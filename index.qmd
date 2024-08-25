@@ -29,32 +29,33 @@ on the due date***.
 |:-------:|----------|---------|:-------:|:-------:|:-------:|---------|:-------:|
 |  1   | `r advdate(mon,0)`  | Welcome to DATS 1001            |         |                                                   |   🖥️   |            |          |
 |      | `r advdate(wed,0)`  | Meet ouR tech stack             |   📖    |                                                   |   🖥️   |            |          |
-|  2   | `r advdate(mon,1)`  | 🇺🇸 No class, Labor Day          |         |                                                   |        |            |          |
-|      | `r advdate(wed,1)`  | Grammar of graphics             |   📖    |                                                   |   🖥️   |            |          |
-|  3   | `r advdate(mon,2)`  | Categorical and continuous data |   📖    |                        📺                         |   🖥️   |            |          |
-|      | `r advdate(wed,2)`  | Visualization best practices    |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |    🧮    |
-|  4   | `r advdate(mon,3)`  | What is tidy data?              |   📖    |                                                   |   🖥️   |            |          |
-|      | `r advdate(wed,3)`  | Grammar of data wrangling       |         |                                                   |   🖥️   |            |    📘    |
-|  5   | `r advdate(mon,4)`  | Joining data                    |   📖    |                                                   |   🖥️   |            |          |
-|      | `r advdate(wed,4)`  | Tidying data                    |   📖    |                                                   |   🖥️   |            |          |
-|  6   | `r advdate(mon,5)`  |                                 |   📖    |                        📺                         |   🖥️   |            |          |
-|      | `r advdate(wed,5)`  |                                 |   📖    |                        📺                         |   🖥️   |            |          |
-|  7   | `r advdate(mon,6)`  |                                 |   📖    |                        📺                         |   🖥️   |            |          |
-|      | `r advdate(wed,6)`  |                                 |   📖    |                        📺                         |   🖥️   |            |    🧮    |
+|  2   | `r advdate(mon,1)`  | R coding basics                 |   📖    |                                                   |        |            |          |
+|      | `r advdate(wed,1)`  | 🇺🇸 No class, Labor Day          |   📖    |                                                   |   🖥️   |            |          |
+|  3   | `r advdate(mon,2)`  | Grammar of graphics             |   📖    |                        📺                         |   🖥️   |            |          |
+|      | `r advdate(wed,2)`  | Categorical and continuous data |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |          |
+|  4   | `r advdate(mon,3)`  | Visualization best practices    |   📖    |                                                   |   🖥️   |            |          |
+|      | `r advdate(wed,3)`  | Coding assignment 1             |   📖    |                                                   |   🖥️   | 🧮         |          |
+|  5   | `r advdate(mon,4)`  | What is tidy data?              |   📖    |                                                   |   🖥️   |            |          |
+|      | `r advdate(wed,4)`  | Grammar of data wrangling       |   📖    |                                                   |   🖥️   |            |          |
+|  6   | `r advdate(mon,5)`  | Grouping and summarizing        |   📖    |                        📺                         |   🖥️   |            |          |
+|      | `r advdate(wed,5)`  | Joining data frames             |   📖    |                        📺                         |   🖥️   |            |          |
+|  7   | `r advdate(mon,6)`  | Tidying data                    |   📖    |                        📺                         |   🖥️   |            |          |
+|      | `r advdate(wed,6)`  | Coding assignment 2             |   📖    |                        📺                         |   🖥️   | 🧮         |          |
 |  8   | `r advdate(mon,7)`  |                                 |   📖    |                                                   |   🖥️   |            |          |
-|      | `r advdate(wed,7)`  |                                 |         |                                                   |   🖥️   |            |    📘    |
+|      | `r advdate(wed,7)`  |                                 |   📖    |                                                   |   🖥️   |            |    📘    |
 |  9   | `r advdate(mon,8)`  |                                 |   📖    |                                                   |        |            |          |
-|      | `r advdate(wed,8)`  |                                 |         |                                                   |        |            |          |
+|      | `r advdate(wed,8)`  |                                 |   📖    |                                                   |        |            |          |
 |  10  | `r advdate(mon,9)`  |                                 |   📖    |                                                   |   🖥️   |            |          |
-|      | `r advdate(wed,9)`  |                                 |   📖    |                                                   |   🖥️   |            |    ✍️    |
-|  11  | `r advdate(mon,10)` |                                 |   📖    |                                                   |   🖥️   |            |          |
-|      | `r advdate(wed,10)` |                                 |   📖    |                                                   |   🖥️   |            |          |
-|  12  | `r advdate(mon,11)` |                                 |   📖    |                                                   |   🖥️   |            |          |
+|      | `r advdate(wed,9)`  | Coding assignment 3             |   📖    |                                                   |   🖥️   | 🧮         |    ✍️    |
+|  11  | `r advdate(mon,10)` | The language of models          |   📖    |                                                   |   🖥️   |            |          |
+|      | `r advdate(wed,10)` | Linear regression               |   📖    |                                                   |   🖥️   |            |          |
+|  12  | `r advdate(mon,11)` | Multiple regression             |   📖    |                                                   |   🖥️   |            |          |
 |      | `r advdate(wed,11)` |                                 |   📖    |                        📺                         |   🖥️   |            |    ✍️    |
 |  13  | `r advdate(mon,12)` |                                 |   📖    |                                                   |   🖥️   |            |          |
 |      | `r advdate(wed,12)` |                                 |   📖    |                                                   |   🖥️   |            |          |
-|  14  | `r advdate(mon,13)` |                                 |   📖    |                                                   |   🖥️   |            |          |
-|      | `r advdate(wed,13)` |                                 |         |                                                   |        |            |          |
+|  14  | `r advdate(mon,13)` |  🦃 No class–Thanksgiving break |         |                                                   |        |            |          |
+|      | `r advdate(wed,13)` | 🦃 No class–Thanksgiving break  |         |                                                   |        |            |          |
 |  15  | `r advdate(mon,14)` |                                 |         |                        📺                         |        |            |          |
 |      | `r advdate(wed,14)` |                                 |         |                                                   |        |            |  📘 ✍️   |
+|  16  | `r advdate(mon,15)` |                                 |         |                                                   |        |            |          |
 :::
