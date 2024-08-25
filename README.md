@@ -1,6 +1,6 @@
-# Website for PSC 2339-Comparative Political Economy at The George Washington University 
+# Website for DATS 1001: Data Science for All
 
-🔗 https://www.psc2339.com
+🔗 https://www.ds4all.rocks
 
 ## Attribution
 
@@ -14,4 +14,3 @@ on a [template](https://github.com/sta210-s22/website) provided by [Mine
 work is licensed under a
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative
 Commons Attribution-NonCommercial 4.0 International License</a>.
-# psc2339-fall-2022

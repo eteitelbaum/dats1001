@@ -3,19 +3,23 @@ title: "Course Description"
 editor: visual
 ---
 
-This is a survey course in comparative political economy, a field of
-inquiry within the subfield of comparative politics that explores the
-interaction of politics and the economy. Comparative political economy
-is one of the most active research fields in comparative politics and is
-comprised of a wide range of research topics. Frequently the focus of
-research in comparative political economy is on how institutions
-influence economic outcomes. How, for example, do property rights
-facilitate investment and economic growth? How do different colonial
-legacies inhibit or promote economic performance? Sometimes, however,
-institutions become the dependent variable in our analysis. How does
-wealth influence regime stability? Or how does economic globalization
-affect welfare states? This course will address questions like these
-through an exploration of relevant literature. The syllabus emphasizes
-current research agendas in political economy, and its main goal is to
-provide students with a broad overview of contemporary debates in the
-field.
+This course provides a comprehensive introduction to data science,
+blending theoretical foundations with practical applications. Students
+will begin with data visualization, learning the essential tools and
+principles for creating informative and impactful visual representations
+of data. The course then progresses to data wrangling, where students
+will clean, manipulate, and prepare data for analysis.
+
+As the semester unfolds, students will explore web scraping techniques
+to gather data from online sources, followed by an examination of the
+ethical considerations surrounding data collection, privacy, and
+algorithmic bias. The course then delves into statistical modeling,
+introducing both linear and logistic regression, and other core methods
+used in predictive analytics.
+
+Throughout the course, various special topics, such as bootstrapping,
+randomization tests, or interactive web applications, will be covered,
+offering students a chance to explore current trends and tools in data
+science. The curriculum is designed to equip students with a versatile
+toolkit, enabling them to tackle real-world data challenges and
+communicate their findings effectively.
