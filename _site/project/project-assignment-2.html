@@ -71,41 +71,12 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <meta property="og:title" content="DATS 1001–Fall Schedule - Project Assignment 2">
-<meta property="og:description" content="White Paper">
+<meta property="og:description" content="Homepage for DATS 1001 - Data Science for All, George Washington University.">
 <meta property="og:site_name" content="DATS 1001--Fall Schedule">
 <meta name="twitter:title" content="DATS 1001–Fall Schedule - Project Assignment 2">
-<meta name="twitter:description" content="White Paper">
+<meta name="twitter:description" content="Homepage for DATS 1001 - Data Science for All, George Washington University.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -204,13 +175,36 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
- <span class="menu-text">Project</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text">Coding Asignments</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/coding-assignment-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignments/coding-assignment-2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Assignment 2</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text">Project</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../project/project-assignment-1.html" class="sidebar-item-text sidebar-link">
@@ -243,15 +237,7 @@ window.Quarto = {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#steps" id="toc-steps" class="nav-link" data-scroll-target="#steps">Steps</a></li>
-  <li><a href="#what-to-submit" id="toc-what-to-submit" class="nav-link" data-scroll-target="#what-to-submit">What to Submit</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/dats1001-fall-2024/edit/main/project/project-assignment-2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dats1001-fall-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -259,7 +245,6 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../project/project-assignment-1.html">Project</a></li><li class="breadcrumb-item"><a href="../project/project-assignment-2.html">Assignment 2</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Project Assignment 2</h1>
-<p class="subtitle lead">White Paper</p>
 </div>
 
 
@@ -276,69 +261,9 @@ window.Quarto = {
 </header>
 
 
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>The due date for this assignment has been moved to Thursday, April 13th.</p>
-</div>
-</div>
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>For this part of the project, you are going to download the data that you discussed in your outline and wrangle it. “Wrangling” means cleaning the data and getting it into the proper format for analysis. For Tableau and other commonly used data analysis applications, the data need to be in <a href="https://stefvanbuuren.name/fimd/sec-longandwide.html">long format</a> so that each row contains values for one country or region per year and each column contains data for one variable. You also need to filter the data for the years that you want to use and select the variables that you want to work with. If you are working with more than one data set, then you have to merge the two data sets. I show you how to do all of this using data from the World Bank and V-Dem in <a href="https://www.youtube.com/watch?v=yqAYuAf6zEc&amp;t=175s">this video</a>.</p>
-</section>
-<section id="steps" class="level2">
-<h2 class="anchored" data-anchor-id="steps">Steps</h2>
-<ol type="1">
-<li>Download the data that you want to work with.</li>
-<li>Open the file in Excel’s Power Query Editor and see what the data look like.</li>
-</ol>
-<ul>
-<li>Are the data in long format or will you need to reshape them?</li>
-<li>How many years are there in the data and what will you need to filter out?</li>
-<li>Which variables do you want to work with?</li>
-</ul>
-<ol start="3" type="1">
-<li>If you want to work with more than one dataset, you will need to merge the two datasets if you want to display variables from the two datasets in the same visualization (like a scatter plot).</li>
-<li>Follow the steps discussed in class to clean the data and prepare it for analysis.</li>
-</ol>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>I recommend working with just a handful of variables for this assignment. You need at least two for the scatter plot. You can then choose whether you want to also display one or both of those in the other visualizations. If you have four visualizations in your report, then you should have a maximum of five variables. But just using two or three is also fine.</p>
-</div>
-</div>
-</section>
-<section id="what-to-submit" class="level2">
-<h2 class="anchored" data-anchor-id="what-to-submit">What to Submit</h2>
-<p>Submit a report in the form of a <a href="https://www.instructionalsolutions.com/blog/how-to-write-white-paper">white paper</a> that tells your boss your plan for creating a Tableau report. The white paper should include the following elements:</p>
-<ol type="1">
-<li>An abstract (<span class="math inline">\(\approx\)</span> 150 words)</li>
-<li>Problem statement (<span class="math inline">\(\approx\)</span> 100 words)</li>
-<li>Background (<span class="math inline">\(\approx\)</span> 250 words)</li>
-<li>Solution (<span class="math inline">\(\approx\)</span> 250 words)</li>
-<li>Conclusion (<span class="math inline">\(\approx\)</span> 100 words)</li>
-<li>Reference list (include at least five sources)</li>
-</ol>
-<p>In the solution section, include a brief description of each variable included in your dataset. Then talk in detail about the visualizations you will build using these variables. The default number of visualizations is four: a line chart; a bar chart; a scatter plot and a map. What will be on the x and y axis of each visualization? How many countries or regions will you include in each? You will probably want to include a selection of countries for the bar and line charts and all of the countries for the map. Please take this opportunity to also note any problems that you had in cleaning the data and any unresolved questions about your data. It is better to admit your limitations and try to find a solution than to simply turn something in that is not going to work.</p>
-<p>Along with your report, please be sure to <strong>include a .csv or Excel file with your data</strong>. I want to make sure that you are ready to produce the visualizations in Power BI. You may even want to take some time and see that the data re ready for that as well.</p>
-<p>Don’t overdo it. The final length of your white paper should be approximately 4-5 pages including references. No visualizations of the data are required at this time, however you are welcome to include any preliminary visualizations you have done in an appendix if you would like some feedback on them.</p>
+<p>Details coming soon…</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -887,7 +812,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dats1001-fall-2024/edit/main/project/project-assignment-2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dats1001-fall-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/dats1001-fall-2024/edit/main/project/project-assignment-2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dats1001-fall-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>. 👷🛠️</p>
 </div>

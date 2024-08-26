@@ -7,8 +7,9 @@ editor: visual
 ```{r setup, include = FALSE}
 library(lubridate)
 
-mon <- as_date("2024-08-26")
-wed <- mon+days(2)
+sun <- as_date("2024-08-25")
+mon <- sun+days(1)
+wed <- sun+days(3)
 
 advdate <- function(day, week) {
   date <- (day + weeks(week))
@@ -20,42 +21,42 @@ advdate <- function(day, week) {
 ```
 
 This page displays an outline of the topics, content, and assignments
-for the semester. Slides and assignment links will go live as the
-semester progresses. ***All assignments must be submitted by 11:59 p.m.
-on the due date***.
+for the semester. Links, to slides, assignments and course resources
+will go live as the semester progresses. ***All assignments must be
+submitted by 11:59 p.m. on the due date***.
 
 ::: column-screen-inset-right
-| Week | Date                 | Topic                           | Reading |                       Video                       | Slides | Assignment | Due Date |
+| Week | Date                 | Topic                           | Reading |                       Video                       | Slides | Assignment |        Due Date         |
 |:-------:|----------|---------|:-------:|:-------:|:-------:|:-------:|:-------:|
-|  1   | `r advdate(mon,0)`   | Welcome to DATS 1001            |         |                                                   |   🖥️   |            |          |
-|      | `r advdate(wed,0)`   | Meet ouR tech stack             |   📖    |                        📺                         |   🖥️   |            |          |
-|  2   | `r advdate(mon,1)`   | R coding basics                 |   📖    |                        📺                         |        |            |          |
-|      | `r advdate(wed,1)`   | 🇺🇸 No class, Labor Day          |         |                                                   |        |            |          |
-|  3   | `r advdate(mon,2)`   | Grammar of graphics             |   📖    |                        📺                         |   🖥️   |            |          |
-|      | `r advdate(wed,2)`   | Which visualization do I use?   |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |          |
-|  4   | `r advdate(mon,3)`   | Visualization best practices    |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |          |
-|      | `r advdate(wed,3)`   | Coding assignment 1             |   📖    |                                                   |   🖥️   |     🧮     |          |
-|  5   | `r advdate(mon,4)`   | What is tidy data?              |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |          |
-|      | `r advdate(wed,4)`   | Grammar of data wrangling       |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |          |
-|  6   | `r advdate(mon,5)`   | Grouping and summarizing        |   📖    |                        📺                         |   🖥️   |            |          |
-|      | `r advdate(wed,5)`   | Joining data frames             |   📖    |                        📺                         |   🖥️   |            |          |
-|  7   | `r advdate(mon,6)`   | Tidying data                    |   📖    |                        📺                         |   🖥️   |            |          |
-|      | `r advdate(wed,6)`   | Coding assignment 2             |   📖    |                                                   |   🖥️   |     🧮     |          |
-|  8   | `r advdate(mon,7)`   | The language of models          |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |          |
-|      | `r advdate(wed,7)`   | Linear regression               |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |     ✍️     |          |
-|  9   | `r advdate(mon,8)`   | Multiple regression             |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |          |
-|      | `r advdate(wed,8)`   | Logistic regression             |   📖    |                        📺                         |   🖥️   |            |          |
-|  10  | `r advdate(mon,9)`   | Predictive modeling             |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |          |
-|      | `r advdate(wed,9)`   | Coding assignment 4             |   📖    |                                                   |   🖥️   |     🧮     |          |
-|  11  | `r advdate(mon,10)`  | Research design                 |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |          |
-|      | `r advdate(wed,10)`  | Distributions                   |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |     ✍️     |          |
-|  12  | `r advdate(mon,11)`  | Sampling and uncertainty        |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |          |
-|      | `r advdate(wed,11)`  | Hypothesis testing 1            |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |          |
-|  13  | `r advdate(mon,12)`  | Hypothesis testing 2            |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |          |
-|      | `r advdate(wed,12)`  | Coding assignment 3             |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |     🧮     |          |
-|  14  | `r advdate(mon,13)`  |  🦃 No class–Thanksgiving break |         |                                                   |        |            |          |
-|      | `r advdate(wed,13)`  | 🦃 No class–Thanksgiving break  |         |                                                   |        |            |          |
-|  15  | `r advdate(mon,14)`  | Lightning talks                 |         |                                                   |        |            |          |
-|      | `r advdate(wed,14)`  | Lightning talks                 |         |                                                   |        |            |          |
-|  16  | `r advdate(mon,15)`  | Wrap-up: DS careers             |         |                                                   |        |     ✍️     |          |
+|  1   | `r advdate(mon,0)`   | Welcome to DATS 1001            |         |                                                   |        |            |                         |
+|      | `r advdate(wed,0)`   | Meet ouR tech stack             |   📖    |                        📺                         |   🖥️   |            |                         |
+|  2   | `r advdate(mon,1)`   | R coding basics                 |   📖    |                        📺                         |        |            |                         |
+|      | `r advdate(wed,1)`   | 🇺🇸 No class, Labor Day          |         |                                                   |        |            |                         |
+|  3   | `r advdate(mon,2)`   | Grammar of graphics             |   📖    |                        📺                         |   🖥️   |            |                         |
+|      | `r advdate(wed,2)`   | Which visualization do I use?   |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |                         |
+|  4   | `r advdate(mon,3)`   | Visualization best practices    |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |                         |
+|      | `r advdate(wed,3)`   | Coding assignment 1             |   📖    |                                                   |   🖥️   |     🧮     |   `r advdate(sun,4)`    |
+|  5   | `r advdate(mon,4)`   | What is tidy data?              |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |                         |
+|      | `r advdate(wed,4)`   | Grammar of data wrangling       |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |                         |
+|  6   | `r advdate(mon,5)`   | Grouping and summarizing        |   📖    |                        📺                         |   🖥️   |            |                         |
+|      | `r advdate(wed,5)`   | Joining data frames             |   📖    |                        📺                         |   🖥️   |            |                         |
+|  7   | `r advdate(mon,6)`   | Tidying data                    |   📖    |                        📺                         |   🖥️   |            |                         |
+|      | `r advdate(wed,6)`   | Coding assignment 2             |   📖    |                                                   |   🖥️   |     🧮     |   `r advdate(sun,7)`    |
+|  8   | `r advdate(mon,7)`   | The language of models          |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |                         |
+|      | `r advdate(wed,7)`   | Linear regression               |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |     ✍️     |   `r advdate(sun,8)`    |
+|  9   | `r advdate(mon,8)`   | Multiple regression             |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |                         |
+|      | `r advdate(wed,8)`   | Logistic regression             |   📖    |                        📺                         |   🖥️   |            |                         |
+|  10  | `r advdate(mon,9)`   | Predictive modeling             |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |                         |
+|      | `r advdate(wed,9)`   | Coding assignment 4             |   📖    |                                                   |   🖥️   |     🧮     |   `r advdate(sun,10)`   |
+|  11  | `r advdate(mon,10)`  | Research design                 |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |                         |
+|      | `r advdate(wed,10)`  | Distributions                   |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |     ✍️     |   `r advdate(sun,11)`   |
+|  12  | `r advdate(mon,11)`  | Sampling and uncertainty        |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |                         |
+|      | `r advdate(wed,11)`  | Hypothesis testing 1            |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |                         |
+|  13  | `r advdate(mon,12)`  | Hypothesis testing 2            |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |                         |
+|      | `r advdate(wed,12)`  | Coding assignment 3             |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |     🧮     |   `r advdate(sun,13)`   |
+|  14  | `r advdate(mon,13)`  |  🦃 No class–Thanksgiving break |         |                                                   |        |            |                         |
+|      | `r advdate(wed,13)`  | 🦃 No class–Thanksgiving break  |         |                                                   |        |            |                         |
+|  15  | `r advdate(mon,14)`  | Lightning talks                 |         |                                                   |        |            |                         |
+|      | `r advdate(wed,14)`  | Lightning talks                 |         |                                                   |        |            |                         |
+|  16  | `r advdate(mon,15)`  | Wrap-up: DS careers             |         |                                                   |        |     ✍️     | Date of scheduled final |
 :::

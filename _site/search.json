@@ -22,17 +22,6 @@
     ]
   },
   {
-    "objectID": "course-syllabus.html#prerequisites",
-    "href": "course-syllabus.html#prerequisites",
-    "title": "Syllabus",
-    "section": "Prerequisites",
-    "text": "Prerequisites\n\nAcademic\nThere are no academic prerequisites for this course.\n\n\nTechnological\n\nConfiguration and software\nTo fully participate in our course, you will need regular access to broadband Internet access as well as other technology components. Please consult GW Online’s Technical Requirements and Support for details on recommended configurations and software available to you. You will need to use the following tools and platforms:\n\nPost Cloud: a cloud-based computing platform that allows you to run R code and render Quarto documents in the cloud.\nRStudio: an IDE for generating data visualizations using the programming language, R.\nQuarto: a document generation tool that allows you to create documents that combine code, data, and text.\nDiscord: a real-time chat application.\n\n\n\nSkills\nFor our course, you should be able to:\n\nAccess and use GW’s Blackboard system.\nUse your GW email for university-related communications per university policy.\nUse productivity software (e.g., Office 365, Google Suite) to collaborate with peers and submit assignments.\nUse web conferencing tools (e.g., Zoom, Webex) to collaborate with peers and me.\nUse a mobile device and/or computer to upload documents, images, and recordings.\nSeek technology help and tools by contacting GW Information Technology | (202)-994-4948 | ithelp@gwu.edu.\n\nIf you need assistance with technology tools we’ll use in this course, please visit the Technology Support link in the left navigation menu in our course on Blackboard.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
     "objectID": "course-syllabus.html#learning-objectives",
     "href": "course-syllabus.html#learning-objectives",
     "title": "Syllabus",
@@ -55,17 +44,6 @@
     ]
   },
   {
-    "objectID": "course-syllabus.html#class-participation",
-    "href": "course-syllabus.html#class-participation",
-    "title": "Syllabus",
-    "section": "Class participation",
-    "text": "Class participation\nThis class is structured so that students have ample opportunity to participate in class discussions. Students are encouraged to voice their opinions both in small group settings as well as in broader class discussions and to ask clarifying questions when the need arises.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
     "objectID": "course-syllabus.html#assignments",
     "href": "course-syllabus.html#assignments",
     "title": "Syllabus",
@@ -77,69 +55,179 @@
     ]
   },
   {
-    "objectID": "course-syllabus.html#out-of-class-preparation",
-    "href": "course-syllabus.html#out-of-class-preparation",
+    "objectID": "course-syllabus.html#course-grading",
+    "href": "course-syllabus.html#course-grading",
     "title": "Syllabus",
-    "section": "Out of class preparation",
-    "text": "Out of class preparation\nIn a 15-week semester, including exam week, students are expected to spend a minimum of 100 minutes of out-of-class work for every 50 minutes of direct instruction, for a minimum total of 2.5 hours a week. A 3-credit course should include 2.5 hours of direct instruction and a minimum of 5 hours of independent learning or 7.5 hours per week.",
+    "section": "Course Grading",
+    "text": "Course Grading\nThe grading scale below maps your final point or percentage total to your final letter grade for the course.\n\n\n\nRange\nLetter Grade\n\n\n\n\n94-100\nA\n\n\n90-93\nA-\n\n\n87-89\nB+\n\n\n84-86\nB\n\n\n80-83\nB-\n\n\n77-79\nC+\n\n\n74-76\nC\n\n\n70-73\nC-\n\n\n67-69\nD+\n\n\n64-66\nD\n\n\n60-63\nD-\n\n\n&lt;59\nF",
     "crumbs": [
       "Course information",
       "Syllabus"
     ]
   },
   {
-    "objectID": "course-syllabus.html#course-policies",
-    "href": "course-syllabus.html#course-policies",
+    "objectID": "course-syllabus.html#late-work",
+    "href": "course-syllabus.html#late-work",
     "title": "Syllabus",
-    "section": "Course policies",
-    "text": "Course policies\n\nDue dates and late assignments\nReadings should be completed and videos watched for the day they are assigned. Assignment due dates are posted in the “weekly materials” page for the week that they are due. The final component of the final project is due at 11:59 p.m. on the date of the scheduled final. (Note that that there is no final exam for this course. This is just the due date for the Tableau assignment).\nLate assignments will be accepted with a standard penalty of three percentage points per day that they are turned in after the official due date. No exceptions will be made to this policy.\nIf you are having a personal or medical emergency and are wondering what to do, start by referencing this FAQ published by GW Student Life. Or just reach out to the CARE Team at gwcares@gwu.edu. For further information about different types of support available to you, see the course support page.\nWhile I will always try to be a source of support to my students, please note that for privacy reasons, the Provost has asked that faculty do not attempt to verify personal or medical emergencies themselves.\n\n\nMake-ups\nThere are no makeups. Please see the late assignments policy above.\n\n\nAttendance\nThis is an in-person class and you are expected to attend. While there is no formal attendance requirement, it is a proven fact that students who attend class tend to perform better on exams and assignments. Also, the instructor will not provide “makeup sessions” to go over material that was missed due to absence.\n\n\nGrading scale\n\n\n\nRange\nLetter Grade\n\n\n\n\n94-100\nA\n\n\n90-93\nA-\n\n\n87-89\nB+\n\n\n84-86\nB\n\n\n80-83\nB-\n\n\n77-79\nC+\n\n\n74-76\nC\n\n\n70-73\nC-\n\n\n67-69\nD+\n\n\n64-66\nD\n\n\n60-63\nD-\n\n\n&lt;59\nF\n\n\n\n\n\nClass recordings\nAll classes will be recorded. Recordings will be posted on the course Blackboard site.\n\n\nLateness\nPlease come to class on time. It is distracting to me and to other students when you enter the room late.\n\n\nLaptops and cell phones\nPlease put away your cell phones during class. It is fine to use computers to take notes, but you should refrain from checking social media and email.\n\n\nDiversity in the classroom\nWe want to make sure that everyone has an opportunity to participate in class and to get the most out of their learning experience at GW. Moreover, we all benefit from a diversity of views in the classroom. Therefore, please be respectful of other people’s views and be mindful of when others are trying to participate.\n\n\nLearning Needs\nPlease let me know if you have any special needs or learning requirements and so that I can accommodate them.\n\n\nEmail\nI try to respond to emails within 24 hours except on weekends. It is usually preferred to talk to me in person, however, either after class or during office hours.\n\n\nFood\nStudents are permitted to eat light snacks, but please refrain from bringing sugary drinks, coffee or large, odiferous meals.",
+    "section": "Late Work",
+    "text": "Late Work\nLate assignments will incur a penalty of 1 percentage point per day. Late work will not be accepted more than 7 days past the deadline.\nStudents with exceptional circumstances may receive accommodations for late work under exceptional circumstances, and in consultation with the students’ academic advisor, when a verified medical excuse written by a qualified medical professional is provided.\nAccommodations are automatically approved for university-approved absences such as sporting events, religious holidays, etc. but these should be provided to the instructor by the end of the second week of the semester.\nNo exceptions will be made to the late work policy.",
     "crumbs": [
       "Course information",
       "Syllabus"
     ]
   },
   {
-    "objectID": "course-syllabus.html#university-policies",
-    "href": "course-syllabus.html#university-policies",
+    "objectID": "course-syllabus.html#policy-on-ai-tools",
+    "href": "course-syllabus.html#policy-on-ai-tools",
     "title": "Syllabus",
-    "section": "University policies",
-    "text": "University policies\n\nAcademic integrity\nBy taking this course, you are agreeing to abide by the GWU code of Academic Integrity. According to this code, academic dishonesty is defined as “cheating of any kind, including misrepresenting one’s own work, taking credit for the work of others without crediting them and without appropriate authorization, and the fabrication of information.” Note that this is not a comprehensive list. Other types of academic dishonesty include providing false or misleading information in an effort to postpone an exam or to get an extension on an assignment and providing substantially similar material for a writing assignment for assignments in two different courses without the prior permission of the faculty members teaching those courses. The minimum penalty for academic dishonesty is a failing grade on the assignment in question and the maximum penalty is failure of the class. Furthermore, the violation will be reported to GW’s Office of Academic Integrity, which can impose additional penalties beyond those I may impose.\n\n\nReligious holidays\nStudents must notify faculty during the first week of the semester in which they are enrolled in the course, or as early as possible, but no later than three weeks prior to the absence, of their intention to be absent from class on their day(s) of religious observance. If the holiday falls within the first three weeks of class, the student must inform faculty in the first week of the semester. For details and policy, see “Religious Holidays.”\n\n\nUse of electronic materials and class recordings\nStudents are encouraged to use electronic course materials, including recorded class sessions, for private personal use in connection with their academic program of study. Electronic course materials and recorded class sessions should not be shared or used for non-course related purposes unless express permission has been granted by the instructor. Students who impermissibly share any electronic course materials are subject to discipline under the Student Code of Conduct. Please contact the instructor if you have questions regarding what constitutes permissible or impermissible use of electronic course materials and/or recorded class sessions. Please contact Disability Support Services if you have questions or need assistance in accessing electronic course materials.",
+    "section": "Policy on AI Tools",
+    "text": "Policy on AI Tools\n\nOverview\nThe use of Large Language Models (LLMs) can be a valuable tool for students in this course, but it is important to use it ethically and appropriately. By following the guidelines and expectations outlined in this syllabus policy, students can maximize the benefits of using LLMs while also demonstrating their own critical thinking, research, and programming skills.\nAs part of this course, students will have the option to use ChatGPT and other LLMs to assist in the writing of their R scripts for specific course assignments. Such tools can provide students with a starting point for their code but often the code is incomplete or error-prone. It is important to recognize that LLMs are a tool and not a substitute for critical thinking, research, or programming skills. Therefore, this syllabus policy outlines the guidelines and expectations for using LLMs in this course.\n\n\nGuidelines\nIt is also important to note that some uses of LLMs are more appropriate than others. For example, it is acceptable to use LLMs to generate boilerplate code or to help with syntax, but it is not acceptable to use an LLM to complete entire assignments or assessments. Students should use LLMs as a starting point and then modify and expand on the generated code to demonstrate their own understanding and skills.\nOne way to think of LLMs is as a tutor or classmate. What would it be appropriate to ask a tutor or classmate for help with? What would you not be permitted ask a tutor or classmate for help with?",
     "crumbs": [
       "Course information",
       "Syllabus"
     ]
   },
   {
-    "objectID": "faq.html",
-    "href": "faq.html",
-    "title": "Frequently Asked Questions",
-    "section": "",
-    "text": "Please be sure that you are logged into Gelman when trying to access the course readings. Most of the readings links will take you directly to the login page if you are not already logged in. But some of them require you to be logged in ahead of time. To log in to Gelman, click on the green “My Account” icon on the Gelman homepage.",
+    "objectID": "course-syllabus.html#office-hours",
+    "href": "course-syllabus.html#office-hours",
+    "title": "Syllabus",
+    "section": "Office Hours",
+    "text": "Office Hours\nAnother way we can work toward your success in the course is through office/student hours. Please make an appointment to talk with me during this time. You can work with me to:\n\nClarify any questions about the syllabus or course content\nReview an assignment you’ve completed and have questions about\nStep through practice problems or questions\nGet study strategies\nDiscuss grades\n\nTo make the meeting more effective, you can:\n\nGather materials (assignments, notes, etc.) ready in advance\nBe ready to take notes during office hours\nAsk follow up questions if you need clarification\nConfirm any action plan at the close of the meeting\nFollowing through on any action plan",
     "crumbs": [
       "Course information",
-      "FAQ"
+      "Syllabus"
     ]
   },
   {
-    "objectID": "faq.html#i-am-having-trouble-accessing-the-course-readings.-what-should-i-do",
-    "href": "faq.html#i-am-having-trouble-accessing-the-course-readings.-what-should-i-do",
-    "title": "Frequently Asked Questions",
-    "section": "",
-    "text": "Please be sure that you are logged into Gelman when trying to access the course readings. Most of the readings links will take you directly to the login page if you are not already logged in. But some of them require you to be logged in ahead of time. To log in to Gelman, click on the green “My Account” icon on the Gelman homepage.",
+    "objectID": "course-syllabus.html#prerequisites",
+    "href": "course-syllabus.html#prerequisites",
+    "title": "Syllabus",
+    "section": "Prerequisites",
+    "text": "Prerequisites\n\nAcademic\nThere are no academic prerequisites for this course.\n\n\nTechnological\n\nConfiguration and software\nTo fully participate in our course, you will need regular access to broadband Internet access as well as other technology components. Please consult GW Online’s Technical Requirements and Support for details on recommended configurations and software available to you. You will need to use the following tools and platforms:\n\nPost Cloud: a cloud-based computing platform that allows you to run R code and render Quarto documents in the cloud.\nRStudio: an IDE for generating data visualizations using the programming language, R.\nQuarto: a document generation tool that allows you to create documents that combine code, data, and text.\nDiscord: a real-time chat application.\n\n\n\nSkills\nFor our course, you should be able to:\n\nAccess and use GW’s Blackboard system.\nUse your GW email for university-related communications per university policy.\nUse productivity software (e.g., Office 365, Google Suite) to collaborate with peers and submit assignments.\nUse web conferencing tools (e.g., Zoom, Webex) to collaborate with peers and me.\nUse a mobile device and/or computer to upload documents, images, and recordings.\nSeek technology help and tools by contacting GW Information Technology | (202)-994-4948 | ithelp@gwu.edu.\n\nIf you need assistance with technology tools we’ll use in this course, please visit the Technology Support link in the left navigation menu in our course on Blackboard.",
     "crumbs": [
       "Course information",
-      "FAQ"
+      "Syllabus"
     ]
   },
   {
-    "objectID": "faq.html#i-am-having-trouble-viewing-the-lessons-on-dataquest.-how-do-i-get-help-with-that",
-    "href": "faq.html#i-am-having-trouble-viewing-the-lessons-on-dataquest.-how-do-i-get-help-with-that",
-    "title": "Frequently Asked Questions",
-    "section": "I am having trouble viewing the lessons on Dataquest. How do I get help with that?",
-    "text": "I am having trouble viewing the lessons on Dataquest. How do I get help with that?\nIf you cannot log in to Dataquest at all, make sure that you have responded to the invitation email that I sent you through Dataquest. Then, make that you are using the email address associated with that invitation. This address will be the Net ID listed for you in Blackboard plus the suffix “@gwu.edu.”\nSometimes people have trouble with pages loading or other errors on the site. Sometime this has to do with the browser that you are using. People have had problems with Safari, for example. So first try another browser.\nAnother issue could be that you are looking at the wrong tab. Make sure that you have clicked on the “Remote session” tab.\n\nIf you can see the lesson but not the spreadsheet, one option is to simply download the the spreadsheet and open it on your computer. To download a spreadsheet, click the tab with the spreadsheet name and then the little cloud icon.\n\nIf none of those things work, then please report the matter to Dataquest support by clicking on the question mark icon. They are usually pretty responsive.",
+    "objectID": "course-syllabus.html#course-credit-hour-policy",
+    "href": "course-syllabus.html#course-credit-hour-policy",
+    "title": "Syllabus",
+    "section": "Course Credit Hour Policy",
+    "text": "Course Credit Hour Policy\nSummer courses are more than twice as intensive as those held during the academic year. Over 6 weeks, students will spend approximately 18.75 hours per week doing independent learning, including, but not limited to, readings, quizzes, assignments and a final project. This amounts to 36 hours of direct-instruction and 76.5 hours independent coursework.\n\nHow this applies to you\nUse the credit hour policy to plan and manage your workload and time spent on this course. Please contact me if you are having difficulty managing your workload, and we can discuss strategies to help you succeed in the course.",
     "crumbs": [
       "Course information",
-      "FAQ"
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#demonstrating-academic-integrity",
+    "href": "course-syllabus.html#demonstrating-academic-integrity",
+    "title": "Syllabus",
+    "section": "Demonstrating Academic Integrity",
+    "text": "Demonstrating Academic Integrity\nAll of us in the course will comply with the GW Code of Academic Integrity. It states that “we, the Students, Faculty, Librarians, Staff, and Administration of The George Washington University, believing academic integrity to be central to the mission of the University, commit ourselves to promoting high standards for the integrity of academic work. Commitment to academic integrity upholds educational equity, development, and dissemination of meaningful knowledge, and mutual respect that our community values and nurtures. The George Washington University Code of Academic Integrity is established to further this commitment.”\nAcademic dishonesty is defined as cheating of any kind, including misrepresenting one’s own work, taking credit for the work of others without crediting them and without appropriate authorization, and the fabrication of information. For details and complete code, see the Code of Academic Integrity.Common examples of academic dishonesty include cheating, fabrication, plagiarism, falsification, forgery of University academic documents, and facilitating academic dishonesty by others. Learn more about avoiding these:\n\nGW guidance for students on academic integrity.\nPlagiarism: What is it and how to avoid it from GW Libraries.\nMaintaining academic honesty can be a challenging skill to learn. If you have questions about maintaining our course standards, please talk with me early on.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#aiming-for-success",
+    "href": "course-syllabus.html#aiming-for-success",
+    "title": "Syllabus",
+    "section": "Aiming For Success",
+    "text": "Aiming For Success\nI care about your learning and also about this subject matter, and I am here to help you have a meaningful learning experience. I expect you to take ownership of your learning: you can get more out of the course by thoughtfully participating in discussions, actively taking notes on readings and lectures, and giving your best effort overall. I will hold you to the highest standards for academic honesty and integrity in your work. I will also encourage you to collaborate and learn from your peers through thoughtful and respectful discussion. It is recommended you log in daily order to keep up with course requirements. I must highlight that communication is vital, so I hope you feel comfortable reaching out to me if you are struggling or have concerns or need accommodations beyond accessibility. We can determine strategies to set you up for success. Finally, I look forward to collaborating with you in this course to create a meaningful experience for everyone.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#course-communication",
+    "href": "course-syllabus.html#course-communication",
+    "title": "Syllabus",
+    "section": "Course Communication",
+    "text": "Course Communication\nCommunication in our course is essential; clearing up questions earlier than later is a good practice, so please don’t hesitate to reach out to me. In any mode of communication used in our course, all of us will follow netiquette found in our syllabus.\nWe will communicate primarily through GW’s Blackboard System and the Discord server. Announcements and emails sent through Blackboard automatically go to your GW email address (i.e., userid@gwu.edu). Please check your GW email account on a daily basis or forward your GW email to another address that you check daily.\nI will respond to emails/discussion posts within 48 hours (i.e., “24 hours on weekdays and on the next business day over weekends and holidays.”) I will provide feedback on assignments/exams within 3 days (i.e., “five days on weekdays and on the next business day over weekends and holidays.”)\nYou can post general course-related questions to our Discord server. Please post your question here first rather than emailing me directly if your question regards the course material. However, if you have a question that is more personal in nature (i.e., grades), please email me directly to set up an appointment.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#netiquette",
+    "href": "course-syllabus.html#netiquette",
+    "title": "Syllabus",
+    "section": "Netiquette",
+    "text": "Netiquette\nBehind every name there is a person.\nTo ensure safe and meaningful learning experiences for everyone, we all agree to:\n\nRemain professional, respectful, and courteous at all times on all platforms.\nKeep in mind this is a college class. Something that would be inappropriate in an in-person classroom is also inappropriate in an online classroom.\nWhen upset, we’ll wait a day or two prior to posting. Messages posted or emailed in anger are often regretted later.\nAsk one another for clarification if we find a communication offensive or difficult to understand.\nAvoid sweeping generalizations. Back up our stated opinions with facts and reliable sources.\nUnderstand that we may disagree and that exposure to other people’s opinions is part of the learning experience.\nJust as we would like our privacy respected, we will respect the privacy of other course participants and what they share.\n\nI (the instructor) reserve the right to delete any post or communication in our course that is deemed inappropriate without prior notification to the student. This includes anything containing language that is offensive, rude, profane, racist, or hateful. Items that are seriously off-topic or serve no purpose other than to vent frustration will also be removed.\nUsing outside communication apps\nI am aware that you and your peers might communicate using tools outside of GW’s Blackboard, my course website, our course Discord channel, or email systems. Rules of netiquette and appropriate communication extend to these tools as well as to Blackboard. If you see any tool being used inappropriately (i.e., any communication containing language that is offensive, rude, profane, racist, or hateful; uses that promote cheating of any kind), contact me as soon as possible to speak privately about it.\n(Adapted from Lake Superior Connect, Creative Commons Attribution 3.0)",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#policies",
+    "href": "course-syllabus.html#policies",
+    "title": "Syllabus",
+    "section": "Policies",
+    "text": "Policies\nTo make this a meaningful learning experience for everyone, please read and understand the following policies. All GW policies can be found on the GW Office of Ethics, Compliance, and Privacy site. All GW community members are responsible for adhering to and activating in accordance with all university policies. Please contact me if you have any questions.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#accessibility-and-accommodations",
+    "href": "course-syllabus.html#accessibility-and-accommodations",
+    "title": "Syllabus",
+    "section": "Accessibility and Accommodations",
+    "text": "Accessibility and Accommodations\n\nGW’s Disability Support Services\nIf you are a student with a disability, or think you may have a disability, you can let me know, and/or you can talk to GW’s Office of Disability Support Services (DSS). DSS works with both students with disabilities and instructors to identify reasonable accommodations. Contact the DSS office at (202) 994-8250, by email on dss@gwu.edu, or in-person in Rome Hall Suite 102 to establish eligibility and to coordinate reasonable accommodations. If you have already been approved for accommodations, please send me your accommodation letter and meet with me so we can develop an implementation plan together.\nHow are course technology tools accessible to everyone? To find out, access Technology Support Technology Tools Policies in the Blackboard course menu.\n\n\nAccommodations Beyond Disability\nEveryone has different needs for learning. If you don’t have a documented disability but feel that you would benefit from learning support for other reasons, please don’t hesitate to talk to me. If you have substantial non-academic obligations or other concerns (e.g., food insecurity, work, childcare, athletic commitments, language barriers, financial issues, technology access, commuting, etc.) that make learning difficult, please contact me. I’ll keep this information confidential, and together, we can brainstorm ways to meet your needs.\n\n\nOther Needs\nAny student who has difficulty affording groceries or accessing sufficient food to eat every day, or who lacks a safe and stable place to live, and believes this may affect their performance in the course, is urged to contact GW’s Office of Student Financial Assistance for support. Furthermore, please notify me if you are comfortable doing so. Some other resources to support you are found under the course menu item Student Resources and include support for academic achievement and personal well-being. (Adapted from Goldrick-Rab, 2017)",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#counseling-and-psychological-services",
+    "href": "course-syllabus.html#counseling-and-psychological-services",
+    "title": "Syllabus",
+    "section": "Counseling and Psychological Services",
+    "text": "Counseling and Psychological Services\nGW’s Health Center offers counseling and psychological services to GW students. Please note that staff is licensed to offer short term therapy to students in Washington, DC, Maryland, and Virginia. If you are living outside these regions, the office may be able to refer you elsewhere. Assistance and referrals 24 hours a day, 365 days a year and can be reached on (202) 994-5300.\nThe Center provides assistance and referral to address students’ personal, social, career, and study skills problems. Services for students include: crisis and emergency mental health consultations, confidential assessment, counseling services (individual and small group), and referrals.\nVirtual Workshops are open to any student regardless of geographic location. These can be exceptionally valuable and help you build essential skills and cope with common ongoing mental health concerns. Please contact the GW Health Center on (202) 994-5300 for more information.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#religious-observances",
+    "href": "course-syllabus.html#religious-observances",
+    "title": "Syllabus",
+    "section": "Religious Observances",
+    "text": "Religious Observances\nAs members of the GW community, you have the right to observe religious holidays. University policy requires that students notify their instructors during the first week of the semester if they plan to be absent from class on days of religious observance. For further details, please consult the university policy on religious holiday observance.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#key-dates",
+    "href": "course-syllabus.html#key-dates",
+    "title": "Syllabus",
+    "section": "Key Dates",
+    "text": "Key Dates\nPlease defer to the due dates listed on the course website. You can also view due dates in the gradebook and under each individual course assignment item in Blackboard Ultra.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "course-syllabus.html#incomplete-grades",
+    "href": "course-syllabus.html#incomplete-grades",
+    "title": "Syllabus",
+    "section": "Incomplete Grades",
+    "text": "Incomplete Grades\n\nUndergraduate students\nIncomplete grades may be given to undergraduate students only if for reasons beyond the student’s control (such as medical or family emergency) they are unable to complete the final work of the course. Faculty should not assign an Incomplete grade if not asked by the student.\nA contract must be signed by the instructor and the student and filed in the department office. A copy should be submitted to the Academic Advising office in Phillips 107. A student has up to a calendar year to finish the coursework for the class, and when completed a grade change form must be submitted to the Academic Advising office to update the grade.\nFor further policy and contract information for undergraduate students, please consult with your advisor and also visit the website for Columbian College of Arts and Sciences Academic Advising.\n\n\nGraduate students\nIncomplete grades may be given to graduate students only if for reasons beyond the student’s control (such as medical or family emergency) they are unable to complete the final work of the course. Faculty should not assign an Incomplete grade if not asked by the student.\nFor further information, please consult with your advisor and complete a CCAS graduate student incomplete grade form.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
     ]
   },
   {
@@ -147,40 +235,7 @@
     "href": "project/project-assignment-2.html",
     "title": "Project Assignment 2",
     "section": "",
-    "text": "Important\n\n\n\nThe due date for this assignment has been moved to Thursday, April 13th.",
-    "crumbs": [
-      "Project",
-      "Assignment 2"
-    ]
-  },
-  {
-    "objectID": "project/project-assignment-2.html#overview",
-    "href": "project/project-assignment-2.html#overview",
-    "title": "Project Assignment 2",
-    "section": "Overview",
-    "text": "Overview\nFor this part of the project, you are going to download the data that you discussed in your outline and wrangle it. “Wrangling” means cleaning the data and getting it into the proper format for analysis. For Tableau and other commonly used data analysis applications, the data need to be in long format so that each row contains values for one country or region per year and each column contains data for one variable. You also need to filter the data for the years that you want to use and select the variables that you want to work with. If you are working with more than one data set, then you have to merge the two data sets. I show you how to do all of this using data from the World Bank and V-Dem in this video.",
-    "crumbs": [
-      "Project",
-      "Assignment 2"
-    ]
-  },
-  {
-    "objectID": "project/project-assignment-2.html#steps",
-    "href": "project/project-assignment-2.html#steps",
-    "title": "Project Assignment 2",
-    "section": "Steps",
-    "text": "Steps\n\nDownload the data that you want to work with.\nOpen the file in Excel’s Power Query Editor and see what the data look like.\n\n\nAre the data in long format or will you need to reshape them?\nHow many years are there in the data and what will you need to filter out?\nWhich variables do you want to work with?\n\n\nIf you want to work with more than one dataset, you will need to merge the two datasets if you want to display variables from the two datasets in the same visualization (like a scatter plot).\nFollow the steps discussed in class to clean the data and prepare it for analysis.\n\n\n\n\n\n\n\nNote\n\n\n\nI recommend working with just a handful of variables for this assignment. You need at least two for the scatter plot. You can then choose whether you want to also display one or both of those in the other visualizations. If you have four visualizations in your report, then you should have a maximum of five variables. But just using two or three is also fine.",
-    "crumbs": [
-      "Project",
-      "Assignment 2"
-    ]
-  },
-  {
-    "objectID": "project/project-assignment-2.html#what-to-submit",
-    "href": "project/project-assignment-2.html#what-to-submit",
-    "title": "Project Assignment 2",
-    "section": "What to Submit",
-    "text": "What to Submit\nSubmit a report in the form of a white paper that tells your boss your plan for creating a Tableau report. The white paper should include the following elements:\n\nAn abstract (\\(\\approx\\) 150 words)\nProblem statement (\\(\\approx\\) 100 words)\nBackground (\\(\\approx\\) 250 words)\nSolution (\\(\\approx\\) 250 words)\nConclusion (\\(\\approx\\) 100 words)\nReference list (include at least five sources)\n\nIn the solution section, include a brief description of each variable included in your dataset. Then talk in detail about the visualizations you will build using these variables. The default number of visualizations is four: a line chart; a bar chart; a scatter plot and a map. What will be on the x and y axis of each visualization? How many countries or regions will you include in each? You will probably want to include a selection of countries for the bar and line charts and all of the countries for the map. Please take this opportunity to also note any problems that you had in cleaning the data and any unresolved questions about your data. It is better to admit your limitations and try to find a solution than to simply turn something in that is not going to work.\nAlong with your report, please be sure to include a .csv or Excel file with your data. I want to make sure that you are ready to produce the visualizations in Power BI. You may even want to take some time and see that the data re ready for that as well.\nDon’t overdo it. The final length of your white paper should be approximately 4-5 pages including references. No visualizations of the data are required at this time, however you are welcome to include any preliminary visualizations you have done in an appendix if you would like some feedback on them.",
+    "text": "Details coming soon…",
     "crumbs": [
       "Project",
       "Assignment 2"
@@ -202,7 +257,7 @@
     "href": "instructor.html",
     "title": "Instructor",
     "section": "",
-    "text": "Emmanuel Teitelbaum is an associate professor of political science and international affairs at the The George Washington University His research and writing explore how class conflict and compromise intersect with democracy and development. He also has a strong interest in labor standards and understanding how labor unions, nonprofit organizations, consumers and corporations can help to promote them.\nAt GW, Professor Teitelbaum teaches courses on comparative politics, comparative political economy and South Asia. He is on faculty in the Department of Political Science and the Elliott School of International Affairs and am affiliated with the Sigur Center for Asian Studies as well as the Institute for International Economic Policy.",
+    "text": "Emmanuel Teitelbaum is an associate professor of political science and international affairs at the The George Washington University His research and writing explore how class conflict and compromise intersect with democracy and development. He also has a strong interest in labor standards and understanding how labor unions, nonprofit organizations, consumers and corporations can help to promote them.\nAt GW, Professor Teitelbaum teaches courses on comparative politics, comparative political economy and data science. He is on faculty in the Department of Political Science and the Elliott School of International Affairs and is affiliated with the Sigur Center for Asian Studies as well as the Institute for International Economic Policy.",
     "crumbs": [
       "Course information",
       "Instructor"
@@ -212,8 +267,8 @@
     "objectID": "instructor.html#office-hours",
     "href": "instructor.html#office-hours",
     "title": "Instructor",
-    "section": "Office hours",
-    "text": "Office hours\nProfessor Teitelbaum’s office hours are on Tuesdays and Thursdays from 4:00 p.m. to 5:00 p.m. Please sign up for a slot (or two) on his Calendly page. He is available for consultation virtually on Zoom or in his office at 411 Monroe Hall (2115 G. ST NW).",
+    "section": "Office Hours",
+    "text": "Office Hours\nProfessor Teitelbaum’s office hours are on Mondays from 3:00 p.m. to 5:00 p.m. Please sign up for a slot (or two) on his Calendly page. He is available for consultation virtually on Zoom or in his office at 411 Monroe Hall (2115 G. ST NW).",
     "crumbs": [
       "Course information",
       "Instructor"
@@ -409,25 +464,15 @@
     "text": "Videos\n📺 Bar chart video\n📺 Line chart video\n\n\nBack to course schedule ⏎"
   },
   {
-    "objectID": "assignments/data-assignment-2.html",
-    "href": "assignments/data-assignment-2.html",
+    "objectID": "assignments/coding-assignment-2.html",
+    "href": "assignments/coding-assignment-2.html",
     "title": "Data Assignment 2",
     "section": "",
-    "text": "The purpose of this assignment is for you to learn how to produce data visualizations in Excel. You will find the assigned modules in Dataquest and the following videos helpful in completing it: bar chart; line chart; scatter plot; and a map."
-  },
-  {
-    "objectID": "assignments/data-assignment-2.html#overview",
-    "href": "assignments/data-assignment-2.html#overview",
-    "title": "Data Assignment 2",
-    "section": "",
-    "text": "The purpose of this assignment is for you to learn how to produce data visualizations in Excel. You will find the assigned modules in Dataquest and the following videos helpful in completing it: bar chart; line chart; scatter plot; and a map."
-  },
-  {
-    "objectID": "assignments/data-assignment-2.html#steps",
-    "href": "assignments/data-assignment-2.html#steps",
-    "title": "Data Assignment 2",
-    "section": "Steps",
-    "text": "Steps\n\nGo to the World Bank’s World Development Indicators Database.\nChoose an indicator that you want to work with. It can anything but female labor force participation but it should be an indicator with a good amount of coverage, meaning that the data are available for most countries and years.\nSelect a group of four or five countries to compare and create a bar chart. Follow the steps in the bar chart video to create a bar chart comparing those countries. Save your file.\nUsing those same countries, follow the steps in the line chart video to create a line chart for your countries. Save the file with your newly created line chart.\nNow select all countries and one other indicator to compare your indicator with. This should be something that you think is related to your indicator, e.g. would display a positive or negative correlation with your indicator. Follow the steps in the scatter plot video to create a scatter plot for your indicator and the other variable you have chosen. Save your file with the new scatter plot visualization.\nNow follow the steps in the map video to create a map visualization for your indicator. Save the file with the visualization.\nCopy the four visualizations that you have made from the Excel files and paste them into a Word file. Make sure that each visualization has an appropriate title. Now below each visualization include a source note and write a line or two describing what you see in the visualization (e.g. trends, comparisons relationships).\nSave the Word file, convert it to a .pdf, and upload it to Blackboard. Please also submit your Excel workbook along with your .pdf."
+    "text": "Details coming soon…",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 2"
+    ]
   },
   {
     "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
@@ -441,7 +486,7 @@
     "href": "course-links.html",
     "title": "Useful links",
     "section": "",
-    "text": "Microsoft 365\n🔗 on GW IT’s Microsoft 365 Page\n\n\nTableau\n🔗 on Tableau Trial\n\n\nLecture Recordings\n🔗 on Blackboard\n\n\nProf T’s Zoom Office\n🔗 on Zoom\n\n\nOffice Hours Appointments\n🔗 on Calendly",
+    "text": "Lecture Recordings\n🔗 on Blackboard\n\n\nProf T’s Zoom Office\n🔗 on Zoom\n\n\nOffice Hours Appointments\n🔗 on Calendly",
     "crumbs": [
       "Course information",
       "Useful links"
@@ -459,25 +504,15 @@
     ]
   },
   {
-    "objectID": "assignments/data-assignment-1.html",
-    "href": "assignments/data-assignment-1.html",
+    "objectID": "assignments/coding-assignment-1.html",
+    "href": "assignments/coding-assignment-1.html",
     "title": "Data Assignment 1",
     "section": "",
-    "text": "The purpose of this exercise is to teach you about cell references and basic functions in Microsoft Excel. You will find the assigned units in Dataquest and this video helpful in completing it."
-  },
-  {
-    "objectID": "assignments/data-assignment-1.html#overview",
-    "href": "assignments/data-assignment-1.html#overview",
-    "title": "Data Assignment 1",
-    "section": "",
-    "text": "The purpose of this exercise is to teach you about cell references and basic functions in Microsoft Excel. You will find the assigned units in Dataquest and this video helpful in completing it."
-  },
-  {
-    "objectID": "assignments/data-assignment-1.html#steps",
-    "href": "assignments/data-assignment-1.html#steps",
-    "title": "Data Assignment 1",
-    "section": "Steps",
-    "text": "Steps\n\nGo to Gapminder’s data download page.\nSelect an indicator that you want to work with and download the Excel file. You can choose any indicator besides life expectancy (which was used in the instructional video).\nAfter opening the file in Excel, have a look at the data. Make sure that there are not too many observations and that the file includes numbers and not text, e.g. “1,000,000” as opposed to “1M.” If there are problems with the data, try a different indicator. Make sure that there are years across the top row and country names in the columns. Think about what units the data are in., e.g. thousands of dollars, millions of people, etc. so that you have a sense of what you are working with. Look for some basic trends and patterns in the data and see if they make sense to you.\nIf the data look good, create a new worksheet. Name it something like “analysis.”\nIn the new worksheet, choose four years to analyze that are roughly evenly spaced across the time period covered by the data. Follow the example in the video to calculate the following values: minimum, median, mean, and maximum. Next, choose a value that seems like an interesting threshold to explore. Count the number and percentage of countries above above that threshold. Put the information in a table like this:\n\n\n\n\n\nYear \\(X\\)\nYear \\(Y\\)\nYear \\(Z\\)\nYear \\(Q\\)\n\n\n\n\nMinimum\n\n\n\n\n\n\nMedian\n\n\n\n\n\n\nMean\n\n\n\n\n\n\nMaximum\n\n\n\n\n\n\nNo. &gt; \\(x\\)\n\n\n\n\n\n\n% &gt; \\(x\\)\n\n\n\n\n\n\n\n\nIdentify an interesting twenty-year period to analyze Take averages of the value of your indicator over this period and place them in a separate row.\nSave your workbook.\nUpload your workbook to Blackboard."
+    "text": "Details coming soon…",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 1"
+    ]
   },
   {
     "objectID": "weeks/week-7.html",
@@ -666,7 +701,7 @@
     "href": "index.html",
     "title": "Course Schedule",
     "section": "",
-    "text": "This page displays an outline of the topics, content, and assignments for the semester. Slides and assignment links will go live as the semester progresses. All assignments must be submitted by 11:59 p.m. on the due date.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nReading\nVideo\nSlides\nAssignment\nDue Date\n\n\n\n\n1\nMon, Aug 26\nWelcome to DATS 1001\n\n\n🖥️\n\n\n\n\n\nWed, Aug 28\nMeet ouR tech stack\n📖\n📺\n🖥️\n\n\n\n\n2\nMon, Sep 2\nR coding basics\n📖\n📺\n\n\n\n\n\n\nWed, Sep 4\n🇺🇸 No class, Labor Day\n\n\n\n\n\n\n\n3\nMon, Sep 9\nGrammar of graphics\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 11\nWhich visualization do I use?\n📖\n📺\n🖥️\n\n\n\n\n4\nMon, Sep 16\nVisualization best practices\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 18\nCoding assignment 1\n📖\n\n🖥️\n🧮\n\n\n\n5\nMon, Sep 23\nWhat is tidy data?\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 25\nGrammar of data wrangling\n📖\n📺\n🖥️\n\n\n\n\n6\nMon, Sep 30\nGrouping and summarizing\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 2\nJoining data frames\n📖\n📺\n🖥️\n\n\n\n\n7\nMon, Oct 7\nTidying data\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 9\nCoding assignment 2\n📖\n\n🖥️\n🧮\n\n\n\n8\nMon, Oct 14\nThe language of models\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 16\nLinear regression\n📖\n📺\n🖥️\n✍️\n\n\n\n9\nMon, Oct 21\nMultiple regression\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 23\nLogistic regression\n📖\n📺\n🖥️\n\n\n\n\n10\nMon, Oct 28\nPredictive modeling\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 30\nCoding assignment 4\n📖\n\n🖥️\n🧮\n\n\n\n11\nMon, Nov 4\nResearch design\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 6\nDistributions\n📖\n📺\n🖥️\n✍️\n\n\n\n12\nMon, Nov 11\nSampling and uncertainty\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 13\nHypothesis testing 1\n📖\n📺\n🖥️\n\n\n\n\n13\nMon, Nov 18\nHypothesis testing 2\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 20\nCoding assignment 3\n📖\n📺\n🖥️\n🧮\n\n\n\n14\nMon, Nov 25\n🦃 No class–Thanksgiving break\n\n\n\n\n\n\n\n\nWed, Nov 27\n🦃 No class–Thanksgiving break\n\n\n\n\n\n\n\n15\nMon, Dec 2\nLightning talks\n\n\n\n\n\n\n\n\nWed, Dec 4\nLightning talks\n\n\n\n\n\n\n\n16\nMon, Dec 9\nWrap-up: DS careers\n\n\n\n✍️",
+    "text": "This page displays an outline of the topics, content, and assignments for the semester. Links, to slides, assignments and course resources will go live as the semester progresses. All assignments must be submitted by 11:59 p.m. on the due date.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nReading\nVideo\nSlides\nAssignment\nDue Date\n\n\n\n\n1\nMon, Aug 26\nWelcome to DATS 1001\n\n\n\n\n\n\n\n\nWed, Aug 28\nMeet ouR tech stack\n📖\n📺\n🖥️\n\n\n\n\n2\nMon, Sep 2\nR coding basics\n📖\n📺\n\n\n\n\n\n\nWed, Sep 4\n🇺🇸 No class, Labor Day\n\n\n\n\n\n\n\n3\nMon, Sep 9\nGrammar of graphics\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 11\nWhich visualization do I use?\n📖\n📺\n🖥️\n\n\n\n\n4\nMon, Sep 16\nVisualization best practices\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 18\nCoding assignment 1\n📖\n\n🖥️\n🧮\nSun, Sep 22\n\n\n5\nMon, Sep 23\nWhat is tidy data?\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 25\nGrammar of data wrangling\n📖\n📺\n🖥️\n\n\n\n\n6\nMon, Sep 30\nGrouping and summarizing\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 2\nJoining data frames\n📖\n📺\n🖥️\n\n\n\n\n7\nMon, Oct 7\nTidying data\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 9\nCoding assignment 2\n📖\n\n🖥️\n🧮\nSun, Oct 13\n\n\n8\nMon, Oct 14\nThe language of models\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 16\nLinear regression\n📖\n📺\n🖥️\n✍️\nSun, Oct 20\n\n\n9\nMon, Oct 21\nMultiple regression\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 23\nLogistic regression\n📖\n📺\n🖥️\n\n\n\n\n10\nMon, Oct 28\nPredictive modeling\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 30\nCoding assignment 4\n📖\n\n🖥️\n🧮\nSun, Nov 3\n\n\n11\nMon, Nov 4\nResearch design\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 6\nDistributions\n📖\n📺\n🖥️\n✍️\nSun, Nov 10\n\n\n12\nMon, Nov 11\nSampling and uncertainty\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 13\nHypothesis testing 1\n📖\n📺\n🖥️\n\n\n\n\n13\nMon, Nov 18\nHypothesis testing 2\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 20\nCoding assignment 3\n📖\n📺\n🖥️\n🧮\nSun, Nov 24\n\n\n14\nMon, Nov 25\n🦃 No class–Thanksgiving break\n\n\n\n\n\n\n\n\nWed, Nov 27\n🦃 No class–Thanksgiving break\n\n\n\n\n\n\n\n15\nMon, Dec 2\nLightning talks\n\n\n\n\n\n\n\n\nWed, Dec 4\nLightning talks\n\n\n\n\n\n\n\n16\nMon, Dec 9\nWrap-up: DS careers\n\n\n\n✍️\nDate of scheduled final",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -684,40 +719,7 @@
     "href": "project/project-assignment-3.html",
     "title": "Project Assignment 3",
     "section": "",
-    "text": "Now that you have your data in the right format, it is time to make your Tableau dashboard. For step by step instructions on how to do this, see this YouTube video.\nYour report should include at least four visualizations. The default selection would include a column chart, a line chart, a map and a scatter plot but there can be some flexibility in terms of the exact composition. Ideally, the visualizations should interact with one another, meaning that when you click on a country represented on the map the data for that country is reflected in the line chart, bar chart, etc.",
-    "crumbs": [
-      "Project",
-      "Assignment 3"
-    ]
-  },
-  {
-    "objectID": "project/project-assignment-3.html#overview",
-    "href": "project/project-assignment-3.html#overview",
-    "title": "Project Assignment 3",
-    "section": "",
-    "text": "Now that you have your data in the right format, it is time to make your Tableau dashboard. For step by step instructions on how to do this, see this YouTube video.\nYour report should include at least four visualizations. The default selection would include a column chart, a line chart, a map and a scatter plot but there can be some flexibility in terms of the exact composition. Ideally, the visualizations should interact with one another, meaning that when you click on a country represented on the map the data for that country is reflected in the line chart, bar chart, etc.",
-    "crumbs": [
-      "Project",
-      "Assignment 3"
-    ]
-  },
-  {
-    "objectID": "project/project-assignment-3.html#steps",
-    "href": "project/project-assignment-3.html#steps",
-    "title": "Project Assignment 3",
-    "section": "Steps",
-    "text": "Steps\n\nCreate a Tableau dashboard following the steps outlined in the videos linked above.\nUsing a screen recording software like Vimeo, submit a video summarizing the main insights derived from your report. Alternatively, you can submit a two to three page written summary covering the same material. Here are some things to talk about in your video:\n\n\nWhat are some of the country-level trends in the data? Did any countries stand out in terms of dramatic upward or downward trends?\nHow do countries compare to one another in terms of average values of your variables of interst? Did any countries stand out or surprise you in terms of average levels?\nWhat interesting relationships did you find between your key variable of interest and another variable (or variables)?\nWhat connections did you make to things that we read or discussed regarding these variables in class or that you had read during the course of your research on this topic?\n\n\nShare a link to the app in the text field of the assignment submission.",
-    "crumbs": [
-      "Project",
-      "Assignment 3"
-    ]
-  },
-  {
-    "objectID": "project/project-assignment-3.html#what-to-submit",
-    "href": "project/project-assignment-3.html#what-to-submit",
-    "title": "Project Assignment 3",
-    "section": "What to Submit",
-    "text": "What to Submit\n\nYour video, a link to your video, or a written summary of your insights.\nA link to your dashboard.\n\nAs always, if you have any questions about anything, please ask. I hope you enjoy the Tableau assignment!",
+    "text": "Details coming soon…",
     "crumbs": [
       "Project",
       "Assignment 3"
@@ -728,40 +730,7 @@
     "href": "project/project-assignment-1.html",
     "title": "Project Assignment 1",
     "section": "",
-    "text": "The purpose of this assignment is to come up with a plan for your final project. The final project is going to involve creating a dashboard in Tableau. You can find some examples of Tableau dashboards here.\nFor the next few weeks you are going to work with me and your classmates to come up with a proposed plan for your report. You will first write an outline of your plan (this assignment) and then write a white paper that will flesh out the details.\nThe topic of your white paper and the Tableau dashboard should be related to of the topics that we cover during the course (democracy and development, women’s empowerment, clientelism, the welfare state, etc.). So the first thing to do is to have a look at the syllabus and see what topic most appeals to you.",
-    "crumbs": [
-      "Project",
-      "Assignment 1"
-    ]
-  },
-  {
-    "objectID": "project/project-assignment-1.html#overview",
-    "href": "project/project-assignment-1.html#overview",
-    "title": "Project Assignment 1",
-    "section": "",
-    "text": "The purpose of this assignment is to come up with a plan for your final project. The final project is going to involve creating a dashboard in Tableau. You can find some examples of Tableau dashboards here.\nFor the next few weeks you are going to work with me and your classmates to come up with a proposed plan for your report. You will first write an outline of your plan (this assignment) and then write a white paper that will flesh out the details.\nThe topic of your white paper and the Tableau dashboard should be related to of the topics that we cover during the course (democracy and development, women’s empowerment, clientelism, the welfare state, etc.). So the first thing to do is to have a look at the syllabus and see what topic most appeals to you.",
-    "crumbs": [
-      "Project",
-      "Assignment 1"
-    ]
-  },
-  {
-    "objectID": "project/project-assignment-1.html#steps",
-    "href": "project/project-assignment-1.html#steps",
-    "title": "Project Assignment 1",
-    "section": "Steps",
-    "text": "Steps\n\nChoose a topic\nFind a dataset to work with\nGather sources relevant to your topic and generate a preliminary bibliography.\nWrite an outline for a white paper describing the need for and purpose of your Power BI report",
-    "crumbs": [
-      "Project",
-      "Assignment 1"
-    ]
-  },
-  {
-    "objectID": "project/project-assignment-1.html#what-to-submit",
-    "href": "project/project-assignment-1.html#what-to-submit",
-    "title": "Project Assignment 1",
-    "section": "What to Submit",
-    "text": "What to Submit\nYou will submit a one-page outline along with a preliminary bibliography. Your outline will consist of the following parts:\n\nA 100 word abstract outlining the importance of your topic and the need for further analysis of it.\nA statement of the specific problem to be addressed by your research and analysis.\nBackground information regarding the problem that you have identified.\nThe proposed analysis, which should consist of two elements:\n\na description of the data you will analyze; and\na description the visualizations you plan to include.\n\n\nFor the dataset, be sure to identify one that is complete and includes both a cross-sectional as well as a time series component, e.g. data that spans across countries or regions and time.\nFor the visualizations, you should describe at least four: a bar chart, a line chart, a scatter plot and a map. You don’t have to do the visualizations yet, but be specific in terms of what your plan is for them.\nYour outline can be in the form of short paragraphs or bullet points.\nPlease upload your assignment as a .pdf document to Blackboard. You will find the link to upload the assignment in the Assignments section of the Blackboard site.",
+    "text": "Details coming soon…",
     "crumbs": [
       "Project",
       "Assignment 1"
@@ -798,171 +767,6 @@
     "crumbs": [
       "Course information",
       "Support"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#course-grading",
-    "href": "course-syllabus.html#course-grading",
-    "title": "Syllabus",
-    "section": "Course Grading",
-    "text": "Course Grading\nThe grading scale below maps your final point or percentage total to your final letter grade for the course.\n\n\n\nRange\nLetter Grade\n\n\n\n\n94-100\nA\n\n\n90-93\nA-\n\n\n87-89\nB+\n\n\n84-86\nB\n\n\n80-83\nB-\n\n\n77-79\nC+\n\n\n74-76\nC\n\n\n70-73\nC-\n\n\n67-69\nD+\n\n\n64-66\nD\n\n\n60-63\nD-\n\n\n&lt;59\nF",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#late-work",
-    "href": "course-syllabus.html#late-work",
-    "title": "Syllabus",
-    "section": "Late Work",
-    "text": "Late Work\nLate assignments will incur a penalty of 1 percentage point per day. Late work will not be accepted more than 7 days past the deadline.\nStudents with exceptional circumstances may receive accommodations for late work under exceptional circumstances, and in consultation with the students’ academic advisor, when a verified medical excuse written by a qualified medical professional is provided.\nAccommodations are automatically approved for university-approved absences such as sporting events, religious holidays, etc. but these should be provided to the instructor by the end of the second week of the semester.\nNo exceptions will be made to the late work policy.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#policy-on-ai-tools",
-    "href": "course-syllabus.html#policy-on-ai-tools",
-    "title": "Syllabus",
-    "section": "Policy on AI Tools",
-    "text": "Policy on AI Tools\n\nOverview\nThe use of Large Language Models (LLMs) can be a valuable tool for students in this course, but it is important to use it ethically and appropriately. By following the guidelines and expectations outlined in this syllabus policy, students can maximize the benefits of using LLMs while also demonstrating their own critical thinking, research, and programming skills.\nAs part of this course, students will have the option to use ChatGPT and other LLMs to assist in the writing of their R scripts for specific course assignments. Such tools can provide students with a starting point for their code but often the code is incomplete or error-prone. It is important to recognize that LLMs are a tool and not a substitute for critical thinking, research, or programming skills. Therefore, this syllabus policy outlines the guidelines and expectations for using LLMs in this course.\n\n\nGuidelines\nIt is also important to note that some uses of LLMs are more appropriate than others. For example, it is acceptable to use LLMs to generate boilerplate code or to help with syntax, but it is not acceptable to use an LLM to complete entire assignments or assessments. Students should use LLMs as a starting point and then modify and expand on the generated code to demonstrate their own understanding and skills.\nOne way to think of LLMs is as a tutor or classmate. What would it be appropriate to ask a tutor or classmate for help with? What would you not be permitted ask a tutor or classmate for help with?",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#office-hours",
-    "href": "course-syllabus.html#office-hours",
-    "title": "Syllabus",
-    "section": "Office Hours",
-    "text": "Office Hours\nAnother way we can work toward your success in the course is through office/student hours. Please make an appointment to talk with me during this time. You can work with me to:\n\nClarify any questions about the syllabus or course content\nReview an assignment you’ve completed and have questions about\nStep through practice problems or questions\nGet study strategies\nDiscuss grades\n\nTo make the meeting more effective, you can:\n\nGather materials (assignments, notes, etc.) ready in advance\nBe ready to take notes during office hours\nAsk follow up questions if you need clarification\nConfirm any action plan at the close of the meeting\nFollowing through on any action plan",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#course-credit-hour-policy",
-    "href": "course-syllabus.html#course-credit-hour-policy",
-    "title": "Syllabus",
-    "section": "Course Credit Hour Policy",
-    "text": "Course Credit Hour Policy\nSummer courses are more than twice as intensive as those held during the academic year. Over 6 weeks, students will spend approximately 18.75 hours per week doing independent learning, including, but not limited to, readings, quizzes, assignments and a final project. This amounts to 36 hours of direct-instruction and 76.5 hours independent coursework.\n\nHow this applies to you\nUse the credit hour policy to plan and manage your workload and time spent on this course. Please contact me if you are having difficulty managing your workload, and we can discuss strategies to help you succeed in the course.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#demonstrating-academic-integrity",
-    "href": "course-syllabus.html#demonstrating-academic-integrity",
-    "title": "Syllabus",
-    "section": "Demonstrating Academic Integrity",
-    "text": "Demonstrating Academic Integrity\nAll of us in the course will comply with the GW Code of Academic Integrity. It states that “we, the Students, Faculty, Librarians, Staff, and Administration of The George Washington University, believing academic integrity to be central to the mission of the University, commit ourselves to promoting high standards for the integrity of academic work. Commitment to academic integrity upholds educational equity, development, and dissemination of meaningful knowledge, and mutual respect that our community values and nurtures. The George Washington University Code of Academic Integrity is established to further this commitment.”\nAcademic dishonesty is defined as cheating of any kind, including misrepresenting one’s own work, taking credit for the work of others without crediting them and without appropriate authorization, and the fabrication of information. For details and complete code, see the Code of Academic Integrity.Common examples of academic dishonesty include cheating, fabrication, plagiarism, falsification, forgery of University academic documents, and facilitating academic dishonesty by others. Learn more about avoiding these:\n\nGW guidance for students on academic integrity.\nPlagiarism: What is it and how to avoid it from GW Libraries.\nMaintaining academic honesty can be a challenging skill to learn. If you have questions about maintaining our course standards, please talk with me early on.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#aiming-for-success",
-    "href": "course-syllabus.html#aiming-for-success",
-    "title": "Syllabus",
-    "section": "Aiming For Success",
-    "text": "Aiming For Success\nI care about your learning and also about this subject matter, and I am here to help you have a meaningful learning experience. I expect you to take ownership of your learning: you can get more out of the course by thoughtfully participating in discussions, actively taking notes on readings and lectures, and giving your best effort overall. I will hold you to the highest standards for academic honesty and integrity in your work. I will also encourage you to collaborate and learn from your peers through thoughtful and respectful discussion. It is recommended you log in daily order to keep up with course requirements. I must highlight that communication is vital, so I hope you feel comfortable reaching out to me if you are struggling or have concerns or need accommodations beyond accessibility. We can determine strategies to set you up for success. Finally, I look forward to collaborating with you in this course to create a meaningful experience for everyone.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#course-communication",
-    "href": "course-syllabus.html#course-communication",
-    "title": "Syllabus",
-    "section": "Course Communication",
-    "text": "Course Communication\nCommunication in our course is essential; clearing up questions earlier than later is a good practice, so please don’t hesitate to reach out to me. In any mode of communication used in our course, all of us will follow netiquette found in our syllabus.\nWe will communicate primarily through GW’s Blackboard System and the Discord server. Announcements and emails sent through Blackboard automatically go to your GW email address (i.e., userid@gwu.edu). Please check your GW email account on a daily basis or forward your GW email to another address that you check daily.\nI will respond to emails/discussion posts within 48 hours (i.e., “24 hours on weekdays and on the next business day over weekends and holidays.”) I will provide feedback on assignments/exams within 3 days (i.e., “five days on weekdays and on the next business day over weekends and holidays.”)\nYou can post general course-related questions to our Discord server. Please post your question here first rather than emailing me directly if your question regards the course material. However, if you have a question that is more personal in nature (i.e., grades), please email me directly to set up an appointment.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#netiquette",
-    "href": "course-syllabus.html#netiquette",
-    "title": "Syllabus",
-    "section": "Netiquette",
-    "text": "Netiquette\nBehind every name there is a person.\nTo ensure safe and meaningful learning experiences for everyone, we all agree to:\n\nRemain professional, respectful, and courteous at all times on all platforms.\nKeep in mind this is a college class. Something that would be inappropriate in an in-person classroom is also inappropriate in an online classroom.\nWhen upset, we’ll wait a day or two prior to posting. Messages posted or emailed in anger are often regretted later.\nAsk one another for clarification if we find a communication offensive or difficult to understand.\nAvoid sweeping generalizations. Back up our stated opinions with facts and reliable sources.\nUnderstand that we may disagree and that exposure to other people’s opinions is part of the learning experience.\nJust as we would like our privacy respected, we will respect the privacy of other course participants and what they share.\n\nI (the instructor) reserve the right to delete any post or communication in our course that is deemed inappropriate without prior notification to the student. This includes anything containing language that is offensive, rude, profane, racist, or hateful. Items that are seriously off-topic or serve no purpose other than to vent frustration will also be removed.\nUsing outside communication apps\nI am aware that you and your peers might communicate using tools outside of GW’s Blackboard, my course website, our course Discord channel, or email systems. Rules of netiquette and appropriate communication extend to these tools as well as to Blackboard. If you see any tool being used inappropriately (i.e., any communication containing language that is offensive, rude, profane, racist, or hateful; uses that promote cheating of any kind), contact me as soon as possible to speak privately about it.\n(Adapted from Lake Superior Connect, Creative Commons Attribution 3.0)",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#policies",
-    "href": "course-syllabus.html#policies",
-    "title": "Syllabus",
-    "section": "Policies",
-    "text": "Policies\nTo make this a meaningful learning experience for everyone, please read and understand the following policies. All GW policies can be found on the GW Office of Ethics, Compliance, and Privacy site. All GW community members are responsible for adhering to and activating in accordance with all university policies. Please contact me if you have any questions.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#accessibility-and-accommodations",
-    "href": "course-syllabus.html#accessibility-and-accommodations",
-    "title": "Syllabus",
-    "section": "Accessibility and Accommodations",
-    "text": "Accessibility and Accommodations\n\nGW’s Disability Support Services\nIf you are a student with a disability, or think you may have a disability, you can let me know, and/or you can talk to GW’s Office of Disability Support Services (DSS). DSS works with both students with disabilities and instructors to identify reasonable accommodations. Contact the DSS office at (202) 994-8250, by email on dss@gwu.edu, or in-person in Rome Hall Suite 102 to establish eligibility and to coordinate reasonable accommodations. If you have already been approved for accommodations, please send me your accommodation letter and meet with me so we can develop an implementation plan together.\nHow are course technology tools accessible to everyone? To find out, access Technology Support Technology Tools Policies in the Blackboard course menu.\n\n\nAccommodations Beyond Disability\nEveryone has different needs for learning. If you don’t have a documented disability but feel that you would benefit from learning support for other reasons, please don’t hesitate to talk to me. If you have substantial non-academic obligations or other concerns (e.g., food insecurity, work, childcare, athletic commitments, language barriers, financial issues, technology access, commuting, etc.) that make learning difficult, please contact me. I’ll keep this information confidential, and together, we can brainstorm ways to meet your needs.\n\n\nOther Needs\nAny student who has difficulty affording groceries or accessing sufficient food to eat every day, or who lacks a safe and stable place to live, and believes this may affect their performance in the course, is urged to contact GW’s Office of Student Financial Assistance for support. Furthermore, please notify me if you are comfortable doing so. Some other resources to support you are found under the course menu item Student Resources and include support for academic achievement and personal well-being. (Adapted from Goldrick-Rab, 2017)",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#counseling-and-psychological-services",
-    "href": "course-syllabus.html#counseling-and-psychological-services",
-    "title": "Syllabus",
-    "section": "Counseling and Psychological Services",
-    "text": "Counseling and Psychological Services\nGW’s Health Center offers counseling and psychological services to GW students. Please note that staff is licensed to offer short term therapy to students in Washington, DC, Maryland, and Virginia. If you are living outside these regions, the office may be able to refer you elsewhere. Assistance and referrals 24 hours a day, 365 days a year and can be reached on (202) 994-5300.\nThe Center provides assistance and referral to address students’ personal, social, career, and study skills problems. Services for students include: crisis and emergency mental health consultations, confidential assessment, counseling services (individual and small group), and referrals.\nVirtual Workshops are open to any student regardless of geographic location. These can be exceptionally valuable and help you build essential skills and cope with common ongoing mental health concerns. Please contact the GW Health Center on (202) 994-5300 for more information.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#religious-observances",
-    "href": "course-syllabus.html#religious-observances",
-    "title": "Syllabus",
-    "section": "Religious Observances",
-    "text": "Religious Observances\nAs members of the GW community, you have the right to observe religious holidays. University policy requires that students notify their instructors during the first week of the semester if they plan to be absent from class on days of religious observance. For further details, please consult the university policy on religious holiday observance.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#key-dates",
-    "href": "course-syllabus.html#key-dates",
-    "title": "Syllabus",
-    "section": "Key Dates",
-    "text": "Key Dates\nPlease defer to the due dates listed on the course website. You can also view due dates in the gradebook and under each individual course assignment item in Blackboard Ultra.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
-    ]
-  },
-  {
-    "objectID": "course-syllabus.html#incomplete-grades",
-    "href": "course-syllabus.html#incomplete-grades",
-    "title": "Syllabus",
-    "section": "Incomplete Grades",
-    "text": "Incomplete Grades\n\nUndergraduate students\nIncomplete grades may be given to undergraduate students only if for reasons beyond the student’s control (such as medical or family emergency) they are unable to complete the final work of the course. Faculty should not assign an Incomplete grade if not asked by the student.\nA contract must be signed by the instructor and the student and filed in the department office. A copy should be submitted to the Academic Advising office in Phillips 107. A student has up to a calendar year to finish the coursework for the class, and when completed a grade change form must be submitted to the Academic Advising office to update the grade.\nFor further policy and contract information for undergraduate students, please consult with your advisor and also visit the website for Columbian College of Arts and Sciences Academic Advising.\n\n\nGraduate students\nIncomplete grades may be given to graduate students only if for reasons beyond the student’s control (such as medical or family emergency) they are unable to complete the final work of the course. Faculty should not assign an Incomplete grade if not asked by the student.\nFor further information, please consult with your advisor and complete a CCAS graduate student incomplete grade form.",
-    "crumbs": [
-      "Course information",
-      "Syllabus"
     ]
   }
 ]
