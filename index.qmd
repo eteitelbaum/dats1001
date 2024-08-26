@@ -30,8 +30,8 @@ submitted by 11:59 p.m. on the due date***.
 |:-------:|----------|---------|:-------:|:-------:|:-------:|:-------:|:-------:|
 |  1   | `r advdate(mon,0)`   | Welcome to DATS 1001            |         |                                                   |        |            |                         |
 |      | `r advdate(wed,0)`   | Meet ouR tech stack             |   📖    |                        📺                         |   🖥️   |            |                         |
-|  2   | `r advdate(mon,1)`   | R coding basics                 |   📖    |                        📺                         |        |            |                         |
-|      | `r advdate(wed,1)`   | 🇺🇸 No class, Labor Day          |         |                                                   |        |            |                         |
+|  2   | `r advdate(mon,1)`   | 🇺🇸 No class, Labor Day          |         |                                                   |        |            |                         |
+|      | `r advdate(wed,1)`   | R coding basics                 |   📖    |                        📺                         |        |            |                         |
 |  3   | `r advdate(mon,2)`   | Grammar of graphics             |   📖    |                        📺                         |   🖥️   |            |                         |
 |      | `r advdate(wed,2)`   | Which visualization do I use?   |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |                         |
 |  4   | `r advdate(mon,3)`   | Visualization best practices    |   📖    | [📺](https://www.youtube.com/watch?v=y7ESq_O3Odw) |   🖥️   |            |                         |
