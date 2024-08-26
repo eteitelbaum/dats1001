@@ -77,7 +77,7 @@ The grading scale below maps your final point or percentage total to your final 
 
 ## Late Work
 
-Late assignments will incur a penalty of 1 percentage point per day. Late work will **not be accepted more than 7 days past the deadline.**
+Late assignments will incur a penalty of 1 percentage point per day. Late work **will not be accepted more than 7 days past the deadline.**
 
 Students with exceptional circumstances may receive accommodations for late work under exceptional circumstances, and in consultation with the students' academic advisor, when a verified medical excuse written by a qualified medical professional is provided.
 
