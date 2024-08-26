@@ -1,135 +1,64 @@
 ---
 title: "Syllabus"
-editor: visual
 ---
 
 ## Course information
 
-| Course: PSC 2339-Comparative Political Economy
-| Lecture: TR 2:20-3:35
-| Classroom: [Tompkins Hall](https://venues.gwu.edu/tompkins-hall) Rm 301
+| Course: DATS 1001-Data Science for All
+| Lecture: MW 12:45-2:00
+| Classroom: [1776 G. St., NW](https://maps.app.goo.gl/vXRsm4Ausht4q2469) Rm. C103
+|
+| Instructor: Prof. Emmanuel Teitelbaum
+| Email: [ejt\@gwu.edu](mailto:ejt@gwu.edu)
+| Office Hours: [Mondays 3-5 p.m.](https://calendly.com/emmanuel-teitelbaum) and by appointment.
+|
+| Credit Hours: 3.0.
+|
+| The best way to contact me is via the course Discord server for inquiries about code or course material and by email or during office hours for personal matters.
 
-## Prerequisites
+## Learning Objectives
 
-Students are required to take *PSC 1001-Introduction to Comparative
-Politics* before enrolling in this course.
+1. **Develop Proficiency in R Programming**: Students will learn the fundamentals of R programming, including basic syntax, data manipulation, and the use of R packages, enabling them to write and execute R scripts effectively.
 
-## Learning objectives
+2. **Master Data Visualization Techniques**: Students will gain a deep understanding of the grammar of graphics and best practices in data visualization, allowing them to create clear, accurate, and impactful visual representations of data.
 
-Students in this course should strive to meet the following objectives:
+3. **Apply Data Wrangling Techniques**: Students will learn to organize, clean, and transform datasets into tidy formats using R, preparing them for analysis by applying grouping, summarizing, and joining operations.
 
-1.  Demonstrate a basic familiarity with the field of comparative
-    political economy.
-2.  Leverage differences between countries or regions to analyze the
-    effects of institutions on economic outcomes and vice-versa.
-3.  Demonstrate how historical legacies shape contemporary political and
-    economic outcomes.
-4.  Discern basic differences in institutional and economic structures
-    shape how countries interact with the global economy.
+4. **Understand and Implement Statistical Models**: Students will learn the principles of statistical modeling, including linear, multiple, and logistic regression, and will apply these models to real-world data to make predictions and informed decisions.
 
-Discern basic differences in institutional and economic structures shape
-how countries interact with the global economy.
+5. **Conduct Hypothesis Testing and Interpret Results**: Students will learn the concepts of sampling, uncertainty, and hypothesis testing, enabling them to design research studies, test hypotheses, and draw valid conclusions from data.
 
 ## Readings
 
-Students will read approximately 75 pages per week of academic material
-during the semester.
+Students will read approximately 20 pages per week of academic material during the semester.
 
-All academic readings are available through Gelman library proxy
-services except the following two texts, which students should purchase
-the following two texts from an online vendor:
-
-📖 Joseph Stiglitz, *People, Power, and Profits*
-
-📖 John Judis, *The Politics of Our Time*
-
-## Class participation
-
-This class is structured so that students have ample opportunity to
-participate in class discussions. Students are encouraged to voice their
-opinions both in small group settings as well as in broader class
-discussions and to ask clarifying questions when the need arises.
+All academic readings will be linked to the course website. There are no textbooks that need to be purchased for this course. 
 
 ## Assignments
 
-1.  Two data assignments (5% percent each)
-2.  Three exams (15% each)
-3.  Final project (45% of final grade)
-    a.  Outline and sources (10%)
-    b.  White paper (15%)
-    c.  Power BI report (20%)
+1.  Quizzes (20%)
+2.  Coding assignments (40%)
+3.  Final project (40% of final grade)
+    a. Assignment 1 (10%)
+    b. Assignment 2 (10%)
+    c. Assignment 3 (10%)
+    d. Lightning Talk (10%)
 
-### Data assignments
+### Quizzes
 
-Students will complete two graded data assignments. These exercises will
-be oriented towards strengthening the student's ability to manipulate,
-visualize and communicate data with Microsoft Excel.
+Students will complete approximately ten graded quizzes. These exercises will be oriented towards strengthening the student's ability to manipulate, visualize and communicate data with R and Quarto. I will drop your lowest two quiz scores. Please do not email me about missed quizzes.
 
-### Exams
+### Coding Assignments
 
-Students will take three non-comprehensive take-home exams. These exams
-will test the students' knowledge of the reading material as well as
-arguments, concepts, and facts presented and discussed in class. Exams
-will be comprised some combination of multiple choice, fill in the
-blank, true or false, short answer and essay questions.
+Students will complete four weekly coding assignments. These assignments are designed to provide students with the opportunity to apply their newly-acquired skills to real world data and to develop their ability to write and execute R scripts. 
 
-### Final project
+### Final Project
 
-Each student will complete a final project that will be developed
-throughout the semester. The project is comprised of three components
-(an outline, a white paper and a Tableau report). The objective of this
-project is to develop the student's ability to incorporate data into an
-analysis of an important research topic in the field of comparative
-politics.
+Each student will complete a final project that will be developed throughout the semester. Students will work in groups to complete the project. The ultimate objective of this project is to design and execute an original data analysis. Details on the project will be provided in class over the course of the semester.
 
-## Out of class preparation
+## Course Grading
 
-In a 15-week semester, including exam week, students are expected to
-spend a minimum of 100 minutes of out-of-class work for every 50 minutes
-of direct instruction, for a minimum total of 2.5 hours a week. A
-3-credit course should include 2.5 hours of direct instruction and a
-minimum of 5 hours of independent learning or 7.5 hours per week.
-
-## Course policies
-
-### Due dates and late assignments
-
-Readings should be completed and videos watched for the day they are
-assigned. Assignment due dates are posted in the "weekly materials" page
-for the week that they are due. The final component of the final project
-is due at 11:59 p.m. on the date of the scheduled final. (Note that that
-**there is no final exam** for this course. This is just the due date
-for the Tableau assignment).
-
-Late assignments will be accepted **with a standard penalty of three
-percentage points per day** that they are turned in after the official
-due date. No exceptions will be made to this policy.
-
-If you are having a personal or medical emergency and are wondering what
-to do, start by referencing [this
-FAQ](https://studentlife.gwu.edu/student-support-faqs) published by [GW
-Student Life](https://studentlife.gwu.edu/). Or just reach out to the
-CARE Team at [gwcares\@gwu.edu](mailto:gwcares@gwu.edu). For further
-information about different types of support available to you, see the
-[course support](\course-support.qmd) page.
-
-While I will always try to be a source of support to my students, please
-note that for privacy reasons, the Provost has asked that faculty do not
-attempt to verify personal or medical emergencies themselves.
-
-### Make-ups
-
-There are no makeups. Please see the late assignments policy above.
-
-### Attendance
-
-This is an in-person class and you are expected to attend. While there
-is no formal attendance requirement, it is a proven fact that students
-who attend class tend to perform better on exams and assignments. Also,
-the instructor will not provide "makeup sessions" to go over material
-that was missed due to absence.
-
-### Grading scale
+The grading scale below maps your final point or percentage total to your final letter grade for the course.
 
 | Range  | Letter Grade |
 |:------:|:------------:|
@@ -146,90 +75,182 @@ that was missed due to absence.
 | 60-63  |      D-      |
 |  \<59  |      F       |
 
-### Class recordings
+## Late Work
 
-All classes will be recorded. Recordings will be posted on the course
-Blackboard site.
+Late assignments will incur a penalty of 1 percentage point per day. Late work will **not be accepted more than 7 days past the deadline.**
 
-### Lateness
+Students with exceptional circumstances may receive accommodations for late work under exceptional circumstances, and in consultation with the students' academic advisor, when a verified medical excuse written by a qualified medical professional is provided.
 
-Please come to class on time. It is distracting to me and to other
-students when you enter the room late.
+Accommodations are automatically approved for university-approved absences such as sporting events, religious holidays, etc. but these should be provided to the instructor by the end of the second week of the semester.
 
-### Laptops and cell phones
+No exceptions will be made to the late work policy.
 
-Please put away your cell phones during class. It is fine to use
-computers to take notes, but you should refrain from checking social
-media and email.
+## Policy on AI Tools
 
-### Diversity in the classroom
+### Overview
 
-We want to make sure that everyone has an opportunity to participate in
-class and to get the most out of their learning experience at GW.
-Moreover, we all benefit from a diversity of views in the classroom.
-Therefore, please be respectful of other people's views and be mindful
-of when others are trying to participate.
+The use of Large Language Models (LLMs) can be a valuable tool for students in this course, but it is important to use it ethically and appropriately. By following the guidelines and expectations outlined in this syllabus policy, students can maximize the benefits of using LLMs while also demonstrating their own critical thinking, research, and programming skills.
 
-### Learning Needs
+As part of this course, students will have the option to use ChatGPT and other LLMs to assist in the writing of their R scripts for specific course assignments. Such tools can provide students with a starting point for their code but often the code is incomplete or error-prone. It is important to recognize that LLMs are a tool and not a substitute for critical thinking, research, or programming skills. Therefore, this syllabus policy outlines the guidelines and expectations for using LLMs in this course.
 
-Please let me know if you have any special needs or learning
-requirements and so that I can accommodate them.
+### Guidelines
 
-### Email
+It is also important to note that some uses of LLMs are more appropriate than others. For example, it is acceptable to use LLMs to generate boilerplate code or to help with syntax, but it is not acceptable to use an LLM to complete entire assignments or assessments. Students should use LLMs as a starting point and then modify and expand on the generated code to demonstrate their own understanding and skills. 
 
-I try to respond to emails within 24 hours except on weekends. It is
-usually preferred to talk to me in person, however, either after class
-or during office hours.
+One way to think of LLMs is as a tutor or classmate. What would it be appropriate to ask a tutor or classmate for help with? What would you not be permitted ask a tutor or classmate for help with?
 
-### Food
+## Office Hours
 
-Students are permitted to eat light snacks, but please refrain from
-bringing sugary drinks, coffee or large, odiferous meals.
+Another way we can work toward your success in the course is through office/student hours. Please make an appointment to talk with me during this time. You can work with me to:
 
-## University policies
+-   Clarify any questions about the syllabus or course content
+-   Review an assignment you've completed and have questions about
+-   Step through practice problems or questions
+-   Get study strategies
+-   Discuss grades
 
-### Academic integrity
+To make the meeting more effective, you can:
 
-By taking this course, you are agreeing to abide by the [GWU code of
-Academic
-Integrity](http://studentconduct.gwu.edu/code-academic-integrity).
-According to this code, academic dishonesty is defined as "cheating of
-any kind, including misrepresenting one's own work, taking credit for
-the work of others without crediting them and without appropriate
-authorization, and the fabrication of information." Note that this is
-not a comprehensive list. Other types of academic dishonesty include
-providing false or misleading information in an effort to postpone an
-exam or to get an extension on an assignment and providing substantially
-similar material for a writing assignment for assignments in two
-different courses without the prior permission of the faculty members
-teaching those courses. The minimum penalty for academic dishonesty is a
-failing grade on the assignment in question and the maximum penalty is
-failure of the class. Furthermore, the violation will be reported to
-GW's Office of Academic Integrity, which can impose additional penalties
-beyond those I may impose.
+-   Gather materials (assignments, notes, etc.) ready in advance
+-   Be ready to take notes during office hours
+-   Ask follow up questions if you need clarification
+-   Confirm any action plan at the close of the meeting
+-   Following through on any action plan
 
-### Religious holidays
+## Prerequisites
 
-Students must notify faculty during the first week of the semester in
-which they are enrolled in the course, or as early as possible, but no
-later than three weeks prior to the absence, of their intention to be
-absent from class on their day(s) of religious observance. If the
-holiday falls within the first three weeks of class, the student must
-inform faculty in the first week of the semester. For details and
-policy, see ["Religious
-Holidays."](https://provost.gwu.edu/policies-procedures-and-guidelines.)
+### Academic
 
-### Use of electronic materials and class recordings
+There are no academic prerequisites for this course.
 
-Students are encouraged to use electronic course materials, including
-recorded class sessions, for private personal use in connection with
-their academic program of study. Electronic course materials and
-recorded class sessions should not be shared or used for non-course
-related purposes unless express permission has been granted by the
-instructor. Students who impermissibly share any electronic course
-materials are subject to discipline under the Student Code of Conduct.
-Please contact the instructor if you have questions regarding what
-constitutes permissible or impermissible use of electronic course
-materials and/or recorded class sessions. Please contact [Disability
-Support Services](https://disabilitysupport.gwu.edu) if you have
-questions or need assistance in accessing electronic course materials.
+### Technological
+
+#### Configuration and software
+
+To fully participate in our course, you will need regular access to broadband Internet access as well as other technology components. Please consult [GW Online's Technical Requirements and Support](https://online.gwu.edu/technical-requirements-and-support) for details on recommended configurations and software available to you. You will need to use the following tools and platforms:
+
+-   [Post Cloud](https://post.cloud): a cloud-based computing platform that allows you to run R code and render Quarto documents in the cloud.
+-   RStudio: an IDE for generating data visualizations using the programming language, R.
+-   Quarto: a document generation tool that allows you to create documents that combine code, data, and text.
+-   Discord: a real-time chat application.
+
+#### Skills
+
+For our course, you should be able to:
+
+-   Access and use [GW's Blackboard system](https://blackboard.gwu.edu).
+-   Use your GW email for university-related communications [per university policy](https://registrar.gwu.edu/university-policies#email).
+-   Use productivity software (e.g., Office 365, Google Suite) to collaborate with peers and submit assignments.
+-   Use web conferencing tools (e.g., Zoom, Webex) to collaborate with peers and me.
+-   Use a mobile device and/or computer to upload documents, images, and recordings.
+-   Seek technology help and tools by contacting [GW Information Technology](https://online.gwu.edu/student-support) \| (202)-994-4948 \| [ithelp\@gwu.edu](mailto:ithelp@gwu.edu).
+
+If you need assistance with technology tools we'll use in this course, please visit the **Technology Support** link in the left navigation menu in our course on Blackboard.
+
+## Course Credit Hour Policy
+
+Summer courses are more than twice as intensive as those held during the academic year. Over 6 weeks, students will spend approximately 18.75 hours per week doing independent learning, including, but not limited to, readings, quizzes, assignments and a final project. This amounts to 36 hours of direct-instruction and 76.5 hours independent coursework.
+
+### How this applies to you
+
+Use the credit hour policy to plan and manage your workload and time spent on this course. Please contact me if you are having difficulty managing your workload, and we can discuss strategies to help you succeed in the course.
+
+## Demonstrating Academic Integrity
+
+All of us in the course will comply with [the GW Code of Academic Integrity](https://studentconduct.gwu.edu/). It states that "we, the Students, Faculty, Librarians, Staff, and Administration of The George Washington University, believing academic integrity to be central to the mission of the University, commit ourselves to promoting high standards for the integrity of academic work. Commitment to academic integrity upholds educational equity, development, and dissemination of meaningful knowledge, and mutual respect that our community values and nurtures. The George Washington University Code of Academic Integrity is established to further this commitment."
+
+Academic dishonesty is defined as cheating of any kind, including misrepresenting one's own work, taking credit for the work of others without crediting them and without appropriate authorization, and the fabrication of information. For details and complete code, see the [Code of Academic Integrity.](http://studentconduct.gwu.edu/code-academic-integrity)Common examples of academic dishonesty include cheating, fabrication, plagiarism, falsification, forgery of University academic documents, and facilitating academic dishonesty by others. Learn more about avoiding these:
+
+-   [GW guidance for students on academic integrity](https://studentconduct.gwu.edu/guidance-students).
+
+-   [Plagiarism: What is it and how to avoid it](https://libguides.gwu.edu/plagiarism) from GW Libraries.
+
+-   Maintaining academic honesty can be a challenging skill to learn. If you have questions about maintaining our course standards, please talk with me early on.
+
+## Aiming For Success
+
+I care about your learning and also about this subject matter, and I am here to help you have a meaningful learning experience. I expect you to take ownership of your learning: you can get more out of the course by thoughtfully participating in discussions, actively taking notes on readings and lectures, and giving your best effort overall. I will hold you to the highest standards for academic honesty and integrity in your work. I will also encourage you to collaborate and learn from your peers through thoughtful and respectful discussion. It is recommended you log in daily order to keep up with course requirements. I must highlight that communication is vital, so I hope you feel comfortable reaching out to me if you are struggling or have concerns or need [accommodations beyond accessibility](#_heading=h.41mghml). We can determine strategies to set you up for success. Finally, I look forward to collaborating with you in this course to create a meaningful experience for everyone.
+
+## Course Communication
+
+Communication in our course is essential; clearing up questions earlier than later is a good practice, so please don't hesitate to reach out to me. In any mode of communication used in our course, all of us will follow [netiquette](#_heading=h.49x2ik5) found in our syllabus.
+
+We will communicate primarily through [GW's Blackboard System](https://blackboard.gwu.edu) and the Discord server. Announcements and emails sent through Blackboard automatically go to your GW email address (i.e., userid\@gwu.edu). Please check your GW email account on a daily basis or forward your GW email to another address that you check daily.
+
+I will respond to emails/discussion posts within 48 hours (i.e., "24 hours on weekdays and on the next business day over weekends and holidays.") I will provide feedback on assignments/exams within 3 days (i.e., "five days on weekdays and on the next business day over weekends and holidays.")
+
+You can post general course-related questions to our Discord server. Please post your question here first rather than emailing me directly if your question regards the course material. However, if you have a question that is more personal in nature (i.e., grades), please email me directly to set up an appointment.
+
+## Netiquette
+
+Behind every name there is a person.
+
+To ensure safe and meaningful learning experiences for everyone, we all agree to:
+
+-   Remain professional, respectful, and courteous at all times on all platforms.
+-   Keep in mind this is a college class. Something that would be inappropriate in an in-person classroom is also inappropriate in an online classroom.
+-   When upset, we'll wait a day or two prior to posting. Messages posted or emailed in anger are often regretted later.
+-   Ask one another for clarification if we find a communication offensive or difficult to understand.
+-   Avoid sweeping generalizations. Back up our stated opinions with facts and reliable sources.
+-   Understand that we may disagree and that exposure to other people's opinions is part of the learning experience.
+-   Just as we would like our privacy respected, we will respect the privacy of other course participants and what they share.
+
+I (the instructor) reserve the right to delete any post or communication in our course that is deemed inappropriate without prior notification to the student. This includes anything containing language that is offensive, rude, profane, racist, or hateful. Items that are seriously off-topic or serve no purpose other than to vent frustration will also be removed.
+
+Using outside communication apps
+
+I am aware that you and your peers might communicate using tools outside of GW's Blackboard, my course website, our course Discord channel, or email systems. Rules of netiquette and appropriate communication extend to these tools as well as to Blackboard. If you see any tool being used inappropriately (i.e., any communication containing language that is offensive, rude, profane, racist, or hateful; uses that promote cheating of any kind), contact me as soon as possible to speak privately about it.
+
+(Adapted from [Lake Superior Connect, Creative Commons Attribution 3.0](https://creativecommons.org/licenses/by/3.0/))
+
+## Policies
+
+To make this a meaningful learning experience for everyone, please read and understand the following policies. [All GW policies can be found on the GW Office of Ethics, Compliance, and Privacy site](https://compliance.gwu.edu/policies). All GW community members are responsible for adhering to and activating in accordance with all university policies. Please contact me if you have any questions.
+
+## Accessibility and Accommodations
+
+### GW's Disability Support Services
+
+If you are a student with a disability, or think you may have a disability, you can let me know, and/or you can talk to [GW's Office of Disability Support Services (DSS)](https://disabilitysupport.gwu.edu/). DSS works with both students with disabilities and instructors to identify reasonable accommodations. Contact the DSS office at (202) 994-8250, by email on dss\@gwu.edu, or in-person in Rome Hall Suite 102 to establish eligibility and to coordinate reasonable accommodations. If you have already been approved for accommodations, please send me your accommodation letter and meet with me so we can develop an implementation plan together.
+
+How are course technology tools accessible to everyone? To find out, access **Technology Support Technology Tools Policies** in the Blackboard course menu.
+
+### Accommodations Beyond Disability
+
+Everyone has different needs for learning. If you don't have a documented disability but feel that you would benefit from learning support for other reasons, please don't hesitate to talk to me. If you have substantial non-academic obligations or other concerns (e.g., [food insecurity](https://studentlife.gwu.edu/store), work, childcare, athletic commitments, language barriers, financial issues, technology access, commuting, etc.) that make learning difficult, please contact me. I'll keep this information confidential, and together, we can brainstorm ways to meet your needs.
+
+### Other Needs
+
+Any student who has difficulty affording groceries or accessing sufficient food to eat every day, or who lacks a safe and stable place to live, and believes this may affect their performance in the course, is urged to contact [GW's Office of Student Financial Assistance](https://financialaid.gwu.edu/emergency-funding) for support. Furthermore, please notify me if you are comfortable doing so. Some other resources to support you are found under the course menu item **Student Resources** and include support for academic achievement and personal well-being. *(Adapted from Goldrick-Rab, 2017)*
+
+## Counseling and Psychological Services
+
+GW's Health Center offers [counseling and psychological services](http://counselingcenter.gwu.edu) to GW students. ***Please note that staff is licensed to offer short term therapy to students in Washington, DC, Maryland, and Virginia. If you are living outside these regions, the office may be able to refer you elsewhere.*** Assistance and referrals 24 hours a day, 365 days a year and can be reached on (202) 994-5300.
+
+The Center provides assistance and referral to address students' personal, social, career, and study skills problems. Services for students include: crisis and emergency mental health consultations, confidential assessment, counseling services (individual and small group), and referrals.
+
+[Virtual Workshops](https://healthcenter.gwu.edu/sites/g/files/zaxdzs1216/f/image/Virtual%20Workshop%20Flyer.pdf) are open to any student regardless of geographic location. These can be exceptionally valuable and help you build essential skills and cope with common ongoing mental health concerns. Please contact the [GW Health Center](https://healthcenter.gwu.edu) on (202) 994-5300 for more information.
+
+## Religious Observances
+
+As members of the GW community, you have the right to observe religious holidays. University policy requires that students notify their instructors during the first week of the semester if they plan to be absent from class on days of religious observance. For further details, please consult [the university policy on religious holiday observance](http://registrar.gwu.edu/university-policies#holidays).
+
+## Key Dates
+
+Please defer to the due dates listed on the course website. You can also view due dates in the gradebook and under each individual course assignment item in Blackboard Ultra.
+
+## Incomplete Grades
+
+### Undergraduate students
+
+Incomplete grades may be given to undergraduate students only if for reasons beyond the student's control (such as medical or family emergency) they are unable to complete the final work of the course. Faculty should not assign an Incomplete grade if not asked by the student.
+
+[A contract](https://advising.columbian.gwu.edu/sites/g/files/zaxdzs1876/f/downloads/Form%20-%20Incomplete%20Contract_1.pdf) must be signed by the instructor and the student and filed in the department office. A copy should be submitted to the Academic Advising office in Phillips 107. A student has up to a calendar year to finish the coursework for the class, and when completed a grade change form must be submitted to the Academic Advising office to update the grade.
+
+For further policy and contract information for undergraduate students, please consult with your advisor and also visit the website for [Columbian College of Arts and Sciences Academic Advising.](https://columbian.gwu.edu/sites/g/files/zaxdzs4901/files/2022-06/ccas_incomplete_contract_21.pdf)
+
+### Graduate students
+
+Incomplete grades may be given to graduate students only if for reasons beyond the student's control (such as medical or family emergency) they are unable to complete the final work of the course. Faculty should not assign an Incomplete grade if not asked by the student.
+
+For further information, please consult with your advisor and complete a [CCAS graduate student incomplete grade form.](https://columbian.gwu.edu/sites/g/files/zaxdzs1971/f/downloads/DGS/Incomplete%20Contract.pdf)
