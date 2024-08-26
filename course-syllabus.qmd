@@ -140,7 +140,7 @@ There are no academic prerequisites for this course.
 
 To fully participate in our course, you will need regular access to broadband Internet access as well as other technology components. Please consult [GW Online's Technical Requirements and Support](https://online.gwu.edu/technical-requirements-and-support) for details on recommended configurations and software available to you. You will need to use the following tools and platforms:
 
--   [Post Cloud](https://posit.cloud): a cloud-based computing platform that allows you to run R code and render Quarto documents in the cloud.You will need to purchase a student subscription ($5/month) to access the class workspace.
+-   [Posit Cloud](https://posit.cloud): a cloud-based computing platform that allows you to run R code and render Quarto documents in the cloud.You will need to purchase a student subscription ($5/month) to access the class workspace.
 -   RStudio: an IDE for generating data visualizations using the programming language, R.
 -   Quarto: a document generation tool that allows you to create documents that combine code, data, and text.
 -   Discord: a real-time chat application.
