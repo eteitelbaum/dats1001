@@ -701,7 +701,7 @@
     "href": "index.html",
     "title": "Course Schedule",
     "section": "",
-    "text": "This page displays an outline of the topics, content, and assignments for the semester. Links, to slides, assignments and course resources will go live as the semester progresses. All assignments must be submitted by 11:59 p.m. on the due date.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nReading\nVideo\nSlides\nAssignment\nDue Date\n\n\n\n\n1\nMon, Aug 26\nWelcome to DATS 1001\n\n\n\n\n\n\n\n\nWed, Aug 28\nMeet ouR tech stack\n📖\n📺\n🖥️\n\n\n\n\n2\nMon, Sep 2\n🇺🇸 No class, Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 4\nR coding basics\n📖\n📺\n\n\n\n\n\n3\nMon, Sep 9\nGrammar of graphics\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 11\nWhich visualization do I use?\n📖\n📺\n🖥️\n\n\n\n\n4\nMon, Sep 16\nVisualization best practices\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 18\nCoding assignment 1\n📖\n\n🖥️\n🧮\nSun, Sep 22\n\n\n5\nMon, Sep 23\nWhat is tidy data?\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 25\nGrammar of data wrangling\n📖\n📺\n🖥️\n\n\n\n\n6\nMon, Sep 30\nGrouping and summarizing\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 2\nJoining data frames\n📖\n📺\n🖥️\n\n\n\n\n7\nMon, Oct 7\nTidying data\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 9\nCoding assignment 2\n📖\n\n🖥️\n🧮\nSun, Oct 13\n\n\n8\nMon, Oct 14\nThe language of models\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 16\nLinear regression\n📖\n📺\n🖥️\n✍️\nSun, Oct 20\n\n\n9\nMon, Oct 21\nMultiple regression\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 23\nLogistic regression\n📖\n📺\n🖥️\n\n\n\n\n10\nMon, Oct 28\nPredictive modeling\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 30\nCoding assignment 4\n📖\n\n🖥️\n🧮\nSun, Nov 3\n\n\n11\nMon, Nov 4\nResearch design\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 6\nDistributions\n📖\n📺\n🖥️\n✍️\nSun, Nov 10\n\n\n12\nMon, Nov 11\nSampling and uncertainty\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 13\nHypothesis testing 1\n📖\n📺\n🖥️\n\n\n\n\n13\nMon, Nov 18\nHypothesis testing 2\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 20\nCoding assignment 3\n📖\n📺\n🖥️\n🧮\nSun, Nov 24\n\n\n14\nMon, Nov 25\n🦃 No class–Thanksgiving break\n\n\n\n\n\n\n\n\nWed, Nov 27\n🦃 No class–Thanksgiving break\n\n\n\n\n\n\n\n15\nMon, Dec 2\nLightning talks\n\n\n\n\n\n\n\n\nWed, Dec 4\nLightning talks\n\n\n\n\n\n\n\n16\nMon, Dec 9\nWrap-up: DS careers\n\n\n\n✍️\nDate of scheduled final",
+    "text": "This page displays an outline of the topics, content, and assignments for the semester. Links, to slides, assignments and course resources will go live as the semester progresses. All assignments must be submitted by 11:59 p.m. on the due date.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nReading\nVideo\nSlides\nAssignment\nDue Date\n\n\n\n\n1\nMon, Aug 26\nWelcome to DATS 1001\n\n\n\n\n\n\n\n\nWed, Aug 28\nMeet ouR tech stack\n\n\n🖥️\n\n\n\n\n2\nMon, Sep 2\n🇺🇸 No class, Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 4\nR coding basics\n📖\n📺\n\n\n\n\n\n3\nMon, Sep 9\nGrammar of graphics\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 11\nWhich visualization do I use?\n📖\n📺\n🖥️\n\n\n\n\n4\nMon, Sep 16\nVisualization best practices\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 18\nCoding assignment 1\n📖\n\n🖥️\n🧮\nSun, Sep 22\n\n\n5\nMon, Sep 23\nWhat is tidy data?\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 25\nGrammar of data wrangling\n📖\n📺\n🖥️\n\n\n\n\n6\nMon, Sep 30\nGrouping and summarizing\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 2\nJoining data frames\n📖\n📺\n🖥️\n\n\n\n\n7\nMon, Oct 7\nTidying data\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 9\nCoding assignment 2\n📖\n\n🖥️\n🧮\nSun, Oct 13\n\n\n8\nMon, Oct 14\nThe language of models\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 16\nLinear regression\n📖\n📺\n🖥️\n✍️\nSun, Oct 20\n\n\n9\nMon, Oct 21\nMultiple regression\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 23\nLogistic regression\n📖\n📺\n🖥️\n\n\n\n\n10\nMon, Oct 28\nPredictive modeling\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 30\nCoding assignment 4\n📖\n\n🖥️\n🧮\nSun, Nov 3\n\n\n11\nMon, Nov 4\nResearch design\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 6\nDistributions\n📖\n📺\n🖥️\n✍️\nSun, Nov 10\n\n\n12\nMon, Nov 11\nSampling and uncertainty\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 13\nHypothesis testing 1\n📖\n📺\n🖥️\n\n\n\n\n13\nMon, Nov 18\nHypothesis testing 2\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 20\nCoding assignment 3\n📖\n📺\n🖥️\n🧮\nSun, Nov 24\n\n\n14\nMon, Nov 25\n🦃 No class–Thanksgiving break\n\n\n\n\n\n\n\n\nWed, Nov 27\n🦃 No class–Thanksgiving break\n\n\n\n\n\n\n\n15\nMon, Dec 2\nLightning talks\n\n\n\n\n\n\n\n\nWed, Dec 4\nLightning talks\n\n\n\n\n\n\n\n16\nMon, Dec 9\nWrap-up: DS careers\n\n\n\n✍️\nDate of scheduled final",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -768,5 +768,215 @@
       "Course information",
       "Support"
     ]
+  },
+  {
+    "objectID": "slides/week-1.2.html#quarto-1",
+    "href": "slides/week-1.2.html#quarto-1",
+    "title": "Meet ouR Tech Stack",
+    "section": "Quarto",
+    "text": "Quarto\n\n\n\nQuarto is an open-source scientific publishing platform\nAllows you to integrate text with code\nKind of like a word processor for data science\nCan use it to create reports, books, websites, etc.\nCan make HTML, PDF, Word, and other formats\nCan use R, Python, Julia, and other languages"
+  },
+  {
+    "objectID": "slides/week-1.2.html#project-oriented-workflow",
+    "href": "slides/week-1.2.html#project-oriented-workflow",
+    "title": "Meet ouR Tech Stack",
+    "section": "Project Oriented Workflow",
+    "text": "Project Oriented Workflow\n\n\n\nAlways start a document in a project folder\n\nThat way you don’t have to do setwd\nAlso can share easily with other people\n\nGo to File&gt;New Project\nCreate a Quarto project folder"
+  },
+  {
+    "objectID": "slides/week-1.2.html#visual-editor",
+    "href": "slides/week-1.2.html#visual-editor",
+    "title": "Meet ouR Tech Stack",
+    "section": "Visual Editor",
+    "text": "Visual Editor\n\n\nThere are two ways to edit Quarto docs\n\nSource (markdown)\nVisual editor\n\nVisual editor\n\nWYSIWYM\nApproximates appearance\n\nTry both and see what you like"
+  },
+  {
+    "objectID": "slides/week-1.2.html#rendering-documents",
+    "href": "slides/week-1.2.html#rendering-documents",
+    "title": "Meet ouR Tech Stack",
+    "section": "Rendering Documents",
+    "text": "Rendering Documents\n\n\nRendering = converting to another format\n\nDefault format is HTML\nCan also render to PDF, Word, etc.\n\nTo render a Quarto document\n\nClick on the Render button\n\nOr keyboard shortcut (Cmd/Ctrl + Shift + K)\n\n\nBy default, Quarto will preview the document in your browser\nBut you can also preview in Viewer pane\n\nClick on the gear icon next to the Render button\nSelect “Preview in Viewer Pane”"
+  },
+  {
+    "objectID": "slides/week-1.2.html#illustration",
+    "href": "slides/week-1.2.html#illustration",
+    "title": "Meet ouR Tech Stack",
+    "section": "Illustration",
+    "text": "Illustration"
+  },
+  {
+    "objectID": "slides/week-1.2.html#lets-try-quarto",
+    "href": "slides/week-1.2.html#lets-try-quarto",
+    "title": "Meet ouR Tech Stack",
+    "section": "Let’s Try Quarto!",
+    "text": "Let’s Try Quarto!\n\nCreate a new Quarto document\n\nFile&gt;New File&gt;Quarto Document\n\nSave the document in your project folder\nRender it\n\nClick on the Render button\nOr keyboard shortcut (Cmd/Ctr + Shift + K)\n\nTry out the visual editor\n\n\n\n\n−+\n02:00"
+  },
+  {
+    "objectID": "slides/week-1.2.html#document-elements",
+    "href": "slides/week-1.2.html#document-elements",
+    "title": "Meet ouR Tech Stack",
+    "section": "Document Elements",
+    "text": "Document Elements\n\n\nYAML Header\nMarkdown content\nCode chunks"
+  },
+  {
+    "objectID": "slides/week-1.2.html#yaml-header",
+    "href": "slides/week-1.2.html#yaml-header",
+    "title": "Meet ouR Tech Stack",
+    "section": "YAML Header",
+    "text": "YAML Header\n\n\nMetadata about the document\n\nTitle, author, date, etc.\n\nOutput format\nExecution options"
+  },
+  {
+    "objectID": "slides/week-1.2.html#yaml-header-1",
+    "href": "slides/week-1.2.html#yaml-header-1",
+    "title": "Meet ouR Tech Stack",
+    "section": "YAML Header",
+    "text": "YAML Header\n---\ntitle: \"My Documnet\"\nauthor: \"Your Name\"\ndate: today\ndate-format: long\nformat: html\nexecute:\n  echo: false\n  message: false\n---\n\nTry adding some of these options in your document\nThen render it again\nLook in the Quarto guide for other options to try\n\n\n\n\n−+\n02:00"
+  },
+  {
+    "objectID": "slides/week-1.2.html#markdown",
+    "href": "slides/week-1.2.html#markdown",
+    "title": "Meet ouR Tech Stack",
+    "section": "Markdown",
+    "text": "Markdown\n\n\n\nMarkdown is a simple markup language\nYou can use it to format text\nYou can also use it to embed images, tables, etc.\nAnd to embed code chunks…"
+  },
+  {
+    "objectID": "slides/week-1.2.html#markdown-syntax---basic-authoring",
+    "href": "slides/week-1.2.html#markdown-syntax---basic-authoring",
+    "title": "Meet ouR Tech Stack",
+    "section": "Markdown Syntax - Basic Authoring",
+    "text": "Markdown Syntax - Basic Authoring\n\n\nFor basic text you can just start typing\nFor line breaks use two spaces and return (enter)\nHeadings (use #, ##, ###, etc.)\n\n# is the largest heading (level 1)\n## is the next largest (level 2)\n### is the next largest (level 3)\nEtc."
+  },
+  {
+    "objectID": "slides/week-1.2.html#markdown-syntax---styling",
+    "href": "slides/week-1.2.html#markdown-syntax---styling",
+    "title": "Meet ouR Tech Stack",
+    "section": "Markdown Syntax - Styling",
+    "text": "Markdown Syntax - Styling\n\n\nEmphasis = Italics (use *)\n\nBold (use **)\n\nLists\n\nBullet points (use -)\nNumbered lists (use 1.)"
+  },
+  {
+    "objectID": "slides/week-1.2.html#markdown-syntax---content",
+    "href": "slides/week-1.2.html#markdown-syntax---content",
+    "title": "Meet ouR Tech Stack",
+    "section": "Markdown Syntax - Content",
+    "text": "Markdown Syntax - Content\n\n\nLinks (use [text](url))\nImages (use ![](file path or url))\nCode chunks\n\nR code chunks (```{r}…```)\nPython code chunks (```{python}…```)\nEtc."
+  },
+  {
+    "objectID": "slides/week-1.2.html#try-some-markdown",
+    "href": "slides/week-1.2.html#try-some-markdown",
+    "title": "Meet ouR Tech Stack",
+    "section": "Try Some Markdown",
+    "text": "Try Some Markdown\n\n\nCheck out the Markdown Cheatsheet\nTry editing the markdown in your document\nTry some of the other things you find in the guide\nThen render it again\n\n\n\n\n−+\n10:00"
+  },
+  {
+    "objectID": "slides/week-1.2.html#code-chunks",
+    "href": "slides/week-1.2.html#code-chunks",
+    "title": "Meet ouR Tech Stack",
+    "section": "Code Chunks",
+    "text": "Code Chunks\n\n\nIncorporate R code (could also be Python, Julia, etc.)\nAdd a code chunk with the ‘+’ button\nRun the code chunk by clicking the play button\n\nOr use keyboard shortcut (Cmd/Ctrl + Shift + Enter)\n\nRun all chunks up that point by clicking the down arrow\n\nOr use keyboard shortcut (Cmd/Ctrl + Shift + K)\n\nRun a single line with shortcut (Cmd/Ctrl + Enter)"
+  },
+  {
+    "objectID": "slides/week-1.2.html#code-chunk-options",
+    "href": "slides/week-1.2.html#code-chunk-options",
+    "title": "Meet ouR Tech Stack",
+    "section": "Code Chunk Options",
+    "text": "Code Chunk Options\n\n\nUse #| (hash-pipe) to add options\nlabel is a unique identifier for the chunk\nOptions to control what happens when you render\n\necho controls whether the code is shown\neval controls whether the code is run\nmessage controls whether messages are shown\nwarning controls whether warnings are shown"
+  },
+  {
+    "objectID": "slides/week-1.2.html#code-chunk-options-1",
+    "href": "slides/week-1.2.html#code-chunk-options-1",
+    "title": "Meet ouR Tech Stack",
+    "section": "Code Chunk Options",
+    "text": "Code Chunk Options\n\n\nCode-chunk options override global options set in YAML header\nSee documentation for more options\nYou can also use write chunk options inline with chunk name,\n\ne.g., {r, echo = FALSE} ..."
+  },
+  {
+    "objectID": "slides/week-1.2.html#illustration-1",
+    "href": "slides/week-1.2.html#illustration-1",
+    "title": "Meet ouR Tech Stack",
+    "section": "Illustration",
+    "text": "Illustration"
+  },
+  {
+    "objectID": "slides/week-1.2.html#try-it-yourself",
+    "href": "slides/week-1.2.html#try-it-yourself",
+    "title": "Meet ouR Tech Stack",
+    "section": "Try it Yourself!",
+    "text": "Try it Yourself!\n\nCreate a code chunk\nCopy this code chunk into your document\n\n\nlibrary(ggplot2)\n\nggplot(mpg, aes(displ, hwy, colour = class)) + \n  geom_point()\n\n\nTry adding some chunk options in your document\nThen render it again\n\n\n\n\n−+\n02:00"
+  },
+  {
+    "objectID": "slides/week-1.2.html#r-packages-and-functions",
+    "href": "slides/week-1.2.html#r-packages-and-functions",
+    "title": "Meet ouR Tech Stack",
+    "section": "R Packages and Functions",
+    "text": "R Packages and Functions\n\n\n\nA function is a set of instructions\n\nread_csv() is a function\nggplot() is a function\n\nA package is a collection of functions\n\nreadr is a package that contains the read_csv() function\nggplot2 is a package that contains the ggplot() function\n\nUse install.packages() to install packages\nUse library() to load packages\nYou can install packages from CRAN"
+  },
+  {
+    "objectID": "slides/week-1.2.html#the-tidyverse",
+    "href": "slides/week-1.2.html#the-tidyverse",
+    "title": "Meet ouR Tech Stack",
+    "section": "The Tidyverse",
+    "text": "The Tidyverse\n\n\nThe Tidyverse is a collection of data science packages\nIt is also considered a dialect of R\nIn this class, we will be using many Tidyverse packages\n\nggplot2 for data visualization\nreadr for reading data\ndplyr for data manipulation\ntidyr for data tidying\nEtc.\n\nAt first we will load the packages independently, e.g. library(ggplot2)\nLater we will load them all at once with library(tidyverse)"
+  },
+  {
+    "objectID": "slides/week-1.2.html#lets-get-going-.-.-.",
+    "href": "slides/week-1.2.html#lets-get-going-.-.-.",
+    "title": "Meet ouR Tech Stack",
+    "section": "Let’s get going . . .",
+    "text": "Let’s get going . . .\n\nLet’s open up the Getting Started module on Posit Cloud…\nAnd work through the examples there."
+  },
+  {
+    "objectID": "slides/week-1.2.html#example-make-a-map",
+    "href": "slides/week-1.2.html#example-make-a-map",
+    "title": "Meet ouR Tech Stack",
+    "section": "Example: Make a map!",
+    "text": "Example: Make a map!"
+  },
+  {
+    "objectID": "slides/week-1.2.html#example-plotting-democracy-over-time",
+    "href": "slides/week-1.2.html#example-plotting-democracy-over-time",
+    "title": "Meet ouR Tech Stack",
+    "section": "Example: Plotting Democracy Over Time",
+    "text": "Example: Plotting Democracy Over Time"
+  },
+  {
+    "objectID": "slides/week-1.2.html#example-un-voting-trends",
+    "href": "slides/week-1.2.html#example-un-voting-trends",
+    "title": "Meet ouR Tech Stack",
+    "section": "Example: UN Voting Trends",
+    "text": "Example: UN Voting Trends"
+  },
+  {
+    "objectID": "slides/week-1.2.html#rstudio",
+    "href": "slides/week-1.2.html#rstudio",
+    "title": "Meet ouR Tech Stack",
+    "section": "RStudio",
+    "text": "RStudio\n\nRStudio is an integrated development environment (IDE) for R\nRStudio has four panes\n\nSource-where you write code\nConsole-where you run code\nEnvironment-where you see objects in memory\nFiles/Plots/Packages/Help-where you can navigate files, see plots, install packages, and get help\n\nLet’s open RStudio and have a look around"
+  },
+  {
+    "objectID": "slides/week-1.2.html#quarto",
+    "href": "slides/week-1.2.html#quarto",
+    "title": "Meet ouR Tech Stack",
+    "section": "Quarto",
+    "text": "Quarto\n\n\n\nQuarto is an open-source scientific publishing platform\nAllows you to integrate text with code\nKind of like a word processor for data science\nCan use it to create reports, books, websites, etc.\nCan make HTML, PDF, Word, and other formats\nCan use R, Python, Julia, and other languages"
+  },
+  {
+    "objectID": "slides/week-1.2.html#example-make-a-map-1",
+    "href": "slides/week-1.2.html#example-make-a-map-1",
+    "title": "Meet ouR Tech Stack",
+    "section": "Example: Make a map!",
+    "text": "Example: Make a map!\n\n\nlibrary(leaflet)\nleaflet() %&gt;% \n  addTiles() %&gt;%   # Add default OpenStreetMap map tiles\n  addMarkers(lat = 38.90243843683386, lng =  -77.0443814477152, \n             label = \"Elliott School of International Affairs\")"
+  },
+  {
+    "objectID": "slides/week-1.2.html#example-plotting-democracy-over-time-1",
+    "href": "slides/week-1.2.html#example-plotting-democracy-over-time-1",
+    "title": "Meet ouR Tech Stack",
+    "section": "Example: Plotting Democracy Over Time",
+    "text": "Example: Plotting Democracy Over Time\n\n# Load the packages\nlibrary(vdemlite)\nlibrary(ggplot2)\n\n# Use vdemlite to extract democracy scores for France and INdia\ndem_data &lt;- fetchdem(indicators = \"v2x_polyarchy\",\n                     countries = c(\"FRA\", \"IND\"))\n\n# And now we can plot the data\nggplot(dem_data, aes(y = v2x_polyarchy, x = year, color=country_name)) +\n  geom_line() +\n  theme_minimal() +\n  xlab(\"Year\") +\n  ylab(\"Electoral Democracy Index\") +\n  ggtitle(\"Electoral Democracy, 1970-2022\") +\n  geom_hline(yintercept = .5, linetype = \"dashed\", color = \"grey\") +\n   scale_color_manual(name=\"Country\", values=c(\"#E69F00\", \"#56B4E9\")) +\n  ylim(0, 1)"
+  },
+  {
+    "objectID": "slides/week-1.2.html#example-un-voting-trends-1",
+    "href": "slides/week-1.2.html#example-un-voting-trends-1",
+    "title": "Meet ouR Tech Stack",
+    "section": "Example: UN Voting Trends",
+    "text": "Example: UN Voting Trends\n\nlibrary(tidyverse)\nlibrary(unvotes)\nlibrary(lubridate)\nlibrary(scales)\nlibrary(pacman)\n\nunvotes &lt;- un_votes %&gt;%\n  inner_join(un_roll_calls, by = \"rcid\") %&gt;%\n  inner_join(un_roll_call_issues, by = \"rcid\")\n\nunvotes %&gt;%\n  # then filter out to only include the countries we want\n  filter(country %in% c(\"South Africa\", \"United States\", \"France\")) %&gt;%\n  # then make sure R understands the the year variable is a data\n  mutate(year = year(date)) %&gt;%\n  # Then group the data by country and year\n  group_by(country, year, issue) %&gt;%\n  # then take the average Yes votes for each country_year\n  summarize(percent_yes = mean(vote == \"yes\")) %&gt;%\n  # then make a nice plot\n  ggplot(mapping = aes(x = year, y = percent_yes, color = country)) +\n  geom_point(alpha = 0.4) +\n  geom_smooth(method = \"loess\", se = FALSE) +\n  facet_wrap(~issue) +\n  scale_y_continuous(labels = percent) +\n  scale_color_manual( values=c(\"#E69F00\", \"#56B4E9\", \"#009E73\")) +\n  labs(\n    title = \"Percentage of 'Yes' votes in the UN General Assembly\",\n    subtitle = \"1946 to 2019\",\n    y = \"% Yes\",\n    x = \"Year\",\n    color = \"Country\"\n  )"
   }
 ]
