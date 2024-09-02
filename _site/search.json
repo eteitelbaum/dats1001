@@ -4,7 +4,7 @@
     "href": "course-syllabus.html",
     "title": "Syllabus",
     "section": "",
-    "text": "Course: DATS 1001-Data Science for All\nLecture: MW 12:45-2:00\nClassroom: 1776 G. St., NW Rm. C103\n\nInstructor: Prof. Emmanuel Teitelbaum\nEmail: ejt@gwu.edu\nOffice Hours: Mondays 3-5 p.m. and by appointment.\nLocation: Online or in Monroe Hall, Rm. 411\n\nTeaching Assistant: Gourab Mukherjee\nEmail: gourab.mukherjee@email.gwu.edu\nOffice Hours: Fridays, time TBD\nLocation: TBD\n\nTeaching Assistant: Sai Srinivas Lakkoju\nEmail: saisrinivas.lakkoju@email.gwu.edu\nOffice Hours: Thursdays, 1-3 p.m.\nLocation: Online, email for link\n\nCredit Hours: 3.0.\n\nThe best way to contact me is via the course Discord server for inquiries about code or course material and by email or during office hours for personal matters.",
+    "text": "Course: DATS 1001-Data Science for All\nLecture: MW 12:45-2:00\nClassroom: 1776 G. St., NW Rm. C103\n\nInstructor: Prof. Emmanuel Teitelbaum\nEmail: ejt@gwu.edu\nOffice Hours:Mondays 3-5 p.m. and by appointment.\nLocation: Online or in Monroe Hall, Rm. 411, Sign up here\n\nTeaching Assistant: Gourab Mukherjee\nEmail: gourab.mukherjee@email.gwu.edu\nOffice Hours: Fridays, 9:30-11:30 a.m.\nLocation: Online, follow this link\n\nTeaching Assistant: Sai Srinivas Lakkoju\nEmail: saisrinivas.lakkoju@email.gwu.edu\nOffice Hours: Thursdays, 1-3 p.m.\nLocation: Online, email for link\n\nCredit Hours: 3.0.\n\nThe best way to contact me is via the course Discord server for inquiries about code or course material and by email or during office hours for personal matters.",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -15,7 +15,7 @@
     "href": "course-syllabus.html#course-information",
     "title": "Syllabus",
     "section": "",
-    "text": "Course: DATS 1001-Data Science for All\nLecture: MW 12:45-2:00\nClassroom: 1776 G. St., NW Rm. C103\n\nInstructor: Prof. Emmanuel Teitelbaum\nEmail: ejt@gwu.edu\nOffice Hours: Mondays 3-5 p.m. and by appointment.\nLocation: Online or in Monroe Hall, Rm. 411\n\nTeaching Assistant: Gourab Mukherjee\nEmail: gourab.mukherjee@email.gwu.edu\nOffice Hours: Fridays, time TBD\nLocation: TBD\n\nTeaching Assistant: Sai Srinivas Lakkoju\nEmail: saisrinivas.lakkoju@email.gwu.edu\nOffice Hours: Thursdays, 1-3 p.m.\nLocation: Online, email for link\n\nCredit Hours: 3.0.\n\nThe best way to contact me is via the course Discord server for inquiries about code or course material and by email or during office hours for personal matters.",
+    "text": "Course: DATS 1001-Data Science for All\nLecture: MW 12:45-2:00\nClassroom: 1776 G. St., NW Rm. C103\n\nInstructor: Prof. Emmanuel Teitelbaum\nEmail: ejt@gwu.edu\nOffice Hours:Mondays 3-5 p.m. and by appointment.\nLocation: Online or in Monroe Hall, Rm. 411, Sign up here\n\nTeaching Assistant: Gourab Mukherjee\nEmail: gourab.mukherjee@email.gwu.edu\nOffice Hours: Fridays, 9:30-11:30 a.m.\nLocation: Online, follow this link\n\nTeaching Assistant: Sai Srinivas Lakkoju\nEmail: saisrinivas.lakkoju@email.gwu.edu\nOffice Hours: Thursdays, 1-3 p.m.\nLocation: Online, email for link\n\nCredit Hours: 3.0.\n\nThe best way to contact me is via the course Discord server for inquiries about code or course material and by email or during office hours for personal matters.",
     "crumbs": [
       "Course information",
       "Syllabus"
@@ -253,525 +253,15 @@
     ]
   },
   {
-    "objectID": "instructor.html",
-    "href": "instructor.html",
-    "title": "Instructor",
-    "section": "",
-    "text": "Emmanuel Teitelbaum is an associate professor of political science and international affairs at the The George Washington University His research and writing explore how class conflict and compromise intersect with democracy and development. He also has a strong interest in labor standards and understanding how labor unions, nonprofit organizations, consumers and corporations can help to promote them.\nAt GW, Professor Teitelbaum teaches courses on comparative politics, comparative political economy and data science. He is on faculty in the Department of Political Science and the Elliott School of International Affairs and is affiliated with the Sigur Center for Asian Studies as well as the Institute for International Economic Policy.",
-    "crumbs": [
-      "Course information",
-      "Instructor"
-    ]
-  },
-  {
-    "objectID": "instructor.html#office-hours",
-    "href": "instructor.html#office-hours",
-    "title": "Instructor",
-    "section": "Office Hours",
-    "text": "Office Hours\nProfessor Teitelbaum’s office hours are on Mondays from 3:00 p.m. to 5:00 p.m. Please sign up for a slot (or two) on his Calendly page. He is available for consultation virtually on Zoom or in his office at 411 Monroe Hall (2115 G. ST NW).",
-    "crumbs": [
-      "Course information",
-      "Instructor"
-    ]
-  },
-  {
-    "objectID": "weeks/week-14.html",
-    "href": "weeks/week-14.html",
-    "title": "Week 14",
-    "section": "",
-    "text": "📖 Aklin and Matto, “Prisoners of the Wrong Dilemma”"
-  },
-  {
-    "objectID": "weeks/week-14.html#readings",
-    "href": "weeks/week-14.html#readings",
-    "title": "Week 14",
-    "section": "",
-    "text": "📖 Aklin and Matto, “Prisoners of the Wrong Dilemma”"
-  },
-  {
-    "objectID": "weeks/week-14.html#slides",
-    "href": "weeks/week-14.html#slides",
-    "title": "Week 14",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Climate change and collective action\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-8.html",
-    "href": "weeks/week-8.html",
-    "title": "Week 8",
-    "section": "",
-    "text": "Important\n\n\n\nExam 2 is due on Sunday, March 19."
-  },
-  {
-    "objectID": "weeks/week-8.html#readings",
-    "href": "weeks/week-8.html#readings",
-    "title": "Week 8",
-    "section": "Readings",
-    "text": "Readings\n📖 James Putzel, “The ‘Populist’ Right Challenge to Neoliberalism”\n📖 Mary Cullen, “How to Write and Format a White Paper”"
-  },
-  {
-    "objectID": "weeks/week-8.html#slides",
-    "href": "weeks/week-8.html#slides",
-    "title": "Week 8",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Populism and social policy\n🖥️ Exam 2 review"
-  },
-  {
-    "objectID": "weeks/week-8.html#assignments",
-    "href": "weeks/week-8.html#assignments",
-    "title": "Week 8",
-    "section": "Assignments",
-    "text": "Assignments\n📘 Exam 2\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-12.html",
-    "href": "weeks/week-12.html",
-    "title": "Week 12",
-    "section": "",
-    "text": "Important\n\n\n\n“Project Assignment 2: White Paper” is due on Sunday, April 9"
-  },
-  {
-    "objectID": "weeks/week-12.html#readings",
-    "href": "weeks/week-12.html#readings",
-    "title": "Week 12",
-    "section": "Readings",
-    "text": "Readings\n📖 Autor, Dorn and Hanson, “The China Shock”\n📖 Joseph Stiglitz, People, Power, and Profits, Chapter 3"
-  },
-  {
-    "objectID": "weeks/week-12.html#slides",
-    "href": "weeks/week-12.html#slides",
-    "title": "Week 12",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Globalization\n🖥️ Inequality"
-  },
-  {
-    "objectID": "weeks/week-12.html#assignments",
-    "href": "weeks/week-12.html#assignments",
-    "title": "Week 12",
-    "section": "Assignments",
-    "text": "Assignments\n✍️ Project Assignment 2: White Paper\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-11.html",
-    "href": "weeks/week-11.html",
-    "title": "Week 11",
-    "section": "",
-    "text": "📖 Gumbrell-McCormick and Hyman, “Democracy in Trade Unions, Democracy Through Trade Unions?”\n📖 Hall and Soskice, Varities of Capitalism, Chapter 1"
-  },
-  {
-    "objectID": "weeks/week-11.html#readings",
-    "href": "weeks/week-11.html#readings",
-    "title": "Week 11",
-    "section": "",
-    "text": "📖 Gumbrell-McCormick and Hyman, “Democracy in Trade Unions, Democracy Through Trade Unions?”\n📖 Hall and Soskice, Varities of Capitalism, Chapter 1"
-  },
-  {
-    "objectID": "weeks/week-11.html#slides",
-    "href": "weeks/week-11.html#slides",
-    "title": "Week 11",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Unions and collective bargaining\n🖥️ Varieties of capitalism\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-2.html",
-    "href": "weeks/week-2.html",
-    "title": "Week 2",
-    "section": "",
-    "text": "📖 Acemoglu and Robinson, “Rents and Economic Development”\n📖 Cheibub and Vreeland, “Modernization Theory”"
-  },
-  {
-    "objectID": "weeks/week-2.html#readings",
-    "href": "weeks/week-2.html#readings",
-    "title": "Week 2",
-    "section": "",
-    "text": "📖 Acemoglu and Robinson, “Rents and Economic Development”\n📖 Cheibub and Vreeland, “Modernization Theory”"
-  },
-  {
-    "objectID": "weeks/week-2.html#slides",
-    "href": "weeks/week-2.html#slides",
-    "title": "Week 2",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Institutions and Development\n🖥️ Modernization Theory\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-1.html",
-    "href": "weeks/week-1.html",
-    "title": "Week 1",
-    "section": "",
-    "text": "📖 Review the course syllabus and support resources\n📖 Polanyi, The Great Transformation, Chapter 11"
-  },
-  {
-    "objectID": "weeks/week-1.html#readings",
-    "href": "weeks/week-1.html#readings",
-    "title": "Week 1",
-    "section": "",
-    "text": "📖 Review the course syllabus and support resources\n📖 Polanyi, The Great Transformation, Chapter 11"
-  },
-  {
-    "objectID": "weeks/week-1.html#slides",
-    "href": "weeks/week-1.html#slides",
-    "title": "Week 1",
-    "section": "Slides",
-    "text": "Slides\n🖥Polany’s Great Transformation\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-5.html",
-    "href": "weeks/week-5.html",
-    "title": "Week 5",
-    "section": "",
-    "text": "📖 Stokes et. al., Brokers, Voters and Clientelism, Chapter 1\n📖 Aspinall and Berenschot, Democracy for Sale, Chapter 5"
-  },
-  {
-    "objectID": "weeks/week-5.html#readings",
-    "href": "weeks/week-5.html#readings",
-    "title": "Week 5",
-    "section": "",
-    "text": "📖 Stokes et. al., Brokers, Voters and Clientelism, Chapter 1\n📖 Aspinall and Berenschot, Democracy for Sale, Chapter 5"
-  },
-  {
-    "objectID": "weeks/week-5.html#slides",
-    "href": "weeks/week-5.html#slides",
-    "title": "Week 5",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Programmatic politics vs. clientelism\n🖥️ Vote buying\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-6.html",
-    "href": "weeks/week-6.html",
-    "title": "Week 6",
-    "section": "",
-    "text": "📖 Edward Miguel, “Tribe or Nation?”\n📖 Holland and Ben Ross Schneider, “Easy and Hard Redistribution”"
-  },
-  {
-    "objectID": "weeks/week-6.html#readings",
-    "href": "weeks/week-6.html#readings",
-    "title": "Week 6",
-    "section": "",
-    "text": "📖 Edward Miguel, “Tribe or Nation?”\n📖 Holland and Ben Ross Schneider, “Easy and Hard Redistribution”"
-  },
-  {
-    "objectID": "weeks/week-6.html#slides",
-    "href": "weeks/week-6.html#slides",
-    "title": "Week 6",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Ethnicity and public goods\n🖥️ Democracy and redistribution"
-  },
-  {
-    "objectID": "weeks/week-6.html#videos",
-    "href": "weeks/week-6.html#videos",
-    "title": "Week 6",
-    "section": "Videos",
-    "text": "Videos\n📺 Bar chart video\n📺 Line chart video\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "assignments/coding-assignment-2.html",
-    "href": "assignments/coding-assignment-2.html",
-    "title": "Data Assignment 2",
-    "section": "",
-    "text": "Details coming soon…",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 2"
-    ]
-  },
-  {
-    "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "href": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "title": "Attribution-ShareAlike 4.0 International",
-    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
-    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\nA. reproduce and Share the Licensed Material, in whole or in part; and\nB. produce, reproduce, and Share Adapted Material.\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\nB. Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\nA. retain the following if it is supplied by the Licensor with the Licensed Material:\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\nB. indicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nC. indicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” The text of the Creative Commons public licenses is dedicated to the public domain under the CC0 Public Domain Dedication. Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org."
-  },
-  {
-    "objectID": "course-links.html",
-    "href": "course-links.html",
-    "title": "Useful links",
-    "section": "",
-    "text": "Lecture Recordings\n🔗 on Blackboard\n\n\nProf T’s Zoom Office\n🔗 on Zoom\n\n\nOffice Hours Appointments\n🔗 on Calendly",
-    "crumbs": [
-      "Course information",
-      "Useful links"
-    ]
-  },
-  {
-    "objectID": "course-description.html",
-    "href": "course-description.html",
-    "title": "Course Description",
-    "section": "",
-    "text": "This course provides a comprehensive introduction to data science, blending theoretical foundations with practical applications. Students will begin with data visualization, learning the essential tools and principles for creating informative and impactful visual representations of data. The course then progresses to data wrangling, where students will clean, manipulate, and prepare data for analysis.\nAs the semester unfolds, students will explore web scraping techniques to gather data from online sources, followed by an examination of the ethical considerations surrounding data collection, privacy, and algorithmic bias. The course then delves into statistical modeling, introducing both linear and logistic regression, and other core methods used in predictive analytics.\nThroughout the course, various special topics, such as bootstrapping, randomization tests, or interactive web applications, will be covered, offering students a chance to explore current trends and tools in data science. The curriculum is designed to equip students with a versatile toolkit, enabling them to tackle real-world data challenges and communicate their findings effectively.",
-    "crumbs": [
-      "Course information",
-      "Description"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-1.html",
-    "href": "assignments/coding-assignment-1.html",
-    "title": "Data Assignment 1",
-    "section": "",
-    "text": "Details coming soon…",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week-7.html",
-    "href": "weeks/week-7.html",
-    "title": "Week 7",
-    "section": "",
-    "text": "Important\n\n\n\n“Data Assignment 2: Cleaning & Visualizing Data in Excel” is due on Sunday, March 5"
-  },
-  {
-    "objectID": "weeks/week-7.html#readings",
-    "href": "weeks/week-7.html#readings",
-    "title": "Week 7",
-    "section": "Readings",
-    "text": "Readings\nArchibong et. al., “Washington Consensus Reforms and Economic Performance in Sub-Saharan Africa”\nBenería et. al., “Markets, Globalization and Gender”"
-  },
-  {
-    "objectID": "weeks/week-7.html#slides",
-    "href": "weeks/week-7.html#slides",
-    "title": "Week 7",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Washington consensus reforms\n🖥️ The gendered legacy of reform"
-  },
-  {
-    "objectID": "weeks/week-7.html#videos",
-    "href": "weeks/week-7.html#videos",
-    "title": "Week 7",
-    "section": "Videos",
-    "text": "Videos\n📺 Scatter plot video\n📺 Map video"
-  },
-  {
-    "objectID": "weeks/week-7.html#assignments",
-    "href": "weeks/week-7.html#assignments",
-    "title": "Week 7",
-    "section": "Assignments",
-    "text": "Assignments\n🧮 Data Assignment 2: Cleaning & Visualizing Data in Excel\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-4.html",
-    "href": "weeks/week-4.html",
-    "title": "Week 4",
-    "section": "",
-    "text": "Important\n\n\n\nExam 1 is due on Sunday, February 12"
-  },
-  {
-    "objectID": "weeks/week-4.html#readings",
-    "href": "weeks/week-4.html#readings",
-    "title": "Week 4",
-    "section": "Readings",
-    "text": "Readings\n📖 Hessami and Lopes da Fonseca, “Female Political Representation and Substantive Effects on Policies”"
-  },
-  {
-    "objectID": "weeks/week-4.html#slides",
-    "href": "weeks/week-4.html#slides",
-    "title": "Week 4",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Women’s empowerment\n🖥️ Exam 1 review"
-  },
-  {
-    "objectID": "weeks/week-4.html#assignments",
-    "href": "weeks/week-4.html#assignments",
-    "title": "Week 4",
-    "section": "Assignments",
-    "text": "Assignments\n📘 Exam 1\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-3.html",
-    "href": "weeks/week-3.html",
-    "title": "Week 3",
-    "section": "",
-    "text": "Important\n\n\n\n“Data Assignment 1: Working With Data in Excel” is due on Sunday, February 5"
-  },
-  {
-    "objectID": "weeks/week-3.html#readings",
-    "href": "weeks/week-3.html#readings",
-    "title": "Week 3",
-    "section": "Readings",
-    "text": "Readings\n📖Kaufman and Haggard, “Democratic Decline in the United States”\n📖Michael Ross, The Oil Curse, Chapter 3"
-  },
-  {
-    "objectID": "weeks/week-3.html#slides",
-    "href": "weeks/week-3.html#slides",
-    "title": "Week 3",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Democratic backsliding\n🖥️ The resource curse"
-  },
-  {
-    "objectID": "weeks/week-3.html#assignments",
-    "href": "weeks/week-3.html#assignments",
-    "title": "Week 3",
-    "section": "Assignments",
-    "text": "Assignments\n🧮 Data Assignment 1\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-10.html",
-    "href": "weeks/week-10.html",
-    "title": "Week 10",
-    "section": "",
-    "text": "Important\n\n\n\nProject Assignment 1 is due on Sunday, March 26."
-  },
-  {
-    "objectID": "weeks/week-10.html#readings",
-    "href": "weeks/week-10.html#readings",
-    "title": "Week 10",
-    "section": "Readings",
-    "text": "Readings\n📖 Gøsta Esping-Andersen, The Three Worlds of Welfare Capitalism\n📖 Alesina et. al., “Why Doesn’t the United States Have a European-Style Welfare State?”"
-  },
-  {
-    "objectID": "weeks/week-10.html#slides",
-    "href": "weeks/week-10.html#slides",
-    "title": "Week 10",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Welfare states in the OECD\n🖥️ U.S. exceptionalism\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-10.html#assignments",
-    "href": "weeks/week-10.html#assignments",
-    "title": "Week 10",
-    "section": "Assignments",
-    "text": "Assignments\n✍️ Project Assignment 1: Outline and Sources"
-  },
-  {
-    "objectID": "weeks/week-13.html",
-    "href": "weeks/week-13.html",
-    "title": "Week 13",
-    "section": "",
-    "text": "📖 John Judis, The Politics of Our Time\n\nFor Tuesday, choose one chapter to read from Part I\nFor Thursday, choose one chapter to read from Part II or Part III"
-  },
-  {
-    "objectID": "weeks/week-13.html#readings",
-    "href": "weeks/week-13.html#readings",
-    "title": "Week 13",
-    "section": "",
-    "text": "📖 John Judis, The Politics of Our Time\n\nFor Tuesday, choose one chapter to read from Part I\nFor Thursday, choose one chapter to read from Part II or Part III"
-  },
-  {
-    "objectID": "weeks/week-13.html#slides",
-    "href": "weeks/week-13.html#slides",
-    "title": "Week 13",
-    "section": "Slides",
-    "text": "Slides\n🖥️ The populist backlash in the West\n🖥️ The rise of nationalism and socialism\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-9.html",
-    "href": "weeks/week-9.html",
-    "title": "Week 9",
-    "section": "",
-    "text": "Important\n\n\n\nExam 2 is due on Sunday, March 19"
-  },
-  {
-    "objectID": "weeks/week-9.html#readings",
-    "href": "weeks/week-9.html#readings",
-    "title": "Week 9",
-    "section": "Readings",
-    "text": "Readings\n📖 Mary Cullen, “How to Write and Format a White Paper”"
-  },
-  {
-    "objectID": "weeks/week-9.html#assignments",
-    "href": "weeks/week-9.html#assignments",
-    "title": "Week 9",
-    "section": "Assignments",
-    "text": "Assignments\n📘 Exam 2\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-15.html",
-    "href": "weeks/week-15.html",
-    "title": "Week 15",
-    "section": "",
-    "text": "Important\n\n\n\nExam 3 is due on Sunday, April 30."
-  },
-  {
-    "objectID": "weeks/week-15.html#slides",
-    "href": "weeks/week-15.html#slides",
-    "title": "Week 15",
-    "section": "Slides",
-    "text": "Slides\nExam 3 Review (Factile game)"
-  },
-  {
-    "objectID": "weeks/week-15.html#assignments",
-    "href": "weeks/week-15.html#assignments",
-    "title": "Week 15",
-    "section": "Assignments",
-    "text": "Assignments\n📘 Exam 3\n✍️ Project Assignment 3: Tableau Dashboard\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Course Schedule",
-    "section": "",
-    "text": "This page displays an outline of the topics, content, and assignments for the semester. Links, to slides, assignments and course resources will go live as the semester progresses. All assignments must be submitted by 11:59 p.m. on the due date.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nReading\nVideo\nSlides\nAssignment\nDue Date\n\n\n\n\n1\nMon, Aug 26\nWelcome to DATS 1001\n\n\n\n\n\n\n\n\nWed, Aug 28\nMeet ouR tech stack\n\n\n🖥️\n\n\n\n\n2\nMon, Sep 2\n🇺🇸 No class, Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 4\nR coding basics\n📖\n📺\n\n\n\n\n\n3\nMon, Sep 9\nGrammar of graphics\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 11\nWhich visualization do I use?\n📖\n📺\n🖥️\n\n\n\n\n4\nMon, Sep 16\nVisualization best practices\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 18\nCoding assignment 1\n📖\n\n🖥️\n🧮\nSun, Sep 22\n\n\n5\nMon, Sep 23\nWhat is tidy data?\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 25\nGrammar of data wrangling\n📖\n📺\n🖥️\n\n\n\n\n6\nMon, Sep 30\nGrouping and summarizing\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 2\nJoining data frames\n📖\n📺\n🖥️\n\n\n\n\n7\nMon, Oct 7\nTidying data\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 9\nCoding assignment 2\n📖\n\n🖥️\n🧮\nSun, Oct 13\n\n\n8\nMon, Oct 14\nThe language of models\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 16\nLinear regression\n📖\n📺\n🖥️\n✍️\nSun, Oct 20\n\n\n9\nMon, Oct 21\nMultiple regression\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 23\nLogistic regression\n📖\n📺\n🖥️\n\n\n\n\n10\nMon, Oct 28\nPredictive modeling\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 30\nCoding assignment 3\n📖\n\n🖥️\n🧮\nSun, Nov 3\n\n\n11\nMon, Nov 4\nResearch design\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 6\nDistributions\n📖\n📺\n🖥️\n✍️\nSun, Nov 10\n\n\n12\nMon, Nov 11\nSampling and uncertainty\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 13\nHypothesis testing 1\n📖\n📺\n🖥️\n\n\n\n\n13\nMon, Nov 18\nHypothesis testing 2\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 20\nCoding assignment 4\n📖\n📺\n🖥️\n🧮\nSun, Nov 24\n\n\n14\nMon, Nov 25\n🦃 No class–Thanksgiving break\n\n\n\n\n\n\n\n\nWed, Nov 27\n🦃 No class–Thanksgiving break\n\n\n\n\n\n\n\n15\nMon, Dec 2\nLightning talks\n\n\n\n\n\n\n\n\nWed, Dec 4\nLightning talks\n\n\n\n\n\n\n\n16\nMon, Dec 9\nWrap-up: DS careers\n\n\n\n✍️\nDate of scheduled final",
-    "crumbs": [
-      "Course information",
-      "Schedule"
-    ]
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "This site was built with Quarto and is based on a template provided by Mine Çetinkaya-Rundel under a Creative Commons Attribution-NonCommercial 4.0 Iicense."
-  },
-  {
-    "objectID": "project/project-assignment-3.html",
-    "href": "project/project-assignment-3.html",
-    "title": "Project Assignment 3",
-    "section": "",
-    "text": "Details coming soon…",
-    "crumbs": [
-      "Project",
-      "Assignment 3"
-    ]
-  },
-  {
-    "objectID": "project/project-assignment-1.html",
-    "href": "project/project-assignment-1.html",
-    "title": "Project Assignment 1",
-    "section": "",
-    "text": "Details coming soon…",
-    "crumbs": [
-      "Project",
-      "Assignment 1"
-    ]
-  },
-  {
-    "objectID": "course-support.html",
-    "href": "course-support.html",
-    "title": "Support",
-    "section": "",
-    "text": "Writing Center GW’s Writing Center cultivates confident writers in the University community by facilitating collaborative, critical, and inclusive conversations at all stages of the writing process. Working alongside peer mentors, writers develop strategies to write independently in academic and public settings. Appointments can be booked online here.\nAcademic Commons Academic Commons provides tutoring and other academic support resources to students in many courses. Students can schedule virtual one-on-one appointments or attend virtual drop-in sessions. Students may schedule an appointment, review the tutoring schedule, access other academic support resources, or obtain assistance here.",
-    "crumbs": [
-      "Course information",
-      "Support"
-    ]
-  },
-  {
-    "objectID": "course-support.html#academic-support",
-    "href": "course-support.html#academic-support",
-    "title": "Support",
-    "section": "",
-    "text": "Writing Center GW’s Writing Center cultivates confident writers in the University community by facilitating collaborative, critical, and inclusive conversations at all stages of the writing process. Working alongside peer mentors, writers develop strategies to write independently in academic and public settings. Appointments can be booked online here.\nAcademic Commons Academic Commons provides tutoring and other academic support resources to students in many courses. Students can schedule virtual one-on-one appointments or attend virtual drop-in sessions. Students may schedule an appointment, review the tutoring schedule, access other academic support resources, or obtain assistance here.",
-    "crumbs": [
-      "Course information",
-      "Support"
-    ]
-  },
-  {
-    "objectID": "course-support.html#support-for-students-outside-the-classroom",
-    "href": "course-support.html#support-for-students-outside-the-classroom",
-    "title": "Support",
-    "section": "Support for students outside the classroom",
-    "text": "Support for students outside the classroom\nDisability Support Services (DSS) 202-994-8250 Any student who may need an accommodation based on the potential impact of a disability should contact Disability Support Services to establish eligibility and to coordinate reasonable accommodations.\nCounseling and Psychological Services 202-994-5300 GW’s Colonial Health Center offers counseling and psychological services, supporting mental health and personal development by collaborating directly with students to overcome challenges and difficulties that may interfere with academic, emotional, and personal success.\nGW aims to create a community that cares for each other.The CARE Team fosters this goal by creating a pathway through which students who may need additional support can be identified and referred to the most appropriate services. Through the CARE Team, students are given the support they need to persist and succeed at GW and beyond.\nSafety and Security:\n\nIn an emergency: call GWPD 202-994-6111 or 911.\nFor situation-specific actions: review the Emergency Response Handbook\nStay informed: safety.gwu.edu/stay-informed",
-    "crumbs": [
-      "Course information",
-      "Support"
-    ]
-  },
-  {
-    "objectID": "slides/week-1.2.html#quarto-1",
-    "href": "slides/week-1.2.html#quarto-1",
+    "objectID": "slides/week-1.2.html#rstudio",
+    "href": "slides/week-1.2.html#rstudio",
+    "title": "Meet ouR Tech Stack",
+    "section": "RStudio",
+    "text": "RStudio\n\nRStudio is an integrated development environment (IDE) for R\nRStudio has four panes\n\nSource-where you write code\nConsole-where you run code\nEnvironment-where you see objects in memory\nFiles/Plots/Packages/Help-where you can navigate files, see plots, install packages, and get help\n\nLet’s open RStudio and have a look around"
+  },
+  {
+    "objectID": "slides/week-1.2.html#quarto",
+    "href": "slides/week-1.2.html#quarto",
     "title": "Meet ouR Tech Stack",
     "section": "Quarto",
     "text": "Quarto\n\n\n\nQuarto is an open-source scientific publishing platform\nAllows you to integrate text with code\nKind of like a word processor for data science\nCan use it to create reports, books, websites, etc.\nCan make HTML, PDF, Word, and other formats\nCan use R, Python, Julia, and other languages"
@@ -931,39 +421,18 @@
     "text": "Example: Make a map!"
   },
   {
-    "objectID": "slides/week-1.2.html#example-plotting-democracy-over-time",
-    "href": "slides/week-1.2.html#example-plotting-democracy-over-time",
-    "title": "Meet ouR Tech Stack",
-    "section": "Example: Plotting Democracy Over Time",
-    "text": "Example: Plotting Democracy Over Time"
-  },
-  {
-    "objectID": "slides/week-1.2.html#example-un-voting-trends",
-    "href": "slides/week-1.2.html#example-un-voting-trends",
-    "title": "Meet ouR Tech Stack",
-    "section": "Example: UN Voting Trends",
-    "text": "Example: UN Voting Trends"
-  },
-  {
-    "objectID": "slides/week-1.2.html#rstudio",
-    "href": "slides/week-1.2.html#rstudio",
-    "title": "Meet ouR Tech Stack",
-    "section": "RStudio",
-    "text": "RStudio\n\nRStudio is an integrated development environment (IDE) for R\nRStudio has four panes\n\nSource-where you write code\nConsole-where you run code\nEnvironment-where you see objects in memory\nFiles/Plots/Packages/Help-where you can navigate files, see plots, install packages, and get help\n\nLet’s open RStudio and have a look around"
-  },
-  {
-    "objectID": "slides/week-1.2.html#quarto",
-    "href": "slides/week-1.2.html#quarto",
-    "title": "Meet ouR Tech Stack",
-    "section": "Quarto",
-    "text": "Quarto\n\n\n\nQuarto is an open-source scientific publishing platform\nAllows you to integrate text with code\nKind of like a word processor for data science\nCan use it to create reports, books, websites, etc.\nCan make HTML, PDF, Word, and other formats\nCan use R, Python, Julia, and other languages"
-  },
-  {
     "objectID": "slides/week-1.2.html#example-make-a-map-1",
     "href": "slides/week-1.2.html#example-make-a-map-1",
     "title": "Meet ouR Tech Stack",
     "section": "Example: Make a map!",
     "text": "Example: Make a map!\n\n\nlibrary(leaflet)\nleaflet() %&gt;% \n  addTiles() %&gt;%   # Add default OpenStreetMap map tiles\n  addMarkers(lat = 38.90243843683386, lng =  -77.0443814477152, \n             label = \"Elliott School of International Affairs\")"
+  },
+  {
+    "objectID": "slides/week-1.2.html#example-plotting-democracy-over-time",
+    "href": "slides/week-1.2.html#example-plotting-democracy-over-time",
+    "title": "Meet ouR Tech Stack",
+    "section": "Example: Plotting Democracy Over Time",
+    "text": "Example: Plotting Democracy Over Time"
   },
   {
     "objectID": "slides/week-1.2.html#example-plotting-democracy-over-time-1",
@@ -973,10 +442,534 @@
     "text": "Example: Plotting Democracy Over Time\n\n# Load the packages\nlibrary(vdemlite)\nlibrary(ggplot2)\n\n# Use vdemlite to extract democracy scores for France and INdia\ndem_data &lt;- fetchdem(indicators = \"v2x_polyarchy\",\n                     countries = c(\"FRA\", \"IND\"))\n\n# And now we can plot the data\nggplot(dem_data, aes(y = v2x_polyarchy, x = year, color=country_name)) +\n  geom_line() +\n  theme_minimal() +\n  xlab(\"Year\") +\n  ylab(\"Electoral Democracy Index\") +\n  ggtitle(\"Electoral Democracy, 1970-2022\") +\n  geom_hline(yintercept = .5, linetype = \"dashed\", color = \"grey\") +\n   scale_color_manual(name=\"Country\", values=c(\"#E69F00\", \"#56B4E9\")) +\n  ylim(0, 1)"
   },
   {
+    "objectID": "slides/week-1.2.html#example-un-voting-trends",
+    "href": "slides/week-1.2.html#example-un-voting-trends",
+    "title": "Meet ouR Tech Stack",
+    "section": "Example: UN Voting Trends",
+    "text": "Example: UN Voting Trends"
+  },
+  {
     "objectID": "slides/week-1.2.html#example-un-voting-trends-1",
     "href": "slides/week-1.2.html#example-un-voting-trends-1",
     "title": "Meet ouR Tech Stack",
     "section": "Example: UN Voting Trends",
     "text": "Example: UN Voting Trends\n\nlibrary(tidyverse)\nlibrary(unvotes)\nlibrary(lubridate)\nlibrary(scales)\nlibrary(pacman)\n\nunvotes &lt;- un_votes %&gt;%\n  inner_join(un_roll_calls, by = \"rcid\") %&gt;%\n  inner_join(un_roll_call_issues, by = \"rcid\")\n\nunvotes %&gt;%\n  # then filter out to only include the countries we want\n  filter(country %in% c(\"South Africa\", \"United States\", \"France\")) %&gt;%\n  # then make sure R understands the the year variable is a data\n  mutate(year = year(date)) %&gt;%\n  # Then group the data by country and year\n  group_by(country, year, issue) %&gt;%\n  # then take the average Yes votes for each country_year\n  summarize(percent_yes = mean(vote == \"yes\")) %&gt;%\n  # then make a nice plot\n  ggplot(mapping = aes(x = year, y = percent_yes, color = country)) +\n  geom_point(alpha = 0.4) +\n  geom_smooth(method = \"loess\", se = FALSE) +\n  facet_wrap(~issue) +\n  scale_y_continuous(labels = percent) +\n  scale_color_manual( values=c(\"#E69F00\", \"#56B4E9\", \"#009E73\")) +\n  labs(\n    title = \"Percentage of 'Yes' votes in the UN General Assembly\",\n    subtitle = \"1946 to 2019\",\n    y = \"% Yes\",\n    x = \"Year\",\n    color = \"Country\"\n  )"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Course Schedule",
+    "section": "",
+    "text": "This page displays an outline of the topics, content, and assignments for the semester. Links, to slides, assignments and course resources will go live as the semester progresses. All assignments must be submitted by 11:59 p.m. on the due date.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nReading\nVideo\nSlides\nAssignment\nDue Date\n\n\n\n\n1\nMon, Aug 26\nWelcome to DATS 1001\n📖 📖\n📺 📺\n\n\n\n\n\n\nWed, Aug 28\nMeet ouR tech stack\n📖\n📺\n🖥️\n\n\n\n\n2\nMon, Sep 2\n🇺🇸 No class, Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 4\nR coding basics\n📖\n📺 📺\n\n\n\n\n\n3\nMon, Sep 9\nGrammar of graphics\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 11\nWhich visualization do I use?\n📖\n📺\n🖥️\n\n\n\n\n4\nMon, Sep 16\nVisualization best practices\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 18\nCoding assignment 1\n📖\n\n🖥️\n🧮\nSun, Sep 22\n\n\n5\nMon, Sep 23\nWhat is tidy data?\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 25\nGrammar of data wrangling\n📖\n📺\n🖥️\n\n\n\n\n6\nMon, Sep 30\nGrouping and summarizing\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 2\nJoining data frames\n📖\n📺\n🖥️\n\n\n\n\n7\nMon, Oct 7\nTidying data\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 9\nCoding assignment 2\n📖\n\n🖥️\n🧮\nSun, Oct 13\n\n\n8\nMon, Oct 14\nThe language of models\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 16\nLinear regression\n📖\n📺\n🖥️\n✍️\nSun, Oct 20\n\n\n9\nMon, Oct 21\nMultiple regression\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 23\nLogistic regression\n📖\n📺\n🖥️\n\n\n\n\n10\nMon, Oct 28\nPredictive modeling\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 30\nCoding assignment 3\n📖\n\n🖥️\n🧮\nSun, Nov 3\n\n\n11\nMon, Nov 4\nResearch design\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 6\nDistributions\n📖\n📺\n🖥️\n✍️\nSun, Nov 10\n\n\n12\nMon, Nov 11\nSampling and uncertainty\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 13\nHypothesis testing 1\n📖\n📺\n🖥️\n\n\n\n\n13\nMon, Nov 18\nHypothesis testing 2\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 20\nCoding assignment 4\n📖\n📺\n🖥️\n🧮\nSun, Nov 24\n\n\n14\nMon, Nov 25\n🦃 No class–Thanksgiving break\n\n\n\n\n\n\n\n\nWed, Nov 27\n🦃 No class–Thanksgiving break\n\n\n\n\n\n\n\n15\nMon, Dec 2\nLightning talks\n\n\n\n\n\n\n\n\nWed, Dec 4\nLightning talks\n\n\n\n\n\n\n\n16\nMon, Dec 9\nWrap-up: DS careers\n\n\n\n✍️\nDate of scheduled final",
+    "crumbs": [
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "weeks/week-15.html",
+    "href": "weeks/week-15.html",
+    "title": "Week 15",
+    "section": "",
+    "text": "Important\n\n\n\nExam 3 is due on Sunday, April 30."
+  },
+  {
+    "objectID": "weeks/week-15.html#slides",
+    "href": "weeks/week-15.html#slides",
+    "title": "Week 15",
+    "section": "Slides",
+    "text": "Slides\nExam 3 Review (Factile game)"
+  },
+  {
+    "objectID": "weeks/week-15.html#assignments",
+    "href": "weeks/week-15.html#assignments",
+    "title": "Week 15",
+    "section": "Assignments",
+    "text": "Assignments\n📘 Exam 3\n✍️ Project Assignment 3: Tableau Dashboard\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-9.html",
+    "href": "weeks/week-9.html",
+    "title": "Week 9",
+    "section": "",
+    "text": "Important\n\n\n\nExam 2 is due on Sunday, March 19"
+  },
+  {
+    "objectID": "weeks/week-9.html#readings",
+    "href": "weeks/week-9.html#readings",
+    "title": "Week 9",
+    "section": "Readings",
+    "text": "Readings\n📖 Mary Cullen, “How to Write and Format a White Paper”"
+  },
+  {
+    "objectID": "weeks/week-9.html#assignments",
+    "href": "weeks/week-9.html#assignments",
+    "title": "Week 9",
+    "section": "Assignments",
+    "text": "Assignments\n📘 Exam 2\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-13.html",
+    "href": "weeks/week-13.html",
+    "title": "Week 13",
+    "section": "",
+    "text": "📖 John Judis, The Politics of Our Time\n\nFor Tuesday, choose one chapter to read from Part I\nFor Thursday, choose one chapter to read from Part II or Part III"
+  },
+  {
+    "objectID": "weeks/week-13.html#readings",
+    "href": "weeks/week-13.html#readings",
+    "title": "Week 13",
+    "section": "",
+    "text": "📖 John Judis, The Politics of Our Time\n\nFor Tuesday, choose one chapter to read from Part I\nFor Thursday, choose one chapter to read from Part II or Part III"
+  },
+  {
+    "objectID": "weeks/week-13.html#slides",
+    "href": "weeks/week-13.html#slides",
+    "title": "Week 13",
+    "section": "Slides",
+    "text": "Slides\n🖥️ The populist backlash in the West\n🖥️ The rise of nationalism and socialism\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-10.html",
+    "href": "weeks/week-10.html",
+    "title": "Week 10",
+    "section": "",
+    "text": "Important\n\n\n\nProject Assignment 1 is due on Sunday, March 26."
+  },
+  {
+    "objectID": "weeks/week-10.html#readings",
+    "href": "weeks/week-10.html#readings",
+    "title": "Week 10",
+    "section": "Readings",
+    "text": "Readings\n📖 Gøsta Esping-Andersen, The Three Worlds of Welfare Capitalism\n📖 Alesina et. al., “Why Doesn’t the United States Have a European-Style Welfare State?”"
+  },
+  {
+    "objectID": "weeks/week-10.html#slides",
+    "href": "weeks/week-10.html#slides",
+    "title": "Week 10",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Welfare states in the OECD\n🖥️ U.S. exceptionalism\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-10.html#assignments",
+    "href": "weeks/week-10.html#assignments",
+    "title": "Week 10",
+    "section": "Assignments",
+    "text": "Assignments\n✍️ Project Assignment 1: Outline and Sources"
+  },
+  {
+    "objectID": "weeks/week-3.html",
+    "href": "weeks/week-3.html",
+    "title": "Week 3",
+    "section": "",
+    "text": "Important\n\n\n\n“Data Assignment 1: Working With Data in Excel” is due on Sunday, February 5"
+  },
+  {
+    "objectID": "weeks/week-3.html#readings",
+    "href": "weeks/week-3.html#readings",
+    "title": "Week 3",
+    "section": "Readings",
+    "text": "Readings\n📖Kaufman and Haggard, “Democratic Decline in the United States”\n📖Michael Ross, The Oil Curse, Chapter 3"
+  },
+  {
+    "objectID": "weeks/week-3.html#slides",
+    "href": "weeks/week-3.html#slides",
+    "title": "Week 3",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Democratic backsliding\n🖥️ The resource curse"
+  },
+  {
+    "objectID": "weeks/week-3.html#assignments",
+    "href": "weeks/week-3.html#assignments",
+    "title": "Week 3",
+    "section": "Assignments",
+    "text": "Assignments\n🧮 Data Assignment 1\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-4.html",
+    "href": "weeks/week-4.html",
+    "title": "Week 4",
+    "section": "",
+    "text": "Important\n\n\n\nExam 1 is due on Sunday, February 12"
+  },
+  {
+    "objectID": "weeks/week-4.html#readings",
+    "href": "weeks/week-4.html#readings",
+    "title": "Week 4",
+    "section": "Readings",
+    "text": "Readings\n📖 Hessami and Lopes da Fonseca, “Female Political Representation and Substantive Effects on Policies”"
+  },
+  {
+    "objectID": "weeks/week-4.html#slides",
+    "href": "weeks/week-4.html#slides",
+    "title": "Week 4",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Women’s empowerment\n🖥️ Exam 1 review"
+  },
+  {
+    "objectID": "weeks/week-4.html#assignments",
+    "href": "weeks/week-4.html#assignments",
+    "title": "Week 4",
+    "section": "Assignments",
+    "text": "Assignments\n📘 Exam 1\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-7.html",
+    "href": "weeks/week-7.html",
+    "title": "Week 7",
+    "section": "",
+    "text": "Important\n\n\n\n“Data Assignment 2: Cleaning & Visualizing Data in Excel” is due on Sunday, March 5"
+  },
+  {
+    "objectID": "weeks/week-7.html#readings",
+    "href": "weeks/week-7.html#readings",
+    "title": "Week 7",
+    "section": "Readings",
+    "text": "Readings\nArchibong et. al., “Washington Consensus Reforms and Economic Performance in Sub-Saharan Africa”\nBenería et. al., “Markets, Globalization and Gender”"
+  },
+  {
+    "objectID": "weeks/week-7.html#slides",
+    "href": "weeks/week-7.html#slides",
+    "title": "Week 7",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Washington consensus reforms\n🖥️ The gendered legacy of reform"
+  },
+  {
+    "objectID": "weeks/week-7.html#videos",
+    "href": "weeks/week-7.html#videos",
+    "title": "Week 7",
+    "section": "Videos",
+    "text": "Videos\n📺 Scatter plot video\n📺 Map video"
+  },
+  {
+    "objectID": "weeks/week-7.html#assignments",
+    "href": "weeks/week-7.html#assignments",
+    "title": "Week 7",
+    "section": "Assignments",
+    "text": "Assignments\n🧮 Data Assignment 2: Cleaning & Visualizing Data in Excel\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "assignments/coding-assignment-1.html",
+    "href": "assignments/coding-assignment-1.html",
+    "title": "Data Assignment 1",
+    "section": "",
+    "text": "Details coming soon…",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "course-description.html",
+    "href": "course-description.html",
+    "title": "Course Description",
+    "section": "",
+    "text": "This course provides a comprehensive introduction to data science, blending theoretical foundations with practical applications. Students will begin with data visualization, learning the essential tools and principles for creating informative and impactful visual representations of data. The course then progresses to data wrangling, where students will clean, manipulate, and prepare data for analysis.\nAs the semester unfolds, students will explore web scraping techniques to gather data from online sources, followed by an examination of the ethical considerations surrounding data collection, privacy, and algorithmic bias. The course then delves into statistical modeling, introducing both linear and logistic regression, and other core methods used in predictive analytics.\nThroughout the course, various special topics, such as bootstrapping, randomization tests, or interactive web applications, will be covered, offering students a chance to explore current trends and tools in data science. The curriculum is designed to equip students with a versatile toolkit, enabling them to tackle real-world data challenges and communicate their findings effectively.",
+    "crumbs": [
+      "Course information",
+      "Description"
+    ]
+  },
+  {
+    "objectID": "course-links.html",
+    "href": "course-links.html",
+    "title": "Useful links",
+    "section": "",
+    "text": "Lecture Recordings\n🔗 on Blackboard\n\n\nProf T’s Zoom Office\n🔗 on Zoom\n\n\nOffice Hours Appointments\n🔗 on Calendly",
+    "crumbs": [
+      "Course information",
+      "Useful links"
+    ]
+  },
+  {
+    "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "href": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "title": "Attribution-ShareAlike 4.0 International",
+    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
+    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\nA. reproduce and Share the Licensed Material, in whole or in part; and\nB. produce, reproduce, and Share Adapted Material.\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\nB. Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\nA. retain the following if it is supplied by the Licensor with the Licensed Material:\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\nB. indicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nC. indicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” The text of the Creative Commons public licenses is dedicated to the public domain under the CC0 Public Domain Dedication. Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org."
+  },
+  {
+    "objectID": "assignments/coding-assignment-2.html",
+    "href": "assignments/coding-assignment-2.html",
+    "title": "Data Assignment 2",
+    "section": "",
+    "text": "Details coming soon…",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "weeks/week-6.html",
+    "href": "weeks/week-6.html",
+    "title": "Week 6",
+    "section": "",
+    "text": "📖 Edward Miguel, “Tribe or Nation?”\n📖 Holland and Ben Ross Schneider, “Easy and Hard Redistribution”"
+  },
+  {
+    "objectID": "weeks/week-6.html#readings",
+    "href": "weeks/week-6.html#readings",
+    "title": "Week 6",
+    "section": "",
+    "text": "📖 Edward Miguel, “Tribe or Nation?”\n📖 Holland and Ben Ross Schneider, “Easy and Hard Redistribution”"
+  },
+  {
+    "objectID": "weeks/week-6.html#slides",
+    "href": "weeks/week-6.html#slides",
+    "title": "Week 6",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Ethnicity and public goods\n🖥️ Democracy and redistribution"
+  },
+  {
+    "objectID": "weeks/week-6.html#videos",
+    "href": "weeks/week-6.html#videos",
+    "title": "Week 6",
+    "section": "Videos",
+    "text": "Videos\n📺 Bar chart video\n📺 Line chart video\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-5.html",
+    "href": "weeks/week-5.html",
+    "title": "Week 5",
+    "section": "",
+    "text": "📖 Stokes et. al., Brokers, Voters and Clientelism, Chapter 1\n📖 Aspinall and Berenschot, Democracy for Sale, Chapter 5"
+  },
+  {
+    "objectID": "weeks/week-5.html#readings",
+    "href": "weeks/week-5.html#readings",
+    "title": "Week 5",
+    "section": "",
+    "text": "📖 Stokes et. al., Brokers, Voters and Clientelism, Chapter 1\n📖 Aspinall and Berenschot, Democracy for Sale, Chapter 5"
+  },
+  {
+    "objectID": "weeks/week-5.html#slides",
+    "href": "weeks/week-5.html#slides",
+    "title": "Week 5",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Programmatic politics vs. clientelism\n🖥️ Vote buying\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-1.html",
+    "href": "weeks/week-1.html",
+    "title": "Week 1",
+    "section": "",
+    "text": "📖 Review the course syllabus and support resources\n📖 Polanyi, The Great Transformation, Chapter 11"
+  },
+  {
+    "objectID": "weeks/week-1.html#readings",
+    "href": "weeks/week-1.html#readings",
+    "title": "Week 1",
+    "section": "",
+    "text": "📖 Review the course syllabus and support resources\n📖 Polanyi, The Great Transformation, Chapter 11"
+  },
+  {
+    "objectID": "weeks/week-1.html#slides",
+    "href": "weeks/week-1.html#slides",
+    "title": "Week 1",
+    "section": "Slides",
+    "text": "Slides\n🖥Polany’s Great Transformation\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-2.html",
+    "href": "weeks/week-2.html",
+    "title": "Week 2",
+    "section": "",
+    "text": "📖 Acemoglu and Robinson, “Rents and Economic Development”\n📖 Cheibub and Vreeland, “Modernization Theory”"
+  },
+  {
+    "objectID": "weeks/week-2.html#readings",
+    "href": "weeks/week-2.html#readings",
+    "title": "Week 2",
+    "section": "",
+    "text": "📖 Acemoglu and Robinson, “Rents and Economic Development”\n📖 Cheibub and Vreeland, “Modernization Theory”"
+  },
+  {
+    "objectID": "weeks/week-2.html#slides",
+    "href": "weeks/week-2.html#slides",
+    "title": "Week 2",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Institutions and Development\n🖥️ Modernization Theory\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-11.html",
+    "href": "weeks/week-11.html",
+    "title": "Week 11",
+    "section": "",
+    "text": "📖 Gumbrell-McCormick and Hyman, “Democracy in Trade Unions, Democracy Through Trade Unions?”\n📖 Hall and Soskice, Varities of Capitalism, Chapter 1"
+  },
+  {
+    "objectID": "weeks/week-11.html#readings",
+    "href": "weeks/week-11.html#readings",
+    "title": "Week 11",
+    "section": "",
+    "text": "📖 Gumbrell-McCormick and Hyman, “Democracy in Trade Unions, Democracy Through Trade Unions?”\n📖 Hall and Soskice, Varities of Capitalism, Chapter 1"
+  },
+  {
+    "objectID": "weeks/week-11.html#slides",
+    "href": "weeks/week-11.html#slides",
+    "title": "Week 11",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Unions and collective bargaining\n🖥️ Varieties of capitalism\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-12.html",
+    "href": "weeks/week-12.html",
+    "title": "Week 12",
+    "section": "",
+    "text": "Important\n\n\n\n“Project Assignment 2: White Paper” is due on Sunday, April 9"
+  },
+  {
+    "objectID": "weeks/week-12.html#readings",
+    "href": "weeks/week-12.html#readings",
+    "title": "Week 12",
+    "section": "Readings",
+    "text": "Readings\n📖 Autor, Dorn and Hanson, “The China Shock”\n📖 Joseph Stiglitz, People, Power, and Profits, Chapter 3"
+  },
+  {
+    "objectID": "weeks/week-12.html#slides",
+    "href": "weeks/week-12.html#slides",
+    "title": "Week 12",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Globalization\n🖥️ Inequality"
+  },
+  {
+    "objectID": "weeks/week-12.html#assignments",
+    "href": "weeks/week-12.html#assignments",
+    "title": "Week 12",
+    "section": "Assignments",
+    "text": "Assignments\n✍️ Project Assignment 2: White Paper\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-8.html",
+    "href": "weeks/week-8.html",
+    "title": "Week 8",
+    "section": "",
+    "text": "Important\n\n\n\nExam 2 is due on Sunday, March 19."
+  },
+  {
+    "objectID": "weeks/week-8.html#readings",
+    "href": "weeks/week-8.html#readings",
+    "title": "Week 8",
+    "section": "Readings",
+    "text": "Readings\n📖 James Putzel, “The ‘Populist’ Right Challenge to Neoliberalism”\n📖 Mary Cullen, “How to Write and Format a White Paper”"
+  },
+  {
+    "objectID": "weeks/week-8.html#slides",
+    "href": "weeks/week-8.html#slides",
+    "title": "Week 8",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Populism and social policy\n🖥️ Exam 2 review"
+  },
+  {
+    "objectID": "weeks/week-8.html#assignments",
+    "href": "weeks/week-8.html#assignments",
+    "title": "Week 8",
+    "section": "Assignments",
+    "text": "Assignments\n📘 Exam 2\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-14.html",
+    "href": "weeks/week-14.html",
+    "title": "Week 14",
+    "section": "",
+    "text": "📖 Aklin and Matto, “Prisoners of the Wrong Dilemma”"
+  },
+  {
+    "objectID": "weeks/week-14.html#readings",
+    "href": "weeks/week-14.html#readings",
+    "title": "Week 14",
+    "section": "",
+    "text": "📖 Aklin and Matto, “Prisoners of the Wrong Dilemma”"
+  },
+  {
+    "objectID": "weeks/week-14.html#slides",
+    "href": "weeks/week-14.html#slides",
+    "title": "Week 14",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Climate change and collective action\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "instructor.html",
+    "href": "instructor.html",
+    "title": "Instructor",
+    "section": "",
+    "text": "Emmanuel Teitelbaum is an associate professor of political science and international affairs at the The George Washington University His research and writing explore how class conflict and compromise intersect with democracy and development. He also has a strong interest in labor standards and understanding how labor unions, nonprofit organizations, consumers and corporations can help to promote them.\nAt GW, Professor Teitelbaum teaches courses on comparative politics, comparative political economy and data science. He is on faculty in the Department of Political Science and the Elliott School of International Affairs and is affiliated with the Sigur Center for Asian Studies as well as the Institute for International Economic Policy.",
+    "crumbs": [
+      "Course information",
+      "Instructor"
+    ]
+  },
+  {
+    "objectID": "instructor.html#office-hours",
+    "href": "instructor.html#office-hours",
+    "title": "Instructor",
+    "section": "Office Hours",
+    "text": "Office Hours\nProfessor Teitelbaum’s office hours are on Mondays from 3:00 p.m. to 5:00 p.m. Please sign up for a slot (or two) on his Calendly page. He is available for consultation virtually on Zoom or in his office at 411 Monroe Hall (2115 G. ST NW).",
+    "crumbs": [
+      "Course information",
+      "Instructor"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This site was built with Quarto and is based on a template provided by Mine Çetinkaya-Rundel under a Creative Commons Attribution-NonCommercial 4.0 Iicense."
+  },
+  {
+    "objectID": "project/project-assignment-3.html",
+    "href": "project/project-assignment-3.html",
+    "title": "Project Assignment 3",
+    "section": "",
+    "text": "Details coming soon…",
+    "crumbs": [
+      "Project",
+      "Assignment 3"
+    ]
+  },
+  {
+    "objectID": "project/project-assignment-1.html",
+    "href": "project/project-assignment-1.html",
+    "title": "Project Assignment 1",
+    "section": "",
+    "text": "Details coming soon…",
+    "crumbs": [
+      "Project",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "course-support.html",
+    "href": "course-support.html",
+    "title": "Support",
+    "section": "",
+    "text": "Writing Center GW’s Writing Center cultivates confident writers in the University community by facilitating collaborative, critical, and inclusive conversations at all stages of the writing process. Working alongside peer mentors, writers develop strategies to write independently in academic and public settings. Appointments can be booked online here.\nAcademic Commons Academic Commons provides tutoring and other academic support resources to students in many courses. Students can schedule virtual one-on-one appointments or attend virtual drop-in sessions. Students may schedule an appointment, review the tutoring schedule, access other academic support resources, or obtain assistance here.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#academic-support",
+    "href": "course-support.html#academic-support",
+    "title": "Support",
+    "section": "",
+    "text": "Writing Center GW’s Writing Center cultivates confident writers in the University community by facilitating collaborative, critical, and inclusive conversations at all stages of the writing process. Working alongside peer mentors, writers develop strategies to write independently in academic and public settings. Appointments can be booked online here.\nAcademic Commons Academic Commons provides tutoring and other academic support resources to students in many courses. Students can schedule virtual one-on-one appointments or attend virtual drop-in sessions. Students may schedule an appointment, review the tutoring schedule, access other academic support resources, or obtain assistance here.",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
+  },
+  {
+    "objectID": "course-support.html#support-for-students-outside-the-classroom",
+    "href": "course-support.html#support-for-students-outside-the-classroom",
+    "title": "Support",
+    "section": "Support for students outside the classroom",
+    "text": "Support for students outside the classroom\nDisability Support Services (DSS) 202-994-8250 Any student who may need an accommodation based on the potential impact of a disability should contact Disability Support Services to establish eligibility and to coordinate reasonable accommodations.\nCounseling and Psychological Services 202-994-5300 GW’s Colonial Health Center offers counseling and psychological services, supporting mental health and personal development by collaborating directly with students to overcome challenges and difficulties that may interfere with academic, emotional, and personal success.\nGW aims to create a community that cares for each other.The CARE Team fosters this goal by creating a pathway through which students who may need additional support can be identified and referred to the most appropriate services. Through the CARE Team, students are given the support they need to persist and succeed at GW and beyond.\nSafety and Security:\n\nIn an emergency: call GWPD 202-994-6111 or 911.\nFor situation-specific actions: review the Emergency Response Handbook\nStay informed: safety.gwu.edu/stay-informed",
+    "crumbs": [
+      "Course information",
+      "Support"
+    ]
   }
 ]

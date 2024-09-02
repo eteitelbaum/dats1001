@@ -8,7 +8,7 @@ website:
   repo-url: "https://github.com/dats1001-fall-2024"
   repo-actions: [edit, issue]
   open-graph: true
-  favicon: "images/cpe_logo.png"
+  favicon: "images/ds4all-logo.png"
   twitter-card: true
   page-footer:
     right: "This page is built with [Quarto](https://quarto.org/). 👷🛠️"
@@ -82,5 +82,6 @@ format:
     code-copy: true
     code-overflow: wrap
     toc: true
+    link-external-newwindow: true
 freeze: auto
 editor: source
