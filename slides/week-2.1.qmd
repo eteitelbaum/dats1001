@@ -1,0 +1,402 @@
+---
+title: R Coding Basics
+#subtitle: 
+date: today
+date-format: long
+footer: "[DATS 1001 Website](https://ds4all.rocks)"
+logo: images/ds4all-logo.png
+format:
+  revealjs:
+    theme: [simple, custom.scss]
+    transition: fade
+    slide-number: true
+    #multiplex: true
+    chalkboard: true
+execute:
+  echo: false
+  message: false
+  warning: false
+  freeze: auto
+---
+
+# R Programming Basics
+
+## What Can R Do? 
+
+<br>
+
+::: incremental
+- R is a powerful language for data analysis and visualization
+- It is also a general-purpose programming language
+- Does everything from web development to machine learning
+- It is open-source and has a large community of users and developers
+:::
+
+## R as a Calculator
+
+<br>
+
+- R can be used as a simple calculator
+- You can perform arithmetic operations on numbers
+
+```{r}
+#| label: arithmetic
+#| echo: true
+
+# Addi a number and store it to a value
+sum_of_2plus2 <- 2 + 2
+
+
+sum_of_2plus2
+```
+
+## Some Common Arithmetic Operators
+
+<br>
+
+- `+` addition
+- `-` subtraction
+- `*` multiplication
+- `/` division
+- `^` exponentiation (also `**`)
+
+## Functions
+
+- A function is a set of instructions that produces some output
+- In R, you can use built-in functions to perform specific tasks
+- For example, you can use the `mean()` function to calculate the average of a set of numbers
+- To do this you have to use the combine function `c()` to create a vector of numbers
+
+## 
+
+<br> 
+
+Create a vector of numbers and take the mean...
+
+<br>
+
+```{r}
+#| label: mean
+#| echo: true
+
+# Create a vector of numbers
+numbers <- c(1, 2, 3, 4, 5)
+
+# Calculate the mean of the numbers
+mean(numbers)
+```
+
+## Some Common Base R Functions {.smaller}
+
+- `mean()` calculates the mean of a set of numbers
+- `median()` calculates the median of a set of numbers
+- `sd()` calculates the standard deviation of a set of numbers
+- `sum()` calculates the sum of a set of numbers
+- `length()` calculates the length of a vector
+- `max()` and `min()` calculate the maximum and minimum values of a vector
+- `round()` rounds a number to a specified number of decimal places
+- `sqrt()` calculates the square root of a number
+- `log()` calculates the natural logarithm of a number
+- `exp()` calculates the exponential of a number
+- `abs()` calculates the absolute value of a number
+
+# Packages
+
+## From Functions to Packages {.smaller}
+
+<br>
+
+::: {.incremental}
+-   A *function* is a set of instructions
+    -   `read_csv()` is a function
+    -   `ggplot()` is a function
+-   A *package* is a collection of functions
+    -   `readr` is a package that contains the `read_csv()` function
+    -   `ggplot2` is a package that contains the `ggplot()` function
+-   Use `install.packages()` to install packages
+-   Use `library()` to load packages
+-   You can install packages from CRAN
+:::
+
+## The Tidyverse {.smaller}
+
+::: {.incremental}
+-   The Tidyverse is a collection of data science packages
+-   It is also considered a dialect of R
+-   In this class, we will be using many Tidyverse packages
+    -   `ggplot2` for data visualization
+    -   `readr` for reading data
+    -   `dplyr` for data manipulation
+    -   `tidyr` for data tidying
+    -   Etc.
+-   At first we will load the packages independently, e.g. `library(ggplot2)`
+-   Later we will load them all at once with `library(tidyverse)`
+:::
+
+# Objects
+
+## What is an Object?
+
+::: incremental
+- An object in R is a data structure used to store data
+- It can vary from simple scalar types to more complex data structures like vectors, lists, or data frames
+- Objects hold not only data but also information about the type of data and the operations that can be performed on them
+- Every entity in R is considered an object, making R a language based around the manipulation of objects
+:::
+
+## How to Store Data
+
+- In R, you can store data in objects using the assignment operator `<-`
+- The object name is on the left of `<-`, and the data or value you wish to assign to the object is on the right
+- Then you can print the object to the console using the object name
+
+```{r}
+#| label: objects
+#| echo: true
+
+# Store the value 42 in the object my_number
+my_number <- 42
+
+# Print the value of my_number
+my_number 
+```
+
+## When to Store Data in Objects
+
+<br>
+
+- Note that you don't always have to store data in objects
+- You should mostly store data in objects when you want to use the data later
+- If you only need to use the data once, you can just use the data directly
+
+```{r}
+#| label: arithmetic2
+#| echo: true
+
+# Add two numbers without storing them in an object
+2 + 2
+```
+
+## Your Turn!
+
+<br>
+
+- Go to the Week 2 module on Posit Cloud
+- Work through the first set of challenges there
+- When prompted, do Quiz 1
+
+```{r}
+#| label: timer0
+
+library(countdown)
+countdown(minutes = 5, 
+          id = "timer0", 
+          bottom = "10%",
+          right = "10%",
+          color_border = "#fff",
+          color_text = "#fff",
+          color_running_background = "#42affa",
+          color_running_text = "black",
+          color_finished_background = "#E5D19D",
+          color_finished_text = "#00264A")
+```
+
+# Three Examples
+
+## Let's get going . . .
+
+<br>
+
+Let's open up the Getting Started module on Posit Cloud...
+
+And work through the examples there.
+
+## Example: Make a map!
+
+```{r}
+#| label: leaflet_map
+
+library(leaflet)
+leaflet() %>% 
+  addTiles() %>%   # Add default OpenStreetMap map tiles
+  addMarkers(lat = 38.90243843683386, lng =  -77.0443814477152, 
+             label = "Elliott School of International Affairs")
+```
+
+## Example: Make a map!
+
+<br>
+
+```{r}
+#| label: leaflet_map2
+#| echo: true
+#| eval: false
+  
+library(leaflet)
+leaflet() %>% 
+  addTiles() %>%   # Add default OpenStreetMap map tiles
+  addMarkers(lat = 38.90243843683386, lng =  -77.0443814477152, 
+             label = "Elliott School of International Affairs")
+```
+
+```{r}
+#| label: timer1
+
+library(countdown)
+countdown(minutes = 5, 
+          id = "timer1")
+```
+
+## Example: Plotting Democracy Over Time
+
+```{r}
+#| label: plot_democracy
+
+# Load the packages
+library(vdemlite)
+library(ggplot2)
+
+# Use vdemlite to extract democracy scores for France and INdia
+dem_data <- fetchdem(indicators = "v2x_polyarchy",
+                     countries = c("FRA", "IND"))
+
+# And now we can plot the data
+ggplot(dem_data, aes(y = v2x_polyarchy, x = year, color=country_name)) +
+  geom_line() +
+  theme_minimal() +
+  xlab("Year") +
+  ylab("Electoral Democracy Index") +
+  ggtitle("Electoral Democracy, 1970-2022") +
+  geom_hline(yintercept = .5, linetype = "dashed", color = "grey") +
+   scale_color_manual(name="Country", values=c("#E69F00", "#56B4E9")) +
+  ylim(0, 1)
+```
+
+## Example: Plotting Democracy Over Time
+
+```{r}
+#| label: plot_democracy2
+#| echo: true
+#| eval: false
+
+# Load the packages
+library(vdemlite)
+library(ggplot2)
+
+# Use vdemlite to extract democracy scores for France and INdia
+dem_data <- fetchdem(indicators = "v2x_polyarchy",
+                     countries = c("FRA", "IND"))
+
+# And now we can plot the data
+ggplot(dem_data, aes(y = v2x_polyarchy, x = year, color=country_name)) +
+  geom_line() +
+  theme_minimal() +
+  xlab("Year") +
+  ylab("Electoral Democracy Index") +
+  ggtitle("Electoral Democracy, 1970-2022") +
+  geom_hline(yintercept = .5, linetype = "dashed", color = "grey") +
+   scale_color_manual(name="Country", values=c("#E69F00", "#56B4E9")) +
+  ylim(0, 1)
+```
+
+```{r}
+#| label: timer2
+
+library(countdown)
+countdown(minutes = 5, 
+          id = "timer2",
+          bottom = "0%",
+          right = "10%")
+```
+
+## Example: UN Voting Trends
+
+```{r}
+#| label: un_voting
+
+library(tidyverse)
+library(unvotes)
+library(lubridate)
+library(scales)
+library(pacman)
+
+unvotes <- un_votes %>%
+  inner_join(un_roll_calls, by = "rcid") %>%
+  inner_join(un_roll_call_issues, by = "rcid")
+
+unvotes %>%
+  # then filter out to only include the countries we want
+  filter(country %in% c("South Africa", "United States", "France")) %>%
+  # then make sure R understands the the year variable is a data
+  mutate(year = year(date)) %>%
+  # Then group the data by country and year
+  group_by(country, year, issue) %>%
+  # then take the average Yes votes for each country_year
+  summarize(percent_yes = mean(vote == "yes")) %>%
+  # then make a nice plot
+  ggplot(mapping = aes(x = year, y = percent_yes, color = country)) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "loess", se = FALSE) +
+  facet_wrap(~issue) +
+  scale_y_continuous(labels = percent) +
+  scale_color_manual( values=c("#E69F00", "#56B4E9", "#009E73")) +
+  labs(
+    title = "Percentage of 'Yes' votes in the UN General Assembly",
+    subtitle = "1946 to 2019",
+    y = "% Yes",
+    x = "Year",
+    color = "Country"
+  )
+```
+
+## Example: UN Voting Trends
+
+```{r}
+#| label: un_voting2
+#| echo: true
+#| eval: false
+
+library(tidyverse)
+library(unvotes)
+library(lubridate)
+library(scales)
+library(pacman)
+
+unvotes <- un_votes %>%
+  inner_join(un_roll_calls, by = "rcid") %>%
+  inner_join(un_roll_call_issues, by = "rcid")
+
+unvotes %>%
+  # then filter out to only include the countries we want
+  filter(country %in% c("South Africa", "United States", "France")) %>%
+  # then make sure R understands the the year variable is a data
+  mutate(year = year(date)) %>%
+  # Then group the data by country and year
+  group_by(country, year, issue) %>%
+  # then take the average Yes votes for each country_year
+  summarize(percent_yes = mean(vote == "yes")) %>%
+  # then make a nice plot
+  ggplot(mapping = aes(x = year, y = percent_yes, color = country)) +
+  geom_point(alpha = 0.4) +
+  geom_smooth(method = "loess", se = FALSE) +
+  facet_wrap(~issue) +
+  scale_y_continuous(labels = percent) +
+  scale_color_manual( values=c("#E69F00", "#56B4E9", "#009E73")) +
+  labs(
+    title = "Percentage of 'Yes' votes in the UN General Assembly",
+    subtitle = "1946 to 2019",
+    y = "% Yes",
+    x = "Year",
+    color = "Country"
+  )
+```
+
+```{r}
+#| label: timer3
+
+library(countdown)
+countdown(minutes = 5, 
+          id = "timer3",
+          bottom = "8",
+          right = "10%")
+```
