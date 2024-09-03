@@ -183,7 +183,6 @@ my_number
 
 - Go to the Week 2 module on Posit Cloud
 - Work through the first set of challenges there
-- When prompted, do Quiz 1
 
 ```{r}
 #| label: timer0
