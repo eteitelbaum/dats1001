@@ -1,0 +1,508 @@
+---
+title: Line Charts & Scatter Plots
+date: today
+date-format: long
+footer: "[DATS 1001 Website](https://ds4all.rocks)"
+logo: images/ds4all-logo.png
+format:
+  revealjs:
+    theme: [simple, custom.scss]
+    transition: fade
+    slide-number: true
+    #multiplex: true
+    chalkboard: true
+execute:
+  echo: true
+  message: false
+  warning: false
+  freeze: auto
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(vdemdata)
+library(plotly)
+library(WDI)
+
+theme_set(theme_minimal())
+```
+
+```{r}
+#| label: vdem_setup
+#| include: false
+
+polyarchy_annual <- vdem %>%
+  group_by(year) %>%
+  summarize(
+    polyarchy = mean(v2x_polyarchy, na.rm = TRUE),
+    gdp_pc = mean(e_gdppc, na.rm = TRUE)*1000
+  ) %>%
+  mutate(
+    wave = case_when(year <= 1827 ~ "pre 1st wave",
+                       year > 1827 & year <= 1926 ~ "1st wave", 
+                       year > 1926 & year <= 1945 ~ "1st rev. wave",
+                       year > 1945 & year <= 1962 ~ "2nd wave", 
+                       year > 1962 & year <= 1973 ~ "2nd rev. wave", 
+                       year > 1973 & year <= 2010 ~ "3rd wave", 
+                       year > 2010 ~ "3rd rev. wave") %>%
+      factor(levels = c("pre 1st wave", "1st wave", "1st rev. wave",
+                        "2nd wave", "2nd rev. wave", "3rd wave", "3rd rev. wave"))
+  ) %>%
+  drop_na()
+```
+
+```{r}
+#| label: dem_waves_setup
+#| include: false
+
+# library(vdemdata)
+# library(tidyverse)
+# 
+# dem_waves_ctrs <- vdem |>
+#   select(
+#     country = country_name,     
+#     year, 
+#     polyarchy = v2x_polyarchy, 
+#   ) |>
+#   filter( 
+#     country %in% c("United States of America", # select countries in this list
+#                    "Japan", 
+#                    "Portugal")
+#     )
+# 
+# write_csv(dem_waves_ctrs, "data/dem_waves_ctrs.csv")
+```
+
+## Huntington's Three Waves
+
+<br>
+
+```{r}
+#| label: huntington
+#| echo: false
+
+region_plot <- ggplot(polyarchy_annual, aes(x = gdp_pc, y = polyarchy)) + 
+  geom_point(aes(color = wave)) + 
+  geom_smooth(method = "lm", se = FALSE, size = .75) + 
+  scale_x_log10(label = scales::label_dollar()) +
+  aes(label = year) +
+  labs(x= "GDP Per Capita", y = "Polyarchy Score",
+       title = "Democracy, development and Huntington's three waves") +
+  scale_color_discrete(name = "Wave")
+
+ggplotly(region_plot, tooltip = c("year", "polyarchy")) %>% 
+  # adjust width
+  layout(width = 1000, height = 450) %>%
+  # add source
+  layout(annotations = list(text = "Source: The V-Dem Institute, Varities of Democracy Dataset",  
+                            font = list(size = 10), showarrow = FALSE,
+                            xref = 'paper', x = 1, xanchor = 'right', xshift = 100,
+                            yref = 'paper', y = -.1, yanchor = 'auto', yshift = 0)) %>%
+  # add web address
+  layout(annotations = list(text = "www.psc2339.com", 
+                            font = list(size = 10, color = 'grey'), showarrow = FALSE,
+                            xref = 'paper', x = .5, xanchor = 'center', xshift = 0,
+                            yref = 'paper', y = 1, yanchor = 'top', yshift = 0))
+```
+
+## Line Chart
+
+```{r}
+#| label: geom_line1
+#| echo: false
+
+# load data
+dem_waves_ctrs <- read_csv("data/dem_waves_ctrs.csv")
+
+# in this ggplot() call, we add a third dimension for line color
+ggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +
+  geom_line(linewidth = 1) + # our geom is a line with a width of 1
+  labs(
+    x = "Year", 
+    y = "Polyarchy Score", 
+    title = 'Democracy in countries representing three different "waves"', 
+    caption = "Source: V-Dem Institute", 
+    color = "Country" # make title of legend to upper case
+  )
+```
+
+##
+
+<br>
+
+Here is the code... 
+
+<br>
+
+```{r}
+#| label: geom_line2
+#| eval: false
+
+# in this ggplot() call, we add a third dimension for line color
+ggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +
+  geom_line(linewidth = 1) + # our geom is a line with a width of 1
+  labs(
+    x = "Year", 
+    y = "Polyarchy Score", 
+    title = 'Democracy in countries representing three different "waves"', 
+    caption = "Source: V-Dem Institute", 
+    color = "Country" # make title of legend to upper case
+  )
+```
+
+## 
+
+<br>
+
+Use `geom_line()` to specify a line chart... 
+
+<br>
+
+```{r}
+#| label: geom_line3
+#| eval: false
+#| code-line-numbers: "3"
+
+# in this ggplot() call, we add a third dimension for line color
+ggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +
+  geom_line(linewidth = 1) + # our geom is a line with a width of 1
+  labs(
+    x = "Year", 
+    y = "Polyarchy Score", 
+    title = 'Democracy in countries representing three different "waves"', 
+    caption = "Source: V-Dem Institute", 
+    color = "Country" # make title of legend to upper case
+  )
+```
+
+## 
+
+<br>
+
+Add third dimension to the `aes()` call for line color...
+
+<br>
+
+```{r}
+#| label: geom_line4
+#| eval: false
+#| code-line-numbers: "2"
+
+# in this ggplot() call, we add a third dimension for line color
+ggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +
+  geom_line(linewidth = 1) + # our geom is a line with a width of 1
+  labs(
+    x = "Year", 
+    y = "Polyarchy Score", 
+    title = 'Democracy in countries representing three different "waves"', 
+    caption = "Source: V-Dem Institute", 
+    color = "Country" # make title of legend to upper case
+  )
+```
+
+## 
+
+<br>
+
+Modify the legend title...
+
+<br>
+
+```{r}
+#| label: geom_line5
+#| eval: false
+#| code-line-numbers: "9"
+
+# in this ggplot() call, we add a third dimension for line color
+ggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +
+  geom_line(linewidth = 1) + # our geom is a line with a width of 1
+  labs(
+    x = "Year", 
+    y = "Polyarchy Score", 
+    title = 'Democracy in countries representing three different "waves"', 
+    caption = "Source: V-Dem Institute", 
+    color = "Country" # make title of legend to upper case
+  )
+```
+
+## Your Turn!
+
+<br>
+
+- See table three of [this article](https://kurzman.unc.edu/wp-content/uploads/sites/1410/2011/06/Kurzman_Waves_of_Democratization.pdf)
+- Select three countries to visualize
+- Adjust setup code to filter data on those countries 
+- Visualize with `geom_line()`
+
+```{r}
+#| label: timer1
+#| echo: false
+
+countdown::countdown(minutes = 10, 
+                     id = "timer1", 
+                     bottom = "10%", 
+                     right = "10%",
+                     color_border = "#fff",
+                     color_text = "#fff",
+                     color_running_background = "#42affa",
+                     color_running_text = "black",
+                     color_finished_background = "#E5D19D",
+                     color_finished_text = "#00264A")
+```
+
+## Scatter Plot Setup
+
+<br>
+
+```{r}
+#| label: scatter_plot_setup
+
+dem_summary_ctry <- read_csv("data/dem_women.csv") |>
+  group_by(country, region) |> # group by country, keep region
+  summarize(
+    polyarchy = mean(polyarchy, na.rm = TRUE),
+    gdp_pc = mean(gdp_pc, na.rm = TRUE), 
+    flfp = mean(flfp, na.rm = TRUE), 
+    women_rep = mean(women_rep, na.rm = TRUE)
+  )
+```
+
+## Scatter Plot
+
+```{r}
+#| label: scatter1
+#| code-fold: true
+
+ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) + 
+  geom_point() + # use geom_point() for scatter plots
+  scale_x_log10(labels = scales::label_number(prefix = "$", suffix = "k")) +
+  labs(
+    x= "GDP per Capita", 
+    y = "Polyarchy Score",
+    title = "Wealth and democracy, 1990 - present", 
+    caption = "Source: V-Dem Institute", 
+    color = "Region",
+    size = "Women Reps"
+    ) 
+```
+
+## Scatter Plot
+
+<br>
+
+Use `geom_point()`...
+
+```{r}
+#| label: scatter2
+#| eval: false
+#| code-line-numbers: "2"
+
+ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) +
+  geom_point() + # use geom_point() for scatter plots
+  scale_x_log10(labels = scales::label_number(prefix = "$", suffix = "k")) +
+  labs(
+    x= "GDP per Capita", 
+    y = "Polyarchy Score",
+    title = "Wealth and democracy, 1990 - present", 
+    caption = "Source: V-Dem Institute", 
+    color = "Region",
+    size = "Women Reps"
+    ) 
+```
+
+## Scatter Plot
+
+<br>
+
+Four dimensions... 
+
+```{r}
+#| label: scatter3
+#| eval: false
+#| code-line-numbers: "1-1"
+
+ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) + 
+  geom_point() + # use geom_point() for scatter plots
+  scale_x_log10(labels = scales::label_number(prefix = "$", suffix = "k")) +
+  labs(
+    x= "GDP per Capita", 
+    y = "Polyarchy Score",
+    title = "Wealth and democracy, 1990 - present", 
+    caption = "Source: V-Dem Institute", 
+    color = "Region",
+    size = "Women Reps"
+    ) 
+```
+
+## Scatter Plot
+
+<br>
+
+Stretch axis on log scale and use `scales` package to adjust labels...
+
+```{r}
+#| label: scatter4
+#| eval: false
+#| code-line-numbers: "3"
+
+ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) + 
+  geom_point() + # use geom_point() for scatter plots
+  scale_x_log10(labels = scales::label_number(prefix = "$", suffix = "k")) +
+  labs(
+    x= "GDP per Capita", 
+    y = "Polyarchy Score",
+    title = "Wealth and democracy, 1990 - present", 
+    caption = "Source: V-Dem Institute", 
+    color = "Region",
+    size = "Women Reps"
+    ) 
+```
+
+
+## Scatter Plot
+
+<br>
+
+Change legend titles... 
+
+```{r}
+#| label: scatter5
+#| eval: false
+#| code-line-numbers: "9-10"
+
+ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) + 
+  geom_point() + # use geom_point() for scatter plots
+  scale_x_log10(labels = scales::label_number(prefix = "$", suffix = "k")) +
+  labs(
+    x= "GDP per Capita", 
+    y = "Polyarchy Score",
+    title = "Wealth and democracy, 1990 - present", 
+    caption = "Source: V-Dem Institute", 
+    color = "Region",
+    size = "Women Reps"
+    ) 
+```
+
+## Your Turn! 
+
+- There are four variables in `dem_summary_ctry`
+- Pick one related to women's empowerment
+- Visualize it on the y-axis with `gdp_pc` or `polyarchy` on the x-axis 
+- Change labels and legend titles to match your visualization
+- Interpret your plot
+
+```{r}
+#| label: dem_waves_time
+#| echo: false
+
+countdown::countdown(minutes = 5, 
+                     id = "women_emp")
+```
+
+## Add a Trend Line
+
+```{r}
+#| label: trend_line1
+#| echo: false
+
+ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + 
+  geom_point(aes(color = region)) + 
+  geom_smooth(method = "lm", linewidth = 1) + 
+  scale_x_log10(labels = scales::label_number(prefix = "$", suffix = "k")) +
+  labs(
+    x= "GDP per Capita", 
+    y = "Polyarchy Score",
+    title = "Wealth and democracy, 1990 - present", 
+    caption = "Source: V-Dem Institute", 
+    color = "Region"
+    ) 
+```
+
+## Add a Trend Line
+
+<br>
+
+```{r}
+#| label: trend_line2
+#| eval: false
+#| code-line-numbers: "3"
+ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + 
+  geom_point(aes(color = region)) + 
+  geom_smooth(method = "lm", linewidth = 1) + 
+  scale_x_log10(labels = scales::label_number(prefix = "$", suffix = "k")) +
+  labs(
+    x= "GDP per Capita", 
+    y = "Polyarchy Score",
+    title = "Wealth and democracy, 1990 - present", 
+    caption = "Source: V-Dem Institute", 
+    color = "Region"
+    ) 
+```
+
+## Add a Trend Line
+
+<br>
+
+Taking out size and adding color to `geom_point()` call...
+
+```{r}
+#| label: trend_line3
+#| eval: false
+#| code-line-numbers: "1-2"
+ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + 
+  geom_point(aes(color = region)) + 
+  geom_smooth(method = "lm", linewidth = 1) + 
+  scale_x_log10(labels = scales::label_number(prefix = "$", suffix = "k")) +
+  labs(
+    x= "GDP per Capita", 
+    y = "Polyarchy Score",
+    title = "Wealth and democracy, 1990 - present", 
+    caption = "Source: V-Dem Institute", 
+    color = "Region"
+    ) 
+```
+
+## Add a Trend Line
+
+<br>
+
+Changing legend titles...
+
+```{r}
+#| label: trend_line4
+#| eval: false
+#| code-line-numbers: "5-11"
+ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + 
+  geom_point(aes(color = region)) + 
+  geom_smooth(method = "lm", linewidth = 1) + 
+  scale_x_log10(labels = scales::label_number(prefix = "$", suffix = "k")) +
+  labs(
+    x= "GDP per Capita", 
+    y = "Polyarchy Score",
+    title = "Wealth and democracy, 1990 - present", 
+    caption = "Source: V-Dem Institute", 
+    color = "Region"
+    ) 
+```
+
+## Your Turn! 
+
+<br>
+
+- Add a trendline to your plot
+- Change the labels accordingly
+- Try using `method = "loess"` instead of a "lm"
+
+```{r}
+#| label: timer2
+#| echo: false
+
+countdown::countdown(minutes = 5, 
+                     id = "timer2", 
+                     bottom = "10%", 
+                     right = "10%")
+```
+
