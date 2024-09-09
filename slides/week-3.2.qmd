@@ -1,5 +1,5 @@
 ---
-title: Line Charts & Scatter Plots
+title: Which Visualization Should I Use?
 date: today
 date-format: long
 footer: "[DATS 1001 Website](https://ds4all.rocks)"

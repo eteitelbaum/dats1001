@@ -11,8 +11,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.533">
 
-  <meta name="dcterms.date" content="2024-09-08">
-  <title>DATS 1001–Fall Schedule - Bar Charts and Histograms</title>
+  <meta name="dcterms.date" content="2024-09-09">
+  <title>DATS 1001–Fall Schedule - Grammar of Graphics</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -390,9 +390,9 @@
   </style>
   <link href="../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
   <script src="../site_libs/countdown-0.4.0/countdown.js"></script>
-<meta property="og:title" content="DATS 1001–Fall Schedule - Bar Charts and Histograms">
+<meta property="og:title" content="DATS 1001–Fall Schedule - Grammar of Graphics">
 <meta property="og:site_name" content="DATS 1001--Fall Schedule">
-<meta name="twitter:title" content="DATS 1001–Fall Schedule - Bar Charts and Histograms">
+<meta name="twitter:title" content="DATS 1001–Fall Schedule - Grammar of Graphics">
 <meta name="twitter:card" content="summary">
 </head>
 <body class="quarto-dark">
@@ -400,12 +400,12 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Bar Charts and Histograms</h1>
+  <h1 class="title">Grammar of Graphics</h1>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">September 8, 2024</p>
+  <p class="date">September 9, 2024</p>
 </section>
 <section id="types-of-visualizations" class="slide level2 smaller">
 <h2>Types of Visualizations</h2>
@@ -493,6 +493,20 @@
 <div class="sourceCode cell-code" id="cb3" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(dem_summary, <span class="fu">aes</span>(<span class="at">x =</span> region, <span class="at">y =</span> polyarchy)) <span class="sc">+</span> </span>
 <span id="cb3-2"><a></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><br></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>See <a href="http://sape.inf.usi.ch/quick-reference/ggplot2/colour">here</a> for more <code>available</code>ggplot2` colors.</p>
+</div>
+</div>
+</div>
 </section>
 <section id="section-5" class="slide level2">
 <h2></h2>
@@ -558,6 +572,20 @@
 <span id="cb6-6"><a></a>    <span class="at">title =</span> <span class="st">"Democracy by region, 1990 - present"</span>, </span>
 <span id="cb6-7"><a></a>    <span class="at">caption =</span> <span class="st">"Source: V-Dem Institute"</span></span>
 <span id="cb6-8"><a></a>    ) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><br></p>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>See <a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">here</a> for available <code>ggplot2</code> themes.</p>
+</div>
+</div>
 </div>
 </section>
 <section id="section-11" class="slide level2">
@@ -631,11 +659,12 @@
 
 </div>
 <img data-src="week-3.1_files/figure-revealjs/barchart19-1.png" width="960" class="r-stretch"></section>
-<section id="your-turn" class="slide level2">
+<section id="your-turn" class="slide level2 smaller">
 <h2>Your Turn!</h2>
+<p><br></p>
 <ol type="1">
 <li><code>glimpse()</code> the data</li>
-<li>Find a new variable to visualize</li>
+<li>Find a new variable to visualize<sup>1</sup></li>
 <li>Make a bar chart with it</li>
 <li>Change the <a href="http://sape.inf.usi.ch/quick-reference/ggplot2/colour">color</a> of the bars</li>
 <li>Order the bars</li>
@@ -648,11 +677,11 @@
 <div class="cell-output-display">
 <div class="countdown" id="timer1" data-update-every="1" tabindex="0" style="right:10%;bottom:10%;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
 </div>
 </div>
-</section>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Data for GDP per capita spotty after 2015</p></li></ol></aside></section>
 <section>
 <section id="histograms" class="title-slide slide level1 center">
 <h1>Histograms</h1>
@@ -660,13 +689,23 @@
 </section>
 <section id="purpose-of-histograms" class="slide level2">
 <h2>Purpose of Histograms</h2>
+<p><br></p>
 <ul>
 <li>Histograms are used to visualize the distribution of a single variable</li>
-<li>They are used for continuous variables (e.g., income, age, etc.)</li>
-<li>A <em>continuous</em> variable is one that can take on any value within a range (e.g., 0.5, 1.2, 3.7, etc.)</li>
-<li>A <em>discrete</em> variable is one that can only take on certain values (e.g., 1, 2, 3, etc.)</li>
 <li>x-axis represents value of variable of interest</li>
 <li>y-axis represents the frequency of that value</li>
+</ul>
+</section>
+<section id="purpose-of-histograms-1" class="slide level2">
+<h2>Purpose of Histograms</h2>
+<p><br></p>
+<ul>
+<li>They are generally used for continuous variables (e.g., income, age, etc.)
+<ul>
+<li>A <em>continuous</em> variable is one that can take on any value within a range (e.g., 0.5, 1.2, 3.7, etc.)</li>
+<li>A <em>discrete</em> variable is one that can only take on certain values (e.g., 1, 2, 3, etc.)</li>
+</ul></li>
+<li>Typically, the height of the bar represents the number of observations which fall in that bin</li>
 </ul>
 </section>
 <section id="example" class="slide level2">
@@ -699,13 +738,13 @@
 <span id="cb14-20"><a></a>    ) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="change-number-of-bins" class="slide level2">
-<h2>Change Number of Bins</h2>
+<section id="histogram-code-1" class="slide level2">
+<h2>Histogram Code</h2>
 <p><br></p>
-<p>Change number of bins (bars) using <code>bins</code> or <code>binwidth</code> arguments (default number of bins = 30):</p>
+<p>Note that you only need to specify the x axis variable in the <code>aes()</code> function. <code>ggplot2</code> will automatically visualize the y-axis for a histogram.</p>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(dem_women_2022, <span class="fu">aes</span>(<span class="at">x =</span> flfp)) <span class="sc">+</span></span>
+<div class="sourceCode cell-code" id="cb15" data-code-line-numbers="0-1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">ggplot</span>(dem_women_2022, <span class="fu">aes</span>(<span class="at">x =</span> flfp)) <span class="sc">+</span></span>
 <span id="cb15-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span> </span>
 <span id="cb15-3"><a></a>  <span class="fu">labs</span>(</span>
 <span id="cb15-4"><a></a>    <span class="at">x =</span> <span class="st">"Percentage of Working Aged Women in Labor Force"</span>,</span>
@@ -713,6 +752,22 @@
 <span id="cb15-6"><a></a>    <span class="at">title =</span> <span class="st">"Female labor force participation rates, 2022"</span>,</span>
 <span id="cb15-7"><a></a>    <span class="at">caption =</span> <span class="st">"Source: World Bank"</span></span>
 <span id="cb15-8"><a></a>    ) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="change-number-of-bins" class="slide level2">
+<h2>Change Number of Bins</h2>
+<p><br></p>
+<p>Change number of bins (bars) using <code>bins</code> or <code>binwidth</code> arguments (default number of bins = 30):</p>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(dem_women_2022, <span class="fu">aes</span>(<span class="at">x =</span> flfp)) <span class="sc">+</span></span>
+<span id="cb16-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span> </span>
+<span id="cb16-3"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb16-4"><a></a>    <span class="at">x =</span> <span class="st">"Percentage of Working Aged Women in Labor Force"</span>,</span>
+<span id="cb16-5"><a></a>    <span class="at">y =</span> <span class="st">"Number of Countries"</span>,</span>
+<span id="cb16-6"><a></a>    <span class="at">title =</span> <span class="st">"Female labor force participation rates, 2022"</span>,</span>
+<span id="cb16-7"><a></a>    <span class="at">caption =</span> <span class="st">"Source: World Bank"</span></span>
+<span id="cb16-8"><a></a>    ) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="section-19" class="slide level2">
@@ -731,14 +786,14 @@
 <p>Using <code>binwidth</code> instead of <code>bins</code>…</p>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">ggplot</span>(dem_women_2022, <span class="fu">aes</span>(<span class="at">x =</span> flfp)) <span class="sc">+</span></span>
-<span id="cb16-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span> </span>
-<span id="cb16-3"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb16-4"><a></a>    <span class="at">x =</span> <span class="st">"Percentage of Working Aged Women in Labor Force"</span>,</span>
-<span id="cb16-5"><a></a>    <span class="at">y =</span> <span class="st">"Number of Countries"</span>,</span>
-<span id="cb16-6"><a></a>    <span class="at">title =</span> <span class="st">"Female labor force participation rates, 2022"</span>,</span>
-<span id="cb16-7"><a></a>    <span class="at">caption =</span> <span class="st">"Source: World Bank"</span></span>
-<span id="cb16-8"><a></a>    ) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(dem_women_2022, <span class="fu">aes</span>(<span class="at">x =</span> flfp)) <span class="sc">+</span></span>
+<span id="cb17-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">2</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span> </span>
+<span id="cb17-3"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb17-4"><a></a>    <span class="at">x =</span> <span class="st">"Percentage of Working Aged Women in Labor Force"</span>,</span>
+<span id="cb17-5"><a></a>    <span class="at">y =</span> <span class="st">"Number of Countries"</span>,</span>
+<span id="cb17-6"><a></a>    <span class="at">title =</span> <span class="st">"Female labor force participation rates, 2022"</span>,</span>
+<span id="cb17-7"><a></a>    <span class="at">caption =</span> <span class="st">"Source: World Bank"</span></span>
+<span id="cb17-8"><a></a>    ) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="section-22" class="slide level2">
@@ -750,25 +805,28 @@
 <h2>Change from Count to Density</h2>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17" data-code-line-numbers="1,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">ggplot</span>(dem_women_2022, <span class="fu">aes</span>(<span class="fu">after_stat</span>(density), <span class="at">x =</span> flfp)) <span class="sc">+</span></span>
-<span id="cb17-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span> </span>
-<span id="cb17-3"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb17-4"><a></a>    <span class="at">x =</span> <span class="st">"Percentage of Working Aged Women in Labor Force"</span>,</span>
-<span id="cb17-5"><a></a>    <span class="at">y =</span> <span class="st">"Density"</span>,</span>
-<span id="cb17-6"><a></a>    <span class="at">title =</span> <span class="st">"Female labor force participation rates, 2022"</span>,</span>
-<span id="cb17-7"><a></a>    <span class="at">caption =</span> <span class="st">"Source: World Bank"</span></span>
-<span id="cb17-8"><a></a>    ) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18" data-code-line-numbers="1,5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">ggplot</span>(dem_women_2022, <span class="fu">aes</span>(<span class="fu">after_stat</span>(density), <span class="at">x =</span> flfp)) <span class="sc">+</span></span>
+<span id="cb18-2"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span> </span>
+<span id="cb18-3"><a></a>  <span class="fu">labs</span>(</span>
+<span id="cb18-4"><a></a>    <span class="at">x =</span> <span class="st">"Percentage of Working Aged Women in Labor Force"</span>,</span>
+<span id="cb18-5"><a></a>    <span class="at">y =</span> <span class="st">"Density"</span>,</span>
+<span id="cb18-6"><a></a>    <span class="at">title =</span> <span class="st">"Female labor force participation rates, 2022"</span>,</span>
+<span id="cb18-7"><a></a>    <span class="at">caption =</span> <span class="st">"Source: World Bank"</span></span>
+<span id="cb18-8"><a></a>    ) <span class="sc">+</span> <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p><br></p>
+<p>For densities, the total area sums to 1. The height of a bar represents the probability of observations in that bin (rather than the number of observations).</p>
 </section>
 <section id="section-23" class="slide level2">
 <h2></h2>
 <p>Which gives us…</p>
 
 <img data-src="week-3.1_files/figure-revealjs/histogram9-1.png" width="960" class="r-stretch"></section>
-<section id="your-turn-1" class="slide level2">
+<section id="your-turn-1" class="slide level2 smaller">
 <h2>Your Turn!</h2>
+<p><br></p>
 <ol type="1">
-<li>Pick a variable that you want to explore the distribution of</li>
+<li>Pick a variable that you want to explore the distribution of<sup>1</sup></li>
 <li>Make a histogram
 <ol type="a">
 <li>Only specify <code>x =</code> in <code>aes()</code></li>
@@ -789,12 +847,13 @@
 </div>
 
 
-</section><div class="quarto-auto-generated-content">
+<aside><ol class="aside-footnotes"><li id="fn2"><p>Data for GDP per capita spotty after 2015</p></li></ol></aside></section><div class="quarto-auto-generated-content">
 <p><img src="images/ds4all-logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="https://ds4all.rocks">DATS 1001 Website</a></p>
 </div>
 </div></section>
+
     </div>
   </div>
 

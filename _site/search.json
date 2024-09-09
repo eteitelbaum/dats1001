@@ -1115,365 +1115,386 @@
   {
     "objectID": "slides/week-3.1.html#the-grammar-of-graphics",
     "href": "slides/week-3.1.html#the-grammar-of-graphics",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "The Grammar of Graphics",
     "text": "The Grammar of Graphics\n\n\nData viz has a language with its own grammar\nBasic components include:\n\nData we are trying to visualize\nAesthetics (dimensions)\nGeom (e.g. bar, line, scatter plot)\nColor scales\nThemes\nAnnotations"
   },
   {
     "objectID": "slides/week-3.1.html#section",
     "href": "slides/week-3.1.html#section",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "Let’s start with the first two, the data and the aesthetic, with a column chart example…\n\n\nlibrary(readr)\nlibrary(ggplot2)\n\ndem_summary &lt;- read_csv(\"data/dem_summary.csv\")\n\nggplot(dem_summary, aes(x = region, y = polyarchy))"
   },
   {
     "objectID": "slides/week-3.1.html#section-1",
     "href": "slides/week-3.1.html#section-1",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "This gives us the axes without any visualization:"
   },
   {
     "objectID": "slides/week-3.1.html#section-2",
     "href": "slides/week-3.1.html#section-2",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "Now let’s add a geom. In this case we want a column chart so we add geom_col().\n\n\nggplot(dem_summary, aes(x = region, y = polyarchy)) + \n  geom_col()"
   },
   {
     "objectID": "slides/week-3.1.html#section-3",
     "href": "slides/week-3.1.html#section-3",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "That gets the idea across but looks a little depressing, so…"
   },
   {
     "objectID": "slides/week-3.1.html#section-4",
     "href": "slides/week-3.1.html#section-4",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
-    "text": "…let’s change the color of the columns by specifying fill = \"steelblue\".\n\n\nggplot(dem_summary, aes(x = region, y = polyarchy)) + \n  geom_col(fill = \"steelblue\")"
+    "text": "…let’s change the color of the columns by specifying fill = \"steelblue\".\n\n\nggplot(dem_summary, aes(x = region, y = polyarchy)) + \n  geom_col(fill = \"steelblue\")\n\n\n\n\n\n\n\n\nTip\n\n\nSee here for more availableggplot2` colors."
   },
   {
     "objectID": "slides/week-3.1.html#section-5",
     "href": "slides/week-3.1.html#section-5",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "Note how color of original columns is simply overwritten:"
   },
   {
     "objectID": "slides/week-3.1.html#section-6",
     "href": "slides/week-3.1.html#section-6",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "Now let’s add some labels with the labs() function:\n\n\nggplot(dem_summary, aes(x = region, y = polyarchy)) + \n  geom_col(fill = \"steelblue\") +\n  labs(\n    x = \"Region\", \n    y = \"Avg. Polyarchy Score\", \n    title = \"Democracy by region, 1990 - present\", \n    caption = \"Source: V-Dem Institute\"\n    )"
   },
   {
     "objectID": "slides/week-3.1.html#section-7",
     "href": "slides/week-3.1.html#section-7",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "And that gives us…"
   },
   {
     "objectID": "slides/week-3.1.html#section-8",
     "href": "slides/week-3.1.html#section-8",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "Next, we reorder the bars with fct_reorder() from the forcats package.\n\n\nlibrary(forcats)\n\nggplot(dem_summary, aes(x = fct_reorder(region, -polyarchy), y = polyarchy)) +\n  geom_col(fill = \"steelblue\") + \n  labs(\n    x = \"Region\", \n    y = \"Avg. Polyarchy Score\", \n    title = \"Democracy by region, 1990 - present\", \n    caption = \"Source: V-Dem Institute\"\n    )\n\n\nNote that we could also use the base R reorder() function here."
   },
   {
     "objectID": "slides/week-3.1.html#section-9",
     "href": "slides/week-3.1.html#section-9",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "This way, we get a nice, visually appealing ordering of the bars according to levels of democracy…"
   },
   {
     "objectID": "slides/week-3.1.html#section-10",
     "href": "slides/week-3.1.html#section-10",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
-    "text": "Now let’s change the theme to theme_minimal().\n\n\nggplot(dem_summary, aes(x = reorder(region, -polyarchy), y = polyarchy)) +\n  geom_col(fill = \"steelblue\") + \n  labs(\n    x = \"Region\", \n    y = \"Avg. Polyarchy Score\", \n    title = \"Democracy by region, 1990 - present\", \n    caption = \"Source: V-Dem Institute\"\n    ) + theme_minimal()"
+    "text": "Now let’s change the theme to theme_minimal().\n\n\nggplot(dem_summary, aes(x = reorder(region, -polyarchy), y = polyarchy)) +\n  geom_col(fill = \"steelblue\") + \n  labs(\n    x = \"Region\", \n    y = \"Avg. Polyarchy Score\", \n    title = \"Democracy by region, 1990 - present\", \n    caption = \"Source: V-Dem Institute\"\n    ) + theme_minimal()\n\n\n\n\n\n\n\n\nTip\n\n\nSee here for available ggplot2 themes."
   },
   {
     "objectID": "slides/week-3.1.html#section-11",
     "href": "slides/week-3.1.html#section-11",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "Gives us a clean, elegant look."
   },
   {
     "objectID": "slides/week-3.1.html#section-12",
     "href": "slides/week-3.1.html#section-12",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "Note that you can also save your plot as an object to modify later.\n\n\ndem_bar_chart &lt;- ggplot(dem_summary, aes(x = reorder(region, -polyarchy), y = polyarchy)) +\n  geom_col(fill = \"steelblue\")"
   },
   {
     "objectID": "slides/week-3.1.html#section-13",
     "href": "slides/week-3.1.html#section-13",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "Which gives us…\n\ndem_bar_chart"
   },
   {
     "objectID": "slides/week-3.1.html#section-14",
     "href": "slides/week-3.1.html#section-14",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "Now let’s add back our labels…\n\n\ndem_bar_chart &lt;- dem_bar_chart +\n  labs(\n    x = \"Region\", \n    y = \"Avg. Polyarchy Score\", \n    title = \"Democracy by region, 1990 - present\", \n    caption = \"Source: V-Dem Institute\"\n    )"
   },
   {
     "objectID": "slides/week-3.1.html#section-15",
     "href": "slides/week-3.1.html#section-15",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "So now we have…\n\ndem_bar_chart"
   },
   {
     "objectID": "slides/week-3.1.html#section-16",
     "href": "slides/week-3.1.html#section-16",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "And now we’ll add back our theme…\n\n\ndem_bar_chart &lt;- dem_bar_chart + theme_minimal()"
   },
   {
     "objectID": "slides/week-3.1.html#section-17",
     "href": "slides/week-3.1.html#section-17",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "Voila!\n\ndem_bar_chart"
   },
   {
     "objectID": "slides/week-3.1.html#section-18",
     "href": "slides/week-3.1.html#section-18",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "Change the theme. There are many themes to choose from.\n\ndem_bar_chart + theme_bw()"
   },
   {
     "objectID": "slides/week-3.1.html#your-turn",
     "href": "slides/week-3.1.html#your-turn",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "Your Turn!",
-    "text": "Your Turn!\n\nglimpse() the data\nFind a new variable to visualize\nMake a bar chart with it\nChange the color of the bars\nOrder the bars\nAdd labels\nAdd a theme\nTry saving your plot as an object\nThen change the labels and/or theme\n\n\n\n\n−+\n05:00"
+    "text": "Your Turn!\n\n\nglimpse() the data\nFind a new variable to visualize1\nMake a bar chart with it\nChange the color of the bars\nOrder the bars\nAdd labels\nAdd a theme\nTry saving your plot as an object\nThen change the labels and/or theme\n\n\n\n\n−+\n10:00\n\n\n\nData for GDP per capita spotty after 2015"
   },
   {
     "objectID": "slides/week-3.1.html#purpose-of-histograms",
     "href": "slides/week-3.1.html#purpose-of-histograms",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "Purpose of Histograms",
-    "text": "Purpose of Histograms\n\nHistograms are used to visualize the distribution of a single variable\nThey are used for continuous variables (e.g., income, age, etc.)\nA continuous variable is one that can take on any value within a range (e.g., 0.5, 1.2, 3.7, etc.)\nA discrete variable is one that can only take on certain values (e.g., 1, 2, 3, etc.)\nx-axis represents value of variable of interest\ny-axis represents the frequency of that value"
+    "text": "Purpose of Histograms\n\n\nHistograms are used to visualize the distribution of a single variable\nx-axis represents value of variable of interest\ny-axis represents the frequency of that value"
   },
   {
     "objectID": "slides/week-3.1.html#example",
     "href": "slides/week-3.1.html#example",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "Example",
     "text": "Example"
   },
   {
     "objectID": "slides/week-3.1.html#histogram-code",
     "href": "slides/week-3.1.html#histogram-code",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "Histogram Code",
     "text": "Histogram Code\n\n\n# load dplyr\n\nlibrary(dplyr)\n\n# load data\ndem_women &lt;- read_csv(\"data/dem_women.csv\")\n\n# filter to 2022\ndem_women_2022 &lt;- dem_women |&gt;\n  filter(year == 2022) \n\n# create histogram\nggplot(dem_women_2022, aes(x = flfp)) +\n  geom_histogram(fill = \"steelblue\") + \n  labs(\n    x = \"Percentage of Working Aged Women in Labor Force\",\n    y = \"Number of Countries\",\n    title = \"Female labor force participation rates, 2022\",\n    caption = \"Source: World Bank\"\n    ) + theme_minimal()"
   },
   {
     "objectID": "slides/week-3.1.html#change-number-of-bins",
     "href": "slides/week-3.1.html#change-number-of-bins",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "Change Number of Bins",
     "text": "Change Number of Bins\n\nChange number of bins (bars) using bins or binwidth arguments (default number of bins = 30):\n\n\nggplot(dem_women_2022, aes(x = flfp)) +\n  geom_histogram(bins = 50, fill = \"steelblue\") + \n  labs(\n    x = \"Percentage of Working Aged Women in Labor Force\",\n    y = \"Number of Countries\",\n    title = \"Female labor force participation rates, 2022\",\n    caption = \"Source: World Bank\"\n    ) + theme_minimal()"
   },
   {
     "objectID": "slides/week-3.1.html#section-19",
     "href": "slides/week-3.1.html#section-19",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "At 50 bins…"
   },
   {
     "objectID": "slides/week-3.1.html#section-20",
     "href": "slides/week-3.1.html#section-20",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "At 100 bins…probably too many!"
   },
   {
     "objectID": "slides/week-3.1.html#section-21",
     "href": "slides/week-3.1.html#section-21",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "Using binwidth instead of bins…\n\n\nggplot(dem_women_2022, aes(x = flfp)) +\n  geom_histogram(binwidth = 2, fill = \"steelblue\") + \n  labs(\n    x = \"Percentage of Working Aged Women in Labor Force\",\n    y = \"Number of Countries\",\n    title = \"Female labor force participation rates, 2022\",\n    caption = \"Source: World Bank\"\n    ) + theme_minimal()"
   },
   {
     "objectID": "slides/week-3.1.html#section-22",
     "href": "slides/week-3.1.html#section-22",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "Setting binwidth to 2…"
   },
   {
     "objectID": "slides/week-3.1.html#change-from-count-to-density",
     "href": "slides/week-3.1.html#change-from-count-to-density",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "Change from Count to Density",
-    "text": "Change from Count to Density\n\n\nggplot(dem_women_2022, aes(after_stat(density), x = flfp)) +\n  geom_histogram(fill = \"steelblue\") + \n  labs(\n    x = \"Percentage of Working Aged Women in Labor Force\",\n    y = \"Density\",\n    title = \"Female labor force participation rates, 2022\",\n    caption = \"Source: World Bank\"\n    ) + theme_minimal()"
+    "text": "Change from Count to Density\n\n\nggplot(dem_women_2022, aes(after_stat(density), x = flfp)) +\n  geom_histogram(fill = \"steelblue\") + \n  labs(\n    x = \"Percentage of Working Aged Women in Labor Force\",\n    y = \"Density\",\n    title = \"Female labor force participation rates, 2022\",\n    caption = \"Source: World Bank\"\n    ) + theme_minimal()\n\n\nFor densities, the total area sums to 1. The height of a bar represents the probability of observations in that bin (rather than the number of observations)."
   },
   {
     "objectID": "slides/week-3.1.html#section-23",
     "href": "slides/week-3.1.html#section-23",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "",
     "text": "Which gives us…"
   },
   {
     "objectID": "slides/week-3.1.html#your-turn-1",
     "href": "slides/week-3.1.html#your-turn-1",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "Your Turn!",
-    "text": "Your Turn!\n\nPick a variable that you want to explore the distribution of\nMake a histogram\n\nOnly specify x = in aes()\nSpecify geom as geom_histogram\n\nChoose color for bars\nChoose appropriate labels\nChange number of bins\nChange from count to density\n\n\n\n\n−+\n10:00"
+    "text": "Your Turn!\n\n\nPick a variable that you want to explore the distribution of1\nMake a histogram\n\nOnly specify x = in aes()\nSpecify geom as geom_histogram\n\nChoose color for bars\nChoose appropriate labels\nChange number of bins\nChange from count to density\n\n\n\n\n−+\n10:00\n\n\n\n\n\nData for GDP per capita spotty after 2015"
   },
   {
     "objectID": "slides/week-3.2.html#huntingtons-three-waves",
     "href": "slides/week-3.2.html#huntingtons-three-waves",
-    "title": "Line Charts & Scatter Plots",
+    "title": "Which Visualization Should I Use?",
     "section": "Huntington’s Three Waves",
     "text": "Huntington’s Three Waves"
   },
   {
     "objectID": "slides/week-3.2.html#line-chart",
     "href": "slides/week-3.2.html#line-chart",
-    "title": "Line Charts & Scatter Plots",
+    "title": "Which Visualization Should I Use?",
     "section": "Line Chart",
     "text": "Line Chart"
   },
   {
     "objectID": "slides/week-3.2.html#section",
     "href": "slides/week-3.2.html#section",
-    "title": "Line Charts & Scatter Plots",
+    "title": "Which Visualization Should I Use?",
     "section": "",
     "text": "Here is the code…\n\n\n# in this ggplot() call, we add a third dimension for line color\nggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +\n  geom_line(linewidth = 1) + # our geom is a line with a width of 1\n  labs(\n    x = \"Year\", \n    y = \"Polyarchy Score\", \n    title = 'Democracy in countries representing three different \"waves\"', \n    caption = \"Source: V-Dem Institute\", \n    color = \"Country\" # make title of legend to upper case\n  )"
   },
   {
     "objectID": "slides/week-3.2.html#section-1",
     "href": "slides/week-3.2.html#section-1",
-    "title": "Line Charts & Scatter Plots",
+    "title": "Which Visualization Should I Use?",
     "section": "",
     "text": "Use geom_line() to specify a line chart…\n\n\n# in this ggplot() call, we add a third dimension for line color\nggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +\n  geom_line(linewidth = 1) + # our geom is a line with a width of 1\n  labs(\n    x = \"Year\", \n    y = \"Polyarchy Score\", \n    title = 'Democracy in countries representing three different \"waves\"', \n    caption = \"Source: V-Dem Institute\", \n    color = \"Country\" # make title of legend to upper case\n  )"
   },
   {
     "objectID": "slides/week-3.2.html#section-2",
     "href": "slides/week-3.2.html#section-2",
-    "title": "Line Charts & Scatter Plots",
+    "title": "Which Visualization Should I Use?",
     "section": "",
     "text": "Add third dimension to the aes() call for line color…\n\n\n# in this ggplot() call, we add a third dimension for line color\nggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +\n  geom_line(linewidth = 1) + # our geom is a line with a width of 1\n  labs(\n    x = \"Year\", \n    y = \"Polyarchy Score\", \n    title = 'Democracy in countries representing three different \"waves\"', \n    caption = \"Source: V-Dem Institute\", \n    color = \"Country\" # make title of legend to upper case\n  )"
   },
   {
     "objectID": "slides/week-3.2.html#section-3",
     "href": "slides/week-3.2.html#section-3",
-    "title": "Line Charts & Scatter Plots",
+    "title": "Which Visualization Should I Use?",
     "section": "",
     "text": "Modify the legend title…\n\n\n# in this ggplot() call, we add a third dimension for line color\nggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +\n  geom_line(linewidth = 1) + # our geom is a line with a width of 1\n  labs(\n    x = \"Year\", \n    y = \"Polyarchy Score\", \n    title = 'Democracy in countries representing three different \"waves\"', \n    caption = \"Source: V-Dem Institute\", \n    color = \"Country\" # make title of legend to upper case\n  )"
   },
   {
     "objectID": "slides/week-3.2.html#your-turn",
     "href": "slides/week-3.2.html#your-turn",
-    "title": "Line Charts & Scatter Plots",
+    "title": "Which Visualization Should I Use?",
     "section": "Your Turn!",
     "text": "Your Turn!\n\n\nSee table three of this article\nSelect three countries to visualize\nAdjust setup code to filter data on those countries\nVisualize with geom_line()\n\n\n\n\n−+\n10:00"
   },
   {
     "objectID": "slides/week-3.2.html#scatter-plot-setup",
     "href": "slides/week-3.2.html#scatter-plot-setup",
-    "title": "Line Charts & Scatter Plots",
+    "title": "Which Visualization Should I Use?",
     "section": "Scatter Plot Setup",
     "text": "Scatter Plot Setup\n\n\ndem_summary_ctry &lt;- read_csv(\"data/dem_women.csv\") |&gt;\n  group_by(country, region) |&gt; # group by country, keep region\n  summarize(\n    polyarchy = mean(polyarchy, na.rm = TRUE),\n    gdp_pc = mean(gdp_pc, na.rm = TRUE), \n    flfp = mean(flfp, na.rm = TRUE), \n    women_rep = mean(women_rep, na.rm = TRUE)\n  )"
   },
   {
     "objectID": "slides/week-3.2.html#scatter-plot",
     "href": "slides/week-3.2.html#scatter-plot",
-    "title": "Line Charts & Scatter Plots",
+    "title": "Which Visualization Should I Use?",
     "section": "Scatter Plot",
     "text": "Scatter Plot\n\n\nCode\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) + \n  geom_point() + # use geom_point() for scatter plots\n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\",\n    size = \"Women Reps\"\n    )"
   },
   {
     "objectID": "slides/week-3.2.html#scatter-plot-1",
     "href": "slides/week-3.2.html#scatter-plot-1",
-    "title": "Line Charts & Scatter Plots",
+    "title": "Which Visualization Should I Use?",
     "section": "Scatter Plot",
     "text": "Scatter Plot\n\nUse geom_point()…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) +\n  geom_point() + # use geom_point() for scatter plots\n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\",\n    size = \"Women Reps\"\n    )"
   },
   {
     "objectID": "slides/week-3.2.html#scatter-plot-2",
     "href": "slides/week-3.2.html#scatter-plot-2",
-    "title": "Line Charts & Scatter Plots",
+    "title": "Which Visualization Should I Use?",
     "section": "Scatter Plot",
     "text": "Scatter Plot\n\nFour dimensions…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) + \n  geom_point() + # use geom_point() for scatter plots\n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\",\n    size = \"Women Reps\"\n    )"
   },
   {
     "objectID": "slides/week-3.2.html#scatter-plot-3",
     "href": "slides/week-3.2.html#scatter-plot-3",
-    "title": "Line Charts & Scatter Plots",
+    "title": "Which Visualization Should I Use?",
     "section": "Scatter Plot",
     "text": "Scatter Plot\n\nStretch axis on log scale and use scales package to adjust labels…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) + \n  geom_point() + # use geom_point() for scatter plots\n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\",\n    size = \"Women Reps\"\n    )"
   },
   {
     "objectID": "slides/week-3.2.html#scatter-plot-4",
     "href": "slides/week-3.2.html#scatter-plot-4",
-    "title": "Line Charts & Scatter Plots",
+    "title": "Which Visualization Should I Use?",
     "section": "Scatter Plot",
     "text": "Scatter Plot\n\nChange legend titles…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) + \n  geom_point() + # use geom_point() for scatter plots\n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\",\n    size = \"Women Reps\"\n    )"
   },
   {
     "objectID": "slides/week-3.2.html#your-turn-1",
     "href": "slides/week-3.2.html#your-turn-1",
-    "title": "Line Charts & Scatter Plots",
+    "title": "Which Visualization Should I Use?",
     "section": "Your Turn!",
     "text": "Your Turn!\n\nThere are four variables in dem_summary_ctry\nPick one related to women’s empowerment\nVisualize it on the y-axis with gdp_pc or polyarchy on the x-axis\nChange labels and legend titles to match your visualization\nInterpret your plot\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/week-3.2.html#add-a-trend-line",
     "href": "slides/week-3.2.html#add-a-trend-line",
-    "title": "Line Charts & Scatter Plots",
+    "title": "Which Visualization Should I Use?",
     "section": "Add a Trend Line",
     "text": "Add a Trend Line"
   },
   {
     "objectID": "slides/week-3.2.html#add-a-trend-line-1",
     "href": "slides/week-3.2.html#add-a-trend-line-1",
-    "title": "Line Charts & Scatter Plots",
+    "title": "Which Visualization Should I Use?",
     "section": "Add a Trend Line",
     "text": "Add a Trend Line\n\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + \n  geom_point(aes(color = region)) + \n  geom_smooth(method = \"lm\", linewidth = 1) + \n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\"\n    )"
   },
   {
     "objectID": "slides/week-3.2.html#add-a-trend-line-2",
     "href": "slides/week-3.2.html#add-a-trend-line-2",
-    "title": "Line Charts & Scatter Plots",
+    "title": "Which Visualization Should I Use?",
     "section": "Add a Trend Line",
     "text": "Add a Trend Line\n\nTaking out size and adding color to geom_point() call…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + \n  geom_point(aes(color = region)) + \n  geom_smooth(method = \"lm\", linewidth = 1) + \n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\"\n    )"
   },
   {
     "objectID": "slides/week-3.2.html#add-a-trend-line-3",
     "href": "slides/week-3.2.html#add-a-trend-line-3",
-    "title": "Line Charts & Scatter Plots",
+    "title": "Which Visualization Should I Use?",
     "section": "Add a Trend Line",
     "text": "Add a Trend Line\n\nChanging legend titles…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + \n  geom_point(aes(color = region)) + \n  geom_smooth(method = \"lm\", linewidth = 1) + \n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\"\n    )"
   },
   {
     "objectID": "slides/week-3.2.html#your-turn-2",
     "href": "slides/week-3.2.html#your-turn-2",
-    "title": "Line Charts & Scatter Plots",
+    "title": "Which Visualization Should I Use?",
     "section": "Your Turn!",
     "text": "Your Turn!\n\n\nAdd a trendline to your plot\nChange the labels accordingly\nTry using method = \"loess\" instead of a “lm”\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/week-3.1.html#types-of-visualizations",
     "href": "slides/week-3.1.html#types-of-visualizations",
-    "title": "Bar Charts and Histograms",
+    "title": "Grammar of Graphics",
     "section": "Types of Visualizations",
     "text": "Types of Visualizations\n\n\n\nColumn charts (bar charts)\n\nUse to compare values across categories\n\nHistograms\n\nUse to show distribution of a single variable\n\nLine charts\n\nUse to show trends over time\nCan use column charts but not as effective\n\nScatter plots\n\nUse to show relationships between two variables\nX-axis is usually explanatory variable, Y-axis is outcome variable"
+  },
+  {
+    "objectID": "slides/week-3.1.html#purpose-of-histograms-1",
+    "href": "slides/week-3.1.html#purpose-of-histograms-1",
+    "title": "Grammar of Graphics",
+    "section": "Purpose of Histograms",
+    "text": "Purpose of Histograms\n\n\nThey are generally used for continuous variables (e.g., income, age, etc.)\n\nA continuous variable is one that can take on any value within a range (e.g., 0.5, 1.2, 3.7, etc.)\nA discrete variable is one that can only take on certain values (e.g., 1, 2, 3, etc.)\n\nTypically, the height of the bar represents the number of observations which fall in that bin"
+  },
+  {
+    "objectID": "slides/week-3.1.html#change-number-of-bins-1",
+    "href": "slides/week-3.1.html#change-number-of-bins-1",
+    "title": "Grammar of Graphics",
+    "section": "Change Number of Bins",
+    "text": "Change Number of Bins\n\nChange number of bins (bars) using bins or binwidth arguments (default number of bins = 30):\n\n\nggplot(dem_women_2022, aes(x = flfp)) +\n  geom_histogram(bins = 50, fill = \"steelblue\") + \n  labs(\n    x = \"Percentage of Working Aged Women in Labor Force\",\n    y = \"Number of Countries\",\n    title = \"Female labor force participation rates, 2022\",\n    caption = \"Source: World Bank\"\n    ) + theme_minimal()"
+  },
+  {
+    "objectID": "slides/week-3.1.html#histogram-code-1",
+    "href": "slides/week-3.1.html#histogram-code-1",
+    "title": "Grammar of Graphics",
+    "section": "Histogram Code",
+    "text": "Histogram Code\n\nNote that you only need to specify the x axis variable in the aes() function. ggplot2 will automatically visualize the y-axis for a histogram.\n\n\nggplot(dem_women_2022, aes(x = flfp)) +\n  geom_histogram(bins = 50, fill = \"steelblue\") + \n  labs(\n    x = \"Percentage of Working Aged Women in Labor Force\",\n    y = \"Number of Countries\",\n    title = \"Female labor force participation rates, 2022\",\n    caption = \"Source: World Bank\"\n    ) + theme_minimal()"
   }
 ]

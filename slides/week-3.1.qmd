@@ -1,5 +1,5 @@
 ---
-title: Bar Charts and Histograms
+title: Grammar of Graphics
 date: today
 date-format: long
 footer: "[DATS 1001 Website](https://ds4all.rocks)"
@@ -126,6 +126,12 @@ ggplot(dem_summary, aes(x = region, y = polyarchy)) +
   geom_col(fill = "steelblue")
 ```
 
+<br>
+
+::: {.callout-tip}
+See [here](http://sape.inf.usi.ch/quick-reference/ggplot2/colour) for more `available`ggplot2` colors. 
+:::
+
 ## 
 
 Note how color of original columns is simply overwritten:
@@ -249,6 +255,12 @@ ggplot(dem_summary, aes(x = reorder(region, -polyarchy), y = polyarchy)) +
     ) + theme_minimal()
 ```
 
+<br>
+
+::: {.callout-tip}
+See [here](https://ggplot2.tidyverse.org/reference/ggtheme.html) for available `ggplot2` themes.
+:::
+
 ## 
 
 Gives us a clean, elegant look. 
@@ -334,7 +346,7 @@ And now we'll add back our theme...
 
 ```{r}
 #| label: barchart17
-#| eval: false
+#| output: false
 
 dem_bar_chart <- dem_bar_chart + theme_minimal()
 ```
@@ -360,10 +372,12 @@ Change the theme. There are many [themes](https://ggplot2.tidyverse.org/referenc
 dem_bar_chart + theme_bw()
 ```
 
-## Your Turn!
+## Your Turn! {.smaller}
+
+<br>
 
 1. `glimpse()` the data
-2. Find a new variable to visualize
+2. Find a new variable to visualize^[Data for GDP per capita spotty after 2015]
 3. Make a bar chart with it
 4. Change the [color](http://sape.inf.usi.ch/quick-reference/ggplot2/colour) of the bars
 5. Order the bars
@@ -377,7 +391,7 @@ dem_bar_chart + theme_bw()
 #| echo: false 
 
 library(countdown)
-countdown(minutes = 5, 
+countdown(minutes = 10, 
           id = "timer1", 
           bottom = "10%", 
           right = "10%",
@@ -393,12 +407,20 @@ countdown(minutes = 5,
 
 ## Purpose of Histograms
 
+<br> 
+
 - Histograms are used to visualize the distribution of a single variable
-- They are used for continuous variables (e.g., income, age, etc.)
-- A *continuous* variable is one that can take on any value within a range (e.g., 0.5, 1.2, 3.7, etc.)
-- A *discrete* variable is one that can only take on certain values (e.g., 1, 2, 3, etc.)
 - x-axis represents value of variable of interest
 - y-axis represents the frequency of that value
+
+## Purpose of Histograms
+
+<br>
+
+- They are generally used for continuous variables (e.g., income, age, etc.)
+    - A *continuous* variable is one that can take on any value within a range (e.g., 0.5, 1.2, 3.7, etc.)
+    - A *discrete* variable is one that can only take on certain values (e.g., 1, 2, 3, etc.)
+- Typically, the height of the bar represents the number of observations which fall in that bin
 
 ## Example
 
@@ -450,6 +472,29 @@ dem_women_2022 <- dem_women |>
 # create histogram
 ggplot(dem_women_2022, aes(x = flfp)) +
   geom_histogram(fill = "steelblue") + 
+  labs(
+    x = "Percentage of Working Aged Women in Labor Force",
+    y = "Number of Countries",
+    title = "Female labor force participation rates, 2022",
+    caption = "Source: World Bank"
+    ) + theme_minimal()
+```
+
+## Histogram Code
+
+<br>
+
+Note that you only need to specify the x axis variable in the `aes()` function. `ggplot2` will automatically visualize the y-axis for a histogram.
+
+<br>
+
+```{r}
+#| label: histogram2.1
+#| eval: false
+#| code-line-numbers: "0-1"
+
+ggplot(dem_women_2022, aes(x = flfp)) +
+  geom_histogram(bins = 50, fill = "steelblue") + 
   labs(
     x = "Percentage of Working Aged Women in Labor Force",
     y = "Number of Countries",
@@ -579,6 +624,10 @@ ggplot(dem_women_2022, aes(after_stat(density), x = flfp)) +
     ) + theme_minimal()
 ```
 
+<br>
+
+For densities, the total area sums to 1. The height of a bar represents the probability of observations in that bin (rather than the number of observations).
+
 ## 
 
 Which gives us... 
@@ -597,9 +646,11 @@ ggplot(dem_women_2022, aes(after_stat(density), x = flfp)) +
     ) + theme_minimal()
 ```
 
-## Your Turn!
+## Your Turn! {.smaller}
 
-1. Pick a variable that you want to explore the distribution of
+<br>
+
+1. Pick a variable that you want to explore the distribution of^[Data for GDP per capita spotty after 2015] 
 2. Make a histogram
     a. Only specify `x = ` in `aes()`
     b. Specify geom as `geom_histogram`
