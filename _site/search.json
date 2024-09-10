@@ -1432,7 +1432,7 @@
     "href": "slides/week-3.2.html#your-turn-1",
     "title": "Which Visualization Should I Use?",
     "section": "Your Turn!",
-    "text": "Your Turn!\n\nThere are four variables in dem_summary_ctry\nPick one related to women’s empowerment\nVisualize it on the y-axis with gdp_pc or polyarchy on the x-axis\nChange labels and legend titles to match your visualization\nInterpret your plot\n\n\n\n\n−+\n05:00"
+    "text": "Your Turn!\n\nThere are four variables in dem_summary_ctry\nPick one related to women’s empowerment\nVisualize it on the y-axis with gdp_pc or polyarchy on the x-axis\nChange labels and legend titles to match your visualization\nInterpret your plot\n\n\n\n\n−+\n10:00"
   },
   {
     "objectID": "slides/week-3.2.html#add-a-trend-line",
@@ -1467,7 +1467,7 @@
     "href": "slides/week-3.2.html#your-turn-2",
     "title": "Which Visualization Should I Use?",
     "section": "Your Turn!",
-    "text": "Your Turn!\n\n\nAdd a trendline to your plot\nChange the labels accordingly\nTry using method = \"loess\" instead of a “lm”\n\n\n\n\n−+\n05:00"
+    "text": "Your Turn!\n\n\nAdd a trendline to your plot\nChange the labels accordingly\nTry using method = \"loess\" instead of a “lm”\n\n\n\n\n−+\n10:00"
   },
   {
     "objectID": "slides/week-3.1.html#types-of-visualizations",
@@ -1496,5 +1496,68 @@
     "title": "Grammar of Graphics",
     "section": "Histogram Code",
     "text": "Histogram Code\n\nNote that you only need to specify the x axis variable in the aes() function. ggplot2 will automatically visualize the y-axis for a histogram.\n\n\nggplot(dem_women_2022, aes(x = flfp)) +\n  geom_histogram(bins = 50, fill = \"steelblue\") + \n  labs(\n    x = \"Percentage of Working Aged Women in Labor Force\",\n    y = \"Number of Countries\",\n    title = \"Female labor force participation rates, 2022\",\n    caption = \"Source: World Bank\"\n    ) + theme_minimal()"
+  },
+  {
+    "objectID": "slides/week-3.2.html#line-charts",
+    "href": "slides/week-3.2.html#line-charts",
+    "title": "Which Visualization Should I Use?",
+    "section": "Line Charts",
+    "text": "Line Charts\n\n\nLine charts are used to show trends over time\nYou especially want to use a line chart when you have multiple cases or categories that you want to compare over time"
+  },
+  {
+    "objectID": "slides/week-3.2.html#example",
+    "href": "slides/week-3.2.html#example",
+    "title": "Which Visualization Should I Use?",
+    "section": "Example",
+    "text": "Example"
+  },
+  {
+    "objectID": "slides/week-3.2.html#scatter-plots",
+    "href": "slides/week-3.2.html#scatter-plots",
+    "title": "Which Visualization Should I Use?",
+    "section": "Scatter Plots",
+    "text": "Scatter Plots\n\n\nScatter plots are used to show the relationship between two variables\nFrequently the outcome variable is on the y-axis and the predictor variable is on the x-axis\nIn addition to the points, you can use color, size, and shape to add more information to the plot"
+  },
+  {
+    "objectID": "slides/week-3.2.html#which-plot-should-you-use",
+    "href": "slides/week-3.2.html#which-plot-should-you-use",
+    "title": "Which Visualization Should I Use?",
+    "section": "Which Plot Should You Use?",
+    "text": "Which Plot Should You Use?\n\n\n\nTrends in stock process over time\nDistribution of income in a country\nComparison of FLFP across MENA countries\nRelationship between poverty and inequality (cross-nationally)"
+  },
+  {
+    "objectID": "slides/week-3.2.html#which-geom-would-you-use",
+    "href": "slides/week-3.2.html#which-geom-would-you-use",
+    "title": "Which Visualization Should I Use?",
+    "section": "Which Geom Would You Use?",
+    "text": "Which Geom Would You Use?\n\n\n\nColumn chart\nHistogram\nLine chart\nScatter plot"
+  },
+  {
+    "objectID": "slides/week-3.2.html#line-chart-example",
+    "href": "slides/week-3.2.html#line-chart-example",
+    "title": "Which Visualization Should I Use?",
+    "section": "Line Chart Example",
+    "text": "Line Chart Example"
+  },
+  {
+    "objectID": "slides/week-3.2.html#other-plots-and-geometries",
+    "href": "slides/week-3.2.html#other-plots-and-geometries",
+    "title": "Which Visualization Should I Use?",
+    "section": "Other Plots and Geometries",
+    "text": "Other Plots and Geometries\n\n\n\n\nBox Plot\ngeom_boxplot()\nViolin Plot\ngeom_violin()\nDensity Plot\ngeom_density()\nBar Plot (Categorical)\ngeom_bar()\nHeatmap\ngeom_tile()\n\n\n\nArea Plot\ngeom_area()\nDot Plot\ngeom_dotplot()\nPie Chart\n(usually a bar plot with coord_polar())\nRidgeline Plot\nggridges::geom_density_ridges()\nMap Plot (Choropleth)\ngeom_polygon()"
+  },
+  {
+    "objectID": "slides/week-3.2.html#other-plots-smaller",
+    "href": "slides/week-3.2.html#other-plots-smaller",
+    "title": "Which Visualization Should I Use?",
+    "section": "Other Plots {smaller}",
+    "text": "Other Plots {smaller}\n\nBox Plot\ngeom_boxplot()\nViolin Plot\ngeom_violin()\nDensity Plot\ngeom_density()\nBar Plot (Categorical)\ngeom_bar()\nHeatmap\ngeom_tile()\nArea Plot\ngeom_area()\nDot Plot\ngeom_dotplot()\nPie Chart\n(usually a bar plot with coord_polar())\nRidgeline Plot\nggridges::geom_density_ridges()\nMap Plot (Choropleth)\ngeom_polygon()"
+  },
+  {
+    "objectID": "slides/week-3.2.html#other-plots",
+    "href": "slides/week-3.2.html#other-plots",
+    "title": "Which Visualization Should I Use?",
+    "section": "Other Plots",
+    "text": "Other Plots\n\n\n\nBox Plot\ngeom_boxplot()\nViolin Plot\ngeom_violin()\nDensity Plot\ngeom_density()\nBar Plot (Categorical)\ngeom_bar()\nHeatmap\ngeom_tile()\n\n\n\nArea Plot\ngeom_area()\nDot Plot\ngeom_dotplot()\nPie Chart\n(usually a bar plot with coord_polar())\nRidgeline Plot\nggridges::geom_density_ridges()\nMap Plot (Choropleth)\ngeom_polygon()"
   }
 ]

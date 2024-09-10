@@ -76,6 +76,13 @@ polyarchy_annual <- vdem %>%
 # write_csv(dem_waves_ctrs, "data/dem_waves_ctrs.csv")
 ```
 
+## Line Charts
+
+<br>
+
+- Line charts are used to show trends over time
+- You especially want to use a line chart when you have multiple cases or categories that you want to compare over time
+
 ## Huntington's Three Waves
 
 <br>
@@ -108,7 +115,9 @@ ggplotly(region_plot, tooltip = c("year", "polyarchy")) %>%
                             yref = 'paper', y = 1, yanchor = 'top', yshift = 0))
 ```
 
-## Line Chart
+## Line Chart Example
+
+<br>
 
 ```{r}
 #| label: geom_line1
@@ -252,6 +261,14 @@ countdown::countdown(minutes = 10,
                      color_finished_background = "#E5D19D",
                      color_finished_text = "#00264A")
 ```
+
+## Scatter Plots
+
+<br>
+
+- Scatter plots are used to show the relationship between two variables
+- Frequently the outcome variable is on the y-axis and the predictor variable is on the x-axis
+- In addition to the points, you can use color, size, and shape to add more information to the plot
 
 ## Scatter Plot Setup
 
@@ -398,7 +415,7 @@ ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = w
 #| label: dem_waves_time
 #| echo: false
 
-countdown::countdown(minutes = 5, 
+countdown::countdown(minutes = 10, 
                      id = "women_emp")
 ```
 
@@ -500,9 +517,72 @@ ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) +
 #| label: timer2
 #| echo: false
 
-countdown::countdown(minutes = 5, 
+countdown::countdown(minutes = 10, 
                      id = "timer2", 
                      bottom = "10%", 
                      right = "10%")
 ```
+
+## Which Plot Should You Use? 
+
+<br>
+
+:::{.incremental}
+- Trends in stock process over time
+- Distribution of income in a country
+- Comparison of FLFP across MENA countries
+- Relationship between poverty and inequality (cross-nationally)
+:::
+
+## Which Geom Would You Use?
+
+<br>
+
+:::{.incremental}
+- Column chart
+- Histogram
+- Line chart
+- Scatter plot
+:::
+
+## Other Plots and Geometries {.smaller}
+
+<br>
+
+:::{.columns}
+::::{.column width=50%}
+- **Box Plot**  
+  `geom_boxplot()`
+  
+- **Violin Plot**  
+  `geom_violin()`
+  
+- **Density Plot**  
+  `geom_density()`
+  
+- **Bar Plot (Categorical)**  
+  `geom_bar()`
+  
+- **Heatmap**  
+  `geom_tile()`
+::::
+
+::::{.column width=50%}
+- **Area Plot**  
+  `geom_area()`
+  
+- **Dot Plot**  
+  `geom_dotplot()`
+  
+- **Pie Chart**  
+  (usually a bar plot with `coord_polar()`)
+
+- **Ridgeline Plot**  
+  `ggridges::geom_density_ridges()`
+  
+- **Map Plot (Choropleth)**  
+  `geom_polygon()`
+::::
+:::
+
 
