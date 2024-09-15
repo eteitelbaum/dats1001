@@ -1559,5 +1559,257 @@
     "title": "Which Visualization Should I Use?",
     "section": "Other Plots",
     "text": "Other Plots\n\n\n\nBox Plot\ngeom_boxplot()\nViolin Plot\ngeom_violin()\nDensity Plot\ngeom_density()\nBar Plot (Categorical)\ngeom_bar()\nHeatmap\ngeom_tile()\n\n\n\nArea Plot\ngeom_area()\nDot Plot\ngeom_dotplot()\nPie Chart\n(usually a bar plot with coord_polar())\nRidgeline Plot\nggridges::geom_density_ridges()\nMap Plot (Choropleth)\ngeom_polygon()"
+  },
+  {
+    "objectID": "slides/week-4.1.html#line-chart-from-last-class",
+    "href": "slides/week-4.1.html#line-chart-from-last-class",
+    "title": "Data Viz Best Practices",
+    "section": "Line Chart from Last Class",
+    "text": "Line Chart from Last Class"
+  },
+  {
+    "objectID": "slides/week-4.1.html#problem",
+    "href": "slides/week-4.1.html#problem",
+    "title": "Data Viz Best Practices",
+    "section": "Problem",
+    "text": "Problem"
+  },
+  {
+    "objectID": "slides/week-4.1.html#color-blindness",
+    "href": "slides/week-4.1.html#color-blindness",
+    "title": "Data Viz Best Practices",
+    "section": "Color Blindness",
+    "text": "Color Blindness\n\n\nColor Vision Deficiency (CVD) or color blindness affects 8 percent of men and 1 in 200 women\nThere are different types of CVD but most common is red-green color blindness\nTherefore, don’t include red and green in the same chart!\nLook for color blind safe palettes"
+  },
+  {
+    "objectID": "slides/week-4.1.html#section",
+    "href": "slides/week-4.1.html#section",
+    "title": "Data Viz Best Practices",
+    "section": "",
+    "text": "Solution: Use a colorblind safe color scheme like viridis…"
+  },
+  {
+    "objectID": "slides/week-4.1.html#section-1",
+    "href": "slides/week-4.1.html#section-1",
+    "title": "Data Viz Best Practices",
+    "section": "",
+    "text": "Use scale_color_viridis_d() in this case to specify the viridis color scheme…\n\n# in this ggplot() call, we add a third dimension for line color\nggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +\n  geom_line(linewidth = 1) + # our geom is a line with a width of 1\n  labs(\n    x = \"Year\", \n    y = \"Polyarchy Score\", \n    title = 'Democracy in countries representing three different \"waves\"', \n    caption = \"Source: V-Dem Institute\", \n    color = \"Country\" # make title of legend to upper case\n  ) +\n  scale_color_viridis_d(option = \"mako\", end = .8) # use viridis color palette"
+  },
+  {
+    "objectID": "slides/week-4.1.html#better",
+    "href": "slides/week-4.1.html#better",
+    "title": "Data Viz Best Practices",
+    "section": "Better!",
+    "text": "Better!"
+  },
+  {
+    "objectID": "slides/week-4.1.html#palettes",
+    "href": "slides/week-4.1.html#palettes",
+    "title": "Data Viz Best Practices",
+    "section": "Palettes",
+    "text": "Palettes\n\n\nThere are a number of viridis palettes\nSee this reference to view different palettes and options\nYou can also use scale_color_viridis_c() to specify a continuous color scale\nAlso check out the paletteer package for easy access to many more palettes"
+  },
+  {
+    "objectID": "slides/week-4.1.html#your-turn",
+    "href": "slides/week-4.1.html#your-turn",
+    "title": "Data Viz Best Practices",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\nSee this reference to view different palettes and options\nAlso check out the paletteer package for easy access to many more palettes\nUse scale_color_viridis_d() to specify a viridis color scheme\n\n\n\n\n−+\n10:00"
+  },
+  {
+    "objectID": "slides/week-4.1.html#scatter-plot-example",
+    "href": "slides/week-4.1.html#scatter-plot-example",
+    "title": "Data Viz Best Practices",
+    "section": "Scatter Plot Example",
+    "text": "Scatter Plot Example"
+  },
+  {
+    "objectID": "slides/week-4.1.html#facet-wrapping",
+    "href": "slides/week-4.1.html#facet-wrapping",
+    "title": "Data Viz Best Practices",
+    "section": "Facet Wrapping",
+    "text": "Facet Wrapping"
+  },
+  {
+    "objectID": "slides/week-4.1.html#facet-wrapping-1",
+    "href": "slides/week-4.1.html#facet-wrapping-1",
+    "title": "Data Viz Best Practices",
+    "section": "Facet Wrapping",
+    "text": "Facet Wrapping\n\nUse facet_wrap() with ~ before variable you want to wrap on…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + \n  geom_point() + \n  geom_smooth(method = \"lm\", linewidth = 1) + \n  facet_wrap(~ region) +\n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\"\n    )"
+  },
+  {
+    "objectID": "slides/week-4.1.html#facet-wrapping-2",
+    "href": "slides/week-4.1.html#facet-wrapping-2",
+    "title": "Data Viz Best Practices",
+    "section": "Facet Wrapping",
+    "text": "Facet Wrapping\n\nWhat else changes? Back down to two dimensions…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + \n  geom_point() + \n  geom_smooth(method = \"lm\", linewidth = 1) + \n  facet_wrap(~ region) +\n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\"\n    )"
+  },
+  {
+    "objectID": "slides/week-4.1.html#facet-wrapping-3",
+    "href": "slides/week-4.1.html#facet-wrapping-3",
+    "title": "Data Viz Best Practices",
+    "section": "Facet Wrapping",
+    "text": "Facet Wrapping\n\nDon’t forget to take the legend title out of the captions…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + \n  geom_point() + \n  geom_smooth(method = \"lm\", linewidth = 1) + \n  facet_wrap(~ region) +\n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\"\n    )"
+  },
+  {
+    "objectID": "slides/week-4.1.html#your-turn-1",
+    "href": "slides/week-4.1.html#your-turn-1",
+    "title": "Data Viz Best Practices",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\nFacet wrap your scatter plot\nUse scales = \"free\" in facet_wrap call to fix the West\n\nfacet_wrap(~ region, scales = \"free\")\n\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/week-4.1.html#labeling-points",
+    "href": "slides/week-4.1.html#labeling-points",
+    "title": "Data Viz Best Practices",
+    "section": "Labeling Points",
+    "text": "Labeling Points"
+  },
+  {
+    "objectID": "slides/week-4.1.html#labeling-points-1",
+    "href": "slides/week-4.1.html#labeling-points-1",
+    "title": "Data Viz Best Practices",
+    "section": "Labeling Points",
+    "text": "Labeling Points\n\nFilter for Asia, add labels with geom_text()…\n\ndem_summary_ctry |&gt; \n  filter(region == \"Asia\") |&gt;\n  ggplot(aes(x = gdp_pc, y = polyarchy)) + \n    geom_point() + \n    geom_text(aes(label = country), size = 2, vjust = 2) +\n    geom_smooth(method = \"lm\", linewidth = 1) +\n    scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n      labs(\n        x= \"GDP Per Capita\", \n        y = \"Polyarchy Score\",\n        title = \"Wealth and democracy in Asia, 1990 - present\", \n        caption = \"Source: V-Dem Institute\"\n        )"
+  },
+  {
+    "objectID": "slides/week-4.1.html#your-turn-2",
+    "href": "slides/week-4.1.html#your-turn-2",
+    "title": "Data Viz Best Practices",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\nFilter for Asia or another region\nUse geom_text() to add labels to your points\nPlay with size and vjust paramters\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/week-4.1.html#make-it-interactive",
+    "href": "slides/week-4.1.html#make-it-interactive",
+    "title": "Data Viz Best Practices",
+    "section": "Make it Interactive",
+    "text": "Make it Interactive"
+  },
+  {
+    "objectID": "slides/week-4.1.html#section-2",
+    "href": "slides/week-4.1.html#section-2",
+    "title": "Data Viz Best Practices",
+    "section": "",
+    "text": "Here we used the fill argument to color the bars in our column chart.\n\n\nggplot(dem_summary, aes(x = reorder(region, -polyarchy), y = polyarchy)) +\n  geom_col(fill = \"steelblue\") + \n  labs(\n    x = \"Region\", \n    y = \"Avg. Polyarchy Score\", \n    title = \"Democracy by region, 1990 - present\", \n    caption = \"Source: V-Dem Institute\"\n    ) + \n  theme_minimal() +\n  scale_fill_viridis_d(option = \"mako\", end = .8)"
+  },
+  {
+    "objectID": "slides/week-4.1.html#scatter-plot-setup",
+    "href": "slides/week-4.1.html#scatter-plot-setup",
+    "title": "Data Viz Best Practices",
+    "section": "Scatter Plot Setup",
+    "text": "Scatter Plot Setup\n\n\ndem_summary_ctry &lt;-\n  read_csv(\"data/dem_women.csv\") |&gt;\n  group_by(country, region) |&gt; # group by country, keep region\n  summarize(\n    polyarchy = mean(polyarchy, na.rm = TRUE),\n    gdp_pc = mean(gdp_pc, na.rm = TRUE), \n    flfp = mean(flfp, na.rm = TRUE), \n    women_rep = mean(women_rep, na.rm = TRUE)\n  )"
+  },
+  {
+    "objectID": "slides/week-4.1.html#scatter-plot-example-1",
+    "href": "slides/week-4.1.html#scatter-plot-example-1",
+    "title": "Data Viz Best Practices",
+    "section": "Scatter Plot Example",
+    "text": "Scatter Plot Example\n\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + \n  geom_point(aes(color = region)) + \n  geom_smooth(method = \"lm\", linewidth = 1) + \n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\"\n    ) +\n  scale_color_viridis_d(option = \"mako\", end = .8)"
+  },
+  {
+    "objectID": "slides/week-4.1.html#continuous-color-scales",
+    "href": "slides/week-4.1.html#continuous-color-scales",
+    "title": "Data Viz Best Practices",
+    "section": "Continuous Color Scales",
+    "text": "Continuous Color Scales"
+  },
+  {
+    "objectID": "slides/week-4.1.html#scale_color_viridis_c-for-continuous-color-scales",
+    "href": "slides/week-4.1.html#scale_color_viridis_c-for-continuous-color-scales",
+    "title": "Data Viz Best Practices",
+    "section": "scale_color_viridis_c() for Continuous Color Scales",
+    "text": "scale_color_viridis_c() for Continuous Color Scales\n\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + \n  geom_point(aes(color = flfp)) + \n  geom_smooth(method = \"lm\", linewidth = 1) + \n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"FLFP\"\n    ) +\n  scale_color_viridis_c(option = \"mako\", end = .8)"
+  },
+  {
+    "objectID": "slides/week-4.1.html#use-scale_color_viridis_c",
+    "href": "slides/week-4.1.html#use-scale_color_viridis_c",
+    "title": "Data Viz Best Practices",
+    "section": "Use scale_color_viridis_c()",
+    "text": "Use scale_color_viridis_c()\n\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + \n  geom_point(aes(color = flfp)) + \n  geom_smooth(method = \"lm\", linewidth = 1) + \n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"FLFP\"\n    ) +\n  scale_color_viridis_c(option = \"mako\", end = .8)"
+  },
+  {
+    "objectID": "slides/week-4.1.html#fill-vs.-color",
+    "href": "slides/week-4.1.html#fill-vs.-color",
+    "title": "Data Viz Best Practices",
+    "section": "Fill vs. Color",
+    "text": "Fill vs. Color\n\n\nUse color (e.g. color = or scale_color_*) to modify the color of points, lines, or text.\nCommonly applied to:\n\nScatter plots\nLine charts\nText elements"
+  },
+  {
+    "objectID": "slides/week-4.1.html#our-column-chart-from-previous-class",
+    "href": "slides/week-4.1.html#our-column-chart-from-previous-class",
+    "title": "Data Viz Best Practices",
+    "section": "Our Column Chart from Previous Class",
+    "text": "Our Column Chart from Previous Class"
+  },
+  {
+    "objectID": "slides/week-4.1.html#adding-color-with-scale_fill_viridis_d",
+    "href": "slides/week-4.1.html#adding-color-with-scale_fill_viridis_d",
+    "title": "Data Viz Best Practices",
+    "section": "Adding Color with `scale_fill_viridis_d()",
+    "text": "Adding Color with `scale_fill_viridis_d()\n\n\nggplot(dem_summary, aes(x = reorder(region, -polyarchy), y = polyarchy)) +\n  geom_col(fill = \"steelblue\") + \n  labs(\n    x = \"Region\", \n    y = \"Avg. Polyarchy Score\", \n    title = \"Democracy by region, 1990 - present\", \n    caption = \"Source: V-Dem Institute\"\n    ) + \n  theme_minimal() +\n  scale_fill_viridis_d(option = \"mako\", end = .8)"
+  },
+  {
+    "objectID": "slides/week-4.1.html#adding-color-with-scale_fill_viridis_d-1",
+    "href": "slides/week-4.1.html#adding-color-with-scale_fill_viridis_d-1",
+    "title": "Data Viz Best Practices",
+    "section": "Adding Color with `scale_fill_viridis_d()",
+    "text": "Adding Color with `scale_fill_viridis_d()\n\n\nggplot(dem_summary, aes(x = reorder(region, -polyarchy), y = polyarchy)) +\n  geom_col(fill = \"steelblue\") + \n  labs(\n    x = \"Region\", \n    y = \"Avg. Polyarchy Score\", \n    title = \"Democracy by region, 1990 - present\", \n    caption = \"Source: V-Dem Institute\"\n    ) + \n  theme_minimal() +\n  scale_fill_viridis_d(option = \"mako\", end = .8)"
+  },
+  {
+    "objectID": "slides/week-4.1.html#your-turn-3",
+    "href": "slides/week-4.1.html#your-turn-3",
+    "title": "Data Viz Best Practices",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\nMake your scatter plot interactive with plotly\nUse tooltip argument to show more information on hover\nMake sure to include an additional aesthetic in aes() for the label\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/week-4.1.html#messages-warnings-and-errors",
+    "href": "slides/week-4.1.html#messages-warnings-and-errors",
+    "title": "Data Viz Best Practices",
+    "section": "Messages, Warnings and Errors",
+    "text": "Messages, Warnings and Errors\n\n\nMessages tell you what R is doing\nWarnings tell you that something might be wrong\nErrors tell you that something is definitely wrong\n\nLocate the error line number in the console and check your code\nError line tells you about where the error occurred, not exact\nErrors are normal, don’t freak out!\nIn fact, you should practice making errors to learn how to fix them"
+  },
+  {
+    "objectID": "slides/week-4.1.html#fill-vs.-color-1",
+    "href": "slides/week-4.1.html#fill-vs.-color-1",
+    "title": "Data Viz Best Practices",
+    "section": "Fill vs. Color",
+    "text": "Fill vs. Color\n\n\nUse fill (e.g. fill = or scale_fill_*) to modify the fill color of shapes like bars, boxes, or polygons.\nCommonly applied to:\n\nBar charts\nBox plots\nHistograms"
+  },
+  {
+    "objectID": "slides/week-4.1.html#using-scale_fill_viridis_d",
+    "href": "slides/week-4.1.html#using-scale_fill_viridis_d",
+    "title": "Data Viz Best Practices",
+    "section": "Using scale_fill_viridis_d()",
+    "text": "Using scale_fill_viridis_d()"
+  },
+  {
+    "objectID": "slides/week-4.1.html#section-3",
+    "href": "slides/week-4.1.html#section-3",
+    "title": "Data Viz Best Practices",
+    "section": "",
+    "text": "Should we do this instead?\n\n\nggplot(dem_summary, aes(x = reorder(region, -polyarchy), y = polyarchy, fill = region)) +\n  geom_col() + \n  labs(\n    x = \"Region\", \n    y = \"Avg. Polyarchy Score\", \n    title = \"Democracy by region, 1990 - present\", \n    caption = \"Source: V-Dem Institute\"\n    ) + \n  theme_minimal() +\n  scale_fill_viridis_d(option = \"mako\", end = .8)"
+  },
+  {
+    "objectID": "slides/week-4.1.html#section-4",
+    "href": "slides/week-4.1.html#section-4",
+    "title": "Data Viz Best Practices",
+    "section": "",
+    "text": "Should we do this instead?"
+  },
+  {
+    "objectID": "slides/week-4.1.html#section-5",
+    "href": "slides/week-4.1.html#section-5",
+    "title": "Data Viz Best Practices",
+    "section": "",
+    "text": "Use plotly to make any plot interactive…\n\nlibrary(plotly)\n\nmodernization_plot &lt;- ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + \n  geom_point(aes(color = region)) + \n  aes(label = country) +\n  geom_smooth(method = \"lm\", linewidth = 1) + \n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\"\n    ) +\n  scale_color_viridis_d(option = \"inferno\", end = .8)\n\nggplotly(modernization_plot, tooltip = c(\"country\", \"gdp_pc\", \"polyarchy\"))"
+  },
+  {
+    "objectID": "slides/week-4.1.html#when-to-use-a-color-scheme",
+    "href": "slides/week-4.1.html#when-to-use-a-color-scheme",
+    "title": "Data Viz Best Practices",
+    "section": "When to Use a Color Scheme",
+    "text": "When to Use a Color Scheme\n\n\nUse a color scheme when you want to differentiate between categories or groups\nBut only when the color adds value to the visualization\nIn this case, region is already differentiated by column height"
   }
 ]

@@ -13,6 +13,7 @@ format:
     #multiplex: true
     chalkboard: true
 execute:
+  echo: true
   message: false
   warning: false
   freeze: auto
@@ -21,13 +22,16 @@ execute:
 ## Line Chart from Last Class
 
 ```{r}
-#| label: geom_line1
+#| label: line_color1
+#| echo: false
+
+library(tidyverse)
 
 # load data
 dem_waves_ctrs <- read_csv("data/dem_waves_ctrs.csv")
 
 # in this ggplot() call, we add a third dimension for line color
-ggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +
+dem_waves_chart <- ggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +
   geom_line(linewidth = 1) + # our geom is a line with a width of 1
   labs(
     x = "Year", 
@@ -36,12 +40,15 @@ ggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +
     caption = "Source: V-Dem Institute", 
     color = "Country" # make title of legend to upper case
   )
+
+dem_waves_chart
 ```
 
 ## Problem
 
 ```{r}
 #| label: cvd_plot
+#| echo: false
 
 library(colorBlindness)
 
@@ -62,7 +69,8 @@ cvdPlot(dem_waves_chart)
 **Solution:** Use a colorblind safe color scheme like `viridis`...
 
 ```{r}
-#| label: geom_line6
+#| label: line_color2
+#| echo: false
 
 # in this ggplot() call, we add a third dimension for line color
 dem_waves_viridis <- ggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +
@@ -86,8 +94,7 @@ dem_waves_viridis
 Use `scale_color_viridis_d()` in this case to specify the viridis color scheme...
 
 ```{r}
-#| label: geom_line7
-#| echo: true
+#| label: line_color3
 #| eval: false
 #| code-line-numbers: "11"
 
@@ -108,30 +115,26 @@ ggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +
 
 ```{r}
 #| label: cvdplot2
+#| echo: false
 
 cvdPlot(dem_waves_viridis)
 ```
-
-## Palettes
-
-<br>
-
-- There are a number of viridis palettes
-- See [this reference](https://search.r-project.org/CRAN/refmans/viridisLite/html/viridis.html) to view different palettes and options
-- You can also use `scale_color_viridis_c()` to specify a continuous color scale 
-- Also check out the [paletteer package](https://emilhvitfeldt.github.io/paletteer/) for easy access to many more palettes
 
 ## Your Turn!
 
 <br>
 
+- See [this reference](https://search.r-project.org/CRAN/refmans/viridisLite/html/viridis.html) to view different palettes and options
+- Also check out the [paletteer package](https://emilhvitfeldt.github.io/paletteer/) for easy access to many more palettes
 - Use `scale_color_viridis_d()` to specify a viridis color scheme
 
 ```{r}
 #| label: timer1
+#| echo: false
+
 countdown::countdown(minutes = 10, 
                      id = "timer1", 
-                     bottom = "10%", 
+                     top = "0%", 
                      right = "10%",
                      color_border = "#fff",
                      color_text = "#fff",
@@ -141,13 +144,15 @@ countdown::countdown(minutes = 10,
                      color_finished_text = "#00264A")
 ```
 
-## Scatter Plot Example
+## Scatter Plot Setup
+
+<br>
 
 ```{r}
-#| label: scatter_plot_setup
-#| output: false
+#| label: scatter_plot1
 
-dem_summary_ctry <- read_csv("data/dem_women.csv") |>
+dem_summary_ctry <-
+  read_csv("data/dem_women.csv") |>
   group_by(country, region) |> # group by country, keep region
   summarize(
     polyarchy = mean(polyarchy, na.rm = TRUE),
@@ -157,72 +162,222 @@ dem_summary_ctry <- read_csv("data/dem_women.csv") |>
   )
 ```
 
+## Scatter Plot Example
+
+<br>
 
 ```{r}
-#| label: scatter1
+#| label: scatter_plot2
+#| echo: false
 
-# load data
-dem_summary_ctry <- read_csv("data/dem_summary_ctry.csv")
-
-# create scatter plot
-ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) + 
-  geom_point() + # use geom_point() for scatter plots
+ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + 
+  geom_point(aes(color = region)) +
+  geom_smooth(method = "lm", linewidth = 1) + 
   scale_x_log10(labels = scales::label_number(prefix = "$", suffix = "k")) +
   labs(
     x= "GDP per Capita", 
     y = "Polyarchy Score",
     title = "Wealth and democracy, 1990 - present", 
     caption = "Source: V-Dem Institute", 
-    color = "Region",
-    size = "Women Reps"
-    ) 
-```
-
-## Scatter Plot Example 
-
-```{r}
-#| label: scatter2
-
-ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) + 
-  geom_point() + # use geom_point() for scatter plots
-  scale_x_log10(labels = scales::label_number(prefix = "$", suffix = "k")) +
-  labs(
-    x= "GDP per Capita", 
-    y = "Polyarchy Score",
-    title = "Wealth and democracy, 1990 - present", 
-    caption = "Source: V-Dem Institute", 
-    color = "Region",
-    size = "Women Reps"
+    color = "Region"
     ) +
-  scale_color_viridis_d(option = "inferno", end = .8)
+  scale_color_viridis_d(option = "mako", end = .8)
 ```
 
-## Scatter Plot Example 
+## Scatter Plot Example
+
+<br>
 
 ```{r}
-#| label: scatter3
-#| echo: true
+#| label: scatter_plot3
 #| eval: false
-#| code-line-numbers: "12"
+#| code-line-numbers: "10-12"
 
-ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) + 
-  geom_point() + # use geom_point() for scatter plots
+ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + 
+  geom_point(aes(color = region)) + 
+  geom_smooth(method = "lm", linewidth = 1) + 
   scale_x_log10(labels = scales::label_number(prefix = "$", suffix = "k")) +
   labs(
     x= "GDP per Capita", 
     y = "Polyarchy Score",
     title = "Wealth and democracy, 1990 - present", 
     caption = "Source: V-Dem Institute", 
-    color = "Region",
-    size = "Women Reps"
+    color = "Region"
     ) +
-  scale_color_viridis_d(option = "inferno", end = .8)
+  scale_color_viridis_d(option = "mako", end = .8)
 ```
+
+## Continuous Color Scales
+
+<br>
+
+```{r}
+#| label: scatter_plot4
+#| echo: false
+
+ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + 
+  geom_point(aes(color = flfp)) + 
+  geom_smooth(method = "lm", linewidth = 1) + 
+  scale_x_log10(labels = scales::label_number(prefix = "$", suffix = "k")) +
+  labs(
+    x= "GDP per Capita", 
+    y = "Polyarchy Score",
+    title = "Wealth and democracy, 1990 - present", 
+    caption = "Source: V-Dem Institute", 
+    color = "FLFP"
+    ) +
+  scale_color_viridis_c(option = "mako", end = .8)
+```
+
+## Use `scale_color_viridis_c()`
+
+<br>
+
+```{r}
+#| label: scatter_plot5
+#| eval: false
+#| code-line-numbers: "10-12"
+
+ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + 
+  geom_point(aes(color = flfp)) + 
+  geom_smooth(method = "lm", linewidth = 1) + 
+  scale_x_log10(labels = scales::label_number(prefix = "$", suffix = "k")) +
+  labs(
+    x= "GDP per Capita", 
+    y = "Polyarchy Score",
+    title = "Wealth and democracy, 1990 - present", 
+    caption = "Source: V-Dem Institute", 
+    color = "FLFP"
+    ) +
+  scale_color_viridis_c(option = "mako", end = .8)
+```
+
+## Fill vs. Color
+
+<br>
+
+- Use **color** (e.g. `color = ` or `scale_color_*`) to modify the color of points, lines, or text. 
+- Commonly applied to:
+  - Scatter plots
+  - Line charts
+  - Text elements
+
+## Fill vs. Color
+
+<br>
+
+- Use **fill** (e.g. `fill = ` or `scale_fill_*`) to modify the fill color of shapes like bars, boxes, or polygons. 
+- Commonly applied to:
+  - Bar charts
+  - Box plots
+  - Histograms
+  
+## Our Column Chart from Previous Class
+
+<br>
+
+```{r}
+#| label: column_chart1
+#| echo: false
+
+library(forcats)
+
+dem_summary <- read_csv("data/dem_summary.csv")
+
+ggplot(dem_summary, aes(x = reorder(region, -polyarchy), y = polyarchy)) +
+  geom_col(fill = "steelblue") + 
+  labs(
+    x = "Region", 
+    y = "Avg. Polyarchy Score", 
+    title = "Democracy by region, 1990 - present", 
+    caption = "Source: V-Dem Institute"
+    ) + theme_minimal()
+```
+
+
+## 
+
+Here we used the `fill` argument to color the bars in our column chart.
+
+<br>
+
+```{r}
+#| label: column_chart3
+#| eval: false
+#| code-line-numbers: "2"
+
+ggplot(dem_summary, aes(x = reorder(region, -polyarchy), y = polyarchy)) +
+  geom_col(fill = "steelblue") + 
+  labs(
+    x = "Region", 
+    y = "Avg. Polyarchy Score", 
+    title = "Democracy by region, 1990 - present", 
+    caption = "Source: V-Dem Institute"
+    ) + 
+  theme_minimal() +
+  scale_fill_viridis_d(option = "mako", end = .8)
+```
+
+## 
+
+Should we do this instead?
+
+<br>
+
+```{r}
+#| label: column_chart4
+#| eval: false
+#| code-line-numbers: "1,10"
+
+ggplot(dem_summary, aes(x = reorder(region, -polyarchy), y = polyarchy, fill = region)) +
+  geom_col() + 
+  labs(
+    x = "Region", 
+    y = "Avg. Polyarchy Score", 
+    title = "Democracy by region, 1990 - present", 
+    caption = "Source: V-Dem Institute"
+    ) + 
+  theme_minimal() +
+  scale_fill_viridis_d(option = "mako", end = .8)
+```
+
+## 
+
+Should we do this instead?
+
+<br>
+
+```{r}
+#| label: column_chart5
+#| echo: false
+
+ggplot(dem_summary, aes(x = reorder(region, -polyarchy), y = polyarchy, fill = region)) +
+  geom_col() + 
+  labs(
+    x = "Region", 
+    y = "Avg. Polyarchy Score", 
+    title = "Democracy by region, 1990 - present", 
+    caption = "Source: V-Dem Institute"
+    ) + 
+  theme_minimal() +
+  scale_fill_viridis_d(option = "mako", end = .8)
+```
+
+## When to Use a Color Scheme
+
+<br>
+
+- Use a color scheme when you want to differentiate between categories or groups
+- But **only** when the color adds value to the visualization
+- In this case, region is already differentiated by column height
 
 ## Facet Wrapping
 
+<br>
+
 ```{r}
 #| label: facet_wrap0
+#| echo: false
 
 ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + 
   geom_point() + 
@@ -245,9 +400,9 @@ Use `facet_wrap()` with `~` before variable you want to wrap on...
 
 ```{r}
 #| label: facet_wrap1
-#| echo: true
 #| eval: false
 #| code-line-numbers: "4"
+
 ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + 
   geom_point() + 
   geom_smooth(method = "lm", linewidth = 1) + 
@@ -269,9 +424,9 @@ What else changes? Back down to two dimensions...
 
 ```{r}
 #| label: facet_wrap2
-#| echo: true
 #| eval: false
 #| code-line-numbers: "1-2"
+
 ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + 
   geom_point() + 
   geom_smooth(method = "lm", linewidth = 1) + 
@@ -293,9 +448,9 @@ Don't forget to take the legend title out of the captions...
 
 ```{r}
 #| label: facet_wrap3
-#| echo: true
 #| eval: false
 #| code-line-numbers: "6-11"
+
 ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + 
   geom_point() + 
   geom_smooth(method = "lm", linewidth = 1) + 
@@ -318,7 +473,9 @@ ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) +
   - `facet_wrap(~ region, scales = "free")`
 
 ```{r}
-#|label: facet_wrap_time
+#| label: facet_wrap_time
+#| echo: false
+
 countdown::countdown(minutes = 5, 
                      id = "facet", 
                      bottom = "10%", 
@@ -329,6 +486,8 @@ countdown::countdown(minutes = 5,
 
 ```{r}
 #| label: geom_text1
+#| echo: false
+
 dem_summary_ctry |> 
   filter(region == "Asia") |>
   ggplot(aes(x = gdp_pc, y = polyarchy)) + 
@@ -352,9 +511,9 @@ Filter for Asia, add labels with `geom_text()`...
 
 ```{r}
 #| label: geom_text2
-#| echo: true
 #| eval: false
 #| code-line-numbers: "1-5"
+
 dem_summary_ctry |> 
   filter(region == "Asia") |>
   ggplot(aes(x = gdp_pc, y = polyarchy)) + 
@@ -379,7 +538,8 @@ dem_summary_ctry |>
 - Play with `size` and `vjust` paramters 
 
 ```{r}
-#|label: label_time
+#| label: label_time
+#| echo: false
 countdown::countdown(minutes = 5, 
                      id = "labels", 
                      bottom = "10%", 
@@ -388,12 +548,15 @@ countdown::countdown(minutes = 5,
 
 ## Make it Interactive
 
+<br>
+
 ```{r}
 #| label: plotly1
+#| echo: false
 
 library(plotly)
 
-modernization_plot <- ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + 
+modernization_plot <- ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) +
   geom_point(aes(color = region)) + 
   aes(label = country) +
   geom_smooth(method = "lm", linewidth = 1) + 
@@ -407,7 +570,8 @@ modernization_plot <- ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) +
     ) +
   scale_color_viridis_d(option = "inferno", end = .8)
 
-ggplotly(modernization_plot, tooltip = c("country", "gdp_pc", "polyarchy"))
+ggplotly(modernization_plot, tooltip = c("country", "gdp_pc", "polyarchy")) |>
+  layout(width = 900, height = 450)
 ```
 
 ##
@@ -418,9 +582,9 @@ Use `plotly` to make any plot interactive...
 
 ```{r}
 #| label: plotly2
-#| echo: true
 #| eval: false
 #| code-line-numbers: "|1|3|5|17"
+
 library(plotly)
 
 modernization_plot <- ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + 
@@ -440,5 +604,34 @@ modernization_plot <- ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) +
 ggplotly(modernization_plot, tooltip = c("country", "gdp_pc", "polyarchy"))
 ```
 
+## Your Turn!
+
+<br>
+
+- Make your scatter plot interactive with `plotly`
+- Use `tooltip` argument to show more information on hover
+- Make sure to include an additional aesthetic in `aes()` for the label
+
+```{r}
+#| label: plotly_time
+#| echo: false
+
+countdown::countdown(minutes = 5, 
+                     id = "interactive", 
+                     bottom = "10%", 
+                     right = "10%")
+```
+
+## Messages, Warnings and Errors {.smaller}
+
+<br>
+
+- Messages tell you what R is doing
+- Warnings tell you that something might be wrong
+- Errors tell you that something is definitely wrong
+  - Locate the error line number in the console and check your code
+  - Error line tells you *about* where the error occurred, not exact
+  - Errors are normal, don't freak out! 
+  - In fact, you should practice making errors to learn how to fix them
 
 
