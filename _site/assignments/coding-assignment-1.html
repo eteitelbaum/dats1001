@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Your Name">
+<meta name="dcterms.date" content="2024-09-19">
 
-<title>DATS 1001–Fall Schedule - Data Assignment 1</title>
+<title>DATS 1001–Fall Schedule - Homework 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -72,11 +108,11 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="DATS 1001–Fall Schedule - Data Assignment 1">
-<meta property="og:description" content="Data Visualization">
+<meta property="og:title" content="DATS 1001–Fall Schedule - Homework 1">
+<meta property="og:description" content="Homepage for DATS 1001 - Data Science for All, George Washington University.">
 <meta property="og:site_name" content="DATS 1001--Fall Schedule">
-<meta name="twitter:title" content="DATS 1001–Fall Schedule - Data Assignment 1">
-<meta name="twitter:description" content="Data Visualization">
+<meta name="twitter:title" content="DATS 1001–Fall Schedule - Homework 1">
+<meta name="twitter:description" content="Homepage for DATS 1001 - Data Science for All, George Washington University.">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -237,22 +273,46 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#step-1-make-a-line-chart-showing-country-trends-20-pts" id="toc-step-1-make-a-line-chart-showing-country-trends-20-pts" class="nav-link" data-scroll-target="#step-1-make-a-line-chart-showing-country-trends-20-pts">Step 1: Make a line chart showing country trends (20 pts)</a></li>
+  <li><a href="#step-2-make-a-column-chart-comparing-regional-levels-20-pts" id="toc-step-2-make-a-column-chart-comparing-regional-levels-20-pts" class="nav-link" data-scroll-target="#step-2-make-a-column-chart-comparing-regional-levels-20-pts">Step 2: Make a column chart comparing regional levels (20 pts)</a></li>
+  <li><a href="#step-3-make-a-scatter-plot-20-pts" id="toc-step-3-make-a-scatter-plot-20-pts" class="nav-link" data-scroll-target="#step-3-make-a-scatter-plot-20-pts">Step 3: Make a scatter plot (20 pts)</a></li>
+  <li><a href="#step-4-additional-tasks-20-pts" id="toc-step-4-additional-tasks-20-pts" class="nav-link" data-scroll-target="#step-4-additional-tasks-20-pts">Step 4: Additional Tasks (20 pts)</a></li>
+  <li><a href="#step-5-interpretation-10-pts" id="toc-step-5-interpretation-10-pts" class="nav-link" data-scroll-target="#step-5-interpretation-10-pts">Step 5: Interpretation (10 pts)</a></li>
+  <li><a href="#step-6-rendering-10-pts" id="toc-step-6-rendering-10-pts" class="nav-link" data-scroll-target="#step-6-rendering-10-pts">Step 6: Rendering (10 pts)</a></li>
+  <li><a href="#extra-credit-3-pts" id="toc-extra-credit-3-pts" class="nav-link" data-scroll-target="#extra-credit-3-pts">Extra Credit (3 pts)</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/dats1001-fall-2024/edit/main/assignments/coding-assignment-1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dats1001-fall-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/coding-assignment-1.html">Coding Asignments</a></li><li class="breadcrumb-item"><a href="../assignments/coding-assignment-1.html">Assignment 1</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Data Assignment 1</h1>
-<p class="subtitle lead">Data Visualization</p>
+<h1 class="title">Homework 1</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Your Name </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">September 19, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -262,9 +322,66 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Details coming soon…</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>For this assignment, you are going to evaluate modernization theory as laid out in Seymour Martin Lipset’s <a href="https://www-jstor-org.proxygw.wrlc.org/stable/1951731?seq=8">classic article</a> entitled “Some Social Requisites of Democracy: Economic Development and Political Legitimacy.” How classic is this article? According to Google Scholar, this piece has been cited more than 11.5 thousand times!</p>
+<p>We are going to use data from V-Dem and modern data viz tools to explore Lipset’s hypothesis that economic modernization is highly correlated with democracy. We have already done this to some extent by looking at the relationship between wealth and the polyarchy score. But we are going to broaden things out by looking at other measures of democracy contained in the V-Dem dataset. Specifically, you will get to choose between the following four measures:</p>
+<ul>
+<li>liberal democracy (<code>libdem</code>)</li>
+<li>participatory democracy (<code>partipdem</code>)</li>
+<li>deliberative democracy (<code>delibdem</code>)</li>
+<li>egalitarian democracy (<code>egaldem</code>).</li>
+</ul>
+<p>For measuring modernization we are going to stick with GDP per capita (<code>gdp_pc</code>).</p>
+<p>Start by running this code chunk to import all of the packages you will need for this exercise. Then start working through the code and questions below. Feel free to grab relevant code chunks from the slides or the classwork QMD files that we have used in class so far.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="step-1-make-a-line-chart-showing-country-trends-20-pts" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-make-a-line-chart-showing-country-trends-20-pts">Step 1: Make a line chart showing country trends (20 pts)</h2>
+<p><em>a) Read in the data from line_chart.csv using <code>read_csv()</code> in an object called <code>line_chart_dta</code>.</em></p>
+<p><em>b) Now use <code>glimpse()</code> to inspect the data. How many rows and columns are in the data frame? Write your answer below the code chunk</em></p>
+<p><em>c) Now click on the data frame in the Environment tab or use <code>View()</code> to scroll through the data frame. What countries, years and variables are in the data frame? What are the measures of democracy?</em></p>
+<p><em>d) Now choose one of the democracy indicators and visualize it with a line chart using <code>ggplot2</code>. Be sure to specify <code>x =</code>, <code>y =</code> and <code>color =</code> in your aes() call and use <code>geom_line()</code> to create the chart.Add appropriate axis labels, a title and a caption. Now add a colorblind-friendly color map using <code>viridis</code> and a theme.</em></p>
+<p><em>e) In a few sentences below, interpret your chart. Describe the levels and trends in democracy scores. Put your answer right below this line in markdown text (DO NOT write your comments in a code chunk!!).</em></p>
+</section>
+<section id="step-2-make-a-column-chart-comparing-regional-levels-20-pts" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-make-a-column-chart-comparing-regional-levels-20-pts">Step 2: Make a column chart comparing regional levels (20 pts)</h2>
+<p><em>a) Read in the data from column_chart.csv using <code>read_csv()</code> in an object called <code>column_chart_dta</code>. You should see average democracy scores for the countries that you made a line chart for in Step 1.</em></p>
+<p><em>b) View the data frame. Describe briefly what you see, e.g.&nbsp;number of rows, columns and how the countries rank in terms of one of the democracy scores.</em></p>
+<p><em>c) Use <code>ggplot()</code> and <code>geom_col()</code> to visualize one of the democracy measures with a column chart (you can use the same measure as in Step 1 or a different one). Use <code>fct_reorder()</code> to arrange the columns in order of the y-axis values. Make sure to add appropriate axis labels, a title and a caption. Change the fill color and add a theme to spruce it up a bit. Remember that these are averages over the same number of years as the line chart you made in Step 1</em></p>
+<p><em>d) Interpret your column chart. Does the evidence in the column chart roughly match what you saw in the line chart above?</em></p>
+</section>
+<section id="step-3-make-a-scatter-plot-20-pts" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-make-a-scatter-plot-20-pts">Step 3: Make a scatter plot (20 pts)</h2>
+<p><em>a) Load the scatter plot data with <code>read_csv()</code>from <code>scatter_plot.csv</code>, storing the data in an object called <code>scatter_plot_dta</code>. Then glimpse or view the data and describe briefly what you see. Note that the values you see are country averages for the variables over the period 2010 - 2019.</em></p>
+<p><em>b) Now build a scatter plot with <code>ggplot2</code> using these data. Put GDP on the x-axis and one of the measures of democracy on the y-axis and color the points by region. Stretch the x-axis on a log scale and use the <code>scales</code> package to add a prefix and suffix to the x-axis numbers to indicate that they are dollar figures. Add appropriate labels and a <code>viridis</code> color map and add your favorite theme. Note that you will get some warnings about a few missing data points, so try setting <code>warning: false</code> at the top of the code chunk with the hash pipe (#|) operator.</em></p>
+<p><em>c) Next add a trend line with <code>geom_smooth()</code> preferably with a linear model (method = “lm”). Note that you will get some warnings about missing data points and a message about the linear model. Try setting <code>warning: false</code> at the top of the code chunk with the hash pipe (#|) operator.</em></p>
+</section>
+<section id="step-4-additional-tasks-20-pts" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-additional-tasks-20-pts">Step 4: Additional Tasks (20 pts)</h2>
+<p><em>a) Facet wrap your scatter plot by region.</em></p>
+<p><em>b) Remove the <code>facet_wrap()</code> call and display the relationship for one region and use <code>geom_text()</code> to label your points.</em></p>
+<p><em>c) Remove the text labels and make your scatter plot interactive using <code>ggplotly()</code>. Make sure that your tooltip includes the information that you want to display to the user.</em></p>
+</section>
+<section id="step-5-interpretation-10-pts" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-interpretation-10-pts">Step 5: Interpretation (10 pts)</h2>
+<p><em>Interpret your results from your visualizations, including the scatter plot, line chart and column chart. Is there an obvious relationship between development and democracy? Do the data generally support Lipset’s theory?</em></p>
+</section>
+<section id="step-6-rendering-10-pts" class="level2">
+<h2 class="anchored" data-anchor-id="step-6-rendering-10-pts">Step 6: Rendering (10 pts)</h2>
+<p><em>Press the render button to create your HTML document. If you get any errors go back and fix them and try again until the document renders.</em></p>
+</section>
+<section id="extra-credit-3-pts" class="level2">
+<h2 class="anchored" data-anchor-id="extra-credit-3-pts">Extra Credit (3 pts)</h2>
+<p><em>(a) Use a Quato theme to improve the look of the HTML output.</em></p>
+<p><em>(b) Use the <code>paletteer</code> package to a different theme to your scatter plot from Step 4.</em></p>
+<p><em>(c) Add annotation to your scatter plot from Step 4 using hline() or vline() to highlight a significant point in your data, like the mean or some other significant value. (Note: you will have to do some research to complete this step–we did not do it in class).</em></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -831,7 +948,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/dats1001-fall-2024/edit/main/assignments/coding-assignment-1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dats1001-fall-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dats1001-fall-2024/edit/main/assignments/coding-assignment-1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dats1001-fall-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>. 👷🛠️</p>
 </div>
