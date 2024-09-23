@@ -103,6 +103,8 @@ Thoughts? :sunglasses: :thought_balloon:
 
 ## Read Data into R
 
+<br>
+
 - Use `read_csv()` function from `readr` package
 - `readr` package is part of the `tidyverse`
 - Can do more with it than base R functions

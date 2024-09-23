@@ -530,7 +530,7 @@
     "href": "slides/week-5.1.html#read-data-into-r",
     "title": "Understanding Data",
     "section": "Read Data into R",
-    "text": "Read Data into R\n\nUse read_csv() function from readr package\nreadr package is part of the tidyverse\nCan do more with it than base R functions"
+    "text": "Read Data into R\n\n\nUse read_csv() function from readr package\nreadr package is part of the tidyverse\nCan do more with it than base R functions"
   },
   {
     "objectID": "slides/week-5.1.html#r-code-review",
