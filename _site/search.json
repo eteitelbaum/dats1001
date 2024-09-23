@@ -1924,5 +1924,54 @@
       "Course information",
       "Support"
     ]
+  },
+  {
+    "objectID": "slides/week-5.1.html#what-is-a-data-frame",
+    "href": "slides/week-5.1.html#what-is-a-data-frame",
+    "title": "Understanding Data",
+    "section": "What is a Data Frame?",
+    "text": "What is a Data Frame?\n\n\nSpecial kind of tabular data used in data science\nEach column can be a different data type\nData frames are the most common data structure in R"
+  },
+  {
+    "objectID": "slides/week-5.1.html#what-is-a-tibble",
+    "href": "slides/week-5.1.html#what-is-a-tibble",
+    "title": "Understanding Data",
+    "section": "What is a Tibble?",
+    "text": "What is a Tibble?\n\n\nModern data frames in R\nOffers better printing and subsetting behaviors\nDoes not convert character vectors to factors by default\nDisplays only the first 10 rows and as many columns as fit on screen\nColumn names are preserved exactly, even if they contain spaces"
+  },
+  {
+    "objectID": "slides/week-5.1.html#creating-a-tibble",
+    "href": "slides/week-5.1.html#creating-a-tibble",
+    "title": "Understanding Data",
+    "section": "Creating a Tibble",
+    "text": "Creating a Tibble\n\n\nWhen you read data into R with readr you automatically get a tibble\nYou can create a tibble using tibble() from the tibble package:\n\n\n  library(tibble)\n  \n  # Create a tibble\n  my_tibble &lt;- tibble(\n    name = c(\"Alice\", \"Bob\", \"Charlie\"),\n    age = c(25, 30, 35),\n    height = c(160, 170, 180),\n    is_student = c(TRUE, FALSE, FALSE)\n  )\n  \nmy_tibble  \n\n# A tibble: 3 × 4\n  name      age height is_student\n  &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;lgl&gt;     \n1 Alice      25    160 TRUE      \n2 Bob        30    170 FALSE     \n3 Charlie    35    180 FALSE"
+  },
+  {
+    "objectID": "slides/week-5.1.html#common-data-types",
+    "href": "slides/week-5.1.html#common-data-types",
+    "title": "Understanding Data",
+    "section": "Common Data Types",
+    "text": "Common Data Types\n\n&lt;chr&gt; (Character): Stores text strings\n\nExample: \"hello\", \"R programming\"\n\n&lt;dbl&gt; (Double): Stores decimal (floating-point) numbers\n\nExample: 3.14, -1.0\n\n&lt;int&gt; (Integer): Stores whole numbers (integers)\n\nExample: 1, -100, 42\n\n&lt;lgl&gt; (Logical): Stores boolean values (TRUE, FALSE, NA)\n\nExample: TRUE, FALSE, NA\n\n&lt;fct&gt; (Factor): Stores categorical variables with fixed levels\n\nExample: factor(c(\"low\", \"medium\", \"high\"))\n\n&lt;date&gt; (Date): Stores dates in the “YYYY-MM-DD” format\n\nExample: as.Date(\"2024-09-05\")"
+  },
+  {
+    "objectID": "slides/week-5.1.html#other-data-types",
+    "href": "slides/week-5.1.html#other-data-types",
+    "title": "Understanding Data",
+    "section": "Other Data Types",
+    "text": "Other Data Types\n\n\n&lt;dttm&gt; (Date-Time or POSIXct): Stores date-time objects (both date and time).\n\nExample: as.POSIXct(\"2024-09-05 14:30:00\")\n\n&lt;time&gt; (Time): Specifically stores time-of-day values (rarely seen without a date)\n\nExample: \"14:30:00\"\n\n&lt;list&gt; (List): Stores lists, where each entry can be a complex object.\n\nExample: list(c(1, 2, 3), c(\"a\", \"b\", \"c\"))"
+  },
+  {
+    "objectID": "slides/week-5.1.html#dates-and-times-with-lubridate",
+    "href": "slides/week-5.1.html#dates-and-times-with-lubridate",
+    "title": "Understanding Data",
+    "section": "Dates and Times with lubridate",
+    "text": "Dates and Times with lubridate\n\nlubridate is an R package that makes it easier to work with dates and times\nUse convenient functions to store dates in different formats\n\n\nlibrary(lubridate)\n  \n# Store a date\nmy_date &lt;- ymd(\"2024-09-05\")\nmy_date2 &lt;- mdy(\"09-05-2024\")\nmy_date3 &lt;- dmy(\"05-09-2024\")\n  \n# Print in long form\nformat(my_date, \"%B %d, %Y\")\n\n[1] \"September 05, 2024\""
+  },
+  {
+    "objectID": "slides/week-5.1.html#your-turn",
+    "href": "slides/week-5.1.html#your-turn",
+    "title": "Understanding Data",
+    "section": "Your Turn",
+    "text": "Your Turn\n\n\nCreate your own tibble\nMake it on a topic you find interesting\nTry to include at least three data types\n\n\n\n\n−+\n05:00"
   }
 ]

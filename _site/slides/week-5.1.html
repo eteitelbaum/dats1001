@@ -11,7 +11,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.4.533">
 
-  <meta name="dcterms.date" content="2024-09-22">
+  <meta name="dcterms.date" content="2024-09-23">
   <title>DATS 1001–Fall Schedule - Understanding Data</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -408,7 +408,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">September 22, 2024</p>
+  <p class="date">September 23, 2024</p>
 </section>
 <section>
 <section id="preliminaries" class="title-slide slide level1 center">
@@ -743,6 +743,145 @@ $ women_rep &lt;dbl&gt; 28.12921, 21.32548, 17.99728, 14.45225, 17.44296, 10.215
 <div class="cell">
 <div class="cell-output-display">
 <div class="countdown" id="timer5" data-update-every="1" tabindex="0" style="right:10%;bottom:10%;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="data-frames" class="title-slide slide level1 center">
+<h1>Data Frames</h1>
+
+</section>
+<section id="what-is-a-data-frame" class="slide level2">
+<h2>What is a Data Frame?</h2>
+<p><br></p>
+<ul>
+<li>Special kind of tabular data used in data science</li>
+<li>Each column can be a different data type</li>
+<li>Data frames are the most common data structure in R</li>
+</ul>
+</section>
+<section id="what-is-a-tibble" class="slide level2">
+<h2>What is a Tibble?</h2>
+<p><br></p>
+<ul>
+<li>Modern data frames in R</li>
+<li>Offers better printing and subsetting behaviors</li>
+<li>Does not convert character vectors to factors by default</li>
+<li>Displays only the first 10 rows and as many columns as fit on screen</li>
+<li>Column names are preserved exactly, even if they contain spaces</li>
+</ul>
+</section>
+<section id="creating-a-tibble" class="slide level2 smaller">
+<h2>Creating a Tibble</h2>
+<p><br></p>
+<ul>
+<li>When you read data into R with <code>readr</code> you automatically get a tibble</li>
+<li>You can create a tibble using <code>tibble()</code> from the <strong>tibble</strong> package:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>  <span class="fu">library</span>(tibble)</span>
+<span id="cb10-2"><a></a>  </span>
+<span id="cb10-3"><a></a>  <span class="co"># Create a tibble</span></span>
+<span id="cb10-4"><a></a>  my_tibble <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb10-5"><a></a>    <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>),</span>
+<span id="cb10-6"><a></a>    <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>),</span>
+<span id="cb10-7"><a></a>    <span class="at">height =</span> <span class="fu">c</span>(<span class="dv">160</span>, <span class="dv">170</span>, <span class="dv">180</span>),</span>
+<span id="cb10-8"><a></a>    <span class="at">is_student =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">FALSE</span>)</span>
+<span id="cb10-9"><a></a>  )</span>
+<span id="cb10-10"><a></a>  </span>
+<span id="cb10-11"><a></a>my_tibble  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+  name      age height is_student
+  &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;lgl&gt;     
+1 Alice      25    160 TRUE      
+2 Bob        30    170 FALSE     
+3 Charlie    35    180 FALSE     </code></pre>
+</div>
+</div>
+</section>
+<section id="common-data-types" class="slide level2 smaller">
+<h2>Common Data Types</h2>
+<ul>
+<li><strong>&lt;chr&gt; (Character)</strong>: Stores text strings
+<ul>
+<li>Example: <code>"hello"</code>, <code>"R programming"</code></li>
+</ul></li>
+<li><strong>&lt;dbl&gt; (Double)</strong>: Stores decimal (floating-point) numbers
+<ul>
+<li>Example: <code>3.14</code>, <code>-1.0</code></li>
+</ul></li>
+<li><strong>&lt;int&gt; (Integer)</strong>: Stores whole numbers (integers)
+<ul>
+<li>Example: <code>1</code>, <code>-100</code>, <code>42</code></li>
+</ul></li>
+<li><strong>&lt;lgl&gt; (Logical)</strong>: Stores boolean values (<code>TRUE</code>, <code>FALSE</code>, <code>NA</code>)
+<ul>
+<li>Example: <code>TRUE</code>, <code>FALSE</code>, <code>NA</code></li>
+</ul></li>
+<li><strong>&lt;fct&gt; (Factor)</strong>: Stores categorical variables with fixed levels
+<ul>
+<li>Example: <code>factor(c("low", "medium", "high"))</code></li>
+</ul></li>
+<li><strong>&lt;date&gt; (Date)</strong>: Stores dates in the “YYYY-MM-DD” format
+<ul>
+<li>Example: <code>as.Date("2024-09-05")</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="other-data-types" class="slide level2 smaller">
+<h2>Other Data Types</h2>
+<p><br></p>
+<ul>
+<li><strong>&lt;dttm&gt; (Date-Time or POSIXct)</strong>: Stores date-time objects (both date and time).
+<ul>
+<li>Example: <code>as.POSIXct("2024-09-05 14:30:00")</code></li>
+</ul></li>
+<li><strong>&lt;time&gt; (Time)</strong>: Specifically stores time-of-day values (rarely seen without a date)
+<ul>
+<li>Example: <code>"14:30:00"</code></li>
+</ul></li>
+<li><strong>&lt;list&gt; (List)</strong>: Stores lists, where each entry can be a complex object.
+<ul>
+<li>Example: <code>list(c(1, 2, 3), c("a", "b", "c"))</code></li>
+</ul></li>
+</ul>
+</section>
+<section id="dates-and-times-with-lubridate" class="slide level2">
+<h2>Dates and Times with <code>lubridate</code></h2>
+<ul>
+<li><p><strong><code>lubridate</code></strong> is an R package that makes it easier to work with dates and times</p></li>
+<li><p>Use convenient functions to store dates in different formats</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb12-2"><a></a>  </span>
+<span id="cb12-3"><a></a><span class="co"># Store a date</span></span>
+<span id="cb12-4"><a></a>my_date <span class="ot">&lt;-</span> <span class="fu">ymd</span>(<span class="st">"2024-09-05"</span>)</span>
+<span id="cb12-5"><a></a>my_date2 <span class="ot">&lt;-</span> <span class="fu">mdy</span>(<span class="st">"09-05-2024"</span>)</span>
+<span id="cb12-6"><a></a>my_date3 <span class="ot">&lt;-</span> <span class="fu">dmy</span>(<span class="st">"05-09-2024"</span>)</span>
+<span id="cb12-7"><a></a>  </span>
+<span id="cb12-8"><a></a><span class="co"># Print in long form</span></span>
+<span id="cb12-9"><a></a><span class="fu">format</span>(my_date, <span class="st">"%B %d, %Y"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "September 05, 2024"</code></pre>
+</div>
+</div>
+</section>
+<section id="your-turn" class="slide level2">
+<h2>Your Turn</h2>
+<p><br></p>
+<ul>
+<li>Create your own tibble</li>
+<li>Make it on a topic you find interesting</li>
+<li>Try to include at least three data types</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer1" data-update-every="1" tabindex="0" style="right:10%;bottom:10%;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
