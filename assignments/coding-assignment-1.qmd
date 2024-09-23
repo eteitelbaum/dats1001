@@ -132,3 +132,7 @@ library(plotly)
 *(b) Use the `paletteer` package to a different theme to your scatter plot from Step 4.*
 
 *(c) Add annotation to your scatter plot from Step 4 using hline() or vline() to highlight a significant point in your data, like the mean or some other significant value. (Note: you will have to do some research to complete this step--we did not do it in class).*
+
+## Submission
+
+*After rendering your document, export your project folder and submit it on Blackboard. You will find the link to the Coding Assignment one submission portal under the Assignments link. There are instructions along with screenshots there to assist you with the process of exporting your project as a ZIP file from Posit Cloud.*

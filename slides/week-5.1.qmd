@@ -1,0 +1,364 @@
+---
+title: "Understanding Data"
+subtitle: "Sources and Structure"
+date: today
+date-format: long
+footer: "[DataViz 2102 Website](https://dataviz-gwu.rocks)"
+logo: images/dataviz-logo.png
+from: markdown+emoji
+format:
+  revealjs:
+    theme: [simple, custom.scss]
+    transition: fade
+    slide-number: true
+    chalkboard: true
+    #multiplex: true
+execute:
+  echo: true
+  message: false
+  warning: false
+  freeze: auto
+---
+
+# Preliminaries
+
+## Where Does Data Come From?
+
+<br>
+
+Thoughts? :sunglasses: :thought_balloon:
+
+. . .
+
+:::{.incremental}
+- Your boss or a client sends you a file
+- Survey data collected by you or someone else 
+- You can download it from a website 
+- You can scrape it from a website
+- A data package (e.g. `unvotes`)
+- You can access it through an API
+:::
+
+## Getting Started with Data {.smaller}
+
+<br>
+
+::: {.incremental}
+- *Tabular data* is data that is organized into rows and columns
+  - a.k.a. *rectangular data*
+- A *data frame* is a special kind of tabular data used in data science
+- A *variable* is something you can measure 
+- An *observation* is a single unit or case in your data set
+- The *unit of analysis* is the level at which you are measuring
+  - In a cross-section: country, state, county, city, individual, etc.
+  - In a time-series: year, month, day, etc.
+:::
+
+# Adjectives for Your Data
+
+## The Concept of "Tidy Data"
+
+<br>
+
+- Each column represents a single variable
+- Each row represents a single observation
+- Each cell represents a single value
+
+## Tidy Data Example
+
+![](images/tidy_data.jpg)
+
+## What are Clean Data?
+
+- Column names are easy to work with and are not duplicated
+- Missing values have been dealt with
+- There are no repeated observations or columns
+- There are no blank observations or columns
+- The data are in the proper format, for example dates should be formatted as dates
+
+## Messy Data Example
+
+![](images/messy_wb_data.jpg){width=70%}
+
+## Which of These is Likely Tidy/Clean?
+
+<br>
+
+- Your boss or a client sends you a file
+- Survey data collected by you or someone else 
+- You can download it from a website 
+- You can scrape it from a website
+- A curated collection (e.g. `unvotes`)
+- You can access it through an API
+
+## How Do We Get Tidy/Clean Data? 
+
+<br>
+
+- Wrangle it ourselves
+- Use a package where it has been wrangled for us
+- Download via an API
+
+# Reading Data
+
+## Read Data into R
+
+- Use `read_csv()` function from `readr` package
+- `readr` package is part of the `tidyverse`
+- Can do more with it than base R functions
+
+## R Code Review {.smaller}
+
+<br>
+
+::: {.incremental}
+- `<-` is the assignment operator
+  - Use it to assign values to objects
+- `#` is the comment operator
+  - Use it to comment out code or add comments
+  - Different function than in markdown text
+- To call a library, use `library()` and name of library
+  - name of library does not have to be in quotes, e.g. `library(readr)`
+  - only when you install it, e.g. `install.packages("readr")`
+:::
+
+## Read Data into R
+
+<br>
+
+```{r}
+#| label: read_data1
+#| eval: false
+#| code-line-numbers: "|1|2-3|5"
+
+# load libraries
+library(readr)
+library(dplry)
+
+dem_summary <- read_csv("data/dem_summary.csv") #notice file path
+
+glimpse(dem_summary)
+```
+
+## Viewing the Data in R
+
+<br>
+
+Use `glimpse()` to see the columns and data types:
+
+```{r}
+#| label: read_data2
+#| code-line-numbers: "7"
+
+# load libraries
+library(readr)
+library(dplyr)
+
+dem_summary <- read_csv("data/dem_summary.csv")
+
+glimpse(dem_summary)
+```
+
+# 
+
+Or use `View()` or click on the name of the object in your Environment tab to see the data in a spreadsheet:
+
+![](images/view_df.gif){fig-align="center"}
+
+## Try It Yourself!
+
+- Open the CSV file to see what it looks like
+- Then use this code to read it into R and view it
+
+```{r}
+#| label: read_data3
+#| eval: false
+
+# load libraries
+library(readr)
+library(dplyr)
+
+dem_summary <- read_csv("data/dem_summary.csv")
+
+glimpse(dem_summary)
+```
+
+```{r}
+#| label: timer1
+#| echo: false
+
+library(countdown)
+countdown(minutes = 5, 
+          id = "timer1", 
+          bottom = "10%", 
+          right = "10%",
+          color_border = "#fff",
+          color_text = "#fff",
+          color_running_background = "#42affa",
+          color_running_text = "black",
+          color_finished_background = "#E5D19D",
+          color_finished_text = "#00264A")
+```
+
+## Write a New CSV File
+
+<br>
+
+Now try writing the same data to a file with a different name
+
+```{r}
+#| label: write_data
+#| eval: false
+
+write_csv(dem_summary, "data/your_new_file_name.csv") 
+```
+
+```{r}
+#| label: timer2
+#| echo: false
+
+library(countdown)
+countdown(minutes = 2, 
+          id = "timer2", 
+          bottom = "10%", 
+          right = "10%")
+```
+
+# Excel Files
+
+## Read in Excel File
+
+<br>
+
+```{r}
+#| label: read_excel
+#| eval: false
+
+library(readxl)
+
+dem_summary <- read_excel("data/dem_summary.xlsx")
+
+glimpse(dem_summary)
+```
+
+## Try With Excel
+
+<br>
+
+- Read in the Excel file
+- Follow same steps as with CSV file
+  - use `read_excel()` to read in the data
+  - install and experiment with [writexl](https://cran.r-project.org/web/packages/writexl/index.html)
+
+```{r}
+#| label: timer3
+#| echo: false
+
+library(countdown)
+countdown(minutes = 5, 
+          id = "timer3", 
+          bottom = "10%", 
+          right = "10%")
+```
+
+# Google Sheets
+
+## Import Data from Google Sheets
+
+<br>
+
+- Can use `googlesheets4`
+- Have a look at [these Gapminder data](https://docs.google.com/spreadsheets/d/1U6Cf_qEOhiR9AZqTqS3mbMF3zt2db48ZP5v3rkrAEJY/edit?gid=780868077#gid=780868077)
+- Use `gs4_deauth()` to authenticate
+- Then use `read_sheet()` to read in the data
+
+## Example Code
+
+<br>
+
+```{r}
+#| label: gs_data1
+
+library(googlesheets4)
+
+# Deauthorize to access public sheets without credentials
+gs4_deauth()
+
+# Read in the gapminder Africa data
+gapminder_data <- read_sheet("1U6Cf_qEOhiR9AZqTqS3mbMF3zt2db48ZP5v3rkrAEJY")
+```
+
+## Or... 
+
+<br>
+
+```{r}
+#| label: gs_data2
+#| eval: false
+
+library(googlesheets4)
+
+# Deauthorize to access public sheets without credentials
+gs4_deauth()
+
+# Read in the gapminder Africa data
+gapminder_data <- read_sheet("1U6Cf_qEOhiR9AZqTqS3mbMF3zt2db48ZP5v3rkrAEJY")
+```
+
+## Or...
+
+<br>
+
+```{r}
+#| label: gs_data3
+#| eval: false
+
+library(googlesheets4)
+
+# Deauthorize to access public sheets without credentials
+gs4_deauth()
+
+# Read in the gapminder Africa data
+gapminder_data <- googledrive::drive_get("gapminder") |>
+  read_sheet()
+```
+
+## Try It Yourself!
+
+<br>
+
+- Use the code above to read in the data
+- Try reading in Gapminder data for a different country
+
+```{r}
+#| label: timer4
+#| echo: false
+
+library(countdown)
+countdown(minutes = 5, 
+          id = "timer4", 
+          bottom = "10%", 
+          right = "10%")
+```
+
+## Find Your Own Data
+
+<br>
+
+- Visit [kaggle.com](https://www.kaggle.com/datasets) 
+- Find a dataset you like
+- Download it as a CSV
+- Upload to your Posit Cloud project
+- Read it into R
+- Explore with `glimpse()` and `View()`
+
+```{r}
+#| label: timer5
+#| echo: false
+
+library(countdown)
+countdown(minutes = 5, 
+          id = "timer5", 
+          bottom = "10%", 
+          right = "10%")
+```

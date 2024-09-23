@@ -6,10 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your Name">
-<meta name="dcterms.date" content="2024-09-19">
+<meta name="dcterms.date" content="2024-09-22">
 
-<title>DATS 1001–Fall Schedule - Homework 1</title>
+<title>DATS 1001–Fall Schedule - Understanding Data</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -65,8 +64,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../assignments/coding-assignment-2.html" rel="next">
-<link href="../faq.html" rel="prev">
 <link href="../images/ds4all-logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -106,13 +103,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<link href="../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
+<script src="../site_libs/countdown-0.4.0/countdown.js"></script>
 
 
-<meta property="og:title" content="DATS 1001–Fall Schedule - Homework 1">
-<meta property="og:description" content="Homepage for DATS 1001 - Data Science for All, George Washington University.">
+<meta property="og:title" content="DATS 1001–Fall Schedule - Understanding Data">
+<meta property="og:description" content="Sources and Structure">
 <meta property="og:site_name" content="DATS 1001--Fall Schedule">
-<meta name="twitter:title" content="DATS 1001–Fall Schedule - Homework 1">
-<meta name="twitter:description" content="Homepage for DATS 1001 - Data Science for All, George Washington University.">
+<meta name="twitter:title" content="DATS 1001–Fall Schedule - Understanding Data">
+<meta name="twitter:description" content="Sources and Structure">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -125,7 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/coding-assignment-1.html">Coding Asignments</a></li><li class="breadcrumb-item"><a href="../assignments/coding-assignment-1.html">Assignment 1</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Understanding Data</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -211,16 +210,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
  <span class="menu-text">Coding Asignments</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/coding-assignment-1.html" class="sidebar-item-text sidebar-link active">
+  <a href="../assignments/coding-assignment-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment 1</span></a>
   </div>
 </li>
@@ -277,41 +276,67 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#step-1-make-a-line-chart-showing-country-trends-20-pts" id="toc-step-1-make-a-line-chart-showing-country-trends-20-pts" class="nav-link" data-scroll-target="#step-1-make-a-line-chart-showing-country-trends-20-pts">Step 1: Make a line chart showing country trends (20 pts)</a></li>
-  <li><a href="#step-2-make-a-column-chart-comparing-regional-levels-20-pts" id="toc-step-2-make-a-column-chart-comparing-regional-levels-20-pts" class="nav-link" data-scroll-target="#step-2-make-a-column-chart-comparing-regional-levels-20-pts">Step 2: Make a column chart comparing regional levels (20 pts)</a></li>
-  <li><a href="#step-3-make-a-scatter-plot-20-pts" id="toc-step-3-make-a-scatter-plot-20-pts" class="nav-link" data-scroll-target="#step-3-make-a-scatter-plot-20-pts">Step 3: Make a scatter plot (20 pts)</a></li>
-  <li><a href="#step-4-additional-tasks-20-pts" id="toc-step-4-additional-tasks-20-pts" class="nav-link" data-scroll-target="#step-4-additional-tasks-20-pts">Step 4: Additional Tasks (20 pts)</a></li>
-  <li><a href="#step-5-interpretation-10-pts" id="toc-step-5-interpretation-10-pts" class="nav-link" data-scroll-target="#step-5-interpretation-10-pts">Step 5: Interpretation (10 pts)</a></li>
-  <li><a href="#step-6-rendering-10-pts" id="toc-step-6-rendering-10-pts" class="nav-link" data-scroll-target="#step-6-rendering-10-pts">Step 6: Rendering (10 pts)</a></li>
-  <li><a href="#extra-credit-3-pts" id="toc-extra-credit-3-pts" class="nav-link" data-scroll-target="#extra-credit-3-pts">Extra Credit (3 pts)</a></li>
-  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#preliminaries" id="toc-preliminaries" class="nav-link active" data-scroll-target="#preliminaries">Preliminaries</a>
+  <ul class="collapse">
+  <li><a href="#where-does-data-come-from" id="toc-where-does-data-come-from" class="nav-link" data-scroll-target="#where-does-data-come-from">Where Does Data Come From?</a></li>
+  <li><a href="#getting-started-with-data" id="toc-getting-started-with-data" class="nav-link" data-scroll-target="#getting-started-with-data">Getting Started with Data</a></li>
+  </ul></li>
+  <li><a href="#adjectives-for-your-data" id="toc-adjectives-for-your-data" class="nav-link" data-scroll-target="#adjectives-for-your-data">Adjectives for Your Data</a>
+  <ul class="collapse">
+  <li><a href="#the-concept-of-tidy-data" id="toc-the-concept-of-tidy-data" class="nav-link" data-scroll-target="#the-concept-of-tidy-data">The Concept of “Tidy Data”</a></li>
+  <li><a href="#tidy-data-example" id="toc-tidy-data-example" class="nav-link" data-scroll-target="#tidy-data-example">Tidy Data Example</a></li>
+  <li><a href="#what-are-clean-data" id="toc-what-are-clean-data" class="nav-link" data-scroll-target="#what-are-clean-data">What are Clean Data?</a></li>
+  <li><a href="#messy-data-example" id="toc-messy-data-example" class="nav-link" data-scroll-target="#messy-data-example">Messy Data Example</a></li>
+  <li><a href="#which-of-these-is-likely-tidyclean" id="toc-which-of-these-is-likely-tidyclean" class="nav-link" data-scroll-target="#which-of-these-is-likely-tidyclean">Which of These is Likely Tidy/Clean?</a></li>
+  <li><a href="#how-do-we-get-tidyclean-data" id="toc-how-do-we-get-tidyclean-data" class="nav-link" data-scroll-target="#how-do-we-get-tidyclean-data">How Do We Get Tidy/Clean Data?</a></li>
+  </ul></li>
+  <li><a href="#reading-data" id="toc-reading-data" class="nav-link" data-scroll-target="#reading-data">Reading Data</a>
+  <ul class="collapse">
+  <li><a href="#read-data-into-r" id="toc-read-data-into-r" class="nav-link" data-scroll-target="#read-data-into-r">Read Data into R</a></li>
+  <li><a href="#r-code-review" id="toc-r-code-review" class="nav-link" data-scroll-target="#r-code-review">R Code Review</a></li>
+  <li><a href="#read-data-into-r-1" id="toc-read-data-into-r-1" class="nav-link" data-scroll-target="#read-data-into-r-1">Read Data into R</a></li>
+  <li><a href="#viewing-the-data-in-r" id="toc-viewing-the-data-in-r" class="nav-link" data-scroll-target="#viewing-the-data-in-r">Viewing the Data in R</a></li>
+  </ul></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a>
+  <ul class="collapse">
+  <li><a href="#try-it-yourself" id="toc-try-it-yourself" class="nav-link" data-scroll-target="#try-it-yourself">Try It Yourself!</a></li>
+  <li><a href="#write-a-new-csv-file" id="toc-write-a-new-csv-file" class="nav-link" data-scroll-target="#write-a-new-csv-file">Write a New CSV File</a></li>
+  </ul></li>
+  <li><a href="#excel-files" id="toc-excel-files" class="nav-link" data-scroll-target="#excel-files">Excel Files</a>
+  <ul class="collapse">
+  <li><a href="#read-in-excel-file" id="toc-read-in-excel-file" class="nav-link" data-scroll-target="#read-in-excel-file">Read in Excel File</a></li>
+  <li><a href="#try-with-excel" id="toc-try-with-excel" class="nav-link" data-scroll-target="#try-with-excel">Try With Excel</a></li>
+  </ul></li>
+  <li><a href="#google-sheets" id="toc-google-sheets" class="nav-link" data-scroll-target="#google-sheets">Google Sheets</a>
+  <ul class="collapse">
+  <li><a href="#import-data-from-google-sheets" id="toc-import-data-from-google-sheets" class="nav-link" data-scroll-target="#import-data-from-google-sheets">Import Data from Google Sheets</a></li>
+  <li><a href="#example-code" id="toc-example-code" class="nav-link" data-scroll-target="#example-code">Example Code</a></li>
+  <li><a href="#or" id="toc-or" class="nav-link" data-scroll-target="#or">Or…</a></li>
+  <li><a href="#or-1" id="toc-or-1" class="nav-link" data-scroll-target="#or-1">Or…</a></li>
+  <li><a href="#try-it-yourself-1" id="toc-try-it-yourself-1" class="nav-link" data-scroll-target="#try-it-yourself-1">Try It Yourself!</a></li>
+  <li><a href="#find-your-own-data" id="toc-find-your-own-data" class="nav-link" data-scroll-target="#find-your-own-data">Find Your Own Data</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/dats1001-fall-2024/edit/main/assignments/coding-assignment-1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dats1001-fall-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/dats1001-fall-2024/edit/main/slides/week-5.1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dats1001-fall-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="week-5.1.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/coding-assignment-1.html">Coding Asignments</a></li><li class="breadcrumb-item"><a href="../assignments/coding-assignment-1.html">Assignment 1</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Homework 1</h1>
+<h1 class="title">Understanding Data</h1>
+<p class="subtitle lead">Sources and Structure</p>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Your Name </p>
-          </div>
-  </div>
     
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">September 19, 2024</p>
+      <p class="date">September 22, 2024</p>
     </div>
   </div>
   
@@ -323,69 +348,338 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>For this assignment, you are going to evaluate modernization theory as laid out in Seymour Martin Lipset’s <a href="https://www-jstor-org.proxygw.wrlc.org/stable/1951731?seq=8">classic article</a> entitled “Some Social Requisites of Democracy: Economic Development and Political Legitimacy.” How classic is this article? According to Google Scholar, this piece has been cited more than 11.5 thousand times!</p>
-<p>We are going to use data from V-Dem and modern data viz tools to explore Lipset’s hypothesis that economic modernization is highly correlated with democracy. We have already done this to some extent by looking at the relationship between wealth and the polyarchy score. But we are going to broaden things out by looking at other measures of democracy contained in the V-Dem dataset. Specifically, you will get to choose between the following four measures:</p>
-<ul>
-<li>liberal democracy (<code>libdem</code>)</li>
-<li>participatory democracy (<code>partipdem</code>)</li>
-<li>deliberative democracy (<code>delibdem</code>)</li>
-<li>egalitarian democracy (<code>egaldem</code>).</li>
+<section id="preliminaries" class="level1">
+<h1>Preliminaries</h1>
+<section id="where-does-data-come-from" class="level2">
+<h2 class="anchored" data-anchor-id="where-does-data-come-from">Where Does Data Come From?</h2>
+<p><br></p>
+<p>Thoughts? <span class="emoji" data-emoji="sunglasses">😎</span> <span class="emoji" data-emoji="thought_balloon">💭</span></p>
+<p>. . .</p>
+<div class="incremental">
+<ul class="incremental">
+<li>Your boss or a client sends you a file</li>
+<li>Survey data collected by you or someone else</li>
+<li>You can download it from a website</li>
+<li>You can scrape it from a website</li>
+<li>A data package (e.g.&nbsp;<code>unvotes</code>)</li>
+<li>You can access it through an API</li>
 </ul>
-<p>For measuring modernization we are going to stick with GDP per capita (<code>gdp_pc</code>).</p>
-<p>Start by running this code chunk to import all of the packages you will need for this exercise. Then start working through the code and questions below. Feel free to grab relevant code chunks from the slides or the classwork QMD files that we have used in class so far.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(plotly)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="step-1-make-a-line-chart-showing-country-trends-20-pts" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-make-a-line-chart-showing-country-trends-20-pts">Step 1: Make a line chart showing country trends (20 pts)</h2>
-<p><em>a) Read in the data from line_chart.csv using <code>read_csv()</code> in an object called <code>line_chart_dta</code>.</em></p>
-<p><em>b) Now use <code>glimpse()</code> to inspect the data. How many rows and columns are in the data frame? Write your answer below the code chunk</em></p>
-<p><em>c) Now click on the data frame in the Environment tab or use <code>View()</code> to scroll through the data frame. What countries, years and variables are in the data frame? What are the measures of democracy?</em></p>
-<p><em>d) Now choose one of the democracy indicators and visualize it with a line chart using <code>ggplot2</code>. Be sure to specify <code>x =</code>, <code>y =</code> and <code>color =</code> in your aes() call and use <code>geom_line()</code> to create the chart.Add appropriate axis labels, a title and a caption. Now add a colorblind-friendly color map using <code>viridis</code> and a theme.</em></p>
-<p><em>e) In a few sentences below, interpret your chart. Describe the levels and trends in democracy scores. Put your answer right below this line in markdown text (DO NOT write your comments in a code chunk!!).</em></p>
+<section id="getting-started-with-data" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="getting-started-with-data">Getting Started with Data</h2>
+<p><br></p>
+<div class="incremental">
+<ul class="incremental">
+<li><em>Tabular data</em> is data that is organized into rows and columns
+<ul class="incremental">
+<li>a.k.a. <em>rectangular data</em></li>
+</ul></li>
+<li>A <em>data frame</em> is a special kind of tabular data used in data science</li>
+<li>A <em>variable</em> is something you can measure</li>
+<li>An <em>observation</em> is a single unit or case in your data set</li>
+<li>The <em>unit of analysis</em> is the level at which you are measuring
+<ul class="incremental">
+<li>In a cross-section: country, state, county, city, individual, etc.</li>
+<li>In a time-series: year, month, day, etc.</li>
+</ul></li>
+</ul>
+</div>
 </section>
-<section id="step-2-make-a-column-chart-comparing-regional-levels-20-pts" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-make-a-column-chart-comparing-regional-levels-20-pts">Step 2: Make a column chart comparing regional levels (20 pts)</h2>
-<p><em>a) Read in the data from column_chart.csv using <code>read_csv()</code> in an object called <code>column_chart_dta</code>. You should see average democracy scores for the countries that you made a line chart for in Step 1.</em></p>
-<p><em>b) View the data frame. Describe briefly what you see, e.g.&nbsp;number of rows, columns and how the countries rank in terms of one of the democracy scores.</em></p>
-<p><em>c) Use <code>ggplot()</code> and <code>geom_col()</code> to visualize one of the democracy measures with a column chart (you can use the same measure as in Step 1 or a different one). Use <code>fct_reorder()</code> to arrange the columns in order of the y-axis values. Make sure to add appropriate axis labels, a title and a caption. Change the fill color and add a theme to spruce it up a bit. Remember that these are averages over the same number of years as the line chart you made in Step 1</em></p>
-<p><em>d) Interpret your column chart. Does the evidence in the column chart roughly match what you saw in the line chart above?</em></p>
 </section>
-<section id="step-3-make-a-scatter-plot-20-pts" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-make-a-scatter-plot-20-pts">Step 3: Make a scatter plot (20 pts)</h2>
-<p><em>a) Load the scatter plot data with <code>read_csv()</code>from <code>scatter_plot.csv</code>, storing the data in an object called <code>scatter_plot_dta</code>. Then glimpse or view the data and describe briefly what you see. Note that the values you see are country averages for the variables over the period 2010 - 2019.</em></p>
-<p><em>b) Now build a scatter plot with <code>ggplot2</code> using these data. Put GDP on the x-axis and one of the measures of democracy on the y-axis and color the points by region. Stretch the x-axis on a log scale and use the <code>scales</code> package to add a prefix and suffix to the x-axis numbers to indicate that they are dollar figures. Add appropriate labels and a <code>viridis</code> color map and add your favorite theme. Note that you will get some warnings about a few missing data points, so try setting <code>warning: false</code> at the top of the code chunk with the hash pipe (#|) operator.</em></p>
-<p><em>c) Next add a trend line with <code>geom_smooth()</code> preferably with a linear model (method = “lm”). Note that you will get some warnings about missing data points and a message about the linear model. Try setting <code>warning: false</code> at the top of the code chunk with the hash pipe (#|) operator.</em></p>
+<section id="adjectives-for-your-data" class="level1">
+<h1>Adjectives for Your Data</h1>
+<section id="the-concept-of-tidy-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-concept-of-tidy-data">The Concept of “Tidy Data”</h2>
+<p><br></p>
+<ul>
+<li>Each column represents a single variable</li>
+<li>Each row represents a single observation</li>
+<li>Each cell represents a single value</li>
+</ul>
 </section>
-<section id="step-4-additional-tasks-20-pts" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-additional-tasks-20-pts">Step 4: Additional Tasks (20 pts)</h2>
-<p><em>a) Facet wrap your scatter plot by region.</em></p>
-<p><em>b) Remove the <code>facet_wrap()</code> call and display the relationship for one region and use <code>geom_text()</code> to label your points.</em></p>
-<p><em>c) Remove the text labels and make your scatter plot interactive using <code>ggplotly()</code>. Make sure that your tooltip includes the information that you want to display to the user.</em></p>
+<section id="tidy-data-example" class="level2">
+<h2 class="anchored" data-anchor-id="tidy-data-example">Tidy Data Example</h2>
+<p><img src="images/tidy_data.jpg" class="img-fluid"></p>
 </section>
-<section id="step-5-interpretation-10-pts" class="level2">
-<h2 class="anchored" data-anchor-id="step-5-interpretation-10-pts">Step 5: Interpretation (10 pts)</h2>
-<p><em>Interpret your results from your visualizations, including the scatter plot, line chart and column chart. Is there an obvious relationship between development and democracy? Do the data generally support Lipset’s theory?</em></p>
+<section id="what-are-clean-data" class="level2">
+<h2 class="anchored" data-anchor-id="what-are-clean-data">What are Clean Data?</h2>
+<ul>
+<li>Column names are easy to work with and are not duplicated</li>
+<li>Missing values have been dealt with</li>
+<li>There are no repeated observations or columns</li>
+<li>There are no blank observations or columns</li>
+<li>The data are in the proper format, for example dates should be formatted as dates</li>
+</ul>
 </section>
-<section id="step-6-rendering-10-pts" class="level2">
-<h2 class="anchored" data-anchor-id="step-6-rendering-10-pts">Step 6: Rendering (10 pts)</h2>
-<p><em>Press the render button to create your HTML document. If you get any errors go back and fix them and try again until the document renders.</em></p>
+<section id="messy-data-example" class="level2">
+<h2 class="anchored" data-anchor-id="messy-data-example">Messy Data Example</h2>
+<p><img src="images/messy_wb_data.jpg" class="img-fluid" style="width:70.0%"></p>
 </section>
-<section id="extra-credit-3-pts" class="level2">
-<h2 class="anchored" data-anchor-id="extra-credit-3-pts">Extra Credit (3 pts)</h2>
-<p><em>(a) Use a Quato theme to improve the look of the HTML output.</em></p>
-<p><em>(b) Use the <code>paletteer</code> package to a different theme to your scatter plot from Step 4.</em></p>
-<p><em>(c) Add annotation to your scatter plot from Step 4 using hline() or vline() to highlight a significant point in your data, like the mean or some other significant value. (Note: you will have to do some research to complete this step–we did not do it in class).</em></p>
+<section id="which-of-these-is-likely-tidyclean" class="level2">
+<h2 class="anchored" data-anchor-id="which-of-these-is-likely-tidyclean">Which of These is Likely Tidy/Clean?</h2>
+<p><br></p>
+<ul>
+<li>Your boss or a client sends you a file</li>
+<li>Survey data collected by you or someone else</li>
+<li>You can download it from a website</li>
+<li>You can scrape it from a website</li>
+<li>A curated collection (e.g.&nbsp;<code>unvotes</code>)</li>
+<li>You can access it through an API</li>
+</ul>
 </section>
-<section id="submission" class="level2">
-<h2 class="anchored" data-anchor-id="submission">Submission</h2>
-<p><em>After rendering your document, export your project folder and submit it on Blackboard. You will find the link to the Coding Assignment one submission portal under the Assignments link. There are instructions along with screenshots there to assist you with the process of exporting your project as a ZIP file from Posit Cloud.</em></p>
+<section id="how-do-we-get-tidyclean-data" class="level2">
+<h2 class="anchored" data-anchor-id="how-do-we-get-tidyclean-data">How Do We Get Tidy/Clean Data?</h2>
+<p><br></p>
+<ul>
+<li>Wrangle it ourselves</li>
+<li>Use a package where it has been wrangled for us</li>
+<li>Download via an API</li>
+</ul>
+</section>
+</section>
+<section id="reading-data" class="level1">
+<h1>Reading Data</h1>
+<section id="read-data-into-r" class="level2">
+<h2 class="anchored" data-anchor-id="read-data-into-r">Read Data into R</h2>
+<ul>
+<li>Use <code>read_csv()</code> function from <code>readr</code> package</li>
+<li><code>readr</code> package is part of the <code>tidyverse</code></li>
+<li>Can do more with it than base R functions</li>
+</ul>
+</section>
+<section id="r-code-review" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="r-code-review">R Code Review</h2>
+<p><br></p>
+<div class="incremental">
+<ul class="incremental">
+<li><code>&lt;-</code> is the assignment operator
+<ul class="incremental">
+<li>Use it to assign values to objects</li>
+</ul></li>
+<li><code>#</code> is the comment operator
+<ul class="incremental">
+<li>Use it to comment out code or add comments</li>
+<li>Different function than in markdown text</li>
+</ul></li>
+<li>To call a library, use <code>library()</code> and name of library
+<ul class="incremental">
+<li>name of library does not have to be in quotes, e.g.&nbsp;<code>library(readr)</code></li>
+<li>only when you install it, e.g.&nbsp;<code>install.packages("readr")</code></li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="read-data-into-r-1" class="level2">
+<h2 class="anchored" data-anchor-id="read-data-into-r-1">Read Data into R</h2>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="co"># load libraries</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(readr)</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">library</span>(dplry)</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a>dem_summary <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/dem_summary.csv"</span>) <span class="co">#notice file path</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="fu">glimpse</span>(dem_summary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="viewing-the-data-in-r" class="level2">
+<h2 class="anchored" data-anchor-id="viewing-the-data-in-r">Viewing the Data in R</h2>
+<p><br></p>
+<p>Use <code>glimpse()</code> to see the columns and data types:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="co"># load libraries</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="fu">library</span>(readr)</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a>dem_summary <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/dem_summary.csv"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6"></a></span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="fu">glimpse</span>(dem_summary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 6
+Columns: 5
+$ region    &lt;chr&gt; "The West", "Latin America", "Eastern Europe", "Asia", "Afri…
+$ polyarchy &lt;dbl&gt; 0.8709230, 0.6371358, 0.5387451, 0.4076602, 0.3934166, 0.245…
+$ gdp_pc    &lt;dbl&gt; 37.913054, 9.610284, 12.176554, 9.746391, 4.410484, 21.134319
+$ flfp      &lt;dbl&gt; 52.99082, 48.12645, 50.45894, 50.32171, 56.69530, 26.57872
+$ women_rep &lt;dbl&gt; 28.12921, 21.32548, 17.99728, 14.45225, 17.44296, 10.21568</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="section" class="level1">
+<h1></h1>
+<p>Or use <code>View()</code> or click on the name of the object in your Environment tab to see the data in a spreadsheet:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/view_df.gif" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<section id="try-it-yourself" class="level2">
+<h2 class="anchored" data-anchor-id="try-it-yourself">Try It Yourself!</h2>
+<ul>
+<li>Open the CSV file to see what it looks like</li>
+<li>Then use this code to read it into R and view it</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># load libraries</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>dem_summary <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/dem_summary.csv"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(dem_summary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer1" data-update-every="1" tabindex="0" style="right:10%;bottom:10%;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="write-a-new-csv-file" class="level2">
+<h2 class="anchored" data-anchor-id="write-a-new-csv-file">Write a New CSV File</h2>
+<p><br></p>
+<p>Now try writing the same data to a file with a different name</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(dem_summary, <span class="st">"data/your_new_file_name.csv"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer2" data-update-every="1" tabindex="0" style="right:10%;bottom:10%;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="excel-files" class="level1">
+<h1>Excel Files</h1>
+<section id="read-in-excel-file" class="level2">
+<h2 class="anchored" data-anchor-id="read-in-excel-file">Read in Excel File</h2>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>dem_summary <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/dem_summary.xlsx"</span>)</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(dem_summary)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="try-with-excel" class="level2">
+<h2 class="anchored" data-anchor-id="try-with-excel">Try With Excel</h2>
+<p><br></p>
+<ul>
+<li>Read in the Excel file</li>
+<li>Follow same steps as with CSV file
+<ul>
+<li>use <code>read_excel()</code> to read in the data</li>
+<li>install and experiment with <a href="https://cran.r-project.org/web/packages/writexl/index.html">writexl</a></li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer3" data-update-every="1" tabindex="0" style="right:10%;bottom:10%;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="google-sheets" class="level1">
+<h1>Google Sheets</h1>
+<section id="import-data-from-google-sheets" class="level2">
+<h2 class="anchored" data-anchor-id="import-data-from-google-sheets">Import Data from Google Sheets</h2>
+<p><br></p>
+<ul>
+<li>Can use <code>googlesheets4</code></li>
+<li>Have a look at <a href="https://docs.google.com/spreadsheets/d/1U6Cf_qEOhiR9AZqTqS3mbMF3zt2db48ZP5v3rkrAEJY/edit?gid=780868077#gid=780868077">these Gapminder data</a></li>
+<li>Use <code>gs4_deauth()</code> to authenticate</li>
+<li>Then use <code>read_sheet()</code> to read in the data</li>
+</ul>
+</section>
+<section id="example-code" class="level2">
+<h2 class="anchored" data-anchor-id="example-code">Example Code</h2>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(googlesheets4)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Deauthorize to access public sheets without credentials</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gs4_deauth</span>()</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the gapminder Africa data</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>gapminder_data <span class="ot">&lt;-</span> <span class="fu">read_sheet</span>(<span class="st">"1U6Cf_qEOhiR9AZqTqS3mbMF3zt2db48ZP5v3rkrAEJY"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="or" class="level2">
+<h2 class="anchored" data-anchor-id="or">Or…</h2>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(googlesheets4)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Deauthorize to access public sheets without credentials</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gs4_deauth</span>()</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the gapminder Africa data</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>gapminder_data <span class="ot">&lt;-</span> <span class="fu">read_sheet</span>(<span class="st">"1U6Cf_qEOhiR9AZqTqS3mbMF3zt2db48ZP5v3rkrAEJY"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="or-1" class="level2">
+<h2 class="anchored" data-anchor-id="or-1">Or…</h2>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(googlesheets4)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Deauthorize to access public sheets without credentials</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gs4_deauth</span>()</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Read in the gapminder Africa data</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>gapminder_data <span class="ot">&lt;-</span> googledrive<span class="sc">::</span><span class="fu">drive_get</span>(<span class="st">"gapminder"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read_sheet</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="try-it-yourself-1" class="level2">
+<h2 class="anchored" data-anchor-id="try-it-yourself-1">Try It Yourself!</h2>
+<p><br></p>
+<ul>
+<li>Use the code above to read in the data</li>
+<li>Try reading in Gapminder data for a different country</li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer4" data-update-every="1" tabindex="0" style="right:10%;bottom:10%;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="find-your-own-data" class="level2">
+<h2 class="anchored" data-anchor-id="find-your-own-data">Find Your Own Data</h2>
+<p><br></p>
+<ul>
+<li>Visit <a href="https://www.kaggle.com/datasets">kaggle.com</a></li>
+<li>Find a dataset you like</li>
+<li>Download it as a CSV</li>
+<li>Upload to your Posit Cloud project</li>
+<li>Read it into R</li>
+<li>Explore with <code>glimpse()</code> and <code>View()</code></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer5" data-update-every="1" tabindex="0" style="right:10%;bottom:10%;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -933,18 +1227,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../faq.html" class="pagination-link  aria-label=" faq"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">FAQ</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../assignments/coding-assignment-2.html" class="pagination-link" aria-label="Assignment 2">
-        <span class="nav-page-text">Assignment 2</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -953,7 +1235,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dats1001-fall-2024/edit/main/assignments/coding-assignment-1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dats1001-fall-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dats1001-fall-2024/edit/main/slides/week-5.1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dats1001-fall-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>. 👷🛠️</p>
 </div>
