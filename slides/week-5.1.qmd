@@ -3,8 +3,8 @@ title: "Understanding Data"
 subtitle: "Sources and Structure"
 date: today
 date-format: long
-footer: "[DataViz 2102 Website](https://dataviz-gwu.rocks)"
-logo: images/dataviz-logo.png
+footer: "[DATS 1001 Website](https://ds4all.rocks)"
+logo: images/ds4all-logo.png
 from: markdown+emoji
 format:
   revealjs:

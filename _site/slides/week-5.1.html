@@ -751,9 +751,9 @@ $ women_rep &lt;dbl&gt; 28.12921, 21.32548, 17.99728, 14.45225, 17.44296, 10.215
 
 
 </section><div class="quarto-auto-generated-content">
-<p><img src="images/dataviz-logo.png" class="slide-logo"></p>
+<p><img src="images/ds4all-logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="https://dataviz-gwu.rocks">DataViz 2102 Website</a></p>
+<p><a href="https://ds4all.rocks">DATS 1001 Website</a></p>
 </div>
 </div></section>
     </div>
@@ -968,6 +968,44 @@ $ women_rep &lt;dbl&gt; 28.12921, 21.32548, 17.99728, 14.45225, 17.44296, 10.215
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
