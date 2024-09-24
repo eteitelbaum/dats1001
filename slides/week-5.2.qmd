@@ -1,0 +1,619 @@
+---
+title: Working With Data
+date: today
+date-format: long
+footer: "[DataViz 2102 Website](https://dataviz-gwu.rocks)"
+logo: images/dataviz-logo.png
+format:
+  revealjs:
+    theme: [simple, custom.scss]
+    transition: fade
+    slide-number: true
+    #multiplex: true
+    chalkboard: true
+execute:
+  echo: true
+  message: false
+  warning: false
+  freeze: auto
+---
+
+## How Do We Get Tidy/Clean Data? 
+
+<br>
+
+- Wrangle it ourselves
+- Use a package where it has been wrangled for us
+- Download via an API 
+
+## This Lesson
+
+- Practice with World Bank and V-Dem data
+- World Bank data through `wbstats`
+  - There is another package called `WDI`
+  - Both packages for accessing data through WB API
+- Varieties of Democracy (V-Dem) through `vdemlite`
+  - There is also a package called `vdemdata`
+  - `vdemlite` offers more functionality, works better in the cloud
+  
+## `filter()`, `select()`, `mutate()` {.smaller}
+
+<br>
+
+Along the way we will practice some important `dplyr` verbs:
+
+<br>
+
+- `filter()` is used to select observations based on their values
+- `select()` is used to select variables
+- `mutate()` is used to create new variables or modifying existing ones  
+
+<br>
+
+As well as some helpful functions from the `janitor` package.  
+
+# Data Frames
+
+## What is a Data Frame?
+
+<br>
+
+- Special kind of tabular data used in data science
+- Each column can be a different data type
+- Data frames are the most common data structure in R
+
+## What is a Tibble? 
+
+<br>
+
+- Modern data frames in R
+- Offers better printing and subsetting behaviors 
+- Does not convert character vectors to factors by default
+- Displays only the first 10 rows and as many columns as fit on screen
+- Column names are preserved exactly, even if they contain spaces
+
+## Creating a Tibble {.smaller}
+
+<br> 
+
+- When you read data into R with `readr` you automatically get a tibble
+- You can create a tibble using `tibble()` from the **tibble** package:
+
+```{r}
+  library(tibble)
+  
+  # Create a tibble
+  my_tibble <- tibble(
+    name = c("Alice", "Bob", "Charlie"),
+    age = c(25, 30, 35),
+    height = c(160, 170, 180),
+    is_student = c(TRUE, FALSE, FALSE)
+  )
+  
+my_tibble  
+```
+
+## Common Data Types {.smaller}
+
+- **\<chr> (Character)**: Stores text strings
+  - Example: `"hello"`, `"R programming"`
+  
+- **\<dbl> (Double)**: Stores decimal (floating-point) numbers
+  - Example: `3.14`, `-1.0`
+  
+- **\<int> (Integer)**: Stores whole numbers (integers)
+  - Example: `1`, `-100`, `42`
+
+- **\<lgl> (Logical)**: Stores boolean values (`TRUE`, `FALSE`, `NA`)
+  - Example: `TRUE`, `FALSE`, `NA`
+
+- **\<fct> (Factor)**: Stores categorical variables with fixed levels
+  - Example: `factor(c("low", "medium", "high"))`
+
+- **\<date> (Date)**: Stores dates in the "YYYY-MM-DD" format
+  - Example: `as.Date("2024-09-05")`
+
+## Other Data Types {.smaller}
+
+<br>
+
+- **\<dttm> (Date-Time or POSIXct)**: Stores date-time objects (both date and time).
+  - Example: `as.POSIXct("2024-09-05 14:30:00")`
+
+- **\<time> (Time)**: Specifically stores time-of-day values (rarely seen without a date)
+  - Example: `"14:30:00"`
+  
+- **\<list> (List)**: Stores lists, where each entry can be a complex object.
+  - Example: `list(c(1, 2, 3), c("a", "b", "c"))`  
+
+## Dates and Times with `lubridate`
+
+- **`lubridate`** is an R package that makes it easier to work with dates and times
+
+- Use convenient functions to store dates in different formats
+
+```{r}
+library(lubridate)
+  
+# Store a date
+my_date <- ymd("2024-09-05")
+my_date2 <- mdy("09-05-2024")
+my_date3 <- dmy("05-09-2024")
+  
+# Print in long form
+format(my_date, "%B %d, %Y")
+```
+
+## Your Turn
+
+<br>
+
+- Create your own tibble
+- Make it on a topic you find interesting
+- Try to include at least three data types
+
+```{r}
+#| label: timer6
+#| echo: false
+
+library(countdown)
+countdown(minutes = 5, 
+          id = "timer1", 
+          bottom = "10%", 
+          right = "10%")
+```
+
+# APIs
+
+## APIs
+
+<br>
+
+- API stands for "Application Programming Interface"
+- Way for two computers to talk to each other
+- In our case, we will use APIs to download social science data
+
+## APIs in R
+
+::: {.incremental}
+- APIs are accessed through packages in R
+- Sometimes there can be more than one package for an API
+- Much easier than reading in data from messy flat file!
+- We will use a few API packages in this course
+  - World Bank data through `wbstats` (or `WDI`)
+  - `fredr` for Federal Reserve Economic Data
+  - `tidycensus` for US Census data
+- But there are many APIs out there (please explore!)
+:::
+
+
+## Searching for WB Indicators
+
+<br>
+
+```{r}
+#| label: search_wb
+#| eval: false
+
+flfp_indicators <- wb_search("female labor force") # store the list of indicators
+
+print(flfp_indicators, n=26) # view the indicators
+```
+
+## `wbstats` Example
+
+<br>
+
+```{r}
+#| label: download_wb
+#| eval: false
+#| echo: true
+#| code-line-numbers: "1-4|6-7|9|10|11|12|13-16|18-19"
+
+# Load packages
+library(wbstats) # for downloading WB data
+library(dplyr) # for selecting, renaming and mutating
+library(janitor) # for rounding
+
+# Store the list of indicators in an object
+indicators <- c("flfp" = "SL.TLF.CACT.FE.ZS", "women_rep" = "SG.GEN.PARL.ZS") 
+
+# Download the data  
+women_emp <- wb_data(indicators, mrv = 50) |> # download data for last 50 yrs
+  select(!iso2c) |> # drop the iso2c code which we won't be using
+  rename(year = date) |> # rename date to year 
+  mutate(
+    flfp = round_to_fraction(flfp, denominator = 100), # round to nearest 100th
+    women_rep = round_to_fraction(women_rep, denominator = 100) 
+  )
+
+# View the data
+glimpse(women_emp) 
+```
+
+## Your Turn!
+
+<br>
+
+- Search for a WB indicator
+- Download the data
+
+```{r}
+#| label: timer1
+#| echo: false
+
+library(countdown)
+countdown(minutes = 5, 
+          id = "timer1", 
+          top = "10%", 
+          right = "10%",
+          color_border = "#fff",
+          color_text = "#fff",
+          color_running_background = "#42affa",
+          color_running_text = "black",
+          color_finished_background = "#E5D19D",
+          color_finished_text = "#00264A")
+```
+
+# V-Dem Data
+
+## The V-Dem Dataset
+
+<br>
+
+- V-Dem stands for Varieties of Democracy
+- It is a dataset that measures democracy around the world
+- Based on expert assessments of the quality of democracy in each country
+- Two packages we will explore: `vdemlite` and `vdemdata`
+
+## `vdemlite` 
+
+<br>
+
+- Covers a few hundred commonly used indicators and indices from 1970 onward
+- Covers everything in [this document](https://v-dem.net/documents/41/v-dem_structureofaggregation_v14.pdf)
+- As opposed to 4000+ indicators from the 18th century onward
+- Adds some functionality for working with the data
+- Easier to work with in the cloud and apps
+
+## `vdemlite` fuctions
+
+<br>
+
+- `fetchdem()` to download the data
+- `summarizedem()` provides searchable table of indicators with summary stats
+- `searchdem()` to search for specific indicators or all indicators used to construct an index
+- See the [vdemlite documentation](https://eteitelbaum.github.io/vdemlite/articles/vdemlite.html) for more details
+
+## `fetchdem()`
+
+<br>
+
+```{r}
+#| label: vdemlite1
+#| eval: false
+
+# Load packages
+library(vdemlite) # to download V-Dem data
+
+# Polyarchy and clean elections index for USA and Sweden for 2000-2020
+dem_indicators <- fetchdem(indicators = c("v2x_polyarchy", "v2xel_frefair"),
+                           countries = c("USA", "SWE"))
+
+# View the data
+glimpse(dem_indicators)
+```
+
+## `summarizedem()`
+
+<br>
+
+```{r}
+#| label: vdemlite2
+#| eval: false
+
+# Summary statistics for the polyarchy index
+summarizedem(indicator = "v2x_polyarchy")
+```
+
+## `searchdem()`
+
+<br>
+
+```{r}
+#| label: vdemlite3
+#| eval: false
+
+searchdem()
+```
+
+## Your Turn
+
+<br>
+
+- Look at the [vdemlite documentation](https://eteitelbaum.github.io/vdemlite/articles/vdemlite.html)
+- Try using `searchdem()` to find an indicator you are interested in using
+- Use `summarizedem()` to get summary statistics for that variable
+- Use `fetchdem()` to download the data for that variable for a country or countries of interest
+- Try using `mutate()` to add region codes to the data 
+
+
+```{r}
+#| label: timer3
+#| echo: false
+
+countdown(minutes = 5, 
+          id = "timer3",
+          top = "0%",
+          right = "5%")
+```
+
+## Downloading V-Dem Data
+
+<br>
+
+The `vdem` function from `vdemdata` just downloads all of the data. Try running this code chunk. What do you see in `democracy`?
+
+```{r}
+#| label: vdemdata1
+#| eval: false
+
+library(vdemdata) # load the V-Dem package
+
+democracy <- vdem() # download the V-Dem dataset
+```
+
+
+## `filter()`
+
+- Run this code. What do you see?
+- Try changing the year 
+- For one year, use `==` instead of `>=`
+- Or try `<=` and see what happens 
+
+```{r}
+#| label: vdemdata2
+#| eval: false
+
+democracy <- vdem |> # download the V-Dem dataset
+  filter(year >= 1990) # filter out years less than 1990
+  
+glimpse(democracy)  
+```
+
+## `=` versus `==`
+
+<br>
+
+- `=` is used to assign values to variables, just like `<-`
+- `==` is used to test if two values are equal to each other
+- So `filter(year == 1990)` will give you just the observations for 1990
+
+## `>=` and `<=`
+
+- `>=` is used to test if a value is greater than or equal to another value
+- `<=` is used to test if a value is less than or equal to another value
+- So `filter(year >= 1990)` will give you the observations for 1990 and later
+- And `filter(year <= 1990)` will give you the observations for 1990 and earlier
+
+## `select()`
+
+- Run this code. What do you see?
+- Now try `v2x_libdem` instead of `v2x_polyarchy`
+- Choose more from the [codebook](https://v-dem.net/documents/24/codebook_v13.pdf) 
+
+```{r}
+#| label: vdemdata3
+#| echo: true
+#| eval: false
+
+democracy <- vdem |> # download the V-Dem dataset
+  select(                  # select (and rename) these variables
+    country = country_name,     # before the = sign is new name  
+    vdem_ctry_id = country_id,  # after the = sign is the old name
+    year, 
+    polyarchy = v2x_polyarchy
+  )
+  
+glimpse(democracy)  
+```
+
+```{r}
+#| label: timer2
+#| echo: false
+
+countdown(minutes = 5, 
+          id = "timer2",
+          top = "0%",
+          right = "5%")
+```
+
+## `mutate()`
+
+- Modify the code to create new variable that is three times the value of `polyarchy` 
+- How about `polyarchy` squared? 
+
+```{r}
+#| label: vdemdata4
+#| eval: false
+
+democracy <- vdem |> # download the V-Dem dataset
+  filter(year == 2015) |> # keep only observations from 2015
+  select(                  # select (and rename) these variables
+    country = country_name,     # name before the = sign is new name  
+    vdem_ctry_id = country_id,  # name after the = sign is old name
+    year, 
+    polyarchy = v2x_polyarchy 
+    ) |>
+  mutate(
+    polyarchy_dbl = polyarchy * 2 # create variable 2X polyarchy
+  )
+  
+glimpse(democracy)  
+```
+
+```{r}
+#| label: timer4
+#| echo: false
+
+countdown(minutes = 5, 
+          id = "timer4",
+          top = "0%",
+          right = "5%")
+```
+
+## Some Common Arithmetic Operators
+
+<br>
+
+- `+` addition
+- `-` subtraction
+- `*` multiplication
+- `/` division
+- `^` exponentiation (also `**`)
+
+## `vdemdata` Example {.smaller}
+
+<br>
+
+```{r}
+#| label: vdemdata5
+#| eval: false
+
+# Load packages
+library(vdemdata) # to download V-Dem data
+library(dplyr)
+
+# Download the data
+democracy <- vdem |> # download the V-Dem dataset
+  filter(year == 2015)  |> # filter year, keep 2015
+  select(                  # select (and rename) these variables
+    country = country_name,     # the name before the = sign is the new name  
+    vdem_ctry_id = country_id,  # the name after the = sign is the old name
+    year, 
+    polyarchy = v2x_polyarchy, 
+    gdp_pc = e_gdppc, 
+    region = e_regionpol_6C
+    ) |>
+  mutate(
+    region = case_match(region, # replace the values in region with country names
+                     1 ~ "Eastern Europe", 
+                     2 ~ "Latin America",  
+                     3 ~ "Middle East",   
+                     4 ~ "Africa", 
+                     5 ~ "The West", 
+                     6 ~ "Asia")
+  )
+
+# View the data
+glimpse(democracy)
+```
+
+## {.smaller}
+
+<br>
+
+Use `filter()` to select years...
+
+<br>
+
+```{r}
+#| label: vdemdata6
+#| eval: false
+#| code-line-numbers: "2-3"
+
+# Download the data
+democracy <- vdem |> 
+  filter(year == 2015)  |> # keep 2015
+  select(                 
+    country = country_name,       
+    vdem_ctry_id = country_id,  
+    year, 
+    polyarchy = v2x_polyarchy, 
+    gdp_pc = e_gdppc, 
+    region = e_regionpol_6C
+    ) |>
+  mutate(
+    region = case_match(region,
+                     1 ~ "Eastern Europe", 
+                     2 ~ "Latin America",  
+                     3 ~ "Middle East",   
+                     4 ~ "Africa", 
+                     5 ~ "The West", 
+                     6 ~ "Asia")
+  )
+```
+
+## {.smaller}
+
+<br>
+
+Use `select()` to choose variables...
+
+<br>
+
+```{r}
+#| label: vdemdata7
+#| eval: false
+#| code-line-numbers: "4-11"
+
+# Download the data
+democracy <- vdem |> 
+  filter(year == 2015)  |> 
+  select(                  # select (and rename) these variables
+    country = country_name,     # the name before the = sign is the new name  
+    vdem_ctry_id = country_id,  # the name after the = sign is the old name
+    year, 
+    polyarchy = v2x_polyarchy, 
+    gdp_pc = e_gdppc, 
+    region = e_regionpol_6C
+    ) |>
+  mutate(
+    region = case_match(region, 
+                     1 ~ "Eastern Europe", 
+                     2 ~ "Latin America",  
+                     3 ~ "Middle East",   
+                     4 ~ "Africa", 
+                     5 ~ "The West", 
+                     6 ~ "Asia")
+  )
+```
+
+## {.smaller}
+
+<br>
+
+Use `mutate` with `case_match()` to Recode Region....
+
+<br>
+
+```{r}
+#| label: vdemdata8
+#| eval: false
+#| code-line-numbers: "12-23"
+
+# Download the data
+democracy <- vdem |>
+  filter(year == 2015)  |> 
+  select(                  
+    country = country_name,     
+    vdem_ctry_id = country_id,  
+    year, 
+    polyarchy = v2x_polyarchy, 
+    gdp_pc = e_gdppc, 
+    region = e_regionpol_6C
+    ) |>
+  mutate(
+    region = case_match(region, # replace the values in region with country names
+                     1 ~ "Eastern Europe", 
+                     2 ~ "Latin America",  
+                     3 ~ "Middle East",   
+                     4 ~ "Africa", 
+                     5 ~ "The West", 
+                     6 ~ "Asia")
+                    # number on the left of the ~ is the V-Dem region code
+                    # we are changing the number to the country name on the right
+                    # of the equals sign
+  )
+```
+
