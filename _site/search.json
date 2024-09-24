@@ -523,7 +523,7 @@
     "href": "slides/week-5.1.html#how-do-we-get-tidyclean-data",
     "title": "Understanding Data",
     "section": "How Do We Get Tidy/Clean Data?",
-    "text": "How Do We Get Tidy/Clean Data?\n\n\nWrangle it ourselves\nUse a package where it has been wrangled for us\nDownload via an API"
+    "text": "How Do We Get Tidy/Clean Data?\n\n\nGet lucky and find it\nWrangle it ourselves\nUse a package where it has been wrangled for us\nDownload via an API"
   },
   {
     "objectID": "slides/week-5.1.html#read-data-into-r",
@@ -1979,7 +1979,7 @@
     "href": "slides/week-5.2.html#how-do-we-get-tidyclean-data",
     "title": "Working With Data",
     "section": "How Do We Get Tidy/Clean Data?",
-    "text": "How Do We Get Tidy/Clean Data?\n\n\nWrangle it ourselves\nUse a package where it has been wrangled for us\nDownload via an API"
+    "text": "How Do We Get Tidy/Clean Data?\n\n\nGet lucky and find it (like on kaggle)\nWrangle it ourselves\nUse a package where it has been wrangled for us\nDownload via an API"
   },
   {
     "objectID": "slides/week-5.2.html#this-lesson",

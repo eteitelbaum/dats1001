@@ -22,6 +22,7 @@ execute:
 
 <br>
 
+- Get lucky and find it (like on kaggle)
 - Wrangle it ourselves
 - Use a package where it has been wrangled for us
 - Download via an API 
