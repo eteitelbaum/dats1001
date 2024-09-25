@@ -11,7 +11,7 @@ title: "Syllabus"
 | Instructor: Prof. Emmanuel Teitelbaum
 | Email: [ejt\@gwu.edu](mailto:ejt@gwu.edu)
 | Office Hours:Mondays 3-5 p.m. and by appointment.
-| Location: Online or in Monroe Hall, Rm. 411, Sign up [here]((https://calendly.com/emmanuel-teitelbaum))
+| Location: Online or in Monroe Hall, Rm. 411, Sign up [here](https://calendly.com/emmanuel-teitelbaum)
 |
 | Teaching Assistant: Gourab Mukherjee
 | Email: [gourab.mukherjee\@email.gwu.edu](mailto:gourab.mukherjee@email.gwu.edu)
