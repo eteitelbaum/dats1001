@@ -1,0 +1,406 @@
+---
+title: Working With Data
+date: today
+date-format: long
+footer: "[DATS 1001 Website](https://ds4all.rocks)"
+logo: images/ds4all-logo.png
+format:
+  revealjs:
+    theme: [simple, custom.scss]
+    transition: fade
+    slide-number: true
+    #multiplex: true
+    chalkboard: true
+execute:
+  echo: true
+  message: false
+  warning: false
+  freeze: auto
+---
+
+# `filter()`, `select()`, `mutate()`
+
+## Downloading V-Dem Data
+
+<br>
+
+The `vdem` function from `vdemdata` just downloads all of the data. Try running this code chunk. What do you see in `democracy`?
+
+<br>
+
+```{r}
+#| label: vdemdata1
+#| eval: false
+
+library(vdemdata) # load the V-Dem package
+
+democracy <- vdem() # download the V-Dem dataset
+```
+
+```{r}
+#| label: timer1
+#| echo: false
+
+source("timer.R")
+library(countdown)
+
+timer(minutes = 2, 
+      id = "timer1", 
+      bottom = "10%", 
+      right = "10%")
+```
+
+## `filter()`
+
+- Run this code. What do you see?
+- Try changing the year 
+- For one year, use `==` instead of `>=`
+- Or try `<=` and see what happens 
+
+<br>
+
+```{r}
+#| label: vdemdata2
+#| eval: false
+
+democracy <- vdem |> # download the V-Dem dataset
+  filter(year >= 1990) # filter out years less than 1990
+  
+glimpse(democracy)  
+```
+
+```{r}
+#| label: timer2
+#| echo: false
+
+timer(minutes = 2, 
+      id = "timer2", 
+      top = "10%", 
+      right = "10%")
+```
+
+
+## `=` versus `==`
+
+<br>
+
+- `=` is used to assign values to variables, just like `<-`
+- `==` is used to test if two values are equal to each other
+- So `filter(year == 1990)` will give you just the observations for 1990
+
+## `>=` and `<=`
+
+- `>=` is used to test if a value is greater than or equal to another value
+- `<=` is used to test if a value is less than or equal to another value
+- So `filter(year >= 1990)` will give you the observations for 1990 and later
+- And `filter(year <= 1990)` will give you the observations for 1990 and earlier
+
+## `select()`
+
+- Run this code. What do you see?
+- Now try `v2x_libdem` instead of `v2x_polyarchy`
+- Choose more from the [codebook](https://v-dem.net/documents/24/codebook_v13.pdf) 
+
+```{r}
+#| label: vdemdata3
+#| echo: true
+#| eval: false
+
+democracy <- vdem |> # download the V-Dem dataset
+  select(                  # select (and rename) these variables
+    country = country_name,     # before the = sign is new name  
+    vdem_ctry_id = country_id,  # after the = sign is the old name
+    year, 
+    polyarchy = v2x_polyarchy
+  )
+  
+glimpse(democracy)  
+```
+
+
+```{r}
+#| label: timer3
+#| echo: false
+
+timer(minutes = 2, 
+      id = "timer3", 
+      top = "0%", 
+      right = "10%")
+```
+
+## `mutate()`
+
+- Modify the code to create new variable that is three times the value of `polyarchy` 
+- How about `polyarchy` squared? 
+
+```{r}
+#| label: vdemdata4
+#| eval: false
+
+democracy <- vdem |> # download the V-Dem dataset
+  filter(year == 2015) |> # keep only observations from 2015
+  select(                  # select (and rename) these variables
+    country = country_name,     # name before the = sign is new name  
+    vdem_ctry_id = country_id,  # name after the = sign is old name
+    year, 
+    polyarchy = v2x_polyarchy 
+    ) |>
+  mutate(
+    polyarchy_dbl = polyarchy * 2 # create variable 2X polyarchy
+  )
+  
+glimpse(democracy)  
+```
+
+```{r}
+#| label: timer4
+#| echo: false
+
+timer(minutes = 2, 
+      top = "0%", 
+      right = "10%")
+```
+
+## Some Common Arithmetic Operators
+
+<br>
+
+- `+` addition
+- `-` subtraction
+- `*` multiplication
+- `/` division
+- `^` exponentiation (also `**`)
+
+## `vdemdata` Example {.smaller}
+
+<br>
+
+```{r}
+#| label: vdemdata5
+#| eval: false
+
+# Load packages
+library(vdemdata) # to download V-Dem data
+library(dplyr)
+
+# Download the data
+democracy <- vdem |> # download the V-Dem dataset
+  filter(year == 2015)  |> # filter year, keep 2015
+  select(                  # select (and rename) these variables
+    country = country_name,     # the name before the = sign is the new name  
+    vdem_ctry_id = country_id,  # the name after the = sign is the old name
+    year, 
+    polyarchy = v2x_polyarchy, 
+    gdp_pc = e_gdppc, 
+    region = e_regionpol_6C
+    ) |>
+  mutate(
+    region = case_match(region, # replace the values in region with country names
+                     1 ~ "Eastern Europe", 
+                     2 ~ "Latin America",  
+                     3 ~ "Middle East",   
+                     4 ~ "Africa", 
+                     5 ~ "The West", 
+                     6 ~ "Asia")
+  )
+
+# View the data
+glimpse(democracy)
+```
+
+## {.smaller}
+
+<br>
+
+Use `filter()` to select years...
+
+<br>
+
+```{r}
+#| label: vdemdata6
+#| eval: false
+#| code-line-numbers: "2-3"
+
+# Download the data
+democracy <- vdem |> 
+  filter(year == 2015)  |> # keep 2015
+  select(                 
+    country = country_name,       
+    vdem_ctry_id = country_id,  
+    year, 
+    polyarchy = v2x_polyarchy, 
+    gdp_pc = e_gdppc, 
+    region = e_regionpol_6C
+    ) |>
+  mutate(
+    region = case_match(region,
+                     1 ~ "Eastern Europe", 
+                     2 ~ "Latin America",  
+                     3 ~ "Middle East",   
+                     4 ~ "Africa", 
+                     5 ~ "The West", 
+                     6 ~ "Asia")
+  )
+```
+
+## {.smaller}
+
+<br>
+
+Use `select()` to choose variables...
+
+<br>
+
+```{r}
+#| label: vdemdata7
+#| eval: false
+#| code-line-numbers: "4-11"
+
+# Download the data
+democracy <- vdem |> 
+  filter(year == 2015)  |> 
+  select(                  # select (and rename) these variables
+    country = country_name,     # the name before the = sign is the new name  
+    vdem_ctry_id = country_id,  # the name after the = sign is the old name
+    year, 
+    polyarchy = v2x_polyarchy, 
+    gdp_pc = e_gdppc, 
+    region = e_regionpol_6C
+    ) |>
+  mutate(
+    region = case_match(region, 
+                     1 ~ "Eastern Europe", 
+                     2 ~ "Latin America",  
+                     3 ~ "Middle East",   
+                     4 ~ "Africa", 
+                     5 ~ "The West", 
+                     6 ~ "Asia")
+  )
+```
+
+## {.smaller}
+
+<br>
+
+Use `mutate` with `case_match()` to Recode Region....
+
+<br>
+
+```{r}
+#| label: vdemdata8
+#| eval: false
+#| code-line-numbers: "12-23"
+
+# Download the data
+democracy <- vdem |>
+  filter(year == 2015)  |> 
+  select(                  
+    country = country_name,     
+    vdem_ctry_id = country_id,  
+    year, 
+    polyarchy = v2x_polyarchy, 
+    gdp_pc = e_gdppc, 
+    region = e_regionpol_6C
+    ) |>
+  mutate(
+    region = case_match(region, # replace the values in region with country names
+                     1 ~ "Eastern Europe", 
+                     2 ~ "Latin America",  
+                     3 ~ "Middle East",   
+                     4 ~ "Africa", 
+                     5 ~ "The West", 
+                     6 ~ "Asia")
+                    # number on the left of the ~ is the V-Dem region code
+                    # we are changing the number to the country name on the right
+                    # of the equals sign
+  )
+```
+
+## Your Turn!
+
+<br>
+
+Have a look at the [V-Dem codebook](https://v-dem.net/documents/38/V-Dem_Codebook_v14.pdf)
+
+<br>
+
+- filter the data for the year 2010
+- select a different democracy indicator
+- use a different region variable (e.g., `e_regionpol_7C`)
+
+# Group, Summarize, and Arrange
+
+## Group, Summarize and Arrange
+
+<br>
+
+- `group_by()`, `summarize()`, `arrange()`
+- A very common sequence in data science:
+  - Take an average or some other statistic for a group
+  - Rank from high to low values of summary value
+  
+## Example
+
+<br>
+
+```{r}
+#| label: summarize
+#| eval: false
+
+# group_by(), summarize() and arrange()
+democracy |> # save result as new object
+  group_by(region)  |> # group data by region
+  summarize(           # summarize following vars (by region)
+    polyarchy_mean = mean(polyarchy, na.rm = TRUE), # calculate mean after remove NAs
+    libdem_median = median(libdem, na.rm = TRUE), # calculate median after remove NAs
+    gender = sd(gender, na.rm = TRUE), # calculate std. dev after remove NAs
+    gdp_pc = min(gdp_pc, na.rm = TRUE) # calculate minimum flfp after remove NAs
+  ) |> 
+  arrange(desc(polyarchy_mean)) # arrange in descending order by polyarchy score
+```
+
+## 
+
+<br>
+
+Use `across()` to Apply Same Function to Multiple Columns
+
+<br>
+
+```{r}
+#| label: across
+#| eval: false
+
+dem_women |>
+  group_by(region) |> 
+  summarize(
+    across(c(polyarchy, libdem, women_rep, flfp), # apply to these columns 
+           mean, # take the mean of the columns
+           na.rm = TRUE,  # remove NAs
+           .names = "mean_{col}") # change the suffix of the vars
+  ) |> 
+  arrange(desc(mean_polyarchy))
+```
+
+
+## Try it Yourself {.scrollable}
+
+- Try changing the parameters in the code to answer these questions: 
+
+1. Try summarizing the data with a [different function](https://dplyr.tidyverse.org/reference/summarise.html#useful-functions) for one or more of the variables. 
+  a. What is the median value of `polyarchy` for The West? 
+  b. What is the max value of `libdem` for Eastern Europe?
+  c. What is the standard deviation of `gender` for Africa?
+  d. What is the mean of `gdp_pc` for the Middle East?
+  
+2. Now try grouping by country instead of region and filter for years >= 2000.
+
+  a. What is the median value of `polyarchy` for Sweden? 
+  b. What is the max value of `libdem` New Zealand?
+  c. What is the standard deviation of `gender` for Norway?
+  d. What is the min of `gdp_pc` for Germany?
+
+3. Try sorting countries in ascending order of the selected variable (hint: delete "desc" from the `arrange()` call). Which country ranks at the "top" of the list? **Now change it back to descending order.** 
+
+
+
