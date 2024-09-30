@@ -2208,113 +2208,120 @@
   {
     "objectID": "slides/week-6.1.html#downloading-v-dem-data",
     "href": "slides/week-6.1.html#downloading-v-dem-data",
-    "title": "Working With Data",
+    "title": "The Grammar of Data Wrangling",
     "section": "Downloading V-Dem Data",
     "text": "Downloading V-Dem Data\n\nThe vdem function from vdemdata just downloads all of the data. Try running this code chunk. What do you see in democracy?\n\n\nlibrary(vdemdata) # load the V-Dem package\n\ndemocracy &lt;- vdem() # download the V-Dem dataset\n\n\n\n\n−+\n02:00"
   },
   {
     "objectID": "slides/week-6.1.html#filter",
     "href": "slides/week-6.1.html#filter",
-    "title": "Working With Data",
+    "title": "The Grammar of Data Wrangling",
     "section": "filter()",
     "text": "filter()\n\nRun this code. What do you see?\nTry changing the year\nFor one year, use == instead of &gt;=\nOr try &lt;= and see what happens\n\n\n\ndemocracy &lt;- vdem |&gt; # download the V-Dem dataset\n  filter(year &gt;= 1990) # filter out years less than 1990\n  \nglimpse(democracy)  \n\n\n\n\n−+\n02:00"
   },
   {
     "objectID": "slides/week-6.1.html#versus",
     "href": "slides/week-6.1.html#versus",
-    "title": "Working With Data",
+    "title": "The Grammar of Data Wrangling",
     "section": "= versus ==",
     "text": "= versus ==\n\n\n= is used to assign values to variables, just like &lt;-\n== is used to test if two values are equal to each other\nSo filter(year == 1990) will give you just the observations for 1990"
   },
   {
     "objectID": "slides/week-6.1.html#and",
     "href": "slides/week-6.1.html#and",
-    "title": "Working With Data",
+    "title": "The Grammar of Data Wrangling",
     "section": ">= and <=",
     "text": "&gt;= and &lt;=\n\n&gt;= is used to test if a value is greater than or equal to another value\n&lt;= is used to test if a value is less than or equal to another value\nSo filter(year &gt;= 1990) will give you the observations for 1990 and later\nAnd filter(year &lt;= 1990) will give you the observations for 1990 and earlier"
   },
   {
     "objectID": "slides/week-6.1.html#select",
     "href": "slides/week-6.1.html#select",
-    "title": "Working With Data",
+    "title": "The Grammar of Data Wrangling",
     "section": "select()",
     "text": "select()\n\nRun this code. What do you see?\nNow try v2x_libdem instead of v2x_polyarchy\nChoose more from the codebook\n\n\ndemocracy &lt;- vdem |&gt; # download the V-Dem dataset\n  select(                  # select (and rename) these variables\n    country = country_name,     # before the = sign is new name  \n    vdem_ctry_id = country_id,  # after the = sign is the old name\n    year, \n    polyarchy = v2x_polyarchy\n  )\n  \nglimpse(democracy)  \n\n\n\n\n−+\n02:00"
   },
   {
     "objectID": "slides/week-6.1.html#mutate",
     "href": "slides/week-6.1.html#mutate",
-    "title": "Working With Data",
+    "title": "The Grammar of Data Wrangling",
     "section": "mutate()",
     "text": "mutate()\n\nModify the code to create new variable that is three times the value of polyarchy\nHow about polyarchy squared?\n\n\ndemocracy &lt;- vdem |&gt; # download the V-Dem dataset\n  filter(year == 2015) |&gt; # keep only observations from 2015\n  select(                  # select (and rename) these variables\n    country = country_name,     # name before the = sign is new name  \n    vdem_ctry_id = country_id,  # name after the = sign is old name\n    year, \n    polyarchy = v2x_polyarchy \n    ) |&gt;\n  mutate(\n    polyarchy_dbl = polyarchy * 2 # create variable 2X polyarchy\n  )\n  \nglimpse(democracy)  \n\n\n\n\n−+\n02:00"
   },
   {
     "objectID": "slides/week-6.1.html#some-common-arithmetic-operators",
     "href": "slides/week-6.1.html#some-common-arithmetic-operators",
-    "title": "Working With Data",
+    "title": "The Grammar of Data Wrangling",
     "section": "Some Common Arithmetic Operators",
     "text": "Some Common Arithmetic Operators\n\n\n+ addition\n- subtraction\n* multiplication\n/ division\n^ exponentiation (also **)"
   },
   {
     "objectID": "slides/week-6.1.html#vdemdata-example",
     "href": "slides/week-6.1.html#vdemdata-example",
-    "title": "Working With Data",
+    "title": "The Grammar of Data Wrangling",
     "section": "vdemdata Example",
     "text": "vdemdata Example\n\n\n# Load packages\nlibrary(vdemdata) # to download V-Dem data\nlibrary(dplyr)\n\n# Download the data\ndemocracy &lt;- vdem |&gt; # download the V-Dem dataset\n  filter(year == 2015)  |&gt; # filter year, keep 2015\n  select(                  # select (and rename) these variables\n    country = country_name,     # the name before the = sign is the new name  \n    vdem_ctry_id = country_id,  # the name after the = sign is the old name\n    year, \n    polyarchy = v2x_polyarchy, \n    gdp_pc = e_gdppc, \n    region = e_regionpol_6C\n    ) |&gt;\n  mutate(\n    region = case_match(region, # replace the values in region with country names\n                     1 ~ \"Eastern Europe\", \n                     2 ~ \"Latin America\",  \n                     3 ~ \"Middle East\",   \n                     4 ~ \"Africa\", \n                     5 ~ \"The West\", \n                     6 ~ \"Asia\")\n  )\n\n# View the data\nglimpse(democracy)"
   },
   {
     "objectID": "slides/week-6.1.html#section",
     "href": "slides/week-6.1.html#section",
-    "title": "Working With Data",
+    "title": "The Grammar of Data Wrangling",
     "section": "",
     "text": "Use filter() to select years…\n\n\n# Download the data\ndemocracy &lt;- vdem |&gt; \n  filter(year == 2015)  |&gt; # keep 2015\n  select(                 \n    country = country_name,       \n    vdem_ctry_id = country_id,  \n    year, \n    polyarchy = v2x_polyarchy, \n    gdp_pc = e_gdppc, \n    region = e_regionpol_6C\n    ) |&gt;\n  mutate(\n    region = case_match(region,\n                     1 ~ \"Eastern Europe\", \n                     2 ~ \"Latin America\",  \n                     3 ~ \"Middle East\",   \n                     4 ~ \"Africa\", \n                     5 ~ \"The West\", \n                     6 ~ \"Asia\")\n  )"
   },
   {
     "objectID": "slides/week-6.1.html#section-1",
     "href": "slides/week-6.1.html#section-1",
-    "title": "Working With Data",
+    "title": "The Grammar of Data Wrangling",
     "section": "",
     "text": "Use select() to choose variables…\n\n\n# Download the data\ndemocracy &lt;- vdem |&gt; \n  filter(year == 2015)  |&gt; \n  select(                  # select (and rename) these variables\n    country = country_name,     # the name before the = sign is the new name  \n    vdem_ctry_id = country_id,  # the name after the = sign is the old name\n    year, \n    polyarchy = v2x_polyarchy, \n    gdp_pc = e_gdppc, \n    region = e_regionpol_6C\n    ) |&gt;\n  mutate(\n    region = case_match(region, \n                     1 ~ \"Eastern Europe\", \n                     2 ~ \"Latin America\",  \n                     3 ~ \"Middle East\",   \n                     4 ~ \"Africa\", \n                     5 ~ \"The West\", \n                     6 ~ \"Asia\")\n  )"
   },
   {
     "objectID": "slides/week-6.1.html#section-2",
     "href": "slides/week-6.1.html#section-2",
-    "title": "Working With Data",
+    "title": "The Grammar of Data Wrangling",
     "section": "",
     "text": "Use mutate with case_match() to Recode Region….\n\n\n# Download the data\ndemocracy &lt;- vdem |&gt;\n  filter(year == 2015)  |&gt; \n  select(                  \n    country = country_name,     \n    vdem_ctry_id = country_id,  \n    year, \n    polyarchy = v2x_polyarchy, \n    gdp_pc = e_gdppc, \n    region = e_regionpol_6C\n    ) |&gt;\n  mutate(\n    region = case_match(region, # replace the values in region with country names\n                     1 ~ \"Eastern Europe\", \n                     2 ~ \"Latin America\",  \n                     3 ~ \"Middle East\",   \n                     4 ~ \"Africa\", \n                     5 ~ \"The West\", \n                     6 ~ \"Asia\")\n                    # number on the left of the ~ is the V-Dem region code\n                    # we are changing the number to the country name on the right\n                    # of the equals sign\n  )"
   },
   {
     "objectID": "slides/week-6.1.html#your-turn",
     "href": "slides/week-6.1.html#your-turn",
-    "title": "Working With Data",
+    "title": "The Grammar of Data Wrangling",
     "section": "Your Turn!",
     "text": "Your Turn!\n\nHave a look at the V-Dem codebook\n\n\nfilter the data for the year 2010\nselect a different democracy indicator\nuse a different region variable (e.g., e_regionpol_7C)"
   },
   {
     "objectID": "slides/week-6.1.html#group-summarize-and-arrange-1",
     "href": "slides/week-6.1.html#group-summarize-and-arrange-1",
-    "title": "Working With Data",
+    "title": "The Grammar of Data Wrangling",
     "section": "Group, Summarize and Arrange",
     "text": "Group, Summarize and Arrange\n\n\ngroup_by(), summarize(), arrange()\nA very common sequence in data science:\n\nTake an average or some other statistic for a group\nRank from high to low values of summary value"
   },
   {
     "objectID": "slides/week-6.1.html#example",
     "href": "slides/week-6.1.html#example",
-    "title": "Working With Data",
+    "title": "The Grammar of Data Wrangling",
     "section": "Example",
     "text": "Example\n\n\n# group_by(), summarize() and arrange()\ndemocracy |&gt; # save result as new object\n  group_by(region)  |&gt; # group data by region\n  summarize(           # summarize following vars (by region)\n    polyarchy_mean = mean(polyarchy, na.rm = TRUE), # calculate mean after remove NAs\n    libdem_median = median(libdem, na.rm = TRUE), # calculate median after remove NAs\n    gender = sd(gender, na.rm = TRUE), # calculate std. dev after remove NAs\n    gdp_pc = min(gdp_pc, na.rm = TRUE) # calculate minimum flfp after remove NAs\n  ) |&gt; \n  arrange(desc(polyarchy_mean)) # arrange in descending order by polyarchy score"
   },
   {
     "objectID": "slides/week-6.1.html#section-3",
     "href": "slides/week-6.1.html#section-3",
-    "title": "Working With Data",
+    "title": "The Grammar of Data Wrangling",
     "section": "",
     "text": "Use across() to Apply Same Function to Multiple Columns\n\n\ndem_women |&gt;\n  group_by(region) |&gt; \n  summarize(\n    across(c(polyarchy, libdem, women_rep, flfp), # apply to these columns \n           mean, # take the mean of the columns\n           na.rm = TRUE,  # remove NAs\n           .names = \"mean_{col}\") # change the suffix of the vars\n  ) |&gt; \n  arrange(desc(mean_polyarchy))"
   },
   {
     "objectID": "slides/week-6.1.html#try-it-yourself",
     "href": "slides/week-6.1.html#try-it-yourself",
-    "title": "Working With Data",
+    "title": "The Grammar of Data Wrangling",
     "section": "Try it Yourself",
     "text": "Try it Yourself\n\nTry changing the parameters in the code to answer these questions:\n\n\nTry summarizing the data with a different function for one or more of the variables.\n\n\nWhat is the median value of polyarchy for The West?\nWhat is the max value of libdem for Eastern Europe?\nWhat is the standard deviation of gender for Africa?\nWhat is the mean of gdp_pc for the Middle East?\n\n\nNow try grouping by country instead of region and filter for years &gt;= 2000.\n\n\nWhat is the median value of polyarchy for Sweden?\nWhat is the max value of libdem New Zealand?\nWhat is the standard deviation of gender for Norway?\nWhat is the min of gdp_pc for Germany?\n\n\nTry sorting countries in ascending order of the selected variable (hint: delete “desc” from the arrange() call). Which country ranks at the “top” of the list? Now change it back to descending order."
+  },
+  {
+    "objectID": "slides/week-6.1.html#group-summarize-and-arrange",
+    "href": "slides/week-6.1.html#group-summarize-and-arrange",
+    "title": "The Grammar of Data Wrangling",
+    "section": "Group, Summarize and Arrange",
+    "text": "Group, Summarize and Arrange\n\n\ngroup_by(), summarize(), arrange()\nA very common sequence in data science:\n\nTake an average or some other statistic for a group\nRank from high to low values of summary value"
   }
 ]

@@ -1,5 +1,5 @@
 ---
-title: Working With Data
+title: The Grammar of Data Wrangling
 date: today
 date-format: long
 footer: "[DATS 1001 Website](https://ds4all.rocks)"
@@ -18,7 +18,7 @@ execute:
   freeze: auto
 ---
 
-# `filter()`, `select()`, `mutate()`
+# `filter()`<br>`select()`<br>`mutate()`
 
 ## Downloading V-Dem Data
 
@@ -328,7 +328,7 @@ Have a look at the [V-Dem codebook](https://v-dem.net/documents/38/V-Dem_Codeboo
 - select a different democracy indicator
 - use a different region variable (e.g., `e_regionpol_7C`)
 
-# Group, Summarize, and Arrange
+# `group_by()` <br> `summarize()` <br> `arrange()`
 
 ## Group, Summarize and Arrange
 
