@@ -2323,5 +2323,187 @@
     "title": "The Grammar of Data Wrangling",
     "section": "Group, Summarize and Arrange",
     "text": "Group, Summarize and Arrange\n\n\ngroup_by(), summarize(), arrange()\nA very common sequence in data science:\n\nTake an average or some other statistic for a group\nRank from high to low values of summary value"
+  },
+  {
+    "objectID": "slides/week-6.2.html#merging-data-frames",
+    "href": "slides/week-6.2.html#merging-data-frames",
+    "title": "Merging Data Frames",
+    "section": "Merging Data Frames",
+    "text": "Merging Data Frames\n\nOften we have data from two different sources\nResults in two data frames\nHow to make them one so we can analyze?\nKey questions\n\nWhat is the unit of analysis?\nWhat is/are the corresponding identifier variables?\nAre the identifier variables in common?\nOr do they have to be added/transformed to match?"
+  },
+  {
+    "objectID": "slides/week-6.2.html#merging-wb-and-v-dem-data",
+    "href": "slides/week-6.2.html#merging-wb-and-v-dem-data",
+    "title": "Merging Data Frames",
+    "section": "Merging WB and V-Dem Data",
+    "text": "Merging WB and V-Dem Data\n\n\nThese are both time-series, country-level data\nNeed to merge by country-year\nYear is easy\nBut there are many different country codes\nCan use countrycode package to assign country codes"
+  },
+  {
+    "objectID": "slides/week-6.2.html#countrycode-example",
+    "href": "slides/week-6.2.html#countrycode-example",
+    "title": "Merging Data Frames",
+    "section": "countrycode Example",
+    "text": "countrycode Example\n\n\n# Load countrycode\nlibrary(countrycode)\n\n# Create new iso3c variable\ndem_data &lt;- dem_data |&gt;    \n  mutate(iso3c = countrycode(sourcevar = country_id, # what we are converting\n        origin = \"vdem\",         # we are converting from vdem\n        destination = \"wb\"))  |&gt; # and converting to the WB iso3c code \n  relocate(iso3c, .after = country_id) # move iso3c \n\n# View the data\nglimpse(dem_data)"
+  },
+  {
+    "objectID": "slides/week-6.2.html#try-it-yourself",
+    "href": "slides/week-6.2.html#try-it-yourself",
+    "title": "Merging Data Frames",
+    "section": "Try it Yourself",
+    "text": "Try it Yourself\n\n\nUsing your democracy data frame from the last lesson\nUse mutate() and countrycode() to add iso3c country codes\nUse relocate to move your iso3c code to the “front” of your data frame (optional)\n\n\n\n\n−+\n10:00"
+  },
+  {
+    "objectID": "slides/week-6.2.html#types-of-joins-in-dplyr",
+    "href": "slides/week-6.2.html#types-of-joins-in-dplyr",
+    "title": "Merging Data Frames",
+    "section": "Types of Joins in dplyr",
+    "text": "Types of Joins in dplyr\n\nMutating versus filtering joins\nFour types of mutating joins\n\ninner_join()\nfull_join()\nleft_join()\nright_join()\n\nFor the most part we will use left_join()"
+  },
+  {
+    "objectID": "slides/week-6.2.html#left_join-example",
+    "href": "slides/week-6.2.html#left_join-example",
+    "title": "Merging Data Frames",
+    "section": "left_join() Example",
+    "text": "left_join() Example\n\n\n# Perform left join using common iso3c variable and year\ndem_women &lt;- left_join(dem_data, women_emp, by = c(\"iso3c\", \"year\")) |&gt; \n  select(-c(country_text_id, country_id, country)) |&gt; # drop extra country codes/names\n  rename(region = e_regionpol_6C, \n         polyarchy = v2x_polyarchy,\n         libdem = v2x_libdem) |&gt;\n    mutate(\n    region = case_match(region, # replace the values in region with country names\n                     1 ~ \"Eastern Europe\", \n                     2 ~ \"Latin America\",  \n                     3 ~ \"Middle East\",   \n                     4 ~ \"Africa\", \n                     5 ~ \"The West\", \n                     6 ~ \"Asia\")\n    )\n  \n# View the data\nglimpse(dem_women)"
+  },
+  {
+    "objectID": "slides/week-6.2.html#try-it-yourself-1",
+    "href": "slides/week-6.2.html#try-it-yourself-1",
+    "title": "Merging Data Frames",
+    "section": "Try it Yourself",
+    "text": "Try it Yourself\n\nTake your V-Dem data frame and your World Bank data frame\nUsing left_join() to merge on country code and year\nAlong the way, use rename() and select() to insure you have just one country name\nTry inner_join(), full_join(), and right_join() as time allows\n\n\n\n\n−+\n10:00"
+  },
+  {
+    "objectID": "slides/week-6.2.html#group-summarize-and-arrange",
+    "href": "slides/week-6.2.html#group-summarize-and-arrange",
+    "title": "Merging Data Frames",
+    "section": "Group, Summarize and Arrange",
+    "text": "Group, Summarize and Arrange\n\n\nDo a group, summarize, arrange sequence on your merged data frame\nGroup and summarize by region (mean or median)\nGroup and summarize by country (mean or median)\nTry using across() to summarize multiple columns at once\n\n\n\n\n−+\n10:00"
+  },
+  {
+    "objectID": "slides/week-6.2.html#example",
+    "href": "slides/week-6.2.html#example",
+    "title": "Merging Data Frames",
+    "section": "Example",
+    "text": "Example\n\n\n# group_by(), summarize() and arrange()\ndem_women |&gt; # save result as new object\n  group_by(region)  |&gt; # group data by region\n  summarize(           # summarize following vars (by region)\n    polyarchy_mean = mean(polyarchy, na.rm = TRUE), # calculate mean after remove NAs\n    libdem_median = median(libdem, na.rm = TRUE), # calculate median after remove NAs\n    women_rep_sd = sd(women_rep, na.rm = TRUE), # calculate std. dev after remove NAs\n    flfp_min = min(flfp, na.rm = TRUE) # calculate minimum flfp after remove NAs\n  ) |&gt; \n  arrange(desc(polyarchy_mean)) # arrange in descending order by polyarchy score"
+  },
+  {
+    "objectID": "slides/week-6.2.html#section",
+    "href": "slides/week-6.2.html#section",
+    "title": "Merging Data Frames",
+    "section": "",
+    "text": "Use across() to Apply Same Function to Multiple Columns\n\n\ndem_women |&gt;\n  group_by(region) |&gt; \n  summarize(\n    across(c(polyarchy, libdem, women_rep, flfp), mean, na.rm = TRUE)\n  ) |&gt; \n  arrange(desc(polyarchy))"
+  },
+  {
+    "objectID": "slides/week-6.2.html#try-it-yourself-2",
+    "href": "slides/week-6.2.html#try-it-yourself-2",
+    "title": "Merging Data Frames",
+    "section": "Try it Yourself",
+    "text": "Try it Yourself\n\nTry changing the parameters in the code to answer these questions:\n\n\nTry summarizing the data with a different function for one or more of the variables.\n\n\nWhat is the median value of polyarchy for The West?\nWhat is the max value of libdem for Eastern Europe?\nWhat is the standard deviation of women_rep for Africa?\nWhat is the mean of flfp for the Middle East?\n\n\nNow try grouping by country instead of region and filter for years &gt;= 2000.\n\n\nWhat is the median value of polyarchy for Sweden?\nWhat is the max value of libdem New Zealand?\nWhat is the standard deviation of women_rep for Norway?\nWhat is the min of flfp for Germany?\n\n\nTry sorting countries in ascending order of the selected variable (hint: delete “desc” from the arrange() call). Which country ranks at the “top” of the list? Now change it back to descending order."
+  },
+  {
+    "objectID": "slides/week-6.2.html#horizontal-join-merge",
+    "href": "slides/week-6.2.html#horizontal-join-merge",
+    "title": "Merging Data Frames",
+    "section": "Horizontal Join (Merge)",
+    "text": "Horizontal Join (Merge)\n\n\nOften we have data from two different sources\nResults in two data frames\nHow to make them one so we can analyze?"
+  },
+  {
+    "objectID": "slides/week-6.2.html#what-a-merge-looks-like",
+    "href": "slides/week-6.2.html#what-a-merge-looks-like",
+    "title": "Merging Data Frames",
+    "section": "What a Merge Looks Like",
+    "text": "What a Merge Looks Like\n\n\nSource: R for HR"
+  },
+  {
+    "objectID": "slides/week-6.2.html#inner_join",
+    "href": "slides/week-6.2.html#inner_join",
+    "title": "Merging Data Frames",
+    "section": "inner_join()",
+    "text": "inner_join()\n\n\nSource: R for HR"
+  },
+  {
+    "objectID": "slides/week-6.2.html#full_join",
+    "href": "slides/week-6.2.html#full_join",
+    "title": "Merging Data Frames",
+    "section": "full_join()",
+    "text": "full_join()\n\n\nSource: R for HR"
+  },
+  {
+    "objectID": "slides/week-6.2.html#left_join",
+    "href": "slides/week-6.2.html#left_join",
+    "title": "Merging Data Frames",
+    "section": "left_join()",
+    "text": "left_join()\n\n\nSource: R for HR"
+  },
+  {
+    "objectID": "slides/week-6.2.html#right_join",
+    "href": "slides/week-6.2.html#right_join",
+    "title": "Merging Data Frames",
+    "section": "right_join()",
+    "text": "right_join()\n\n\nSource: R for HR"
+  },
+  {
+    "objectID": "slides/week-6.2.html#scenario",
+    "href": "slides/week-6.2.html#scenario",
+    "title": "Merging Data Frames",
+    "section": "Scenario",
+    "text": "Scenario\n\n\nWe want to merge two data frames\nOne is from the World Bank\nThe other is from V-Dem\nHow do we do it?"
+  },
+  {
+    "objectID": "slides/week-6.2.html#key-questions",
+    "href": "slides/week-6.2.html#key-questions",
+    "title": "Merging Data Frames",
+    "section": "Key Questions",
+    "text": "Key Questions\n\n\nWhat is the unit of analysis?\nWhat is/are the corresponding identifier variables?\nAre the identifier variables in common?\nOr do they have to be added/transformed to match?"
+  },
+  {
+    "objectID": "slides/week-6.2.html#use-left_join-to-merge",
+    "href": "slides/week-6.2.html#use-left_join-to-merge",
+    "title": "Merging Data Frames",
+    "section": "Use left_join() to Merge",
+    "text": "Use left_join() to Merge\n\n\n# Perform left join using common iso3c variable and year\ndem_women &lt;- left_join(vdem_dta, wb_dta, by = c(\"iso3c\", \"year\")) |&gt; #join\n  select(-c(country_text_id, country_id, country)) # drop extra country variables\n  \n# View the data\nglimpse(dem_women)"
+  },
+  {
+    "objectID": "slides/week-6.2.html#illustration",
+    "href": "slides/week-6.2.html#illustration",
+    "title": "Merging Data Frames",
+    "section": "Illustration",
+    "text": "Illustration\n\nSource: R for HR"
+  },
+  {
+    "objectID": "slides/week-6.2.html#grab-some-wb-data",
+    "href": "slides/week-6.2.html#grab-some-wb-data",
+    "title": "Merging Data Frames",
+    "section": "Grab Some WB Data",
+    "text": "Grab Some WB Data\n\n\n# Load packages\nlibrary(wbstats) \nlibrary(dplyr) \nlibrary(janitor) \n\n# Store the list of indicators in an object\nindicators &lt;- c(\"flfp\" = \"SL.TLF.CACT.FE.ZS\", \"women_rep\" = \"SG.GEN.PARL.ZS\") \n\n# Download the data  \nwb_dta &lt;- wb_data(indicators, mrv = 25) |&gt; # most recent 25 years\n  select(!iso2c) |&gt; \n  rename(year = date) |&gt; \n  mutate(\n    flfp = round_to_fraction(flfp, denominator = 100), # round to nearest 100th\n    women_rep = round_to_fraction(women_rep, denominator = 100) \n  )\n\n# View the data\nglimpse(women_emp)"
+  },
+  {
+    "objectID": "slides/week-6.2.html#grab-some-v-dem-data",
+    "href": "slides/week-6.2.html#grab-some-v-dem-data",
+    "title": "Merging Data Frames",
+    "section": "Grab Some V-Dem Data",
+    "text": "Grab Some V-Dem Data\n\n\nlibrary(vdemlite)\n\nvdem_dta &lt;- fetchdem(indicators = c(\"v2x_gender\", \"v2x_gencl\", \"e_regionpol_6C\") |&gt;\n                         start_year = 2000, end_year = 2020) |&gt; # 20 year span\n                 rename(\n                   women_polemp = v2x_gender,\n                   women_civlib = v2x_gencl,\n                   region = e_regionpol_6C\n                 ) |&gt;\n            mutate(\n              region = case_match(region, \n                                  1 ~ \"Eastern Europe\", \n                                  2 ~ \"Latin America\",  \n                                  3 ~ \"Middle East\",   \n                                  4 ~ \"Africa\", \n                                  5 ~ \"The West\", \n                                  6 ~ \"Asia\")\n              )\n\nglimpse(vdem_dta)"
+  },
+  {
+    "objectID": "slides/week-6.2.html#use-countrycode",
+    "href": "slides/week-6.2.html#use-countrycode",
+    "title": "Merging Data Frames",
+    "section": "Use countrycode",
+    "text": "Use countrycode\n\n\n# Load countrycode\nlibrary(countrycode)\n\n# Create new iso3c variable\nvdem_data &lt;- vdem_data |&gt;    \n  mutate(iso3c = countrycode(sourcevar = country_id, # what we are converting\n        origin = \"vdem\",         # we are converting from vdem\n        destination = \"wb\"))  |&gt; # and converting to the WB iso3c code \n  relocate(iso3c, .after = country_id) # move iso3c \n\n# View the data\nglimpse(dem_data)"
+  },
+  {
+    "objectID": "slides/week-6.2.html#summarize-the-data",
+    "href": "slides/week-6.2.html#summarize-the-data",
+    "title": "Merging Data Frames",
+    "section": "Summarize the Data",
+    "text": "Summarize the Data\n\n\nDo a group, summarize, arrange sequence on your merged data frame\nGroup and summarize by country (mean or median)\nTry using across() to summarize multiple columns at once\n\n\n\n\n−+\n10:00"
+  },
+  {
+    "objectID": "slides/week-6.2.html#create-a-scatter-plot",
+    "href": "slides/week-6.2.html#create-a-scatter-plot",
+    "title": "Merging Data Frames",
+    "section": "Create a Scatter Plot",
+    "text": "Create a Scatter Plot\n\n\nNow you have one data point per country\nUse ggplot2 to create a scatter plot\n\n\n\n\n−+\n10:00"
   }
 ]

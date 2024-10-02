@@ -1,0 +1,264 @@
+---
+title: Merging Data Frames
+date: today
+date-format: long
+footer: "[DATS 1001 Website](https://ds4all.rocks)"
+logo: images/ds4all-logo.png
+format:
+  revealjs:
+    theme: [simple, custom.scss]
+    transition: fade
+    slide-number: true
+   # multiplex: true
+    chalkboard: true
+execute:
+  echo: true
+  message: false
+  warning: false
+  freeze: auto
+---
+
+# What is a Join
+
+## Horizontal Join (Merge)
+
+<br>
+
+- Often we have data from two different sources
+- Results in two data frames
+- How to make them one so we can analyze? 
+
+## Illustration
+
+![*Source: R for HR*](images/join.png)
+
+## Types of Joins in `dplyr`
+
+- Mutating versus filtering joins
+- Four types of mutating joins
+  - `inner_join()`
+  - `full_join()`
+  - `left_join()`
+  - `right_join()`
+- For the most part we will use `left_join()`  
+
+## `inner_join()`
+
+<br>
+
+![*Source: R for HR*](images/inner_join.png)
+
+## `full_join()`
+
+<br>
+
+![*Source: R for HR*](images/full_join.png)
+
+## `left_join()`
+
+<br>
+
+![*Source: R for HR*](images/left_join.png)
+
+## `right_join()`
+
+<br>
+
+![*Source: R for HR*](images/right_join.png)
+
+# Worked Example 
+
+## Scenario
+
+<br>
+
+- We want to merge two data frames
+- One is from the World Bank
+- The other is from V-Dem
+- How do we do it?
+
+## Grab Some WB Data
+
+<br>
+
+```{r}
+#| label: get_wb_data
+#| eval: false
+
+# Load packages
+library(wbstats) 
+library(dplyr) 
+library(janitor) 
+
+# Store the list of indicators in an object
+indicators <- c("flfp" = "SL.TLF.CACT.FE.ZS", "women_rep" = "SG.GEN.PARL.ZS") 
+
+# Download the data  
+wb_dta <- wb_data(indicators, mrv = 25) |> # most recent 25 years
+  select(!iso2c) |> 
+  rename(year = date) |> 
+  mutate(
+    flfp = round_to_fraction(flfp, denominator = 100), # round to nearest 100th
+    women_rep = round_to_fraction(women_rep, denominator = 100) 
+  )
+
+# View the data
+glimpse(women_emp) 
+```
+
+
+## Grab Some V-Dem Data
+
+<br>
+
+```{r}
+#| label: get_vdem_data
+#| eval: false
+
+library(vdemlite)
+
+vdem_dta <- fetchdem(indicators = c("v2x_gender", "v2x_gencl", "e_regionpol_6C") |>
+                         start_year = 2000, end_year = 2020) |> # 20 year span
+                 rename(
+                   women_polemp = v2x_gender,
+                   women_civlib = v2x_gencl,
+                   region = e_regionpol_6C
+                 ) |>
+            mutate(
+              region = case_match(region, 
+                                  1 ~ "Eastern Europe", 
+                                  2 ~ "Latin America",  
+                                  3 ~ "Middle East",   
+                                  4 ~ "Africa", 
+                                  5 ~ "The West", 
+                                  6 ~ "Asia")
+              )
+
+glimpse(vdem_dta)
+```
+
+## Key Questions
+
+<br>
+
+- What is the unit of analysis? 
+- What is/are the corresponding identifier variables?
+- Are the identifier variables in common? 
+- Or do they have to be added/transformed to match?
+  
+## Merging WB and V-Dem Data
+
+<br>
+
+- These are both time-series, country-level data
+- Need to merge by country-year
+- Year is easy
+- But there are many different country codes
+- Can use `countrycode` package to assign country codes
+
+## Use `countrycode` 
+
+<br>
+
+```{r}
+#| label: countrycode
+#| eval: false
+
+# Load countrycode
+library(countrycode)
+
+# Create new iso3c variable
+vdem_data <- vdem_data |>    
+  mutate(iso3c = countrycode(sourcevar = country_id, # what we are converting
+        origin = "vdem",         # we are converting from vdem
+        destination = "wb"))  |> # and converting to the WB iso3c code 
+  relocate(iso3c, .after = country_id) # move iso3c 
+
+# View the data
+glimpse(dem_data)
+```
+
+## Try it Yourself
+
+<br>
+
+- Using your democracy data frame from the last lesson
+- Use `mutate()` and `countrycode()` to add iso3c country codes
+- Use `relocate` to move your iso3c code to the "front" of your data frame (optional)
+
+```{r}
+#| label: timer1
+#| echo: false
+
+source("timer.R")
+library(countdown)
+
+timer(minutes = 10, 
+      bottom = "10%", 
+      right = "10%")
+```
+
+## Use `left_join()` to Merge
+
+<br>
+
+```{r}
+#| label: left_join()
+#| eval: false
+
+# Perform left join using common iso3c variable and year
+dem_women <- left_join(vdem_dta, wb_dta, by = c("iso3c", "year")) |> #join
+  select(-c(country_text_id, country_id, country)) # drop extra country variables
+  
+# View the data
+glimpse(dem_women)  
+```
+
+## Try it Yourself
+
+- Take your V-Dem data frame and your World Bank data frame
+- Using `left_join()` to merge on country code and year
+- Along the way, use `rename()` and `select()` to insure you have just one country name
+- Try `inner_join()`, `full_join()`, and `right_join()` as time allows
+
+```{r}
+#| label: timer2
+#| echo: false
+
+timer(minutes = 10, 
+      bottom = "10%", 
+      right = "10%")
+```
+
+## Summarize the Data
+
+<br>
+
+- Do a group, summarize, arrange sequence on your merged data frame
+- Group and summarize by country (mean or median)
+- Try using `across()` to summarize multiple columns at once
+
+```{r}
+#| label: timer3
+#| echo: false
+
+timer(minutes = 10, 
+      bottom = "10%", 
+      right = "10%")
+```
+
+## Create a Scatter Plot
+
+<br>
+
+- Now you have one data point per country
+- Use `ggplot2` to create a scatter plot
+
+```{r}
+#| label: timer4
+#| echo: false
+
+timer(minutes = 10, 
+      bottom = "10%", 
+      right = "10%")
+```

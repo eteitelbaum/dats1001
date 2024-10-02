@@ -25,3 +25,7 @@ $link-color: #42affa;
 b, strong {
     color: #42affa;
 }
+
+.reveal h1, .reveal h2, .reveal .slide-title {
+  color: #fff !important; /* Force white color */
+}
