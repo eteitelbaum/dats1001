@@ -385,22 +385,16 @@ dem_women |>
 
 ## Try it Yourself {.scrollable}
 
-- Try changing the parameters in the code to answer these questions: 
-
-1. Try summarizing the data with a [different function](https://dplyr.tidyverse.org/reference/summarise.html#useful-functions) for one or more of the variables. 
-  a. What is the median value of `polyarchy` for The West? 
-  b. What is the max value of `libdem` for Eastern Europe?
-  c. What is the standard deviation of `gender` for Africa?
-  d. What is the mean of `gdp_pc` for the Middle East?
-  
-2. Now try grouping by country instead of region and filter for years >= 2000.
+Now try grouping by country instead of region and filter for years >= 2000.
 
   a. What is the median value of `polyarchy` for Sweden? 
   b. What is the max value of `libdem` New Zealand?
   c. What is the standard deviation of `gender` for Norway?
   d. What is the min of `gdp_pc` for Germany?
 
-3. Try sorting countries in ascending order of the selected variable (hint: delete "desc" from the `arrange()` call). Which country ranks at the "top" of the list? **Now change it back to descending order.** 
+Try using `across()` to calculate the mean of `polyarchy`, `libdem`, `gender1` and `gdp_pc` for each country.
+
+
 
 
 

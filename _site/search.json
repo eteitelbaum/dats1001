@@ -2315,7 +2315,7 @@
     "href": "slides/week-6.1.html#try-it-yourself",
     "title": "The Grammar of Data Wrangling",
     "section": "Try it Yourself",
-    "text": "Try it Yourself\n\nTry changing the parameters in the code to answer these questions:\n\n\nTry summarizing the data with a different function for one or more of the variables.\n\n\nWhat is the median value of polyarchy for The West?\nWhat is the max value of libdem for Eastern Europe?\nWhat is the standard deviation of gender for Africa?\nWhat is the mean of gdp_pc for the Middle East?\n\n\nNow try grouping by country instead of region and filter for years &gt;= 2000.\n\n\nWhat is the median value of polyarchy for Sweden?\nWhat is the max value of libdem New Zealand?\nWhat is the standard deviation of gender for Norway?\nWhat is the min of gdp_pc for Germany?\n\n\nTry sorting countries in ascending order of the selected variable (hint: delete “desc” from the arrange() call). Which country ranks at the “top” of the list? Now change it back to descending order."
+    "text": "Try it Yourself\nNow try grouping by country instead of region and filter for years &gt;= 2000.\n\nWhat is the median value of polyarchy for Sweden?\nWhat is the max value of libdem New Zealand?\nWhat is the standard deviation of gender for Norway?\nWhat is the min of gdp_pc for Germany?\n\nTry using across() to calculate the mean of polyarchy, libdem, gender1 and gdp_pc for each country."
   },
   {
     "objectID": "slides/week-6.1.html#group-summarize-and-arrange",
@@ -2462,7 +2462,7 @@
     "href": "slides/week-6.2.html#use-left_join-to-merge",
     "title": "Merging Data Frames",
     "section": "Use left_join() to Merge",
-    "text": "Use left_join() to Merge\n\n\n# Perform left join using common iso3c variable and year\ndem_women &lt;- left_join(vdem_dta, wb_dta, by = c(\"iso3c\", \"year\")) |&gt; #join\n  select(-c(country_text_id, country_id, country)) # drop extra country variables\n  \n# View the data\nglimpse(dem_women)"
+    "text": "Use left_join() to Merge\n\n\n# Perform left join using common iso3c variable and year\ndem_wb &lt;- left_join(vdem_dta, wb_dta, by = c(\"iso3c\", \"year\")) |&gt; #join\n  select(-c(country_text_id, country_id, country)) # drop extra country variables\n  \n# View the data\nglimpse(dem_wb)"
   },
   {
     "objectID": "slides/week-6.2.html#illustration",

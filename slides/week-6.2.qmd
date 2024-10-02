@@ -207,11 +207,11 @@ timer(minutes = 10,
 #| eval: false
 
 # Perform left join using common iso3c variable and year
-dem_women <- left_join(vdem_dta, wb_dta, by = c("iso3c", "year")) |> #join
+dem_wb <- left_join(vdem_dta, wb_dta, by = c("iso3c", "year")) |> #join
   select(-c(country_text_id, country_id, country)) # drop extra country variables
   
 # View the data
-glimpse(dem_women)  
+glimpse(dem_wb)  
 ```
 
 ## Try it Yourself

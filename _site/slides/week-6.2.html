@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-5223d57514b7f3c9e8f675d86406bf62.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.18">
 
-  <meta name="dcterms.date" content="2024-10-01">
+  <meta name="dcterms.date" content="2024-10-02">
   <title>DATS 1001--Fall Schedule – Merging Data Frames</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -404,7 +404,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">October 1, 2024</p>
+  <p class="date">October 2, 2024</p>
 </section>
 <section>
 <section id="what-is-a-join" class="title-slide slide level1 center">
@@ -573,7 +573,7 @@
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_0313cca8" data-update-every="1" tabindex="0" style="right:10%;bottom:10%;">
+<div class="countdown" id="timer_1f473407" data-update-every="1" tabindex="0" style="right:10%;bottom:10%;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -585,11 +585,11 @@
 <p><br></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># Perform left join using common iso3c variable and year</span></span>
-<span id="cb4-2"><a></a>dem_women <span class="ot">&lt;-</span> <span class="fu">left_join</span>(vdem_dta, wb_dta, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"iso3c"</span>, <span class="st">"year"</span>)) <span class="sc">|&gt;</span> <span class="co">#join</span></span>
+<span id="cb4-2"><a></a>dem_wb <span class="ot">&lt;-</span> <span class="fu">left_join</span>(vdem_dta, wb_dta, <span class="at">by =</span> <span class="fu">c</span>(<span class="st">"iso3c"</span>, <span class="st">"year"</span>)) <span class="sc">|&gt;</span> <span class="co">#join</span></span>
 <span id="cb4-3"><a></a>  <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(country_text_id, country_id, country)) <span class="co"># drop extra country variables</span></span>
 <span id="cb4-4"><a></a>  </span>
 <span id="cb4-5"><a></a><span class="co"># View the data</span></span>
-<span id="cb4-6"><a></a><span class="fu">glimpse</span>(dem_women)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-6"><a></a><span class="fu">glimpse</span>(dem_wb)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="try-it-yourself-1" class="slide level2">
@@ -602,7 +602,7 @@
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_7387e2bf" data-update-every="1" tabindex="0" style="right:10%;bottom:10%;">
+<div class="countdown" id="timer_e3bf480b" data-update-every="1" tabindex="0" style="right:10%;bottom:10%;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -619,7 +619,7 @@
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_5b8ccb13" data-update-every="1" tabindex="0" style="right:10%;bottom:10%;">
+<div class="countdown" id="timer_22ed4ee2" data-update-every="1" tabindex="0" style="right:10%;bottom:10%;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
@@ -635,7 +635,7 @@
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_0bc5489d" data-update-every="1" tabindex="0" style="right:10%;bottom:10%;">
+<div class="countdown" id="timer_5f7f97c9" data-update-every="1" tabindex="0" style="right:10%;bottom:10%;">
 <div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
 <code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
 </div>
