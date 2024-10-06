@@ -1,0 +1,393 @@
+---
+title: Tidying Data
+date: today
+date-format: long
+footer: "[DATS 1001 Website](https://ds4all.rocks)"
+logo: images/ds4all-logo.png
+format:
+  revealjs:
+    theme: [simple, custom.scss]
+    transition: fade
+    slide-number: true
+    #multiplex: true
+    chalkboard: true
+execute:
+  echo: true
+  message: false
+  warning: false
+  freeze: auto
+---
+
+# Tidying Data
+
+## What is Tyding Data? 
+
+- Earlier we talked about the concept of "tidy data"
+  - Each variable forms a column
+  - Each observation is in a row
+  - Each cell has a single value 
+- The process of tidying data involves reshaping (or pivoting) data into a tidy format
+- We want to use the `pivot_longer()` or `pivot_wider()` functions from `tidyr` to do this
+
+## 
+
+**Query:** Are these data in a tidy format? 
+
+<br>
+
+```{r}
+#| label: smiths
+
+library(tidyr)
+
+smiths
+```
+
+<br> 
+
+::: {.callout-tip}
+To get a list of data frames available in a package use the `data()` function, e.g. `data(package = "tidyr")`. 
+:::
+
+## {.smaller}
+
+<br>
+
+How about these data? 
+
+<br>
+
+```{r}
+#| label: wb_pop
+
+world_bank_pop
+```
+
+# Pivot Longer
+
+## Pivot Longer
+
+<br>
+
+`pivot_longer()` takes three arguments:
+
+- **cols** - which columns you want to pivot
+- **names_to** - the name of the column where the old column names are going to (identifier)
+- **values_to** - the name of the column where the values are going to
+
+## Example: WB Population Data
+
+<br>
+
+```{r}
+#| eval: false
+
+library(tidyr)
+library(dplyr)
+
+# Pivot using pivot_longer
+
+long_pop_data <- world_bank_pop |>
+  pivot_longer(
+    cols = `2000`:`2017`,   # The columns you want to pivot (years)
+    names_to = "year",      # New column name for the years
+    values_to = "pop"       # New column name for the values
+  ) 
+
+# View the tidied data
+long_pop_data
+```
+
+## {.smaller}
+
+This is better, usable even, but are we done if we want a tidy data frame? 
+
+<br>
+
+```{r}
+#| eval: false
+ 
+library(tidyr)
+library(dplyr)
+
+# Pivot using pivot_longer
+
+long_pop_data <- world_bank_pop |>
+  pivot_longer(
+    cols = `2000`:`2017`,   # The columns you want to pivot (years)
+    names_to = "year",      # New column name for the years
+    values_to = "pop"       # New column name for the values
+  ) 
+
+# View the tidied data
+long_pop_data
+```
+
+## {.smaller}
+
+<br>
+
+This is better, usable even, but are we done if we want a tidy data frame? 
+
+<br>
+
+```{r}
+#| eval: false
+
+library(tidyr)
+library(dplyr)
+
+# Pivot using pivot_longer
+
+long_pop_data <- world_bank_pop |>
+  pivot_longer(
+    cols = `2000`:`2017`,   # The columns you want to pivot (years)
+    names_to = "year",      # New column name for the years
+    values_to = "pop"       # New column name for the values
+  ) 
+
+# View the tidied data
+long_pop_data
+```
+
+## {.smaller}
+
+Issue is that the data are in long form (which is OK for some purposes), but we want to make it wider. Wider, but tidy... 
+
+<br>
+
+```{r}
+#| eval: false
+
+library(tidyr)
+library(dplyr)
+
+# Pivot using pivot_longer
+
+long_pop_data <- world_bank_pop |>
+  pivot_longer(
+    cols = `2000`:`2017`,   # The columns you want to pivot (years)
+    names_to = "year",      # New column name for the years
+    values_to = "pop"       # New column name for the values
+  ) 
+
+# View the tidied data
+long_pop_data
+```
+
+# Pivot Wider
+
+## Pivot Wider
+
+<br>
+
+`pivot_wider()` takes three main arguments:
+
+- **names_from** - the column whose values will become new column names (identifier)
+- **values_from** - the column containing the values that will fill the new columns
+- **values_fill** (optional) - specifies what to use for missing values (e.g., `NA`, `0`)
+
+## `pivotwider()` the WB Data {.smaller}
+
+<br>
+
+```{r}
+#| label: pivot_wb_data
+#| eval: false
+
+# pivot wider
+tidy_pop_data <- long_pop_data |>
+  pivot_wider(
+    names_from = indicator, 
+    values_from = pop
+  )
+
+# view the data
+tidy_pop_data
+```
+
+# Exercise
+
+## Download Some Messy Data
+
+<br>
+
+- Download some messy WB data
+- Make it multiple variables
+- Download as a CSV file
+- Save in your project `/data` folder
+
+## Messy Data Example
+
+![](images/messy_wb_data.jpg){width=70%}
+
+
+## Read Data 
+
+<br>
+
+```{r}
+#| label: read_data
+#| eval: false
+
+# Load packages
+library(readr) 
+library(dplyr) 
+
+# Read data from csv file into an object called "wb_data_messy"
+wb_data_messy <- read_csv("data/your_file_name.csv")
+
+# View the data
+glimpse(wb_data_messy)
+```
+
+## Pivot the Data
+
+<br>
+
+- Use `pivot_longer()` to get the data in long form
+- Use `pivot_wider()` to get the series in the columns
+
+## Special Considerations
+
+<br>
+
+```{r}
+#| label: pivot
+#| eval: false
+
+# Load tidyr
+library(tidyr)
+
+# Reshape the data
+wb_data <- wb_data_messy |> 
+  pivot_longer(             
+    cols = `1973 [YR1973]`: `2022 [YR2022]`, # columns to pivot
+    names_to = "year", # name the identifier column "year"
+    values_to = "values" # name the numeric var column 
+  ) 
+
+# View the data
+glimpse(wb_data)
+```
+
+## Special Considerations
+  
+<br>
+  
+```{r}
+#| label: pivot_multiple
+#| eval: false
+
+wb_data <- wb_data |>
+  select(-`Series Name`)
+
+# Reshape the data
+tidy_data <- wb_data |> 
+  pivot_wider(             
+    names_from = `Series Code`,
+    values_from = values
+  ) 
+
+# View the data
+glimpse(wb_data)
+```
+
+## Give it a Shot!
+
+<br>
+
+- Try downloading some messy WB data and make it tidy
+- Refer to previous slides for help
+
+```{r}
+#| label: timer3
+#| echo: false
+
+library(countdown)
+countdown(minutes = 10, 
+          id = "timer3", 
+          bottom = "10%", 
+          right = "10%")
+```
+
+# Mutate
+
+## Mutating Variables
+
+<br>
+
+- Anytime we want to change a variable, we are going to use the `dplyr` verbs `mutate()` or `mutate_at()`
+- `mutate()` is if you want to change on variable
+- Use `across()` for multiple variables
+
+## Let's Fix Our Variables
+
+<br>
+
+```{r}
+#| label: mutate
+#| eval: false
+
+# Fix year and flfp
+wb_data <- wb_data |> 
+  mutate(year = substring(year, 1, 4)) |>  # truncate year
+  mutate(across(c("year", "flfp"), as.numeric))  # convert year and flfp to numeric
+
+# View the data
+glimpse(wb_data)
+```
+
+## Now Try it With Multiple Varaibles
+
+<br>
+
+- Go to the data frame with multiple variables that you created earlier
+- How would you modify this code to make sure the variables are in the right format? 
+
+## Clean Variable Names
+
+<br>
+
+| Very simple: use the `janitor` package!
+
+```{r}
+#| label: janitor
+#| eval: false
+#| echo: true
+
+# Load janitor
+library(janitor)
+
+# Apply clean_names() to wb_data, store in new data frame called wb_data_clean
+wb_data_clean <- wb_data |>  
+  clean_names() 
+
+# Write wb_data_clean to a csv file
+write_csv(wb_data_clean, "data/wb_data_clean.csv")
+
+# View the data
+glimpse(wb_data_clean)
+```
+
+## Column Specifications
+
+<br>
+
+- Can clean columns on backend
+- But can also specify data types in `read_csv()` or `read_excel()`
+
+```{r}
+#| label: col_types
+#| eval: false
+#| echo: true
+
+spec(wb_data_messy) # show column specifications (from `readr`)
+
+wb_data_messy <- read_csv("data/your_file_name.csv", 
+                          col_types = cols(
+                           col_double(`1990 [YR1990]`) 
+                          ))
+```
+
+

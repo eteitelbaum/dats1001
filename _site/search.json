@@ -2505,5 +2505,222 @@
     "title": "Merging Data Frames",
     "section": "Create a Scatter Plot",
     "text": "Create a Scatter Plot\n\n\nNow you have one data point per country\nUse ggplot2 to create a scatter plot\n\n\n\n\n−+\n10:00"
+  },
+  {
+    "objectID": "slides/week-7.1.html#what-is-a-data-frame",
+    "href": "slides/week-7.1.html#what-is-a-data-frame",
+    "title": "Tidying Data",
+    "section": "What is a Data Frame?",
+    "text": "What is a Data Frame?\n\n\nSpecial kind of tabular data used in data science\nEach column can be a different data type\nData frames are the most common data structure in R"
+  },
+  {
+    "objectID": "slides/week-7.1.html#what-is-a-tibble",
+    "href": "slides/week-7.1.html#what-is-a-tibble",
+    "title": "Tidying Data",
+    "section": "What is a Tibble?",
+    "text": "What is a Tibble?\n\n\nModern data frames in R\nOffers better printing and subsetting behaviors\nDoes not convert character vectors to factors by default\nDisplays only the first 10 rows and as many columns as fit on screen\nColumn names are preserved exactly, even if they contain spaces"
+  },
+  {
+    "objectID": "slides/week-7.1.html#creating-a-tibble",
+    "href": "slides/week-7.1.html#creating-a-tibble",
+    "title": "Tidying Data",
+    "section": "Creating a Tibble",
+    "text": "Creating a Tibble\n\n\nWhen you read data into R with readr you automatically get a tibble\nYou can create a tibble using tibble() from the tibble package:\n\n\n  library(tibble)\n  \n  # Create a tibble\n  my_tibble &lt;- tibble(\n    name = c(\"Alice\", \"Bob\", \"Charlie\"),\n    age = c(25, 30, 35),\n    height = c(160, 170, 180),\n    is_student = c(TRUE, FALSE, FALSE)\n  )\n  \nmy_tibble  \n\n# A tibble: 3 × 4\n  name      age height is_student\n  &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt; &lt;lgl&gt;     \n1 Alice      25    160 TRUE      \n2 Bob        30    170 FALSE     \n3 Charlie    35    180 FALSE"
+  },
+  {
+    "objectID": "slides/week-7.1.html#common-data-types",
+    "href": "slides/week-7.1.html#common-data-types",
+    "title": "Tidying Data",
+    "section": "Common Data Types",
+    "text": "Common Data Types\n\n&lt;chr&gt; (Character): Stores text strings\n\nExample: \"hello\", \"R programming\"\n\n&lt;dbl&gt; (Double): Stores decimal (floating-point) numbers\n\nExample: 3.14, -1.0\n\n&lt;int&gt; (Integer): Stores whole numbers (integers)\n\nExample: 1, -100, 42\n\n&lt;lgl&gt; (Logical): Stores boolean values (TRUE, FALSE, NA)\n\nExample: TRUE, FALSE, NA\n\n&lt;fct&gt; (Factor): Stores categorical variables with fixed levels\n\nExample: factor(c(\"low\", \"medium\", \"high\"))\n\n&lt;date&gt; (Date): Stores dates in the “YYYY-MM-DD” format\n\nExample: as.Date(\"2024-09-05\")"
+  },
+  {
+    "objectID": "slides/week-7.1.html#other-data-types",
+    "href": "slides/week-7.1.html#other-data-types",
+    "title": "Tidying Data",
+    "section": "Other Data Types",
+    "text": "Other Data Types\n\n\n&lt;dttm&gt; (Date-Time or POSIXct): Stores date-time objects (both date and time).\n\nExample: as.POSIXct(\"2024-09-05 14:30:00\")\n\n&lt;time&gt; (Time): Specifically stores time-of-day values (rarely seen without a date)\n\nExample: \"14:30:00\"\n\n&lt;list&gt; (List): Stores lists, where each entry can be a complex object.\n\nExample: list(c(1, 2, 3), c(\"a\", \"b\", \"c\"))"
+  },
+  {
+    "objectID": "slides/week-7.1.html#dates-and-times-with-lubridate",
+    "href": "slides/week-7.1.html#dates-and-times-with-lubridate",
+    "title": "Tidying Data",
+    "section": "Dates and Times with lubridate",
+    "text": "Dates and Times with lubridate\n\nlubridate is an R package that makes it easier to work with dates and times\nUse convenient functions to store dates in different formats\n\n\nlibrary(lubridate)\n  \n# Store a date\nmy_date &lt;- ymd(\"2024-09-05\")\nmy_date2 &lt;- mdy(\"09-05-2024\")\nmy_date3 &lt;- dmy(\"05-09-2024\")\n  \n# Print in long form\nformat(my_date, \"%B %d, %Y\")\n\n[1] \"September 05, 2024\""
+  },
+  {
+    "objectID": "slides/week-7.1.html#your-turn",
+    "href": "slides/week-7.1.html#your-turn",
+    "title": "Tidying Data",
+    "section": "Your Turn",
+    "text": "Your Turn\n\n\nCreate your own tibble\nMake it on a topic you find interesting\nTry to include at least three data types\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/week-7.1.html#what-is-tyding-data",
+    "href": "slides/week-7.1.html#what-is-tyding-data",
+    "title": "Tidying Data",
+    "section": "What is Tyding Data?",
+    "text": "What is Tyding Data?\n\nEarlier we talked about the concept of “tidy data”\n\nEach variable forms a column\nEach observation is in a row\nEach cell has a single value\n\nThe process of tidying data involves reshaping (or pivoting) data into a tidy format\nWe want to use the pivot_longer() or pivot_wider() functions from tidyr to do this"
+  },
+  {
+    "objectID": "slides/week-7.1.html#section",
+    "href": "slides/week-7.1.html#section",
+    "title": "Tidying Data",
+    "section": "",
+    "text": "Query: Are these data in a tidy format?\n\n\nlibrary(tidyr)\n\nsmiths\n\n# A tibble: 2 × 5\n  subject     time   age weight height\n  &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;\n1 John Smith     1    33     90   1.87\n2 Mary Smith     1    NA     NA   1.54\n\n\n\n\n\n\n\n\n\nTip\n\n\nTo get a list of data frames available in a package use the data() function, e.g. data(package = \"tidyr\")."
+  },
+  {
+    "objectID": "slides/week-7.1.html#section-1",
+    "href": "slides/week-7.1.html#section-1",
+    "title": "Tidying Data",
+    "section": "",
+    "text": "How about these data?\n\n\nworld_bank_pop\n\n# A tibble: 1,064 × 20\n   country indicator      `2000`  `2001`  `2002`  `2003`  `2004`  `2005`  `2006`\n   &lt;chr&gt;   &lt;chr&gt;           &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;\n 1 ABW     SP.URB.TOTL    4.16e4 4.20e+4 4.22e+4 4.23e+4 4.23e+4 4.24e+4 4.26e+4\n 2 ABW     SP.URB.GROW    1.66e0 9.56e-1 4.01e-1 1.97e-1 9.46e-2 1.94e-1 3.67e-1\n 3 ABW     SP.POP.TOTL    8.91e4 9.07e+4 9.18e+4 9.27e+4 9.35e+4 9.45e+4 9.56e+4\n 4 ABW     SP.POP.GROW    2.54e0 1.77e+0 1.19e+0 9.97e-1 9.01e-1 1.00e+0 1.18e+0\n 5 AFE     SP.URB.TOTL    1.16e8 1.20e+8 1.24e+8 1.29e+8 1.34e+8 1.39e+8 1.44e+8\n 6 AFE     SP.URB.GROW    3.60e0 3.66e+0 3.72e+0 3.71e+0 3.74e+0 3.81e+0 3.81e+0\n 7 AFE     SP.POP.TOTL    4.02e8 4.12e+8 4.23e+8 4.34e+8 4.45e+8 4.57e+8 4.70e+8\n 8 AFE     SP.POP.GROW    2.58e0 2.59e+0 2.61e+0 2.62e+0 2.64e+0 2.67e+0 2.70e+0\n 9 AFG     SP.URB.TOTL    4.31e6 4.36e+6 4.67e+6 5.06e+6 5.30e+6 5.54e+6 5.83e+6\n10 AFG     SP.URB.GROW    1.86e0 1.15e+0 6.86e+0 7.95e+0 4.59e+0 4.47e+0 5.03e+0\n# ℹ 1,054 more rows\n# ℹ 11 more variables: `2007` &lt;dbl&gt;, `2008` &lt;dbl&gt;, `2009` &lt;dbl&gt;, `2010` &lt;dbl&gt;,\n#   `2011` &lt;dbl&gt;, `2012` &lt;dbl&gt;, `2013` &lt;dbl&gt;, `2014` &lt;dbl&gt;, `2015` &lt;dbl&gt;,\n#   `2016` &lt;dbl&gt;, `2017` &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/week-7.1.html#pivot-longer",
+    "href": "slides/week-7.1.html#pivot-longer",
+    "title": "Tidying Data",
+    "section": "Pivot Longer",
+    "text": "Pivot Longer\n\npivot_longer() takes three arguments:\n\ncols - which columns you want to pivot\nnames_to - the name of the column where the old column names are going to (identifier)\nvalues_to - the name of the column where the values are going to"
+  },
+  {
+    "objectID": "slides/week-7.1.html#example-wb-population-data",
+    "href": "slides/week-7.1.html#example-wb-population-data",
+    "title": "Tidying Data",
+    "section": "Example: WB Population Data",
+    "text": "Example: WB Population Data\n\n\nlibrary(tidyr)\nlibrary(dplyr)\n\n# Pivot using pivot_longer\n\nlong_pop_data &lt;- world_bank_pop |&gt;\n  pivot_longer(\n    cols = `2000`:`2017`,   # The columns you want to pivot (years)\n    names_to = \"year\",      # New column name for the years\n    values_to = \"pop\"       # New column name for the values\n  ) \n\n# View the tidied data\nlong_pop_data"
+  },
+  {
+    "objectID": "slides/week-7.1.html#section-2",
+    "href": "slides/week-7.1.html#section-2",
+    "title": "Tidying Data",
+    "section": "",
+    "text": "This is better, usable even, but are we done if we want a tidy data frame?\n\n\nlibrary(tidyr)\nlibrary(dplyr)\n\n# Pivot using pivot_longer\n\nlong_pop_data &lt;- world_bank_pop |&gt;\n  pivot_longer(\n    cols = `2000`:`2017`,   # The columns you want to pivot (years)\n    names_to = \"year\",      # New column name for the years\n    values_to = \"pop\"       # New column name for the values\n  ) \n\n# View the tidied data\nlong_pop_data"
+  },
+  {
+    "objectID": "slides/week-7.1.html#section-3",
+    "href": "slides/week-7.1.html#section-3",
+    "title": "Tidying Data",
+    "section": "",
+    "text": "This is better, usable even, but are we done if we want a tidy data frame?\n\n\nlibrary(tidyr)\nlibrary(dplyr)\n\n# Pivot using pivot_longer\n\nlong_pop_data &lt;- world_bank_pop |&gt;\n  pivot_longer(\n    cols = `2000`:`2017`,   # The columns you want to pivot (years)\n    names_to = \"year\",      # New column name for the years\n    values_to = \"pop\"       # New column name for the values\n  ) \n\n# View the tidied data\nlong_pop_data"
+  },
+  {
+    "objectID": "slides/week-7.1.html#section-4",
+    "href": "slides/week-7.1.html#section-4",
+    "title": "Tidying Data",
+    "section": "",
+    "text": "Issue is that the data are in long form (which is OK for some purposes), but we want to make it wider. Wider, but tidy…\n\n\nlibrary(tidyr)\nlibrary(dplyr)\n\n# Pivot using pivot_longer\n\nlong_pop_data &lt;- world_bank_pop |&gt;\n  pivot_longer(\n    cols = `2000`:`2017`,   # The columns you want to pivot (years)\n    names_to = \"year\",      # New column name for the years\n    values_to = \"pop\"       # New column name for the values\n  ) \n\n# View the tidied data\nlong_pop_data"
+  },
+  {
+    "objectID": "slides/week-7.1.html#pivot-wider",
+    "href": "slides/week-7.1.html#pivot-wider",
+    "title": "Tidying Data",
+    "section": "Pivot Wider",
+    "text": "Pivot Wider\n\npivot_wider() takes three main arguments:\n\nnames_from - the column whose values will become new column names (identifier)\nvalues_from - the column containing the values that will fill the new columns\nvalues_fill (optional) - specifies what to use for missing values (e.g., NA, 0)"
+  },
+  {
+    "objectID": "slides/week-7.1.html#pivotwider-the-wb-data",
+    "href": "slides/week-7.1.html#pivotwider-the-wb-data",
+    "title": "Tidying Data",
+    "section": "pivotwider() the WB Data",
+    "text": "pivotwider() the WB Data\n\n\n# pivot wider\ntidy_pop_data &lt;- long_pop_data |&gt;\n  pivot_wider(\n    names_from = indicator, \n    values_from = pop\n  )\n\n# view the data\ntidy_pop_data"
+  },
+  {
+    "objectID": "slides/week-7.1.html#download-some-messy-data",
+    "href": "slides/week-7.1.html#download-some-messy-data",
+    "title": "Tidying Data",
+    "section": "Download Some Messy Data",
+    "text": "Download Some Messy Data\n\n\nDownload some messy WB data\nMake it multiple variables\nDownload as a CSV file\nSave in your project /data folder"
+  },
+  {
+    "objectID": "slides/week-7.1.html#messy-data-example",
+    "href": "slides/week-7.1.html#messy-data-example",
+    "title": "Tidying Data",
+    "section": "Messy Data Example",
+    "text": "Messy Data Example"
+  },
+  {
+    "objectID": "slides/week-7.1.html#read-data",
+    "href": "slides/week-7.1.html#read-data",
+    "title": "Tidying Data",
+    "section": "Read Data",
+    "text": "Read Data\n\n\n# Load packages\nlibrary(readr) \nlibrary(dplyr) \n\n# Read data from csv file into an object called \"wb_data_messy\"\nwb_data_messy &lt;- read_csv(\"data/your_file_name.csv\")\n\n# View the data\nglimpse(wb_data_messy)"
+  },
+  {
+    "objectID": "slides/week-7.1.html#pivot-the-data",
+    "href": "slides/week-7.1.html#pivot-the-data",
+    "title": "Tidying Data",
+    "section": "Pivot the Data",
+    "text": "Pivot the Data\n\n\nUse pivot_longer() to get the data in long form\nUse pivot_wider() to get the series in the columns"
+  },
+  {
+    "objectID": "slides/week-7.1.html#special-considerations",
+    "href": "slides/week-7.1.html#special-considerations",
+    "title": "Tidying Data",
+    "section": "Special Considerations",
+    "text": "Special Considerations\n\n\n# Load tidyr\nlibrary(tidyr)\n\n# Reshape the data\nwb_data &lt;- wb_data_messy |&gt; \n  pivot_longer(             \n    cols = `1973 [YR1973]`: `2022 [YR2022]`, # columns to pivot\n    names_to = \"year\", # name the identifier column \"year\"\n    values_to = \"values\" # name the numeric var column \n  ) \n\n# View the data\nglimpse(wb_data)"
+  },
+  {
+    "objectID": "slides/week-7.1.html#special-considerations-1",
+    "href": "slides/week-7.1.html#special-considerations-1",
+    "title": "Tidying Data",
+    "section": "Special Considerations",
+    "text": "Special Considerations\n\n\nwb_data &lt;- wb_data |&gt;\n  select(-`Series Name`)\n\n# Reshape the data\ntidy_data &lt;- wb_data |&gt; \n  pivot_wider(             \n    names_from = `Series Code`,\n    values_from = values\n  ) \n\n# View the data\nglimpse(wb_data)"
+  },
+  {
+    "objectID": "slides/week-7.1.html#give-it-a-shot",
+    "href": "slides/week-7.1.html#give-it-a-shot",
+    "title": "Tidying Data",
+    "section": "Give it a Shot!",
+    "text": "Give it a Shot!\n\n\nTry downloading some messy WB data and make it tidy\nRefer to previous slides for help\n\n\n\n\n−+\n10:00"
+  },
+  {
+    "objectID": "slides/week-7.1.html#mutating-variables",
+    "href": "slides/week-7.1.html#mutating-variables",
+    "title": "Tidying Data",
+    "section": "Mutating Variables",
+    "text": "Mutating Variables\n\n\nAnytime we want to change a variable, we are going to use the dplyr verbs mutate() or mutate_at()\nmutate() is if you want to change on variable\nUse across() for multiple variables"
+  },
+  {
+    "objectID": "slides/week-7.1.html#lets-fix-our-variables",
+    "href": "slides/week-7.1.html#lets-fix-our-variables",
+    "title": "Tidying Data",
+    "section": "Let’s Fix Our Variables",
+    "text": "Let’s Fix Our Variables\n\n\n# Fix year and flfp\nwb_data &lt;- wb_data |&gt; \n  mutate(year = substring(year, 1, 4)) |&gt;  # truncate year\n  mutate(across(c(\"year\", \"flfp\"), as.numeric))  # convert year and flfp to numeric\n\n# View the data\nglimpse(wb_data)"
+  },
+  {
+    "objectID": "slides/week-7.1.html#now-try-it-with-multiple-varaibles",
+    "href": "slides/week-7.1.html#now-try-it-with-multiple-varaibles",
+    "title": "Tidying Data",
+    "section": "Now Try it With Multiple Varaibles",
+    "text": "Now Try it With Multiple Varaibles\n\n\nGo to the data frame with multiple variables that you created earlier\nHow would you modify this code to make sure the variables are in the right format?"
+  },
+  {
+    "objectID": "slides/week-7.1.html#clean-variable-names",
+    "href": "slides/week-7.1.html#clean-variable-names",
+    "title": "Tidying Data",
+    "section": "Clean Variable Names",
+    "text": "Clean Variable Names\n\nVery simple: use the janitor package!\n\n# Load janitor\nlibrary(janitor)\n\n# Apply clean_names() to wb_data, store in new data frame called wb_data_clean\nwb_data_clean &lt;- wb_data |&gt;  \n  clean_names() \n\n# Write wb_data_clean to a csv file\nwrite_csv(wb_data_clean, \"data/wb_data_clean.csv\")\n\n# View the data\nglimpse(wb_data_clean)"
+  },
+  {
+    "objectID": "slides/week-7.1.html#column-specifications",
+    "href": "slides/week-7.1.html#column-specifications",
+    "title": "Tidying Data",
+    "section": "Column Specifications",
+    "text": "Column Specifications\n\n\nCan clean columns on backend\nBut can also specify data types in read_csv() or read_excel()\n\n\nspec(wb_data_messy) # show column specifications (from `readr`)\n\nwb_data_messy &lt;- read_csv(\"data/your_file_name.csv\", \n                          col_types = cols(\n                           col_double(`1990 [YR1990]`) \n                          ))"
+  },
+  {
+    "objectID": "slides/week-7.1.html#pivot-longer-1",
+    "href": "slides/week-7.1.html#pivot-longer-1",
+    "title": "Tidying Data",
+    "section": "Pivot Longer",
+    "text": "Pivot Longer\n\npivot_longer() takes three arguments:\n\ncols - which columns you want to pivot\nnames_to - the name of the column where the old column names are going to (identifier)\nvalues_to - the name of the column where the values are going to"
+  },
+  {
+    "objectID": "slides/week-7.1.html#pivot-wider-1",
+    "href": "slides/week-7.1.html#pivot-wider-1",
+    "title": "Tidying Data",
+    "section": "Pivot Wider",
+    "text": "Pivot Wider\n\npivot_wider() takes three main arguments:\n\nnames_from - the column whose values will become new column names (identifier)\nvalues_from - the column containing the values that will fill the new columns\nvalues_fill (optional) - specifies what to use for missing values (e.g., NA, 0)"
   }
 ]
