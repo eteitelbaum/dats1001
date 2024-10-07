@@ -80,8 +80,6 @@ world_bank_pop
 <br>
 
 ```{r}
-#| eval: false
-
 library(tidyr)
 library(dplyr)
 
@@ -98,32 +96,7 @@ long_pop_data <- world_bank_pop |>
 long_pop_data
 ```
 
-## {.smaller}
-
-This is better, usable even, but are we done if we want a tidy data frame? 
-
-<br>
-
-```{r}
-#| eval: false
- 
-library(tidyr)
-library(dplyr)
-
-# Pivot using pivot_longer
-
-long_pop_data <- world_bank_pop |>
-  pivot_longer(
-    cols = `2000`:`2017`,   # The columns you want to pivot (years)
-    names_to = "year",      # New column name for the years
-    values_to = "pop"       # New column name for the values
-  ) 
-
-# View the tidied data
-long_pop_data
-```
-
-## {.smaller}
+## 
 
 <br>
 
@@ -132,46 +105,22 @@ This is better, usable even, but are we done if we want a tidy data frame?
 <br>
 
 ```{r}
-#| eval: false
+#| echo: false
 
-library(tidyr)
-library(dplyr)
-
-# Pivot using pivot_longer
-
-long_pop_data <- world_bank_pop |>
-  pivot_longer(
-    cols = `2000`:`2017`,   # The columns you want to pivot (years)
-    names_to = "year",      # New column name for the years
-    values_to = "pop"       # New column name for the values
-  ) 
-
-# View the tidied data
 long_pop_data
 ```
 
-## {.smaller}
+## 
+
+<br>
 
 Issue is that the data are in long form (which is OK for some purposes), but we want to make it wider. Wider, but tidy... 
 
 <br>
 
 ```{r}
-#| eval: false
+#| echo: false
 
-library(tidyr)
-library(dplyr)
-
-# Pivot using pivot_longer
-
-long_pop_data <- world_bank_pop |>
-  pivot_longer(
-    cols = `2000`:`2017`,   # The columns you want to pivot (years)
-    names_to = "year",      # New column name for the years
-    values_to = "pop"       # New column name for the values
-  ) 
-
-# View the tidied data
 long_pop_data
 ```
 
@@ -193,7 +142,6 @@ long_pop_data
 
 ```{r}
 #| label: pivot_wb_data
-#| eval: false
 
 # pivot wider
 tidy_pop_data <- long_pop_data |>
@@ -203,6 +151,17 @@ tidy_pop_data <- long_pop_data |>
   )
 
 # view the data
+tidy_pop_data
+```
+
+## `pivotwider()` the WB Data
+
+<br>
+
+```{r}
+#| label: pivot_wb_data2
+#| echo: false
+
 tidy_pop_data
 ```
 
