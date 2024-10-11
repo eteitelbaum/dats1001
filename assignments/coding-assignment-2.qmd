@@ -81,4 +81,6 @@ Don't write your paragraphs or any interpretation or analysis in a code chunk. U
 
 **Now render the document to make sure everything runs and to produce a final HTML document!**
 
+## Submission
 
+*After rendering your document, export your project folder and submit it on Blackboard. You will find the link to the Coding Assignment one submission portal under the Assignments link. There is a screen capture video in the Discord server that will help you understand how to do this.*
