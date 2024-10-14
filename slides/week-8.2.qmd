@@ -1,0 +1,543 @@
+---
+title: Linear Regression
+date: today
+date-format: long
+footer: "[DATS 1001 Website](https://ds4all.rocks)"
+logo: images/ds4all-logo.png
+format:
+  revealjs:
+    theme: [simple, custom.scss]
+    transition: fade
+    slide-number: true
+    #multiplex: true
+    chalkboard: true
+execute:
+  echo: false
+  message: false
+  warning: false
+  freeze: auto
+---
+
+
+```{r}
+#| label: setup
+
+library(tidyverse)
+library(tidymodels)
+library(vdemdata)
+```
+
+## Linear Model with Single Predictor
+
+<br>
+
+Goal: Estimate Democracy score ($\hat{Y_{i}}$) of a country given level of GDP per capita ($X_{i}$).
+
+<br>
+
+Or: Estimate relationship between GDP per capita and democracy.
+
+## Linear Model with Single Predictor
+
+```{r}
+#| label: model-data
+
+modelData <- vdem |> 
+  filter(year == 2019) |> 
+  select(
+    country = country_name, 
+    lib_dem = v2x_libdem, 
+    wealth = e_gdppc, 
+    corruption = v2x_corr, 
+    ) |>
+  mutate(log_wealth = log(wealth)) 
+  
+
+ggplot(modelData, aes(x = log_wealth, y = lib_dem)) +
+  geom_point() +
+  geom_smooth(method = "lm", color = "#E48957", se = FALSE) +
+  labs(x = "GDP per capita", y = "Liberal Democracy Index") +
+  theme_bw()
+```
+
+# Estimate Model using Tidymodels
+
+## 
+
+<br>
+
+Step 1: Specify model
+
+<br>
+
+```{r}
+#| label: specify-model
+#| echo: true
+#| eval: false
+
+linear_reg()
+```
+
+## 
+
+<br>
+
+Step 2: Set model fitting *engine*
+
+<br>
+
+```{r}
+#| label: set-engine
+#| echo: true
+#| eval: false
+
+linear_reg() |>
+  set_engine("lm") # lm: linear model
+```
+
+## 
+
+<br>
+
+Step 3: Fit model & estimate parameters
+
+<bt>
+
+... using **formula syntax**
+
+```{r}
+#| label: fit-model
+#| echo: true
+
+linear_reg() |>
+  set_engine("lm") |>
+  fit(lib_dem ~ log_wealth, data = modelData) 
+```
+
+## 
+
+<br>
+
+Step 4: Tidy things up...
+
+<br>
+
+$$\widehat{Democracy}_{i} = 0.13 + 0.12 * {loggdppc}_{i}$$
+
+```{r}
+#| label: tidy-model
+#| echo: true
+
+linear_reg() |>
+  set_engine("lm") |>
+  fit(lib_dem ~ log_wealth, data = modelData) |>
+  tidy()
+```
+
+
+## Interpretation?
+
+<br>
+
+$$\widehat{Democracy}_{i} = 0.13 + 0.12 * {loggdppc}_{i}$$
+
+## Question
+
+<br>
+
+How do we get the "best" values for the slope and intercept?
+
+
+## How would you draw the "best" line?
+
+```{r}
+#| label: best-line
+
+ggplot(modelData, aes(x = log_wealth, y = lib_dem)) +
+  geom_point() +
+ # geom_smooth(method = "lm", color = "#E48957", se = FALSE) +
+  labs(x = "GDP per capita", y = "Liberal Democracy Index") +
+  theme_bw()
+```
+
+
+## How would you draw the "best" line?
+
+```{r}
+#| label: best-line2
+
+ggplot(modelData, aes(x = log_wealth, y = lib_dem)) +
+  geom_point() +
+  geom_smooth(method = "lm", color = "#E48957", se = FALSE) +
+  labs(x = "GDP per capita", y = "Liberal Democracy Index") +
+  theme_bw()
+```
+
+## Least squares regression
+
+<br>
+
+- Remember the residual is the difference between the actual value and the predicted value
+
+. . .
+
+- The regression line minimizes the sum of squared residuals.
+
+## Least squares regression
+
+<br>
+
+- Residual for each point is:  $e_i = y_i - \hat{y}_i$
+
+- Least squares regression line minimizes $\sum_{i = 1}^n e_i^2$.
+
+. . .
+
+- Why do we square the residual?
+
+. . .
+
+- Why not take absolute value?
+
+    - Principle: larger penalty for residuals further away
+    - Math: makes the math easier and some nice properties (not our concern here...)
+
+## Least squares regression
+
+
+```{r}
+#| label: best-line3 
+
+mod_fit <- linear_reg() %>%
+  set_engine("lm") %>%
+  fit(lib_dem ~ log_wealth, data = modelData)
+
+fit_tidy <- tidy(mod_fit$fit) 
+fit_aug  <- augment(mod_fit$fit) %>%
+  mutate(res_cat = ifelse(.resid > 0, TRUE, FALSE))
+
+a <- round(fit_tidy$estimate[1], 2)
+b <- round(fit_tidy$estimate[2], 2)
+
+ggplot(data = fit_aug) +
+  geom_point(aes(x = log_wealth, y = lib_dem, color = res_cat)) +
+  geom_line(aes(x = log_wealth, y = .fitted), size = 0.75, color = "#8E2C90") + 
+  labs(
+    title = "GDP per Capita and Democracy",
+    x = "GDP per Capita",
+    y = "Libearl Democracy Index"
+  ) +
+  guides(color = "none") +
+  scale_color_manual(values = c("#260b27", "darkorange")) +
+  theme_bw()
+#+
+#  geom_text(aes(x = 0, y = 150), label = "Positive residual", color = "#e6b0e7", hjust = 0, size = 8) +
+ # geom_text(aes(x = 150, y = 25), label = "Negative residual", color = "#260b27", hjust = 0, size = 8)
+
+```
+
+## Very Simple Example
+
+What should the slope and intercept be?
+
+```{r}
+#| label: best-line4
+
+# create data
+dat <- tibble(
+    x = c(1, 2, 3),
+    y = c(1, 2, 3)
+)
+
+ggplot(dat, aes(y=y, x=x)) +
+  geom_point(size=3, color="darkblue") +
+  xlim(0, 4) + ylim(0,4) +
+  theme_bw()
+```
+
+
+## Example
+
+$\hat{Y} = 0 + 1*X$
+
+```{r}
+#| label: best-line5
+
+# create data
+ggplot(dat, aes(y=y, x=x)) +
+  geom_point(size=3, color="darkblue") +
+  xlim(0, 4) + ylim(0,4) +
+  geom_segment(x=0, y=0, xend=4, yend=4, color="darkorange") +
+  theme_bw()
+```
+
+## Example
+
+What is the sum of squared residuals?
+
+```{r}
+#| label: best-line6
+
+# create data
+ggplot(dat, aes(y=y, x=x)) +
+  geom_point(size=3, color="darkblue") +
+  xlim(0, 4) + ylim(0,4) +
+  geom_segment(x=0, y=0, xend=4, yend=4, color="darkorange") +
+  theme_bw()
+```
+
+## Example
+
+What is sum of squared residuals for $y = 0 + 0*X$?
+
+```{r}
+#| label: best-line7
+
+# create data
+ ggplot(dat, aes(y=y, x=x)) +
+  geom_point(size=3, color="darkblue") +
+  xlim(0, 4) + ylim(0,4) +
+  geom_segment(x=0, y=0, xend=4, yend=0, color="black") +
+  theme_bw()
+```
+
+
+## Example
+
+What is sum of squared residuals for $y = 0 + 0*X$?
+
+```{r}
+#| label: best-line8
+
+# create data
+ ggplot(dat, aes(y=y, x=x)) +
+  geom_point(size=3, color="darkblue") +
+  xlim(0, 4) + ylim(0,4) +
+  geom_segment(x=0, y=0, xend=4, yend=0, color="black") +
+  theme_bw()
+```
+
+
+```{r}
+#| label: best-line9
+#| echo: true
+
+(1-0)^2 + (2-0)^2 + (3-0)^2
+```
+
+
+
+## Example
+
+What is sum of squared residuals for $y = 0 + 2*X$?
+
+```{r}
+#| label: best-line10
+
+# create data
+ ggplot(dat, aes(y=y, x=x)) +
+  geom_point(size=3, color="darkblue") +
+  xlim(0, 4) + ylim(0,8) +
+  geom_segment(x=0, y=0, xend=4, yend=8, color="black") +
+  theme_bw()
+```
+
+## Example
+
+What is sum of squared residuals for $y = 0 + 2*X$?
+
+```{r}
+#| label: best-line11
+
+ ggplot(dat, aes(y=y, x=x)) +
+  geom_point(size=3, color="darkblue") +
+  xlim(0, 4) + ylim(0,8) +
+  geom_segment(x=0, y=0, xend=4, yend=8, color="black") +
+  theme_bw()
+```
+
+
+```{r}
+#| label: best-line12
+#| echo: true
+
+(1-2)^2 + (2-4)^2 + (3-6)^2
+```
+
+
+## One more...
+
+What is sum of squared residuals for $y = 0 + -1*X$?
+
+```{r}
+#| label: best-line13
+
+ ggplot(dat, aes(y=y, x=x)) +
+  geom_point(size=3, color="darkblue") +
+  xlim(0, 4) + ylim(-4,4) +
+  geom_segment(x=0, y=0, xend=4, yend=-4, color="black") +
+  theme_bw()
+```
+
+## One more...
+
+What is sum of squared residuals for $y = 0 + -1*X$?
+
+```{r}
+#| label: best-line14
+
+ ggplot(dat, aes(y=y, x=x)) +
+  geom_point(size=3, color="darkblue") +
+  xlim(0, 4) + ylim(-4,4) +
+  geom_segment(x=0, y=0, xend=4, yend=-4, color="black") +
+  theme_bw()
+```
+
+
+```{r}
+#| label: best-line15
+#| echo: true
+
+(1+1)^2 + (2+2)^2 + (3+3)^2
+```
+
+## Cost Function
+
+Sum of Squared Residuals as function of possible values of $b$
+
+
+```{r}
+#| label: cost-function
+
+sse <- tibble(
+          b=c(-2, -1, 0, 1, 2, 3, 4), 
+          c=c(81, 56, 14, 0, 14, 56, 81)
+          )
+
+ggplot(sse, aes(y=c, x=b)) +
+    geom_point(size=3, color="darkred") +
+    labs(
+    x = "Slope (b)",
+    y = "Sum of Squared Residuals"
+  ) +
+  theme_bw()
+```
+
+
+## Least Squares Regression
+
+<br>
+
+- When we estimate a least squares regression, it is looking for the line that minimizes sum of squared residuals
+
+- In the simple example, I set $a=0$ to make it easier.  More complicated when searching for combination of $a$ and $b$ that minimize, but same basic idea
+
+## Least Squares Regression
+
+<br>
+
+- There is a way to solve for this analytically for linear regression (i.e., by doing math...)
+
+    -- They made us do this in grad school...
+
+. . .
+
+- In machine learning, people also use gradient descent algorithm in which the computer searches over possible combinations of $a$ and $b$ until it settles on the lowest point.    
+
+## Least Squares Regression
+
+```{r}
+#| label: ssr-viz
+
+sse <- tibble(
+          b=c(-2, -1, 0, 1, 2, 3, 4), 
+          c=c(81, 56, 14, 0, 14, 56, 81)
+          )
+
+ggplot(sse, aes(y=c, x=b)) +
+    geom_point(size=3, color="darkred") +
+  #  geom_line(color = "darkred") +
+    labs(
+    x = "Slope (b)",
+    y = "Sum of Squared Residuals"
+  ) +
+  theme_bw()
+```
+
+## Least Squares Regression
+
+```{r}
+#| label: regression-line
+
+ggplot(modelData, aes(x = log_wealth, y = lib_dem)) +
+  geom_point() +
+  geom_smooth(method = "lm", color = "#E48957", se = FALSE) +
+  labs(x = "GDP per capita", y = "Liberal Democracy Index") +
+  theme(
+    axis.text  = element_blank(),
+    axis.ticks = element_blank()
+    ) +
+  theme_bw()
+```
+
+## Your Turn {.smaller}
+
+<br>
+
+Are democracies less corrupt?
+
+<br>
+
+- V-Dem includes a Political Corruption Index, which aggregates corruption in a number of spheres (see codebook for details).  
+
+- The variable name is: *v2x_corr* : lower values mean less corruption
+
+- See started code [HERE](https://www.dropbox.com/scl/fo/8xpsrz27m0on1mc2pf5ya/h?rlkey=716y4lvy6uisq0gortq1as0sp&dl=0)
+
+
+## Your Turn {.smaller}
+
+<br>
+
+**Are democracies less corrupt?**
+
+<br>
+
+::: {.smaller}
+- Filter the V-Dem data to only include the year 2019
+- Make a scatterplot to visualize the relationship between democracy (X) and corruption (Y) (use the *v2x_libdem* variable for democracy)
+- Fit a linear model
+- Interpret results for the slope and intercept
+- For a country with the average (mean) level of democracy, what is the predicted level of corruption?
+:::
+
+```{r}
+#| label: time1
+
+library(countdown)
+
+countdown(minutes = 10, 
+          id = "timer1", 
+          bottom = "5%", 
+          right = "10%",
+          color_border = "#fff",
+          color_text = "#fff",
+          color_running_background = "#42affa",
+          color_running_text = "black",
+          color_finished_background = "#E5D19D",
+          color_finished_text = "#00264A")
+```
+
+## Create Your Own Model {.smaller}
+
+<br>
+
+- What is a theory that you would like to test with V-Dem data?
+- What is the dependent variable? 
+- What is the independent variable? 
+- Map out steps to wrangle the data and fit a regression model
+- What do you expect to find? 
+- Now go ahead and wrangle the data
+- Fit the model
+- Interpret the coefficients and their significance
+- Did the results match your expectations?

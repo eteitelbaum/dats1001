@@ -59,7 +59,7 @@ Try to make sure you download indicators with enough data to conduct your analys
 
 ```
 
-## Step 6: Interpret your data (10 pts)
+## Step 5: Interpret your data (10 pts)
 
 *Write a paragraph or so relating your insights to the Norris reading about electoral reform and women's representation. Picking a handful of country cases from your data, how does your summary of gender and democracy variables relate to the level of female representation in a country? How would you relate these findings to Norris's argument about the importance of an inclusive democracy?* 
 
@@ -67,7 +67,7 @@ Try to make sure you download indicators with enough data to conduct your analys
 Don't write your paragraphs or any interpretation or analysis in a code chunk. Use markdown text. Quarto is designed to be a literate programming tool, so you can write your analysis in markdown text and include code chunks when necessary to support your argument.
 :::
 
-## Step 7: Pivot WB Data (10 pts.)
+## Step 6: Pivot WB Data (10 pts.)
 
 *Sometimes our data does not come in the format that we need to have it in for our analysis. Demonstrate that you know how to pivot data from wide to long form using the `world_bank_pop` data frame that comes with the `tidyr` package. Then pivot again (wider this time) to get the data into tidy format.*
 
@@ -77,7 +77,7 @@ Don't write your paragraphs or any interpretation or analysis in a code chunk. U
 
 ## Extra Credit (3 pts.)
 
-*Following the example that we did in class, download some messy data from the World Development Indicators website and wrangle it so that it is a tidy data frame. Be sure to download more than one data frame and don't forget to use backticks (``) when dealing with unconventional variable names.*
+*Following the example that we did in class, download some messy data from the World Development Indicators website and wrangle it so that it is a tidy data frame. Be sure to download more than one data variable and don't forget to use backticks (``) when dealing with unconventional variable names.*
 
 **Now render the document to make sure everything runs and to produce a final HTML document!**
 

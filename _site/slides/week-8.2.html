@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Your Name">
+<meta name="dcterms.date" content="2024-10-14">
 
-<title>Coding Assignment 2 – DATS 1001–Fall Schedule</title>
+<title>Linear Regression – DATS 1001–Fall Schedule</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,8 +64,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../project/project-assignment-1.html" rel="next">
-<link href="../assignments/coding-assignment-1.html" rel="prev">
 <link href="../images/ds4all-logo.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -105,12 +103,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<link href="../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
+<script src="../site_libs/countdown-0.4.0/countdown.js"></script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
-<meta property="og:title" content="Coding Assignment 2 – DATS 1001–Fall Schedule">
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<meta property="og:title" content="Linear Regression – DATS 1001–Fall Schedule">
 <meta property="og:description" content="Homepage for DATS 1001 - Data Science for All, George Washington University.">
 <meta property="og:site_name" content="DATS 1001--Fall Schedule">
-<meta name="twitter:title" content="Coding Assignment 2 – DATS 1001–Fall Schedule">
+<meta name="twitter:title" content="Linear Regression – DATS 1001–Fall Schedule">
 <meta name="twitter:description" content="Homepage for DATS 1001 - Data Science for All, George Washington University.">
 <meta name="twitter:card" content="summary">
 </head>
@@ -124,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/coding-assignment-1.html">Coding Asignments</a></li><li class="breadcrumb-item"><a href="../assignments/coding-assignment-2.html">Assignment 2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Linear Regression</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -210,13 +239,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">Coding Asignments</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../assignments/coding-assignment-1.html" class="sidebar-item-text sidebar-link">
@@ -225,7 +254,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../assignments/coding-assignment-2.html" class="sidebar-item-text sidebar-link active">
+  <a href="../assignments/coding-assignment-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Assignment 2</span></a>
   </div>
 </li>
@@ -276,37 +305,61 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#step-1-download-data-from-v-dem-20pts" id="toc-step-1-download-data-from-v-dem-20pts" class="nav-link" data-scroll-target="#step-1-download-data-from-v-dem-20pts">Step 1: Download data from V-Dem (20pts)</a></li>
-  <li><a href="#step-2-download-data-from-the-world-bank-20-pts" id="toc-step-2-download-data-from-the-world-bank-20-pts" class="nav-link" data-scroll-target="#step-2-download-data-from-the-world-bank-20-pts">Step 2: Download data from the World Bank (20 pts)</a></li>
-  <li><a href="#step-3-merge-the-data-20-pts" id="toc-step-3-merge-the-data-20-pts" class="nav-link" data-scroll-target="#step-3-merge-the-data-20-pts">Step 3: Merge the data (20 pts)</a></li>
-  <li><a href="#step-4-summarize-your-combined-data-set-20-pts" id="toc-step-4-summarize-your-combined-data-set-20-pts" class="nav-link" data-scroll-target="#step-4-summarize-your-combined-data-set-20-pts">Step 4: Summarize your combined data set (20 pts)</a></li>
-  <li><a href="#step-5-interpret-your-data-10-pts" id="toc-step-5-interpret-your-data-10-pts" class="nav-link" data-scroll-target="#step-5-interpret-your-data-10-pts">Step 5: Interpret your data (10 pts)</a></li>
-  <li><a href="#step-6-pivot-wb-data-10-pts." id="toc-step-6-pivot-wb-data-10-pts." class="nav-link" data-scroll-target="#step-6-pivot-wb-data-10-pts.">Step 6: Pivot WB Data (10 pts.)</a></li>
-  <li><a href="#extra-credit-3-pts." id="toc-extra-credit-3-pts." class="nav-link" data-scroll-target="#extra-credit-3-pts.">Extra Credit (3 pts.)</a></li>
-  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#linear-model-with-single-predictor" id="toc-linear-model-with-single-predictor" class="nav-link active" data-scroll-target="#linear-model-with-single-predictor">Linear Model with Single Predictor</a></li>
+  <li><a href="#linear-model-with-single-predictor-1" id="toc-linear-model-with-single-predictor-1" class="nav-link" data-scroll-target="#linear-model-with-single-predictor-1">Linear Model with Single Predictor</a></li>
+  <li><a href="#estimate-model-using-tidymodels" id="toc-estimate-model-using-tidymodels" class="nav-link" data-scroll-target="#estimate-model-using-tidymodels">Estimate Model using Tidymodels</a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#section-1" id="toc-section-1" class="nav-link" data-scroll-target="#section-1"></a></li>
+  <li><a href="#section-2" id="toc-section-2" class="nav-link" data-scroll-target="#section-2"></a></li>
+  <li><a href="#section-3" id="toc-section-3" class="nav-link" data-scroll-target="#section-3"></a></li>
+  <li><a href="#interpretation" id="toc-interpretation" class="nav-link" data-scroll-target="#interpretation">Interpretation?</a></li>
+  <li><a href="#question" id="toc-question" class="nav-link" data-scroll-target="#question">Question</a></li>
+  <li><a href="#how-would-you-draw-the-best-line" id="toc-how-would-you-draw-the-best-line" class="nav-link" data-scroll-target="#how-would-you-draw-the-best-line">How would you draw the “best” line?</a></li>
+  <li><a href="#how-would-you-draw-the-best-line-1" id="toc-how-would-you-draw-the-best-line-1" class="nav-link" data-scroll-target="#how-would-you-draw-the-best-line-1">How would you draw the “best” line?</a></li>
+  <li><a href="#least-squares-regression" id="toc-least-squares-regression" class="nav-link" data-scroll-target="#least-squares-regression">Least squares regression</a></li>
+  <li><a href="#least-squares-regression-1" id="toc-least-squares-regression-1" class="nav-link" data-scroll-target="#least-squares-regression-1">Least squares regression</a></li>
+  <li><a href="#least-squares-regression-2" id="toc-least-squares-regression-2" class="nav-link" data-scroll-target="#least-squares-regression-2">Least squares regression</a></li>
+  <li><a href="#very-simple-example" id="toc-very-simple-example" class="nav-link" data-scroll-target="#very-simple-example">Very Simple Example</a></li>
+  <li><a href="#example" id="toc-example" class="nav-link" data-scroll-target="#example">Example</a></li>
+  <li><a href="#example-1" id="toc-example-1" class="nav-link" data-scroll-target="#example-1">Example</a></li>
+  <li><a href="#example-2" id="toc-example-2" class="nav-link" data-scroll-target="#example-2">Example</a></li>
+  <li><a href="#example-3" id="toc-example-3" class="nav-link" data-scroll-target="#example-3">Example</a></li>
+  <li><a href="#example-4" id="toc-example-4" class="nav-link" data-scroll-target="#example-4">Example</a></li>
+  <li><a href="#example-5" id="toc-example-5" class="nav-link" data-scroll-target="#example-5">Example</a></li>
+  <li><a href="#one-more" id="toc-one-more" class="nav-link" data-scroll-target="#one-more">One more…</a></li>
+  <li><a href="#one-more-1" id="toc-one-more-1" class="nav-link" data-scroll-target="#one-more-1">One more…</a></li>
+  <li><a href="#cost-function" id="toc-cost-function" class="nav-link" data-scroll-target="#cost-function">Cost Function</a></li>
+  <li><a href="#least-squares-regression-3" id="toc-least-squares-regression-3" class="nav-link" data-scroll-target="#least-squares-regression-3">Least Squares Regression</a></li>
+  <li><a href="#least-squares-regression-4" id="toc-least-squares-regression-4" class="nav-link" data-scroll-target="#least-squares-regression-4">Least Squares Regression</a></li>
+  <li><a href="#least-squares-regression-5" id="toc-least-squares-regression-5" class="nav-link" data-scroll-target="#least-squares-regression-5">Least Squares Regression</a></li>
+  <li><a href="#least-squares-regression-6" id="toc-least-squares-regression-6" class="nav-link" data-scroll-target="#least-squares-regression-6">Least Squares Regression</a></li>
+  <li><a href="#your-turn" id="toc-your-turn" class="nav-link" data-scroll-target="#your-turn">Your Turn</a></li>
+  <li><a href="#your-turn-1" id="toc-your-turn-1" class="nav-link" data-scroll-target="#your-turn-1">Your Turn</a></li>
+  <li><a href="#create-your-own-model" id="toc-create-your-own-model" class="nav-link" data-scroll-target="#create-your-own-model">Create Your Own Model</a></li>
+  </ul></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/dats1001-fall-2024/edit/main/assignments/coding-assignment-2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dats1001-fall-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/dats1001-fall-2024/edit/main/slides/week-8.2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dats1001-fall-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="week-8.2.html"><i class="bi bi-file-slides"></i>RevealJS</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignments/coding-assignment-1.html">Coding Asignments</a></li><li class="breadcrumb-item"><a href="../assignments/coding-assignment-2.html">Assignment 2</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Coding Assignment 2</h1>
+<h1 class="title">Linear Regression</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Your Name </p>
-          </div>
-  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">October 14, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -316,90 +369,409 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="overview" class="level2">
-<h2 class="anchored" data-anchor-id="overview">Overview</h2>
-<p>For this assignment, you are going to download some variables using the <code>wbstats</code> and <code>vdemlite</code> packages. Then you are going to wrangle these data and merge the two data sets into one and analyze how they relate to women’s representation in national parliaments. Do your work for each step in the code chunks provided.</p>
-<p>Here is a setup code chunk. You can load all of your packages here or as you go along in the code chunks below using the <code>library()</code> function. However, note that you really only need to load a library once per document.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Please refrain from <em>installing</em> any packages in your code chunks because this will also install them every time the code chunk is run or your document is rendered. This may not be desirable for you or whoever is looking at or running your code (e.g.&nbsp;me).</p>
-</div>
-</div>
+<section id="linear-model-with-single-predictor" class="level2">
+<h2 class="anchored" data-anchor-id="linear-model-with-single-predictor">Linear Model with Single Predictor</h2>
+<p><br></p>
+<p>Goal: Estimate Democracy score (<span class="math inline">\(\hat{Y_{i}}\)</span>) of a country given level of GDP per capita (<span class="math inline">\(X_{i}\)</span>).</p>
+<p><br></p>
+<p>Or: Estimate relationship between GDP per capita and democracy.</p>
 </section>
-<section id="step-1-download-data-from-v-dem-20pts" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-download-data-from-v-dem-20pts">Step 1: Download data from V-Dem (20pts)</h2>
-<p><em>Use the V-Dem <a href="https://www.v-dem.net/data/reference-documents/">codebook</a> or the <code>searchdem()</code> function in <code>vdemlite</code> to identify one measure of democracy and one indicator related to women’s empowerment (or two measures of women’s empowerment). Now use <code>fetchdem()</code> to download the most recent 25 years or so of data for your analysis for all countries in the dataset. Make sure to load the packages that you need and <code>glimpse()</code> the data or <code>View()</code> it to make sure that it downloaded properly.</em></p>
-</section>
-<section id="step-2-download-data-from-the-world-bank-20-pts" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-download-data-from-the-world-bank-20-pts">Step 2: Download data from the World Bank (20 pts)</h2>
-<p><em>Next, download the variable on women’s represenation that we used in Module 1.2 (“SG.GEN.PARL.ZS”) and at least one additional measure related to women’s empowerment. Go to the <a href="https://databank.worldbank.org/source/world-development-indicators">WDI</a> site the wb_search() function to identify relevant variables. Download data for the same time period as you did for the V-Dem data for all countries.</em></p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Try to make sure you download indicators with enough data to conduct your analysis. You won’t get great results if there are too many NAs.</p>
-</div>
-</div>
-</section>
-<section id="step-3-merge-the-data-20-pts" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-merge-the-data-20-pts">Step 3: Merge the data (20 pts)</h2>
-<p><em>Now add country codes using the <code>countrycode</code> package and merge the data using <code>left_join()</code>.</em></p>
-</section>
-<section id="step-4-summarize-your-combined-data-set-20-pts" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-summarize-your-combined-data-set-20-pts">Step 4: Summarize your combined data set (20 pts)</h2>
-<p><em>Use <code>group_by()</code>, <code>summarize()</code> and <code>arrange()</code> to glean insights about your data. For example, how do regions compare on mean values of women’s representation and how do these values relate to the values of other variables in your data set? Which countries stand out in terms of women’s representation?</em></p>
+<section id="linear-model-with-single-predictor-1" class="level2">
+<h2 class="anchored" data-anchor-id="linear-model-with-single-predictor-1">Linear Model with Single Predictor</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regional summary</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week-8.2_files/figure-html/model-data-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
 </div>
+</div>
+</div>
+</section>
+<section id="estimate-model-using-tidymodels" class="level1">
+<h1>Estimate Model using Tidymodels</h1>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+<p><br></p>
+<p>Step 1: Specify model</p>
+<p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Country summary</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">linear_reg</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="step-5-interpret-your-data-10-pts" class="level2">
-<h2 class="anchored" data-anchor-id="step-5-interpret-your-data-10-pts">Step 5: Interpret your data (10 pts)</h2>
-<p><em>Write a paragraph or so relating your insights to the Norris reading about electoral reform and women’s representation. Picking a handful of country cases from your data, how does your summary of gender and democracy variables relate to the level of female representation in a country? How would you relate these findings to Norris’s argument about the importance of an inclusive democracy?</em></p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Don’t write your paragraphs or any interpretation or analysis in a code chunk. Use markdown text. Quarto is designed to be a literate programming tool, so you can write your analysis in markdown text and include code chunks when necessary to support your argument.</p>
-</div>
+<section id="section-1" class="level2">
+<h2 class="anchored" data-anchor-id="section-1"></h2>
+<p><br></p>
+<p>Step 2: Set model fitting <em>engine</em></p>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="co"># lm: linear model</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="step-6-pivot-wb-data-10-pts." class="level2">
-<h2 class="anchored" data-anchor-id="step-6-pivot-wb-data-10-pts.">Step 6: Pivot WB Data (10 pts.)</h2>
-<p><em>Sometimes our data does not come in the format that we need to have it in for our analysis. Demonstrate that you know how to pivot data from wide to long form using the <code>world_bank_pop</code> data frame that comes with the <code>tidyr</code> package. Then pivot again (wider this time) to get the data into tidy format.</em></p>
-</section>
-<section id="extra-credit-3-pts." class="level2">
-<h2 class="anchored" data-anchor-id="extra-credit-3-pts.">Extra Credit (3 pts.)</h2>
-<p><em>Following the example that we did in class, download some messy data from the World Development Indicators website and wrangle it so that it is a tidy data frame. Be sure to download more than one data variable and don’t forget to use backticks (``) when dealing with unconventional variable names.</em></p>
-<p><strong>Now render the document to make sure everything runs and to produce a final HTML document!</strong></p>
-</section>
-<section id="submission" class="level2">
-<h2 class="anchored" data-anchor-id="submission">Submission</h2>
-<p><em>After rendering your document, export your project folder and submit it on Blackboard. You will find the link to the Coding Assignment one submission portal under the Assignments link. There is a screen capture video in the Discord server that will help you understand how to do this.</em></p>
+<section id="section-2" class="level2">
+<h2 class="anchored" data-anchor-id="section-2"></h2>
+<p><br></p>
+<p>Step 3: Fit model &amp; estimate parameters</p>
+<p><bt></bt></p>
+<p>… using <strong>formula syntax</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(lib_dem <span class="sc">~</span> log_wealth, <span class="at">data =</span> modelData) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>parsnip model object
 
 
+Call:
+stats::lm(formula = lib_dem ~ log_wealth, data = data)
+
+Coefficients:
+(Intercept)   log_wealth  
+     0.1305       0.1204  </code></pre>
+</div>
+</div>
+</section>
+<section id="section-3" class="level2">
+<h2 class="anchored" data-anchor-id="section-3"></h2>
+<p><br></p>
+<p>Step 4: Tidy things up…</p>
+<p><br></p>
+<p><span class="math display">\[\widehat{Democracy}_{i} = 0.13 + 0.12 * {loggdppc}_{i}\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">linear_reg</span>() <span class="sc">|&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">set_engine</span>(<span class="st">"lm"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">fit</span>(lib_dem <span class="sc">~</span> log_wealth, <span class="at">data =</span> modelData) <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">tidy</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 2 × 5
+  term        estimate std.error statistic  p.value
+  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;
+1 (Intercept)    0.131    0.0381      3.43 7.58e- 4
+2 log_wealth     0.120    0.0147      8.19 5.75e-14</code></pre>
+</div>
+</div>
+</section>
+<section id="interpretation" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation">Interpretation?</h2>
+<p><br></p>
+<p><span class="math display">\[\widehat{Democracy}_{i} = 0.13 + 0.12 * {loggdppc}_{i}\]</span></p>
+</section>
+<section id="question" class="level2">
+<h2 class="anchored" data-anchor-id="question">Question</h2>
+<p><br></p>
+<p>How do we get the “best” values for the slope and intercept?</p>
+</section>
+<section id="how-would-you-draw-the-best-line" class="level2">
+<h2 class="anchored" data-anchor-id="how-would-you-draw-the-best-line">How would you draw the “best” line?</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week-8.2_files/figure-html/best-line-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="how-would-you-draw-the-best-line-1" class="level2">
+<h2 class="anchored" data-anchor-id="how-would-you-draw-the-best-line-1">How would you draw the “best” line?</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week-8.2_files/figure-html/best-line2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="least-squares-regression" class="level2">
+<h2 class="anchored" data-anchor-id="least-squares-regression">Least squares regression</h2>
+<p><br></p>
+<ul>
+<li>Remember the residual is the difference between the actual value and the predicted value</li>
+</ul>
+<p>. . .</p>
+<ul>
+<li>The regression line minimizes the sum of squared residuals.</li>
+</ul>
+</section>
+<section id="least-squares-regression-1" class="level2">
+<h2 class="anchored" data-anchor-id="least-squares-regression-1">Least squares regression</h2>
+<p><br></p>
+<ul>
+<li><p>Residual for each point is: <span class="math inline">\(e_i = y_i - \hat{y}_i\)</span></p></li>
+<li><p>Least squares regression line minimizes <span class="math inline">\(\sum_{i = 1}^n e_i^2\)</span>.</p></li>
+</ul>
+<p>. . .</p>
+<ul>
+<li>Why do we square the residual?</li>
+</ul>
+<p>. . .</p>
+<ul>
+<li><p>Why not take absolute value?</p>
+<ul>
+<li>Principle: larger penalty for residuals further away</li>
+<li>Math: makes the math easier and some nice properties (not our concern here…)</li>
+</ul></li>
+</ul>
+</section>
+<section id="least-squares-regression-2" class="level2">
+<h2 class="anchored" data-anchor-id="least-squares-regression-2">Least squares regression</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week-8.2_files/figure-html/best-line3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="very-simple-example" class="level2">
+<h2 class="anchored" data-anchor-id="very-simple-example">Very Simple Example</h2>
+<p>What should the slope and intercept be?</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week-8.2_files/figure-html/best-line4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="example" class="level2">
+<h2 class="anchored" data-anchor-id="example">Example</h2>
+<p><span class="math inline">\(\hat{Y} = 0 + 1*X\)</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week-8.2_files/figure-html/best-line5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="example-1" class="level2">
+<h2 class="anchored" data-anchor-id="example-1">Example</h2>
+<p>What is the sum of squared residuals?</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week-8.2_files/figure-html/best-line6-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="example-2" class="level2">
+<h2 class="anchored" data-anchor-id="example-2">Example</h2>
+<p>What is sum of squared residuals for <span class="math inline">\(y = 0 + 0*X\)</span>?</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week-8.2_files/figure-html/best-line7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="example-3" class="level2">
+<h2 class="anchored" data-anchor-id="example-3">Example</h2>
+<p>What is sum of squared residuals for <span class="math inline">\(y = 0 + 0*X\)</span>?</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week-8.2_files/figure-html/best-line8-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1-0</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> (<span class="dv">2-0</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> (<span class="dv">3-0</span>)<span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 14</code></pre>
+</div>
+</div>
+</section>
+<section id="example-4" class="level2">
+<h2 class="anchored" data-anchor-id="example-4">Example</h2>
+<p>What is sum of squared residuals for <span class="math inline">\(y = 0 + 2*X\)</span>?</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week-8.2_files/figure-html/best-line10-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="example-5" class="level2">
+<h2 class="anchored" data-anchor-id="example-5">Example</h2>
+<p>What is sum of squared residuals for <span class="math inline">\(y = 0 + 2*X\)</span>?</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week-8.2_files/figure-html/best-line11-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1-2</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> (<span class="dv">2-4</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> (<span class="dv">3-6</span>)<span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 14</code></pre>
+</div>
+</div>
+</section>
+<section id="one-more" class="level2">
+<h2 class="anchored" data-anchor-id="one-more">One more…</h2>
+<p>What is sum of squared residuals for <span class="math inline">\(y = 0 + -1*X\)</span>?</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week-8.2_files/figure-html/best-line13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="one-more-1" class="level2">
+<h2 class="anchored" data-anchor-id="one-more-1">One more…</h2>
+<p>What is sum of squared residuals for <span class="math inline">\(y = 0 + -1*X\)</span>?</p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week-8.2_files/figure-html/best-line14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>(<span class="dv">1</span><span class="sc">+</span><span class="dv">1</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> (<span class="dv">2</span><span class="sc">+</span><span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> (<span class="dv">3</span><span class="sc">+</span><span class="dv">3</span>)<span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 56</code></pre>
+</div>
+</div>
+</section>
+<section id="cost-function" class="level2">
+<h2 class="anchored" data-anchor-id="cost-function">Cost Function</h2>
+<p>Sum of Squared Residuals as function of possible values of <span class="math inline">\(b\)</span></p>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week-8.2_files/figure-html/cost-function-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="least-squares-regression-3" class="level2">
+<h2 class="anchored" data-anchor-id="least-squares-regression-3">Least Squares Regression</h2>
+<p><br></p>
+<ul>
+<li><p>When we estimate a least squares regression, it is looking for the line that minimizes sum of squared residuals</p></li>
+<li><p>In the simple example, I set <span class="math inline">\(a=0\)</span> to make it easier. More complicated when searching for combination of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> that minimize, but same basic idea</p></li>
+</ul>
+</section>
+<section id="least-squares-regression-4" class="level2">
+<h2 class="anchored" data-anchor-id="least-squares-regression-4">Least Squares Regression</h2>
+<p><br></p>
+<ul>
+<li><p>There is a way to solve for this analytically for linear regression (i.e., by doing math…)</p>
+<p>– They made us do this in grad school…</p></li>
+</ul>
+<p>. . .</p>
+<ul>
+<li>In machine learning, people also use gradient descent algorithm in which the computer searches over possible combinations of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> until it settles on the lowest point.</li>
+</ul>
+</section>
+<section id="least-squares-regression-5" class="level2">
+<h2 class="anchored" data-anchor-id="least-squares-regression-5">Least Squares Regression</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week-8.2_files/figure-html/ssr-viz-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="least-squares-regression-6" class="level2">
+<h2 class="anchored" data-anchor-id="least-squares-regression-6">Least Squares Regression</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="week-8.2_files/figure-html/regression-line-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="your-turn" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="your-turn">Your Turn</h2>
+<p><br></p>
+<p>Are democracies less corrupt?</p>
+<p><br></p>
+<ul>
+<li><p>V-Dem includes a Political Corruption Index, which aggregates corruption in a number of spheres (see codebook for details).</p></li>
+<li><p>The variable name is: <em>v2x_corr</em> : lower values mean less corruption</p></li>
+<li><p>See started code <a href="https://www.dropbox.com/scl/fo/8xpsrz27m0on1mc2pf5ya/h?rlkey=716y4lvy6uisq0gortq1as0sp&amp;dl=0">HERE</a></p></li>
+</ul>
+</section>
+<section id="your-turn-1" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="your-turn-1">Your Turn</h2>
+<p><br></p>
+<p><strong>Are democracies less corrupt?</strong></p>
+<p><br></p>
+<div class="smaller">
+<ul>
+<li>Filter the V-Dem data to only include the year 2019</li>
+<li>Make a scatterplot to visualize the relationship between democracy (X) and corruption (Y) (use the <em>v2x_libdem</em> variable for democracy)</li>
+<li>Fit a linear model</li>
+<li>Interpret results for the slope and intercept</li>
+<li>For a country with the average (mean) level of democracy, what is the predicted level of corruption?</li>
+</ul>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer1" data-update-every="1" tabindex="0" style="right:10%;bottom:5%;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">10</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section>
+<section id="create-your-own-model" class="level2 smaller">
+<h2 class="smaller anchored" data-anchor-id="create-your-own-model">Create Your Own Model</h2>
+<p><br></p>
+<ul>
+<li>What is a theory that you would like to test with V-Dem data?</li>
+<li>What is the dependent variable?</li>
+<li>What is the independent variable?</li>
+<li>Map out steps to wrangle the data and fit a regression model</li>
+<li>What do you expect to find?</li>
+<li>Now go ahead and wrangle the data</li>
+<li>Fit the model</li>
+<li>Interpret the coefficients and their significance</li>
+<li>Did the results match your expectations?</li>
+</ul>
+
+
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -972,18 +1344,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="../assignments/coding-assignment-1.html" class="pagination-link" aria-label="Assignment 1">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Assignment 1</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="../project/project-assignment-1.html" class="pagination-link" aria-label="Assignment 1">
-        <span class="nav-page-text">Assignment 1</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -992,7 +1352,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dats1001-fall-2024/edit/main/assignments/coding-assignment-2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dats1001-fall-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dats1001-fall-2024/edit/main/slides/week-8.2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dats1001-fall-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>. 👷🛠️</p>
 </div>

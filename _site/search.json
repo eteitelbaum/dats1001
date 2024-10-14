@@ -1416,7 +1416,7 @@
     "href": "index.html",
     "title": "Course Schedule",
     "section": "",
-    "text": "This page displays an outline of the topics, content, and assignments for the semester. Links, to slides, assignments and course resources will go live as the semester progresses. All assignments must be submitted by 11:59 p.m. on the due date.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nReading\nVideo\nSlides\nAssignment\nDue Date\n\n\n\n\n1\nMon, Aug 26\nWelcome to DATS 1001\n📖 📖\n📺 📺\n\n\n\n\n\n\nWed, Aug 28\nMeet ouR tech stack\n📖\n📺\n🖥️\n\n\n\n\n2\nMon, Sep 2\n🇺🇸 No class, Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 4\nR coding basics\n📖\n📺 📺\n🖥️\n\n\n\n\n3\nMon, Sep 9\nGrammar of graphics\n📖 📖\n📺 📺\n🖥️\n\n\n\n\n\nWed, Sep 11\nWhich visualization do I use?\n📖\n📺 📺\n🖥️\n\n\n\n\n4\nMon, Sep 16\nVisualization best practices\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 18\nCoding assignment 1\n📖\n\n\n🧮\nSun, Sep 22\n\n\n5\nMon, Sep 23\nWhat is tidy data?\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 25\nWorking with data\n📖\n📺\n🖥️\n\n\n\n\n6\nMon, Sep 30\nGrammar of data wrangling\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 2\nJoining data frames\n📖\n📺\n🖥️\n\n\n\n\n7\nMon, Oct 7\nTidying data\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 9\nCoding assignment 2\n📖\n\n🖥️\n🧮\nSun, Oct 13\n\n\n8\nMon, Oct 14\nThe language of models\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 16\nLinear regression\n📖\n📺\n🖥️\n✍️\nSun, Oct 20\n\n\n9\nMon, Oct 21\nMultiple regression\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 23\nLogistic regression\n📖\n📺\n🖥️\n\n\n\n\n10\nMon, Oct 28\nPredictive modeling\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 30\nCoding assignment 3\n📖\n\n🖥️\n🧮\nSun, Nov 3\n\n\n11\nMon, Nov 4\nResearch design\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 6\nDistributions\n📖\n📺\n🖥️\n✍️\nSun, Nov 10\n\n\n12\nMon, Nov 11\nSampling and uncertainty\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 13\nHypothesis testing 1\n📖\n📺\n🖥️\n\n\n\n\n13\nMon, Nov 18\nHypothesis testing 2\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 20\nCoding assignment 4\n📖\n📺\n🖥️\n🧮\nSun, Nov 24\n\n\n14\nMon, Nov 25\n🦃 No class–Thanksgiving break\n\n\n\n\n\n\n\n\nWed, Nov 27\n🦃 No class–Thanksgiving break\n\n\n\n\n\n\n\n15\nMon, Dec 2\nLightning talks\n\n\n\n\n\n\n\n\nWed, Dec 4\nLightning talks\n\n\n\n\n\n\n\n16\nMon, Dec 9\nWrap-up: DS careers\n\n\n\n✍️\nDate of scheduled final",
+    "text": "This page displays an outline of the topics, content, and assignments for the semester. Links, to slides, assignments and course resources will go live as the semester progresses. All assignments must be submitted by 11:59 p.m. on the due date.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nReading\nVideo\nSlides\nAssignment\nDue Date\n\n\n\n\n1\nMon, Aug 26\nWelcome to DATS 1001\n📖 📖\n📺 📺\n\n\n\n\n\n\nWed, Aug 28\nMeet ouR tech stack\n📖\n📺\n🖥️\n\n\n\n\n2\nMon, Sep 2\n🇺🇸 No class, Labor Day\n\n\n\n\n\n\n\n\nWed, Sep 4\nR coding basics\n📖\n📺 📺\n🖥️\n\n\n\n\n3\nMon, Sep 9\nGrammar of graphics\n📖 📖\n📺 📺\n🖥️\n\n\n\n\n\nWed, Sep 11\nWhich visualization do I use?\n📖\n📺 📺\n🖥️\n\n\n\n\n4\nMon, Sep 16\nVisualization best practices\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 18\nCoding assignment 1\n📖\n\n\n🧮\nSun, Sep 22\n\n\n5\nMon, Sep 23\nWhat is tidy data?\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Sep 25\nWorking with data\n📖\n📺\n🖥️\n\n\n\n\n6\nMon, Sep 30\nGrammar of data wrangling\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 2\nJoining data frames\n📖\n📺\n🖥️\n\n\n\n\n7\nMon, Oct 7\nTidying data\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 9\nCoding assignment 2\n📖\n\n\n🧮\nSun, Oct 13\n\n\n8\nMon, Oct 14\nThe language of models\n\n\n🖥️\n\n\n\n\n\nWed, Oct 16\nLinear regression\n📖\n📺\n🖥️\n✍️\nSun, Oct 20\n\n\n9\nMon, Oct 21\nMultiple regression\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 23\nLogistic regression\n📖\n📺\n🖥️\n\n\n\n\n10\nMon, Oct 28\nPredictive modeling\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Oct 30\nCoding assignment 3\n📖\n\n🖥️\n🧮\nSun, Nov 3\n\n\n11\nMon, Nov 4\nResearch design\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 6\nDistributions\n📖\n📺\n🖥️\n✍️\nSun, Nov 10\n\n\n12\nMon, Nov 11\nSampling and uncertainty\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 13\nHypothesis testing 1\n📖\n📺\n🖥️\n\n\n\n\n13\nMon, Nov 18\nHypothesis testing 2\n📖\n📺\n🖥️\n\n\n\n\n\nWed, Nov 20\nCoding assignment 4\n📖\n📺\n🖥️\n🧮\nSun, Nov 24\n\n\n14\nMon, Nov 25\n🦃 No class–Thanksgiving break\n\n\n\n\n\n\n\n\nWed, Nov 27\n🦃 No class–Thanksgiving break\n\n\n\n\n\n\n\n15\nMon, Dec 2\nLightning talks\n\n\n\n\n\n\n\n\nWed, Dec 4\nLightning talks\n\n\n\n\n\n\n\n16\nMon, Dec 9\nWrap-up: DS careers\n\n\n\n✍️\nDate of scheduled final",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -2812,7 +2812,7 @@
     "href": "assignments/coding-assignment-2.html#extra-credit-3-pts.",
     "title": "Coding Assignment 2",
     "section": "Extra Credit (3 pts.)",
-    "text": "Extra Credit (3 pts.)\nFollowing the example that we did in class, download some messy data from the World Development Indicators website and wrangle it so that it is a tidy data frame. Be sure to download more than one data frame and don’t forget to use backticks (``) when dealing with unconventional variable names.\nNow render the document to make sure everything runs and to produce a final HTML document!",
+    "text": "Extra Credit (3 pts.)\nFollowing the example that we did in class, download some messy data from the World Development Indicators website and wrangle it so that it is a tidy data frame. Be sure to download more than one data variable and don’t forget to use backticks (``) when dealing with unconventional variable names.\nNow render the document to make sure everything runs and to produce a final HTML document!",
     "crumbs": [
       "Coding Asignments",
       "Assignment 2"
@@ -2828,5 +2828,454 @@
       "Coding Asignments",
       "Assignment 2"
     ]
+  },
+  {
+    "objectID": "slides/week-8.1.html#modeling",
+    "href": "slides/week-8.1.html#modeling",
+    "title": "Modeling",
+    "section": "Modeling",
+    "text": "Modeling\n\n\nUse models to explore the relationship between variables and to make predictions\nExplaining relationships (usually interested in causal relationships, but not always)\n\nDoes oil wealth impact regime type?\n\nPredictive modeling\n\nWhere is violence most likely to happen in (country X) during their next election?\nIs this email spam?"
+  },
+  {
+    "objectID": "slides/week-8.1.html#modeling-1",
+    "href": "slides/week-8.1.html#modeling-1",
+    "title": "Modeling",
+    "section": "Modeling",
+    "text": "Modeling"
+  },
+  {
+    "objectID": "slides/week-8.1.html#modeling-2",
+    "href": "slides/week-8.1.html#modeling-2",
+    "title": "Modeling",
+    "section": "Modeling",
+    "text": "Modeling"
+  },
+  {
+    "objectID": "slides/week-8.1.html#pull-in-the-vdem-data",
+    "href": "slides/week-8.1.html#pull-in-the-vdem-data",
+    "title": "Modeling",
+    "section": "Pull in the VDEM Data",
+    "text": "Pull in the VDEM Data\n\n\nlibrary(vdemlite)\n\nmodel_data &lt;- fetchdem(indicators = c(\"v2x_libdem\", \"e_gdppc\"),\n                       start_year = 2019, end_year = 2019) |&gt;\n  rename(\n    country = country_name, \n    lib_dem = v2x_libdem, \n    wealth = e_gdppc\n    ) \n\nglimpse(model_data)"
+  },
+  {
+    "objectID": "slides/week-8.1.html#plot-the-relationship",
+    "href": "slides/week-8.1.html#plot-the-relationship",
+    "title": "Modeling",
+    "section": "Plot the Relationship",
+    "text": "Plot the Relationship"
+  },
+  {
+    "objectID": "slides/week-8.1.html#plot-the-relationship-1",
+    "href": "slides/week-8.1.html#plot-the-relationship-1",
+    "title": "Modeling",
+    "section": "Plot the Relationship",
+    "text": "Plot the Relationship"
+  },
+  {
+    "objectID": "slides/week-8.1.html#plot-the-relationship-2",
+    "href": "slides/week-8.1.html#plot-the-relationship-2",
+    "title": "Modeling",
+    "section": "Plot the Relationship",
+    "text": "Plot the Relationship\n\n\nggplot(modelData, aes(x = wealth, y = lib_dem)) +\n  geom_point() +\n  geom_smooth(method = \"lm\", color = \"#E48957\", se = FALSE) +\n  labs(x = \"GPD per capita\", y = \"Liberal Democracy Index\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "slides/week-8.1.html#using-the-scales-package",
+    "href": "slides/week-8.1.html#using-the-scales-package",
+    "title": "Modeling",
+    "section": "Using the Scales Package",
+    "text": "Using the Scales Package"
+  },
+  {
+    "objectID": "slides/week-8.1.html#using-the-scales-package-1",
+    "href": "slides/week-8.1.html#using-the-scales-package-1",
+    "title": "Modeling",
+    "section": "Using the Scales Package",
+    "text": "Using the Scales Package\n\n\nggplot(modelData, aes(x = wealth, y = lib_dem)) +\n  geom_point() +\n  geom_smooth(method = \"lm\", color = \"#E48957\", se = FALSE) +\n  scale_x_log10(label = scales::label_dollar(suffix = \"k\")) +\n  labs(\n    title = \"Wealth and Democracy, 2019\",\n    x = \"GPD per capita\", \n    y = \"Liberal Democracy Index\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "slides/week-8.1.html#models-as-functions",
+    "href": "slides/week-8.1.html#models-as-functions",
+    "title": "Modeling",
+    "section": "Models as Functions",
+    "text": "Models as Functions\n\n\nWe can represent relationships between variables using functions\nA function is a mathematical concept: the relationship between an output and one or more inputs\n\nPlug in the inputs and receive back the output\n\nExample: The formula \\(y = 3x + 7\\) is a function with input \\(x\\) and output \\(y\\).\n\nIf \\(x\\) is \\(5\\), \\(y\\) is \\(22\\),\n\\(y = 3 \\times 5 + 7 = 22\\)"
+  },
+  {
+    "objectID": "slides/week-8.1.html#quant-lingo",
+    "href": "slides/week-8.1.html#quant-lingo",
+    "title": "Modeling",
+    "section": "Quant Lingo",
+    "text": "Quant Lingo\n\n\n\nResponse variable: Variable whose behavior or variation you are trying to understand, on the y-axis in the plot\n\nDependent variable\nOutcome variable\nY variable\n\nExplanatory variables: Other variables that you want to use to explain the variation in the response, on the x-axis in the plot\n\nIndependent variables\nPredictors"
+  },
+  {
+    "objectID": "slides/week-8.1.html#section",
+    "href": "slides/week-8.1.html#section",
+    "title": "Modeling",
+    "section": "",
+    "text": "Linear model with one explanatory variable…\n\n\n\\(Y = a + bX\\)\n\\(Y\\) is the outcome variable\n\\(X\\) is the explanatory variable\n\\(a\\) is the intercept: the predicted value of \\(Y\\) when \\(X\\) is equal to 0\n\\(b\\) is the slope of the line (rise over run)"
+  },
+  {
+    "objectID": "slides/week-8.1.html#quant-lingo-1",
+    "href": "slides/week-8.1.html#quant-lingo-1",
+    "title": "Modeling",
+    "section": "Quant Lingo",
+    "text": "Quant Lingo\n\n\n\nPredicted value: Output of the model function\n\nThe model function gives the typical (expected) value of the response variable conditioning on the explanatory variables\nWe often call this \\(\\hat{Y}\\) to differentiate the predicted value from an observed value of Y in the data\n\nResiduals: A measure of how far each case is from its predicted value (based on a particular model)\n\nResidual = Observed value (\\(Y\\)) - Predicted value (\\(\\hat{Y}\\))\nHow far above/below the expected value each case is"
+  },
+  {
+    "objectID": "slides/week-8.1.html#residuals",
+    "href": "slides/week-8.1.html#residuals",
+    "title": "Modeling",
+    "section": "Residuals",
+    "text": "Residuals"
+  },
+  {
+    "objectID": "slides/week-8.1.html#linear-model",
+    "href": "slides/week-8.1.html#linear-model",
+    "title": "Modeling",
+    "section": "Linear Model",
+    "text": "Linear Model\n\\(\\hat{Y} = a  + b \\times X\\)\n\\(\\hat{Y} = 0.13  + 0.12 \\times X\\)"
+  },
+  {
+    "objectID": "slides/week-8.1.html#linear-model-interpretation",
+    "href": "slides/week-8.1.html#linear-model-interpretation",
+    "title": "Modeling",
+    "section": "Linear Model: Interpretation",
+    "text": "Linear Model: Interpretation\n\n\\(\\hat{Y} = a  + b \\times X\\)\n\\(\\hat{Y} = 0.13  + 0.12 \\times X\\)\nWhat is the interpretation of our estimate of \\(a\\)?\n\n\n\\(\\hat{Y} = 0.13  + 0.12 \\times 0\\)\n\\(\\hat{Y} = 0.13\\)\n\\(a\\) is our predicted level of democracy when GDP per capita is 0."
+  },
+  {
+    "objectID": "slides/week-8.1.html#linear-model-interpretation-1",
+    "href": "slides/week-8.1.html#linear-model-interpretation-1",
+    "title": "Modeling",
+    "section": "Linear Model: Interpretation",
+    "text": "Linear Model: Interpretation\n\n\\(\\hat{Y} = a  + b \\times X\\)\n\\(\\hat{Y} = 0.13  + 0.12 \\times X\\)\nWhat is interpretation of our estimate of \\(b\\)?\n\n\n\\(\\hat{Y} = a  + \\frac{Rise}{Run} \\times X\\)\n\\(\\hat{Y} = a  + \\frac{Change Y}{Change X} \\times X\\)"
+  },
+  {
+    "objectID": "slides/week-8.1.html#linear-model-interpretation-2",
+    "href": "slides/week-8.1.html#linear-model-interpretation-2",
+    "title": "Modeling",
+    "section": "Linear Model: Interpretation",
+    "text": "Linear Model: Interpretation\n\n\\(b = \\frac{Change Y}{Change X}\\)\n\\(0.12 = \\frac{Change Y}{Change X}\\)\n\\({Change Y} = 0.12 * {ChangeX}\\)\n\n\nWhen \\(ChangeX = 1\\):\n\\({Change Y = 0.12}\\)\n\n\n\n\\(b\\) is the predicted change in \\(Y\\) associated with a ONE unit change in X."
+  },
+  {
+    "objectID": "slides/week-8.1.html#linear-model-interpretation-3",
+    "href": "slides/week-8.1.html#linear-model-interpretation-3",
+    "title": "Modeling",
+    "section": "Linear Model: Interpretation",
+    "text": "Linear Model: Interpretation"
+  },
+  {
+    "objectID": "slides/week-8.1.html#linear-model-interpretation-4",
+    "href": "slides/week-8.1.html#linear-model-interpretation-4",
+    "title": "Modeling",
+    "section": "Linear Model: Interpretation",
+    "text": "Linear Model: Interpretation"
+  },
+  {
+    "objectID": "slides/week-8.1.html#linear-model-interpretation-5",
+    "href": "slides/week-8.1.html#linear-model-interpretation-5",
+    "title": "Modeling",
+    "section": "Linear Model: Interpretation",
+    "text": "Linear Model: Interpretation"
+  },
+  {
+    "objectID": "slides/week-8.1.html#linear-model-interpretation-6",
+    "href": "slides/week-8.1.html#linear-model-interpretation-6",
+    "title": "Modeling",
+    "section": "Linear Model: Interpretation",
+    "text": "Linear Model: Interpretation\n\nIs this the causal effect of GDP per capita on liberal democracy?\n\n\nNo! It is only the association…\n\n\n\nTo identify causality we need other methods (beyond the scope of this course)."
+  },
+  {
+    "objectID": "slides/week-8.1.html#your-task",
+    "href": "slides/week-8.1.html#your-task",
+    "title": "Modeling",
+    "section": "Your Task",
+    "text": "Your Task\n\nAn economist is interested in the relationship between years of education and hourly wages. They estimate a linear model with estimates of \\(a\\) and \\(b\\) as follows:\n\n\\(\\hat{Y} = 9 + 1.60*{YrsEdu}\\)\n\n1. Interpret \\(a\\) and \\(b\\)\n2. What is the predicted hourly wage for those with 10 years of education?\n3. How about for those with a high school diploma? (12 yrs)\n4. What about a college degree? (16 yrs)"
+  },
+  {
+    "objectID": "slides/week-8.1.html#next-step",
+    "href": "slides/week-8.1.html#next-step",
+    "title": "Modeling",
+    "section": "Next step",
+    "text": "Next step\n\n\nLinear model with one predictor: \\(Y = a + bX\\)\nFor any given data…\nHow do we figure out what the best values are for \\(a\\) and \\(b\\)??"
+  },
+  {
+    "objectID": "slides/week-8.1.html#plot-the-data",
+    "href": "slides/week-8.1.html#plot-the-data",
+    "title": "Modeling",
+    "section": "Plot the Data",
+    "text": "Plot the Data"
+  },
+  {
+    "objectID": "slides/week-8.1.html#section-1",
+    "href": "slides/week-8.1.html#section-1",
+    "title": "Modeling",
+    "section": "",
+    "text": "Caution\n\n\nNote that for the next few examples we will be analyzing GDP per capita on a log scale."
+  },
+  {
+    "objectID": "assignments/coding-assignment-2.html#step-5-interpret-your-data-10-pts",
+    "href": "assignments/coding-assignment-2.html#step-5-interpret-your-data-10-pts",
+    "title": "Coding Assignment 2",
+    "section": "Step 5: Interpret your data (10 pts)",
+    "text": "Step 5: Interpret your data (10 pts)\nWrite a paragraph or so relating your insights to the Norris reading about electoral reform and women’s representation. Picking a handful of country cases from your data, how does your summary of gender and democracy variables relate to the level of female representation in a country? How would you relate these findings to Norris’s argument about the importance of an inclusive democracy?\n\n\n\n\n\n\nWarning\n\n\n\nDon’t write your paragraphs or any interpretation or analysis in a code chunk. Use markdown text. Quarto is designed to be a literate programming tool, so you can write your analysis in markdown text and include code chunks when necessary to support your argument.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-2.html#step-6-pivot-wb-data-10-pts.",
+    "href": "assignments/coding-assignment-2.html#step-6-pivot-wb-data-10-pts.",
+    "title": "Coding Assignment 2",
+    "section": "Step 6: Pivot WB Data (10 pts.)",
+    "text": "Step 6: Pivot WB Data (10 pts.)\nSometimes our data does not come in the format that we need to have it in for our analysis. Demonstrate that you know how to pivot data from wide to long form using the world_bank_pop data frame that comes with the tidyr package. Then pivot again (wider this time) to get the data into tidy format.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "slides/week-8.2.html",
+    "href": "slides/week-8.2.html",
+    "title": "Linear Regression",
+    "section": "",
+    "text": "Goal: Estimate Democracy score (\\(\\hat{Y_{i}}\\)) of a country given level of GDP per capita (\\(X_{i}\\)).\n\nOr: Estimate relationship between GDP per capita and democracy."
+  },
+  {
+    "objectID": "slides/week-8.2.html#linear-model-with-single-predictor",
+    "href": "slides/week-8.2.html#linear-model-with-single-predictor",
+    "title": "Linear Regression",
+    "section": "",
+    "text": "Goal: Estimate Democracy score (\\(\\hat{Y_{i}}\\)) of a country given level of GDP per capita (\\(X_{i}\\)).\n\nOr: Estimate relationship between GDP per capita and democracy."
+  },
+  {
+    "objectID": "slides/week-8.2.html#linear-model-with-single-predictor-1",
+    "href": "slides/week-8.2.html#linear-model-with-single-predictor-1",
+    "title": "Linear Regression",
+    "section": "Linear Model with Single Predictor",
+    "text": "Linear Model with Single Predictor"
+  },
+  {
+    "objectID": "slides/week-8.2.html#section",
+    "href": "slides/week-8.2.html#section",
+    "title": "Linear Regression",
+    "section": "",
+    "text": "Step 1: Specify model\n\n\nlinear_reg()"
+  },
+  {
+    "objectID": "slides/week-8.2.html#section-1",
+    "href": "slides/week-8.2.html#section-1",
+    "title": "Linear Regression",
+    "section": "",
+    "text": "Step 2: Set model fitting engine\n\n\nlinear_reg() |&gt;\n  set_engine(\"lm\") # lm: linear model"
+  },
+  {
+    "objectID": "slides/week-8.2.html#section-2",
+    "href": "slides/week-8.2.html#section-2",
+    "title": "Linear Regression",
+    "section": "",
+    "text": "Step 3: Fit model & estimate parameters\n\n… using formula syntax\n\nlinear_reg() |&gt;\n  set_engine(\"lm\") |&gt;\n  fit(lib_dem ~ log_wealth, data = modelData) \n\nparsnip model object\n\n\nCall:\nstats::lm(formula = lib_dem ~ log_wealth, data = data)\n\nCoefficients:\n(Intercept)   log_wealth  \n     0.1305       0.1204"
+  },
+  {
+    "objectID": "slides/week-8.2.html#section-3",
+    "href": "slides/week-8.2.html#section-3",
+    "title": "Linear Regression",
+    "section": "",
+    "text": "Step 4: Tidy things up…\n\n\\[\\widehat{Democracy}_{i} = 0.13 + 0.12 * {loggdppc}_{i}\\]\n\nlinear_reg() |&gt;\n  set_engine(\"lm\") |&gt;\n  fit(lib_dem ~ log_wealth, data = modelData) |&gt;\n  tidy()\n\n# A tibble: 2 × 5\n  term        estimate std.error statistic  p.value\n  &lt;chr&gt;          &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n1 (Intercept)    0.131    0.0381      3.43 7.58e- 4\n2 log_wealth     0.120    0.0147      8.19 5.75e-14"
+  },
+  {
+    "objectID": "slides/week-8.2.html#interpretation",
+    "href": "slides/week-8.2.html#interpretation",
+    "title": "Linear Regression",
+    "section": "Interpretation?",
+    "text": "Interpretation?\n\n\\[\\widehat{Democracy}_{i} = 0.13 + 0.12 * {loggdppc}_{i}\\]"
+  },
+  {
+    "objectID": "slides/week-8.2.html#question",
+    "href": "slides/week-8.2.html#question",
+    "title": "Linear Regression",
+    "section": "Question",
+    "text": "Question\n\nHow do we get the “best” values for the slope and intercept?"
+  },
+  {
+    "objectID": "slides/week-8.2.html#how-would-you-draw-the-best-line",
+    "href": "slides/week-8.2.html#how-would-you-draw-the-best-line",
+    "title": "Linear Regression",
+    "section": "How would you draw the “best” line?",
+    "text": "How would you draw the “best” line?"
+  },
+  {
+    "objectID": "slides/week-8.2.html#how-would-you-draw-the-best-line-1",
+    "href": "slides/week-8.2.html#how-would-you-draw-the-best-line-1",
+    "title": "Linear Regression",
+    "section": "How would you draw the “best” line?",
+    "text": "How would you draw the “best” line?"
+  },
+  {
+    "objectID": "slides/week-8.2.html#least-squares-regression",
+    "href": "slides/week-8.2.html#least-squares-regression",
+    "title": "Linear Regression",
+    "section": "Least squares regression",
+    "text": "Least squares regression\n\n\nRemember the residual is the difference between the actual value and the predicted value\n\n. . .\n\nThe regression line minimizes the sum of squared residuals."
+  },
+  {
+    "objectID": "slides/week-8.2.html#least-squares-regression-1",
+    "href": "slides/week-8.2.html#least-squares-regression-1",
+    "title": "Linear Regression",
+    "section": "Least squares regression",
+    "text": "Least squares regression\n\n\nResidual for each point is: \\(e_i = y_i - \\hat{y}_i\\)\nLeast squares regression line minimizes \\(\\sum_{i = 1}^n e_i^2\\).\n\n. . .\n\nWhy do we square the residual?\n\n. . .\n\nWhy not take absolute value?\n\nPrinciple: larger penalty for residuals further away\nMath: makes the math easier and some nice properties (not our concern here…)"
+  },
+  {
+    "objectID": "slides/week-8.2.html#least-squares-regression-2",
+    "href": "slides/week-8.2.html#least-squares-regression-2",
+    "title": "Linear Regression",
+    "section": "Least squares regression",
+    "text": "Least squares regression"
+  },
+  {
+    "objectID": "slides/week-8.2.html#very-simple-example",
+    "href": "slides/week-8.2.html#very-simple-example",
+    "title": "Linear Regression",
+    "section": "Very Simple Example",
+    "text": "Very Simple Example\nWhat should the slope and intercept be?"
+  },
+  {
+    "objectID": "slides/week-8.2.html#example",
+    "href": "slides/week-8.2.html#example",
+    "title": "Linear Regression",
+    "section": "Example",
+    "text": "Example\n\\(\\hat{Y} = 0 + 1*X\\)"
+  },
+  {
+    "objectID": "slides/week-8.2.html#example-1",
+    "href": "slides/week-8.2.html#example-1",
+    "title": "Linear Regression",
+    "section": "Example",
+    "text": "Example\nWhat is the sum of squared residuals?"
+  },
+  {
+    "objectID": "slides/week-8.2.html#example-2",
+    "href": "slides/week-8.2.html#example-2",
+    "title": "Linear Regression",
+    "section": "Example",
+    "text": "Example\nWhat is sum of squared residuals for \\(y = 0 + 0*X\\)?"
+  },
+  {
+    "objectID": "slides/week-8.2.html#example-3",
+    "href": "slides/week-8.2.html#example-3",
+    "title": "Linear Regression",
+    "section": "Example",
+    "text": "Example\nWhat is sum of squared residuals for \\(y = 0 + 0*X\\)?\n\n\n\n\n\n\n\n\n\n\n(1-0)^2 + (2-0)^2 + (3-0)^2\n\n[1] 14"
+  },
+  {
+    "objectID": "slides/week-8.2.html#example-4",
+    "href": "slides/week-8.2.html#example-4",
+    "title": "Linear Regression",
+    "section": "Example",
+    "text": "Example\nWhat is sum of squared residuals for \\(y = 0 + 2*X\\)?"
+  },
+  {
+    "objectID": "slides/week-8.2.html#example-5",
+    "href": "slides/week-8.2.html#example-5",
+    "title": "Linear Regression",
+    "section": "Example",
+    "text": "Example\nWhat is sum of squared residuals for \\(y = 0 + 2*X\\)?\n\n\n\n\n\n\n\n\n\n\n(1-2)^2 + (2-4)^2 + (3-6)^2\n\n[1] 14"
+  },
+  {
+    "objectID": "slides/week-8.2.html#one-more",
+    "href": "slides/week-8.2.html#one-more",
+    "title": "Linear Regression",
+    "section": "One more…",
+    "text": "One more…\nWhat is sum of squared residuals for \\(y = 0 + -1*X\\)?"
+  },
+  {
+    "objectID": "slides/week-8.2.html#one-more-1",
+    "href": "slides/week-8.2.html#one-more-1",
+    "title": "Linear Regression",
+    "section": "One more…",
+    "text": "One more…\nWhat is sum of squared residuals for \\(y = 0 + -1*X\\)?\n\n\n\n\n\n\n\n\n\n\n(1+1)^2 + (2+2)^2 + (3+3)^2\n\n[1] 56"
+  },
+  {
+    "objectID": "slides/week-8.2.html#cost-function",
+    "href": "slides/week-8.2.html#cost-function",
+    "title": "Linear Regression",
+    "section": "Cost Function",
+    "text": "Cost Function\nSum of Squared Residuals as function of possible values of \\(b\\)"
+  },
+  {
+    "objectID": "slides/week-8.2.html#least-squares-regression-3",
+    "href": "slides/week-8.2.html#least-squares-regression-3",
+    "title": "Linear Regression",
+    "section": "Least Squares Regression",
+    "text": "Least Squares Regression\n\n\nWhen we estimate a least squares regression, it is looking for the line that minimizes sum of squared residuals\nIn the simple example, I set \\(a=0\\) to make it easier. More complicated when searching for combination of \\(a\\) and \\(b\\) that minimize, but same basic idea"
+  },
+  {
+    "objectID": "slides/week-8.2.html#least-squares-regression-4",
+    "href": "slides/week-8.2.html#least-squares-regression-4",
+    "title": "Linear Regression",
+    "section": "Least Squares Regression",
+    "text": "Least Squares Regression\n\n\nThere is a way to solve for this analytically for linear regression (i.e., by doing math…)\n– They made us do this in grad school…\n\n. . .\n\nIn machine learning, people also use gradient descent algorithm in which the computer searches over possible combinations of \\(a\\) and \\(b\\) until it settles on the lowest point."
+  },
+  {
+    "objectID": "slides/week-8.2.html#least-squares-regression-5",
+    "href": "slides/week-8.2.html#least-squares-regression-5",
+    "title": "Linear Regression",
+    "section": "Least Squares Regression",
+    "text": "Least Squares Regression"
+  },
+  {
+    "objectID": "slides/week-8.2.html#least-squares-regression-6",
+    "href": "slides/week-8.2.html#least-squares-regression-6",
+    "title": "Linear Regression",
+    "section": "Least Squares Regression",
+    "text": "Least Squares Regression"
+  },
+  {
+    "objectID": "slides/week-8.2.html#your-turn",
+    "href": "slides/week-8.2.html#your-turn",
+    "title": "Linear Regression",
+    "section": "Your Turn",
+    "text": "Your Turn\n\nAre democracies less corrupt?\n\n\nV-Dem includes a Political Corruption Index, which aggregates corruption in a number of spheres (see codebook for details).\nThe variable name is: v2x_corr : lower values mean less corruption\nSee started code HERE"
+  },
+  {
+    "objectID": "slides/week-8.2.html#your-turn-1",
+    "href": "slides/week-8.2.html#your-turn-1",
+    "title": "Linear Regression",
+    "section": "Your Turn",
+    "text": "Your Turn\n\nAre democracies less corrupt?\n\n\n\nFilter the V-Dem data to only include the year 2019\nMake a scatterplot to visualize the relationship between democracy (X) and corruption (Y) (use the v2x_libdem variable for democracy)\nFit a linear model\nInterpret results for the slope and intercept\nFor a country with the average (mean) level of democracy, what is the predicted level of corruption?\n\n\n\n\n\n−+\n10:00"
+  },
+  {
+    "objectID": "slides/week-8.2.html#create-your-own-model",
+    "href": "slides/week-8.2.html#create-your-own-model",
+    "title": "Linear Regression",
+    "section": "Create Your Own Model",
+    "text": "Create Your Own Model\n\n\nWhat is a theory that you would like to test with V-Dem data?\nWhat is the dependent variable?\nWhat is the independent variable?\nMap out steps to wrangle the data and fit a regression model\nWhat do you expect to find?\nNow go ahead and wrangle the data\nFit the model\nInterpret the coefficients and their significance\nDid the results match your expectations?"
+  },
+  {
+    "objectID": "slides/week-8.1.html#plot-the-data-1",
+    "href": "slides/week-8.1.html#plot-the-data-1",
+    "title": "Modeling",
+    "section": "Plot the Data",
+    "text": "Plot the Data\n\n\nggplot(model_data, aes(x = wealth, y = lib_dem)) +\n  geom_point() +\n  geom_smooth(method = \"lm\", color = \"#E48957\", se = FALSE) +\n  scale_x_log10(label = scales::label_dollar(suffix = \"k\")) +\n  labs(\n    title = \"Wealth and Democracy, 2019\",\n    x = \"GPD per capita\", \n    y = \"Liberal Democracy Index\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "slides/week-8.1.html",
+    "href": "slides/week-8.1.html",
+    "title": "Modeling",
+    "section": "",
+    "text": "Use models to explore the relationship between variables and to make predictions\nExplaining relationships (usually interested in causal relationships, but not always)\n\nDoes oil wealth impact regime type?\n\nPredictive modeling\n\nWhere is violence most likely to happen in (country X) during their next election?\nIs this email spam?"
+  },
+  {
+    "objectID": "slides/week-8.1.html#linear-model-interpretation-7",
+    "href": "slides/week-8.1.html#linear-model-interpretation-7",
+    "title": "Modeling",
+    "section": "Linear Model: Interpretation",
+    "text": "Linear Model: Interpretation\n\nIs this the causal effect of GDP per capita on liberal democracy?\n\n\nNo! It is only the association…\n\n\n\nTo identify causality we need other methods (beyond the scope of this course)."
+  },
+  {
+    "objectID": "slides/week-8.1.html#interpreting-the-coefficient-for-logwealth",
+    "href": "slides/week-8.1.html#interpreting-the-coefficient-for-logwealth",
+    "title": "Modeling",
+    "section": "Interpreting the Coefficient for log(Wealth)",
+    "text": "Interpreting the Coefficient for log(Wealth)\n\nModel: Democracy = 0.12 × log(Wealth)\nCoefficient Interpretation:\n\nA 1% increase in GDP per capita is associated with a 0.0012 increase in the democracy score\nDoubling GDP per capita (e.g., from $10,000 to $20,000) increases the democracy score by 0.12 points\n\nIn Dollar Terms:\n\nIf GDP per capita increases by 10% (e.g., from $10,000 to $11,000), the democracy score is expected to increase by 0.012 points"
   }
 ]
