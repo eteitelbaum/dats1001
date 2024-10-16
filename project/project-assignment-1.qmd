@@ -40,7 +40,7 @@ Before gathering any data, or even looking at any data, you should write down yo
 
 ## Data Sources
 
-Now it is time to identify your data sources. You can use any data source that will be relevant in answering your question. This could be data from a government agency, an international organization, a non-profit, a private company, or even data that you collect yourself. A partial list of data sources is available [here](project/project-datasets.qmd). 
+Now it is time to identify your data sources. You can use any data source that will be relevant in answering your question. This could be data from a government agency, an international organization, a non-profit, a private company, or even data that you collect yourself. A partial list of data sources is available [here](project-datasets.qmd). 
 
 Briefly list and discuss the data sources you plan to use. What data do they contain? How will you use them to answer your question? I would limit the number of data sources to 2-3. But just one data source is also OK if you think it is sufficient to answer your question.
 
