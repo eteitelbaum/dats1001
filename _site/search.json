@@ -2833,8 +2833,8 @@
     "objectID": "slides/week-8.1.html#modeling",
     "href": "slides/week-8.1.html#modeling",
     "title": "Linear Regression",
-    "section": "",
-    "text": "Use models to explore the relationship between variables and to make predictions\nExplaining relationships (usually interested in causal relationships, but not always)\n\nDoes oil wealth impact regime type?\n\nPredictive modeling\n\nWhere is violence most likely to happen in (country X) during their next election?\nIs this email spam?"
+    "section": "Modeling",
+    "text": "Modeling\n\n\nUse models to explore the relationship between variables and to make predictions\nExplaining relationships (usually interested in causal relationships, but not always)\n\nDoes oil wealth impact regime type?\n\nPredictive modeling\n\nWhere is violence most likely to happen in (country X) during their next election?\nIs this email spam?"
   },
   {
     "objectID": "slides/week-8.1.html#modeling-1",
@@ -2939,21 +2939,21 @@
     "href": "slides/week-8.1.html#linear-model-interpretation",
     "title": "Linear Regression",
     "section": "Linear Model: Interpretation",
-    "text": "Linear Model: Interpretation\n\n\\(\\hat{Y} = a  + b \\times X\\)\n\\(\\hat{Y} = 0.13  + 0.12 \\times X\\)\nWhat is the interpretation of our estimate of \\(a\\)?\n. . .\n\n\\(\\hat{Y} = 0.13  + 0.12 \\times 0\\)\n\\(\\hat{Y} = 0.13\\)\n\\(a\\) is our predicted level of democracy when GDP per capita is 0."
+    "text": "Linear Model: Interpretation\n\n\\(\\hat{Y} = a  + b \\times X\\)\n\\(\\hat{Y} = 0.13  + 0.12 \\times X\\)\nWhat is the interpretation of our estimate of \\(a\\)?\n\n\n\\(\\hat{Y} = 0.13  + 0.12 \\times 0\\)\n\\(\\hat{Y} = 0.13\\)\n\\(a\\) is our predicted level of democracy when GDP per capita is 0."
   },
   {
     "objectID": "slides/week-8.1.html#linear-model-interpretation-1",
     "href": "slides/week-8.1.html#linear-model-interpretation-1",
     "title": "Linear Regression",
     "section": "Linear Model: Interpretation",
-    "text": "Linear Model: Interpretation\n\n\\(\\hat{Y} = a  + b \\times X\\)\n\\(\\hat{Y} = 0.13  + 0.12 \\times X\\)\nWhat is interpretation of our estimate of \\(b\\)?\n. . .\n\n\\(\\hat{Y} = a  + \\frac{Rise}{Run} \\times X\\)\n\\(\\hat{Y} = a  + \\frac{Change Y}{Change X} \\times X\\)"
+    "text": "Linear Model: Interpretation\n\n\\(\\hat{Y} = a  + b \\times X\\)\n\\(\\hat{Y} = 0.13  + 0.12 \\times X\\)\nWhat is interpretation of our estimate of \\(b\\)?\n\n\n\\(\\hat{Y} = a  + \\frac{Rise}{Run} \\times X\\)\n\\(\\hat{Y} = a  + \\frac{Change Y}{Change X} \\times X\\)"
   },
   {
     "objectID": "slides/week-8.1.html#linear-model-interpretation-2",
     "href": "slides/week-8.1.html#linear-model-interpretation-2",
     "title": "Linear Regression",
     "section": "Linear Model: Interpretation",
-    "text": "Linear Model: Interpretation\n\n\\(b = \\frac{Change Y}{Change X}\\)\n\\(0.12 = \\frac{Change Y}{Change X}\\)\n\\({Change Y} = 0.12 * {ChangeX}\\)\n. . .\n\nWhen \\(ChangeX = 1\\):\n\\({Change Y = 0.12}\\)\n. . .\n\n\\(b\\) is the predicted change in \\(Y\\) associated with a ONE unit change in X."
+    "text": "Linear Model: Interpretation\n\n\\(b = \\frac{Change Y}{Change X}\\)\n\\(0.12 = \\frac{Change Y}{Change X}\\)\n\\({Change Y} = 0.12 * {ChangeX}\\)\n\n\nWhen \\(ChangeX = 1\\):\n\\({Change Y = 0.12}\\)\n\n\n\n\\(b\\) is the predicted change in \\(Y\\) associated with a ONE unit change in X."
   },
   {
     "objectID": "slides/week-8.1.html#linear-model-interpretation-3",
@@ -2981,7 +2981,7 @@
     "href": "slides/week-8.1.html#linear-model-interpretation-6",
     "title": "Linear Regression",
     "section": "Linear Model: Interpretation",
-    "text": "Linear Model: Interpretation\n\nIs this the causal effect of GDP per capita on liberal democracy?\n. . .\n\nNo! It is only the association…\n. . .\n\nTo identify causality we need other methods (beyond the scope of this course)."
+    "text": "Linear Model: Interpretation\n\nIs this the causal effect of GDP per capita on liberal democracy?\n\n\nNo! It is only the association…\n\n\n\nTo identify causality we need other methods (beyond the scope of this course)."
   },
   {
     "objectID": "slides/week-8.1.html#your-task",
@@ -3009,7 +3009,7 @@
     "href": "slides/week-8.1.html#section-1",
     "title": "Linear Regression",
     "section": "",
-    "text": "Caution\n\n\n\nNote that for the next few examples we will be analyzing GDP per capita on a log scale."
+    "text": "Caution\n\n\nNote that for the next few examples we will be analyzing GDP per capita on a log scale."
   },
   {
     "objectID": "assignments/coding-assignment-2.html#step-5-interpret-your-data-10-pts",
@@ -3419,14 +3419,14 @@
     "href": "slides/week-8.1.html#least-squares-regression",
     "title": "Linear Regression",
     "section": "Least squares regression",
-    "text": "Least squares regression\n\n\nRemember the residual is the difference between the actual value and the predicted value\n\n. . .\n\nThe regression line minimizes the sum of squared residuals."
+    "text": "Least squares regression\n\n\nRemember the residual is the difference between the actual value and the predicted value\n\n\n\nThe regression line minimizes the sum of squared residuals."
   },
   {
     "objectID": "slides/week-8.1.html#least-squares-regression-1",
     "href": "slides/week-8.1.html#least-squares-regression-1",
     "title": "Linear Regression",
     "section": "Least squares regression",
-    "text": "Least squares regression\n\n\nResidual for each point is: \\(e_i = y_i - \\hat{y}_i\\)\nLeast squares regression line minimizes \\(\\sum_{i = 1}^n e_i^2\\).\n\n. . .\n\nWhy do we square the residual?\n\n. . .\n\nWhy not take absolute value?\n\nPrinciple: larger penalty for residuals further away\nMath: makes the math easier and some nice properties (not our concern here…)"
+    "text": "Least squares regression\n\n\nResidual for each point is: \\(e_i = y_i - \\hat{y}_i\\)\nLeast squares regression line minimizes \\(\\sum_{i = 1}^n e_i^2\\).\n\n\n\nWhy do we square the residual?\n\n\n\n\nWhy not take absolute value?\n\nPrinciple: larger penalty for residuals further away\nMath: makes the math easier and some nice properties (not our concern here…)"
   },
   {
     "objectID": "slides/week-8.1.html#least-squares-regression-2",
@@ -3468,7 +3468,7 @@
     "href": "slides/week-8.1.html#example-3",
     "title": "Linear Regression",
     "section": "Example",
-    "text": "Example\nWhat is sum of squared residuals for \\(y = 0 + 0*X\\)?\n\n\n\n\n\n\n\n\n\n\n(1-0)^2 + (2-0)^2 + (3-0)^2\n\n[1] 14"
+    "text": "Example\nWhat is sum of squared residuals for \\(y = 0 + 0*X\\)?\n\n\n(1-0)^2 + (2-0)^2 + (3-0)^2\n\n[1] 14"
   },
   {
     "objectID": "slides/week-8.1.html#example-4",
@@ -3482,7 +3482,7 @@
     "href": "slides/week-8.1.html#example-5",
     "title": "Linear Regression",
     "section": "Example",
-    "text": "Example\nWhat is sum of squared residuals for \\(y = 0 + 2*X\\)?\n\n\n\n\n\n\n\n\n\n\n(1-2)^2 + (2-4)^2 + (3-6)^2\n\n[1] 14"
+    "text": "Example\nWhat is sum of squared residuals for \\(y = 0 + 2*X\\)?\n\n\n(1-2)^2 + (2-4)^2 + (3-6)^2\n\n[1] 14"
   },
   {
     "objectID": "slides/week-8.1.html#one-more",
@@ -3496,7 +3496,7 @@
     "href": "slides/week-8.1.html#one-more-1",
     "title": "Linear Regression",
     "section": "One more…",
-    "text": "One more…\nWhat is sum of squared residuals for \\(y = 0 + -1*X\\)?\n\n\n\n\n\n\n\n\n\n\n(1+1)^2 + (2+2)^2 + (3+3)^2\n\n[1] 56"
+    "text": "One more…\nWhat is sum of squared residuals for \\(y = 0 + -1*X\\)?\n\n\n(1+1)^2 + (2+2)^2 + (3+3)^2\n\n[1] 56"
   },
   {
     "objectID": "slides/week-8.1.html#cost-function",
@@ -3517,7 +3517,7 @@
     "href": "slides/week-8.1.html#least-squares-regression-4",
     "title": "Linear Regression",
     "section": "Least Squares Regression",
-    "text": "Least Squares Regression\n\n\nThere is a way to solve for this analytically for linear regression (i.e., by doing math…)\n– They made us do this in grad school…\n\n. . .\n\nIn machine learning, people also use gradient descent algorithm in which the computer searches over possible combinations of \\(a\\) and \\(b\\) until it settles on the lowest point."
+    "text": "Least Squares Regression\n\n\nThere is a way to solve for this analytically for linear regression (i.e., by doing math…)\n– They made us do this in grad school…\n\n\n\nIn machine learning, people also use gradient descent algorithm in which the computer searches over possible combinations of \\(a\\) and \\(b\\) until it settles on the lowest point."
   },
   {
     "objectID": "slides/week-8.1.html#least-squares-regression-5",
