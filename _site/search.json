@@ -246,7 +246,7 @@
     "href": "project/project-datasets.html",
     "title": "Datasets",
     "section": "",
-    "text": "Here are some datasets that you might consider using for your final project:\n\nILOSTAT is the statistical database of the International Labour Organisation. It has data pertaining to labor, working conditions, industrial relations, poverty and inequality.\nGoogle Public Data Explorer contains information about dozens of databases related to governance and the economy. You cannot download the raw data from Google, but you can use the site to visualize the data and then follow the link to the original source.\nOECD DATA provides data related to the performance of high income countries.\nOur World in Data is a good general resource for political economy data. The site is centered around blog posts but you can also search for a topic, view a visualization related to that topic and then download the data used to create it.\nStatista is a good place to look for data on more niche topics.\nUNCTADstat is the United Nations Conference on Trade and Development statistical database. It provides harmonized data on a range of topics related to economic performance, trade and statistics.\nThe UN Human Development Reports include a number of important indicators related to human development, gender and sustainable development goals (SDGs).\nVarieties of Democracy (V-DEM) provides original measures of the quality of democracy for every country dating back to the 18th century.\nWorld Bank Development Indicators (WDI) is the primary World Bank database for development data from officially-recognized international sources.\nThe World Bank DataBank provides access to dozens of additional World Bank databases on topics such as regional development, governance, education, gender and the environment.\n\nFor information on more specific resources available, see this page on the Gelman Library website.",
+    "text": "Here are some datasets that you might consider using for your final project:\n\nfredr is an R package that provides access to the Federal Reserve Economic Data (FRED) API. FRED is a comprehensive database of economic data maintained by the Federal Reserve Bank of St. Louis. The package allows you to search for and download data from FRED directly into R.\nGoogle Public Data Explorer contains information about dozens of databases related to governance and the economy. You cannot download the raw data from Google, but you can use the site to visualize the data and then follow the link to the original source.\nILOSTAT is the statistical database of the International Labour Organisation. It has data pertaining to labor, working conditions, industrial relations, poverty and inequality.\nKaggle has data on just about anything you can think of. Very usable, clean data. Just stick to the social science stuff for your project. You can easily download CSV files from Kaggle but you can also access the data through the Kaggle API.\nOECD DATA provides data related to the performance of high income countries.\nOur World in Data is a good general resource for political economy data. The site is centered around blog posts but you can also search for a topic, view a visualization related to that topic and then download the data used to create it.\npeacesciencer is an R package maintained by Steve Miller that compiles data from a number of sources that are useful for peace and conflict studies analysis\nStatista is a good place to look for data on more niche topics.\nUNCTADstat is the United Nations Conference on Trade and Development statistical database. It provides harmonized data on a range of topics related to economic performance, trade and statistics.\nThe UN Human Development Reports include a number of important indicators related to human development, gender and sustainable development goals (SDGs).\nThe unvotes package provides data on United Nations General Assembly voting patterns.\nVarieties of Democracy (V-DEM) provides original measures of the quality of democracy for every country dating back to the 18th century. You can access vdem data through the vdemdata package.\nWorld Bank Development Indicators (WDI) is the primary World Bank database for development data from officially-recognized international sources. You can access WB Development Indicators through the WDI package or the wbstats package.\nThe World Bank DataBank provides access to dozens of additional World Bank databases on topics such as regional development, governance, education, gender and the environment. You can access world bank data through the wbstats package.\n\nFor information on more specific resources available, see this page on the Gelman Library website.",
     "crumbs": [
       "Project",
       "Datasets"
@@ -1886,7 +1886,7 @@
     "href": "project/project-assignment-1.html",
     "title": "Project Assignment 1",
     "section": "",
-    "text": "Details coming soon…",
+    "text": "For this project you will work in groups to use data to answer a question. This is your chance to use the skills you are developing in this class to help guide decision-making in a real-world context.\nCrucially, your data analysis should be question-driven. Part of the challenge is to identify the most appropriate data and analysis to answer your question. You will need to think about how to do this and the answer will not always be obvious–a level of creativity is involved.\nFor this first project assignment, you are to form groups of 3-4 students. You will select a question to work on, do some preliminary research on the type of data that might help you to answer the question, and discuss how you will use the data to provide an answer.",
     "crumbs": [
       "Project",
       "Assignment 1"
@@ -3044,8 +3044,8 @@
     "objectID": "slides/week-8.2.html#linear-model-with-single-predictor",
     "href": "slides/week-8.2.html#linear-model-with-single-predictor",
     "title": "Linear Regression",
-    "section": "",
-    "text": "Goal: Estimate Democracy score (\\(\\hat{Y_{i}}\\)) of a country given level of GDP per capita (\\(X_{i}\\)).\n\nOr: Estimate relationship between GDP per capita and democracy."
+    "section": "Linear Model with Single Predictor",
+    "text": "Linear Model with Single Predictor\n\nGoal: Estimate Democracy score (\\(\\hat{Y_{i}}\\)) of a country given level of GDP per capita (\\(X_{i}\\)).\n\nOr: Estimate relationship between GDP per capita and democracy."
   },
   {
     "objectID": "slides/week-8.2.html#linear-model-with-single-predictor-1",
@@ -3115,14 +3115,14 @@
     "href": "slides/week-8.2.html#least-squares-regression",
     "title": "Linear Regression",
     "section": "Least squares regression",
-    "text": "Least squares regression\n\n\nRemember the residual is the difference between the actual value and the predicted value\n\n. . .\n\nThe regression line minimizes the sum of squared residuals."
+    "text": "Least squares regression\n\n\nRemember the residual is the difference between the actual value and the predicted value\n\n\n\nThe regression line minimizes the sum of squared residuals."
   },
   {
     "objectID": "slides/week-8.2.html#least-squares-regression-1",
     "href": "slides/week-8.2.html#least-squares-regression-1",
     "title": "Linear Regression",
     "section": "Least squares regression",
-    "text": "Least squares regression\n\n\nResidual for each point is: \\(e_i = y_i - \\hat{y}_i\\)\nLeast squares regression line minimizes \\(\\sum_{i = 1}^n e_i^2\\).\n\n. . .\n\nWhy do we square the residual?\n\n. . .\n\nWhy not take absolute value?\n\nPrinciple: larger penalty for residuals further away\nMath: makes the math easier and some nice properties (not our concern here…)"
+    "text": "Least squares regression\n\n\nResidual for each point is: \\(e_i = y_i - \\hat{y}_i\\)\nLeast squares regression line minimizes \\(\\sum_{i = 1}^n e_i^2\\).\n\n\n\nWhy do we square the residual?\n\n\n\n\nWhy not take absolute value?\n\nPrinciple: larger penalty for residuals further away\nMath: makes the math easier and some nice properties (not our concern here…)"
   },
   {
     "objectID": "slides/week-8.2.html#least-squares-regression-2",
@@ -3164,7 +3164,7 @@
     "href": "slides/week-8.2.html#example-3",
     "title": "Linear Regression",
     "section": "Example",
-    "text": "Example\nWhat is sum of squared residuals for \\(y = 0 + 0*X\\)?\n\n\n\n\n\n\n\n\n\n\n(1-0)^2 + (2-0)^2 + (3-0)^2\n\n[1] 14"
+    "text": "Example\nWhat is sum of squared residuals for \\(y = 0 + 0*X\\)?\n\n\n(1-0)^2 + (2-0)^2 + (3-0)^2\n\n[1] 14"
   },
   {
     "objectID": "slides/week-8.2.html#example-4",
@@ -3178,7 +3178,7 @@
     "href": "slides/week-8.2.html#example-5",
     "title": "Linear Regression",
     "section": "Example",
-    "text": "Example\nWhat is sum of squared residuals for \\(y = 0 + 2*X\\)?\n\n\n\n\n\n\n\n\n\n\n(1-2)^2 + (2-4)^2 + (3-6)^2\n\n[1] 14"
+    "text": "Example\nWhat is sum of squared residuals for \\(y = 0 + 2*X\\)?\n\n\n(1-2)^2 + (2-4)^2 + (3-6)^2\n\n[1] 14"
   },
   {
     "objectID": "slides/week-8.2.html#one-more",
@@ -3192,7 +3192,7 @@
     "href": "slides/week-8.2.html#one-more-1",
     "title": "Linear Regression",
     "section": "One more…",
-    "text": "One more…\nWhat is sum of squared residuals for \\(y = 0 + -1*X\\)?\n\n\n\n\n\n\n\n\n\n\n(1+1)^2 + (2+2)^2 + (3+3)^2\n\n[1] 56"
+    "text": "One more…\nWhat is sum of squared residuals for \\(y = 0 + -1*X\\)?\n\n\n(1+1)^2 + (2+2)^2 + (3+3)^2\n\n[1] 56"
   },
   {
     "objectID": "slides/week-8.2.html#cost-function",
@@ -3213,7 +3213,7 @@
     "href": "slides/week-8.2.html#least-squares-regression-4",
     "title": "Linear Regression",
     "section": "Least Squares Regression",
-    "text": "Least Squares Regression\n\n\nThere is a way to solve for this analytically for linear regression (i.e., by doing math…)\n– They made us do this in grad school…\n\n. . .\n\nIn machine learning, people also use gradient descent algorithm in which the computer searches over possible combinations of \\(a\\) and \\(b\\) until it settles on the lowest point."
+    "text": "Least Squares Regression\n\n\nThere is a way to solve for this analytically for linear regression (i.e., by doing math…)\n– They made us do this in grad school…\n\n\n\nIn machine learning, people also use gradient descent algorithm in which the computer searches over possible combinations of \\(a\\) and \\(b\\) until it settles on the lowest point."
   },
   {
     "objectID": "slides/week-8.2.html#least-squares-regression-5",
@@ -3277,5 +3277,71 @@
     "title": "Modeling",
     "section": "Interpreting the Coefficient for log(Wealth)",
     "text": "Interpreting the Coefficient for log(Wealth)\n\nModel: Democracy = 0.12 × log(Wealth)\nCoefficient Interpretation:\n\nA 1% increase in GDP per capita is associated with a 0.0012 increase in the democracy score\nDoubling GDP per capita (e.g., from $10,000 to $20,000) increases the democracy score by 0.12 points\n\nIn Dollar Terms:\n\nIf GDP per capita increases by 10% (e.g., from $10,000 to $11,000), the democracy score is expected to increase by 0.012 points"
+  },
+  {
+    "objectID": "project/project-assignment-1.html#overview",
+    "href": "project/project-assignment-1.html#overview",
+    "title": "Project Assignment 1",
+    "section": "",
+    "text": "For this project you will work in groups to use data to answer a question. This is your chance to use the skills you are developing in this class to help guide decision-making in a real-world context.\nCrucially, your data analysis should be question-driven. Part of the challenge is to identify the most appropriate data and analysis to answer your question. You will need to think about how to do this and the answer will not always be obvious–a level of creativity is involved.\nFor this first project assignment, you are to form groups of 3-4 students. You will select a question to work on, do some preliminary research on the type of data that might help you to answer the question, and discuss how you will use the data to provide an answer.",
+    "crumbs": [
+      "Project",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "project/project-assignment-1.html#groups",
+    "href": "project/project-assignment-1.html#groups",
+    "title": "Project Assignment 1",
+    "section": "Groups",
+    "text": "Groups\nYou will form groups of 3-4 students. You will work with this group for the duration of the project. Please list the names of your group members here:",
+    "crumbs": [
+      "Project",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "project/project-assignment-1.html#topics",
+    "href": "project/project-assignment-1.html#topics",
+    "title": "Project Assignment 1",
+    "section": "Topics",
+    "text": "Topics\nYou should select from the following list of topics. If you have another topic in mind, please discuss with me before proceeding. After choosing your topic, delete the other non-chosen topics and discuss briefly why you chose it.\n\nYou are the CEO of a multinational corporation considering expansion into emerging markets. Based on available data, which countries offer the most stable and profitable environment for expansion over the next five years? What factors are most relevant for your decision?\nAs a cosultant for the World Bank, you are tasked with improving democratic governance in developing countries. Based on trends in political and economic data over the past decade, what key areas (e.g., electoral integrity, gender equity, economic policy) should you prioritize to enhance democracy?\nA city mayor is planning to allocate resources to improve public health outcomes in response to rising pollution levels. Based on historical data, which factors should the mayor focus on to achieve the best results? Options could include things like healthcare infrastructure, public awareness campaigns, or environmental regulations.\nAs the head of a national education department, you need to decide where to allocate a limited budget: digital infrastructure for remote learning, teacher training programs, or curriculum development for STEM subjects. Which option is likely to yield the most significant improvement in educational outcomes based on available data?\nA company is considering launching a CSR initiative focused on reducing carbon emissions. As the head of the sustainability team, you need to determine the most effective strategy: investing in renewable energy, improving supply chain efficiency, or partnering with NGOs for reforestation projects. Which approach offers the best return on investment based on environmental and economic data?",
+    "crumbs": [
+      "Project",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "project/project-assignment-1.html#hypotheses",
+    "href": "project/project-assignment-1.html#hypotheses",
+    "title": "Project Assignment 1",
+    "section": "Hypotheses",
+    "text": "Hypotheses\nBefore gathering any data, or even looking at any data, you should write down your hypotheses. These are the assumptions you are making about the world that you will test with your data. Or, another way to think about hypotheses is as the predicted relationships between variables that you will test with your data. What do you expect to find and how do you expect the variables to be related? Write these down in a list here.\n\nH1:\nH2:\nH3:\netc.",
+    "crumbs": [
+      "Project",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "project/project-assignment-1.html#data-sources",
+    "href": "project/project-assignment-1.html#data-sources",
+    "title": "Project Assignment 1",
+    "section": "Data Sources",
+    "text": "Data Sources\nNow it is time to identify your data sources. You can use any data source that will be relevant in answering your question. This could be data from a government agency, an international organization, a non-profit, a private company, or even data that you collect yourself. A partial list of data sources is available here.\nBriefly list and discuss the data sources you plan to use. What data do they contain? How will you use them to answer your question? I would limit the number of data sources to 2-3. But just one data source is also OK if you think it is sufficient to answer your question.\n\nData Source 1:\nData Source 2:\nData Source 3:",
+    "crumbs": [
+      "Project",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "project/project-assignment-1.html#submission",
+    "href": "project/project-assignment-1.html#submission",
+    "title": "Project Assignment 1",
+    "section": "Submission",
+    "text": "Submission\nThat is it for Project Assignment 1! Please export this document and submit it via Blackboard by the due date.",
+    "crumbs": [
+      "Project",
+      "Assignment 1"
+    ]
   }
 ]

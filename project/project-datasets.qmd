@@ -1,60 +1,35 @@
 ---
 title: "Datasets"
-editor: visual
 ---
 
-Here are some datasets that you might consider using for your final
-project:
+Here are some datasets that you might consider using for your final project:
 
--   [ILOSTAT](https://ilostat.ilo.org/) is the statistical database of
-    the International Labour Organisation. It has data pertaining to
-    labor, working conditions, industrial relations, poverty and
-    inequality.
+-   [fredr](https://github.com/jcizel/FredR) is an R package that provides access to the Federal Reserve Economic Data (FRED) API. FRED is a comprehensive database of economic data maintained by the Federal Reserve Bank of St. Louis. The package allows you to search for and download data from FRED directly into R.
 
--   [Google Public Data
-    Explorer](https://www.google.com/publicdata/directory) contains
-    information about dozens of databases related to governance and the
-    economy. You cannot download the raw data from Google, but you can
-    use the site to visualize the data and then follow the link to the
-    original source.
+-   [Google Public Data Explorer](https://www.google.com/publicdata/directory) contains information about dozens of databases related to governance and the economy. You cannot download the raw data from Google, but you can use the site to visualize the data and then follow the link to the original source.
 
--   [OECD DATA](https://data.oecd.org/) provides data related to the
-    performance of high income countries.
+-   [ILOSTAT](https://ilostat.ilo.org/) is the statistical database of the International Labour Organisation. It has data pertaining to labor, working conditions, industrial relations, poverty and inequality.
 
--   [Our World in Data](https://ourworldindata.org/) is a good general
-    resource for political economy data. The site is centered around
-    blog posts but you can also search for a topic, view a visualization
-    related to that topic and then download the data used to create it.
+-   [Kaggle](https://www.kaggle.com/datasets) has data on just about anything you can think of. Very usable, clean data. Just stick to the social science stuff for your project. You can easily download CSV files from Kaggle but you can also access the data through the [Kaggle API](https://github.com/mkearney/kaggler).
 
--   [Statista](https://www-statista-com.proxygw.wrlc.org/) is a good
-    place to look for data on more niche topics.
+-   [OECD DATA](https://data.oecd.org/) provides data related to the performance of high income countries.
 
--   [UNCTADstat](http://unctadstat.unctad.org/EN/) is the United Nations
-    Conference on Trade and Development statistical database. It
-    provides harmonized data on a range of topics related to economic
-    performance, trade and statistics.
+-   [Our World in Data](https://ourworldindata.org/) is a good general resource for political economy data. The site is centered around blog posts but you can also search for a topic, view a visualization related to that topic and then download the data used to create it.
 
--   The [UN Human Development
-    Reports](https://hdr.undp.org/data-center/documentation-and-downloads)
-    include a number of important indicators related to human
-    development, gender and sustainable development goals (SDGs).
+-   [peacesciencer](https://svmiller.com/peacesciencer/) is an R package maintained by Steve Miller that compiles data from a number of sources that are useful for peace and conflict studies analysis
 
--   [Varieties of Democracy
-    (V-DEM)](https://www.v-dem.net/data/the-v-dem-dataset/) provides
-    original measures of the quality of democracy for every country
-    dating back to the 18th century.
+-   [Statista](https://www-statista-com.proxygw.wrlc.org/) is a good place to look for data on more niche topics.
 
--   [World Bank Development Indicators
-    (WDI)](https://databank-worldbank-org.proxygw.wrlc.org/reports.aspx?source=world-development-indicators)
-    is the primary World Bank database for development data from
-    officially-recognized international sources.
+-   [UNCTADstat](http://unctadstat.unctad.org/EN/) is the United Nations Conference on Trade and Development statistical database. It provides harmonized data on a range of topics related to economic performance, trade and statistics.
 
--   The [World Bank
-    DataBank](https://databank-worldbank-org.proxygw.wrlc.org/home)
-    provides access to dozens of additional World Bank databases on
-    topics such as regional development, governance, education, gender
-    and the environment.
+-   The [UN Human Development Reports](https://hdr.undp.org/data-center/documentation-and-downloads) include a number of important indicators related to human development, gender and sustainable development goals (SDGs).
 
-For information on more specific resources available, see [this
-page](https://libguides.gwu.edu/datasetsdatabases) on the Gelman Library
-website.
+-   The [unvotes](https://github.com/dgrtwo/unvotes) package provides data on United Nations General Assembly voting patterns.
+
+-   [Varieties of Democracy (V-DEM)](https://www.v-dem.net/data/the-v-dem-dataset/) provides original measures of the quality of democracy for every country dating back to the 18th century. You can access vdem data through the [vdemdata](https://github.com/vdeminstitute/vdemdata) package.
+
+-   [World Bank Development Indicators (WDI)](https://databank-worldbank-org.proxygw.wrlc.org/reports.aspx?source=world-development-indicators) is the primary World Bank database for development data from officially-recognized international sources. You can access WB Development Indicators through the [WDI](https://github.com/vincentarelbundock/WDI) package or the [wbstats](https://github.com/gshs-ornl/wbstats) package.
+
+-   The [World Bank DataBank](https://databank-worldbank-org.proxygw.wrlc.org/home) provides access to dozens of additional World Bank databases on topics such as regional development, governance, education, gender and the environment. You can access world bank data through the [wbstats](https://github.com/gshs-ornl/wbstats) package.
+
+For information on more specific resources available, see [this page](https://libguides.gwu.edu/datasetsdatabases) on the Gelman Library website.

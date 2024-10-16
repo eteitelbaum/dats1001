@@ -1,6 +1,55 @@
 ---
 title: "Project Assignment 1"
-subtitle: "Outline and Sources"
+subtitle: "Research Question and Data Sources"
 ---
 
-Details coming soon... 
+## Overview
+
+For this project you will work in groups to use data to answer a question. This is your chance to use the skills you are developing in this class to help guide decision-making in a real-world context. 
+
+Crucially, your data analysis should be question-driven. Part of the challenge is to identify the most appropriate data and analysis to answer your question. You will need to think about how to do this and the answer will not always be obvious--a level of creativity is involved. 
+
+For this first project assignment, you are to form groups of 3-4 students. You will select a question to work on, do some preliminary research on the type of data that might help you to answer the question, and discuss how you will use the data to provide an answer.
+
+## Groups
+
+You will form groups of 3-4 students. You will work with this group for the duration of the project. Please list the names of your group members here:
+
+## Topics
+
+You should select from the following list of topics. If you have another topic in mind, please discuss with me before proceeding. After choosing your topic, delete the other non-chosen topics and discuss briefly why you chose it. 
+
+- You are the CEO of a multinational corporation considering expansion into emerging markets. Based on available data, which countries offer the most stable and profitable environment for expansion over the next five years? What factors are most relevant for your decision?
+
+- As a cosultant for the World Bank, you are tasked with improving democratic governance in developing countries. Based on trends in political and economic data over the past decade, what key areas (e.g., electoral integrity, gender equity, economic policy) should you prioritize to enhance democracy? 
+
+- A city mayor is planning to allocate resources to improve public health outcomes in response to rising pollution levels. Based on historical data, which factors should the mayor focus on to achieve the best results? Options could include things like healthcare infrastructure, public awareness campaigns, or environmental regulations.
+
+- As the head of a national education department, you need to decide where to allocate a limited budget: digital infrastructure for remote learning, teacher training programs, or curriculum development for STEM subjects. Which option is likely to yield the most significant improvement in educational outcomes based on available data?
+
+- A company is considering launching a CSR initiative focused on reducing carbon emissions. As the head of the sustainability team, you need to determine the most effective strategy: investing in renewable energy, improving supply chain efficiency, or partnering with NGOs for reforestation projects. Which approach offers the best return on investment based on environmental and economic data?
+
+## Hypotheses
+
+Before gathering any data, or even looking at any data, you should write down your hypotheses. These are the assumptions you are making about the world that you will test with your data. Or, another way to think about hypotheses is as the predicted relationships between variables that you will test with your data. What do you **expect** to find and how do you **expect** the variables to be related? Write these down in a list here.
+
+- H1: 
+- H2: 
+- H3:
+- etc. 
+
+## Data Sources
+
+Now it is time to identify your data sources. You can use any data source that will be relevant in answering your question. This could be data from a government agency, an international organization, a non-profit, a private company, or even data that you collect yourself. A partial list of data sources is available [here](project/project-datasets.qmd). 
+
+Briefly list and discuss the data sources you plan to use. What data do they contain? How will you use them to answer your question? I would limit the number of data sources to 2-3. But just one data source is also OK if you think it is sufficient to answer your question.
+
+- Data Source 1:
+
+- Data Source 2:
+
+- Data Source 3:
+
+## Submission
+
+*That is it for Project Assignment 1! Please export this document and submit it via Blackboard by the due date.*
