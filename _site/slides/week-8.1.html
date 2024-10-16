@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-5223d57514b7f3c9e8f675d86406bf62.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.18">
 
-  <meta name="dcterms.date" content="2024-10-14">
+  <meta name="dcterms.date" content="2024-10-16">
   <title>DATS 1001--Fall Schedule – Modeling</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -402,7 +402,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">October 14, 2024</p>
+  <p class="date">October 16, 2024</p>
 </section>
 <section id="modeling" class="slide level2">
 <h2>Modeling</h2>
@@ -666,9 +666,208 @@
 <li>For any given data…</li>
 <li>How do we figure out what the best values are for <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>??</li>
 </ul>
-
-
 </section></section>
+<section>
+<section id="estimation" class="title-slide slide level1 center">
+<h1>Estimation</h1>
+
+</section>
+<section id="linear-model-with-single-predictor" class="slide level2">
+<h2>Linear Model with Single Predictor</h2>
+<p><br></p>
+<p>Goal: Estimate Democracy score (<span class="math inline">\(\hat{Y_{i}}\)</span>) of a country given level of GDP per capita (<span class="math inline">\(X_{i}\)</span>).</p>
+<p><br></p>
+<p>Or: Estimate relationship between GDP per capita and democracy.</p>
+</section>
+<section id="linear-model-with-single-predictor-1" class="slide level2">
+<h2>Linear Model with Single Predictor</h2>
+
+<img data-src="week-8.1_files/figure-revealjs/model-data-1.png" width="960" class="r-stretch"></section>
+<section id="estimate-model" class="slide level2">
+<h2>Estimate Model</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>model1 <span class="ot">&lt;-</span>  <span class="fu">lm</span>(lib_dem <span class="sc">~</span> log_wealth, <span class="at">data =</span> modelData) </span>
+<span id="cb3-2"><a></a></span>
+<span id="cb3-3"><a></a><span class="fu">summary</span>(model1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = lib_dem ~ log_wealth, data = modelData)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.57441 -0.14334  0.03911  0.18730  0.37017 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  0.13051    0.03806   3.429 0.000758 ***
+log_wealth   0.12040    0.01471   8.188 5.75e-14 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.2233 on 172 degrees of freedom
+  (5 observations deleted due to missingness)
+Multiple R-squared:  0.2805,    Adjusted R-squared:  0.2763 
+F-statistic: 67.04 on 1 and 172 DF,  p-value: 5.754e-14</code></pre>
+</div>
+</div>
+</section>
+<section id="section-2" class="slide level2">
+<h2></h2>
+<p>In equation form… How do we interpret the model?</p>
+<p><br></p>
+<p><span class="math display">\[\widehat{Democracy}_{i} = 0.13 + 0.12 * {loggdppc}_{i}\]</span></p>
+</section>
+<section id="question" class="slide level2">
+<h2>Question</h2>
+<p><br></p>
+<p>How do we get the “best” values for the slope and intercept?</p>
+</section>
+<section id="how-would-you-draw-the-best-line" class="slide level2">
+<h2>How would you draw the “best” line?</h2>
+
+<img data-src="week-8.1_files/figure-revealjs/best-line-1.png" width="960" class="r-stretch"></section>
+<section id="how-would-you-draw-the-best-line-1" class="slide level2">
+<h2>How would you draw the “best” line?</h2>
+
+<img data-src="week-8.1_files/figure-revealjs/best-line2-1.png" width="960" class="r-stretch"></section>
+<section id="least-squares-regression" class="slide level2">
+<h2>Least squares regression</h2>
+<p><br></p>
+<ul>
+<li>Remember the residual is the difference between the actual value and the predicted value</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>The regression line minimizes the sum of squared residuals.</li>
+</ul>
+</div>
+</section>
+<section id="least-squares-regression-1" class="slide level2">
+<h2>Least squares regression</h2>
+<p><br></p>
+<ul>
+<li><p>Residual for each point is: <span class="math inline">\(e_i = y_i - \hat{y}_i\)</span></p></li>
+<li><p>Least squares regression line minimizes <span class="math inline">\(\sum_{i = 1}^n e_i^2\)</span>.</p></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Why do we square the residual?</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li><p>Why not take absolute value?</p>
+<ul>
+<li>Principle: larger penalty for residuals further away</li>
+<li>Math: makes the math easier and some nice properties (not our concern here…)</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="least-squares-regression-2" class="slide level2">
+<h2>Least squares regression</h2>
+
+<img data-src="week-8.1_files/figure-revealjs/best-line3-1.png" width="960" class="r-stretch"></section>
+<section id="very-simple-example" class="slide level2">
+<h2>Very Simple Example</h2>
+<p>What should the slope and intercept be?</p>
+
+<img data-src="week-8.1_files/figure-revealjs/best-line4-1.png" width="960" class="r-stretch"></section>
+<section id="example" class="slide level2">
+<h2>Example</h2>
+<p><span class="math inline">\(\hat{Y} = 0 + 1*X\)</span></p>
+
+<img data-src="week-8.1_files/figure-revealjs/best-line5-1.png" width="960" class="r-stretch"></section>
+<section id="example-1" class="slide level2">
+<h2>Example</h2>
+<p>What is the sum of squared residuals?</p>
+
+<img data-src="week-8.1_files/figure-revealjs/best-line6-1.png" width="960" class="r-stretch"></section>
+<section id="example-2" class="slide level2">
+<h2>Example</h2>
+<p>What is sum of squared residuals for <span class="math inline">\(y = 0 + 0*X\)</span>?</p>
+
+<img data-src="week-8.1_files/figure-revealjs/best-line7-1.png" width="960" class="r-stretch"></section>
+<section id="example-3" class="slide level2">
+<h2>Example</h2>
+<p>What is sum of squared residuals for <span class="math inline">\(y = 0 + 0*X\)</span>?</p>
+
+<img data-src="week-8.1_files/figure-revealjs/best-line8-1.png" width="960" class="r-stretch"><div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>(<span class="dv">1-0</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> (<span class="dv">2-0</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> (<span class="dv">3-0</span>)<span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 14</code></pre>
+</div>
+</div>
+</section>
+<section id="example-4" class="slide level2">
+<h2>Example</h2>
+<p>What is sum of squared residuals for <span class="math inline">\(y = 0 + 2*X\)</span>?</p>
+
+<img data-src="week-8.1_files/figure-revealjs/best-line10-1.png" width="960" class="r-stretch"></section>
+<section id="example-5" class="slide level2">
+<h2>Example</h2>
+<p>What is sum of squared residuals for <span class="math inline">\(y = 0 + 2*X\)</span>?</p>
+
+<img data-src="week-8.1_files/figure-revealjs/best-line11-1.png" width="960" class="r-stretch"><div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>(<span class="dv">1-2</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> (<span class="dv">2-4</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> (<span class="dv">3-6</span>)<span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 14</code></pre>
+</div>
+</div>
+</section>
+<section id="one-more" class="slide level2">
+<h2>One more…</h2>
+<p>What is sum of squared residuals for <span class="math inline">\(y = 0 + -1*X\)</span>?</p>
+
+<img data-src="week-8.1_files/figure-revealjs/best-line13-1.png" width="960" class="r-stretch"></section>
+<section id="one-more-1" class="slide level2">
+<h2>One more…</h2>
+<p>What is sum of squared residuals for <span class="math inline">\(y = 0 + -1*X\)</span>?</p>
+
+<img data-src="week-8.1_files/figure-revealjs/best-line14-1.png" width="960" class="r-stretch"><div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>(<span class="dv">1</span><span class="sc">+</span><span class="dv">1</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> (<span class="dv">2</span><span class="sc">+</span><span class="dv">2</span>)<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> (<span class="dv">3</span><span class="sc">+</span><span class="dv">3</span>)<span class="sc">^</span><span class="dv">2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 56</code></pre>
+</div>
+</div>
+</section>
+<section id="cost-function" class="slide level2">
+<h2>Cost Function</h2>
+<p>Sum of Squared Residuals as function of possible values of <span class="math inline">\(b\)</span></p>
+
+<img data-src="week-8.1_files/figure-revealjs/cost-function-1.png" width="960" class="r-stretch"></section>
+<section id="least-squares-regression-3" class="slide level2">
+<h2>Least Squares Regression</h2>
+<p><br></p>
+<ul>
+<li><p>When we estimate a least squares regression, it is looking for the line that minimizes sum of squared residuals</p></li>
+<li><p>In the simple example, I set <span class="math inline">\(a=0\)</span> to make it easier. More complicated when searching for combination of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> that minimize, but same basic idea</p></li>
+</ul>
+</section>
+<section id="least-squares-regression-4" class="slide level2">
+<h2>Least Squares Regression</h2>
+<p><br></p>
+<ul>
+<li><p>There is a way to solve for this analytically for linear regression (i.e., by doing math…)</p>
+<p>– They made us do this in grad school…</p></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>In machine learning, people also use gradient descent algorithm in which the computer searches over possible combinations of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> until it settles on the lowest point.</li>
+</ul>
+</div>
+</section>
+<section id="least-squares-regression-5" class="slide level2">
+<h2>Least Squares Regression</h2>
+
+<img data-src="week-8.1_files/figure-revealjs/ssr-viz-1.png" width="960" class="r-stretch"></section>
+<section id="least-squares-regression-6" class="slide level2">
+<h2>Least Squares Regression</h2>
+
+
+
+<img data-src="week-8.1_files/figure-revealjs/regression-line-1.png" width="960" class="r-stretch"></section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <p><img src="images/ds4all-logo.png" class="slide-logo"></p>
