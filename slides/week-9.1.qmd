@@ -1,0 +1,491 @@
+---
+title: Multiple Regression
+date: today
+date-format: long
+footer: "[DATS 1001 Website](https://ds4all.rocks)"
+logo: images/ds4all-logo.png
+format:
+  revealjs:
+    theme: [simple, custom.scss]
+    transition: fade
+    slide-number: true
+    #multiplex: true
+    chalkboard: true
+execute:
+  echo: true
+  message: false
+  warning: false
+  freeze: auto
+---
+
+## Load packages 
+
+<br>
+
+```{r} 
+#| label: packages
+#| echo: true
+
+library(tidyverse)
+library(vdemdata)
+```
+
+
+## Load VDEM Data {.smaller}
+
+<br>
+
+```{r}
+#| label: get_data
+#| output: false
+
+model_data <- vdem |>
+  filter(year == 2006) |> 
+  select(country_name, 
+         libdem = v2x_libdem, 
+         wealth = e_gdppc, 
+         oil_rents = e_total_oil_income_pc,
+         polarization = v2cacamps, 
+         corruption = v2x_corr, 
+         judicial_review = v2jureview_ord, 
+         region = e_regionpol_6C, 
+         regime = v2x_regime) |> 
+  mutate(
+         region = factor(
+           region,
+           labels=c("Eastern Europe", 
+             "Latin America", 
+             "MENA", 
+             "SSAfrica", 
+             "Western Europe and North America", 
+             "Asia and Pacific"))
+          )
+
+glimpse(model_data)
+```
+
+## Linear Model with Multiple Predictors
+
+<br>
+
+- Previously, we were interested in GDP per capita as a predictor of democracy
+- Now, let's consider another predictor: polarization (also measured by V-Dem)
+
+## Polarization Measure in the USA
+
+```{r}
+#| label: polarization_usa
+#| echo: false
+
+vdem |> 
+  filter(country_name == "United States of America") |>
+  filter(year > 1900) |> 
+  ggplot(aes(y= v2cacamps, x = year)) +
+  geom_line(color = "dodgerblue", size = 1) +
+  labs(title = "Polarization in the USA", 
+       y = "Polarization", x = "Year") +
+  theme_minimal()
+```
+
+## Polarization and Democracy in 2006
+
+```{r echo=FALSE}
+ggplot(model_data, aes(x = polarization, y = libdem)) +
+  geom_point() +
+  geom_smooth(method = "lm", color = "#E48957", se = FALSE) +
+  labs(x = "Polarization", y = "Liberal Democracy Index") +
+  theme_minimal()
+```
+
+## Model with One Predictor
+
+<br>
+
+```{r}
+#| label: model1
+
+library(broom) # for tidy() function
+
+lm(libdem ~ polarization, data = model_data) |> 
+  tidy() # for nicer regression output
+```
+<br>
+
+| How do we interpret the intercept and the slope estimate?
+| Significance? 
+
+## Model with Two Predictors
+
+<br>
+
+```{r}
+#| label: model2
+#| echo: true
+
+lm(libdem ~ polarization + log(wealth), data = model_data) |> 
+  tidy()
+```
+
+## Model with Two Predictors
+
+<br>
+
+$$ \hat{Y_i} = a + b_1*Polarization + b_2*GDPpc $$ 
+
+$$ \hat{Y_i} = 0.18 + -0.05*Polarization + 0.10*GDPpc $$ 
+
+## Model with Two Predictors 
+
+<br>
+
+$$ \hat{Y_i} = a + b_1*Polarization + b_2*GDPpc $$ 
+
+$$ \hat{Y_i} = 0.18 + -0.05*Polarization + 0.10*GDPpc $$ 
+
+$a$ is the predicted level of Y when BOTH GDP per capita and polarization are equal to 0
+
+## Model with Two Predictors 
+
+<br>
+
+$$ \hat{Y_i} = a + b_1*Polarization + b_2*GDPpc $$ 
+
+$$ \hat{Y_i} = 0.18 + -0.05*Polarization + 0.10*GDPpc $$ 
+
+- $b_1$ is the impact of a 1-unit change in polarization on the predicted level of Y, **holding GDP per capita fixed** (all else equal)
+- The relationship between polarization and democracy, controlling for wealth
+
+## Model with Two Predictors 
+
+$$ \hat{Y_i} = a + b_1*Polarization + b_2*GDPpc $$ 
+
+$$ \hat{Y_i} = 0.18 + -0.05*Polarization + 0.10*GDPpc $$ 
+
+- $b_2$ is the impact of a 1-unit change in GDP per capita on the predicted level of Y, **holding polarization fixed** (all else equal)
+- The relationship between wealth and democracy, controlling for polarization
+
+## Model with Two Predictors
+
+<br>
+
+$$ \hat{Y_i} = a + b_1*Polarization + b_2*GDPpc $$ 
+
+
+- OLS is searching for combination of $a$, $b_1$, and $b_2$ that minimize sum of squared residuals
+- Same logic as model with one predictor, just more complicated
+
+## Model with Three Predictors 
+
+<br>
+
+$$ \hat{Y_i} = a + b_1*Polarization + b_2*GDPpc + b_3*OilRents $$ 
+
+## Model with Three Predictors 
+
+<br>
+
+```{r}
+#| label: model3
+#| echo: true
+
+lm(libdem ~ polarization + log(wealth) + oil_rents, data = model_data) |> 
+  tidy()
+```
+
+## Model with Three Predictors {.smaller}
+
+<br>
+
+$$ \hat{Y_i} = a + b_1*Polarization + b_2*GDPpc + b_3*OilRents $$ 
+
+$$ \hat{Y_i} = a + -.05*Polarization + .13*GDPpc + .00004*OilRents $$ 
+<br>
+
+| $b_3$ is the impact of a 1-unit change in oil revenues per capita on the predicted level of Y, **holding polarization and GDP fixed** (all else equal)
+
+## Your Turn! {.smaller}
+
+<br>
+
+- In the last session, you examined levels of democracy and corruption
+- Now, let's fit a multiple regression model predicting corruption with two predictors: democracy (libdem) and polarization (polarization)
+- Then, interpret the coefficients
+- Estimate a second multiple regression model that adds in GDP per capita (lg_gdppc)
+- Interpret the coefficients
+- What happens to the coefficients of the other variables when we add GDP per capita to the model?
+    - Why do you think this happens?
+- Try adding in additional predictors if there is time
+
+```{r}
+#| label: time1
+#| echo: false
+
+library(countdown)
+
+countdown(minutes = 10, 
+          id = "timer1", 
+          bottom = "10%", 
+          right = "10%",
+          color_border = "#fff",
+          color_text = "#fff",
+          color_running_background = "#42affa",
+          color_running_text = "black",
+          color_finished_background = "#E5D19D",
+          color_finished_text = "#00264A")
+```
+
+## Model 1
+
+<br>
+
+```{r}
+lm(corruption ~ libdem + polarization , data = model_data) |>
+      tidy() 
+```
+
+## Model 2 - Adding GDP per capita
+
+<br>
+
+```{r}
+lm(corruption ~ libdem + polarization + log(wealth), data = model_data) |>
+      tidy() 
+```
+
+# Categorical Variables
+
+## What is a Categorical Variable?
+
+<br>
+
+- A variable that represents distinct groups or categories
+- Categories can be named (e.g., "Male" or "Female") 
+- Or numbered (e.g., 1, 2, 3)
+- Or words (like different regions)
+- Can be either nominal (unordered) or ordinal (ordered)
+- Also called "dummy variables" or "indicator variables"
+
+## What is a Factor in R?
+
+<br>
+
+- A data structure used to represent categorical variables
+- Can be dichotomous (binary) or have multiple levels
+- Supports both ordered and unordered categories
+- Call `factor()` to convert a variable to a factor
+- Call `levels()` to see the categories
+
+## Reference Categories
+
+<br>
+
+- In a regression model, every categorical variable needs a reference category
+- The reference category is the category that all other categories are compared to when interpreting the results
+- Call `relevel()` to change the reference category
+
+## Judicial Review and Democracy
+
+<br>
+
+**Judicial Review:**
+
+- Do high courts (Supreme Court, Constitutional Court, etc) have the power to rule on whether laws or policies are constitutional/legal? (Yes or No)
+- Dimension of Judicial Independence
+
+## Judicial Review and Democracy
+
+```{r}
+#| label: judicial_review
+#| echo: false
+
+ggplot(model_data, aes(x = wealth, y = libdem, 
+                       color=factor(judicial_review))) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(x = "GPD per capita", y = "Liberal Democracy Index") +
+  theme_bw() +
+  scale_x_log10(labels = scales::dollar_format(suffix = "k")) +
+  scale_color_manual(name = "Judicial Review", 
+                     values = c("steelblue3", "coral"), 
+                     labels = c("No", "Yes")) 
+
+```
+
+## Judicial Review and Democracy
+
+<br>
+
+```{r}
+#| label: judicial_review_model
+
+lm(libdem ~ factor(judicial_review), data = model_data) |>
+  tidy()
+```
+
+## Judicial Review and Democracy {.smaller}
+
+<br>
+
+$$ \widehat{Democracy_{i}} = 0.17 + 0.28*JudicialReview(yes) $$
+
+- **Slope:** countries with judicial review are expected, on average, to be 0.28 units more democratic on the liberal democracy index
+  - Compares baseline level (Judicial Review = 0) to the other level (Judicial Review = 1)
+- **Intercept:** average democracy score of countries without judicial review
+- Average democracy score of countries with judicial review is 0.17 + 0.28 = 0.45
+
+## Dummy Variables
+
+<br>
+
+- When the categorical explanatory variable has many levels, they're encoded to **dummy variables** 
+- We always leave one category out of the model, as the omitted reference category
+- Each coefficient describes is the expected difference between level of the factor **and the baseline level**
+- Everything is relative to the omitted reference category
+
+## Democracy and World Region
+
+<br>
+
+- Does region predict levels of democracy?
+- Since Eastern Europe is the first category, default in R is to use that as the omitted category in models.
+
+```{r}
+#| label: region_model
+
+levels(model_data$region)
+```
+
+## Democracy and World Region {.smaller}
+
+<br>
+
+How should we interpret intercept?  How about the coefficient on Latin America?
+
+<br>
+
+```{r}
+#| label: region_model2
+
+lm(libdem ~ region, data = model_data) |>
+  tidy()
+```
+
+## Democracy and World Region {.smaller}
+
+<br>
+
+What if you want a different baseline category? How do we interpret now?
+
+<br>
+
+
+```{r}
+#| label: region_model3
+
+# make SS Africa the reference category
+model_data <- model_data |> 
+mutate(newReg = relevel(region, ref=4)) 
+
+lm(libdem ~ newReg, data = model_data) |>
+      tidy()
+```
+
+## Your Turn
+
+<br>
+
+**Which types of regime have more corruption?**
+
+<br>
+ 
+V-Dem also includes a categorial regime variable: Closed autocracy (0), Electoral Autocracy (1), Electoral Democracy (2), Liberal Democracy (3)
+
+## Your Turn
+
+<br>
+
+**Which types of regime have more corruption?**
+
+<br>
+
+ 
+First, let's make this an easier factor variable to work with.
+
+```{r}
+#| label: regime_factor
+#| echo: true
+
+# Make nicer regime factor variable
+model_data <- model_data |> 
+  mutate(regime = factor(regime,
+                         labels = c("Closed Autocracy",
+                                   "Electoral Autocracy",
+                                  "Electoral Democracy",
+                                  "Liberal Democracy")))
+levels(model_data$regime)
+```
+
+## Your Turn {.smaller}
+
+<br>
+
+**Which types of regime have more corruption?**
+
+<br>
+
+- Filter data to include only the year 2019 (or run the code to use model_data)
+- Make a plot to visualize the relationship between regime type and level of corruption.          - Which kind of plot is best in this situation?
+- Fit a linear model
+- Interpret the intercept and coefficients
+
+
+```{r}
+#| label: time2
+#| echo: false
+
+library(countdown)
+
+countdown(minutes = 10, 
+          id = "timer2", 
+          bottom = "10%", 
+          right = "10%")
+```
+
+## Visualization
+
+```{r}
+#| label: corruption_plot
+#| echo: false
+
+model_data |> 
+  group_by(regime) |> 
+  summarize(corr = mean(corruption)) |> 
+  ggplot(aes(y=corr, x = regime)) +
+    geom_col(fill="steelblue") +
+  theme_bw()
+```
+
+## Model
+
+<br>
+
+```{r}
+#| label: corruption_model
+
+lm(corruption ~ regime, data = model_data) |>
+      tidy()
+```
+
+## Create Your Own Model {.smaller}
+
+<br>
+
+- What is a theory that you would like to test with V-Dem data?
+- What is the dependent variable? 
+- What are the independent variables? 
+- Map out steps to wrangle the data and fit a regression model
+- What do you expect to find? 
+- Now go ahead and wrangle the data
+- Fit the model
+- Interpret the coefficients and their significance
+- Did the results match your expectations?
