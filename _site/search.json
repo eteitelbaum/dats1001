@@ -3798,5 +3798,250 @@
     "title": "Multiple Regression",
     "section": "What is a Categorical Variable?",
     "text": "What is a Categorical Variable?\n\n\nA variable that represents distinct groups or categories\nCategories can be named (e.g., “Male” or “Female”)\nOr numbered (e.g., 1, 2, 3)\nOr words (like different regions)\nCan be either nominal (unordered) or ordinal (ordered)\nAlso called “dummy variables” or “indicator variables”"
+  },
+  {
+    "objectID": "slides/week-9.2.html#multiple-logistic-regression-1",
+    "href": "slides/week-9.2.html#multiple-logistic-regression-1",
+    "title": "Regression Tables",
+    "section": "Multiple Logistic Regression",
+    "text": "Multiple Logistic Regression\n\n\n\nJust as with linear models, we can also run multiple logistic regressions\nWe can include multiple predictors in the model\nUsually we want to include our main predictor of interest and control variables\nThe interpetation of the coefficients is the same as in the bivariate models"
+  },
+  {
+    "objectID": "slides/week-9.2.html#section",
+    "href": "slides/week-9.2.html#section",
+    "title": "Regression Tables",
+    "section": "",
+    "text": "Download the data using the peacesciencer package if you haven’t already…\n\n\nconflict_df &lt;- create_stateyears(system = 'gw') |&gt;\n  filter(year %in% c(1946:1999)) |&gt;\n  add_ucdp_acd(type=c(\"intrastate\"), only_wars = FALSE) |&gt;\n  add_democracy() |&gt;\n  add_creg_fractionalization() |&gt;\n  add_sdp_gdp() |&gt;\n  add_rugged_terrain()"
+  },
+  {
+    "objectID": "slides/week-9.2.html#section-1",
+    "href": "slides/week-9.2.html#section-1",
+    "title": "Regression Tables",
+    "section": "",
+    "text": "Example, including multiple predictors associated with conflict:\n\nconflict_model &lt;- glm(ucdponset ~ ethfrac + relfrac + v2x_polyarchy + \n                          rugged + wbgdppc2011est + wbpopest,\n                  data= conflict_df,\n                  family = \"binomial\")\n\nsummary(conflict_model)\n\n\nCall:\nglm(formula = ucdponset ~ ethfrac + relfrac + v2x_polyarchy + \n    rugged + wbgdppc2011est + wbpopest, family = \"binomial\", \n    data = conflict_df)\n\nCoefficients:\n               Estimate Std. Error z value Pr(&gt;|z|)    \n(Intercept)    -5.69260    1.40788  -4.043 5.27e-05 ***\nethfrac         0.80005    0.38072   2.101  0.03560 *  \nrelfrac        -0.39138    0.41673  -0.939  0.34764    \nv2x_polyarchy  -0.60161    0.50879  -1.182  0.23704    \nrugged          0.06413    0.07603   0.843  0.39897    \nwbgdppc2011est -0.37188    0.12059  -3.084  0.00204 ** \nwbpopest        0.29318    0.06735   4.353 1.34e-05 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 1182.5  on 6150  degrees of freedom\nResidual deviance: 1126.7  on 6144  degrees of freedom\n  (885 observations deleted due to missingness)\nAIC: 1140.7\n\nNumber of Fisher Scoring iterations: 7"
+  },
+  {
+    "objectID": "slides/week-9.2.html#predicted-probabilities",
+    "href": "slides/week-9.2.html#predicted-probabilities",
+    "title": "Regression Tables",
+    "section": "Predicted Probabilities",
+    "text": "Predicted Probabilities\n\n\n\nShow the code\n# load the \nlibrary(marginaleffects)\n\n# seledct some countries for a given year\nselected_countries &lt;- conflict_df |&gt;\n  filter(\n    statename %in% c(\"United States of America\", \"Venezuela\", \"Rwanda\"),\n    year == 1999)\n\n# calculate margins for the subset\nmarg_effects &lt;- predictions(conflict_model, newdata = selected_countries)\n\n# tidy the results\nlibrary(broom)\n\ntidy(marg_effects) |&gt;\n  select(statename, estimate, p.value, conf.low, conf.high) \n\n\n# A tibble: 3 × 5\n  statename                estimate  p.value conf.low conf.high\n  &lt;chr&gt;                       &lt;dbl&gt;    &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 United States of America   0.0123 2.23e-28  0.00567    0.0264\n2 Venezuela                  0.0140 2.25e-70  0.00879    0.0222\n3 Rwanda                     0.0286 8.46e-39  0.0170     0.0477"
+  },
+  {
+    "objectID": "slides/week-9.2.html#your-turn",
+    "href": "slides/week-9.2.html#your-turn",
+    "title": "Logistic Regression",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\nRun a bivariate logistic regression using ucdp onset as the outcome variable\nFirst replicate the results using GDP per capita as the predictor\nNow try a different predictor\nInterpret the results\n\nWhat is the average effect of the predictor on conflict onset?\nHow do you interpret that effect in terms of the odds of conflict onset?\n\n\n\n\n\n−+\n10:00"
+  },
+  {
+    "objectID": "slides/week-9.2.html#whats-in-a-regression-table",
+    "href": "slides/week-9.2.html#whats-in-a-regression-table",
+    "title": "Regression Tables",
+    "section": "What’s in a Regression Table?",
+    "text": "What’s in a Regression Table?"
+  },
+  {
+    "objectID": "slides/week-9.2.html#regression-tables-with-modelsummary",
+    "href": "slides/week-9.2.html#regression-tables-with-modelsummary",
+    "title": "Regression Tables",
+    "section": "Regression Tables with modelsummary",
+    "text": "Regression Tables with modelsummary\n\n\n\nOftentimes we want to show multiple models at once (like F&L)\nWe want to compare across them and see which is the best model\nHow can we do that?\nThere are many ways to do this in R\nWe will use the modelsummary package"
+  },
+  {
+    "objectID": "slides/week-9.2.html#run-multiple-models",
+    "href": "slides/week-9.2.html#run-multiple-models",
+    "title": "Regression Tables",
+    "section": "Run Multiple Models",
+    "text": "Run Multiple Models\n\n\nethnicity &lt;- glm(ucdponset ~ ethfrac + relfrac + wbgdppc2011est + wbpopest, # store each model in an object\n                  data = conflict_df,\n                  family = \"binomial\")\n\ndemocracy &lt;- glm(ucdponset ~ v2x_polyarchy + wbgdppc2011est +  wbpopest,\n                  data = conflict_df,\n                  family = \"binomial\")\n\nterrain &lt;- glm(ucdponset ~ rugged + wbgdppc2011est + wbpopest ,\n                  data = conflict_df,\n                  family = \"binomial\")\n\nfull_model &lt;- glm(ucdponset ~ ethfrac + relfrac + v2x_polyarchy + rugged +\n                        wbgdppc2011est + wbpopest,\n                  data = conflict_df,\n                  family = \"binomial\")"
+  },
+  {
+    "objectID": "slides/week-9.2.html#prep-data-for-display",
+    "href": "slides/week-9.2.html#prep-data-for-display",
+    "title": "Regression Tables",
+    "section": "Prep Data for Display",
+    "text": "Prep Data for Display\n\n\nmodels &lt;- list(\"Ethnicity\" = ethnicity,  # store list of models in an object\n               \"Democracy\" = democracy, \n               \"Terrain\" = terrain, \n               \"Full Model\" = full_model)\n\ncoef_map &lt;- c(\"ethfrac\" = \"Ethnic Frac\",  # map coefficients\n        \"relfrac\" = \"Religions Frac\",     #(change names and order)\n        \"v2x_polyarchy\" = \"Polyarchy\",\n        \"rugged\" = \"Terrain\",\n        \"wbgdppc2011est\" = \"Per capita GDP\",\n        \"wbpopest\" = \"Population\",\n        \"(Intercept)\" = \"Intercept\")\n\ncaption = \"Table 1: Predictors of Conflict Onset\" # store caption\nreference = \"See appendix for data sources.\"      # store reference notes"
+  },
+  {
+    "objectID": "slides/week-9.2.html#display-the-models",
+    "href": "slides/week-9.2.html#display-the-models",
+    "title": "Regression Tables",
+    "section": "Display the Models",
+    "text": "Display the Models\n\n\n \n\n  \n    \n    \n    tinytable_rg1054ewd7fb50sayad9\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        Table 1: Predictors of Conflict Onset\n              \n                 \n                Ethnicity\n                Democracy\n                Terrain\n                Full Model\n              \n        \n        + p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001\nSee appendix for data sources.\n        \n                \n                  Ethnic Frac   \n                  0.744*   \n                           \n                           \n                  0.800*   \n                \n                \n                                \n                  (0.367)  \n                           \n                           \n                  (0.381)  \n                \n                \n                  Religions Frac\n                  -0.481   \n                           \n                           \n                  -0.391   \n                \n                \n                                \n                  (0.411)  \n                           \n                           \n                  (0.417)  \n                \n                \n                  Polyarchy     \n                           \n                  -0.228   \n                           \n                  -0.602   \n                \n                \n                                \n                           \n                  (0.436)  \n                           \n                  (0.509)  \n                \n                \n                  Terrain       \n                           \n                           \n                  0.031    \n                  0.064    \n                \n                \n                                \n                           \n                           \n                  (0.076)  \n                  (0.076)  \n                \n                \n                  Per capita GDP\n                  -0.474***\n                  -0.512***\n                  -0.543***\n                  -0.372** \n                \n                \n                                \n                  (0.104)  \n                  (0.108)  \n                  (0.092)  \n                  (0.121)  \n                \n                \n                  Population    \n                  0.282*** \n                  0.297*** \n                  0.299*** \n                  0.293*** \n                \n                \n                                \n                  (0.067)  \n                  (0.051)  \n                  (0.050)  \n                  (0.067)  \n                \n                \n                  Intercept     \n                  -4.703***\n                  -4.407***\n                  -4.296***\n                  -5.693***\n                \n                \n                                \n                  (1.327)  \n                  (1.205)  \n                  (1.143)  \n                  (1.408)  \n                \n                \n                  Num.Obs.      \n                  6364     \n                  6772     \n                  6840     \n                  6151"
+  },
+  {
+    "objectID": "slides/week-9.2.html#your-turn-1",
+    "href": "slides/week-9.2.html#your-turn-1",
+    "title": "Logistic Regression",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\nSelect your favorite three countries and a recent year\nCalculate the predicted proability of conflict onset for that year using the marginal effects package\nIf you have time, try to do the calcualation by hand as well\n\n\n\n\n−+\n10:00"
+  },
+  {
+    "objectID": "slides/week-9.2.html#section-2",
+    "href": "slides/week-9.2.html#section-2",
+    "title": "Regression Tables",
+    "section": "",
+    "text": "This don’t look too good…\n\n\nShow the code\nmodelsummary(conflict_model, \n             stars = TRUE,  \n             gof_map = c(\"nobs\"),\n             coef_map = coef_map,\n             title = caption, \n             notes = reference)\n\n\n \n\n  \n    \n    \n    tinytable_yvetiy9pobr7ms6thpnn\n    \n    \n    \n    \n  \n\n  \n    \n      \n        \n        Table 1: Predictors of Conflict Onset\n              \n                 \n                (1)\n              \n        \n        + p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001\nSee appendix for data sources.\n        \n                \n                  Ethnic Frac   \n                  0.800*   \n                \n                \n                                \n                  (0.381)  \n                \n                \n                  Religions Frac\n                  -0.391   \n                \n                \n                                \n                  (0.417)  \n                \n                \n                  Polyarchy     \n                  -0.602   \n                \n                \n                                \n                  (0.509)  \n                \n                \n                  Terrain       \n                  0.064    \n                \n                \n                                \n                  (0.076)  \n                \n                \n                  Per capita GDP\n                  -0.372** \n                \n                \n                                \n                  (0.121)  \n                \n                \n                  Population    \n                  0.293*** \n                \n                \n                                \n                  (0.067)  \n                \n                \n                  Intercept     \n                  -5.693***\n                \n                \n                                \n                  (1.408)  \n                \n                \n                  Num.Obs.      \n                  6151"
+  },
+  {
+    "objectID": "slides/week-9.2.html#section-3",
+    "href": "slides/week-9.2.html#section-3",
+    "title": "Regression Tables",
+    "section": "",
+    "text": "So we can use ggplot to make a coefficient plot instead…\n\n\nShow the code\nlibrary(ggplot2)\n\nmodelplot(conflict_model, \n          coef_map = rev(coef_map), # rev() reverses list order\n          coef_omit = \"Intercept\", \n          color = \"blue\") + # use plus to add customizations like any ggplot object\n  geom_vline(xintercept = 0, color = \"red\", linetype = \"dashed\", linewidth = .75) + # red 0 line\n  labs(\n    title = \"Figure 1: Predictors of Conflict Onset\",\n    caption = \"See appendix for data sources.\"\n  )"
+  },
+  {
+    "objectID": "slides/week-9.2.html#your-turn-2",
+    "href": "slides/week-9.2.html#your-turn-2",
+    "title": "Regression Tables",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\nTake one of your models\nUse modelplot to create a coefficient plot of it\nCustomize the plot to your liking\nInterpret the results\nDiscuss advantages of coefficient plots with a neighbor\n\n\n\n\n−+\n12:00"
+  },
+  {
+    "objectID": "slides/week-9.2.html#binary-outcomes-1",
+    "href": "slides/week-9.2.html#binary-outcomes-1",
+    "title": "Logistic Regression",
+    "section": "Binary Outcomes",
+    "text": "Binary Outcomes\n\n\nSo far we have looked at continuous or numerical outcomes (response variables)\nWe are often also interested in outcome variables that are binary (Yes/No, or 1/0)\n\nDid violence happen, or not?\nClassification: is this email spam?"
+  },
+  {
+    "objectID": "slides/week-9.2.html#example-conflict-onset",
+    "href": "slides/week-9.2.html#example-conflict-onset",
+    "title": "Logistic Regression",
+    "section": "Example: Conflict Onset",
+    "text": "Example: Conflict Onset\n\n\n\nDid a civil war begin in a given country in a given year? (yes/no)\nPredictors: wealth, democracy, terrain, ethnic diversity, etc.\nSeminal work by Fearon and Laitin (2003)\nWe can use logistic regression to model this binary outcome"
+  },
+  {
+    "objectID": "slides/week-9.2.html#modeling",
+    "href": "slides/week-9.2.html#modeling",
+    "title": "Logistic Regression",
+    "section": "Modeling",
+    "text": "Modeling\n\n\n\nWe can treat each outcome (conflict onset) as successes and failures arising from separate Bernoulli trials\nBernoulli trial: a random experiment with exactly two possible outcomes, “success” and “failure”, in which the probability of success is the same every time the experiment is conducted\nSuccess is usually coded as 1, failure as 0\nSo ironically, conflict onset is a “success” in this context"
+  },
+  {
+    "objectID": "slides/week-9.2.html#modeling-1",
+    "href": "slides/week-9.2.html#modeling-1",
+    "title": "Logistic Regression",
+    "section": "Modeling",
+    "text": "Modeling\n\nEach Bernoulli trial can have a separate probability of success\n\n\\[ y_i ∼ Bern(p) \\]"
+  },
+  {
+    "objectID": "slides/week-9.2.html#modeling-2",
+    "href": "slides/week-9.2.html#modeling-2",
+    "title": "Logistic Regression",
+    "section": "Modeling",
+    "text": "Modeling\n\n\nWe can then use the predictor variables to model that probability of success, \\(p_i\\)\nWe can’t really use a linear model for \\(p_i\\) (since \\(p_i\\) must be between 0 and 1) but we can transform the linear model to have the appropriate range"
+  },
+  {
+    "objectID": "slides/week-9.2.html#generalized-linear-models",
+    "href": "slides/week-9.2.html#generalized-linear-models",
+    "title": "Logistic Regression",
+    "section": "Generalized Linear Models",
+    "text": "Generalized Linear Models\n\n\nThis is a very general way of addressing many problems in regression and the resulting models are called generalized linear models (GLMs)\nLogistic regression is a very common example"
+  },
+  {
+    "objectID": "slides/week-9.2.html#glms",
+    "href": "slides/week-9.2.html#glms",
+    "title": "Logistic Regression",
+    "section": "GLMs",
+    "text": "GLMs\n\nAll GLMs have the following three characteristics:\n\n\nA probability distribution describing a generative model for the outcome variable\nA linear model: \\[\\eta = \\beta_0 + \\beta_1 X_1 + \\cdots + \\beta_k X_k\\]\nA link function that relates the linear model to the parameter of the outcome distribution"
+  },
+  {
+    "objectID": "slides/week-9.2.html#logistic-regression",
+    "href": "slides/week-9.2.html#logistic-regression",
+    "title": "Logistic Regression",
+    "section": "Logistic Regression",
+    "text": "Logistic Regression\n\n\nLogistic regression is a GLM used to model a binary categorical outcome (0 or 1)\nIn logistic regression, the link function that connects \\(\\eta_i\\) to \\(p_i\\) is the logit function\nLogit function: For \\(0\\le p \\le 1\\)\n\n\\[logit(p) = \\log\\left(\\frac{p}{1-p}\\right)\\]"
+  },
+  {
+    "objectID": "slides/week-9.2.html#logit-function",
+    "href": "slides/week-9.2.html#logit-function",
+    "title": "Logistic Regression",
+    "section": "Logit Function",
+    "text": "Logit Function"
+  },
+  {
+    "objectID": "slides/week-9.2.html#logistic-regression-model",
+    "href": "slides/week-9.2.html#logistic-regression-model",
+    "title": "Logistic Regression",
+    "section": "Logistic Regression Model",
+    "text": "Logistic Regression Model\n\n\n\n\\(y_i \\sim \\text{Bern}(p_i)\\)\n\\(\\eta_i = \\beta_0+ \\beta_1 x_{1,i} + \\cdots + \\beta_n x_{n,i}\\)\n\\(\\text{logit}(p_i) = \\eta_i\\)"
+  },
+  {
+    "objectID": "slides/week-9.2.html#logistic-regression-model-1",
+    "href": "slides/week-9.2.html#logistic-regression-model-1",
+    "title": "Logistic Regression",
+    "section": "Logistic Regression Model",
+    "text": "Logistic Regression Model\n\n\n\\(\\text{logit}(p_i) = \\eta_i = \\beta_0+ \\beta_1 x_{1,i} + \\cdots + \\beta_n x_{n,i}\\)\nNow take inverse logit to get \\(p\\)\n\n\\[p_i = \\frac{\\exp(\\beta_0+\\beta_1 x_{1,i} + \\cdots + \\beta_k x_{k,i})}{1+\\exp(\\beta_0+\\beta_1 x_{1,i} + \\cdots + \\beta_k x_{k,i})}\\]"
+  },
+  {
+    "objectID": "slides/week-9.2.html#the-peacesciencer-package",
+    "href": "slides/week-9.2.html#the-peacesciencer-package",
+    "title": "Logistic Regression",
+    "section": "The peacesciencer Package",
+    "text": "The peacesciencer Package\n\nThe peacesciencer package provides a number of datasets and functions for analyzing conflict and peace\nProvides data from a number of important datasets in the field of conflict studies, e.g.\n\nCorrelates of War (CoW) project\nUppsala Conflict Data Program (UCDP)\nMilitarized Interstate Dispute (MID) dataset\n\nProvides functions for analyzing conflict and adding control variables to the dataset"
+  },
+  {
+    "objectID": "slides/week-9.2.html#using-the-peacesciencer-package",
+    "href": "slides/week-9.2.html#using-the-peacesciencer-package",
+    "title": "Logistic Regression",
+    "section": "Using the peacesciencer Package",
+    "text": "Using the peacesciencer Package\n\n\nlibrary(peacesciencer)\nlibrary(tidymodels)\n\nconflict_df &lt;- create_stateyears(system = 'gw') |&gt;\n  filter(year %in% c(1946:1999)) |&gt;\n  add_ucdp_acd(type=c(\"intrastate\"), only_wars = FALSE) |&gt;\n  add_democracy() |&gt;\n  add_creg_fractionalization() |&gt;\n  add_sdp_gdp() |&gt;\n  add_rugged_terrain()\n\nglimpse(conflict_df)\n\nRows: 7,036\nColumns: 20\n$ gwcode         &lt;dbl&gt; 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2…\n$ statename      &lt;chr&gt; \"United States of America\", \"United States of America\",…\n$ year           &lt;dbl&gt; 1946, 1947, 1948, 1949, 1950, 1951, 1952, 1953, 1954, 1…\n$ ucdpongoing    &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…\n$ ucdponset      &lt;dbl&gt; 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0…\n$ maxintensity   &lt;dbl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n$ conflict_ids   &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,…\n$ v2x_polyarchy  &lt;dbl&gt; 0.605, 0.587, 0.599, 0.599, 0.587, 0.602, 0.601, 0.594,…\n$ polity2        &lt;dbl&gt; 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,…\n$ xm_qudsest     &lt;dbl&gt; 1.259180, 1.259180, 1.252190, 1.252190, 1.270106, 1.259…\n$ ethfrac        &lt;dbl&gt; 0.2226323, 0.2248701, 0.2271561, 0.2294918, 0.2318781, …\n$ ethpol         &lt;dbl&gt; 0.4152487, 0.4186156, 0.4220368, 0.4255134, 0.4290458, …\n$ relfrac        &lt;dbl&gt; 0.4980802, 0.5009111, 0.5037278, 0.5065309, 0.5093204, …\n$ relpol         &lt;dbl&gt; 0.7769888, 0.7770017, 0.7770303, 0.7770729, 0.7771274, …\n$ wbgdp2011est   &lt;dbl&gt; 28.539, 28.519, 28.545, 28.534, 28.572, 28.635, 28.669,…\n$ wbpopest       &lt;dbl&gt; 18.744, 18.756, 18.781, 18.804, 18.821, 18.832, 18.848,…\n$ sdpest         &lt;dbl&gt; 28.478, 28.456, 28.483, 28.469, 28.510, 28.576, 28.611,…\n$ wbgdppc2011est &lt;dbl&gt; 9.794, 9.762, 9.764, 9.730, 9.752, 9.803, 9.821, 9.857,…\n$ rugged         &lt;dbl&gt; 1.073, 1.073, 1.073, 1.073, 1.073, 1.073, 1.073, 1.073,…\n$ newlmtnest     &lt;dbl&gt; 3.214868, 3.214868, 3.214868, 3.214868, 3.214868, 3.214…"
+  },
+  {
+    "objectID": "slides/week-9.2.html#running-a-logistic-regression",
+    "href": "slides/week-9.2.html#running-a-logistic-regression",
+    "title": "Logistic Regression",
+    "section": "Running a Logistic Regression",
+    "text": "Running a Logistic Regression\n\n\nImplementation is not very different from a linear model\nWe just need to update our code to run a GLM\n\nspecify the model with logistic_reg()\nuse \"glm\" instead of \"lm\" as the engine\n\ndefine family = \"binomial\" for the link function to be used in the model"
+  },
+  {
+    "objectID": "slides/week-9.2.html#bivariate-logistic-regression",
+    "href": "slides/week-9.2.html#bivariate-logistic-regression",
+    "title": "Logistic Regression",
+    "section": "Bivariate Logistic Regression",
+    "text": "Bivariate Logistic Regression\n\n\nconflict_model &lt;- glm(ucdponset ~ wbgdppc2011est,\n                  data= conflict_df,\n                  family = \"binomial\")\n\nsummary(conflict_model)\n\n\nCall:\nglm(formula = ucdponset ~ wbgdppc2011est, family = \"binomial\", \n    data = conflict_df)\n\nCoefficients:\n               Estimate Std. Error z value Pr(&gt;|z|)    \n(Intercept)    -1.16241    0.42606  -2.728  0.00637 ** \nwbgdppc2011est -0.33082    0.05261  -6.289  3.2e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n(Dispersion parameter for binomial family taken to be 1)\n\n    Null deviance: 1389.6  on 7035  degrees of freedom\nResidual deviance: 1358.4  on 7034  degrees of freedom\nAIC: 1362.4\n\nNumber of Fisher Scoring iterations: 7"
+  },
+  {
+    "objectID": "slides/week-9.2.html#interpreting-the-results",
+    "href": "slides/week-9.2.html#interpreting-the-results",
+    "title": "Logistic Regression",
+    "section": "Interpreting the Results",
+    "text": "Interpreting the Results\n\n\\[\\log\\left(\\frac{p}{1-p}\\right) = -1.16-0.33\\times \\text{logGDPpc}\\]"
+  },
+  {
+    "objectID": "slides/week-9.2.html#interpreting-the-results-1",
+    "href": "slides/week-9.2.html#interpreting-the-results-1",
+    "title": "Logistic Regression",
+    "section": "Interpreting the Results",
+    "text": "Interpreting the Results\n\n\nFor a quick interpretation of the coefficients, we can exponentiate them\nThe exponentiated coefficient is the odds ratio\nFor each one-unit increase in the independent variable, the odds of the outcome occurring increase (or decrease) by a factor of the exponentiated coefficient"
+  },
+  {
+    "objectID": "slides/week-9.2.html#interpreting-the-results-2",
+    "href": "slides/week-9.2.html#interpreting-the-results-2",
+    "title": "Logistic Regression",
+    "section": "Interpreting the Results",
+    "text": "Interpreting the Results\n\n\\[\\log\\left(\\frac{p}{1-p}\\right) = -1.16-0.33\\times \\text{logGDPpc}\\]\n\nFor each one unit increase in log GDP per capita, the odds of the outcome occurring are multiplied by approximately 0.718, assuming other variables in the model are held constant.\n\nThis means that an increase in GDP per capita is associated with a decrease in the odds of the outcome occurring. The odds of the outcome decrease by about 28.2% for each unit increase in GDP per capita (on average)."
+  },
+  {
+    "objectID": "slides/week-9.2.html#calculating-predicted-probabilities",
+    "href": "slides/week-9.2.html#calculating-predicted-probabilities",
+    "title": "Logistic Regression",
+    "section": "Calculating Predicted Probabilities",
+    "text": "Calculating Predicted Probabilities\n\nProbability of conflict onset for a country with a log per capita GDP of 9 (about $8,000):\n\\[\\log\\left(\\frac{p}{1-p}\\right) = -1.16-0.33\\times 9\\] \\[\\log\\left(\\frac{p}{1-p}\\right) = -4.13\\]\n\\[\\frac{p}{1-p} = \\exp(-4.13)\\]\n\\[\\frac{p}{1-p} = 0.016\\]\n\\[p = 0.016 \\times (1 - p)\\] \\[p = 0.016 - 0.016p\\]\n\\[1.016p = 0.016\\] \\[p = 0.016 / 1.016\\] \\[p = 0.0158\\]"
+  },
+  {
+    "objectID": "slides/week-9.2.html#using-marginaleffects",
+    "href": "slides/week-9.2.html#using-marginaleffects",
+    "title": "Logistic Regression",
+    "section": "Using marginaleffects",
+    "text": "Using marginaleffects\n\n# load the marginaleffects library\nlibrary(marginaleffects)\n\n# select some countries for a given year\nselected_countries &lt;- conflict_df |&gt;\n  filter(\n    statename %in% c(\"United States of America\", \"Venezuela\", \"Rwanda\"),\n    year == 1999)\n\n# calculate margins for the subset\nmarg_effects &lt;- predictions(conflict_model, newdata = selected_countries)\n\n# view the results\nlibrary(broom)\n\ntidy(marg_effects) |&gt;\n  select(statename, estimate, p.value, conf.low, conf.high)"
+  },
+  {
+    "objectID": "slides/week-9.2.html#using-marginaleffects-1",
+    "href": "slides/week-9.2.html#using-marginaleffects-1",
+    "title": "Logistic Regression",
+    "section": "Using marginaleffects",
+    "text": "Using marginaleffects\n\n\n\n# A tibble: 3 × 5\n  statename                estimate   p.value conf.low conf.high\n  &lt;chr&gt;                       &lt;dbl&gt;     &lt;dbl&gt;    &lt;dbl&gt;     &lt;dbl&gt;\n1 United States of America  0.00853 4.20e-161  0.00606    0.0120\n2 Venezuela                 0.0141  0          0.0113     0.0175\n3 Rwanda                    0.0311  1.36e-250  0.0256     0.0377"
   }
 ]

@@ -1,0 +1,347 @@
+---
+title: Logistic Regression
+subtitle: Classification
+date: today
+date-format: long
+footer: "[DATS 1001 Website](https://ds4all.rocks)"
+logo: images/ds4all-logo.png
+format:
+  revealjs:
+    theme: [simple, custom.scss]
+    transition: fade
+    slide-number: true
+    #multiplex: true
+    chalkboard: true
+execute:
+  echo: false
+  message: false
+  warning: false
+  freeze: auto
+---
+
+```{r packages, echo = FALSE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(tidymodels)
+library(peacesciencer)
+```
+
+# Binary Outcomes
+
+## Binary Outcomes
+
+<br>
+
+- So far we have looked at continuous or numerical outcomes (response variables)
+- We are often also interested in outcome variables that are binary (Yes/No, or 1/0)
+    - Did violence happen, or not?
+    - Classification: is this email spam?
+
+## Example: Conflict Onset
+
+<br>
+
+::: {.incremental}
+- Did a civil war begin in a given country in a given year? (yes/no)
+- Predictors: wealth, democracy, terrain, ethnic diversity, etc. 
+- Seminal work by Fearon and Laitin (2003) 
+- We can use logistic regression to model this binary outcome
+:::
+
+## Modeling
+
+<br>
+
+::: {.incremental}
+- We can treat each outcome (conflict onset) as successes and failures arising from separate Bernoulli trials
+- **Bernoulli trial**: a random experiment with exactly two possible outcomes, "success" and "failure", in which the probability of success is the same every time the experiment is conducted
+- Success is usually coded as 1, failure as 0
+- So ironically, conflict onset is a "success" in this context
+:::
+
+## Modeling
+
+<br>
+
+Each Bernoulli trial can have a separate probability of success
+
+<br>
+
+$$ y_i ∼ Bern(p) $$
+
+## Modeling
+
+<br>
+
+- We can then use the predictor variables to model that probability of success, $p_i$
+- We can't really use a linear model for $p_i$ (since $p_i$ must be between 0 and 1) but we can transform the linear model to have the appropriate range
+
+
+## Generalized Linear Models
+
+<br>
+
+- This is a very general way of addressing many problems in regression and the resulting models are called **generalized linear models (GLMs)**
+- Logistic regression is a very common example
+
+## GLMs
+
+<br>
+
+All GLMs have the following three characteristics:
+
+::: {.incremental}
+- A probability distribution describing a generative model for the outcome variable
+- A linear model:
+$$\eta = \beta_0 + \beta_1 X_1 + \cdots + \beta_k X_k$$
+- A link function that relates the linear model to the parameter of the outcome distribution
+:::
+  
+## Logistic Regression
+
+<br>
+
+- Logistic regression is a GLM used to model a binary categorical outcome (0 or 1)
+- In logistic regression, the link function that connects $\eta_i$ to $p_i$ is the **logit function**
+- **Logit function:** For $0\le p \le 1$
+
+$$logit(p) = \log\left(\frac{p}{1-p}\right)$$
+
+## Logit Function
+
+
+```{r}
+#| label: logit_function
+
+d <- tibble(p = seq(0.001, 0.999, length.out = 1000)) %>%
+  mutate(logit_p = log(p/(1-p)))
+
+ggplot(d, aes(x = p, y = logit_p)) + 
+  geom_line() + 
+  xlim(0,1) + 
+  ylab("logit(p)") +
+  labs(title = "logit(p) vs. p")
+```
+
+
+## Logistic Regression Model
+
+<br>
+
+::: {.incremental}
+- $y_i \sim \text{Bern}(p_i)$
+- $\eta_i = \beta_0+ \beta_1 x_{1,i} + \cdots + \beta_n x_{n,i}$
+- $\text{logit}(p_i) = \eta_i$
+:::
+
+## Logistic Regression Model
+
+<br>
+
+- $\text{logit}(p_i) = \eta_i = \beta_0+ \beta_1 x_{1,i} + \cdots + \beta_n x_{n,i}$
+- Now take inverse logit to get $p$
+
+$$p_i = \frac{\exp(\beta_0+\beta_1 x_{1,i} + \cdots + \beta_k x_{k,i})}{1+\exp(\beta_0+\beta_1 x_{1,i} + \cdots + \beta_k x_{k,i})}$$
+
+# Analyzing Conflict Onset
+
+## The `peacesciencer` Package
+
+- The `peacesciencer` package provides a number of datasets and functions for analyzing conflict and peace
+- Provides data from a number of important datasets in the field of conflict studies, e.g.
+  - Correlates of War (CoW) project
+  - Uppsala Conflict Data Program (UCDP)
+  - Militarized Interstate Dispute (MID) dataset
+- Provides functions for analyzing conflict and adding control variables to the dataset
+
+## Using the `peacesciencer` Package
+
+<br>
+
+```{r}
+#| label: use_peacesciencer
+#| echo: true
+
+library(peacesciencer)
+library(tidymodels)
+
+conflict_df <- create_stateyears(system = 'gw') |>
+  filter(year %in% c(1946:1999)) |>
+  add_ucdp_acd(type=c("intrastate"), only_wars = FALSE) |>
+  add_democracy() |>
+  add_creg_fractionalization() |>
+  add_sdp_gdp() |>
+  add_rugged_terrain()
+
+glimpse(conflict_df)
+```
+
+## Running a Logistic Regression
+
+<br>
+
+- Implementation is not very different from a linear model
+- We just need to update our code to run a GLM
+    - specify the model with `logistic_reg()`
+    - use `"glm"` instead of `"lm"` as the engine     
+    - define `family = "binomial"` for the link function to be used in the model
+
+## Bivariate Logistic Regression
+
+<br>
+
+```{r}
+#| label: bivariate_model
+#| echo: true
+
+conflict_model <- glm(ucdponset ~ wbgdppc2011est,
+                  data= conflict_df,
+                  family = "binomial")
+
+summary(conflict_model)
+```
+
+## Interpreting the Results
+
+<br>
+
+
+$$\log\left(\frac{p}{1-p}\right) = -1.16-0.33\times \text{logGDPpc}$$
+
+## Interpreting the Results
+
+<br> 
+
+- For a quick interpretation of the coefficients, we can exponentiate them
+- The exponentiated coefficient is the odds ratio
+- For each one-unit increase in the independent variable, the odds of the outcome occurring increase (or decrease) by a factor of the exponentiated coefficient
+
+## Interpreting the Results {.smaller}
+
+<br>
+
+$$\log\left(\frac{p}{1-p}\right) = -1.16-0.33\times \text{logGDPpc}$$
+
+<br>
+
+For each one unit increase in log GDP per capita, the odds of the outcome occurring are multiplied by approximately 0.718, assuming other variables in the model are held constant. 
+
+<br>
+
+This means that an increase in GDP per capita is associated with a **decrease** in the odds of the outcome occurring. The odds of the outcome decrease by about 28.2% for each unit increase in GDP per capita (on average).
+
+## Your Turn! {.smaller}
+
+<br>
+
+- Run a bivariate logistic regression using ucdp onset as the outcome variable
+- First replicate the results using GDP per capita as the predictor
+- Now try a different predictor
+- Interpret the results
+  - What is the average effect of the predictor on conflict onset? 
+  - How do you interpret that effect in terms of the odds of conflict onset?
+  
+```{r}
+#| label: time1
+
+library(countdown)
+
+countdown(minutes = 10, 
+          id = "timer1", 
+          bottom = "5%", 
+          right = "10%",
+          color_border = "#fff",
+          color_text = "#fff",
+          color_running_background = "#42affa",
+          color_running_text = "black",
+          color_finished_background = "#E5D19D",
+          color_finished_text = "#00264A")
+```
+
+## Calculating Predicted Probabilities {.scrollable}
+
+<br>
+
+Probability of conflict onset for a country with a log per capita GDP of 9 (about $8,000):
+
+$$\log\left(\frac{p}{1-p}\right) = -1.16-0.33\times 9$$
+$$\log\left(\frac{p}{1-p}\right) = -4.13$$
+
+$$\frac{p}{1-p} = \exp(-4.13)$$
+
+$$\frac{p}{1-p} = 0.016$$
+
+$$p = 0.016 \times (1 - p)$$
+$$p = 0.016 - 0.016p$$ 
+
+$$1.016p = 0.016$$
+$$p = 0.016 / 1.016$$
+$$p = 0.0158$$
+
+## Using `marginaleffects` 
+
+```{r}
+#| label: marginal_effects
+#| echo: true
+#| eval: false
+
+# load the marginaleffects library
+library(marginaleffects)
+
+# select some countries for a given year
+selected_countries <- conflict_df |>
+  filter(
+    statename %in% c("United States of America", "Venezuela", "Rwanda"),
+    year == 1999)
+
+# calculate margins for the subset
+marg_effects <- predictions(conflict_model, newdata = selected_countries)
+
+# view the results
+library(broom)
+
+tidy(marg_effects) |>
+  select(statename, estimate, p.value, conf.low, conf.high)
+```
+
+## Using `marginaleffects`
+
+<br>
+
+```{r}
+#| label: marginal_effects2
+
+# load the 
+library(marginaleffects)
+
+# seledct some countries for a given year
+selected_countries <- conflict_df |>
+  filter(
+    statename %in% c("United States of America", "Venezuela", "Rwanda"),
+    year == 1999)
+
+# calculate margins for the subset
+marg_effects <- predictions(conflict_model, newdata = selected_countries)
+
+# view the results
+tidy(marg_effects) |>
+  select(statename, estimate, p.value, conf.low, conf.high)
+```
+
+
+## Your Turn!
+
+<br>
+
+- Select your favorite three countries and a recent year
+- Calculate the predicted proability of conflict onset for that year using the marginal effects package
+- If you have time, try to do the calcualation by hand as well
+
+```{r}
+#| label: time2
+
+countdown(minutes = 10, 
+          id = "timer2", 
+          bottom = "10%", 
+          right = "10%")
+```
+
