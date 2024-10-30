@@ -345,3 +345,38 @@ countdown(minutes = 10,
           right = "10%")
 ```
 
+# More on Odds Ratios
+
+## What is an Odds Ratio?
+
+- **Definition**: An odds ratio (OR) is a measure of association between a predictor variable and the outcome, showing how the odds of the outcome change with a one-unit increase in the predictor.
+- **Interpretation**:
+  - **OR > 1**: The odds of the outcome increase as the predictor increases.
+  - **OR < 1**: The odds of the outcome decrease as the predictor increases.
+
+## Examples
+
+<br>
+
+- **OR = 1.5**: For each one-unit increase in the predictor, the odds of the outcome increase by 50%.
+- **OR = 0.7**: For each one-unit increase in the predictor, the odds of the outcome decrease by 30%.
+
+## Our Conflict Model
+
+| Variable         | Logit Coefficient | Odds Ratio |
+|------------------|-------------------|------------|
+| (Intercept)      | -5.3342           | 0.0048     |
+| v2x_polyarchy    | -0.6304           | 0.5325     |
+| ethfrac          | 0.7615            | 2.1418     |
+| relfrac          | -0.4569           | 0.6332     |
+| wbpopest         | 0.2851            | 1.3298     |
+| wbgdppc2011est   | -0.3826           | 0.6821     |
+
+## Slide 3: Interpretation of Odds Ratios {.smaller}
+
+- **(Intercept)**: An OR of 0.0048 indicates the baseline odds of \(y\) when all predictors are zero.
+- **v2x_polyarchy**: An OR of 0.5325 implies that for each one-unit increase in v2x_polyarchy, the odds of \(y\) decrease by approximately 46.8%.
+- **ethfrac**: An OR of 2.1418 indicates that for each one-unit increase in ethfrac, the odds of \(y\) increase by approximately 114.2%.
+- **relfrac**: An OR of 0.6332 suggests that for each one-unit increase in relfrac, the odds of \(y\) decrease by approximately 36.7%.
+- **wbpopest**: An OR of 1.3298 implies that for each one-unit increase in wbpopest, the odds of \(y\) increase by about 32.98%.
+- **wbgdppc2011est**: An OR of 0.6821 indicates that for each one-unit increase in wbgdppc2011est, the odds of \(y\) decrease by about 31.8%.

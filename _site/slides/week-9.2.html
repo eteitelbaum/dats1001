@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-5223d57514b7f3c9e8f675d86406bf62.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.18">
 
-  <meta name="dcterms.date" content="2024-10-23">
+  <meta name="dcterms.date" content="2024-10-30">
   <title>DATS 1001--Fall Schedule – Logistic Regression</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -407,7 +407,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">October 23, 2024</p>
+  <p class="date">October 30, 2024</p>
 </section>
 <section>
 <section id="binary-outcomes" class="title-slide slide level1 center">
@@ -732,6 +732,85 @@ Number of Fisher Scoring iterations: 7</code></pre>
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="more-on-odds-ratios" class="title-slide slide level1 center">
+<h1>More on Odds Ratios</h1>
+
+</section>
+<section id="what-is-an-odds-ratio" class="slide level2">
+<h2>What is an Odds Ratio?</h2>
+<ul>
+<li><strong>Definition</strong>: An odds ratio (OR) is a measure of association between a predictor variable and the outcome, showing how the odds of the outcome change with a one-unit increase in the predictor.</li>
+<li><strong>Interpretation</strong>:
+<ul>
+<li><strong>OR &gt; 1</strong>: The odds of the outcome increase as the predictor increases.</li>
+<li><strong>OR &lt; 1</strong>: The odds of the outcome decrease as the predictor increases.</li>
+</ul></li>
+</ul>
+</section>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+<p><br></p>
+<ul>
+<li><strong>OR = 1.5</strong>: For each one-unit increase in the predictor, the odds of the outcome increase by 50%.</li>
+<li><strong>OR = 0.7</strong>: For each one-unit increase in the predictor, the odds of the outcome decrease by 30%.</li>
+</ul>
+</section>
+<section id="our-conflict-model" class="slide level2">
+<h2>Our Conflict Model</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Logit Coefficient</th>
+<th>Odds Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>(Intercept)</td>
+<td>-5.3342</td>
+<td>0.0048</td>
+</tr>
+<tr class="even">
+<td>v2x_polyarchy</td>
+<td>-0.6304</td>
+<td>0.5325</td>
+</tr>
+<tr class="odd">
+<td>ethfrac</td>
+<td>0.7615</td>
+<td>2.1418</td>
+</tr>
+<tr class="even">
+<td>relfrac</td>
+<td>-0.4569</td>
+<td>0.6332</td>
+</tr>
+<tr class="odd">
+<td>wbpopest</td>
+<td>0.2851</td>
+<td>1.3298</td>
+</tr>
+<tr class="even">
+<td>wbgdppc2011est</td>
+<td>-0.3826</td>
+<td>0.6821</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="slide-3-interpretation-of-odds-ratios" class="slide level2 smaller">
+<h2>Slide 3: Interpretation of Odds Ratios</h2>
+<ul>
+<li><strong>(Intercept)</strong>: An OR of 0.0048 indicates the baseline odds of (y) when all predictors are zero.</li>
+<li><strong>v2x_polyarchy</strong>: An OR of 0.5325 implies that for each one-unit increase in v2x_polyarchy, the odds of (y) decrease by approximately 46.8%.</li>
+<li><strong>ethfrac</strong>: An OR of 2.1418 indicates that for each one-unit increase in ethfrac, the odds of (y) increase by approximately 114.2%.</li>
+<li><strong>relfrac</strong>: An OR of 0.6332 suggests that for each one-unit increase in relfrac, the odds of (y) decrease by approximately 36.7%.</li>
+<li><strong>wbpopest</strong>: An OR of 1.3298 implies that for each one-unit increase in wbpopest, the odds of (y) increase by about 32.98%.</li>
+<li><strong>wbgdppc2011est</strong>: An OR of 0.6821 indicates that for each one-unit increase in wbgdppc2011est, the odds of (y) decrease by about 31.8%.</li>
+</ul>
 
 
 </section></section>
