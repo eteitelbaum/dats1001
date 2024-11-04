@@ -55,8 +55,8 @@ website:
             text: "Assignment 1"
           - href: assignments/coding-assignment-2.qmd
             text: "Assignment 2"
-          # - href: assignments/coding-assignment-3.qmd
-          #   text: "Assignment 3"
+          - href: assignments/coding-assignment-3.qmd
+            text: "Assignment 3"
           # - href: assignments/coding-assignment-4.qmd
           #   text: "Assignment 4"
           # - href: assignments/coding-assignment-5.qmd
