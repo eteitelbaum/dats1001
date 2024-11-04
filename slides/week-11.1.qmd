@@ -1,0 +1,415 @@
+---
+title: Distributions I
+subtitle: Categorical Variables
+date: today
+date-format: long
+footer: "[DATS 1001 Website](https://ds4all.rocks)"
+logo: images/ds4all-logo.png
+format:
+  revealjs:
+    theme: [simple, custom.scss]
+    transition: fade
+    slide-number: true
+    chalkboard: true
+    from: markdown+emoji
+execute:
+  echo: true
+  message: false
+  warning: false
+  freeze: auto
+---
+
+# Thinking About Data
+
+## 
+
+What are some ways we can classify data? :sunglasses: :thought_balloon:
+
+. . .
+
+::: {.incremental}
+- anecdotal vs. representative
+- census vs. sample
+- observational vs. experimental
+- categorical vs. numerical
+- discrete vs. continuous
+- cross-sectional vs. time series
+- longitudinal vs. panel
+- unstructured vs. structured
+:::
+
+## 
+
+What are some ways we can classify data? :sunglasses: :thought_balloon:
+
+- anecdotal vs. representative
+- census vs. sample
+- observational vs. experimental
+- **categorical vs. numerical**
+- **discrete vs. continuous**
+- cross-sectional vs. time series
+- longitudinal vs. panel
+- unstructured vs. structured
+
+## Variable Types
+    
+-   Categorical
+    - Binary - two categories
+    - Nominal - multiple unordered categories
+    - Ordinal - multiple ordered categories
+-   Numerical
+    - Continuous - fractional values (measurement data)
+    - Discrete - non-negative whole numbers (count data)
+
+## 
+
+What types of variables are these? :thinking:
+
+::: {.incremental}
+-  Is a country a democracy? (yes/no)
+-  Polity (-10 to 10 in 1 unit increments)
+-  V-Dem Polyarchy (0-1 in 0.01 increments)
+-  V-Dem Regimes of the World Measure 
+    - closed autocracy | electoral autocracy | electoral democracy | democracy
+- Number of protest events
+- Protest types (sit in, march, strike, etc.)
+:::
+
+# Categorical Data
+
+## V-Dem Regimes of the World Measure
+
+<br>
+
+-   Closed Autocracy
+-   Electoral Autocracy
+-   Electoral Democracy
+-   Liberal Democracy
+
+## Data Setup {.smaller}
+
+```{r}
+#| label: setup
+
+library(tidyverse)
+library(vdemlite)
+
+vdem2022 <- fetchdem(indicators = c("v2x_regime", "e_regionpol_6C"), 
+                     start_year = 2022, end_year = 2022) |>
+  rename(
+    country = country_name, 
+    regime = v2x_regime, 
+    region = e_regionpol_6C
+    ) |>
+  mutate(
+    region = case_match(region, 
+                     1 ~ "Eastern Europe", 
+                     2 ~ "Latin America",  
+                     3 ~ "Middle East",   
+                     4 ~ "Africa", 
+                     5 ~ "The West", 
+                     6 ~ "Asia"),
+    regime = case_match(regime,
+                    0 ~ "Closed Autocracy",
+                    1 ~ "Electoral Autocracy",
+                    2 ~  "Electoral Democracy",
+                    3 ~  "Liberal Democracy")
+  )
+```
+
+## Examine the Data
+
+<br>
+
+```{r}
+#| label: glimpse2
+#| echo: true
+
+glimpse(vdem2022)
+```
+
+## 
+
+<br>
+
+Let's count the number of regimes by type...
+
+<br>
+
+```{r}
+#| label: regime-count
+
+vdem2022 |>
+  count(regime)
+```
+
+
+## 
+
+Now let's visualize the distribution of regimes with a bar plot...
+
+```{r}
+#| label: regime-bar-1
+#| echo: false
+
+vdem2022 |>
+  ggplot(aes(x = regime)) +
+  geom_bar(fill = "steelblue") +
+  labs(
+    x = "Regime",
+    y = "Frequency",
+    title = "Regimes of the World in 2022",
+    caption = "Source: V-Dem Institute"
+  ) +
+  theme_minimal()
+```
+
+## 
+
+Now let's visualize the distribution of regimes with a bar plot...
+
+<br>
+
+```{r}
+#| label: regime-bar-2
+#| output: false 
+
+vdem2022 |>
+  ggplot(aes(x = regime)) +
+  geom_bar(fill = "steelblue") +
+  labs(
+    x = "Regime",
+    y = "Frequency",
+    title = "Regimes of the World in 2022",
+    caption = "Source: V-Dem Institute"
+  ) +
+  theme_minimal()
+```
+
+## 
+
+Now let's visualize the distribution of regimes with a bar plot...
+
+<br>
+
+```{r}
+#| label: regime-bar-3
+#| output: false 
+#| code-line-numbers: "3"
+
+vdem2022 |>
+  ggplot(aes(x = regime)) +
+  geom_bar(fill = "steelblue") +
+  labs(
+    x = "Regime",
+    y = "Frequency",
+    title = "Regimes of the World in 2022",
+    caption = "Source: V-Dem Institute"
+  ) +
+  theme_minimal()
+```
+
+## More about `geom_bar()`
+
+<br>
+
+-  `geom_bar()` is different from `geom_col()`
+-   Used to create bar plots where the height of the bar represents counts or frequencies of categorical variable
+-   By default, geom_bar() counts the number of occurrences of each category or group and plots it as the height of the bar
+-   Like `geom_histogram()`, `geom_bar()` only requires the x aesthetic (y is automatically calcualted for you)
+
+## Your Turn! 
+
+- Expore the distribution of regimes for a different year
+- Preprocess your data to include only the year you are interested in
+- Visualize the distribution of regimes using `geom_bar()`
+- Use the `labs()` function to change title
+- What is different about the year that you chose relative to 2022?
+
+```{r}
+#| label: time1
+#| echo: false
+
+library(countdown)
+
+countdown(minutes = 5, 
+          id = "timer1", 
+          bottom = "10%", 
+          right = "10%",
+          color_border = "#fff",
+          color_text = "#fff",
+          color_running_background = "#42affa",
+          color_running_text = "black",
+          color_finished_background = "#E5D19D",
+          color_finished_text = "#00264A")
+```
+
+
+## How do Regimes Vary by Region?
+
+<br>
+
+```{r}
+#| label: regime-region-1
+#| code-fold: true
+
+vdem2022 |>
+  ggplot(aes(x = region, fill = regime)) +
+      geom_bar() +
+  theme_minimal() +
+  labs(
+    x = "Region",
+    y = "Frequency",
+    title = "Regimes of the World by World Region in 2022",
+    caption = "Source: V-Dem Institute",
+    fill = "Regime"
+  ) +
+  scale_fill_viridis_d(option = "inferno", end = .8)
+```
+
+## How do Regimes Vary by Region?
+
+<br>
+
+```{r}
+#| label: regime-region-2
+#| output: false
+
+vdem2022 |>
+  ggplot(aes(x = region, fill = regime)) +
+      geom_bar() +
+  theme_minimal() +
+  labs(
+    x = "Region",
+    y = "Frequency",
+    title = "Regimes of the World by World Region in 2022",
+    caption = "Source: V-Dem Institute",
+    fill = "Regime"
+  ) +
+  scale_fill_viridis_d(option = "inferno", end = .8)
+```
+
+## How do Regimes Vary by Region?
+
+<br>
+
+```{r}
+#| label: regime-region-3
+#| output: false
+#| code-line-numbers: "2"
+
+vdem2022 |>
+  ggplot(aes(x = region, fill = regime)) +
+      geom_bar() +
+  theme_minimal() +
+  labs(
+    x = "Region",
+    y = "Frequency",
+    title = "Regimes of the World by World Region in 2022",
+    caption = "Source: V-Dem Institute",
+    fill = "Regime"
+  ) +
+  scale_fill_viridis_d(option = "inferno", end = .8)
+```
+
+## What Did We Just Do?
+
+<br>
+
+:::{.incremental}
+-  We used `geom_bar()` to visualize the distribution of regimes by region
+-  Essentially, we used two categorical variables to create a bar plot
+-  Regime type is...
+    -  ...an ordered categorical variable
+-  Region is... 
+    - ...a nominal categorical variable
+:::
+
+## 
+
+Some regions have more countries than others.  Why does this create an issue for telling a story with our data here?
+
+```{r}
+#| label: regime-region-4
+#| echo: false
+
+vdem2022 |>
+  ggplot(aes(x = region, fill = regime)) +
+      geom_bar() +
+  theme_minimal() +
+  labs(
+    x = "Region",
+    y = "Frequency",
+    title = "Regimes of the World by World Region in 2022",
+    caption = "Source: V-Dem Institute",
+    fill = "Regime"
+  ) +
+  scale_fill_viridis_d(option = "inferno", end = .8)
+```
+
+## Show Proportions Instead
+
+<br>
+
+```{r}
+#| label: regime-region-5
+#| code-fold: true
+#| code-line-numbers: "3"
+vdem2022 %>%
+  ggplot(., aes(x = region, fill = regime)) +
+      geom_bar(position = "fill") +
+  theme_minimal() +
+  labs(
+    x = "Region",
+    y = "Proportion",
+    title = "Regimes of the World by World Region in 2022",
+    caption = "Source: V-Dem Institute",
+    fill = "Regime"
+  ) +
+  scale_fill_viridis_d(option = "inferno", end = .8)
+```
+
+
+## 
+
+We use `position = "fill"` to normalize the data and make the plot more interpretable...
+
+<br>
+
+```{r}
+#| label: regime-region-6
+#| output: false
+#| code-line-numbers: "3"
+
+vdem2022 %>%
+  ggplot(., aes(x = region, fill = regime)) +
+      geom_bar(position = "fill") +
+  theme_minimal() +
+  labs(
+    x = "Region",
+    y = "Proportion",
+    title = "Regimes of the World by World Region in 2022",
+    caption = "Source: V-Dem Institute",
+    fill = "Regime"
+  ) +
+  scale_fill_viridis_d(option = "inferno", end = .8)
+```
+
+## Your Turn! 
+
+- Explore the distribution of regimes by region for a different year
+- Preprocess your data to include only the year you are interested in
+- Visualize the distribution of regimes using `geom_bar()` and `position = "fill"`
+- Use the `labs()` function to change title
+- What is different about the year that you chose relative to 2022?
+
+```{r}
+#| label: timer2
+#| echo: false
+
+countdown(minutes = 5, 
+          id = "timer2", 
+          bottom = "0%", 
+          right = "5%")
+```
+
