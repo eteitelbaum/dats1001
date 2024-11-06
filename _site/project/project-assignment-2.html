@@ -71,12 +71,41 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <meta property="og:title" content="Project Assignment 2 – DATS 1001–Fall Schedule">
-<meta property="og:description" content="Homepage for DATS 1001 - Data Science for All, George Washington University.">
+<meta property="og:description" content="Analysis Plan and Data Preparation">
 <meta property="og:site_name" content="DATS 1001--Fall Schedule">
 <meta name="twitter:title" content="Project Assignment 2 – DATS 1001–Fall Schedule">
-<meta name="twitter:description" content="Homepage for DATS 1001 - Data Science for All, George Washington University.">
+<meta name="twitter:description" content="Analysis Plan and Data Preparation">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -242,8 +271,18 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#analytical-approach" id="toc-analytical-approach" class="nav-link" data-scroll-target="#analytical-approach">Analytical Approach</a></li>
+  <li><a href="#regression-equations" id="toc-regression-equations" class="nav-link" data-scroll-target="#regression-equations">Regression Equations</a></li>
+  <li><a href="#data-preparation" id="toc-data-preparation" class="nav-link" data-scroll-target="#data-preparation">Data Preparation</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/dats1001-fall-2024/edit/main/project/project-assignment-2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dats1001-fall-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -251,6 +290,7 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../project/project-assignment-1.html">Project</a></li><li class="breadcrumb-item"><a href="../project/project-assignment-2.html">Assignment 2</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Project Assignment 2</h1>
+<p class="subtitle lead">Analysis Plan and Data Preparation</p>
 </div>
 
 
@@ -267,9 +307,50 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Details coming soon…</p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>In this assignment, you will take the next step in your project by planning the type of analysis you will perform. You will scope out the specific analytical approach, write regression equations relevant to your question, and prepare your data for analysis. This assignment builds directly on the work you did in Project Assignment 1, where you identified your research question, hypotheses, and potential data sources.</p>
+</section>
+<section id="analytical-approach" class="level2">
+<h2 class="anchored" data-anchor-id="analytical-approach">Analytical Approach</h2>
+<p>Start by briefly describing the type of analysis you plan to use to answer your question. This could include exploratory data analysis (EDA) techniques, descriptive statistics, or regression analysis. Focus on why these methods are appropriate for testing your hypotheses and addressing your research question. Consider the following:</p>
+<ul>
+<li><strong>Type of Analysis</strong>: Will you conduct a linear regression, logistic regression, or perhaps time-series analysis?</li>
+<li><strong>Justification</strong>: Why is this approach suitable for answering your research question?</li>
+<li><strong>Expected Outcomes</strong>: What will this analysis allow you to determine or predict?</li>
+</ul>
+<p><strong>Example</strong>: <em>“For the question of which emerging markets are best suited for expansion, we will perform multiple regression analysis, testing how factors like political stability, GDP growth, and trade openness predict market profitability.”</em></p>
+<p>In your discussion, elaborate as much as possible on the type of analysis you plan to conduct. This will help you clarify your thinking and prepare for the next steps in your project.</p>
+</section>
+<section id="regression-equations" class="level2">
+<h2 class="anchored" data-anchor-id="regression-equations">Regression Equations</h2>
+<p>Next, translate your hypotheses into regression equations. Each equation should represent a specific relationship that you are testing in your data.</p>
+<ul>
+<li><strong>Define Your Variables</strong>: Identify the dependent and independent variables in your analysis.</li>
+<li><strong>Write the Equations</strong>: Formulate the equations that correspond to each hypothesis.</li>
+</ul>
+<p>For example, if you hypothesized that political stability (measured as a stability index) positively influences foreign direct investment (FDI), your regression equation might look like:</p>
+<p><span class="math display">\[
+\text{FDI} = \beta_0 + \beta_1 \cdot \text{StabilityIndex} + \beta_2 \cdot \text{GDPGrowth} + \epsilon
+\]</span></p>
+<p>Provide 2-3 equations if your research question has multiple hypotheses. This will help clarify your analytical plan. The discuss the euqations and what hypotheses they are supposed to test.</p>
+</section>
+<section id="data-preparation" class="level2">
+<h2 class="anchored" data-anchor-id="data-preparation">Data Preparation</h2>
+<p>In this section, prepare your data for analysis. List the specific steps you will take to get the data ready, including cleaning, transforming, and merging datasets if necessary. Consider the following:</p>
+<ul>
+<li><strong>Data Cleaning</strong>: Describe any initial steps to handle missing values, outliers, or inconsistent data.</li>
+<li><strong>Variable Transformation</strong>: Indicate if any variables need to be transformed (e.g., logged, scaled) for regression analysis.</li>
+<li><strong>Data Merging</strong>: Describe any steps needed to combine multiple datasets, if applicable.</li>
+</ul>
+<p>Write a list of tasks below that you expect to complete to prepare your data for analysis. Make it as comprehensive as possible.</p>
+</section>
+<section id="submission" class="level2">
+<h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<p>Please post a document outlining your analytical approach, regression equations, and data preparation steps to your team’s workspace. Make sure that Prof.&nbsp;T is added as an admin to the workspace. Then, export this document and submit it via Blackboard by the due date. Each group member should submit a copy for grading purposes.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -861,7 +942,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/dats1001-fall-2024/edit/main/project/project-assignment-2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dats1001-fall-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/dats1001-fall-2024/edit/main/project/project-assignment-2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dats1001-fall-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with <a href="https://quarto.org/">Quarto</a>. 👷🛠️</p>
 </div>

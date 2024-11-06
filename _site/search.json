@@ -235,7 +235,7 @@
     "href": "project/project-assignment-2.html",
     "title": "Project Assignment 2",
     "section": "",
-    "text": "Details coming soon…",
+    "text": "In this assignment, you will take the next step in your project by planning the type of analysis you will perform. You will scope out the specific analytical approach, write regression equations relevant to your question, and prepare your data for analysis. This assignment builds directly on the work you did in Project Assignment 1, where you identified your research question, hypotheses, and potential data sources.",
     "crumbs": [
       "Project",
       "Assignment 2"
@@ -4018,6 +4018,61 @@
     "crumbs": [
       "Course information",
       "Support"
+    ]
+  },
+  {
+    "objectID": "project/project-assignment-2.html#overview",
+    "href": "project/project-assignment-2.html#overview",
+    "title": "Project Assignment 2",
+    "section": "",
+    "text": "In this assignment, you will take the next step in your project by planning the type of analysis you will perform. You will scope out the specific analytical approach, write regression equations relevant to your question, and prepare your data for analysis. This assignment builds directly on the work you did in Project Assignment 1, where you identified your research question, hypotheses, and potential data sources.",
+    "crumbs": [
+      "Project",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "project/project-assignment-2.html#analytical-approach",
+    "href": "project/project-assignment-2.html#analytical-approach",
+    "title": "Project Assignment 2",
+    "section": "Analytical Approach",
+    "text": "Analytical Approach\nStart by briefly describing the type of analysis you plan to use to answer your question. This could include exploratory data analysis (EDA) techniques, descriptive statistics, or regression analysis. Focus on why these methods are appropriate for testing your hypotheses and addressing your research question. Consider the following:\n\nType of Analysis: Will you conduct a linear regression, logistic regression, or perhaps time-series analysis?\nJustification: Why is this approach suitable for answering your research question?\nExpected Outcomes: What will this analysis allow you to determine or predict?\n\nExample: “For the question of which emerging markets are best suited for expansion, we will perform multiple regression analysis, testing how factors like political stability, GDP growth, and trade openness predict market profitability.”\nIn your discussion, elaborate as much as possible on the type of analysis you plan to conduct. This will help you clarify your thinking and prepare for the next steps in your project.",
+    "crumbs": [
+      "Project",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "project/project-assignment-2.html#regression-equations",
+    "href": "project/project-assignment-2.html#regression-equations",
+    "title": "Project Assignment 2",
+    "section": "Regression Equations",
+    "text": "Regression Equations\nNext, translate your hypotheses into regression equations. Each equation should represent a specific relationship that you are testing in your data.\n\nDefine Your Variables: Identify the dependent and independent variables in your analysis.\nWrite the Equations: Formulate the equations that correspond to each hypothesis.\n\nFor example, if you hypothesized that political stability (measured as a stability index) positively influences foreign direct investment (FDI), your regression equation might look like:\n\\[\n\\text{FDI} = \\beta_0 + \\beta_1 \\cdot \\text{StabilityIndex} + \\beta_2 \\cdot \\text{GDPGrowth} + \\epsilon\n\\]\nProvide 2-3 equations if your research question has multiple hypotheses. This will help clarify your analytical plan. The discuss the euqations and what hypotheses they are supposed to test.",
+    "crumbs": [
+      "Project",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "project/project-assignment-2.html#data-preparation",
+    "href": "project/project-assignment-2.html#data-preparation",
+    "title": "Project Assignment 2",
+    "section": "Data Preparation",
+    "text": "Data Preparation\nIn this section, prepare your data for analysis. List the specific steps you will take to get the data ready, including cleaning, transforming, and merging datasets if necessary. Consider the following:\n\nData Cleaning: Describe any initial steps to handle missing values, outliers, or inconsistent data.\nVariable Transformation: Indicate if any variables need to be transformed (e.g., logged, scaled) for regression analysis.\nData Merging: Describe any steps needed to combine multiple datasets, if applicable.\n\nWrite a list of tasks below that you expect to complete to prepare your data for analysis. Make it as comprehensive as possible.",
+    "crumbs": [
+      "Project",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "project/project-assignment-2.html#submission",
+    "href": "project/project-assignment-2.html#submission",
+    "title": "Project Assignment 2",
+    "section": "Submission",
+    "text": "Submission\nPlease post a document outlining your analytical approach, regression equations, and data preparation steps to your team’s workspace. Make sure that Prof. T is added as an admin to the workspace. Then, export this document and submit it via Blackboard by the due date. Each group member should submit a copy for grading purposes.",
+    "crumbs": [
+      "Project",
+      "Assignment 2"
     ]
   }
 ]

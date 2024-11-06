@@ -1,6 +1,49 @@
 ---
 title: "Project Assignment 2"
-subtitle: ""
+subtitle: "Analysis Plan and Data Preparation"
 ---
 
-Details coming soon...
+## Overview
+
+In this assignment, you will take the next step in your project by planning the type of analysis you will perform. You will scope out the specific analytical approach, write regression equations relevant to your question, and prepare your data for analysis. This assignment builds directly on the work you did in Project Assignment 1, where you identified your research question, hypotheses, and potential data sources.
+
+## Analytical Approach
+
+Start by briefly describing the type of analysis you plan to use to answer your question. This could include exploratory data analysis (EDA) techniques, descriptive statistics, or regression analysis. Focus on why these methods are appropriate for testing your hypotheses and addressing your research question. Consider the following:
+
+- **Type of Analysis**: Will you conduct a linear regression, logistic regression, or perhaps time-series analysis?
+- **Justification**: Why is this approach suitable for answering your research question?
+- **Expected Outcomes**: What will this analysis allow you to determine or predict?
+
+**Example**: *“For the question of which emerging markets are best suited for expansion, we will perform multiple regression analysis, testing how factors like political stability, GDP growth, and trade openness predict market profitability.”*
+
+In your discussion, elaborate as much as possible on the type of analysis you plan to conduct. This will help you clarify your thinking and prepare for the next steps in your project.
+
+## Regression Equations
+
+Next, translate your hypotheses into regression equations. Each equation should represent a specific relationship that you are testing in your data.
+
+- **Define Your Variables**: Identify the dependent and independent variables in your analysis.
+- **Write the Equations**: Formulate the equations that correspond to each hypothesis.
+  
+For example, if you hypothesized that political stability (measured as a stability index) positively influences foreign direct investment (FDI), your regression equation might look like:
+
+$$
+\text{FDI} = \beta_0 + \beta_1 \cdot \text{StabilityIndex} + \beta_2 \cdot \text{GDPGrowth} + \epsilon
+$$
+
+Provide 2-3 equations if your research question has multiple hypotheses. This will help clarify your analytical plan. The discuss the euqations and what hypotheses they are supposed to test.
+
+## Data Preparation
+
+In this section, prepare your data for analysis. List the specific steps you will take to get the data ready, including cleaning, transforming, and merging datasets if necessary. Consider the following:
+
+- **Data Cleaning**: Describe any initial steps to handle missing values, outliers, or inconsistent data.
+- **Variable Transformation**: Indicate if any variables need to be transformed (e.g., logged, scaled) for regression analysis.
+- **Data Merging**: Describe any steps needed to combine multiple datasets, if applicable.
+  
+Write a list of tasks below that you expect to complete to prepare your data for analysis. Make it as comprehensive as possible.
+
+## Submission
+
+Please post a document outlining your analytical approach, regression equations, and data preparation steps to your team's workspace. Make sure that Prof. T is added as an admin to the workspace. Then, export this document and submit it via Blackboard by the due date. Each group member should submit a copy for grading purposes.
