@@ -2721,14 +2721,14 @@
     "href": "slides/week-11.2.html#visualize-our-measure-1",
     "title": "Distributions II",
     "section": "Visualize Our Measure",
-    "text": "Visualize Our Measure\n\n\nmn &lt;- mean(vdem2022$polyarchy)\nmed &lt;- median(vdem2022$polyarchy)\n\nggplot(vdem2022, aes(x = polyarchy )) +\n  geom_histogram(binwidth = .05, fill = \"steelblue\") +\n   labs(\n    x = \"Electoral Democracy\", \n    y = \"Frequency\", \n    title = \"Distribution of Electoral Democracy in 2022\", \n    caption = \"Source: V-Dem Institute\"\n  ) + \n  geom_vline(xintercept = mn, linewidth = 1, color = \"darkorange\") +\n  theme_minimal()"
+    "text": "Visualize Our Measure\n\n\nmn &lt;- mean(vdem2022$polyarchy, na.rm = TRUE)\nmed &lt;- median(vdem2022$polyarchy, na.rm = TRUE)\n\nggplot(vdem2022, aes(x = polyarchy )) +\n  geom_histogram(binwidth = .05, fill = \"steelblue\") +\n   labs(\n    x = \"Electoral Democracy\", \n    y = \"Frequency\", \n    title = \"Distribution of Electoral Democracy in 2022\", \n    caption = \"Source: V-Dem Institute\"\n  ) + \n  geom_vline(xintercept = mn, linewidth = 2, color = \"darkorange\") +\n  theme_minimal()"
   },
   {
     "objectID": "slides/week-11.2.html#visualize-our-measure-2",
     "href": "slides/week-11.2.html#visualize-our-measure-2",
     "title": "Distributions II",
     "section": "Visualize Our Measure",
-    "text": "Visualize Our Measure\n\n\nmn &lt;- mean(vdem2022$polyarchy)\nmed &lt;- median(vdem2022$polyarchy)\n\nggplot(vdem2022, aes(x = polyarchy )) +\n  geom_histogram(binwidth = .05, fill = \"steelblue\") +\n   labs(\n    x = \"Electoral Democracy\", \n    y = \"Frequency\", \n    title = \"Distribution of Electoral Democracy in 2022\", \n    caption = \"Source: V-Dem Institute\"\n  ) + \n  geom_vline(xintercept = mn, linewidth = 1, color = \"darkorange\") +\n  theme_minimal()"
+    "text": "Visualize Our Measure\n\n\nmn &lt;- mean(vdem2022$polyarchy, na.rm = TRUE)\nmed &lt;- median(vdem2022$polyarchy, na.rm = TRUE)\n\nggplot(vdem2022, aes(x = polyarchy )) +\n  geom_histogram(binwidth = .05, fill = \"steelblue\") +\n   labs(\n    x = \"Electoral Democracy\", \n    y = \"Frequency\", \n    title = \"Distribution of Electoral Democracy in 2022\", \n    caption = \"Source: V-Dem Institute\"\n  ) + \n  geom_vline(xintercept = mn, linewidth = 2, color = \"darkorange\") +\n  theme_minimal()"
   },
   {
     "objectID": "slides/week-11.2.html#your-turn",

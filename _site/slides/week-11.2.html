@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-5223d57514b7f3c9e8f675d86406bf62.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.18">
 
-  <meta name="dcterms.date" content="2024-11-04">
+  <meta name="dcterms.date" content="2024-11-06">
   <title>DATS 1001--Fall Schedule – Distributions II</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -407,7 +407,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">November 4, 2024</p>
+  <p class="date">November 6, 2024</p>
 </section>
 <section id="electoral-democracy-measure" class="slide level2 smaller">
 <h2>Electoral Democracy Measure</h2>
@@ -597,8 +597,8 @@ $ region          &lt;chr&gt; "Latin America", "Latin America", "Latin America",
 <h2>Visualize Our Measure</h2>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>mn <span class="ot">&lt;-</span> <span class="fu">mean</span>(vdem2022<span class="sc">$</span>polyarchy)</span>
-<span id="cb8-2"><a></a>med <span class="ot">&lt;-</span> <span class="fu">median</span>(vdem2022<span class="sc">$</span>polyarchy)</span>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>mn <span class="ot">&lt;-</span> <span class="fu">mean</span>(vdem2022<span class="sc">$</span>polyarchy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-2"><a></a>med <span class="ot">&lt;-</span> <span class="fu">median</span>(vdem2022<span class="sc">$</span>polyarchy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb8-3"><a></a></span>
 <span id="cb8-4"><a></a><span class="fu">ggplot</span>(vdem2022, <span class="fu">aes</span>(<span class="at">x =</span> polyarchy )) <span class="sc">+</span></span>
 <span id="cb8-5"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> .<span class="dv">05</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
@@ -608,7 +608,7 @@ $ region          &lt;chr&gt; "Latin America", "Latin America", "Latin America",
 <span id="cb8-9"><a></a>    <span class="at">title =</span> <span class="st">"Distribution of Electoral Democracy in 2022"</span>, </span>
 <span id="cb8-10"><a></a>    <span class="at">caption =</span> <span class="st">"Source: V-Dem Institute"</span></span>
 <span id="cb8-11"><a></a>  ) <span class="sc">+</span> </span>
-<span id="cb8-12"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> mn, <span class="at">linewidth =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">"darkorange"</span>) <span class="sc">+</span></span>
+<span id="cb8-12"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> mn, <span class="at">linewidth =</span> <span class="dv">2</span>, <span class="at">color =</span> <span class="st">"darkorange"</span>) <span class="sc">+</span></span>
 <span id="cb8-13"><a></a>  <span class="fu">theme_minimal</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
@@ -616,8 +616,8 @@ $ region          &lt;chr&gt; "Latin America", "Latin America", "Latin America",
 <h2>Visualize Our Measure</h2>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9" data-code-line-numbers="1-2|5|12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>mn <span class="ot">&lt;-</span> <span class="fu">mean</span>(vdem2022<span class="sc">$</span>polyarchy)</span>
-<span id="cb9-2"><a></a>med <span class="ot">&lt;-</span> <span class="fu">median</span>(vdem2022<span class="sc">$</span>polyarchy)</span>
+<div class="sourceCode cell-code" id="cb9" data-code-line-numbers="1-2|5|12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>mn <span class="ot">&lt;-</span> <span class="fu">mean</span>(vdem2022<span class="sc">$</span>polyarchy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb9-2"><a></a>med <span class="ot">&lt;-</span> <span class="fu">median</span>(vdem2022<span class="sc">$</span>polyarchy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb9-3"><a></a></span>
 <span id="cb9-4"><a></a><span class="fu">ggplot</span>(vdem2022, <span class="fu">aes</span>(<span class="at">x =</span> polyarchy )) <span class="sc">+</span></span>
 <span id="cb9-5"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> .<span class="dv">05</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
@@ -627,7 +627,7 @@ $ region          &lt;chr&gt; "Latin America", "Latin America", "Latin America",
 <span id="cb9-9"><a></a>    <span class="at">title =</span> <span class="st">"Distribution of Electoral Democracy in 2022"</span>, </span>
 <span id="cb9-10"><a></a>    <span class="at">caption =</span> <span class="st">"Source: V-Dem Institute"</span></span>
 <span id="cb9-11"><a></a>  ) <span class="sc">+</span> </span>
-<span id="cb9-12"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> mn, <span class="at">linewidth =</span> <span class="dv">1</span>, <span class="at">color =</span> <span class="st">"darkorange"</span>) <span class="sc">+</span></span>
+<span id="cb9-12"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> mn, <span class="at">linewidth =</span> <span class="dv">2</span>, <span class="at">color =</span> <span class="st">"darkorange"</span>) <span class="sc">+</span></span>
 <span id="cb9-13"><a></a>  <span class="fu">theme_minimal</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>

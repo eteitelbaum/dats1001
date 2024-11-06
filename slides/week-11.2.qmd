@@ -316,8 +316,8 @@ ggplot(x, aes(x = x )) +
 #| label: visualize-polyarchy 
 #| echo: false
 
-mn <- mean(vdem2022$polyarchy)
-med <- median(vdem2022$polyarchy)
+mn <- mean(vdem2022$polyarchy, na.rm = TRUE)
+med <- median(vdem2022$polyarchy, na.rm = TRUE)
 
 ggplot(vdem2022, aes(x = polyarchy )) +
   geom_histogram(binwidth = .05, fill = "steelblue") + 
@@ -327,7 +327,7 @@ ggplot(vdem2022, aes(x = polyarchy )) +
     title = "Distribution of Electoral Democracy in 2022", 
     caption = "Source: V-Dem Institute"
   ) + 
-  geom_vline(xintercept = mn, linewidth = 1, color = "darkorange") +
+  geom_vline(xintercept = mn, linewidth = 2, color = "darkorange") +
   theme_minimal()
 ```
 
@@ -339,8 +339,8 @@ ggplot(vdem2022, aes(x = polyarchy )) +
 #| label: visualize-polyarchy-2
 #| eval: false
 
-mn <- mean(vdem2022$polyarchy)
-med <- median(vdem2022$polyarchy)
+mn <- mean(vdem2022$polyarchy, na.rm = TRUE)
+med <- median(vdem2022$polyarchy, na.rm = TRUE)
 
 ggplot(vdem2022, aes(x = polyarchy )) +
   geom_histogram(binwidth = .05, fill = "steelblue") +
@@ -350,7 +350,7 @@ ggplot(vdem2022, aes(x = polyarchy )) +
     title = "Distribution of Electoral Democracy in 2022", 
     caption = "Source: V-Dem Institute"
   ) + 
-  geom_vline(xintercept = mn, linewidth = 1, color = "darkorange") +
+  geom_vline(xintercept = mn, linewidth = 2, color = "darkorange") +
   theme_minimal() 
 ```
 
@@ -363,8 +363,8 @@ ggplot(vdem2022, aes(x = polyarchy )) +
 #| eval: false
 #| code-line-numbers: "1-2|5|12" 
 
-mn <- mean(vdem2022$polyarchy)
-med <- median(vdem2022$polyarchy)
+mn <- mean(vdem2022$polyarchy, na.rm = TRUE)
+med <- median(vdem2022$polyarchy, na.rm = TRUE)
 
 ggplot(vdem2022, aes(x = polyarchy )) +
   geom_histogram(binwidth = .05, fill = "steelblue") +
@@ -374,7 +374,7 @@ ggplot(vdem2022, aes(x = polyarchy )) +
     title = "Distribution of Electoral Democracy in 2022", 
     caption = "Source: V-Dem Institute"
   ) + 
-  geom_vline(xintercept = mn, linewidth = 1, color = "darkorange") +
+  geom_vline(xintercept = mn, linewidth = 2, color = "darkorange") +
   theme_minimal() 
 ```
 
