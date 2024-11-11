@@ -4074,5 +4074,299 @@
       "Project",
       "Assignment 2"
     ]
+  },
+  {
+    "objectID": "slides/week-12.1.html#sampling",
+    "href": "slides/week-12.1.html#sampling",
+    "title": "Sampling and Uncertainty",
+    "section": "Sampling",
+    "text": "Sampling\n\n\nSampling the act of selecting a subset of individuals, items, or data points from a larger population to estimate characteristics or metrics of the entire population\nVersus a census, which involves gathering information on every individual in the population\nWhy would you want to use a sample?"
+  },
+  {
+    "objectID": "slides/week-12.1.html#what-proportion-of-all-milk-chocolate-mms-are-blue",
+    "href": "slides/week-12.1.html#what-proportion-of-all-milk-chocolate-mms-are-blue",
+    "title": "Sampling and Uncertainty",
+    "section": "What proportion of all milk chocolate M&Ms are blue?",
+    "text": "What proportion of all milk chocolate M&Ms are blue?\n\nM&Ms has a precise distribution of colors that it produces in its factories\nM&Ms are sorted into bags in factories in a fairly random process\nEach bag represents a sample from the full population of M&Ms"
+  },
+  {
+    "objectID": "slides/week-12.1.html#activity",
+    "href": "slides/week-12.1.html#activity",
+    "title": "Sampling and Uncertainty",
+    "section": "Activity",
+    "text": "Activity\n\nGet in groups of 3. Each group will have 4-5 bags of M&Ms.\nKeep the contents of each bag separate, and do not eat (yet!)\nOpen up your first bag of M&Ms: calculate the proportion of the M&Ms that are blue. Write this down. What is your best guess (your estimate) for the proportion of all M&Ms that are blue?"
+  },
+  {
+    "objectID": "slides/week-12.1.html#activity-1",
+    "href": "slides/week-12.1.html#activity-1",
+    "title": "Sampling and Uncertainty",
+    "section": "Activity",
+    "text": "Activity\n\nDo the same as above for the rest of your bags (you should have 4-5 estimates written down)\nDraw a histogram of your estimates (by hand)\nAdd your estimates to this Google Sheet\nAdd your estimates to the class histogram on the whiteboard"
+  },
+  {
+    "objectID": "slides/week-12.1.html#lets-analyze-the-data",
+    "href": "slides/week-12.1.html#lets-analyze-the-data",
+    "title": "Sampling and Uncertainty",
+    "section": "Let’s Analyze the Data",
+    "text": "Let’s Analyze the Data\n\nWe will use the googlesheets4 package to pull the data into R so be sure to install it.\n\n#install.packages(\"googlesheets4\")\n\nlibrary(tidyverse)\nlibrary(googlesheets4)\n\ngs4_deauth() # to signify no authorization required\n\nmnm_data &lt;- read_sheet(\"https://docs.google.com/spreadsheets/d/136wGKZOnwOdo3O-4bUfF_TWKBCAWQUCyiVKSY4HyYAw/edit#gid=0\")\n\nglimpse(mnm_data)"
+  },
+  {
+    "objectID": "slides/week-12.1.html#calculate-some-summary-stats",
+    "href": "slides/week-12.1.html#calculate-some-summary-stats",
+    "title": "Sampling and Uncertainty",
+    "section": "Calculate Some Summary Stats",
+    "text": "Calculate Some Summary Stats\n\n\nmnm_data |&gt;\n  summarize(\n    mean_blue = mean(proportion_blue),\n    median_blue = median(proportion_blue),\n    sd_blue = sd(proportion_blue)\n  )"
+  },
+  {
+    "objectID": "slides/week-12.1.html#now-lets-make-a-histogram",
+    "href": "slides/week-12.1.html#now-lets-make-a-histogram",
+    "title": "Sampling and Uncertainty",
+    "section": "Now Let’s Make a Histogram",
+    "text": "Now Let’s Make a Histogram\n\n\nggplot(mnm_data, aes(x = proportion_blue)) +\n  geom_histogram(fill = \"steelblue\") +\n  labs(\n    title = \"Percentage of Blue M&Ms\",\n    x = \"Proportion Blue\",\n    y = \"Count\"\n  )"
+  },
+  {
+    "objectID": "slides/week-12.1.html#discuss-with-neighbor",
+    "href": "slides/week-12.1.html#discuss-with-neighbor",
+    "title": "Sampling and Uncertainty",
+    "section": "Discuss with Neighbor",
+    "text": "Discuss with Neighbor\n\nWhat is the histogram/distribution showing?\nBased on the histogram on the board, what is your answer to the question of what proportion of all milk chocolate M&Ms are blue? Why do you give that answer?\nWhy do some bag of M&Ms have proportions of blues that are higher and lower than the number you gave above?\nHow do our estimates relate to the actual percentage of blue M&Ms manufactured (ask Google or ChatGPT)"
+  },
+  {
+    "objectID": "slides/week-12.1.html#what-did-we-just-do",
+    "href": "slides/week-12.1.html#what-did-we-just-do",
+    "title": "Sampling and Uncertainty",
+    "section": "What did we just do?",
+    "text": "What did we just do?\n\n\nWe wanted to say something about the population of M&Ms\nThe parameter we care about is the proportion of M&Ms that are blue\nIt would be impossible to conduct a census and to calculate the parameter\nWe took a sample from the population and calculated a sample statistic\nstatistical inference: act of making a guess about a population using information from a sample"
+  },
+  {
+    "objectID": "slides/week-12.1.html#what-did-we-just-do-1",
+    "href": "slides/week-12.1.html#what-did-we-just-do-1",
+    "title": "Sampling and Uncertainty",
+    "section": "What did we just do?",
+    "text": "What did we just do?\n\n\nWe completed this task many times\nThis produced a sampling distribution of our estimates\nThere is a distribution of estimates because of sampling variability\nDue to random chance, one estimate from one sample can differ from another\nThese are foundational ideas for statistical inference that we are going to keep building on"
+  },
+  {
+    "objectID": "slides/week-12.1.html#target-population",
+    "href": "slides/week-12.1.html#target-population",
+    "title": "Sampling and Uncertainty",
+    "section": "Target Population",
+    "text": "Target Population\nIn data analysis, we are usually interested in saying something about a Target Population.\n\n\nWhat proportion of adult Russians support the war in Ukraine?\n\nTarget population: adult Russians (age 18+)\n\nHow many US college students check social media during their classes?\n\nTarget population: US college students\n\nWhat percentage of M&Ms are blue?\n\nTarget population: all of the M&Ms"
+  },
+  {
+    "objectID": "slides/week-12.1.html#sample",
+    "href": "slides/week-12.1.html#sample",
+    "title": "Sampling and Uncertainty",
+    "section": "Sample",
+    "text": "Sample\n\nIn many instances, we have a Sample\n\nWe cannot talk to every Russian\nWe cannot talk to all college students\nWe cannot count all of the M&Ms"
+  },
+  {
+    "objectID": "slides/week-12.1.html#parameters-vs-statistics",
+    "href": "slides/week-12.1.html#parameters-vs-statistics",
+    "title": "Sampling and Uncertainty",
+    "section": "Parameters vs Statistics",
+    "text": "Parameters vs Statistics\n\n\n\nThe parameter is the value of a calculation for the entire target population\nThe statistic is what we calculate on our sample\n\nWe calculate a statistic in order to say something about the parameter"
+  },
+  {
+    "objectID": "slides/week-12.1.html#inference",
+    "href": "slides/week-12.1.html#inference",
+    "title": "Sampling and Uncertainty",
+    "section": "Inference",
+    "text": "Inference\n\n\n\nInference–The act of “making a guess” about some unknown\nStatistical inference–Making a good guess about a population from a sample\nCausal inference–Did X cause Y? [topic for later classes]"
+  },
+  {
+    "objectID": "slides/week-12.1.html#section",
+    "href": "slides/week-12.1.html#section",
+    "title": "Sampling and Uncertainty",
+    "section": "",
+    "text": "On December 19, 2014, the front page of Spanish national newspaper El País read “Catalan public opinion swings toward ‘no’ for independence, says survey”.1\n\n\n\n\n\n\n\n\n\nAlberto Cairo. The truthful art: Data, charts, and maps for communication. New Riders, 2016."
+  },
+  {
+    "objectID": "slides/week-12.1.html#section-1",
+    "href": "slides/week-12.1.html#section-1",
+    "title": "Sampling and Uncertainty",
+    "section": "",
+    "text": "The probability of the tiny difference between the ‘No’ and ‘Yes’ being just due to random chance is very high.1\n\n\n\n\n\n\n\n\n\nAlberto Cairo. “Uncertainty and Graphicacy”, 2017."
+  },
+  {
+    "objectID": "slides/week-12.1.html#characterizing-uncertainty",
+    "href": "slides/week-12.1.html#characterizing-uncertainty",
+    "title": "Sampling and Uncertainty",
+    "section": "Characterizing Uncertainty",
+    "text": "Characterizing Uncertainty\n\n\nWe know from previous section that even unbiased procedures do not get the “right” answer every time\nWe also know that our estimates might vary from sample to sample due to random chance\nTherefore we want to report on our estimate and our level of uncertainty"
+  },
+  {
+    "objectID": "slides/week-12.1.html#characterizing-uncertainty-1",
+    "href": "slides/week-12.1.html#characterizing-uncertainty-1",
+    "title": "Sampling and Uncertainty",
+    "section": "Characterizing Uncertainty",
+    "text": "Characterizing Uncertainty\n\n\nWith M&Ms, we knew the population parameter\nIn real life, we do not!\nWe want to generate an estimate and characterize our uncertainty with a range of possible estimates"
+  },
+  {
+    "objectID": "slides/week-12.1.html#solution-create-a-confidence-interval",
+    "href": "slides/week-12.1.html#solution-create-a-confidence-interval",
+    "title": "Sampling and Uncertainty",
+    "section": "Solution: Create a Confidence Interval",
+    "text": "Solution: Create a Confidence Interval\n\n\nA plausible range of values for the population parameter is a confidence interval.\n\n\n\n95 percent confidence interval is standard\n\nWe are 95% confident that the parameter value falls within the range given by the confidence interval"
+  },
+  {
+    "objectID": "slides/week-12.1.html#ways-to-estimate",
+    "href": "slides/week-12.1.html#ways-to-estimate",
+    "title": "Sampling and Uncertainty",
+    "section": "Ways to Estimate",
+    "text": "Ways to Estimate\n\n\nTake advantage of Central Limit Theorem to estimate using math\nUse simulation, bootstrapping"
+  },
+  {
+    "objectID": "slides/week-12.1.html#with-math",
+    "href": "slides/week-12.1.html#with-math",
+    "title": "Sampling and Uncertainty",
+    "section": "With Math…",
+    "text": "With Math…\n\\[CI = \\bar{x} \\pm Z \\left( \\frac{\\sigma}{\\sqrt{n}} \\right)\\]\n\n\\(\\bar{x}\\) is the sample mean,\n\\(Z\\) is the Z-score corresponding to the desired level of confidence\n\\(\\sigma\\) is the population standard deviation, and\n\\(n\\) is the sample size"
+  },
+  {
+    "objectID": "slides/week-12.1.html#section-2",
+    "href": "slides/week-12.1.html#section-2",
+    "title": "Sampling and Uncertainty",
+    "section": "",
+    "text": "This part here represents the standard error:\n\\[\\left( \\frac{\\sigma}{\\sqrt{n}} \\right)\\]\n\nStandard deviation of the sampling distribution\nCharacterizes the spread of the sampling distribution\nThe bigger this is the bigger the CIs are going to be"
+  },
+  {
+    "objectID": "slides/week-12.1.html#central-limit-theorem",
+    "href": "slides/week-12.1.html#central-limit-theorem",
+    "title": "Sampling and Uncertainty",
+    "section": "Central Limit Theorem",
+    "text": "Central Limit Theorem\n\\[CI = \\bar{x} \\pm Z \\left( \\frac{\\sigma}{\\sqrt{n}} \\right)\\]\n\nThis way of doing things depends on the Central Limit Theorem\nAs sample size gets bigger, the spread of the sampling distribution gets narrower\nThe shape of the sampling distributions becomes more normally distributed"
+  },
+  {
+    "objectID": "slides/week-12.1.html#section-3",
+    "href": "slides/week-12.1.html#section-3",
+    "title": "Sampling and Uncertainty",
+    "section": "",
+    "text": "\\[CI = \\bar{x} \\pm Z \\left( \\frac{\\sigma}{\\sqrt{n}} \\right)\\]\nThis is therefore a parametric method of calculating the CI. It depends on assumptions about the normality of the distribution."
+  },
+  {
+    "objectID": "slides/week-12.1.html#bootstrapping",
+    "href": "slides/week-12.1.html#bootstrapping",
+    "title": "Sampling and Uncertainty",
+    "section": "Bootstrapping",
+    "text": "Bootstrapping\n\n\n\nPulling oneself up from their bootstraps …\nUse the data we have to estimate the sampling distribution\nWe call this the bootstrap distribution\nThis is a nonparametric method\nIt does not depend on assumptions about normality"
+  },
+  {
+    "objectID": "slides/week-12.1.html#bootstrap-process",
+    "href": "slides/week-12.1.html#bootstrap-process",
+    "title": "Sampling and Uncertainty",
+    "section": "Bootstrap Process",
+    "text": "Bootstrap Process\n\n\nTake a bootstrap sample - a random sample taken with replacement from the original sample, of the same size as the original sample\n\n\n\nCalculate the bootstrap statistic - a statistic such as mean, median, proportion, slope, etc. computed on the bootstrap samples\n\n\n\n\nRepeat steps (1) and (2) many times to create a bootstrap distribution - a distribution of bootstrap statistics\n\n\n\n\nCalculate the bounds of the XX% confidence interval as the middle XX% of the bootstrap distribution (usually 95 percent confidence interval)"
+  },
+  {
+    "objectID": "slides/week-12.1.html#russia",
+    "href": "slides/week-12.1.html#russia",
+    "title": "Sampling and Uncertainty",
+    "section": "Russia",
+    "text": "Russia\n\nWhat Proportion of Russians believe their country interfered in the 2016 presidential elections in the US?\n\nPew Research survey\n506 subjects\nData available in the openintro package"
+  },
+  {
+    "objectID": "slides/week-12.1.html#section-4",
+    "href": "slides/week-12.1.html#section-4",
+    "title": "Sampling and Uncertainty",
+    "section": "",
+    "text": "For this example, we will use data from the Open Intro package. Install that package before running this code chunk.\n\n\n#install.packages(\"openintro\")\nlibrary(openintro)\n\nglimpse(russian_influence_on_us_election_2016)\n\nRows: 506\nColumns: 1\n$ influence_2016 &lt;chr&gt; \"Did not try\", \"Did not try\", \"Did not try\", \"Don't kno…"
+  },
+  {
+    "objectID": "slides/week-12.1.html#section-5",
+    "href": "slides/week-12.1.html#section-5",
+    "title": "Sampling and Uncertainty",
+    "section": "",
+    "text": "Let’s use mutate() to recode the qualitative variable as a numeric one…\n\n\nrussiaData &lt;- russian_influence_on_us_election_2016 |&gt; \n  mutate(try_influence = ifelse(influence_2016 == \"Did try\", 1, 0))"
+  },
+  {
+    "objectID": "slides/week-12.1.html#section-6",
+    "href": "slides/week-12.1.html#section-6",
+    "title": "Sampling and Uncertainty",
+    "section": "",
+    "text": "Now let’s calculate the mean and standard deviation of the try_influence variable…\n\n\nrussiaData |&gt;\n  summarize( \n          mean = mean(try_influence),\n          sd = sd(try_influence)\n  )\n\n# A tibble: 1 × 2\n   mean    sd\n  &lt;dbl&gt; &lt;dbl&gt;\n1 0.150 0.358"
+  },
+  {
+    "objectID": "slides/week-12.1.html#section-7",
+    "href": "slides/week-12.1.html#section-7",
+    "title": "Sampling and Uncertainty",
+    "section": "",
+    "text": "And finally let’s draw a bar plot…\n\n\nggplot(russiaData, aes(x = try_influence)) +\n  geom_bar(fill = \"steelblue\", width = .75) +\n  labs(\n    title = \"Did Russia try to influence the U.S. election?\",\n    x = \"0 = 'No', 1 = 'Yes'\",\n    y = \"Frequncy\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/week-12.1.html#bootstrap-with-tidymodels",
+    "href": "slides/week-12.1.html#bootstrap-with-tidymodels",
+    "title": "Sampling and Uncertainty",
+    "section": "Bootstrap with tidymodels",
+    "text": "Bootstrap with tidymodels\nInstall tidymodels before running this code chunk…\n\n#install.packages(\"tidymodels\")\nlibrary(tidymodels)\n\nset.seed(66)\nboot_dist &lt;- russiaData |&gt;\n  # specify the variable of interest\n  specify(response = try_influence) |&gt;\n  # generate 10000 bootstrap samples\n  generate(reps = 10000, type = \"bootstrap\") |&gt;\n  # calculate the mean of each bootstrap sample\n  calculate(stat = \"mean\")\n\nglimpse(boot_dist)\n\nRows: 10,000\nColumns: 2\n$ replicate &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 1…\n$ stat      &lt;dbl&gt; 0.1146245, 0.1442688, 0.1343874, 0.1877470, 0.1521739, 0.138…"
+  },
+  {
+    "objectID": "slides/week-12.1.html#section-9",
+    "href": "slides/week-12.1.html#section-9",
+    "title": "Sampling and Uncertainty",
+    "section": "",
+    "text": "Calculate the mean of the bootstrap distribution (of the means of the individual draws)…\n\n\nboot_dist |&gt; summarize(mean = mean(stat))\n\n# A tibble: 1 × 1\n   mean\n  &lt;dbl&gt;\n1 0.150"
+  },
+  {
+    "objectID": "slides/week-12.1.html#section-10",
+    "href": "slides/week-12.1.html#section-10",
+    "title": "Sampling and Uncertainty",
+    "section": "",
+    "text": "Calculate the confidence interval. A 95% confidence interval is bounded by the middle 95% of the bootstrap distribution.\n\n\nboot_dist |&gt;\n  summarize(lower = quantile(stat, 0.025),\n            upper = quantile(stat, 0.975))\n\n# A tibble: 1 × 2\n  lower upper\n  &lt;dbl&gt; &lt;dbl&gt;\n1 0.119 0.182"
+  },
+  {
+    "objectID": "slides/week-12.1.html#section-11",
+    "href": "slides/week-12.1.html#section-11",
+    "title": "Sampling and Uncertainty",
+    "section": "",
+    "text": "Create upper and lower bounds for visualization.\n\n\n# for using these values later\nlower_bound &lt;- boot_dist |&gt; summarize(lower_bound = quantile(stat, 0.025)) |&gt; pull() \nupper_bound &lt;- boot_dist |&gt; summarize(upper_bound = quantile(stat, 0.975)) |&gt; pull()"
+  },
+  {
+    "objectID": "slides/week-12.1.html#section-12",
+    "href": "slides/week-12.1.html#section-12",
+    "title": "Sampling and Uncertainty",
+    "section": "",
+    "text": "Visualize with a histogram\n\n\nggplot(data = boot_dist, mapping = aes(x = stat)) +\n  geom_histogram(binwidth =.01, fill = \"steelblue4\") +\n  geom_vline(xintercept = c(lower_bound, upper_bound), color = \"darkgrey\", size = 1, linetype = \"dashed\") +\n  labs(title = \"Bootstrap distribution of means\",\n       subtitle = \"and 95% confidence interval\",\n       x = \"Estimate\",\n       y = \"Frequency\") +\n  theme_bw()"
+  },
+  {
+    "objectID": "slides/week-12.1.html#or-use-the-infer-package",
+    "href": "slides/week-12.1.html#or-use-the-infer-package",
+    "title": "Sampling and Uncertainty",
+    "section": "Or use the infer package",
+    "text": "Or use the infer package\n\nci &lt;- boot_dist |&gt; get_ci(level = 0.95) \n\nci\n\n# A tibble: 1 × 2\n  lower_ci upper_ci\n     &lt;dbl&gt;    &lt;dbl&gt;\n1    0.119    0.182"
+  },
+  {
+    "objectID": "slides/week-12.1.html#or-use-the-infer-package-1",
+    "href": "slides/week-12.1.html#or-use-the-infer-package-1",
+    "title": "Sampling and Uncertainty",
+    "section": "Or use the infer package",
+    "text": "Or use the infer package\n\nboot_dist |&gt;\n  visualize() +\n  shade_ci(ci, color = \"red\", fill = NULL) +\n  labs( \n    title = \"Distribution of the Means of the Bootstrap Samples\",\n    x = \"Mean\",\n    y = \"Count\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/week-12.1.html#or-use-the-infer-package-2",
+    "href": "slides/week-12.1.html#or-use-the-infer-package-2",
+    "title": "Sampling and Uncertainty",
+    "section": "Or use the infer package",
+    "text": "Or use the infer package\n\nboot_dist |&gt;\n  visualize() +\n  shade_ci(ci, color = \"red\", fill = NULL) +\n  labs( \n    title = \"Distribution of the Means of the Bootstrap Samples\",\n    x = \"Mean\",\n    y = \"Count\"\n  ) +\n  theme_minimal()"
+  },
+  {
+    "objectID": "slides/week-12.1.html#interpret-the-confidence-interval",
+    "href": "slides/week-12.1.html#interpret-the-confidence-interval",
+    "title": "Sampling and Uncertainty",
+    "section": "Interpret the confidence interval",
+    "text": "Interpret the confidence interval\n\nThe 95% confidence interval was calculated as (lower_bound, upper_bound). Which of the following is the correct interpretation of this interval?\n\n(a) 95% of the time the percentage of Russian who believe that Russia interfered in the 2016 US elections is between lower_bound and upper_bound.\n(b) 95% of all Russians believe that the chance Russia interfered in the 2016 US elections is between lower_bound and upper_bound.\n(c) We are 95% confident that the proportion of Russians who believe that Russia interfered in the 2016 US election is between lower_bound and upper_bound.\n(d) We are 95% confident that the proportion of Russians who supported interfering in the 2016 US elections is between lower_bound and upper_bound."
+  },
+  {
+    "objectID": "slides/week-12.1.html#your-turn",
+    "href": "slides/week-12.1.html#your-turn",
+    "title": "Sampling and Uncertainty",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\nChange the reps argument in the generate() function to something way smaller, like 100. What happens to your estimates?\nTry progressively higher numbers. What happens to your estimates as the number of reps increases?"
+  },
+  {
+    "objectID": "slides/week-12.1.html#why-did-we-do-these-simulations",
+    "href": "slides/week-12.1.html#why-did-we-do-these-simulations",
+    "title": "Sampling and Uncertainty",
+    "section": "Why did we do these simulations?",
+    "text": "Why did we do these simulations?\n\n\nThey provide a foundation for statistical inference and for characterizing uncertainty in our estimates\nThe best research designs will try to maximize or achieve good balance on bias vs precision"
   }
 ]
