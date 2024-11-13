@@ -26,10 +26,6 @@ execute:
 -   One organization claims that its jobs training program is a success because only 15 of the 60 people that they trained did not have a job (25% unemployment rate)
 -   What should we think about this claim? Is this a successful program?
 
-## Today's Code
-
-<https://www.dropbox.com/scl/fo/k6q8n5lbwbff6j0h5vvs1/AK9Ibhnd8t3rxV5FneYf8AU?rlkey=zo2rejko587tfvoq8tterd44r&dl=0>
-
 ## 
 
 <br>
