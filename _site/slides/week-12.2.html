@@ -10,8 +10,8 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-5223d57514b7f3c9e8f675d86406bf62.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.18">
 
-  <meta name="dcterms.date" content="2024-11-11">
-  <title>DATS 1001--Fall Schedule – Distributions II</title>
+  <meta name="dcterms.date" content="2024-11-12">
+  <title>DATS 1001--Fall Schedule – Hypothesis Testing 1</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -387,13 +387,11 @@
       margin-right: 0; 
     }
   </style>
-  <link href="../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
-  <script src="../site_libs/countdown-0.4.0/countdown.js"></script>
-<meta property="og:title" content="Distributions II – DATS 1001–Fall Schedule">
-<meta property="og:description" content="Continuous Variables">
+<meta property="og:title" content="Hypothesis Testing 1 – DATS 1001–Fall Schedule">
+<meta property="og:description" content="Single Proportion">
 <meta property="og:site_name" content="DATS 1001--Fall Schedule">
-<meta name="twitter:title" content="Distributions II – DATS 1001–Fall Schedule">
-<meta name="twitter:description" content="Continuous Variables">
+<meta name="twitter:title" content="Hypothesis Testing 1 – DATS 1001–Fall Schedule">
+<meta name="twitter:description" content="Single Proportion">
 <meta name="twitter:card" content="summary">
 </head>
 <body class="quarto-dark">
@@ -401,600 +399,404 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Distributions II</h1>
-  <p class="subtitle">Continuous Variables</p>
+  <h1 class="title">Hypothesis Testing 1</h1>
+  <p class="subtitle">Single Proportion</p>
 
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">November 11, 2024</p>
+  <p class="date">November 12, 2024</p>
 </section>
-<section id="electoral-democracy-measure" class="slide level2 smaller">
-<h2>Electoral Democracy Measure</h2>
-<p><br></p>
+<section id="jobs-training-programs" class="slide level2">
+<h2>Jobs Training Programs</h2>
 <ul>
-<li>To what extent is the ideal of electoral democracy in its fullest sense achieved?</li>
-<li>Measure runs from 0 (lowest) to 1 (highest)</li>
-<li>0.5 is a cutoff for distinguishing electoral democracy from electoral autocracy</li>
+<li>International development organizations are sometimes interested in providing training to people in order to help them find a job</li>
+<li>Imagine the unemployment rate in a low-income country is 30%</li>
+<li>One organization claims that its jobs training program is a success because only 15 of the 60 people that they trained did not have a job (25% unemployment rate)</li>
+<li>What should we think about this claim? Is this a successful program?</li>
 </ul>
-<blockquote>
-<p>The electoral principle of democracy seeks to embody the core value of making rulers responsive to citizens, achieved through electoral competition for the electorate’s approval under circumstances when suffrage is extensive; political and civil society organizations can operate freely; elections are clean and not marred by fraud or systematic irregularities; and elections affect the composition of the chief executive of the country. In between elections, there is freedom of expression and an independent media capable of presenting alternative views on matters of political relevance. – V-Dem Codebook</p>
-</blockquote>
 </section>
-<section id="other-high-level-v-dem-measures" class="slide level2">
-<h2>Other High-Level V-Dem Measures</h2>
-<p><br></p>
-<ul>
-<li>Liberal Democracy</li>
-<li>Egalitarian Democracy</li>
-<li>Participatory Democracy</li>
-<li>Deliberative Democracy</li>
-</ul>
-<p>All continuous measures, ranging from 0 to 1. Let’s take a look at how to summarize data like this!</p>
-</section>
-<section id="data-setup" class="slide level2 smaller">
-<h2>Data Setup</h2>
-<p><br></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co"># Load packages </span></span>
-<span id="cb1-2"><a></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a></a><span class="fu">library</span>(vdemlite)</span>
-<span id="cb1-4"><a></a></span>
-<span id="cb1-5"><a></a><span class="co"># Create dataset for year 2022, with country name, year, and electoral dem</span></span>
-<span id="cb1-6"><a></a>vdem2022 <span class="ot">&lt;-</span> <span class="fu">fetchdem</span>(</span>
-<span id="cb1-7"><a></a>  <span class="at">indicators =</span> <span class="fu">c</span>(<span class="st">"v2x_polyarchy"</span>, <span class="st">"e_regionpol_6C"</span>,</span>
-<span id="cb1-8"><a></a>                 <span class="at">start_year =</span> <span class="dv">2022</span>, <span class="at">end_year =</span> <span class="dv">2022</span>)</span>
-<span id="cb1-9"><a></a>  ) <span class="sc">|&gt;</span></span>
-<span id="cb1-10"><a></a>  <span class="fu">rename</span>(</span>
-<span id="cb1-11"><a></a>    <span class="at">country =</span> country_name,    </span>
-<span id="cb1-12"><a></a>    <span class="at">polyarchy =</span> v2x_polyarchy, </span>
-<span id="cb1-13"><a></a>    <span class="at">region =</span> e_regionpol_6C </span>
-<span id="cb1-14"><a></a>    ) <span class="sc">|&gt;</span></span>
-<span id="cb1-15"><a></a>  <span class="fu">mutate</span>(</span>
-<span id="cb1-16"><a></a>    <span class="at">region =</span> <span class="fu">case_match</span>(region, </span>
-<span id="cb1-17"><a></a>                        <span class="dv">1</span> <span class="sc">~</span> <span class="st">"Eastern Europe"</span>, </span>
-<span id="cb1-18"><a></a>                        <span class="dv">2</span> <span class="sc">~</span> <span class="st">"Latin America"</span>,  </span>
-<span id="cb1-19"><a></a>                        <span class="dv">3</span> <span class="sc">~</span> <span class="st">"Middle East"</span>,   </span>
-<span id="cb1-20"><a></a>                        <span class="dv">4</span> <span class="sc">~</span> <span class="st">"Africa"</span>, </span>
-<span id="cb1-21"><a></a>                        <span class="dv">5</span> <span class="sc">~</span> <span class="st">"The West"</span>, </span>
-<span id="cb1-22"><a></a>                        <span class="dv">6</span> <span class="sc">~</span> <span class="st">"Asia"</span>)</span>
-<span id="cb1-23"><a></a>    ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="examine-the-data" class="slide level2">
-<h2>Examine the Data</h2>
-<p><br></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">glimpse</span>(vdem2022)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 9,170
-Columns: 6
-$ country         &lt;chr&gt; "Mexico", "Mexico", "Mexico", "Mexico", "Mexico", "Mex…
-$ country_text_id &lt;chr&gt; "MEX", "MEX", "MEX", "MEX", "MEX", "MEX", "MEX", "MEX"…
-$ country_id      &lt;dbl&gt; 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, …
-$ year            &lt;dbl&gt; 1970, 1971, 1972, 1973, 1974, 1975, 1976, 1977, 1978, …
-$ polyarchy       &lt;dbl&gt; 0.250, 0.248, 0.249, 0.249, 0.251, 0.251, 0.262, 0.276…
-$ region          &lt;chr&gt; "Latin America", "Latin America", "Latin America", "La…</code></pre>
-</div>
-</div>
+<section id="todays-code" class="slide level2">
+<h2>Today’s Code</h2>
+<p><a href="https://www.dropbox.com/scl/fo/k6q8n5lbwbff6j0h5vvs1/AK9Ibhnd8t3rxV5FneYf8AU?rlkey=zo2rejko587tfvoq8tterd44r&amp;dl=0" class="uri">https://www.dropbox.com/scl/fo/k6q8n5lbwbff6j0h5vvs1/AK9Ibhnd8t3rxV5FneYf8AU?rlkey=zo2rejko587tfvoq8tterd44r&amp;dl=0</a></p>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>
 <p><br></p>
-<p>How can we summarize measures of democracy? :thinking:</p>
+<p>Now let’s create some data to match our hypothetical example.</p>
 <p><br></p>
-<p>We could calculate the <strong>mean</strong>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>vdem2022 <span class="sc">|&gt;</span></span>
-<span id="cb4-2"><a></a>  <span class="fu">summarize</span>(<span class="at">mean_democracy =</span> <span class="fu">mean</span>(polyarchy))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  mean_democracy
-1             NA</code></pre>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a>jobs_program <span class="ot">&lt;-</span> <span class="fu">tibble</span>(</span>
+<span id="cb1-4"><a></a>  <span class="at">outcome =</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">"unemployed"</span>, <span class="dv">15</span>), <span class="fu">rep</span>(<span class="st">"employed"</span>, <span class="dv">45</span>))</span>
+<span id="cb1-5"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-<p>The mean is the average of the values. Common measure of central tendency but sensitive to outliers.</p>
 </section>
 <section id="section-1" class="slide level2">
 <h2></h2>
 <p><br></p>
-<p>How can we summarize measures of democracy? :thinking:</p>
-<p><br></p>
-<p>We could calculate the <strong>median</strong>.</p>
+<p>Use the base R <code>head()</code> function to see the first five rows.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>vdem2022 <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a></a>  <span class="fu">summarize</span>(<span class="at">median_democracy =</span> <span class="fu">median</span>(polyarchy))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">head</span>(jobs_program)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  median_democracy
-1               NA</code></pre>
+<pre><code># A tibble: 6 × 1
+  outcome   
+  &lt;chr&gt;     
+1 unemployed
+2 unemployed
+3 unemployed
+4 unemployed
+5 unemployed
+6 unemployed</code></pre>
 </div>
 </div>
-<p>The median is the value that separates the higher half from the lower half of the data.</p>
 </section>
 <section id="section-2" class="slide level2">
 <h2></h2>
 <p><br></p>
-<p>We can also describe the shape of the distribution…</p>
-<ul>
-<li>symmetric (e.g.&nbsp;normal)</li>
-<li>right-skewed</li>
-<li>left-skewed</li>
-<li>unimodal (one peak)</li>
-<li>bimodal (multiple peaks)</li>
-</ul>
+<p>Use the <code>tail()</code> function to see the last five rows.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">tail</span>(jobs_program)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 1
+  outcome 
+  &lt;chr&gt;   
+1 employed
+2 employed
+3 employed
+4 employed
+5 employed
+6 employed</code></pre>
+</div>
+</div>
 </section>
-<section id="histograms" class="slide level2">
-<h2>Histograms</h2>
-<ul>
-<li>Used to represent the distribution of a continuous variable</li>
-<li>The x-axis represents the range of values</li>
-<li>The y-axis represents the frequency of each value</li>
-<li>The bars represent the number of observations in each range or “bin”</li>
-<li>The shape of the histogram can tell us a lot about the distribution of the data</li>
-</ul>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<p><br></p>
+<p>Now let’s visualize it with a bar chart.</p>
+
+<img data-src="week-12.2_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"></section>
+<section id="question" class="slide level2">
+<h2>Question</h2>
+<p><br></p>
+<p>Is it possible to assess this hypothetical organization’s claim using the data and information presented thus far?</p>
+<blockquote>
+<p>“Our jobs program is a success because only 15 of the 60 people that we trained did not have a job. Thus our 25% unemployment rate beats the country’s unemployment rate of 30%.”</p>
+</blockquote>
 </section>
-<section id="symmetric-distributions" class="slide level2">
-<h2>Symmetric Distributions</h2>
-
-<img data-src="week-11.2_files/figure-revealjs/symmetric-1-1.png" width="960" class="r-stretch"></section>
-<section id="symmetric-distributions-1" class="slide level2">
-<h2>Symmetric Distributions</h2>
-
-<img data-src="week-11.2_files/figure-revealjs/symmetric-2-1.png" width="960" class="r-stretch"></section>
-<section id="skewed-distributions" class="slide level2">
-<h2>Skewed Distributions</h2>
-
-<img data-src="week-11.2_files/figure-revealjs/left-skewed-1.png" width="960" class="r-stretch"></section>
-<section id="skewed-distributions-1" class="slide level2">
-<h2>Skewed Distributions</h2>
-
-<img data-src="week-11.2_files/figure-revealjs/right-skewed-1.png" width="960" class="r-stretch"></section>
-<section id="bimodal-distribution" class="slide level2">
-<h2>Bimodal Distribution</h2>
-
-<img data-src="week-11.2_files/figure-revealjs/bimodal-1.png" width="960" class="r-stretch"></section>
-<section id="when-is-the-mean-useful" class="slide level2">
-<h2>When is the Mean Useful?</h2>
-
-<img data-src="week-11.2_files/figure-revealjs/normal-distribution-1.png" width="960" class="r-stretch"></section>
-<section id="when-is-the-mean-useful-1" class="slide level2">
-<h2>When is the Mean Useful?</h2>
-
-<img data-src="week-11.2_files/figure-revealjs/mean-right-skew-1.png" width="960" class="r-stretch"></section>
-<section id="when-is-the-mean-useful-2" class="slide level2">
-<h2>When is the Mean Useful?</h2>
-
-<img data-src="week-11.2_files/figure-revealjs/mean-bimodal-1.png" width="960" class="r-stretch"></section>
-<section id="when-is-the-mean-useful-3" class="slide level2">
-<h2>When is the <code>mean</code> useful?</h2>
+<section id="correlation-vs.-causation" class="slide level2">
+<h2>Correlation vs.&nbsp;causation</h2>
 <p><br></p>
 <ul>
-<li>The Mean works well as a summary statistic when the distribution is relatively symmetric</li>
-<li>Not as well when distributions are skewed or bimodal (or multi-modal)</li>
-<li>With skewed distributions, the mean is sensitive to extreme values</li>
-<li>The median is more robust</li>
+<li>No.</li>
+<li>We need to know more about how people were selected for the program in order to assess causality (e.g., were they randomly assigned?)</li>
+<li>But, we can still ask whether the unemployment rate of <span class="math inline">\(\hat{p}\)</span> = 0.25 could be due to chance.</li>
 </ul>
 </section>
-<section id="lesson" class="slide level2">
-<h2>Lesson</h2>
-<div>
+<section id="hypothesis-testing-intuition" class="slide level2 smaller">
+<h2>Hypothesis Testing Intuition</h2>
+<p><br></p>
 <ul>
-<li class="fragment">Always look at your data!!</li>
-<li class="fragment">When reading or in a presentation, ask yourself:
+<li>We are going to assume “nothing is going on”
 <ul>
-<li class="fragment">Does the mean make sense given the distribution of the measure?</li>
-<li class="fragment">Could extreme values in a skewed distribution make the mean not as useful?</li>
-<li class="fragment">Have the analysts shown you the distribution? If not, ask about it!</li>
+<li>In this case, the jobs program had no impact</li>
+</ul></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>We are going to figure out what the distribution of outcomes we we might observe could be if nothing is going on
+<ul>
+<li>In this case: if we take a sample of 60 from a population where the parameter is 0.3</li>
+</ul></li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>We will assess how likely we would be to observe our data if nothing is going on
+<ul>
+<li>If very unlikely, we conclude that something is probably going on</li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="visualize-our-measure" class="slide level2">
-<h2>Visualize Our Measure</h2>
+<section id="stating-our-hypotheses" class="slide level2">
+<h2>Stating our Hypotheses</h2>
 <p><br></p>
-
-<img data-src="week-11.2_files/figure-revealjs/visualize-polyarchy-1.png" width="960" class="r-stretch"></section>
-<section id="visualize-our-measure-1" class="slide level2">
-<h2>Visualize Our Measure</h2>
-<p><br></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a>mn <span class="ot">&lt;-</span> <span class="fu">mean</span>(vdem2022<span class="sc">$</span>polyarchy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb8-2"><a></a>med <span class="ot">&lt;-</span> <span class="fu">median</span>(vdem2022<span class="sc">$</span>polyarchy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb8-3"><a></a></span>
-<span id="cb8-4"><a></a><span class="fu">ggplot</span>(vdem2022, <span class="fu">aes</span>(<span class="at">x =</span> polyarchy )) <span class="sc">+</span></span>
-<span id="cb8-5"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> .<span class="dv">05</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
-<span id="cb8-6"><a></a>   <span class="fu">labs</span>(</span>
-<span id="cb8-7"><a></a>    <span class="at">x =</span> <span class="st">"Electoral Democracy"</span>, </span>
-<span id="cb8-8"><a></a>    <span class="at">y =</span> <span class="st">"Frequency"</span>, </span>
-<span id="cb8-9"><a></a>    <span class="at">title =</span> <span class="st">"Distribution of Electoral Democracy in 2022"</span>, </span>
-<span id="cb8-10"><a></a>    <span class="at">caption =</span> <span class="st">"Source: V-Dem Institute"</span></span>
-<span id="cb8-11"><a></a>  ) <span class="sc">+</span> </span>
-<span id="cb8-12"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> mn, <span class="at">linewidth =</span> <span class="dv">2</span>, <span class="at">color =</span> <span class="st">"darkorange"</span>) <span class="sc">+</span></span>
-<span id="cb8-13"><a></a>  <span class="fu">theme_minimal</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Null hypothesis (<span class="math inline">\(H_0\)</span>):</strong> “There is nothing going on.”</p>
+<blockquote>
+<p>Unemployment rate among those in the jobs program is no different than the country average of 30%.</p>
+</blockquote>
+<div class="fragment">
+<p><strong>Alternative hypothesis (<span class="math inline">\(H_A\)</span>):</strong> “There is something going on.”</p>
+<blockquote>
+<p>Unemployment rate is <strong>lower</strong> than the country average of 30%.</p>
+</blockquote>
 </div>
 </section>
-<section id="visualize-our-measure-2" class="slide level2">
-<h2>Visualize Our Measure</h2>
+<section id="hypothesis-test" class="slide level2">
+<h2>Hypothesis Test</h2>
+<p><br></p>
+<div>
+<ul>
+<li class="fragment"><strong>Hypothesis test:</strong> If the null hypothesis were true, is the data we have in our sample likely to have been generated by chance (due to random variability)?</li>
+<li class="fragment">If yes, we do NOT reject the null hypothesis</li>
+<li class="fragment">If not very likely, we reject the null hypothesis</li>
+</ul>
+</div>
+</section>
+<section id="hypothesis-testing-framework" class="slide level2">
+<h2>Hypothesis Testing Framework</h2>
+<div>
+<ul>
+<li class="fragment">Start with null hypothesis, <span class="math inline">\(H_0\)</span>, represents the status quo</li>
+<li class="fragment">Set an alternative hypothesis, <span class="math inline">\(H_A\)</span>, that represents the research question, i.e.&nbsp;what we’re testing for</li>
+<li class="fragment">Conduct a hypothesis test under the assumption that the null hypothesis is true
+<ul>
+<li class="fragment">if the test results suggest that the data do not provide convincing evidence for the alternative hypothesis, stick with the null hypothesis</li>
+<li class="fragment">if they do, then reject the null hypothesis in favor of the alternative</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="p-values-and-critical-values" class="slide level2">
+<h2>p-values and Critical Values</h2>
+<p><br></p>
+<div>
+<ul>
+<li class="fragment">A <strong>p-value</strong> is the probability of observed or more extreme outcome given that the null hypothesis is true</li>
+<li class="fragment">A critical value (<span class="math inline">\(\alpha\)</span>) is the threshold at which we will reject the null hypothesis</li>
+<li class="fragment">If the p-value is less than <span class="math inline">\(\alpha\)</span>, we reject the null hypothesis</li>
+<li class="fragment">A standard threshold for <span class="math inline">\(\alpha\)</span> is 0.05</li>
+</ul>
+</div>
+</section>
+<section id="the-null-distribution" class="slide level2">
+<h2>The Null Distribution</h2>
+<p><br></p>
+<ul>
+<li>Since <span class="math inline">\(H_0: p = 0.30\)</span>, we need to simulate a null distribution where the probability of success (unemployment) for each trial (person in program) is 0.30</li>
+</ul>
+<div class="fragment">
+<ul>
+<li>We want to know how likely we would be to get an unemployment rate of 0.25 in our sample of 60, <em>if the true unemployment rate were 0.30</em></li>
+</ul>
+</div>
+</section>
+<section id="what-do-we-expect" class="slide level2">
+<h2>What do we expect?</h2>
+<p><br></p>
+<div>
+<ul>
+<li class="fragment">So the first step is to simulate our null distribution</li>
+<li class="fragment">And the question is, when sampling from the null distribution, what is the expected proportion of unemployed?</li>
+<li class="fragment">We set up our simulator to select samples of 60 individuals with a 30% chance of being unemployed</li>
+<li class="fragment">We then calculate the proportion of unemployed in each sample</li>
+</ul>
+</div>
+</section>
+<section id="simulation-1" class="slide level2">
+<h2>Simulation #1</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>sim1
+  employed unemployed 
+        42         18 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.3</code></pre>
+</div>
+
+</div>
+<img data-src="week-12.2_files/figure-revealjs/unnamed-chunk-5-1.png" style="width:50.0%" class="r-stretch"></section>
+<section id="simulation-2" class="slide level2">
+<h2>Simulation #2</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>sim2
+  employed unemployed 
+        41         19 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.3166667</code></pre>
+</div>
+
+</div>
+<img data-src="week-12.2_files/figure-revealjs/unnamed-chunk-6-1.png" style="width:50.0%" class="r-stretch"></section>
+<section id="simulation-3" class="slide level2">
+<h2>Simulation #3</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>sim3
+  employed unemployed 
+        38         22 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.3666667</code></pre>
+</div>
+
+</div>
+<img data-src="week-12.2_files/figure-revealjs/unnamed-chunk-7-1.png" style="width:50.0%" class="r-stretch"></section>
+<section id="we-need-to-do-this-many-times" class="slide level2">
+<h2>We need to do this many times…</h2>
+</section>
+<section id="tidymodels" class="slide level2">
+<h2><code>tidymodels</code></h2>
+<p><br></p>
+<p>We can use the <code>tidymodels</code> package to help with this process…</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co">#load tidymodels</span></span>
+<span id="cb12-2"><a></a><span class="fu">library</span>(tidymodels)</span>
+<span id="cb12-3"><a></a></span>
+<span id="cb12-4"><a></a><span class="co"># simulate the distribution</span></span>
+<span id="cb12-5"><a></a>null_dist <span class="ot">&lt;-</span> jobs_program <span class="sc">|&gt;</span></span>
+<span id="cb12-6"><a></a>  <span class="fu">specify</span>(<span class="at">response =</span> outcome, <span class="at">success =</span> <span class="st">"unemployed"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb12-7"><a></a>  <span class="fu">hypothesize</span>(<span class="at">null =</span> <span class="st">"point"</span>, <span class="at">p =</span> <span class="fu">c</span>(<span class="st">"unemployed"</span> <span class="ot">=</span> <span class="fl">0.30</span>, <span class="st">"employed"</span> <span class="ot">=</span> <span class="fl">0.70</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb12-8"><a></a>  <span class="fu">generate</span>(<span class="at">reps =</span> <span class="dv">2000</span>, <span class="at">type =</span> <span class="st">"draw"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb12-9"><a></a>  <span class="fu">calculate</span>(<span class="at">stat =</span> <span class="st">"prop"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="what-is-being-stored-in-null_dist" class="slide level2">
+<h2>What is being stored in <em>null_dist</em>?</h2>
 <p><br></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9" data-code-line-numbers="1-2|5|12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>mn <span class="ot">&lt;-</span> <span class="fu">mean</span>(vdem2022<span class="sc">$</span>polyarchy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb9-2"><a></a>med <span class="ot">&lt;-</span> <span class="fu">median</span>(vdem2022<span class="sc">$</span>polyarchy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb9-3"><a></a></span>
-<span id="cb9-4"><a></a><span class="fu">ggplot</span>(vdem2022, <span class="fu">aes</span>(<span class="at">x =</span> polyarchy )) <span class="sc">+</span></span>
-<span id="cb9-5"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> .<span class="dv">05</span>, <span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span></span>
-<span id="cb9-6"><a></a>   <span class="fu">labs</span>(</span>
-<span id="cb9-7"><a></a>    <span class="at">x =</span> <span class="st">"Electoral Democracy"</span>, </span>
-<span id="cb9-8"><a></a>    <span class="at">y =</span> <span class="st">"Frequency"</span>, </span>
-<span id="cb9-9"><a></a>    <span class="at">title =</span> <span class="st">"Distribution of Electoral Democracy in 2022"</span>, </span>
-<span id="cb9-10"><a></a>    <span class="at">caption =</span> <span class="st">"Source: V-Dem Institute"</span></span>
-<span id="cb9-11"><a></a>  ) <span class="sc">+</span> </span>
-<span id="cb9-12"><a></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> mn, <span class="at">linewidth =</span> <span class="dv">2</span>, <span class="at">color =</span> <span class="st">"darkorange"</span>) <span class="sc">+</span></span>
-<span id="cb9-13"><a></a>  <span class="fu">theme_minimal</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Response: outcome (factor)
+Null Hypothesis: point
+# A tibble: 2,000 × 2
+   replicate  stat
+       &lt;dbl&gt; &lt;dbl&gt;
+ 1         1 0.367
+ 2         2 0.2  
+ 3         3 0.283
+ 4         4 0.2  
+ 5         5 0.4  
+ 6         6 0.317
+ 7         7 0.3  
+ 8         8 0.333
+ 9         9 0.283
+10        10 0.25 
+# ℹ 1,990 more rows</code></pre>
 </div>
+</div>
+</section>
+<section id="the-null-distribution-1" class="slide level2">
+<h2>The null distribution</h2>
+<p><br></p>
+<p>Where should this distribution be centered? Or, what should the mean be?</p>
+<p><br></p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>null_dist <span class="sc">|&gt;</span></span>
+<span id="cb14-2"><a></a>  <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(stat))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+   mean
+  &lt;dbl&gt;
+1 0.301</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="visualizing-the-null-distribution" class="slide level2">
+<h2>Visualizing the null distribution</h2>
+
+<img data-src="week-12.2_files/figure-revealjs/unnamed-chunk-11-1.png" style="width:40.0%" class="r-stretch"></section>
+<section id="calculate-the-p-value" class="slide level2">
+<h2>Calculate the p-value</h2>
+<p><br> <em>p-value</em>–in what % of the simulations was the simulated sample proportion at least as extreme as the observed sample proportion?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>null_dist <span class="sc">|&gt;</span></span>
+<span id="cb16-2"><a></a>  <span class="co"># select out the value in the null distribution that are less that 0.25</span></span>
+<span id="cb16-3"><a></a>  <span class="fu">filter</span>(stat <span class="sc">&lt;=</span> (<span class="dv">15</span><span class="sc">/</span><span class="dv">60</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb16-4"><a></a>  <span class="co"># calculate the proportion - (number less divided by all values in null_dist)</span></span>
+<span id="cb16-5"><a></a>  <span class="fu">summarise</span>(<span class="at">p_value =</span> <span class="fu">n</span>()<span class="sc">/</span><span class="fu">nrow</span>(null_dist))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  p_value
+    &lt;dbl&gt;
+1   0.238</code></pre>
+</div>
+</div>
+</section>
+<section id="visualizing-the-p-value" class="slide level2">
+<h2>Visualizing the p-value</h2>
+
+<img data-src="week-12.2_files/figure-revealjs/unnamed-chunk-13-1.png" style="width:50.0%" class="r-stretch"></section>
+<section id="p-value-using-infer" class="slide level2">
+<h2>p-value using <code>infer</code></h2>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="fu">library</span>(infer)</span>
+<span id="cb18-2"><a></a></span>
+<span id="cb18-3"><a></a><span class="co"># calculate the p-value from null distribution</span></span>
+<span id="cb18-4"><a></a>p_value <span class="ot">&lt;-</span> null_dist <span class="sc">|&gt;</span></span>
+<span id="cb18-5"><a></a>  <span class="fu">get_p_value</span>(<span class="at">obs_stat =</span> <span class="dv">15</span><span class="sc">/</span><span class="dv">60</span>, <span class="at">direction =</span> <span class="st">"less"</span>)</span>
+<span id="cb18-6"><a></a></span>
+<span id="cb18-7"><a></a>p_value</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 1
+  p_value
+    &lt;dbl&gt;
+1   0.238</code></pre>
+</div>
+</div>
+</section>
+<section id="visualing-the-p-value-using-infer" class="slide level2">
+<h2>Visualing the p-value using <code>infer</code></h2>
+<p><br></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">visualize</span>(null_dist) <span class="sc">+</span></span>
+<span id="cb20-2"><a></a>  <span class="fu">shade_p_value</span>(<span class="at">obs_stat =</span> <span class="dv">15</span><span class="sc">/</span><span class="dv">60</span>, <span class="at">direction =</span> <span class="st">"less"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="week-12.2_files/figure-revealjs/unnamed-chunk-15-1.png" width="960" class="r-stretch"></section>
+<section id="significance-level" class="slide level2 smaller">
+<h2>“Significance” level</h2>
+<p><br></p>
+<div>
+<ul>
+<li class="fragment">Conventionally, people use a p-value of <em>0.05</em> as a cutoff (“signifigance level”) for determining “statistical significance”
+<ul>
+<li class="fragment">That is, whether the null hypothesis should be rejected</li>
+<li class="fragment">That is, whether the data we gathered is very unlikely to have been generated due to chance</li>
+</ul></li>
+<li class="fragment">Always remember that this is a convention
+<ul>
+<li class="fragment"><em>p=0.049</em> is under the cutoff, while p=0.051 is not: are these really different?</li>
+</ul></li>
+<li class="fragment">When people report “statistically significant” results, they mean that the p-value from their analysis is less than 0.05</li>
+</ul>
+</div>
+</section>
+<section id="our-hypothetical-study" class="slide level2">
+<h2>Our Hypothetical Study</h2>
+<p><br></p>
+<ul>
+<li>Our finding: if the true unemployment rate were 30 percent and we draw samples of 60, about 23 percent of the time we will get an unemployment rate lower than the one among the participants in the program (simply due to random chance)</li>
+<li>What should we conclude?</li>
+</ul>
+</section>
+<section id="conclusion" class="slide level2">
+<h2>Conclusion</h2>
+<p><br></p>
+<ul>
+<li>We do NOT reject the null hypothesis: the unemployment rate in the sample could likely have been due to chance</li>
+</ul>
 </section>
 <section id="your-turn" class="slide level2">
 <h2>Your Turn!</h2>
 <ul>
-<li>Look at the <a href="https://v-dem.net/documents/24/codebook_v13.pdf">V-Dem codebook</a></li>
-<li>Select a different high-level measure of democracy</li>
-<li>Preprocess your data to include tha measure in your data frame</li>
-<li>Calculate the mean and median and store as a variable</li>
-<li>Visualize the distribution of the measure</li>
-<li>Include a vertical line for the mean</li>
-<li>Now try the median</li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer3" data-update-every="1" tabindex="0" style="right:10%;bottom:5%;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
-</div>
-</section>
-<section id="recap" class="slide level2">
-<h2>Recap</h2>
-<p><br></p>
+<li>What if the unemployment rate for the program was only 10%? - Would you reject the null hypothesis in this case?
 <ul>
-<li>We can use statistics like mean or median to describe the center of a variable</li>
-<li>We can visualize the entire distribution to charachterize the distribution of the variable</li>
-<li>We should also say something about the <strong>spread</strong> of the distribution</li>
-</ul>
-</section>
-<section id="why-measure-and-visualize-spread" class="slide level2">
-<h2>Why Measure and Visualize Spread?</h2>
-
-<img data-src="week-11.2_files/figure-revealjs/spread-1.png" width="960" class="r-stretch"></section>
-<section id="measures-of-spread-range" class="slide level2">
-<h2>Measures of Spread: Range</h2>
-<p><br></p>
-<ul>
-<li>Range (min and max values)</li>
-<li>Not ideal b/c does not tell us much about where most of the values are located</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a>vdem2022 <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a></a>  <span class="fu">summarize</span>(<span class="at">min =</span> <span class="fu">min</span>(polyarchy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb10-3"><a></a>            <span class="at">max =</span> <span class="fu">max</span>(polyarchy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>   min   max
-1 0.01 0.922</code></pre>
-</div>
-</div>
-</section>
-<section id="measure-of-spread-interquartile-range" class="slide level2">
-<h2>Measure of Spread: Interquartile Range</h2>
-<p>IQR: 25th percentile - 75th percentile</p>
-
-<img data-src="week-11.2_files/figure-revealjs/iqr1-1.png" width="960" class="r-stretch"></section>
-<section id="interquartile-range" class="slide level2">
-<h2>Interquartile Range</h2>
-<ul>
-<li>The middle 50 percent of the countries in the data lie between 0.262 and 0.747</li>
-<li>The IQR (0.485) is the difference between the Q3 and Q1 values</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>vdem2022 <span class="sc">|&gt;</span></span>
-<span id="cb12-2"><a></a>  <span class="fu">summarize</span>(</span>
-<span id="cb12-3"><a></a>    <span class="at">IQRlow =</span>  <span class="fu">quantile</span>(polyarchy, .<span class="dv">25</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb12-4"><a></a>    <span class="at">IQRhigh =</span> <span class="fu">quantile</span>(polyarchy, .<span class="dv">75</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb12-5"><a></a>    <span class="at">IQRlength =</span> <span class="fu">IQR</span>(polyarchy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb12-6"><a></a>          )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  IQRlow IQRhigh IQRlength
-1  0.175   0.712     0.537</code></pre>
-</div>
-</div>
-</section>
-<section id="box-plot" class="slide level2">
-<h2>Box Plot</h2>
-<ul>
-<li>A box plot is a graphical representation of the distribution based on the median and quartiles</li>
-<li>It is a standardized way of displaying the distribution of data based on a five number summary: minimum, first quartile, median, third quartile, and maximum</li>
-</ul>
-</section>
-<section id="box-plot-1" class="slide level2">
-<h2>Box Plot</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">ggplot</span>(vdem2022, <span class="fu">aes</span>(<span class="at">x =</span> <span class="st">""</span>, <span class="at">y =</span> polyarchy)) <span class="sc">+</span></span>
-<span id="cb14-2"><a></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span> </span>
-<span id="cb14-3"><a></a>   <span class="fu">labs</span>(</span>
-<span id="cb14-4"><a></a>    <span class="at">x =</span> <span class="st">""</span>, </span>
-<span id="cb14-5"><a></a>    <span class="at">y =</span> <span class="st">"Electoral Democracy"</span>, </span>
-<span id="cb14-6"><a></a>    <span class="at">title =</span> <span class="st">"Distribution of Electoral Democracy in 2022"</span>, </span>
-<span id="cb14-7"><a></a>    <span class="at">caption =</span> <span class="st">"Source: V-Dem Institute"</span></span>
-<span id="cb14-8"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb14-9"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-
-</div>
-<img data-src="week-11.2_files/figure-revealjs/boxplot-1.png" width="960" class="r-stretch"></section>
-<section id="measure-of-spead-standard-deviation" class="slide level2">
-<h2>Measure of Spead: Standard Deviation</h2>
-<p><br></p>
-<ul>
-<li>Can think of it as something like the “average distance” of each data point from the mean</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>vdem2022 <span class="sc">|&gt;</span></span>
-<span id="cb15-2"><a></a>  <span class="fu">summarize</span>(<span class="at">mean =</span> <span class="fu">mean</span>(polyarchy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb15-3"><a></a>            <span class="at">stdDev =</span> <span class="fu">sd</span>(polyarchy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>       mean    stdDev
-1 0.4370313 0.2856311</code></pre>
-</div>
-</div>
-</section>
-<section id="standard-deviation" class="slide level2">
-<h2>Standard Deviation</h2>
-<p><br></p>
-<ul>
-<li>A low standard deviation indicates that the values tend to be close to the mean</li>
-<li>A high standard deviation indicates that the values are spread out over a wider range</li>
-</ul>
-</section>
-<section id="starting-with-variance" class="slide level2">
-<h2>Starting with Variance</h2>
-<p><br></p>
-<ul>
-<li>Variance is a step towards calculating the standard deviation.</li>
-<li>It quantifies the average squared deviation of each number from the mean of the data set.</li>
-</ul>
-</section>
-<section id="calculating-deviation-from-the-mean" class="slide level2">
-<h2>Calculating Deviation from the Mean</h2>
-<ul>
-<li>First, calculate the mean (<span class="math inline">\(\bar{X}\)</span>) of the dataset.</li>
-<li>For each data point (<span class="math inline">\(X_i\)</span>), calculate its deviation from the mean: <span class="math display">\[e_i = X_i - \bar{X}\]</span>
-<ul>
-<li>Example with a mean of 5:
-<ul>
-<li>For a data point where <span class="math inline">\((X_i = 0): (0 - 5 = -5)\)</span></li>
-<li>For a data point where <span class="math inline">\((X_i = 10): (10 - 5 = 5)\)</span></li>
+<li>Demonstrate by calculating the p-value</li>
 </ul></li>
+<li>Try changing the true unemployment rate in the null distribution to 0.50 (50%)
+<ul>
+<li>Simulate the null distribution</li>
+<li>Would you reject the null hypothesis if the observed unemployment rate was 23% in this case?</li>
 </ul></li>
 </ul>
-</section>
-<section id="squaring-the-deviations" class="slide level2">
-<h2>Squaring the Deviations</h2>
-<ul>
-<li>Squaring each deviation (<span class="math inline">\(e_i\)</span>) to eliminate negative values: <span class="math display">\[e_i^2 = (X_i - \bar{X})^2\]</span></li>
-<li>Summing up all squared deviations: <span class="math display">\[\sum_{i=1}^{n} (X_i - \bar{X})^2\]</span></li>
-<li>This sum represents the total squared deviation from the mean.</li>
-</ul>
-</section>
-<section id="calculating-the-variance" class="slide level2">
-<h2>Calculating the Variance</h2>
-<ul>
-<li>Divide the total squared deviation by <span class="math inline">\((n-1)\)</span> (to account for the sample variance): <span class="math display">\[\text{Variance} = \frac{1}{n-1} \sum_{i=1}^{n} (X_i - \bar{X})^2\]</span></li>
-<li>Using <span class="math inline">\((n-1)\)</span> ensures an unbiased estimate of the population variance when calculating from a sample.</li>
-</ul>
-</section>
-<section id="deriving-the-standard-deviation" class="slide level2">
-<h2>Deriving the Standard Deviation</h2>
-<p><br></p>
-<ul>
-<li>The standard deviation is the square root of the variance: <span class="math display">\[s = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (X_i - \bar{X})^2}\]</span></li>
-<li>Taking the square root converts the variance back to the units of the original data.</li>
-</ul>
-</section>
-<section id="standard-deviation-simple-example" class="slide level2">
-<h2>Standard Deviation Simple Example</h2>
-<p><br></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>)</span>
-<span id="cb17-2"><a></a>e <span class="ot">&lt;-</span> x <span class="sc">-</span> <span class="fu">mean</span>(x)</span>
-<span id="cb17-3"><a></a>e</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] -5 -4 -3 -2 -1  0  1  2  3  4  5</code></pre>
-</div>
-</div>
-</section>
-<section id="standard-deviation-simple-example-1" class="slide level2">
-<h2>Standard Deviation Simple Example</h2>
-<p><br></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>)</span>
-<span id="cb19-2"><a></a>e_squared <span class="ot">&lt;-</span> e<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb19-3"><a></a>e_squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code> [1] 25 16  9  4  1  0  1  4  9 16 25</code></pre>
-</div>
-</div>
-</section>
-<section id="standard-deviation-simple-example-2" class="slide level2">
-<h2>Standard Deviation Simple Example</h2>
-<p><br></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>, <span class="dv">10</span>)</span>
-<span id="cb21-2"><a></a>sum_e_squared <span class="ot">&lt;-</span> <span class="fu">sum</span>(e_squared)</span>
-<span id="cb21-3"><a></a>sum_e_squared</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 110</code></pre>
-</div>
-</div>
-</section>
-<section id="standard-deviation-simple-example-3" class="slide level2">
-<h2>Standard Deviation Simple Example</h2>
-<p><br></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>variance <span class="ot">&lt;-</span> sum_e_squared<span class="sc">/</span>(<span class="fu">length</span>(x)<span class="sc">-</span><span class="dv">1</span>)</span>
-<span id="cb23-2"><a></a>variance</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 11</code></pre>
-</div>
-</div>
-</section>
-<section id="standard-deviation-simple-example-4" class="slide level2">
-<h2>Standard Deviation Simple Example</h2>
-<p><br></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>standard_dev <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(variance)</span>
-<span id="cb25-2"><a></a>standard_dev</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.316625</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">sd</span>(x)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 3.316625</code></pre>
-</div>
-</div>
-</section>
-<section id="your-turn-1" class="slide level2">
-<h2>Your Turn!</h2>
-<p><br></p>
-<ul>
-<li>Calculate measures of spread for the <code>polyarchy</code> variable in the V-Dem data (mean, median, IQR, standard deviation)</li>
-<li>How would you interpret these measures?</li>
-<li>Try a box plot for the <code>polyarchy</code> variable</li>
-<li>Try another variable in the V-Dem data</li>
-<li>How does it compare to <code>polyarchy</code>?</li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer4" data-update-every="1" tabindex="0" style="right:10%;bottom:10%;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
-</div>
-</section>
-<section id="calculating-statistics-by-groups" class="slide level2">
-<h2>Calculating Statistics by groups</h2>
-<p><br></p>
-<ul>
-<li>What if we want to describe electoral democracy and see how it differs by some different variable? For example, by world region, or by year?</li>
-<li>In this case we want to combine numerical summaries with categorical variables</li>
-<li>This brings us back to bar chart</li>
-</ul>
-</section>
-<section id="calculating-statistics-by-groups-1" class="slide level2">
-<h2>Calculating Statistics by Groups</h2>
-<ul>
-<li>Let’s calculate the mean and median of electoral democracy in each world region</li>
-<li>For this, we add the <em>group_by()</em> to our previous code</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb29" data-code-line-numbers="2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>vdem2022 <span class="sc">|&gt;</span></span>
-<span id="cb29-2"><a></a>  <span class="fu">group_by</span>(region) <span class="sc">|&gt;</span></span>
-<span id="cb29-3"><a></a>  <span class="fu">summarize</span>(<span class="at">mean_dem =</span> <span class="fu">mean</span>(polyarchy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb29-4"><a></a>            <span class="at">median_dem =</span> <span class="fu">median</span>(polyarchy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 3
-  region         mean_dem median_dem
-  &lt;chr&gt;             &lt;dbl&gt;      &lt;dbl&gt;
-1 Africa            0.315      0.254
-2 Asia              0.354      0.328
-3 Eastern Europe    0.475      0.468
-4 Latin America     0.532      0.585
-5 Middle East       0.213      0.166
-6 The West          0.846      0.868</code></pre>
-</div>
-</div>
-</section>
-<section id="calculating-statistics-by-groups-2" class="slide level2">
-<h2>Calculating Statistics by Groups</h2>
-<ul>
-<li>Let’s store our statistics as a new data object, <em>democracy_region</em></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>democracy_region <span class="ot">&lt;-</span> vdem2022 <span class="sc">|&gt;</span> </span>
-<span id="cb31-2"><a></a>  <span class="fu">group_by</span>(region) <span class="sc">|&gt;</span></span>
-<span id="cb31-3"><a></a>  <span class="fu">summarize</span>(</span>
-<span id="cb31-4"><a></a>    <span class="at">mean_dem =</span> <span class="fu">mean</span>(polyarchy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="cb31-5"><a></a>    <span class="at">median_dem =</span> <span class="fu">median</span>(polyarchy, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb31-6"><a></a>  )</span>
-<span id="cb31-7"><a></a></span>
-<span id="cb31-8"><a></a>democracy_region</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 6 × 3
-  region         mean_dem median_dem
-  &lt;chr&gt;             &lt;dbl&gt;      &lt;dbl&gt;
-1 Africa            0.315      0.254
-2 Asia              0.354      0.328
-3 Eastern Europe    0.475      0.468
-4 Latin America     0.532      0.585
-5 Middle East       0.213      0.166
-6 The West          0.846      0.868</code></pre>
-</div>
-</div>
-</section>
-<section id="visualize-using-our-bar-chart-skills" class="slide level2">
-<h2>Visualize using our Bar Chart Skills</h2>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">ggplot</span>(democracy_region, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(region, <span class="sc">-</span>mean_dem), <span class="at">y =</span> mean_dem)) <span class="sc">+</span></span>
-<span id="cb33-2"><a></a>  <span class="fu">geom_col</span>(<span class="at">fill =</span> <span class="st">"steelblue"</span>) <span class="sc">+</span> </span>
-<span id="cb33-3"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb33-4"><a></a>    <span class="at">x =</span> <span class="st">"Region"</span>, </span>
-<span id="cb33-5"><a></a>    <span class="at">y =</span> <span class="st">"Mean Polyarchy Score"</span>, </span>
-<span id="cb33-6"><a></a>    <span class="at">title =</span> <span class="st">"Democracy by region, 1990 - present"</span>, </span>
-<span id="cb33-7"><a></a>    <span class="at">caption =</span> <span class="st">"Source: V-Dem Institute"</span></span>
-<span id="cb33-8"><a></a>    ) <span class="sc">+</span> </span>
-<span id="cb33-9"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-
-</div>
-<img data-src="week-11.2_files/figure-revealjs/group-by-3-1.png" width="960" class="r-stretch"></section>
-<section id="numerical-variable-by-group" class="slide level2">
-<h2>Numerical Variable by Group</h2>
-<p>How should we interpret this plot?</p>
-<div class="cell">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="fu">library</span>(ggridges)</span>
-<span id="cb34-2"><a></a><span class="co">#library(forcats)</span></span>
-<span id="cb34-3"><a></a>  <span class="fu">ggplot</span>(vdem2022, <span class="fu">aes</span>(<span class="at">x =</span> polyarchy, <span class="at">y =</span> region, <span class="at">fill =</span> region)) <span class="sc">+</span></span>
-<span id="cb34-4"><a></a>    <span class="fu">geom_density_ridges</span>() <span class="sc">+</span></span>
-<span id="cb34-5"><a></a>  <span class="fu">labs</span>(</span>
-<span id="cb34-6"><a></a>    <span class="at">x =</span> <span class="st">"Electoral Democracy"</span>,</span>
-<span id="cb34-7"><a></a>    <span class="at">y =</span> <span class="st">"Region"</span>,</span>
-<span id="cb34-8"><a></a>    <span class="at">title =</span> <span class="st">"A Ridge Plot"</span>,</span>
-<span id="cb34-9"><a></a>    <span class="at">caption =</span> <span class="st">"Source: V-Dem Institute"</span>,</span>
-<span id="cb34-10"><a></a>  ) <span class="sc">+</span></span>
-<span id="cb34-11"><a></a>  <span class="fu">scale_fill_viridis_d</span>() <span class="sc">+</span></span>
-<span id="cb34-12"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-
-</div>
-<img data-src="week-11.2_files/figure-revealjs/ridge-plot-1.png" width="960" class="r-stretch"></section>
-<section id="your-turn-2" class="slide level2">
-<h2>Your Turn!</h2>
-<p><br></p>
-<ul>
-<li>Make a bar chart summarizing <code>polyarchy</code> or some other V-Dem variable</li>
-<li>Now try your hand at a ridge plot</li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<div class="countdown" id="timer5" data-update-every="1" tabindex="0" style="right:10%;bottom:10%;">
-<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
-<code class="countdown-time"><span class="countdown-digits minutes">05</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
-</div>
-</div>
-</div>
 
 
 </section>

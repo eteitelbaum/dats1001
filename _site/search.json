@@ -4368,5 +4368,222 @@
     "title": "Sampling and Uncertainty",
     "section": "Why did we do these simulations?",
     "text": "Why did we do these simulations?\n\n\nThey provide a foundation for statistical inference and for characterizing uncertainty in our estimates\nThe best research designs will try to maximize or achieve good balance on bias vs precision"
+  },
+  {
+    "objectID": "slides/week-12.2.html#jobs-training-programs",
+    "href": "slides/week-12.2.html#jobs-training-programs",
+    "title": "Hypothesis Testing 1",
+    "section": "Jobs Training Programs",
+    "text": "Jobs Training Programs\n\nInternational development organizations are sometimes interested in providing training to people in order to help them find a job\nImagine the unemployment rate in a low-income country is 30%\nOne organization claims that its jobs training program is a success because only 15 of the 60 people that they trained did not have a job (25% unemployment rate)\nWhat should we think about this claim? Is this a successful program?"
+  },
+  {
+    "objectID": "slides/week-12.2.html#todays-code",
+    "href": "slides/week-12.2.html#todays-code",
+    "title": "Hypothesis Testing 1",
+    "section": "Today’s Code",
+    "text": "Today’s Code\nhttps://www.dropbox.com/scl/fo/k6q8n5lbwbff6j0h5vvs1/AK9Ibhnd8t3rxV5FneYf8AU?rlkey=zo2rejko587tfvoq8tterd44r&dl=0"
+  },
+  {
+    "objectID": "slides/week-12.2.html#section",
+    "href": "slides/week-12.2.html#section",
+    "title": "Hypothesis Testing 1",
+    "section": "",
+    "text": "Now let’s create some data to match our hypothetical example.\n\n\nlibrary(tidyverse)\n\njobs_program &lt;- tibble(\n  outcome = c(rep(\"unemployed\", 15), rep(\"employed\", 45))\n)"
+  },
+  {
+    "objectID": "slides/week-12.2.html#section-1",
+    "href": "slides/week-12.2.html#section-1",
+    "title": "Hypothesis Testing 1",
+    "section": "",
+    "text": "Use the base R head() function to see the first five rows.\n\nhead(jobs_program)\n\n# A tibble: 6 × 1\n  outcome   \n  &lt;chr&gt;     \n1 unemployed\n2 unemployed\n3 unemployed\n4 unemployed\n5 unemployed\n6 unemployed"
+  },
+  {
+    "objectID": "slides/week-12.2.html#section-2",
+    "href": "slides/week-12.2.html#section-2",
+    "title": "Hypothesis Testing 1",
+    "section": "",
+    "text": "Use the tail() function to see the last five rows.\n\ntail(jobs_program)\n\n# A tibble: 6 × 1\n  outcome \n  &lt;chr&gt;   \n1 employed\n2 employed\n3 employed\n4 employed\n5 employed\n6 employed"
+  },
+  {
+    "objectID": "slides/week-12.2.html#section-3",
+    "href": "slides/week-12.2.html#section-3",
+    "title": "Hypothesis Testing 1",
+    "section": "",
+    "text": "Now let’s visualize it with a bar chart."
+  },
+  {
+    "objectID": "slides/week-12.2.html#question",
+    "href": "slides/week-12.2.html#question",
+    "title": "Hypothesis Testing 1",
+    "section": "Question",
+    "text": "Question\n\nIs it possible to assess this hypothetical organization’s claim using the data and information presented thus far?\n\n“Our jobs program is a success because only 15 of the 60 people that we trained did not have a job. Thus our 25% unemployment rate beats the country’s unemployment rate of 30%.”"
+  },
+  {
+    "objectID": "slides/week-12.2.html#correlation-vs.-causation",
+    "href": "slides/week-12.2.html#correlation-vs.-causation",
+    "title": "Hypothesis Testing 1",
+    "section": "Correlation vs. causation",
+    "text": "Correlation vs. causation\n\n\nNo.\nWe need to know more about how people were selected for the program in order to assess causality (e.g., were they randomly assigned?)\nBut, we can still ask whether the unemployment rate of \\(\\hat{p}\\) = 0.25 could be due to chance."
+  },
+  {
+    "objectID": "slides/week-12.2.html#hypothesis-testing-intuition",
+    "href": "slides/week-12.2.html#hypothesis-testing-intuition",
+    "title": "Hypothesis Testing 1",
+    "section": "Hypothesis Testing Intuition",
+    "text": "Hypothesis Testing Intuition\n\n\nWe are going to assume “nothing is going on”\n\nIn this case, the jobs program had no impact\n\n\n\n\nWe are going to figure out what the distribution of outcomes we we might observe could be if nothing is going on\n\nIn this case: if we take a sample of 60 from a population where the parameter is 0.3\n\n\n\n\n\nWe will assess how likely we would be to observe our data if nothing is going on\n\nIf very unlikely, we conclude that something is probably going on"
+  },
+  {
+    "objectID": "slides/week-12.2.html#stating-our-hypotheses",
+    "href": "slides/week-12.2.html#stating-our-hypotheses",
+    "title": "Hypothesis Testing 1",
+    "section": "Stating our Hypotheses",
+    "text": "Stating our Hypotheses\n\nNull hypothesis (\\(H_0\\)): “There is nothing going on.”\n\nUnemployment rate among those in the jobs program is no different than the country average of 30%.\n\n\nAlternative hypothesis (\\(H_A\\)): “There is something going on.”\n\nUnemployment rate is lower than the country average of 30%."
+  },
+  {
+    "objectID": "slides/week-12.2.html#hypothesis-test",
+    "href": "slides/week-12.2.html#hypothesis-test",
+    "title": "Hypothesis Testing 1",
+    "section": "Hypothesis Test",
+    "text": "Hypothesis Test\n\n\n\nHypothesis test: If the null hypothesis were true, is the data we have in our sample likely to have been generated by chance (due to random variability)?\nIf yes, we do NOT reject the null hypothesis\nIf not very likely, we reject the null hypothesis"
+  },
+  {
+    "objectID": "slides/week-12.2.html#hypothesis-testing-framework",
+    "href": "slides/week-12.2.html#hypothesis-testing-framework",
+    "title": "Hypothesis Testing 1",
+    "section": "Hypothesis Testing Framework",
+    "text": "Hypothesis Testing Framework\n\n\nStart with null hypothesis, \\(H_0\\), represents the status quo\nSet an alternative hypothesis, \\(H_A\\), that represents the research question, i.e. what we’re testing for\nConduct a hypothesis test under the assumption that the null hypothesis is true\n\nif the test results suggest that the data do not provide convincing evidence for the alternative hypothesis, stick with the null hypothesis\nif they do, then reject the null hypothesis in favor of the alternative"
+  },
+  {
+    "objectID": "slides/week-12.2.html#p-values-and-critical-values",
+    "href": "slides/week-12.2.html#p-values-and-critical-values",
+    "title": "Hypothesis Testing 1",
+    "section": "p-values and Critical Values",
+    "text": "p-values and Critical Values\n\n\n\nA p-value is the probability of observed or more extreme outcome given that the null hypothesis is true\nA critical value (\\(\\alpha\\)) is the threshold at which we will reject the null hypothesis\nIf the p-value is less than \\(\\alpha\\), we reject the null hypothesis\nA standard threshold for \\(\\alpha\\) is 0.05"
+  },
+  {
+    "objectID": "slides/week-12.2.html#the-null-distribution",
+    "href": "slides/week-12.2.html#the-null-distribution",
+    "title": "Hypothesis Testing 1",
+    "section": "The Null Distribution",
+    "text": "The Null Distribution\n\n\nSince \\(H_0: p = 0.30\\), we need to simulate a null distribution where the probability of success (unemployment) for each trial (person in program) is 0.30\n\n\n\nWe want to know how likely we would be to get an unemployment rate of 0.25 in our sample of 60, if the true unemployment rate were 0.30"
+  },
+  {
+    "objectID": "slides/week-12.2.html#what-do-we-expect",
+    "href": "slides/week-12.2.html#what-do-we-expect",
+    "title": "Hypothesis Testing 1",
+    "section": "What do we expect?",
+    "text": "What do we expect?\n\n\n\nSo the first step is to simulate our null distribution\nAnd the question is, when sampling from the null distribution, what is the expected proportion of unemployed?\nWe set up our simulator to select samples of 60 individuals with a 30% chance of being unemployed\nWe then calculate the proportion of unemployed in each sample"
+  },
+  {
+    "objectID": "slides/week-12.2.html#simulation-1",
+    "href": "slides/week-12.2.html#simulation-1",
+    "title": "Hypothesis Testing 1",
+    "section": "Simulation #1",
+    "text": "Simulation #1\n\n\nsim1\n  employed unemployed \n        42         18 \n\n\n[1] 0.3"
+  },
+  {
+    "objectID": "slides/week-12.2.html#simulation-2",
+    "href": "slides/week-12.2.html#simulation-2",
+    "title": "Hypothesis Testing 1",
+    "section": "Simulation #2",
+    "text": "Simulation #2\n\n\nsim2\n  employed unemployed \n        41         19 \n\n\n[1] 0.3166667"
+  },
+  {
+    "objectID": "slides/week-12.2.html#simulation-3",
+    "href": "slides/week-12.2.html#simulation-3",
+    "title": "Hypothesis Testing 1",
+    "section": "Simulation #3",
+    "text": "Simulation #3\n\n\nsim3\n  employed unemployed \n        38         22 \n\n\n[1] 0.3666667"
+  },
+  {
+    "objectID": "slides/week-12.2.html#we-need-to-do-this-many-times",
+    "href": "slides/week-12.2.html#we-need-to-do-this-many-times",
+    "title": "Hypothesis Testing 1",
+    "section": "We need to do this many times…",
+    "text": "We need to do this many times…"
+  },
+  {
+    "objectID": "slides/week-12.2.html#tidymodels",
+    "href": "slides/week-12.2.html#tidymodels",
+    "title": "Hypothesis Testing 1",
+    "section": "tidymodels",
+    "text": "tidymodels\n\nWe can use the tidymodels package to help with this process…\n\n#load tidymodels\nlibrary(tidymodels)\n\n# simulate the distribution\nnull_dist &lt;- jobs_program |&gt;\n  specify(response = outcome, success = \"unemployed\") |&gt;\n  hypothesize(null = \"point\", p = c(\"unemployed\" = 0.30, \"employed\" = 0.70)) |&gt;\n  generate(reps = 2000, type = \"draw\") |&gt; \n  calculate(stat = \"prop\")"
+  },
+  {
+    "objectID": "slides/week-12.2.html#what-is-being-stored-in-null_dist",
+    "href": "slides/week-12.2.html#what-is-being-stored-in-null_dist",
+    "title": "Hypothesis Testing 1",
+    "section": "What is being stored in null_dist?",
+    "text": "What is being stored in null_dist?\n\n\n\nResponse: outcome (factor)\nNull Hypothesis: point\n# A tibble: 2,000 × 2\n   replicate  stat\n       &lt;dbl&gt; &lt;dbl&gt;\n 1         1 0.367\n 2         2 0.2  \n 3         3 0.283\n 4         4 0.2  \n 5         5 0.4  \n 6         6 0.317\n 7         7 0.3  \n 8         8 0.333\n 9         9 0.283\n10        10 0.25 \n# ℹ 1,990 more rows"
+  },
+  {
+    "objectID": "slides/week-12.2.html#the-null-distribution-1",
+    "href": "slides/week-12.2.html#the-null-distribution-1",
+    "title": "Hypothesis Testing 1",
+    "section": "The null distribution",
+    "text": "The null distribution\n\nWhere should this distribution be centered? Or, what should the mean be?\n\n\n\nnull_dist |&gt;\n  summarize(mean = mean(stat))\n\n# A tibble: 1 × 1\n   mean\n  &lt;dbl&gt;\n1 0.301"
+  },
+  {
+    "objectID": "slides/week-12.2.html#visualizing-the-null-distribution",
+    "href": "slides/week-12.2.html#visualizing-the-null-distribution",
+    "title": "Hypothesis Testing 1",
+    "section": "Visualizing the null distribution",
+    "text": "Visualizing the null distribution"
+  },
+  {
+    "objectID": "slides/week-12.2.html#calculate-the-p-value",
+    "href": "slides/week-12.2.html#calculate-the-p-value",
+    "title": "Hypothesis Testing 1",
+    "section": "Calculate the p-value",
+    "text": "Calculate the p-value\n p-value–in what % of the simulations was the simulated sample proportion at least as extreme as the observed sample proportion?\n\nnull_dist |&gt;\n  # select out the value in the null distribution that are less that 0.25\n  filter(stat &lt;= (15/60)) |&gt;\n  # calculate the proportion - (number less divided by all values in null_dist)\n  summarise(p_value = n()/nrow(null_dist))\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1   0.238"
+  },
+  {
+    "objectID": "slides/week-12.2.html#visualizing-the-p-value",
+    "href": "slides/week-12.2.html#visualizing-the-p-value",
+    "title": "Hypothesis Testing 1",
+    "section": "Visualizing the p-value",
+    "text": "Visualizing the p-value"
+  },
+  {
+    "objectID": "slides/week-12.2.html#p-value-using-infer",
+    "href": "slides/week-12.2.html#p-value-using-infer",
+    "title": "Hypothesis Testing 1",
+    "section": "p-value using infer",
+    "text": "p-value using infer\n\n\nlibrary(infer)\n\n# calculate the p-value from null distribution\np_value &lt;- null_dist |&gt;\n  get_p_value(obs_stat = 15/60, direction = \"less\")\n\np_value\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1   0.238"
+  },
+  {
+    "objectID": "slides/week-12.2.html#visualing-the-p-value-using-infer",
+    "href": "slides/week-12.2.html#visualing-the-p-value-using-infer",
+    "title": "Hypothesis Testing 1",
+    "section": "Visualing the p-value using infer",
+    "text": "Visualing the p-value using infer\n\n\nvisualize(null_dist) +\n  shade_p_value(obs_stat = 15/60, direction = \"less\")"
+  },
+  {
+    "objectID": "slides/week-12.2.html#significance-level",
+    "href": "slides/week-12.2.html#significance-level",
+    "title": "Hypothesis Testing 1",
+    "section": "“Significance” level",
+    "text": "“Significance” level\n\n\n\nConventionally, people use a p-value of 0.05 as a cutoff (“signifigance level”) for determining “statistical significance”\n\nThat is, whether the null hypothesis should be rejected\nThat is, whether the data we gathered is very unlikely to have been generated due to chance\n\nAlways remember that this is a convention\n\np=0.049 is under the cutoff, while p=0.051 is not: are these really different?\n\nWhen people report “statistically significant” results, they mean that the p-value from their analysis is less than 0.05"
+  },
+  {
+    "objectID": "slides/week-12.2.html#our-hypothetical-study",
+    "href": "slides/week-12.2.html#our-hypothetical-study",
+    "title": "Hypothesis Testing 1",
+    "section": "Our Hypothetical Study",
+    "text": "Our Hypothetical Study\n\n\nOur finding: if the true unemployment rate were 30 percent and we draw samples of 60, about 23 percent of the time we will get an unemployment rate lower than the one among the participants in the program (simply due to random chance)\nWhat should we conclude?"
+  },
+  {
+    "objectID": "slides/week-12.2.html#conclusion",
+    "href": "slides/week-12.2.html#conclusion",
+    "title": "Hypothesis Testing 1",
+    "section": "Conclusion",
+    "text": "Conclusion\n\n\nWe do NOT reject the null hypothesis: the unemployment rate in the sample could likely have been due to chance"
+  },
+  {
+    "objectID": "slides/week-12.2.html#your-turn",
+    "href": "slides/week-12.2.html#your-turn",
+    "title": "Hypothesis Testing 1",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\nWhat if the unemployment rate for the program was only 10%? - Would you reject the null hypothesis in this case?\n\nDemonstrate by calculating the p-value\n\nTry changing the true unemployment rate in the null distribution to 0.50 (50%)\n\nSimulate the null distribution\nWould you reject the null hypothesis if the observed unemployment rate was 23% in this case?"
   }
 ]
