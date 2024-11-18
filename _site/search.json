@@ -4585,5 +4585,187 @@
     "title": "Hypothesis Testing 1",
     "section": "Your Turn!",
     "text": "Your Turn!\n\nWhat if the unemployment rate for the program was only 10%? - Would you reject the null hypothesis in this case?\n\nDemonstrate by calculating the p-value\n\nTry changing the true unemployment rate in the null distribution to 0.50 (50%)\n\nSimulate the null distribution\nWould you reject the null hypothesis if the observed unemployment rate was 23% in this case?"
+  },
+  {
+    "objectID": "slides/week-13.1.html#hypotheses",
+    "href": "slides/week-13.1.html#hypotheses",
+    "title": "Hypothesis Testing 2",
+    "section": "Hypotheses",
+    "text": "Hypotheses\n\n\nNull hypothesis: there is no relationship between treatment and outcome, the difference is due to chance\nAlternative hypothesis: there is a relationship, the difference is not due to chance"
+  },
+  {
+    "objectID": "slides/week-13.1.html#approach",
+    "href": "slides/week-13.1.html#approach",
+    "title": "Hypothesis Testing 2",
+    "section": "Approach",
+    "text": "Approach\n\n\nUnder the null hypothesis, treatment has NO impact on y (the outcome)\nThis means that if we were to change the values of the treatment variable, the values on y would stay the same"
+  },
+  {
+    "objectID": "slides/week-13.1.html#approach-1",
+    "href": "slides/week-13.1.html#approach-1",
+    "title": "Hypothesis Testing 2",
+    "section": "Approach",
+    "text": "Approach\n\nSo…we can simulate the null distribution by:\n\nReshuffling the treatment variable\nCalculating the treatment effect\nRepeating many times\n\n\n\n\nThen we can ask: how likely would we be to observe the treatment effect in our data, if there is no effect of the treatment?"
+  },
+  {
+    "objectID": "slides/week-13.1.html#résumé-experiment-example",
+    "href": "slides/week-13.1.html#résumé-experiment-example",
+    "title": "Hypothesis Testing 2",
+    "section": "Résumé Experiment Example",
+    "text": "Résumé Experiment Example\nBertrand and Mullainathan studied racial discrimination in responses to job applications in Chicago and Boston. They sent 4,870 résumés, randomly assigning names associated with different racial groups. - Data are in openintro package as an object called resume - I will save as myDat\n\nlibrary(openintro)\nmyDat &lt;- resume"
+  },
+  {
+    "objectID": "slides/week-13.1.html#callbacks-by-race",
+    "href": "slides/week-13.1.html#callbacks-by-race",
+    "title": "Hypothesis Testing 2",
+    "section": "Callbacks by Race",
+    "text": "Callbacks by Race\n\nRemember, race of applicant is randomly assigned.\n\nlibrary(tidyverse)\n\nmns &lt;- myDat |&gt;\n  group_by(race) |&gt; \n  summarize(calls = mean(received_callback))\nmns\n\n# A tibble: 2 × 2\n  race   calls\n  &lt;chr&gt;  &lt;dbl&gt;\n1 black 0.0645\n2 white 0.0965"
+  },
+  {
+    "objectID": "slides/week-13.1.html#section",
+    "href": "slides/week-13.1.html#section",
+    "title": "Hypothesis Testing 2",
+    "section": "",
+    "text": "Let’s save the means for white and black applicants.\n\n\nmean_white = mns$calls[2]\nmean_black = mns$calls[1]"
+  },
+  {
+    "objectID": "slides/week-13.1.html#section-1",
+    "href": "slides/week-13.1.html#section-1",
+    "title": "Hypothesis Testing 2",
+    "section": "",
+    "text": "And calculate the treatment effect. The treatment effect is the difference in means.\n\n\nteffect &lt;- mean_white - mean_black\nteffect\n\n[1] 0.03203285"
+  },
+  {
+    "objectID": "slides/week-13.1.html#section-2",
+    "href": "slides/week-13.1.html#section-2",
+    "title": "Hypothesis Testing 2",
+    "section": "",
+    "text": "Before formal tests, let’s look at the data–the estimates and the confidence intervals…"
+  },
+  {
+    "objectID": "slides/week-13.1.html#section-3",
+    "href": "slides/week-13.1.html#section-3",
+    "title": "Hypothesis Testing 2",
+    "section": "",
+    "text": "First, let’s make the CIs for the white applicants.\n\n\nlibrary(tidymodels)\nboot_df_white &lt;- myDat |&gt;\n  filter(race == \"white\") |&gt; \n  specify(response = received_callback) |&gt;  \n  generate(reps = 15000, type = \"bootstrap\") |&gt; \n  calculate(stat = \"mean\")\nlower_bound_white &lt;- boot_df_white |&gt; summarize(lower_bound_white = quantile(stat, 0.025)) |&gt; pull() \nupper_bound_white &lt;- boot_df_white |&gt; summarize(upper_bound_white = quantile(stat, 0.975)) |&gt; pull()"
+  },
+  {
+    "objectID": "slides/week-13.1.html#section-4",
+    "href": "slides/week-13.1.html#section-4",
+    "title": "Hypothesis Testing 2",
+    "section": "",
+    "text": "Now, let’s create the CIs for black applicants.\n\n\nboot_df_black &lt;- myDat |&gt;\n  filter(race == \"black\") |&gt; \n  specify(response = received_callback) |&gt;  \n  generate(reps = 15000, type = \"bootstrap\") |&gt; \n  calculate(stat = \"mean\")\nlower_bound_black &lt;- boot_df_black |&gt; summarize(lower_bound_black = quantile(stat, 0.025)) |&gt; pull() \nupper_bound_black &lt;- boot_df_black |&gt; summarize(upper_bound_black = quantile(stat, 0.975)) |&gt; pull()"
+  },
+  {
+    "objectID": "slides/week-13.1.html#section-5",
+    "href": "slides/week-13.1.html#section-5",
+    "title": "Hypothesis Testing 2",
+    "section": "",
+    "text": "Now, let’s tidy the data for plotting.\n\n\nplotData &lt;- tibble(\n  race = c(\"Black\", \"White\"),\n  meanCalls = c(mean_black, mean_white),\n  lower95 = c(lower_bound_black, lower_bound_white),\n  upper95 = c(upper_bound_black, upper_bound_white)\n)\nplotData\n\n# A tibble: 2 × 4\n  race  meanCalls lower95 upper95\n  &lt;chr&gt;     &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;\n1 Black    0.0645  0.0550  0.0743\n2 White    0.0965  0.0846  0.108"
+  },
+  {
+    "objectID": "slides/week-13.1.html#plot",
+    "href": "slides/week-13.1.html#plot",
+    "title": "Hypothesis Testing 2",
+    "section": "Plot",
+    "text": "Plot"
+  },
+  {
+    "objectID": "slides/week-13.1.html#plot-1",
+    "href": "slides/week-13.1.html#plot-1",
+    "title": "Hypothesis Testing 2",
+    "section": "Plot",
+    "text": "Plot\n\n\nggplot(plotData, aes(y = meanCalls, x = race, ymin = lower95, ymax = upper95)) +\n  geom_col(fill = \"steelblue4\") +\n  geom_errorbar(width = .05) +\n  theme_bw()  +\n  ylim(0, .15) +\n  labs(x = \"Race of Applicant\",\n       y = \"Call Back Rate\")"
+  },
+  {
+    "objectID": "slides/week-13.1.html#is-this-evidence-of-racial-discrimination",
+    "href": "slides/week-13.1.html#is-this-evidence-of-racial-discrimination",
+    "title": "Hypothesis Testing 2",
+    "section": "Is this evidence of racial discrimination?",
+    "text": "Is this evidence of racial discrimination?\n\n\nWhat is the null hypothesis?\n\n\n\nWhat is the alternative hypothesis?\n\n\n\n\nHow can we formally test the null hypothesis to decide whether to reject it?"
+  },
+  {
+    "objectID": "slides/week-13.1.html#formal-hypothesis-test",
+    "href": "slides/week-13.1.html#formal-hypothesis-test",
+    "title": "Hypothesis Testing 2",
+    "section": "Formal Hypothesis Test",
+    "text": "Formal Hypothesis Test\n\n\n\nCalculate the difference in means (White - Black)\nShuffle the race variable\nCalculate the difference in means for the shuffled data\nRepeat many times\nSimulates the null distribution of differences in callbacks"
+  },
+  {
+    "objectID": "slides/week-13.1.html#hypothetical-original-data",
+    "href": "slides/week-13.1.html#hypothetical-original-data",
+    "title": "Hypothesis Testing 2",
+    "section": "Hypothetical Original Data",
+    "text": "Hypothetical Original Data\n\n\n\n\nApplicant\nRace\nCallback\n\n\n\n\nA\nBlack\nYes\n\n\nB\nBlack\nNo\n\n\nC\nBlack\nNo\n\n\nD\nWhite\nYes\n\n\nE\nWhite\nNo\n\n\nF\nWhite\nNo"
+  },
+  {
+    "objectID": "slides/week-13.1.html#step-1-calculate-original-difference-in-callback-rates",
+    "href": "slides/week-13.1.html#step-1-calculate-original-difference-in-callback-rates",
+    "title": "Hypothesis Testing 2",
+    "section": "Step 1: Calculate Original Difference in Callback Rates",
+    "text": "Step 1: Calculate Original Difference in Callback Rates\n\n\nObjective: Understand initial association between race and callback rates"
+  },
+  {
+    "objectID": "slides/week-13.1.html#step-2-shuffle-permute-the-race-variable",
+    "href": "slides/week-13.1.html#step-2-shuffle-permute-the-race-variable",
+    "title": "Hypothesis Testing 2",
+    "section": "Step 2: Shuffle (Permute) the Race Variable",
+    "text": "Step 2: Shuffle (Permute) the Race Variable\n\n\nMethod: Randomly reassign race labels, keeping callback outcomes fixed"
+  },
+  {
+    "objectID": "slides/week-13.1.html#hypothetical-shuffled-data",
+    "href": "slides/week-13.1.html#hypothetical-shuffled-data",
+    "title": "Hypothesis Testing 2",
+    "section": "Hypothetical Shuffled Data",
+    "text": "Hypothetical Shuffled Data\n\n\n\n\nApplicant\nRace (Shuffled)\nCallback\n\n\n\n\nA\nWhite\nYes\n\n\nB\nBlack\nNo\n\n\nC\nWhite\nNo\n\n\nD\nWhite\nYes\n\n\nE\nBlack\nNo\n\n\nF\nBlack\nNo"
+  },
+  {
+    "objectID": "slides/week-13.1.html#step-3-calculate-difference-in-callback-rates-again",
+    "href": "slides/week-13.1.html#step-3-calculate-difference-in-callback-rates-again",
+    "title": "Hypothesis Testing 2",
+    "section": "Step 3: Calculate Difference in Callback Rates Again",
+    "text": "Step 3: Calculate Difference in Callback Rates Again\n\n\nAfter Shuffling: Calculate the difference in callback rates between Black and White groups\nPurpose: Determine if observed difference is due to chance"
+  },
+  {
+    "objectID": "slides/week-13.1.html#repeat-many-times",
+    "href": "slides/week-13.1.html#repeat-many-times",
+    "title": "Hypothesis Testing 2",
+    "section": "Repeat Many Times",
+    "text": "Repeat Many Times\n\n\nRepeat shuffling 5000 times to generate a distribution of differences by chance\nTest: Compare observed difference to null distribution to assess effect of race on callbacks\nIf observed difference is extreme (p-value is low), reject the null hypothesis"
+  },
+  {
+    "objectID": "slides/week-13.1.html#simulating-with-tidymodels",
+    "href": "slides/week-13.1.html#simulating-with-tidymodels",
+    "title": "Hypothesis Testing 2",
+    "section": "Simulating with tidymodels",
+    "text": "Simulating with tidymodels\n\nIn real life we are going to use the tidymodels package to do the simulation for us.\n\nnull_dist &lt;- myDat |&gt;\n  specify(response = received_callback, explanatory = race) |&gt;\n  hypothesize(null = \"independence\") |&gt;\n  generate(5000, type = \"permute\") |&gt;\n  calculate(stat = \"diff in means\", \n            order = c(\"white\", \"black\")) #"
+  },
+  {
+    "objectID": "slides/week-13.1.html#get-the-p-value",
+    "href": "slides/week-13.1.html#get-the-p-value",
+    "title": "Hypothesis Testing 2",
+    "section": "Get the p-value",
+    "text": "Get the p-value\n\nLet’s get the p-value with get_pvalue from the infer package.\n\n\nget_p_value(null_dist, obs_stat = teffect, direction = \"greater\")\n\n# A tibble: 1 × 1\n  p_value\n    &lt;dbl&gt;\n1       0"
+  },
+  {
+    "objectID": "slides/week-13.1.html#visualize-the-null-distribution",
+    "href": "slides/week-13.1.html#visualize-the-null-distribution",
+    "title": "Hypothesis Testing 2",
+    "section": "Visualize the Null Distribution",
+    "text": "Visualize the Null Distribution\n\n\nvisualize(null_dist) +\n  shade_p_value(obs_stat = teffect, direction = \"greater\") +\n  labs(\n    x = \"Estimated Difference under the Null\",\n    y = \"Count\"\n  ) + \n  theme_bw()"
+  },
+  {
+    "objectID": "slides/week-13.1.html#what-should-we-conclude",
+    "href": "slides/week-13.1.html#what-should-we-conclude",
+    "title": "Hypothesis Testing 2",
+    "section": "What should we conclude?",
+    "text": "What should we conclude?\n\n\n\nThe p-value is very small (below .05 threshold)\nTherefore, we reject the null hypothesis: the racial gap is extremely unlikely to have occurred due to chance alone\nThis is evidence of racial discrimination"
+  },
+  {
+    "objectID": "slides/week-13.1.html#your-turn",
+    "href": "slides/week-13.1.html#your-turn",
+    "title": "Hypothesis Testing 2",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\nUse the gender variable in the resume data to assess whether there is gender discrimination in call backs\nPlot means and 95% confidence intervals for the call back rate for men and women\nWrite the null and alternative hypotheses\nSimulate the null distribution\nVisualize the null distribution and the gender gap\nCalculate the p-value\nWhat do you conclude from your test?"
   }
 ]
