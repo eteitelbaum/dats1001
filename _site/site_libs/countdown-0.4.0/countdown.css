@@ -4,7 +4,7 @@
   cursor: pointer;
   font-size: 3rem;
   line-height: 1;
-  border-color: #ddd;
+  border-color: #fff;
   border-width: 3px;
   border-style: solid;
   border-radius: 15px;
@@ -30,21 +30,21 @@
   padding: 0;
 }
 .countdown-digits {
-  color: inherit;
+  color: #fff;
 }
 .countdown.running {
-  border-color: #2A9B59FF;
-  background-color: #43AC6A;
+  border-color: #139DE7FF;
+  background-color: #42affa;
 }
 .countdown.running .countdown-digits {
-  color: #002F14FF;
+  color: black;
 }
 .countdown.finished {
-  border-color: #DE3000FF;
-  background-color: #F04124;
+  border-color: #CDBA85FF;
+  background-color: #E5D19D;
 }
 .countdown.finished .countdown-digits {
-  color: #4A0900FF;
+  color: #00264A;
 }
 .countdown.running.warning {
   border-color: #CEAC04FF;
@@ -96,17 +96,17 @@
 .countdown .countdown-controls > button:last-child {
   transform: translate(calc(-1 * var(--countdown-transition-distance)), var(--countdown-transition-distance));
   opacity: 0;
-  color: #002F14FF;
-  background-color: #43AC6A;
-  border-color: #2A9B59FF;
+  color: black;
+  background-color: #42affa;
+  border-color: #139DE7FF;
 }
 
 .countdown .countdown-controls > button:first-child {
   transform: translate(var(--countdown-transition-distance), var(--countdown-transition-distance));
   opacity: 0;
-  color: #4A0900FF;
-  background-color: #F04124;
-  border-color: #DE3000FF;
+  color: #00264A;
+  background-color: #E5D19D;
+  border-color: #CDBA85FF;
 }
 
 .countdown.running:hover .countdown-controls > button,

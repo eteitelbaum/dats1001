@@ -1,6 +1,70 @@
 ---
 title: "Project Assignment 3"
-subtitle: "Tableau Dashboard"
+subtitle: "Final Presentation and Report"
 ---
 
-Details coming soon...
+## Overview  
+
+For this final assignment, you will synthesize the work completed in Parts 1 and 2 into a polished deliverable that communicates your findings effectively. This assignment has **two components**:  
+
+1. **A Quarto RevealJS Presentation**: A lightning talk summarizing your project, findings, and policy implications.  
+2. **A Final Written Report**: A detailed document that provides a comprehensive overview of your analysis, results, and recommendations.  
+
+Together, these components should demonstrate your ability to apply data analysis skills to answer a question relevant to decision-making in a real-world context.  
+
+## Component 1: RevealJS Presentation  
+
+You will create a **5 minute presentation** using Quarto's RevealJS slide deck format. The goal of the presentation is to provide a concise and engaging summary of your project.  
+
+**Here is a rough outline for your presentation**:  
+- **Slide 1**: Title slide with project title, group member names, and date.  
+- **Slide 2**: Introduction of your research question and its importance.  
+- **Slide 3**: Overview of your data, including the source and key variables.  
+- **Slides 4 - 5**: Key results, supported by 1–2 visuals (e.g., plots or tables).  
+- **Slide 6**: Summary of findings and policy implications.  
+
+**Tips**:  
+- Use visuals to make your presentation engaging and accessible.  
+- Keep text minimal—focus on high-level points and key insights.  
+- Practice your timing to stay within the 5 minute limit.  
+- You can add a few more slides if needed, but only if it still allows you to stay within the time limit.
+
+**Submission Instructions**:  
+- Upload your RevealJS presentation to [Quarto Pub](https://quartopub.com/) and share the link on the designated platform (e.g., Discord).  
+- Submit your QMD file and project folder to Blackboard.  
+
+## Component 2: Final Written Report  
+
+The final report should be a **3–5 page policy memo** or technical report that provides a detailed narrative of your project. The memo should build upon the work from Parts 1 and 2, integrating your research question, hypotheses, analysis, and conclusions.  
+
+**Your report should include**:  
+
+1. **Introduction**:  
+   - Clearly state your research question and why it is important.  
+   - Provide background context, citing relevant literature or examples.  
+
+2. **Data and Methodology**:  
+   - Describe your data sources and key variables (outcome and explanatory).  
+   - Justify your choice of analytical approach, including the methods used (e.g., regression, hypothesis testing).  
+
+3. **Analysis and Results**:  
+   - Present your findings, supported by tables, plots, or statistical results.  
+   - Include at least one visualization of your results (e.g., regression plot, histogram).  
+
+4. **Discussion**:  
+   - Interpret your results in the context of your research question and hypotheses.  
+   - Discuss the statistical significance and implications of your findings.  
+
+5. **Policy Implications**:  
+   - Summarize how your findings inform policy or decision-making in your chosen area.  
+   - Propose actionable recommendations based on your analysis.  
+
+6. **Conclusion**:  
+   - Provide a clear and concise answer to your research question.  
+   - Reflect briefly on the limitations of your analysis and potential next steps.  
+
+**Submission Instructions**:  
+- Render your report in **HTML** format and upload it to Quarto Pub.  
+- Submit the link to the report to Discord and the project folder (including the QMD file) on Blackboard.  
+
+
