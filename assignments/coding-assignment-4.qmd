@@ -58,6 +58,8 @@ For our purposes, we will focus on a smaller set of variables, summarized below:
 
 -   **Public Goods:** Is there a functioning primary school in the community? (*f_psch*)
 
+- **Sanitation:** Is there a functioning latrine in the community (*f_latrine*)
+
 -   Inclusion, **Gender equality** in participatory decision making (*role_wmn*).
     -   "Enumerator account of how actively women participated in the deliberation compared to men, ranging from 5 = no difference between women and men to 1 = women not active at all compared to men"
 
