@@ -4848,7 +4848,7 @@
     "href": "assignments/coding-assignment-4.html#part-2-calculate-the-treatment-effect-of-a-variable-16-points",
     "title": "Homework 4",
     "section": "Part 2: Calculate the Treatment Effect of a Variable (16 points)",
-    "text": "Part 2: Calculate the Treatment Effect of a Variable (16 points)\nChoose one variable other than VDCs (which we already did in class). Calculate the means and treatment effect of your chosen variable."
+    "text": "Part 2: Calculate the Treatment Effect of a Variable (16 points)\nChoose one variables. Calculate the means and treatment effect of your chosen variable."
   },
   {
     "objectID": "assignments/coding-assignment-4.html#part-3-state-your-hypotheses-16-points",
@@ -4890,7 +4890,7 @@
     "href": "assignments/coding-assignment-4.html#extra-credit",
     "title": "Homework 4",
     "section": "Extra Credit",
-    "text": "Extra Credit\nThere are three outcome variables you did not select: create visualizations that display the means and 95% confidence intervals in treatment and control groups for these three outcomes.\n\n\n\n\n\n\nSubmission Instructions\n\n\n\nAfter rendering your document, export your project folder and submit it on Blackboard. You will find the link to the Coding Assignment one submission portal under the Assignments link. There is a screen capture video in the Discord server that will help you understand how to do this."
+    "text": "Extra Credit\nThere are other outcome variables in the study that you did not select: create visualizations that display the means and 95% confidence intervals in treatment and control groups for these outcomes.\n\n\n\n\n\n\nSubmission Instructions\n\n\n\nAfter rendering your document, export your project folder and submit it on Blackboard. You will find the link to the Coding Assignment one submission portal under the Assignments link. There is a screen capture video in the Discord server that will help you understand how to do this."
   },
   {
     "objectID": "slides/week-13.2.html#what-is-reveal.js",

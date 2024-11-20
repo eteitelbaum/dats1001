@@ -74,7 +74,7 @@ For our purposes, we will focus on a smaller set of variables, summarized below:
 
 ## Part 2: Calculate the Treatment Effect of a Variable (16 points)
 
-Choose one variable other than VDCs (which we already did in class). Calculate the means and treatment effect of your chosen variable. 
+Choose one variables. Calculate the means and treatment effect of your chosen variable. 
 
 ## Part 3: State Your Hypotheses (16 points)
 
@@ -98,7 +98,7 @@ Write one or two paragraphs that summarize the results of your analysis and accu
 
 ## Extra Credit
 
-There are three outcome variables you did not select: create visualizations that display the means and 95% confidence intervals in treatment and control groups for these three outcomes. 
+There are other outcome variables in the study that you did not select: create visualizations that display the means and 95% confidence intervals in treatment and control groups for these outcomes. 
 
 ::: {.callout-important}
 ## Submission Instructions
