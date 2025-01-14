@@ -12,7 +12,7 @@ website:
   twitter-card: true
   page-footer:
     right: "This page is built with [Quarto](https://quarto.org/). 👷🛠️"
-    left: "&copy; Copyright 2024, [Emmanuel Teitelbaum](https://emmanuel.teitelbaum.com)"
+    left: "&copy; Copyright 2025, [Emmanuel Teitelbaum](https://emmanuel.teitelbaum.com)"
     background: "#1F3867"
   sidebar:
     background: "#1F3867"
@@ -57,10 +57,8 @@ website:
             text: "Assignment 2"
           - href: assignments/coding-assignment-3.qmd
             text: "Assignment 3"
-          # - href: assignments/coding-assignment-4.qmd
-          #   text: "Assignment 4"
-          # - href: assignments/coding-assignment-5.qmd
-          #   text: "Assignment 5"
+          - href: assignments/coding-assignment-4.qmd
+            text: "Assignment 4"
       - section: "Project"
         contents:
            #- href: project-description.qmd
