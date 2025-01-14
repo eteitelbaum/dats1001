@@ -5,7 +5,7 @@ title: "Syllabus"
 ## Course information
 
 | Course: DATS 1001-Data Science for All
-| Lecture: MW 12:45-2:00
+| Lecture: WF 11:10-12:25
 | Classroom: [Duques Hall](https://g.co/kgs/81oCUV4) Rm. 152
 |
 | Instructor: Prof. Emmanuel Teitelbaum
