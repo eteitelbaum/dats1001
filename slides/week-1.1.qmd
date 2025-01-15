@@ -1,6 +1,6 @@
 ---
-title: R Coding Basics
-#subtitle: 
+title: Coding Examples
+subtitle: No Fear!
 date: today
 date-format: long
 footer: "[DATS 1001 Website](https://ds4all.rocks)"
@@ -18,194 +18,11 @@ execute:
   freeze: auto
 ---
 
-# R Programming Basics
-
-## What Can R Do? 
-
-<br>
-
-::: incremental
-- R is a powerful language for data analysis and visualization
-- It is also a general-purpose programming language
-- Does everything from web development to machine learning
-- It is open-source and has a large community of users and developers
-:::
-
-## R as a Calculator
-
-<br>
-
-- R can be used as a simple calculator
-- You can perform arithmetic operations on numbers
-
-```{r}
-#| label: arithmetic
-#| echo: true
-
-# Addi a number and store it to a value
-sum_of_2plus2 <- 2 + 2
-
-
-sum_of_2plus2
-```
-
-## Some Common Arithmetic Operators
-
-<br>
-
-- `+` addition
-- `-` subtraction
-- `*` multiplication
-- `/` division
-- `^` exponentiation (also `**`)
-
-## Functions
-
-- A function is a set of instructions that produces some output
-- In R, you can use built-in functions to perform specific tasks
-- For example, you can use the `mean()` function to calculate the average of a set of numbers
-- To do this you have to use the combine function `c()` to create a vector of numbers
-
-## 
-
-<br> 
-
-Create a vector of numbers and take the mean...
-
-<br>
-
-```{r}
-#| label: mean
-#| echo: true
-
-# Create a vector of numbers
-numbers <- c(1, 2, 3, 4, 5)
-
-# Calculate the mean of the numbers
-mean(numbers)
-```
-
-## Some Common Base R Functions {.smaller}
-
-- `mean()` calculates the mean of a set of numbers
-- `median()` calculates the median of a set of numbers
-- `sd()` calculates the standard deviation of a set of numbers
-- `sum()` calculates the sum of a set of numbers
-- `length()` calculates the length of a vector
-- `max()` and `min()` calculate the maximum and minimum values of a vector
-- `round()` rounds a number to a specified number of decimal places
-- `sqrt()` calculates the square root of a number
-- `log()` calculates the natural logarithm of a number
-- `exp()` calculates the exponential of a number
-- `abs()` calculates the absolute value of a number
-
-# Packages
-
-## From Functions to Packages {.smaller}
-
-<br>
-
-::: {.incremental}
--   A *function* is a set of instructions
-    -   `read_csv()` is a function
-    -   `ggplot()` is a function
--   A *package* is a collection of functions
-    -   `readr` is a package that contains the `read_csv()` function
-    -   `ggplot2` is a package that contains the `ggplot()` function
--   Use `install.packages()` to install packages
--   Use `library()` to load packages
--   You can install packages from CRAN
-:::
-
-## The Tidyverse {.smaller}
-
-::: {.incremental}
--   The Tidyverse is a collection of data science packages
--   It is also considered a dialect of R
--   In this class, we will be using many Tidyverse packages
-    -   `ggplot2` for data visualization
-    -   `readr` for reading data
-    -   `dplyr` for data manipulation
-    -   `tidyr` for data tidying
-    -   Etc.
--   At first we will load the packages independently, e.g. `library(ggplot2)`
--   Later we will load them all at once with `library(tidyverse)`
-:::
-
-# Objects
-
-## What is an Object?
-
-::: incremental
-- An object in R is a data structure used to store data
-- It can vary from simple scalar types to more complex data structures like vectors, lists, or data frames
-- Objects hold not only data but also information about the type of data and the operations that can be performed on them
-- Every entity in R is considered an object, making R a language based around the manipulation of objects
-:::
-
-## How to Store Data
-
-- In R, you can store data in objects using the assignment operator `<-`
-- The object name is on the left of `<-`, and the data or value you wish to assign to the object is on the right
-- Then you can print the object to the console using the object name
-
-```{r}
-#| label: objects
-#| echo: true
-
-# Store the value 42 in the object my_number
-my_number <- 42
-
-# Print the value of my_number
-my_number 
-```
-
-## When to Store Data in Objects
-
-<br>
-
-- Note that you don't always have to store data in objects
-- You should mostly store data in objects when you want to use the data later
-- If you only need to use the data once, you can just use the data directly
-
-```{r}
-#| label: arithmetic2
-#| echo: true
-
-# Add two numbers without storing them in an object
-2 + 2
-```
-
-## Your Turn!
-
-<br>
-
-- Go to the Week 2 module on Posit Cloud
-- Work through the first set of challenges there
-
-```{r}
-#| label: timer0
-
-library(countdown)
-countdown(minutes = 5, 
-          id = "timer0", 
-          bottom = "10%",
-          right = "10%",
-          color_border = "#fff",
-          color_text = "#fff",
-          color_running_background = "#42affa",
-          color_running_text = "black",
-          color_finished_background = "#E5D19D",
-          color_finished_text = "#00264A")
-```
-
-# Three Examples
-
 ## Let's get going . . .
 
 <br>
 
-Let's open up the Getting Started module on Posit Cloud...
+Let's open up the Week 01 module on Posit Cloud...
 
 And work through the examples there.
 
@@ -242,10 +59,18 @@ leaflet() %>%
 
 library(countdown)
 countdown(minutes = 5, 
-          id = "timer1")
+          id = "timer0", 
+          bottom = "10%",
+          right = "10%",
+          color_border = "#fff",
+          color_text = "#fff",
+          color_running_background = "#42affa",
+          color_running_text = "black",
+          color_finished_background = "#E5D19D",
+          color_finished_text = "#00264A")
 ```
 
-## Example: Plotting Democracy Over Time
+## Plotting Democracy Over Time
 
 ```{r}
 #| label: plot_democracy
