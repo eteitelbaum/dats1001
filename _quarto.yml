@@ -71,6 +71,10 @@ website:
             text: "Assignment 3"
           - href: project/project-datasets.qmd
             text: Datasets
+      - section: "Weekly materials"
+        contents:
+          - href: weeks/week-1.qmd
+            text: "Week 1"
 format:
   html:
     theme:

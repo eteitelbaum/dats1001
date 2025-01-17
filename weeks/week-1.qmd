@@ -6,16 +6,29 @@ editor: visual
 
 ## Readings
 
-📖 Review the [course syllabus](/course-syllabus.html) and [support
-resources](/course-support.html)
+📖 Review the [course syllabus](/course-syllabus.qmd) and [support
+resources](/course-support.qmd)
 
-📖 Polanyi, [*The Great
-Transformation*](https://blackboard.gwu.edu/webapps/blackboard/execute/content/file?cmd=view&mode=designer&content_id=_12821132_1&course_id=_380501_1),
-Chapter 11
+📖 [HOPWR](https://rstudio-education.github.io/hopr/starting.html),
+Appendix A and B
+
+📖 [Hello, Quarto](https://quarto.org/docs/get-started/hello/rstudio.html)
+
+📖 [Markdown Guide](https://www.markdownguide.org/getting-started/)
+
+## Videos
+
+📺 [Getting Started with R and RStudio](https://youtu.be/eimM6pNkYjE)
+
+📺 [Getting Started with Quarto](https://youtu.be/6QN9ZYURDFg)
+
+📺 [Markdown Crash Course](https://www.youtube.com/watch?v=bTVIMt3XllM)
 
 ## Slides
 
-🖥[Polany's Great Transformation](/slides/lecture-1.html)
+🖥 [Coding Examples](/slides/week-1.1.qmd)
+
+🖥 [Meet ouR Tech Stack](/slides/week-1.2.qmd)
 
 <br><br>
 

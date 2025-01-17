@@ -3082,21 +3082,44 @@
     "href": "weeks/week-1.html",
     "title": "Week 1",
     "section": "",
-    "text": "📖 Review the course syllabus and support resources\n📖 Polanyi, The Great Transformation, Chapter 11"
+    "text": "📖 Review the course syllabus and support resources\n📖 HOPWR, Appendix A and B\n📖 Hello, Quarto\n📖 Markdown Guide",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
   },
   {
     "objectID": "weeks/week-1.html#readings",
     "href": "weeks/week-1.html#readings",
     "title": "Week 1",
     "section": "",
-    "text": "📖 Review the course syllabus and support resources\n📖 Polanyi, The Great Transformation, Chapter 11"
+    "text": "📖 Review the course syllabus and support resources\n📖 HOPWR, Appendix A and B\n📖 Hello, Quarto\n📖 Markdown Guide",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
+  },
+  {
+    "objectID": "weeks/week-1.html#videos",
+    "href": "weeks/week-1.html#videos",
+    "title": "Week 1",
+    "section": "Videos",
+    "text": "Videos\n📺 Getting Started with R and RStudio\n📺 Getting Started with Quarto\n📺 Markdown Crash Course",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
   },
   {
     "objectID": "weeks/week-1.html#slides",
     "href": "weeks/week-1.html#slides",
     "title": "Week 1",
     "section": "Slides",
-    "text": "Slides\n🖥Polany’s Great Transformation\n\n\nBack to course schedule ⏎"
+    "text": "Slides\n🖥 Coding Examples\n🖥 Meet ouR Tech Stack\n\n\nBack to course schedule ⏎",
+    "crumbs": [
+      "Weekly materials",
+      "Week 1"
+    ]
   },
   {
     "objectID": "weeks/week-2.html",
