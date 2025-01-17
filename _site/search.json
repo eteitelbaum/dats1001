@@ -1665,8 +1665,8 @@
     "objectID": "slides/week-1.2.html#rstudio",
     "href": "slides/week-1.2.html#rstudio",
     "title": "Meet ouR Tech Stack",
-    "section": "",
-    "text": "RStudio is an integrated development environment (IDE) for R\nRStudio has four panes\n\nSource-where you write code\nConsole-where you run code\nEnvironment-where you see objects in memory\nFiles/Plots/Packages/Help-where you can navigate files, see plots, install packages, and get help\n\nLet’s open RStudio and have a look around"
+    "section": "RStudio",
+    "text": "RStudio\n\nRStudio is an integrated development environment (IDE) for R\nRStudio has four panes\n\nSource-where you write code\nConsole-where you run code\nEnvironment-where you see objects in memory\nFiles/Plots/Packages/Help-where you can navigate files, see plots, install packages, and get help\n\nLet’s open RStudio and have a look around"
   },
   {
     "objectID": "slides/week-1.2.html#quarto",
@@ -1949,1067 +1949,53 @@
     "text": "Your Turn!\n\nExplore the distribution of regimes by region for a different year\nPreprocess your data to include only the year you are interested in\nVisualize the distribution of regimes using geom_bar() and position = \"fill\"\nUse the labs() function to change title\nWhat is different about the year that you chose relative to 2022?\n\n\n\n\n−+\n05:00"
   },
   {
-    "objectID": "slides/week-3.2.html#line-charts",
-    "href": "slides/week-3.2.html#line-charts",
-    "title": "Which Visualization Should I Use?",
-    "section": "Line Charts",
-    "text": "Line Charts\n\n\nLine charts are used to show trends over time\nYou especially want to use a line chart when you have multiple cases or categories that you want to compare over time"
+    "objectID": "slides/week-1.1.html#lets-get-going-.-.-.",
+    "href": "slides/week-1.1.html#lets-get-going-.-.-.",
+    "title": "Coding Examples",
+    "section": "Let’s get going . . .",
+    "text": "Let’s get going . . .\n\nLet’s open up the Week 01 module on Posit Cloud…\nAnd work through the examples there."
   },
   {
-    "objectID": "slides/week-3.2.html#huntingtons-three-waves",
-    "href": "slides/week-3.2.html#huntingtons-three-waves",
-    "title": "Which Visualization Should I Use?",
-    "section": "Huntington’s Three Waves",
-    "text": "Huntington’s Three Waves"
+    "objectID": "slides/week-1.1.html#example-make-a-map",
+    "href": "slides/week-1.1.html#example-make-a-map",
+    "title": "Coding Examples",
+    "section": "Example: Make a map!",
+    "text": "Example: Make a map!"
   },
   {
-    "objectID": "slides/week-3.2.html#line-chart-example",
-    "href": "slides/week-3.2.html#line-chart-example",
-    "title": "Which Visualization Should I Use?",
-    "section": "Line Chart Example",
-    "text": "Line Chart Example"
+    "objectID": "slides/week-1.1.html#example-make-a-map-1",
+    "href": "slides/week-1.1.html#example-make-a-map-1",
+    "title": "Coding Examples",
+    "section": "Example: Make a map!",
+    "text": "Example: Make a map!\n\n\nlibrary(leaflet)\nleaflet() %&gt;% \n  addTiles() %&gt;%   # Add default OpenStreetMap map tiles\n  addMarkers(lat = 38.90243843683386, lng =  -77.0443814477152, \n             label = \"Elliott School of International Affairs\")\n\n\n\n\n−+\n05:00"
   },
   {
-    "objectID": "slides/week-3.2.html#section",
-    "href": "slides/week-3.2.html#section",
-    "title": "Which Visualization Should I Use?",
-    "section": "",
-    "text": "Here is the code…\n\n\n# in this ggplot() call, we add a third dimension for line color\nggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +\n  geom_line(linewidth = 1) + # our geom is a line with a width of 1\n  labs(\n    x = \"Year\", \n    y = \"Polyarchy Score\", \n    title = 'Democracy in countries representing three different \"waves\"', \n    caption = \"Source: V-Dem Institute\", \n    color = \"Country\" # make title of legend to upper case\n  )"
+    "objectID": "slides/week-1.1.html#plotting-democracy-over-time",
+    "href": "slides/week-1.1.html#plotting-democracy-over-time",
+    "title": "Coding Examples",
+    "section": "Plotting Democracy Over Time",
+    "text": "Plotting Democracy Over Time"
   },
   {
-    "objectID": "slides/week-3.2.html#section-1",
-    "href": "slides/week-3.2.html#section-1",
-    "title": "Which Visualization Should I Use?",
-    "section": "",
-    "text": "Use geom_line() to specify a line chart…\n\n\n# in this ggplot() call, we add a third dimension for line color\nggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +\n  geom_line(linewidth = 1) + # our geom is a line with a width of 1\n  labs(\n    x = \"Year\", \n    y = \"Polyarchy Score\", \n    title = 'Democracy in countries representing three different \"waves\"', \n    caption = \"Source: V-Dem Institute\", \n    color = \"Country\" # make title of legend to upper case\n  )"
+    "objectID": "slides/week-1.1.html#example-plotting-democracy-over-time",
+    "href": "slides/week-1.1.html#example-plotting-democracy-over-time",
+    "title": "Coding Examples",
+    "section": "Example: Plotting Democracy Over Time",
+    "text": "Example: Plotting Democracy Over Time\n\n# Load the packages\nlibrary(vdemlite)\nlibrary(ggplot2)\n\n# Use vdemlite to extract democracy scores for France and INdia\ndem_data &lt;- fetchdem(indicators = \"v2x_polyarchy\",\n                     countries = c(\"FRA\", \"IND\"))\n\n# And now we can plot the data\nggplot(dem_data, aes(y = v2x_polyarchy, x = year, color=country_name)) +\n  geom_line() +\n  theme_minimal() +\n  xlab(\"Year\") +\n  ylab(\"Electoral Democracy Index\") +\n  ggtitle(\"Electoral Democracy, 1970-2022\") +\n  geom_hline(yintercept = .5, linetype = \"dashed\", color = \"grey\") +\n   scale_color_manual(name=\"Country\", values=c(\"#E69F00\", \"#56B4E9\")) +\n  ylim(0, 1)\n\n\n\n\n−+\n05:00"
   },
   {
-    "objectID": "slides/week-3.2.html#section-2",
-    "href": "slides/week-3.2.html#section-2",
-    "title": "Which Visualization Should I Use?",
-    "section": "",
-    "text": "Add third dimension to the aes() call for line color…\n\n\n# in this ggplot() call, we add a third dimension for line color\nggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +\n  geom_line(linewidth = 1) + # our geom is a line with a width of 1\n  labs(\n    x = \"Year\", \n    y = \"Polyarchy Score\", \n    title = 'Democracy in countries representing three different \"waves\"', \n    caption = \"Source: V-Dem Institute\", \n    color = \"Country\" # make title of legend to upper case\n  )"
+    "objectID": "slides/week-1.1.html#example-un-voting-trends",
+    "href": "slides/week-1.1.html#example-un-voting-trends",
+    "title": "Coding Examples",
+    "section": "Example: UN Voting Trends",
+    "text": "Example: UN Voting Trends"
   },
   {
-    "objectID": "slides/week-3.2.html#section-3",
-    "href": "slides/week-3.2.html#section-3",
-    "title": "Which Visualization Should I Use?",
-    "section": "",
-    "text": "Modify the legend title…\n\n\n# in this ggplot() call, we add a third dimension for line color\nggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +\n  geom_line(linewidth = 1) + # our geom is a line with a width of 1\n  labs(\n    x = \"Year\", \n    y = \"Polyarchy Score\", \n    title = 'Democracy in countries representing three different \"waves\"', \n    caption = \"Source: V-Dem Institute\", \n    color = \"Country\" # make title of legend to upper case\n  )"
-  },
-  {
-    "objectID": "slides/week-3.2.html#your-turn",
-    "href": "slides/week-3.2.html#your-turn",
-    "title": "Which Visualization Should I Use?",
-    "section": "Your Turn!",
-    "text": "Your Turn!\n\n\nSee table three of this article\nSelect three countries to visualize\nAdjust setup code to filter data on those countries\nVisualize with geom_line()\n\n\n\n\n−+\n10:00"
-  },
-  {
-    "objectID": "slides/week-3.2.html#scatter-plots",
-    "href": "slides/week-3.2.html#scatter-plots",
-    "title": "Which Visualization Should I Use?",
-    "section": "Scatter Plots",
-    "text": "Scatter Plots\n\n\nScatter plots are used to show the relationship between two variables\nFrequently the outcome variable is on the y-axis and the predictor variable is on the x-axis\nIn addition to the points, you can use color, size, and shape to add more information to the plot"
-  },
-  {
-    "objectID": "slides/week-3.2.html#scatter-plot-setup",
-    "href": "slides/week-3.2.html#scatter-plot-setup",
-    "title": "Which Visualization Should I Use?",
-    "section": "Scatter Plot Setup",
-    "text": "Scatter Plot Setup\n\n\ndem_summary_ctry &lt;- read_csv(\"data/dem_women.csv\") |&gt;\n  group_by(country, region) |&gt; # group by country, keep region\n  summarize(\n    polyarchy = mean(polyarchy, na.rm = TRUE),\n    gdp_pc = mean(gdp_pc, na.rm = TRUE), \n    flfp = mean(flfp, na.rm = TRUE), \n    women_rep = mean(women_rep, na.rm = TRUE)\n  )"
-  },
-  {
-    "objectID": "slides/week-3.2.html#scatter-plot",
-    "href": "slides/week-3.2.html#scatter-plot",
-    "title": "Which Visualization Should I Use?",
-    "section": "Scatter Plot",
-    "text": "Scatter Plot\n\n\nCode\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) + \n  geom_point() + # use geom_point() for scatter plots\n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\",\n    size = \"Women Reps\"\n    )"
-  },
-  {
-    "objectID": "slides/week-3.2.html#scatter-plot-1",
-    "href": "slides/week-3.2.html#scatter-plot-1",
-    "title": "Which Visualization Should I Use?",
-    "section": "Scatter Plot",
-    "text": "Scatter Plot\n\nUse geom_point()…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) +\n  geom_point() + # use geom_point() for scatter plots\n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\",\n    size = \"Women Reps\"\n    )"
-  },
-  {
-    "objectID": "slides/week-3.2.html#scatter-plot-2",
-    "href": "slides/week-3.2.html#scatter-plot-2",
-    "title": "Which Visualization Should I Use?",
-    "section": "Scatter Plot",
-    "text": "Scatter Plot\n\nFour dimensions…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) + \n  geom_point() + # use geom_point() for scatter plots\n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\",\n    size = \"Women Reps\"\n    )"
-  },
-  {
-    "objectID": "slides/week-3.2.html#scatter-plot-3",
-    "href": "slides/week-3.2.html#scatter-plot-3",
-    "title": "Which Visualization Should I Use?",
-    "section": "Scatter Plot",
-    "text": "Scatter Plot\n\nStretch axis on log scale and use scales package to adjust labels…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) + \n  geom_point() + # use geom_point() for scatter plots\n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\",\n    size = \"Women Reps\"\n    )"
-  },
-  {
-    "objectID": "slides/week-3.2.html#scatter-plot-4",
-    "href": "slides/week-3.2.html#scatter-plot-4",
-    "title": "Which Visualization Should I Use?",
-    "section": "Scatter Plot",
-    "text": "Scatter Plot\n\nChange legend titles…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) + \n  geom_point() + # use geom_point() for scatter plots\n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\",\n    size = \"Women Reps\"\n    )"
-  },
-  {
-    "objectID": "slides/week-3.2.html#your-turn-1",
-    "href": "slides/week-3.2.html#your-turn-1",
-    "title": "Which Visualization Should I Use?",
-    "section": "Your Turn!",
-    "text": "Your Turn!\n\nThere are four variables in dem_summary_ctry\nPick one related to women’s empowerment\nVisualize it on the y-axis with gdp_pc or polyarchy on the x-axis\nChange labels and legend titles to match your visualization\nInterpret your plot\n\n\n\n\n−+\n10:00"
-  },
-  {
-    "objectID": "slides/week-3.2.html#add-a-trend-line",
-    "href": "slides/week-3.2.html#add-a-trend-line",
-    "title": "Which Visualization Should I Use?",
-    "section": "Add a Trend Line",
-    "text": "Add a Trend Line"
-  },
-  {
-    "objectID": "slides/week-3.2.html#add-a-trend-line-1",
-    "href": "slides/week-3.2.html#add-a-trend-line-1",
-    "title": "Which Visualization Should I Use?",
-    "section": "Add a Trend Line",
-    "text": "Add a Trend Line\n\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + \n  geom_point(aes(color = region)) + \n  geom_smooth(method = \"lm\", linewidth = 1) + \n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\"\n    )"
-  },
-  {
-    "objectID": "slides/week-3.2.html#add-a-trend-line-2",
-    "href": "slides/week-3.2.html#add-a-trend-line-2",
-    "title": "Which Visualization Should I Use?",
-    "section": "Add a Trend Line",
-    "text": "Add a Trend Line\n\nTaking out size and adding color to geom_point() call…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + \n  geom_point(aes(color = region)) + \n  geom_smooth(method = \"lm\", linewidth = 1) + \n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\"\n    )"
-  },
-  {
-    "objectID": "slides/week-3.2.html#add-a-trend-line-3",
-    "href": "slides/week-3.2.html#add-a-trend-line-3",
-    "title": "Which Visualization Should I Use?",
-    "section": "Add a Trend Line",
-    "text": "Add a Trend Line\n\nChanging legend titles…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + \n  geom_point(aes(color = region)) + \n  geom_smooth(method = \"lm\", linewidth = 1) + \n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\"\n    )"
-  },
-  {
-    "objectID": "slides/week-3.2.html#your-turn-2",
-    "href": "slides/week-3.2.html#your-turn-2",
-    "title": "Which Visualization Should I Use?",
-    "section": "Your Turn!",
-    "text": "Your Turn!\n\n\nAdd a trendline to your plot\nChange the labels accordingly\nTry using method = \"loess\" instead of a “lm”\n\n\n\n\n−+\n10:00"
-  },
-  {
-    "objectID": "slides/week-3.2.html#which-plot-should-you-use",
-    "href": "slides/week-3.2.html#which-plot-should-you-use",
-    "title": "Which Visualization Should I Use?",
-    "section": "Which Plot Should You Use?",
-    "text": "Which Plot Should You Use?\n\n\n\nTrends in stock process over time\nDistribution of income in a country\nComparison of FLFP across MENA countries\nRelationship between poverty and inequality (cross-nationally)"
-  },
-  {
-    "objectID": "slides/week-3.2.html#which-geom-would-you-use",
-    "href": "slides/week-3.2.html#which-geom-would-you-use",
-    "title": "Which Visualization Should I Use?",
-    "section": "Which Geom Would You Use?",
-    "text": "Which Geom Would You Use?\n\n\n\nColumn chart\nHistogram\nLine chart\nScatter plot"
-  },
-  {
-    "objectID": "slides/week-3.2.html#other-plots-and-geometries",
-    "href": "slides/week-3.2.html#other-plots-and-geometries",
-    "title": "Which Visualization Should I Use?",
-    "section": "Other Plots and Geometries",
-    "text": "Other Plots and Geometries\n\n\n\n\nBox Plot\ngeom_boxplot()\nViolin Plot\ngeom_violin()\nDensity Plot\ngeom_density()\nBar Plot (Categorical)\ngeom_bar()\nHeatmap\ngeom_tile()\n\n\n\nArea Plot\ngeom_area()\nDot Plot\ngeom_dotplot()\nPie Chart\n(usually a bar plot with coord_polar())\nRidgeline Plot\nggridges::geom_density_ridges()\nMap Plot (Choropleth)\ngeom_polygon()"
-  },
-  {
-    "objectID": "instructor.html",
-    "href": "instructor.html",
-    "title": "Instructor",
-    "section": "",
-    "text": "Emmanuel Teitelbaum is an associate professor of political science and international affairs at the The George Washington University His research and writing explore how class conflict and compromise intersect with democracy and development. He also has a strong interest in labor standards and understanding how labor unions, nonprofit organizations, consumers and corporations can help to promote them.\nAt GW, Professor Teitelbaum teaches courses on comparative politics, comparative political economy and data science. He is on faculty in the Department of Political Science and the Elliott School of International Affairs and is affiliated with the Sigur Center for Asian Studies as well as the Institute for International Economic Policy.",
-    "crumbs": [
-      "Course information",
-      "Instructor"
-    ]
-  },
-  {
-    "objectID": "weeks/week-14.html",
-    "href": "weeks/week-14.html",
-    "title": "Week 14",
-    "section": "",
-    "text": "📖 Aklin and Matto, “Prisoners of the Wrong Dilemma”"
-  },
-  {
-    "objectID": "weeks/week-14.html#readings",
-    "href": "weeks/week-14.html#readings",
-    "title": "Week 14",
-    "section": "",
-    "text": "📖 Aklin and Matto, “Prisoners of the Wrong Dilemma”"
-  },
-  {
-    "objectID": "weeks/week-14.html#slides",
-    "href": "weeks/week-14.html#slides",
-    "title": "Week 14",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Climate change and collective action\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-8.html",
-    "href": "weeks/week-8.html",
-    "title": "Week 8",
-    "section": "",
-    "text": "Important\n\n\n\nExam 2 is due on Sunday, March 19."
-  },
-  {
-    "objectID": "weeks/week-8.html#readings",
-    "href": "weeks/week-8.html#readings",
-    "title": "Week 8",
-    "section": "Readings",
-    "text": "Readings\n📖 James Putzel, “The ‘Populist’ Right Challenge to Neoliberalism”\n📖 Mary Cullen, “How to Write and Format a White Paper”"
-  },
-  {
-    "objectID": "weeks/week-8.html#slides",
-    "href": "weeks/week-8.html#slides",
-    "title": "Week 8",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Populism and social policy\n🖥️ Exam 2 review"
-  },
-  {
-    "objectID": "weeks/week-8.html#assignments",
-    "href": "weeks/week-8.html#assignments",
-    "title": "Week 8",
-    "section": "Assignments",
-    "text": "Assignments\n📘 Exam 2\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-12.html",
-    "href": "weeks/week-12.html",
-    "title": "Week 12",
-    "section": "",
-    "text": "Important\n\n\n\n“Project Assignment 2: White Paper” is due on Sunday, April 9"
-  },
-  {
-    "objectID": "weeks/week-12.html#readings",
-    "href": "weeks/week-12.html#readings",
-    "title": "Week 12",
-    "section": "Readings",
-    "text": "Readings\n📖 Autor, Dorn and Hanson, “The China Shock”\n📖 Joseph Stiglitz, People, Power, and Profits, Chapter 3"
-  },
-  {
-    "objectID": "weeks/week-12.html#slides",
-    "href": "weeks/week-12.html#slides",
-    "title": "Week 12",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Globalization\n🖥️ Inequality"
-  },
-  {
-    "objectID": "weeks/week-12.html#assignments",
-    "href": "weeks/week-12.html#assignments",
-    "title": "Week 12",
-    "section": "Assignments",
-    "text": "Assignments\n✍️ Project Assignment 2: White Paper\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-11.html",
-    "href": "weeks/week-11.html",
-    "title": "Week 11",
-    "section": "",
-    "text": "📖 Gumbrell-McCormick and Hyman, “Democracy in Trade Unions, Democracy Through Trade Unions?”\n📖 Hall and Soskice, Varities of Capitalism, Chapter 1"
-  },
-  {
-    "objectID": "weeks/week-11.html#readings",
-    "href": "weeks/week-11.html#readings",
-    "title": "Week 11",
-    "section": "",
-    "text": "📖 Gumbrell-McCormick and Hyman, “Democracy in Trade Unions, Democracy Through Trade Unions?”\n📖 Hall and Soskice, Varities of Capitalism, Chapter 1"
-  },
-  {
-    "objectID": "weeks/week-11.html#slides",
-    "href": "weeks/week-11.html#slides",
-    "title": "Week 11",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Unions and collective bargaining\n🖥️ Varieties of capitalism\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-2.html",
-    "href": "weeks/week-2.html",
-    "title": "Week 2",
-    "section": "",
-    "text": "📖 Acemoglu and Robinson, “Rents and Economic Development”\n📖 Cheibub and Vreeland, “Modernization Theory”"
-  },
-  {
-    "objectID": "weeks/week-2.html#readings",
-    "href": "weeks/week-2.html#readings",
-    "title": "Week 2",
-    "section": "",
-    "text": "📖 Acemoglu and Robinson, “Rents and Economic Development”\n📖 Cheibub and Vreeland, “Modernization Theory”"
-  },
-  {
-    "objectID": "weeks/week-2.html#slides",
-    "href": "weeks/week-2.html#slides",
-    "title": "Week 2",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Institutions and Development\n🖥️ Modernization Theory\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-1.html",
-    "href": "weeks/week-1.html",
-    "title": "Week 1",
-    "section": "",
-    "text": "📖 Review the course syllabus and support resources\n📖 Polanyi, The Great Transformation, Chapter 11"
-  },
-  {
-    "objectID": "weeks/week-1.html#readings",
-    "href": "weeks/week-1.html#readings",
-    "title": "Week 1",
-    "section": "",
-    "text": "📖 Review the course syllabus and support resources\n📖 Polanyi, The Great Transformation, Chapter 11"
-  },
-  {
-    "objectID": "weeks/week-1.html#slides",
-    "href": "weeks/week-1.html#slides",
-    "title": "Week 1",
-    "section": "Slides",
-    "text": "Slides\n🖥Polany’s Great Transformation\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-5.html",
-    "href": "weeks/week-5.html",
-    "title": "Week 5",
-    "section": "",
-    "text": "📖 Stokes et. al., Brokers, Voters and Clientelism, Chapter 1\n📖 Aspinall and Berenschot, Democracy for Sale, Chapter 5"
-  },
-  {
-    "objectID": "weeks/week-5.html#readings",
-    "href": "weeks/week-5.html#readings",
-    "title": "Week 5",
-    "section": "",
-    "text": "📖 Stokes et. al., Brokers, Voters and Clientelism, Chapter 1\n📖 Aspinall and Berenschot, Democracy for Sale, Chapter 5"
-  },
-  {
-    "objectID": "weeks/week-5.html#slides",
-    "href": "weeks/week-5.html#slides",
-    "title": "Week 5",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Programmatic politics vs. clientelism\n🖥️ Vote buying\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-6.html",
-    "href": "weeks/week-6.html",
-    "title": "Week 6",
-    "section": "",
-    "text": "📖 Edward Miguel, “Tribe or Nation?”\n📖 Holland and Ben Ross Schneider, “Easy and Hard Redistribution”"
-  },
-  {
-    "objectID": "weeks/week-6.html#readings",
-    "href": "weeks/week-6.html#readings",
-    "title": "Week 6",
-    "section": "",
-    "text": "📖 Edward Miguel, “Tribe or Nation?”\n📖 Holland and Ben Ross Schneider, “Easy and Hard Redistribution”"
-  },
-  {
-    "objectID": "weeks/week-6.html#slides",
-    "href": "weeks/week-6.html#slides",
-    "title": "Week 6",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Ethnicity and public goods\n🖥️ Democracy and redistribution"
-  },
-  {
-    "objectID": "weeks/week-6.html#videos",
-    "href": "weeks/week-6.html#videos",
-    "title": "Week 6",
-    "section": "Videos",
-    "text": "Videos\n📺 Bar chart video\n📺 Line chart video\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "assignments/coding-assignment-3.html",
-    "href": "assignments/coding-assignment-3.html",
-    "title": "Homework 3",
-    "section": "",
-    "text": "In this homework assignment, we are once again going to be exploring the correlates of democracy with V-Dem. But this time we are going to do so in the context of regression analysis.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 3"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-3.html#step-1-load-the-data-12.5-pts.",
-    "href": "assignments/coding-assignment-3.html#step-1-load-the-data-12.5-pts.",
-    "title": "Homework 3",
-    "section": "Step 1: Load the data (12.5 pts.)",
-    "text": "Step 1: Load the data (12.5 pts.)\nUsing fetchdem from vdemlite, select the v2x_regime variable, a continuous measure of democracy like v2x_polyarchy, and at least three variables that you believe correlate with democracy for all countries and one year of your choosing. Use mutate() to transform v2x_regime into a binary variable that indicates whether a country is a democracy or not (I have provided this part of the code for you).\n\nlibrary(vdemlite)\n\n# Uncomment this code to start working on it.\n\n#vdem_data &lt;- fetchdem(indicators = c(???),\n#                      start_year = ???, end_year = ???) |&gt;\n#  mutate(regime_dummy = ifelse(v2x_regime &gt;= 2, 1, 0)",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 3"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-3.html#step-2-hypotheses-12.5-pts.",
-    "href": "assignments/coding-assignment-3.html#step-2-hypotheses-12.5-pts.",
-    "title": "Homework 3",
-    "section": "Step 2: Hypotheses (12.5 pts.)",
-    "text": "Step 2: Hypotheses (12.5 pts.)\nTalk about why you chose the indicators you did and why you think your independent variables should be related to democracy.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 3"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-3.html#step-3-run-a-bivariate-linear-regression-model-12.5-pts.",
-    "href": "assignments/coding-assignment-3.html#step-3-run-a-bivariate-linear-regression-model-12.5-pts.",
-    "title": "Homework 3",
-    "section": "Step 3: Run a bivariate linear regression model (12.5 pts.)",
-    "text": "Step 3: Run a bivariate linear regression model (12.5 pts.)\nRun a bivariate linear regression model with your selected continuous measure of democracy as the dependent variable and one of your selected predictors as the independent variable. Use the lm() function to run the model and the summary() function to view the results.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 3"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-3.html#step-4-interpret-the-results-12.5-pts.",
-    "href": "assignments/coding-assignment-3.html#step-4-interpret-the-results-12.5-pts.",
-    "title": "Homework 3",
-    "section": "Step 4: Interpret the results (12.5 pts.)",
-    "text": "Step 4: Interpret the results (12.5 pts.)\nInterpret the results of the regression model. What is the coefficient on the predictor variable? What does this coefficient tell you about the relationship between the predictor and democracy? Is the relationship stastically significant? How about the constant (intercept term)?",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 3"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-3.html#step-5-run-a-multiple-linear-regression-model-12.5-pts.",
-    "href": "assignments/coding-assignment-3.html#step-5-run-a-multiple-linear-regression-model-12.5-pts.",
-    "title": "Homework 3",
-    "section": "Step 5: Run a Multiple Linear Regression Model (12.5 pts.)",
-    "text": "Step 5: Run a Multiple Linear Regression Model (12.5 pts.)\nRun a multiple linear regression model with your selected continous measure of democracy as the dependent variable and at least three of your selected predictors as the independent variables. Use the lm() function to run the model and the summary() function to view the results.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 3"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-3.html#step-6-interpret-the-results-of-your-multiple-regression-12.5-pts.",
-    "href": "assignments/coding-assignment-3.html#step-6-interpret-the-results-of-your-multiple-regression-12.5-pts.",
-    "title": "Homework 3",
-    "section": "Step 6: Interpret the Results of Your Multiple Regression (12.5 pts.)",
-    "text": "Step 6: Interpret the Results of Your Multiple Regression (12.5 pts.)\nInterpret the results of the multiple regression model. What is the coefficient on each of the predictor variables? What does this coefficient tell you about the relationship between the predictors and democracy? Are the relationships statistically significant? How would you interpret the constant (intercept term)?",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 3"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-3.html#step-7-run-a-multiple-logistic-regression-12.5-pts.",
-    "href": "assignments/coding-assignment-3.html#step-7-run-a-multiple-logistic-regression-12.5-pts.",
-    "title": "Homework 3",
-    "section": "Step 7: Run a Multiple Logistic Regression (12.5 pts.)",
-    "text": "Step 7: Run a Multiple Logistic Regression (12.5 pts.)\nUsing your dichotomous measure of regime type (democratic or not) as the dependent variable, run a multiple logistic regression model with your three predictors. Use the glm() function to run the model and the summary() function to view the results.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 3"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-3.html#step-8-interpret-the-results-of-your-logistic-regression-12.5-pts.",
-    "href": "assignments/coding-assignment-3.html#step-8-interpret-the-results-of-your-logistic-regression-12.5-pts.",
-    "title": "Homework 3",
-    "section": "Step 8: Interpret the Results of Your Logistic Regression (12.5 pts.)",
-    "text": "Step 8: Interpret the Results of Your Logistic Regression (12.5 pts.)\nInterpret the results of the logistic regression model. Interpret the direction and significance of each predictor. Exponentiate the coefficient of one of the predictors and interpret it?",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 3"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-3.html#extra-credit-3-pts.",
-    "href": "assignments/coding-assignment-3.html#extra-credit-3-pts.",
-    "title": "Homework 3",
-    "section": "Extra Credit (3 pts.)",
-    "text": "Extra Credit (3 pts.)\nUse the marginaleffects package to give the predicted probabilities of regime transition for three countries in your dataset.\n\n\n\n\n\n\nSubmission Instructions\n\n\n\nAfter rendering your document, export your project folder and submit it on Blackboard. You will find the link to the Coding Assignment one submission portal under the Assignments link. There is a screen capture video in the Discord server that will help you understand how to do this.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 3"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-4.html",
-    "href": "assignments/coding-assignment-4.html",
-    "title": "Homework 4",
-    "section": "",
-    "text": "Community Driven Development (CDD) programs have become increasingly popular in international development over the past several decades. CDD programs directly involve impacted communities in the selection, design, and implementation of development projects. Usually, this also involves building upon or creating community level organizations (or committees) that are involved with the projects, with the goal of creating democratic and inclusive decision-making processes. See this 3ie working paper for discussion of some common features of CDD.\nGiven these design features, proponents of CDD argue that these programs should (a) improve the quality and impact of development projects (e.g., public goods) AND (b) improve social cohesion, inclusion, and local governance. For this reason, CDD has been implemented in a number of post-conflict settings, where the hope is that CDD can both improve development outcomes and contribute to rebuilding social cohesion and governance (which are often harmed by conflict).\nDoes CDD improve development outcomes? Does it improve social cohesion after conflict? Your goal in this assignment is to answer these questions, using data from an evaluation of a CDD program in post-conflict Sierra Leone.\nThe relevant files for this assignment are available in the Posit Cloud folder.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 4"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-4.html#overview",
-    "href": "assignments/coding-assignment-4.html#overview",
-    "title": "Homework 4",
-    "section": "",
-    "text": "Community Driven Development (CDD) programs have become increasingly popular in international development over the past several decades. CDD programs directly involve impacted communities in the selection, design, and implementation of development projects. Usually, this also involves building upon or creating community level organizations (or committees) that are involved with the projects, with the goal of creating democratic and inclusive decision-making processes. See this 3ie working paper for discussion of some common features of CDD.\nGiven these design features, proponents of CDD argue that these programs should (a) improve the quality and impact of development projects (e.g., public goods) AND (b) improve social cohesion, inclusion, and local governance. For this reason, CDD has been implemented in a number of post-conflict settings, where the hope is that CDD can both improve development outcomes and contribute to rebuilding social cohesion and governance (which are often harmed by conflict).\nDoes CDD improve development outcomes? Does it improve social cohesion after conflict? Your goal in this assignment is to answer these questions, using data from an evaluation of a CDD program in post-conflict Sierra Leone.\nThe relevant files for this assignment are available in the Posit Cloud folder.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 4"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-4.html#the-gobifo-program-in-sierra-leone",
-    "href": "assignments/coding-assignment-4.html#the-gobifo-program-in-sierra-leone",
-    "title": "Homework 4",
-    "section": "The GoBifo Program in Sierra Leone",
-    "text": "The GoBifo Program in Sierra Leone\nSierra Leone was devastated by a civil war lasting from 1991 to 2002. In the post-conflict context, the Ministry of Local Government and Community Development implemented the GoBifo (“forge ahead”) CDD project in Sierra Leone from 2005-2009 (with support from the World Bank and other international donors). See this report for a detailed summary of the program.\nThe program had two key components:\n\nBlock grants of about 4,667 dollars (about 100 per household in each community) that communities could allocate to local development projects, skills trainings, and small-business investment.\n“Technical assistance that promoted democratic decision-making, the participation of socially marginalized women and youth in local politics, and transparent budgeting practices” [@casey2012]\n\nThe GiBifo program also included an impact evaluation, conducted by economists Katherine Casey, Rachel Glennerster, and Edward Miguel. The academic paper generated from the project is in the References section [@casey2012].\nImportantly, the impact evaluation included randomization: communities in the study were randomly assigned to receive the GoBifo program, or not. In this sense, the impact evaluation was similar to a clinical drug trial, where some subjects are randomly assigned to receive the medicine while others do not receive it. This aspect of the design makes it easier to assess the causal impact of this project: we can compare outcomes in the treatment (GoBifo program) and control groups, and test for whether any differences we observe are likely to be due to chance.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 4"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-4.html#load-data-and-packages",
-    "href": "assignments/coding-assignment-4.html#load-data-and-packages",
-    "title": "Homework 4",
-    "section": "Load Data and Packages",
-    "text": "Load Data and Packages\nYou can use the code below to load the packages and data. Make sure the .csv file is saved in your RProj folder for this project.\n\nlibrary(tidyverse)\nlibrary(tidymodels)\n\n\nmyData &lt;- read_csv(\"gobifo_data.csv\")",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 4"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-4.html#data",
-    "href": "assignments/coding-assignment-4.html#data",
-    "title": "Homework 4",
-    "section": "Data",
-    "text": "Data\n“gobifo_data.csv” provides a condensed version of the data collected by @casey2012 for their evaluation of the project. The study team gathered literally hundreds of outcome variables, and the paper includes an interesting discussion of how they analyze the data and interpret the results given the large number of outcomes they measured.\nThe unit of analysis (or row in the dataset) is the village.\nFor our purposes, we will focus on a smaller set of variables, summarized below:\n\nTreatment variable (named t in the data): this equals treatment if the community was randomly assigned to be in the program, and control if not. As a character variable, tidymodels will automatically recognize it as a factor. But be sure to use quotation marks when working with the two categories, e.g. filter(t == \"treatment\").\nCommunity Decision Making Infrastructure: Is there a village development committee in the community? (vdc)\nPublic Goods: Is there a functioning primary school in the community? (f_psch)\nSanitation: Is there a functioning latrine in the community (f_latrine)\nInclusion, Gender equality in participatory decision making (role_wmn).\n\n“Enumerator account of how actively women participated in the deliberation compared to men, ranging from 5 = no difference between women and men to 1 = women not active at all compared to men”\n\nSocial Capital: Trust in other in the community (trust_own)\nConflict: Percentage of respondents in the village that reported they had NO conflicts/disputes with others that required outside intervention (no_conflict)",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 4"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-4.html#part-1-setup-and-load-data-10-points",
-    "href": "assignments/coding-assignment-4.html#part-1-setup-and-load-data-10-points",
-    "title": "Homework 4",
-    "section": "Part 1: Setup and Load Data (10 points)",
-    "text": "Part 1: Setup and Load Data (10 points)\n\nCreate a folder and an RProj file for this assignment. Save “gobifo_data.csv” in that folder. Create a new Quarto document where you will complete the work for this assignment. Make sure to include a title, your name, and the date. (1 point)\nCreate a code chunk that loads the packages you will need: tidyverse and tidymodels\nUse read_csv() to read the “gobifo_data.csv” data in to RStudio. Save the dataset as an object called “myData”\nExamine the data. How many observations (villages) are there in the study? You can use glimpse() to determine the number of rows. How many were in the treatment (t) group (in the program) and how many were in control? You can use summarize() or count() for this calculation.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 4"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-4.html#part-2-calculate-the-treatment-effect-of-a-variable-16-points",
-    "href": "assignments/coding-assignment-4.html#part-2-calculate-the-treatment-effect-of-a-variable-16-points",
-    "title": "Homework 4",
-    "section": "Part 2: Calculate the Treatment Effect of a Variable (16 points)",
-    "text": "Part 2: Calculate the Treatment Effect of a Variable (16 points)\nChoose one variables. Calculate the means and treatment effect of your chosen variable.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 4"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-4.html#part-3-state-your-hypotheses-16-points",
-    "href": "assignments/coding-assignment-4.html#part-3-state-your-hypotheses-16-points",
-    "title": "Homework 4",
-    "section": "Part 3: State Your Hypotheses (16 points)",
-    "text": "Part 3: State Your Hypotheses (16 points)\nWhat is your null hypothesis for the effect of your chosen variable? What is your alternative hypothesis?",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 4"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-4.html#part-4-generate-the-null-distribution-16-points",
-    "href": "assignments/coding-assignment-4.html#part-4-generate-the-null-distribution-16-points",
-    "title": "Homework 4",
-    "section": "Part 4: Generate the Null Distribution (16 points)",
-    "text": "Part 4: Generate the Null Distribution (16 points)\nUsing tidymodels, generate a null distribution for the treatment effect of your chosen variable.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 4"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-4.html#part-5-get-the-p-value-16-points",
-    "href": "assignments/coding-assignment-4.html#part-5-get-the-p-value-16-points",
-    "title": "Homework 4",
-    "section": "Part 5: Get the p-value (16 points)",
-    "text": "Part 5: Get the p-value (16 points)\nUse the get_p_value() function from the infer package to calculate the p-value for your chosen variable.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 4"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-4.html#part-6-visualize-the-treatment-effect-16-points",
-    "href": "assignments/coding-assignment-4.html#part-6-visualize-the-treatment-effect-16-points",
-    "title": "Homework 4",
-    "section": "Part 6: Visualize the Treatment Effect (16 points)",
-    "text": "Part 6: Visualize the Treatment Effect (16 points)\nUse the visualize() function from the infer package to visualize the treatment effect of your chosen variable relative to the null distribution.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 4"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-4.html#part-7-interpret-the-results-10-points",
-    "href": "assignments/coding-assignment-4.html#part-7-interpret-the-results-10-points",
-    "title": "Homework 4",
-    "section": "Part 7: Interpret the Results (10 points)",
-    "text": "Part 7: Interpret the Results (10 points)\nWrite one or two paragraphs that summarize the results of your analysis and accurately interpret them. What is the big picture takeaway of your analysis? What does your analysis teach us about the impact of this CDD program based on the variable you chose?",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 4"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-4.html#extra-credit",
-    "href": "assignments/coding-assignment-4.html#extra-credit",
-    "title": "Homework 4",
-    "section": "Extra Credit",
-    "text": "Extra Credit\nThere are other outcome variables in the study that you did not select: create visualizations that display the means and 95% confidence intervals in treatment and control groups for these outcomes.\n\n\n\n\n\n\nSubmission Instructions\n\n\n\nAfter rendering your document, export your project folder and submit it on Blackboard. You will find the link to the Coding Assignment one submission portal under the Assignments link. There is a screen capture video in the Discord server that will help you understand how to do this.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 4"
-    ]
-  },
-  {
-    "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "href": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
-    "title": "Attribution-ShareAlike 4.0 International",
-    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
-    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\nA. reproduce and Share the Licensed Material, in whole or in part; and\nB. produce, reproduce, and Share Adapted Material.\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\nB. Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\nA. retain the following if it is supplied by the Licensor with the Licensed Material:\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\nB. indicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nC. indicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” The text of the Creative Commons public licenses is dedicated to the public domain under the CC0 Public Domain Dedication. Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org."
-  },
-  {
-    "objectID": "course-links.html",
-    "href": "course-links.html",
-    "title": "Useful links",
-    "section": "",
-    "text": "Lecture Recordings\n🔗 on Blackboard\n\n\nProf T’s Zoom Office\n🔗 on Zoom\n\n\nOffice Hours Appointments\n🔗 on Calendly",
-    "crumbs": [
-      "Course information",
-      "Useful links"
-    ]
-  },
-  {
-    "objectID": "course-description.html",
-    "href": "course-description.html",
-    "title": "Course Description",
-    "section": "",
-    "text": "This course provides a comprehensive introduction to data science, blending theoretical foundations with practical applications. Students will begin with data visualization, learning the essential tools and principles for creating informative and impactful visual representations of data. The course then progresses to data wrangling, where students will clean, manipulate, and prepare data for analysis.\nAs the semester unfolds, students will explore web scraping techniques to gather data from online sources, followed by an examination of the ethical considerations surrounding data collection, privacy, and algorithmic bias. The course then delves into statistical modeling, introducing both linear and logistic regression, and other core methods used in predictive analytics.\nThroughout the course, various special topics, such as bootstrapping, randomization tests, or interactive web applications, will be covered, offering students a chance to explore current trends and tools in data science. The curriculum is designed to equip students with a versatile toolkit, enabling them to tackle real-world data challenges and communicate their findings effectively.",
-    "crumbs": [
-      "Course information",
-      "Description"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-2.html",
-    "href": "assignments/coding-assignment-2.html",
-    "title": "Coding Assignment 2",
-    "section": "",
-    "text": "For this assignment, you are going to download some variables using the wbstats and vdemlite packages. Then you are going to wrangle these data and merge the two data sets into one and analyze how they relate to women’s representation in national parliaments. Do your work for each step in the code chunks provided.\nHere is a setup code chunk. You can load all of your packages here or as you go along in the code chunks below using the library() function. However, note that you really only need to load a library once per document.\n\n\n\n\n\n\nWarning\n\n\n\nPlease refrain from installing any packages in your code chunks because this will also install them every time the code chunk is run or your document is rendered. This may not be desirable for you or whoever is looking at or running your code (e.g. me).",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 2"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-2.html#overview",
-    "href": "assignments/coding-assignment-2.html#overview",
-    "title": "Coding Assignment 2",
-    "section": "",
-    "text": "For this assignment, you are going to download some variables using the wbstats and vdemlite packages. Then you are going to wrangle these data and merge the two data sets into one and analyze how they relate to women’s representation in national parliaments. Do your work for each step in the code chunks provided.\nHere is a setup code chunk. You can load all of your packages here or as you go along in the code chunks below using the library() function. However, note that you really only need to load a library once per document.\n\n\n\n\n\n\nWarning\n\n\n\nPlease refrain from installing any packages in your code chunks because this will also install them every time the code chunk is run or your document is rendered. This may not be desirable for you or whoever is looking at or running your code (e.g. me).",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 2"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-2.html#step-1-download-data-from-v-dem-20pts",
-    "href": "assignments/coding-assignment-2.html#step-1-download-data-from-v-dem-20pts",
-    "title": "Coding Assignment 2",
-    "section": "Step 1: Download data from V-Dem (20pts)",
-    "text": "Step 1: Download data from V-Dem (20pts)\nUse the V-Dem codebook or the searchdem() function in vdemlite to identify one measure of democracy and one indicator related to women’s empowerment (or two measures of women’s empowerment). Now use fetchdem() to download the most recent 25 years or so of data for your analysis for all countries in the dataset. Make sure to load the packages that you need and glimpse() the data or View() it to make sure that it downloaded properly.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 2"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-2.html#step-2-download-data-from-the-world-bank-20-pts",
-    "href": "assignments/coding-assignment-2.html#step-2-download-data-from-the-world-bank-20-pts",
-    "title": "Coding Assignment 2",
-    "section": "Step 2: Download data from the World Bank (20 pts)",
-    "text": "Step 2: Download data from the World Bank (20 pts)\nNext, download the variable on women’s represenation that we used in Module 1.2 (“SG.GEN.PARL.ZS”) and at least one additional measure related to women’s empowerment. Go to the WDI site the wb_search() function to identify relevant variables. Download data for the same time period as you did for the V-Dem data for all countries.\n\n\n\n\n\n\nImportant\n\n\n\nTry to make sure you download indicators with enough data to conduct your analysis. You won’t get great results if there are too many NAs.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 2"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-2.html#step-3-merge-the-data-20-pts",
-    "href": "assignments/coding-assignment-2.html#step-3-merge-the-data-20-pts",
-    "title": "Coding Assignment 2",
-    "section": "Step 3: Merge the data (20 pts)",
-    "text": "Step 3: Merge the data (20 pts)\nNow add country codes using the countrycode package and merge the data using left_join().",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 2"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-2.html#step-4-summarize-your-combined-data-set-20-pts",
-    "href": "assignments/coding-assignment-2.html#step-4-summarize-your-combined-data-set-20-pts",
-    "title": "Coding Assignment 2",
-    "section": "Step 4: Summarize your combined data set (20 pts)",
-    "text": "Step 4: Summarize your combined data set (20 pts)\nUse group_by(), summarize() and arrange() to glean insights about your data. For example, how do regions compare on mean values of women’s representation and how do these values relate to the values of other variables in your data set? Which countries stand out in terms of women’s representation?\n\n# Regional summary\n\n\n# Country summary",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 2"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-2.html#step-5-interpret-your-data-10-pts",
-    "href": "assignments/coding-assignment-2.html#step-5-interpret-your-data-10-pts",
-    "title": "Coding Assignment 2",
-    "section": "Step 5: Interpret your data (10 pts)",
-    "text": "Step 5: Interpret your data (10 pts)\nWrite a paragraph or so relating your insights to the Norris reading about electoral reform and women’s representation. Picking a handful of country cases from your data, how does your summary of gender and democracy variables relate to the level of female representation in a country? How would you relate these findings to Norris’s argument about the importance of an inclusive democracy?\n\n\n\n\n\n\nWarning\n\n\n\nDon’t write your paragraphs or any interpretation or analysis in a code chunk. Use markdown text. Quarto is designed to be a literate programming tool, so you can write your analysis in markdown text and include code chunks when necessary to support your argument.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 2"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-2.html#step-6-pivot-wb-data-10-pts.",
-    "href": "assignments/coding-assignment-2.html#step-6-pivot-wb-data-10-pts.",
-    "title": "Coding Assignment 2",
-    "section": "Step 6: Pivot WB Data (10 pts.)",
-    "text": "Step 6: Pivot WB Data (10 pts.)\nSometimes our data does not come in the format that we need to have it in for our analysis. Demonstrate that you know how to pivot data from wide to long form using the world_bank_pop data frame that comes with the tidyr package. Then pivot again (wider this time) to get the data into tidy format.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 2"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-2.html#extra-credit-3-pts.",
-    "href": "assignments/coding-assignment-2.html#extra-credit-3-pts.",
-    "title": "Coding Assignment 2",
-    "section": "Extra Credit (3 pts.)",
-    "text": "Extra Credit (3 pts.)\nFollowing the example that we did in class, download some messy data from the World Development Indicators website and wrangle it so that it is a tidy data frame. Be sure to download more than one data variable and don’t forget to use backticks (``) when dealing with unconventional variable names.\nNow render the document to make sure everything runs and to produce a final HTML document!",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 2"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-2.html#submission",
-    "href": "assignments/coding-assignment-2.html#submission",
-    "title": "Coding Assignment 2",
-    "section": "Submission",
-    "text": "Submission\nAfter rendering your document, export your project folder and submit it on Blackboard. You will find the link to the Coding Assignment one submission portal under the Assignments link. There is a screen capture video in the Discord server that will help you understand how to do this.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 2"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-1.html",
-    "href": "assignments/coding-assignment-1.html",
-    "title": "Homework 1",
-    "section": "",
-    "text": "For this assignment, you are going to evaluate modernization theory as laid out in Seymour Martin Lipset’s classic article entitled “Some Social Requisites of Democracy: Economic Development and Political Legitimacy.” How classic is this article? According to Google Scholar, this piece has been cited more than 11.5 thousand times!\nWe are going to use data from V-Dem and modern data viz tools to explore Lipset’s hypothesis that economic modernization is highly correlated with democracy. We have already done this to some extent by looking at the relationship between wealth and the polyarchy score. But we are going to broaden things out by looking at other measures of democracy contained in the V-Dem dataset. Specifically, you will get to choose between the following four measures:\n\nliberal democracy (libdem)\nparticipatory democracy (partipdem)\ndeliberative democracy (delibdem)\negalitarian democracy (egaldem).\n\nFor measuring modernization we are going to stick with GDP per capita (gdp_pc).\nStart by running this code chunk to import all of the packages you will need for this exercise. Then start working through the code and questions below. Feel free to grab relevant code chunks from the slides or the classwork QMD files that we have used in class so far.\n\nlibrary(tidyverse)\nlibrary(plotly)",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 1"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-1.html#overview",
-    "href": "assignments/coding-assignment-1.html#overview",
-    "title": "Homework 1",
-    "section": "",
-    "text": "For this assignment, you are going to evaluate modernization theory as laid out in Seymour Martin Lipset’s classic article entitled “Some Social Requisites of Democracy: Economic Development and Political Legitimacy.” How classic is this article? According to Google Scholar, this piece has been cited more than 11.5 thousand times!\nWe are going to use data from V-Dem and modern data viz tools to explore Lipset’s hypothesis that economic modernization is highly correlated with democracy. We have already done this to some extent by looking at the relationship between wealth and the polyarchy score. But we are going to broaden things out by looking at other measures of democracy contained in the V-Dem dataset. Specifically, you will get to choose between the following four measures:\n\nliberal democracy (libdem)\nparticipatory democracy (partipdem)\ndeliberative democracy (delibdem)\negalitarian democracy (egaldem).\n\nFor measuring modernization we are going to stick with GDP per capita (gdp_pc).\nStart by running this code chunk to import all of the packages you will need for this exercise. Then start working through the code and questions below. Feel free to grab relevant code chunks from the slides or the classwork QMD files that we have used in class so far.\n\nlibrary(tidyverse)\nlibrary(plotly)",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 1"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-1.html#step-1-make-a-line-chart-showing-country-trends-20-pts",
-    "href": "assignments/coding-assignment-1.html#step-1-make-a-line-chart-showing-country-trends-20-pts",
-    "title": "Homework 1",
-    "section": "Step 1: Make a line chart showing country trends (20 pts)",
-    "text": "Step 1: Make a line chart showing country trends (20 pts)\na) Read in the data from line_chart.csv using read_csv() in an object called line_chart_dta.\nb) Now use glimpse() to inspect the data. How many rows and columns are in the data frame? Write your answer below the code chunk\nc) Now click on the data frame in the Environment tab or use View() to scroll through the data frame. What countries, years and variables are in the data frame? What are the measures of democracy?\nd) Now choose one of the democracy indicators and visualize it with a line chart using ggplot2. Be sure to specify x =, y = and color = in your aes() call and use geom_line() to create the chart.Add appropriate axis labels, a title and a caption. Now add a colorblind-friendly color map using viridis and a theme.\ne) In a few sentences below, interpret your chart. Describe the levels and trends in democracy scores. Put your answer right below this line in markdown text (DO NOT write your comments in a code chunk!!).",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 1"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-1.html#step-2-make-a-column-chart-comparing-regional-levels-20-pts",
-    "href": "assignments/coding-assignment-1.html#step-2-make-a-column-chart-comparing-regional-levels-20-pts",
-    "title": "Homework 1",
-    "section": "Step 2: Make a column chart comparing regional levels (20 pts)",
-    "text": "Step 2: Make a column chart comparing regional levels (20 pts)\na) Read in the data from column_chart.csv using read_csv() in an object called column_chart_dta. You should see average democracy scores for the countries that you made a line chart for in Step 1.\nb) View the data frame. Describe briefly what you see, e.g. number of rows, columns and how the countries rank in terms of one of the democracy scores.\nc) Use ggplot() and geom_col() to visualize one of the democracy measures with a column chart (you can use the same measure as in Step 1 or a different one). Use fct_reorder() to arrange the columns in order of the y-axis values. Make sure to add appropriate axis labels, a title and a caption. Change the fill color and add a theme to spruce it up a bit. Remember that these are averages over the same number of years as the line chart you made in Step 1\nd) Interpret your column chart. Does the evidence in the column chart roughly match what you saw in the line chart above?",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 1"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-1.html#step-3-make-a-scatter-plot-20-pts",
-    "href": "assignments/coding-assignment-1.html#step-3-make-a-scatter-plot-20-pts",
-    "title": "Homework 1",
-    "section": "Step 3: Make a scatter plot (20 pts)",
-    "text": "Step 3: Make a scatter plot (20 pts)\na) Load the scatter plot data with read_csv()from scatter_plot.csv, storing the data in an object called scatter_plot_dta. Then glimpse or view the data and describe briefly what you see. Note that the values you see are country averages for the variables over the period 2010 - 2019.\nb) Now build a scatter plot with ggplot2 using these data. Put GDP on the x-axis and one of the measures of democracy on the y-axis and color the points by region. Stretch the x-axis on a log scale and use the scales package to add a prefix and suffix to the x-axis numbers to indicate that they are dollar figures. Add appropriate labels and a viridis color map and add your favorite theme. Note that you will get some warnings about a few missing data points, so try setting warning: false at the top of the code chunk with the hash pipe (#|) operator.\nc) Next add a trend line with geom_smooth() preferably with a linear model (method = “lm”). Note that you will get some warnings about missing data points and a message about the linear model. Try setting warning: false at the top of the code chunk with the hash pipe (#|) operator.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 1"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-1.html#step-4-additional-tasks-20-pts",
-    "href": "assignments/coding-assignment-1.html#step-4-additional-tasks-20-pts",
-    "title": "Homework 1",
-    "section": "Step 4: Additional Tasks (20 pts)",
-    "text": "Step 4: Additional Tasks (20 pts)\na) Facet wrap your scatter plot by region.\nb) Remove the facet_wrap() call and display the relationship for one region and use geom_text() to label your points.\nc) Remove the text labels and make your scatter plot interactive using ggplotly(). Make sure that your tooltip includes the information that you want to display to the user.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 1"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-1.html#step-5-interpretation-10-pts",
-    "href": "assignments/coding-assignment-1.html#step-5-interpretation-10-pts",
-    "title": "Homework 1",
-    "section": "Step 5: Interpretation (10 pts)",
-    "text": "Step 5: Interpretation (10 pts)\nInterpret your results from your visualizations, including the scatter plot, line chart and column chart. Is there an obvious relationship between development and democracy? Do the data generally support Lipset’s theory?",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 1"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-1.html#step-6-rendering-10-pts",
-    "href": "assignments/coding-assignment-1.html#step-6-rendering-10-pts",
-    "title": "Homework 1",
-    "section": "Step 6: Rendering (10 pts)",
-    "text": "Step 6: Rendering (10 pts)\nPress the render button to create your HTML document. If you get any errors go back and fix them and try again until the document renders.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 1"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-1.html#extra-credit-3-pts",
-    "href": "assignments/coding-assignment-1.html#extra-credit-3-pts",
-    "title": "Homework 1",
-    "section": "Extra Credit (3 pts)",
-    "text": "Extra Credit (3 pts)\n(a) Use a Quato theme to improve the look of the HTML output.\n(b) Use the paletteer package to a different theme to your scatter plot from Step 4.\n(c) Add annotation to your scatter plot from Step 4 using hline() or vline() to highlight a significant point in your data, like the mean or some other significant value. (Note: you will have to do some research to complete this step–we did not do it in class).",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 1"
-    ]
-  },
-  {
-    "objectID": "assignments/coding-assignment-1.html#submission",
-    "href": "assignments/coding-assignment-1.html#submission",
-    "title": "Homework 1",
-    "section": "Submission",
-    "text": "Submission\nAfter rendering your document, export your project folder and submit it on Blackboard. You will find the link to the Coding Assignment one submission portal under the Assignments link. There are instructions along with screenshots there to assist you with the process of exporting your project as a ZIP file from Posit Cloud.",
-    "crumbs": [
-      "Coding Asignments",
-      "Assignment 1"
-    ]
-  },
-  {
-    "objectID": "weeks/week-7.html",
-    "href": "weeks/week-7.html",
-    "title": "Week 7",
-    "section": "",
-    "text": "Important\n\n\n\n“Data Assignment 2: Cleaning & Visualizing Data in Excel” is due on Sunday, March 5"
-  },
-  {
-    "objectID": "weeks/week-7.html#readings",
-    "href": "weeks/week-7.html#readings",
-    "title": "Week 7",
-    "section": "Readings",
-    "text": "Readings\nArchibong et. al., “Washington Consensus Reforms and Economic Performance in Sub-Saharan Africa”\nBenería et. al., “Markets, Globalization and Gender”"
-  },
-  {
-    "objectID": "weeks/week-7.html#slides",
-    "href": "weeks/week-7.html#slides",
-    "title": "Week 7",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Washington consensus reforms\n🖥️ The gendered legacy of reform"
-  },
-  {
-    "objectID": "weeks/week-7.html#videos",
-    "href": "weeks/week-7.html#videos",
-    "title": "Week 7",
-    "section": "Videos",
-    "text": "Videos\n📺 Scatter plot video\n📺 Map video"
-  },
-  {
-    "objectID": "weeks/week-7.html#assignments",
-    "href": "weeks/week-7.html#assignments",
-    "title": "Week 7",
-    "section": "Assignments",
-    "text": "Assignments\n🧮 Data Assignment 2: Cleaning & Visualizing Data in Excel\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-4.html",
-    "href": "weeks/week-4.html",
-    "title": "Week 4",
-    "section": "",
-    "text": "Important\n\n\n\nExam 1 is due on Sunday, February 12"
-  },
-  {
-    "objectID": "weeks/week-4.html#readings",
-    "href": "weeks/week-4.html#readings",
-    "title": "Week 4",
-    "section": "Readings",
-    "text": "Readings\n📖 Hessami and Lopes da Fonseca, “Female Political Representation and Substantive Effects on Policies”"
-  },
-  {
-    "objectID": "weeks/week-4.html#slides",
-    "href": "weeks/week-4.html#slides",
-    "title": "Week 4",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Women’s empowerment\n🖥️ Exam 1 review"
-  },
-  {
-    "objectID": "weeks/week-4.html#assignments",
-    "href": "weeks/week-4.html#assignments",
-    "title": "Week 4",
-    "section": "Assignments",
-    "text": "Assignments\n📘 Exam 1\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-3.html",
-    "href": "weeks/week-3.html",
-    "title": "Week 3",
-    "section": "",
-    "text": "Important\n\n\n\n“Data Assignment 1: Working With Data in Excel” is due on Sunday, February 5"
-  },
-  {
-    "objectID": "weeks/week-3.html#readings",
-    "href": "weeks/week-3.html#readings",
-    "title": "Week 3",
-    "section": "Readings",
-    "text": "Readings\n📖Kaufman and Haggard, “Democratic Decline in the United States”\n📖Michael Ross, The Oil Curse, Chapter 3"
-  },
-  {
-    "objectID": "weeks/week-3.html#slides",
-    "href": "weeks/week-3.html#slides",
-    "title": "Week 3",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Democratic backsliding\n🖥️ The resource curse"
-  },
-  {
-    "objectID": "weeks/week-3.html#assignments",
-    "href": "weeks/week-3.html#assignments",
-    "title": "Week 3",
-    "section": "Assignments",
-    "text": "Assignments\n🧮 Data Assignment 1\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-10.html",
-    "href": "weeks/week-10.html",
-    "title": "Week 10",
-    "section": "",
-    "text": "Important\n\n\n\nProject Assignment 1 is due on Sunday, March 26."
-  },
-  {
-    "objectID": "weeks/week-10.html#readings",
-    "href": "weeks/week-10.html#readings",
-    "title": "Week 10",
-    "section": "Readings",
-    "text": "Readings\n📖 Gøsta Esping-Andersen, The Three Worlds of Welfare Capitalism\n📖 Alesina et. al., “Why Doesn’t the United States Have a European-Style Welfare State?”"
-  },
-  {
-    "objectID": "weeks/week-10.html#slides",
-    "href": "weeks/week-10.html#slides",
-    "title": "Week 10",
-    "section": "Slides",
-    "text": "Slides\n🖥️ Welfare states in the OECD\n🖥️ U.S. exceptionalism\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-10.html#assignments",
-    "href": "weeks/week-10.html#assignments",
-    "title": "Week 10",
-    "section": "Assignments",
-    "text": "Assignments\n✍️ Project Assignment 1: Outline and Sources"
-  },
-  {
-    "objectID": "weeks/week-13.html",
-    "href": "weeks/week-13.html",
-    "title": "Week 13",
-    "section": "",
-    "text": "📖 John Judis, The Politics of Our Time\n\nFor Tuesday, choose one chapter to read from Part I\nFor Thursday, choose one chapter to read from Part II or Part III"
-  },
-  {
-    "objectID": "weeks/week-13.html#readings",
-    "href": "weeks/week-13.html#readings",
-    "title": "Week 13",
-    "section": "",
-    "text": "📖 John Judis, The Politics of Our Time\n\nFor Tuesday, choose one chapter to read from Part I\nFor Thursday, choose one chapter to read from Part II or Part III"
-  },
-  {
-    "objectID": "weeks/week-13.html#slides",
-    "href": "weeks/week-13.html#slides",
-    "title": "Week 13",
-    "section": "Slides",
-    "text": "Slides\n🖥️ The populist backlash in the West\n🖥️ The rise of nationalism and socialism\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-9.html",
-    "href": "weeks/week-9.html",
-    "title": "Week 9",
-    "section": "",
-    "text": "Important\n\n\n\nExam 2 is due on Sunday, March 19"
-  },
-  {
-    "objectID": "weeks/week-9.html#readings",
-    "href": "weeks/week-9.html#readings",
-    "title": "Week 9",
-    "section": "Readings",
-    "text": "Readings\n📖 Mary Cullen, “How to Write and Format a White Paper”"
-  },
-  {
-    "objectID": "weeks/week-9.html#assignments",
-    "href": "weeks/week-9.html#assignments",
-    "title": "Week 9",
-    "section": "Assignments",
-    "text": "Assignments\n📘 Exam 2\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "weeks/week-15.html",
-    "href": "weeks/week-15.html",
-    "title": "Week 15",
-    "section": "",
-    "text": "Important\n\n\n\nExam 3 is due on Sunday, April 30."
-  },
-  {
-    "objectID": "weeks/week-15.html#slides",
-    "href": "weeks/week-15.html#slides",
-    "title": "Week 15",
-    "section": "Slides",
-    "text": "Slides\nExam 3 Review (Factile game)"
-  },
-  {
-    "objectID": "weeks/week-15.html#assignments",
-    "href": "weeks/week-15.html#assignments",
-    "title": "Week 15",
-    "section": "Assignments",
-    "text": "Assignments\n📘 Exam 3\n✍️ Project Assignment 3: Tableau Dashboard\n\n\nBack to course schedule ⏎"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Course Schedule",
-    "section": "",
-    "text": "This page displays an outline of the topics, content, and assignments for the semester. Links, to slides, assignments and course resources will go live as the semester progresses. All assignments must be submitted by 11:59 p.m. on the due date.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nReading\nVideo\nSlides\nAssignment\nDue Date\n\n\n\n\n1\nWed, Jan 15\nWelcome to DATS 1001\n📖 📖\n📺 📺\n🖥️\n\n\n\n\n\nFri, Jan 17\nMeet ouR tech stack\n📖\n📺\n🖥️\n\n\n\n\n2\nWed, Jan 22\nR coding basics\n📖\n📺 📺\n🖥️\n\n\n\n\n\nFri, Jan 24\nIntro to the Tidyverse\n\n\n\n\n\n\n\n3\nWed, Jan 29\nGrammar of graphics\n📖 📖\n📺 📺\n🖥️\n\n\n\n\n\nFri, Jan 31\nWhich visualization do I use?\n📖\n📺 📺\n🖥️\n\n\n\n\n4\nWed, Feb 5\nVisualization best practices\n📖\n📺\n🖥️\n\n\n\n\n\nFri, Feb 7\nCoding assignment 1\n📖\n\n\n🧮\nSun, Feb 9\n\n\n5\nWed, Feb 12\nWhat is tidy data?\n📖\n📺\n🖥️\n\n\n\n\n\nFri, Feb 14\nWorking with data\n📖\n📺\n🖥️\n\n\n\n\n6\nWed, Feb 19\nGrammar of data wrangling\n📖\n📺\n🖥️\n\n\n\n\n\nFri, Feb 21\nJoining data frames\n📖\n📺\n🖥️\n\n\n\n\n7\nWed, Feb 26\nTidying data\n📖\n📺\n🖥️\n\n\n\n\n\nFri, Feb 28\nCoding assignment 2\n📖\n\n\n🧮\nSun, Mar 2\n\n\n8\nWed, Mar 5\nThe language of models\n\n\n🖥️\n\n\n\n\n\nFri, Mar 7\nLinear regression\n📖\n📺\n🖥️\n\n\n\n\n9\nWed, Mar 12\nSpring Break 🏄‍♂️ 🌴 🏖️\n\n\n\n\n\n\n\n\nFri, Mar 14\nSpring Break\n\n\n\n\n\n\n\n10\nWed, Mar 19\nMultiple regression\n📖\n📺\n🖥️\n\n\n\n\n\nFri, Mar 21\nLogistic regression\n📖\n📺\n🖥️\n✍️\nSun, Mar 23\n\n\n11\nWed, Mar 26\nPredictive modeling\n📖\n📺\n🖥️\n\n\n\n\n\nFri, Mar 28\nCoding assignment 3\n📖\n\n🖥️\n🧮\nSun, Mar 30\n\n\n12\nWed, Apr 2\nResearch design\n📖\n📺\n🖥️\n\n\n\n\n\nFri, Apr 4\nDistributions\n📖\n📺\n🖥️\n✍️\nSun, Apr 6\n\n\n13\nWed, Apr 9\nSampling and uncertainty\n📖\n📺\n🖥️\n\n\n\n\n\nFri, Apr 11\nHypothesis testing 1\n📖\n📺\n🖥️\n\n\n\n\n14\nWed, Apr 16\nHypothesis testing 2\n📖\n📺\n🖥️\n\n\n\n\n\nFri, Apr 18\nCoding assignment 4\n📖\n📺\n🖥️\n🧮\nSun, Apr 13\n\n\n15\nWed, Apr 23\nLightning talks\n\n\n\n\n\n\n\n\nFri, Apr 25\nLightning talks\n\n\n\n✍️\nFri, May 2",
-    "crumbs": [
-      "Course information",
-      "Schedule"
-    ]
+    "objectID": "slides/week-1.1.html#example-un-voting-trends-1",
+    "href": "slides/week-1.1.html#example-un-voting-trends-1",
+    "title": "Coding Examples",
+    "section": "Example: UN Voting Trends",
+    "text": "Example: UN Voting Trends\n\nlibrary(tidyverse)\nlibrary(unvotes)\nlibrary(lubridate)\nlibrary(scales)\nlibrary(pacman)\n\nunvotes &lt;- un_votes %&gt;%\n  inner_join(un_roll_calls, by = \"rcid\") %&gt;%\n  inner_join(un_roll_call_issues, by = \"rcid\")\n\nunvotes %&gt;%\n  # then filter out to only include the countries we want\n  filter(country %in% c(\"South Africa\", \"United States\", \"France\")) %&gt;%\n  # then make sure R understands the the year variable is a data\n  mutate(year = year(date)) %&gt;%\n  # Then group the data by country and year\n  group_by(country, year, issue) %&gt;%\n  # then take the average Yes votes for each country_year\n  summarize(percent_yes = mean(vote == \"yes\")) %&gt;%\n  # then make a nice plot\n  ggplot(mapping = aes(x = year, y = percent_yes, color = country)) +\n  geom_point(alpha = 0.4) +\n  geom_smooth(method = \"loess\", se = FALSE) +\n  facet_wrap(~issue) +\n  scale_y_continuous(labels = percent) +\n  scale_color_manual( values=c(\"#E69F00\", \"#56B4E9\", \"#009E73\")) +\n  labs(\n    title = \"Percentage of 'Yes' votes in the UN General Assembly\",\n    subtitle = \"1946 to 2019\",\n    y = \"% Yes\",\n    x = \"Year\",\n    color = \"Country\"\n  )\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/week-11.2.html#electoral-democracy-measure",
@@ -3346,6 +2332,1069 @@
     "title": "Distributions II",
     "section": "Your Turn!",
     "text": "Your Turn!\n\n\nMake a bar chart summarizing polyarchy or some other V-Dem variable\nNow try your hand at a ridge plot\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Course Schedule",
+    "section": "",
+    "text": "This page displays an outline of the topics, content, and assignments for the semester. Links, to slides, assignments and course resources will go live as the semester progresses. All assignments must be submitted by 11:59 p.m. on the due date.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDate\nTopic\nReading\nVideo\nSlides\nAssignment\nDue Date\n\n\n\n\n1\nWed, Jan 15\nWelcome to DATS 1001\n📖 📖\n📺 📺\n🖥️\n\n\n\n\n\nFri, Jan 17\nMeet ouR tech stack\n📖\n📺\n🖥️\n\n\n\n\n2\nWed, Jan 22\nR coding basics\n📖\n📺 📺\n🖥️\n\n\n\n\n\nFri, Jan 24\nIntro to the Tidyverse\n\n\n\n\n\n\n\n3\nWed, Jan 29\nGrammar of graphics\n📖 📖\n📺 📺\n🖥️\n\n\n\n\n\nFri, Jan 31\nWhich visualization do I use?\n📖\n📺 📺\n🖥️\n\n\n\n\n4\nWed, Feb 5\nVisualization best practices\n📖\n📺\n🖥️\n\n\n\n\n\nFri, Feb 7\nCoding assignment 1\n📖\n\n\n🧮\nSun, Feb 9\n\n\n5\nWed, Feb 12\nWhat is tidy data?\n📖\n📺\n🖥️\n\n\n\n\n\nFri, Feb 14\nWorking with data\n📖\n📺\n🖥️\n\n\n\n\n6\nWed, Feb 19\nGrammar of data wrangling\n📖\n📺\n🖥️\n\n\n\n\n\nFri, Feb 21\nJoining data frames\n📖\n📺\n🖥️\n\n\n\n\n7\nWed, Feb 26\nTidying data\n📖\n📺\n🖥️\n\n\n\n\n\nFri, Feb 28\nCoding assignment 2\n📖\n\n\n🧮\nSun, Mar 2\n\n\n8\nWed, Mar 5\nThe language of models\n\n\n🖥️\n\n\n\n\n\nFri, Mar 7\nLinear regression\n📖\n📺\n🖥️\n\n\n\n\n9\nWed, Mar 12\nSpring Break 🏄‍♂️ 🌴 🏖️\n\n\n\n\n\n\n\n\nFri, Mar 14\nSpring Break\n\n\n\n\n\n\n\n10\nWed, Mar 19\nMultiple regression\n📖\n📺\n🖥️\n\n\n\n\n\nFri, Mar 21\nLogistic regression\n📖\n📺\n🖥️\n✍️\nSun, Mar 23\n\n\n11\nWed, Mar 26\nPredictive modeling\n📖\n📺\n🖥️\n\n\n\n\n\nFri, Mar 28\nCoding assignment 3\n📖\n\n🖥️\n🧮\nSun, Mar 30\n\n\n12\nWed, Apr 2\nResearch design\n📖\n📺\n🖥️\n\n\n\n\n\nFri, Apr 4\nDistributions\n📖\n📺\n🖥️\n✍️\nSun, Apr 6\n\n\n13\nWed, Apr 9\nSampling and uncertainty\n📖\n📺\n🖥️\n\n\n\n\n\nFri, Apr 11\nHypothesis testing 1\n📖\n📺\n🖥️\n\n\n\n\n14\nWed, Apr 16\nHypothesis testing 2\n📖\n📺\n🖥️\n\n\n\n\n\nFri, Apr 18\nCoding assignment 4\n📖\n📺\n🖥️\n🧮\nSun, Apr 13\n\n\n15\nWed, Apr 23\nLightning talks\n\n\n\n\n\n\n\n\nFri, Apr 25\nLightning talks\n\n\n\n✍️\nFri, May 2",
+    "crumbs": [
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "weeks/week-15.html",
+    "href": "weeks/week-15.html",
+    "title": "Week 15",
+    "section": "",
+    "text": "Important\n\n\n\nExam 3 is due on Sunday, April 30."
+  },
+  {
+    "objectID": "weeks/week-15.html#slides",
+    "href": "weeks/week-15.html#slides",
+    "title": "Week 15",
+    "section": "Slides",
+    "text": "Slides\nExam 3 Review (Factile game)"
+  },
+  {
+    "objectID": "weeks/week-15.html#assignments",
+    "href": "weeks/week-15.html#assignments",
+    "title": "Week 15",
+    "section": "Assignments",
+    "text": "Assignments\n📘 Exam 3\n✍️ Project Assignment 3: Tableau Dashboard\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-9.html",
+    "href": "weeks/week-9.html",
+    "title": "Week 9",
+    "section": "",
+    "text": "Important\n\n\n\nExam 2 is due on Sunday, March 19"
+  },
+  {
+    "objectID": "weeks/week-9.html#readings",
+    "href": "weeks/week-9.html#readings",
+    "title": "Week 9",
+    "section": "Readings",
+    "text": "Readings\n📖 Mary Cullen, “How to Write and Format a White Paper”"
+  },
+  {
+    "objectID": "weeks/week-9.html#assignments",
+    "href": "weeks/week-9.html#assignments",
+    "title": "Week 9",
+    "section": "Assignments",
+    "text": "Assignments\n📘 Exam 2\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-13.html",
+    "href": "weeks/week-13.html",
+    "title": "Week 13",
+    "section": "",
+    "text": "📖 John Judis, The Politics of Our Time\n\nFor Tuesday, choose one chapter to read from Part I\nFor Thursday, choose one chapter to read from Part II or Part III"
+  },
+  {
+    "objectID": "weeks/week-13.html#readings",
+    "href": "weeks/week-13.html#readings",
+    "title": "Week 13",
+    "section": "",
+    "text": "📖 John Judis, The Politics of Our Time\n\nFor Tuesday, choose one chapter to read from Part I\nFor Thursday, choose one chapter to read from Part II or Part III"
+  },
+  {
+    "objectID": "weeks/week-13.html#slides",
+    "href": "weeks/week-13.html#slides",
+    "title": "Week 13",
+    "section": "Slides",
+    "text": "Slides\n🖥️ The populist backlash in the West\n🖥️ The rise of nationalism and socialism\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-10.html",
+    "href": "weeks/week-10.html",
+    "title": "Week 10",
+    "section": "",
+    "text": "Important\n\n\n\nProject Assignment 1 is due on Sunday, March 26."
+  },
+  {
+    "objectID": "weeks/week-10.html#readings",
+    "href": "weeks/week-10.html#readings",
+    "title": "Week 10",
+    "section": "Readings",
+    "text": "Readings\n📖 Gøsta Esping-Andersen, The Three Worlds of Welfare Capitalism\n📖 Alesina et. al., “Why Doesn’t the United States Have a European-Style Welfare State?”"
+  },
+  {
+    "objectID": "weeks/week-10.html#slides",
+    "href": "weeks/week-10.html#slides",
+    "title": "Week 10",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Welfare states in the OECD\n🖥️ U.S. exceptionalism\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-10.html#assignments",
+    "href": "weeks/week-10.html#assignments",
+    "title": "Week 10",
+    "section": "Assignments",
+    "text": "Assignments\n✍️ Project Assignment 1: Outline and Sources"
+  },
+  {
+    "objectID": "weeks/week-3.html",
+    "href": "weeks/week-3.html",
+    "title": "Week 3",
+    "section": "",
+    "text": "Important\n\n\n\n“Data Assignment 1: Working With Data in Excel” is due on Sunday, February 5"
+  },
+  {
+    "objectID": "weeks/week-3.html#readings",
+    "href": "weeks/week-3.html#readings",
+    "title": "Week 3",
+    "section": "Readings",
+    "text": "Readings\n📖Kaufman and Haggard, “Democratic Decline in the United States”\n📖Michael Ross, The Oil Curse, Chapter 3"
+  },
+  {
+    "objectID": "weeks/week-3.html#slides",
+    "href": "weeks/week-3.html#slides",
+    "title": "Week 3",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Democratic backsliding\n🖥️ The resource curse"
+  },
+  {
+    "objectID": "weeks/week-3.html#assignments",
+    "href": "weeks/week-3.html#assignments",
+    "title": "Week 3",
+    "section": "Assignments",
+    "text": "Assignments\n🧮 Data Assignment 1\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-4.html",
+    "href": "weeks/week-4.html",
+    "title": "Week 4",
+    "section": "",
+    "text": "Important\n\n\n\nExam 1 is due on Sunday, February 12"
+  },
+  {
+    "objectID": "weeks/week-4.html#readings",
+    "href": "weeks/week-4.html#readings",
+    "title": "Week 4",
+    "section": "Readings",
+    "text": "Readings\n📖 Hessami and Lopes da Fonseca, “Female Political Representation and Substantive Effects on Policies”"
+  },
+  {
+    "objectID": "weeks/week-4.html#slides",
+    "href": "weeks/week-4.html#slides",
+    "title": "Week 4",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Women’s empowerment\n🖥️ Exam 1 review"
+  },
+  {
+    "objectID": "weeks/week-4.html#assignments",
+    "href": "weeks/week-4.html#assignments",
+    "title": "Week 4",
+    "section": "Assignments",
+    "text": "Assignments\n📘 Exam 1\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-7.html",
+    "href": "weeks/week-7.html",
+    "title": "Week 7",
+    "section": "",
+    "text": "Important\n\n\n\n“Data Assignment 2: Cleaning & Visualizing Data in Excel” is due on Sunday, March 5"
+  },
+  {
+    "objectID": "weeks/week-7.html#readings",
+    "href": "weeks/week-7.html#readings",
+    "title": "Week 7",
+    "section": "Readings",
+    "text": "Readings\nArchibong et. al., “Washington Consensus Reforms and Economic Performance in Sub-Saharan Africa”\nBenería et. al., “Markets, Globalization and Gender”"
+  },
+  {
+    "objectID": "weeks/week-7.html#slides",
+    "href": "weeks/week-7.html#slides",
+    "title": "Week 7",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Washington consensus reforms\n🖥️ The gendered legacy of reform"
+  },
+  {
+    "objectID": "weeks/week-7.html#videos",
+    "href": "weeks/week-7.html#videos",
+    "title": "Week 7",
+    "section": "Videos",
+    "text": "Videos\n📺 Scatter plot video\n📺 Map video"
+  },
+  {
+    "objectID": "weeks/week-7.html#assignments",
+    "href": "weeks/week-7.html#assignments",
+    "title": "Week 7",
+    "section": "Assignments",
+    "text": "Assignments\n🧮 Data Assignment 2: Cleaning & Visualizing Data in Excel\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "assignments/coding-assignment-1.html",
+    "href": "assignments/coding-assignment-1.html",
+    "title": "Homework 1",
+    "section": "",
+    "text": "For this assignment, you are going to evaluate modernization theory as laid out in Seymour Martin Lipset’s classic article entitled “Some Social Requisites of Democracy: Economic Development and Political Legitimacy.” How classic is this article? According to Google Scholar, this piece has been cited more than 11.5 thousand times!\nWe are going to use data from V-Dem and modern data viz tools to explore Lipset’s hypothesis that economic modernization is highly correlated with democracy. We have already done this to some extent by looking at the relationship between wealth and the polyarchy score. But we are going to broaden things out by looking at other measures of democracy contained in the V-Dem dataset. Specifically, you will get to choose between the following four measures:\n\nliberal democracy (libdem)\nparticipatory democracy (partipdem)\ndeliberative democracy (delibdem)\negalitarian democracy (egaldem).\n\nFor measuring modernization we are going to stick with GDP per capita (gdp_pc).\nStart by running this code chunk to import all of the packages you will need for this exercise. Then start working through the code and questions below. Feel free to grab relevant code chunks from the slides or the classwork QMD files that we have used in class so far.\n\nlibrary(tidyverse)\nlibrary(plotly)",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-1.html#overview",
+    "href": "assignments/coding-assignment-1.html#overview",
+    "title": "Homework 1",
+    "section": "",
+    "text": "For this assignment, you are going to evaluate modernization theory as laid out in Seymour Martin Lipset’s classic article entitled “Some Social Requisites of Democracy: Economic Development and Political Legitimacy.” How classic is this article? According to Google Scholar, this piece has been cited more than 11.5 thousand times!\nWe are going to use data from V-Dem and modern data viz tools to explore Lipset’s hypothesis that economic modernization is highly correlated with democracy. We have already done this to some extent by looking at the relationship between wealth and the polyarchy score. But we are going to broaden things out by looking at other measures of democracy contained in the V-Dem dataset. Specifically, you will get to choose between the following four measures:\n\nliberal democracy (libdem)\nparticipatory democracy (partipdem)\ndeliberative democracy (delibdem)\negalitarian democracy (egaldem).\n\nFor measuring modernization we are going to stick with GDP per capita (gdp_pc).\nStart by running this code chunk to import all of the packages you will need for this exercise. Then start working through the code and questions below. Feel free to grab relevant code chunks from the slides or the classwork QMD files that we have used in class so far.\n\nlibrary(tidyverse)\nlibrary(plotly)",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-1.html#step-1-make-a-line-chart-showing-country-trends-20-pts",
+    "href": "assignments/coding-assignment-1.html#step-1-make-a-line-chart-showing-country-trends-20-pts",
+    "title": "Homework 1",
+    "section": "Step 1: Make a line chart showing country trends (20 pts)",
+    "text": "Step 1: Make a line chart showing country trends (20 pts)\na) Read in the data from line_chart.csv using read_csv() in an object called line_chart_dta.\nb) Now use glimpse() to inspect the data. How many rows and columns are in the data frame? Write your answer below the code chunk\nc) Now click on the data frame in the Environment tab or use View() to scroll through the data frame. What countries, years and variables are in the data frame? What are the measures of democracy?\nd) Now choose one of the democracy indicators and visualize it with a line chart using ggplot2. Be sure to specify x =, y = and color = in your aes() call and use geom_line() to create the chart.Add appropriate axis labels, a title and a caption. Now add a colorblind-friendly color map using viridis and a theme.\ne) In a few sentences below, interpret your chart. Describe the levels and trends in democracy scores. Put your answer right below this line in markdown text (DO NOT write your comments in a code chunk!!).",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-1.html#step-2-make-a-column-chart-comparing-regional-levels-20-pts",
+    "href": "assignments/coding-assignment-1.html#step-2-make-a-column-chart-comparing-regional-levels-20-pts",
+    "title": "Homework 1",
+    "section": "Step 2: Make a column chart comparing regional levels (20 pts)",
+    "text": "Step 2: Make a column chart comparing regional levels (20 pts)\na) Read in the data from column_chart.csv using read_csv() in an object called column_chart_dta. You should see average democracy scores for the countries that you made a line chart for in Step 1.\nb) View the data frame. Describe briefly what you see, e.g. number of rows, columns and how the countries rank in terms of one of the democracy scores.\nc) Use ggplot() and geom_col() to visualize one of the democracy measures with a column chart (you can use the same measure as in Step 1 or a different one). Use fct_reorder() to arrange the columns in order of the y-axis values. Make sure to add appropriate axis labels, a title and a caption. Change the fill color and add a theme to spruce it up a bit. Remember that these are averages over the same number of years as the line chart you made in Step 1\nd) Interpret your column chart. Does the evidence in the column chart roughly match what you saw in the line chart above?",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-1.html#step-3-make-a-scatter-plot-20-pts",
+    "href": "assignments/coding-assignment-1.html#step-3-make-a-scatter-plot-20-pts",
+    "title": "Homework 1",
+    "section": "Step 3: Make a scatter plot (20 pts)",
+    "text": "Step 3: Make a scatter plot (20 pts)\na) Load the scatter plot data with read_csv()from scatter_plot.csv, storing the data in an object called scatter_plot_dta. Then glimpse or view the data and describe briefly what you see. Note that the values you see are country averages for the variables over the period 2010 - 2019.\nb) Now build a scatter plot with ggplot2 using these data. Put GDP on the x-axis and one of the measures of democracy on the y-axis and color the points by region. Stretch the x-axis on a log scale and use the scales package to add a prefix and suffix to the x-axis numbers to indicate that they are dollar figures. Add appropriate labels and a viridis color map and add your favorite theme. Note that you will get some warnings about a few missing data points, so try setting warning: false at the top of the code chunk with the hash pipe (#|) operator.\nc) Next add a trend line with geom_smooth() preferably with a linear model (method = “lm”). Note that you will get some warnings about missing data points and a message about the linear model. Try setting warning: false at the top of the code chunk with the hash pipe (#|) operator.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-1.html#step-4-additional-tasks-20-pts",
+    "href": "assignments/coding-assignment-1.html#step-4-additional-tasks-20-pts",
+    "title": "Homework 1",
+    "section": "Step 4: Additional Tasks (20 pts)",
+    "text": "Step 4: Additional Tasks (20 pts)\na) Facet wrap your scatter plot by region.\nb) Remove the facet_wrap() call and display the relationship for one region and use geom_text() to label your points.\nc) Remove the text labels and make your scatter plot interactive using ggplotly(). Make sure that your tooltip includes the information that you want to display to the user.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-1.html#step-5-interpretation-10-pts",
+    "href": "assignments/coding-assignment-1.html#step-5-interpretation-10-pts",
+    "title": "Homework 1",
+    "section": "Step 5: Interpretation (10 pts)",
+    "text": "Step 5: Interpretation (10 pts)\nInterpret your results from your visualizations, including the scatter plot, line chart and column chart. Is there an obvious relationship between development and democracy? Do the data generally support Lipset’s theory?",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-1.html#step-6-rendering-10-pts",
+    "href": "assignments/coding-assignment-1.html#step-6-rendering-10-pts",
+    "title": "Homework 1",
+    "section": "Step 6: Rendering (10 pts)",
+    "text": "Step 6: Rendering (10 pts)\nPress the render button to create your HTML document. If you get any errors go back and fix them and try again until the document renders.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-1.html#extra-credit-3-pts",
+    "href": "assignments/coding-assignment-1.html#extra-credit-3-pts",
+    "title": "Homework 1",
+    "section": "Extra Credit (3 pts)",
+    "text": "Extra Credit (3 pts)\n(a) Use a Quato theme to improve the look of the HTML output.\n(b) Use the paletteer package to a different theme to your scatter plot from Step 4.\n(c) Add annotation to your scatter plot from Step 4 using hline() or vline() to highlight a significant point in your data, like the mean or some other significant value. (Note: you will have to do some research to complete this step–we did not do it in class).",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-1.html#submission",
+    "href": "assignments/coding-assignment-1.html#submission",
+    "title": "Homework 1",
+    "section": "Submission",
+    "text": "Submission\nAfter rendering your document, export your project folder and submit it on Blackboard. You will find the link to the Coding Assignment one submission portal under the Assignments link. There are instructions along with screenshots there to assist you with the process of exporting your project as a ZIP file from Posit Cloud.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 1"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-2.html",
+    "href": "assignments/coding-assignment-2.html",
+    "title": "Coding Assignment 2",
+    "section": "",
+    "text": "For this assignment, you are going to download some variables using the wbstats and vdemlite packages. Then you are going to wrangle these data and merge the two data sets into one and analyze how they relate to women’s representation in national parliaments. Do your work for each step in the code chunks provided.\nHere is a setup code chunk. You can load all of your packages here or as you go along in the code chunks below using the library() function. However, note that you really only need to load a library once per document.\n\n\n\n\n\n\nWarning\n\n\n\nPlease refrain from installing any packages in your code chunks because this will also install them every time the code chunk is run or your document is rendered. This may not be desirable for you or whoever is looking at or running your code (e.g. me).",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-2.html#overview",
+    "href": "assignments/coding-assignment-2.html#overview",
+    "title": "Coding Assignment 2",
+    "section": "",
+    "text": "For this assignment, you are going to download some variables using the wbstats and vdemlite packages. Then you are going to wrangle these data and merge the two data sets into one and analyze how they relate to women’s representation in national parliaments. Do your work for each step in the code chunks provided.\nHere is a setup code chunk. You can load all of your packages here or as you go along in the code chunks below using the library() function. However, note that you really only need to load a library once per document.\n\n\n\n\n\n\nWarning\n\n\n\nPlease refrain from installing any packages in your code chunks because this will also install them every time the code chunk is run or your document is rendered. This may not be desirable for you or whoever is looking at or running your code (e.g. me).",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-2.html#step-1-download-data-from-v-dem-20pts",
+    "href": "assignments/coding-assignment-2.html#step-1-download-data-from-v-dem-20pts",
+    "title": "Coding Assignment 2",
+    "section": "Step 1: Download data from V-Dem (20pts)",
+    "text": "Step 1: Download data from V-Dem (20pts)\nUse the V-Dem codebook or the searchdem() function in vdemlite to identify one measure of democracy and one indicator related to women’s empowerment (or two measures of women’s empowerment). Now use fetchdem() to download the most recent 25 years or so of data for your analysis for all countries in the dataset. Make sure to load the packages that you need and glimpse() the data or View() it to make sure that it downloaded properly.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-2.html#step-2-download-data-from-the-world-bank-20-pts",
+    "href": "assignments/coding-assignment-2.html#step-2-download-data-from-the-world-bank-20-pts",
+    "title": "Coding Assignment 2",
+    "section": "Step 2: Download data from the World Bank (20 pts)",
+    "text": "Step 2: Download data from the World Bank (20 pts)\nNext, download the variable on women’s represenation that we used in Module 1.2 (“SG.GEN.PARL.ZS”) and at least one additional measure related to women’s empowerment. Go to the WDI site the wb_search() function to identify relevant variables. Download data for the same time period as you did for the V-Dem data for all countries.\n\n\n\n\n\n\nImportant\n\n\n\nTry to make sure you download indicators with enough data to conduct your analysis. You won’t get great results if there are too many NAs.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-2.html#step-3-merge-the-data-20-pts",
+    "href": "assignments/coding-assignment-2.html#step-3-merge-the-data-20-pts",
+    "title": "Coding Assignment 2",
+    "section": "Step 3: Merge the data (20 pts)",
+    "text": "Step 3: Merge the data (20 pts)\nNow add country codes using the countrycode package and merge the data using left_join().",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-2.html#step-4-summarize-your-combined-data-set-20-pts",
+    "href": "assignments/coding-assignment-2.html#step-4-summarize-your-combined-data-set-20-pts",
+    "title": "Coding Assignment 2",
+    "section": "Step 4: Summarize your combined data set (20 pts)",
+    "text": "Step 4: Summarize your combined data set (20 pts)\nUse group_by(), summarize() and arrange() to glean insights about your data. For example, how do regions compare on mean values of women’s representation and how do these values relate to the values of other variables in your data set? Which countries stand out in terms of women’s representation?\n\n# Regional summary\n\n\n# Country summary",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-2.html#step-5-interpret-your-data-10-pts",
+    "href": "assignments/coding-assignment-2.html#step-5-interpret-your-data-10-pts",
+    "title": "Coding Assignment 2",
+    "section": "Step 5: Interpret your data (10 pts)",
+    "text": "Step 5: Interpret your data (10 pts)\nWrite a paragraph or so relating your insights to the Norris reading about electoral reform and women’s representation. Picking a handful of country cases from your data, how does your summary of gender and democracy variables relate to the level of female representation in a country? How would you relate these findings to Norris’s argument about the importance of an inclusive democracy?\n\n\n\n\n\n\nWarning\n\n\n\nDon’t write your paragraphs or any interpretation or analysis in a code chunk. Use markdown text. Quarto is designed to be a literate programming tool, so you can write your analysis in markdown text and include code chunks when necessary to support your argument.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-2.html#step-6-pivot-wb-data-10-pts.",
+    "href": "assignments/coding-assignment-2.html#step-6-pivot-wb-data-10-pts.",
+    "title": "Coding Assignment 2",
+    "section": "Step 6: Pivot WB Data (10 pts.)",
+    "text": "Step 6: Pivot WB Data (10 pts.)\nSometimes our data does not come in the format that we need to have it in for our analysis. Demonstrate that you know how to pivot data from wide to long form using the world_bank_pop data frame that comes with the tidyr package. Then pivot again (wider this time) to get the data into tidy format.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-2.html#extra-credit-3-pts.",
+    "href": "assignments/coding-assignment-2.html#extra-credit-3-pts.",
+    "title": "Coding Assignment 2",
+    "section": "Extra Credit (3 pts.)",
+    "text": "Extra Credit (3 pts.)\nFollowing the example that we did in class, download some messy data from the World Development Indicators website and wrangle it so that it is a tidy data frame. Be sure to download more than one data variable and don’t forget to use backticks (``) when dealing with unconventional variable names.\nNow render the document to make sure everything runs and to produce a final HTML document!",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-2.html#submission",
+    "href": "assignments/coding-assignment-2.html#submission",
+    "title": "Coding Assignment 2",
+    "section": "Submission",
+    "text": "Submission\nAfter rendering your document, export your project folder and submit it on Blackboard. You will find the link to the Coding Assignment one submission portal under the Assignments link. There is a screen capture video in the Discord server that will help you understand how to do this.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "course-description.html",
+    "href": "course-description.html",
+    "title": "Course Description",
+    "section": "",
+    "text": "This course provides a comprehensive introduction to data science, blending theoretical foundations with practical applications. Students will begin with data visualization, learning the essential tools and principles for creating informative and impactful visual representations of data. The course then progresses to data wrangling, where students will clean, manipulate, and prepare data for analysis.\nAs the semester unfolds, students will explore web scraping techniques to gather data from online sources, followed by an examination of the ethical considerations surrounding data collection, privacy, and algorithmic bias. The course then delves into statistical modeling, introducing both linear and logistic regression, and other core methods used in predictive analytics.\nThroughout the course, various special topics, such as bootstrapping, randomization tests, or interactive web applications, will be covered, offering students a chance to explore current trends and tools in data science. The curriculum is designed to equip students with a versatile toolkit, enabling them to tackle real-world data challenges and communicate their findings effectively.",
+    "crumbs": [
+      "Course information",
+      "Description"
+    ]
+  },
+  {
+    "objectID": "course-links.html",
+    "href": "course-links.html",
+    "title": "Useful links",
+    "section": "",
+    "text": "Lecture Recordings\n🔗 on Blackboard\n\n\nProf T’s Zoom Office\n🔗 on Zoom\n\n\nOffice Hours Appointments\n🔗 on Calendly",
+    "crumbs": [
+      "Course information",
+      "Useful links"
+    ]
+  },
+  {
+    "objectID": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "href": "LICENSE.html#creative-commons-attribution-sharealike-4.0-international-public-license",
+    "title": "Attribution-ShareAlike 4.0 International",
+    "section": "Creative Commons Attribution-ShareAlike 4.0 International Public License",
+    "text": "Creative Commons Attribution-ShareAlike 4.0 International Public License\nBy exercising the Licensed Rights (defined below), You accept and agree to be bound by the terms and conditions of this Creative Commons Attribution-ShareAlike 4.0 International Public License (“Public License”). To the extent this Public License may be interpreted as a contract, You are granted the Licensed Rights in consideration of Your acceptance of these terms and conditions, and the Licensor grants You such rights in consideration of benefits the Licensor receives from making the Licensed Material available under these terms and conditions.\n\nSection 1 – Definitions.\n\nAdapted Material means material subject to Copyright and Similar Rights that is derived from or based upon the Licensed Material and in which the Licensed Material is translated, altered, arranged, transformed, or otherwise modified in a manner requiring permission under the Copyright and Similar Rights held by the Licensor. For purposes of this Public License, where the Licensed Material is a musical work, performance, or sound recording, Adapted Material is always produced where the Licensed Material is synched in timed relation with a moving image.\nAdapter’s License means the license You apply to Your Copyright and Similar Rights in Your contributions to Adapted Material in accordance with the terms and conditions of this Public License.\nBY-SA Compatible License means a license listed at creativecommons.org/compatiblelicenses, approved by Creative Commons as essentially the equivalent of this Public License.\nCopyright and Similar Rights means copyright and/or similar rights closely related to copyright including, without limitation, performance, broadcast, sound recording, and Sui Generis Database Rights, without regard to how the rights are labeled or categorized. For purposes of this Public License, the rights specified in Section 2(b)(1)-(2) are not Copyright and Similar Rights.\nEffective Technological Measures means those measures that, in the absence of proper authority, may not be circumvented under laws fulfilling obligations under Article 11 of the WIPO Copyright Treaty adopted on December 20, 1996, and/or similar international agreements.\nExceptions and Limitations means fair use, fair dealing, and/or any other exception or limitation to Copyright and Similar Rights that applies to Your use of the Licensed Material.\nLicense Elements means the license attributes listed in the name of a Creative Commons Public License. The License Elements of this Public License are Attribution and ShareAlike.\nLicensed Material means the artistic or literary work, database, or other material to which the Licensor applied this Public License.\nLicensed Rights means the rights granted to You subject to the terms and conditions of this Public License, which are limited to all Copyright and Similar Rights that apply to Your use of the Licensed Material and that the Licensor has authority to license.\nLicensor means the individual(s) or entity(ies) granting rights under this Public License.\nShare means to provide material to the public by any means or process that requires permission under the Licensed Rights, such as reproduction, public display, public performance, distribution, dissemination, communication, or importation, and to make material available to the public including in ways that members of the public may access the material from a place and at a time individually chosen by them.\nSui Generis Database Rights means rights other than copyright resulting from Directive 96/9/EC of the European Parliament and of the Council of 11 March 1996 on the legal protection of databases, as amended and/or succeeded, as well as other essentially equivalent rights anywhere in the world.\nYou means the individual or entity exercising the Licensed Rights under this Public License. Your has a corresponding meaning.\n\n\n\nSection 2 – Scope.\n\nLicense grant.\n\nSubject to the terms and conditions of this Public License, the Licensor hereby grants You a worldwide, royalty-free, non-sublicensable, non-exclusive, irrevocable license to exercise the Licensed Rights in the Licensed Material to:\nA. reproduce and Share the Licensed Material, in whole or in part; and\nB. produce, reproduce, and Share Adapted Material.\nExceptions and Limitations. For the avoidance of doubt, where Exceptions and Limitations apply to Your use, this Public License does not apply, and You do not need to comply with its terms and conditions.\nTerm. The term of this Public License is specified in Section 6(a).\nMedia and formats; technical modifications allowed. The Licensor authorizes You to exercise the Licensed Rights in all media and formats whether now known or hereafter created, and to make technical modifications necessary to do so. The Licensor waives and/or agrees not to assert any right or authority to forbid You from making technical modifications necessary to exercise the Licensed Rights, including technical modifications necessary to circumvent Effective Technological Measures. For purposes of this Public License, simply making modifications authorized by this Section 2(a)(4) never produces Adapted Material.\nDownstream recipients.\nA. Offer from the Licensor – Licensed Material. Every recipient of the Licensed Material automatically receives an offer from the Licensor to exercise the Licensed Rights under the terms and conditions of this Public License.\nB. Additional offer from the Licensor – Adapted Material. Every recipient of Adapted Material from You automatically receives an offer from the Licensor to exercise the Licensed Rights in the Adapted Material under the conditions of the Adapter’s License You apply.\nC. No downstream restrictions. You may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, the Licensed Material if doing so restricts exercise of the Licensed Rights by any recipient of the Licensed Material.\nNo endorsement. Nothing in this Public License constitutes or may be construed as permission to assert or imply that You are, or that Your use of the Licensed Material is, connected with, or sponsored, endorsed, or granted official status by, the Licensor or others designated to receive attribution as provided in Section 3(a)(1)(A)(i).\n\nOther rights.\n\nMoral rights, such as the right of integrity, are not licensed under this Public License, nor are publicity, privacy, and/or other similar personality rights; however, to the extent possible, the Licensor waives and/or agrees not to assert any such rights held by the Licensor to the limited extent necessary to allow You to exercise the Licensed Rights, but not otherwise.\nPatent and trademark rights are not licensed under this Public License.\nTo the extent possible, the Licensor waives any right to collect royalties from You for the exercise of the Licensed Rights, whether directly or through a collecting society under any voluntary or waivable statutory or compulsory licensing scheme. In all other cases the Licensor expressly reserves any right to collect such royalties.\n\n\n\n\nSection 3 – License Conditions.\nYour exercise of the Licensed Rights is expressly made subject to the following conditions.\n\nAttribution.\n\nIf You Share the Licensed Material (including in modified form), You must:\nA. retain the following if it is supplied by the Licensor with the Licensed Material:\n\nidentification of the creator(s) of the Licensed Material and any others designated to receive attribution, in any reasonable manner requested by the Licensor (including by pseudonym if designated);\na copyright notice;\na notice that refers to this Public License;\na notice that refers to the disclaimer of warranties;\na URI or hyperlink to the Licensed Material to the extent reasonably practicable;\n\nB. indicate if You modified the Licensed Material and retain an indication of any previous modifications; and\nC. indicate the Licensed Material is licensed under this Public License, and include the text of, or the URI or hyperlink to, this Public License.\nYou may satisfy the conditions in Section 3(a)(1) in any reasonable manner based on the medium, means, and context in which You Share the Licensed Material. For example, it may be reasonable to satisfy the conditions by providing a URI or hyperlink to a resource that includes the required information.\nIf requested by the Licensor, You must remove any of the information required by Section 3(a)(1)(A) to the extent reasonably practicable.\n\nShareAlike.\n\nIn addition to the conditions in Section 3(a), if You Share Adapted Material You produce, the following conditions also apply.\n\nThe Adapter’s License You apply must be a Creative Commons license with the same License Elements, this version or later, or a BY-SA Compatible License.\nYou must include the text of, or the URI or hyperlink to, the Adapter’s License You apply. You may satisfy this condition in any reasonable manner based on the medium, means, and context in which You Share Adapted Material.\nYou may not offer or impose any additional or different terms or conditions on, or apply any Effective Technological Measures to, Adapted Material that restrict exercise of the rights granted under the Adapter’s License You apply.\n\n\n\nSection 4 – Sui Generis Database Rights.\nWhere the Licensed Rights include Sui Generis Database Rights that apply to Your use of the Licensed Material:\n\nfor the avoidance of doubt, Section 2(a)(1) grants You the right to extract, reuse, reproduce, and Share all or a substantial portion of the contents of the database;\nif You include all or a substantial portion of the database contents in a database in which You have Sui Generis Database Rights, then the database in which You have Sui Generis Database Rights (but not its individual contents) is Adapted Material, including for purposes of Section 3(b); and\nYou must comply with the conditions in Section 3(a) if You Share all or a substantial portion of the contents of the database.\n\nFor the avoidance of doubt, this Section 4 supplements and does not replace Your obligations under this Public License where the Licensed Rights include other Copyright and Similar Rights.\n\n\nSection 5 – Disclaimer of Warranties and Limitation of Liability.\n\nUnless otherwise separately undertaken by the Licensor, to the extent possible, the Licensor offers the Licensed Material as-is and as-available, and makes no representations or warranties of any kind concerning the Licensed Material, whether express, implied, statutory, or other. This includes, without limitation, warranties of title, merchantability, fitness for a particular purpose, non-infringement, absence of latent or other defects, accuracy, or the presence or absence of errors, whether or not known or discoverable. Where disclaimers of warranties are not allowed in full or in part, this disclaimer may not apply to You.\nTo the extent possible, in no event will the Licensor be liable to You on any legal theory (including, without limitation, negligence) or otherwise for any direct, special, indirect, incidental, consequential, punitive, exemplary, or other losses, costs, expenses, or damages arising out of this Public License or use of the Licensed Material, even if the Licensor has been advised of the possibility of such losses, costs, expenses, or damages. Where a limitation of liability is not allowed in full or in part, this limitation may not apply to You.\nThe disclaimer of warranties and limitation of liability provided above shall be interpreted in a manner that, to the extent possible, most closely approximates an absolute disclaimer and waiver of all liability.\n\n\n\nSection 6 – Term and Termination.\n\nThis Public License applies for the term of the Copyright and Similar Rights licensed here. However, if You fail to comply with this Public License, then Your rights under this Public License terminate automatically.\nWhere Your right to use the Licensed Material has terminated under Section 6(a), it reinstates:\n\nautomatically as of the date the violation is cured, provided it is cured within 30 days of Your discovery of the violation; or\nupon express reinstatement by the Licensor.\n\nFor the avoidance of doubt, this Section 6(b) does not affect any right the Licensor may have to seek remedies for Your violations of this Public License.\nFor the avoidance of doubt, the Licensor may also offer the Licensed Material under separate terms or conditions or stop distributing the Licensed Material at any time; however, doing so will not terminate this Public License.\nSections 1, 5, 6, 7, and 8 survive termination of this Public License.\n\n\n\nSection 7 – Other Terms and Conditions.\n\nThe Licensor shall not be bound by any additional or different terms or conditions communicated by You unless expressly agreed.\nAny arrangements, understandings, or agreements regarding the Licensed Material not stated herein are separate from and independent of the terms and conditions of this Public License.\n\n\n\nSection 8 – Interpretation.\n\nFor the avoidance of doubt, this Public License does not, and shall not be interpreted to, reduce, limit, restrict, or impose conditions on any use of the Licensed Material that could lawfully be made without permission under this Public License.\nTo the extent possible, if any provision of this Public License is deemed unenforceable, it shall be automatically reformed to the minimum extent necessary to make it enforceable. If the provision cannot be reformed, it shall be severed from this Public License without affecting the enforceability of the remaining terms and conditions.\nNo term or condition of this Public License will be waived and no failure to comply consented to unless expressly agreed to by the Licensor.\nNothing in this Public License constitutes or may be interpreted as a limitation upon, or waiver of, any privileges and immunities that apply to the Licensor or You, including from the legal processes of any jurisdiction or authority.\n\n\nCreative Commons is not a party to its public licenses. Notwithstanding, Creative Commons may elect to apply one of its public licenses to material it publishes and in those instances will be considered the “Licensor.” The text of the Creative Commons public licenses is dedicated to the public domain under the CC0 Public Domain Dedication. Except for the limited purpose of indicating that material is shared under a Creative Commons public license or as otherwise permitted by the Creative Commons policies published at creativecommons.org/policies, Creative Commons does not authorize the use of the trademark “Creative Commons” or any other trademark or logo of Creative Commons without its prior written consent including, without limitation, in connection with any unauthorized modifications to any of its public licenses or any other arrangements, understandings, or agreements concerning use of licensed material. For the avoidance of doubt, this paragraph does not form part of the public licenses.\nCreative Commons may be contacted at creativecommons.org."
+  },
+  {
+    "objectID": "assignments/coding-assignment-4.html",
+    "href": "assignments/coding-assignment-4.html",
+    "title": "Homework 4",
+    "section": "",
+    "text": "Community Driven Development (CDD) programs have become increasingly popular in international development over the past several decades. CDD programs directly involve impacted communities in the selection, design, and implementation of development projects. Usually, this also involves building upon or creating community level organizations (or committees) that are involved with the projects, with the goal of creating democratic and inclusive decision-making processes. See this 3ie working paper for discussion of some common features of CDD.\nGiven these design features, proponents of CDD argue that these programs should (a) improve the quality and impact of development projects (e.g., public goods) AND (b) improve social cohesion, inclusion, and local governance. For this reason, CDD has been implemented in a number of post-conflict settings, where the hope is that CDD can both improve development outcomes and contribute to rebuilding social cohesion and governance (which are often harmed by conflict).\nDoes CDD improve development outcomes? Does it improve social cohesion after conflict? Your goal in this assignment is to answer these questions, using data from an evaluation of a CDD program in post-conflict Sierra Leone.\nThe relevant files for this assignment are available in the Posit Cloud folder.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 4"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-4.html#overview",
+    "href": "assignments/coding-assignment-4.html#overview",
+    "title": "Homework 4",
+    "section": "",
+    "text": "Community Driven Development (CDD) programs have become increasingly popular in international development over the past several decades. CDD programs directly involve impacted communities in the selection, design, and implementation of development projects. Usually, this also involves building upon or creating community level organizations (or committees) that are involved with the projects, with the goal of creating democratic and inclusive decision-making processes. See this 3ie working paper for discussion of some common features of CDD.\nGiven these design features, proponents of CDD argue that these programs should (a) improve the quality and impact of development projects (e.g., public goods) AND (b) improve social cohesion, inclusion, and local governance. For this reason, CDD has been implemented in a number of post-conflict settings, where the hope is that CDD can both improve development outcomes and contribute to rebuilding social cohesion and governance (which are often harmed by conflict).\nDoes CDD improve development outcomes? Does it improve social cohesion after conflict? Your goal in this assignment is to answer these questions, using data from an evaluation of a CDD program in post-conflict Sierra Leone.\nThe relevant files for this assignment are available in the Posit Cloud folder.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 4"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-4.html#the-gobifo-program-in-sierra-leone",
+    "href": "assignments/coding-assignment-4.html#the-gobifo-program-in-sierra-leone",
+    "title": "Homework 4",
+    "section": "The GoBifo Program in Sierra Leone",
+    "text": "The GoBifo Program in Sierra Leone\nSierra Leone was devastated by a civil war lasting from 1991 to 2002. In the post-conflict context, the Ministry of Local Government and Community Development implemented the GoBifo (“forge ahead”) CDD project in Sierra Leone from 2005-2009 (with support from the World Bank and other international donors). See this report for a detailed summary of the program.\nThe program had two key components:\n\nBlock grants of about 4,667 dollars (about 100 per household in each community) that communities could allocate to local development projects, skills trainings, and small-business investment.\n“Technical assistance that promoted democratic decision-making, the participation of socially marginalized women and youth in local politics, and transparent budgeting practices” [@casey2012]\n\nThe GiBifo program also included an impact evaluation, conducted by economists Katherine Casey, Rachel Glennerster, and Edward Miguel. The academic paper generated from the project is in the References section [@casey2012].\nImportantly, the impact evaluation included randomization: communities in the study were randomly assigned to receive the GoBifo program, or not. In this sense, the impact evaluation was similar to a clinical drug trial, where some subjects are randomly assigned to receive the medicine while others do not receive it. This aspect of the design makes it easier to assess the causal impact of this project: we can compare outcomes in the treatment (GoBifo program) and control groups, and test for whether any differences we observe are likely to be due to chance.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 4"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-4.html#load-data-and-packages",
+    "href": "assignments/coding-assignment-4.html#load-data-and-packages",
+    "title": "Homework 4",
+    "section": "Load Data and Packages",
+    "text": "Load Data and Packages\nYou can use the code below to load the packages and data. Make sure the .csv file is saved in your RProj folder for this project.\n\nlibrary(tidyverse)\nlibrary(tidymodels)\n\n\nmyData &lt;- read_csv(\"gobifo_data.csv\")",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 4"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-4.html#data",
+    "href": "assignments/coding-assignment-4.html#data",
+    "title": "Homework 4",
+    "section": "Data",
+    "text": "Data\n“gobifo_data.csv” provides a condensed version of the data collected by @casey2012 for their evaluation of the project. The study team gathered literally hundreds of outcome variables, and the paper includes an interesting discussion of how they analyze the data and interpret the results given the large number of outcomes they measured.\nThe unit of analysis (or row in the dataset) is the village.\nFor our purposes, we will focus on a smaller set of variables, summarized below:\n\nTreatment variable (named t in the data): this equals treatment if the community was randomly assigned to be in the program, and control if not. As a character variable, tidymodels will automatically recognize it as a factor. But be sure to use quotation marks when working with the two categories, e.g. filter(t == \"treatment\").\nCommunity Decision Making Infrastructure: Is there a village development committee in the community? (vdc)\nPublic Goods: Is there a functioning primary school in the community? (f_psch)\nSanitation: Is there a functioning latrine in the community (f_latrine)\nInclusion, Gender equality in participatory decision making (role_wmn).\n\n“Enumerator account of how actively women participated in the deliberation compared to men, ranging from 5 = no difference between women and men to 1 = women not active at all compared to men”\n\nSocial Capital: Trust in other in the community (trust_own)\nConflict: Percentage of respondents in the village that reported they had NO conflicts/disputes with others that required outside intervention (no_conflict)",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 4"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-4.html#part-1-setup-and-load-data-10-points",
+    "href": "assignments/coding-assignment-4.html#part-1-setup-and-load-data-10-points",
+    "title": "Homework 4",
+    "section": "Part 1: Setup and Load Data (10 points)",
+    "text": "Part 1: Setup and Load Data (10 points)\n\nCreate a folder and an RProj file for this assignment. Save “gobifo_data.csv” in that folder. Create a new Quarto document where you will complete the work for this assignment. Make sure to include a title, your name, and the date. (1 point)\nCreate a code chunk that loads the packages you will need: tidyverse and tidymodels\nUse read_csv() to read the “gobifo_data.csv” data in to RStudio. Save the dataset as an object called “myData”\nExamine the data. How many observations (villages) are there in the study? You can use glimpse() to determine the number of rows. How many were in the treatment (t) group (in the program) and how many were in control? You can use summarize() or count() for this calculation.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 4"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-4.html#part-2-calculate-the-treatment-effect-of-a-variable-16-points",
+    "href": "assignments/coding-assignment-4.html#part-2-calculate-the-treatment-effect-of-a-variable-16-points",
+    "title": "Homework 4",
+    "section": "Part 2: Calculate the Treatment Effect of a Variable (16 points)",
+    "text": "Part 2: Calculate the Treatment Effect of a Variable (16 points)\nChoose one variables. Calculate the means and treatment effect of your chosen variable.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 4"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-4.html#part-3-state-your-hypotheses-16-points",
+    "href": "assignments/coding-assignment-4.html#part-3-state-your-hypotheses-16-points",
+    "title": "Homework 4",
+    "section": "Part 3: State Your Hypotheses (16 points)",
+    "text": "Part 3: State Your Hypotheses (16 points)\nWhat is your null hypothesis for the effect of your chosen variable? What is your alternative hypothesis?",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 4"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-4.html#part-4-generate-the-null-distribution-16-points",
+    "href": "assignments/coding-assignment-4.html#part-4-generate-the-null-distribution-16-points",
+    "title": "Homework 4",
+    "section": "Part 4: Generate the Null Distribution (16 points)",
+    "text": "Part 4: Generate the Null Distribution (16 points)\nUsing tidymodels, generate a null distribution for the treatment effect of your chosen variable.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 4"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-4.html#part-5-get-the-p-value-16-points",
+    "href": "assignments/coding-assignment-4.html#part-5-get-the-p-value-16-points",
+    "title": "Homework 4",
+    "section": "Part 5: Get the p-value (16 points)",
+    "text": "Part 5: Get the p-value (16 points)\nUse the get_p_value() function from the infer package to calculate the p-value for your chosen variable.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 4"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-4.html#part-6-visualize-the-treatment-effect-16-points",
+    "href": "assignments/coding-assignment-4.html#part-6-visualize-the-treatment-effect-16-points",
+    "title": "Homework 4",
+    "section": "Part 6: Visualize the Treatment Effect (16 points)",
+    "text": "Part 6: Visualize the Treatment Effect (16 points)\nUse the visualize() function from the infer package to visualize the treatment effect of your chosen variable relative to the null distribution.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 4"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-4.html#part-7-interpret-the-results-10-points",
+    "href": "assignments/coding-assignment-4.html#part-7-interpret-the-results-10-points",
+    "title": "Homework 4",
+    "section": "Part 7: Interpret the Results (10 points)",
+    "text": "Part 7: Interpret the Results (10 points)\nWrite one or two paragraphs that summarize the results of your analysis and accurately interpret them. What is the big picture takeaway of your analysis? What does your analysis teach us about the impact of this CDD program based on the variable you chose?",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 4"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-4.html#extra-credit",
+    "href": "assignments/coding-assignment-4.html#extra-credit",
+    "title": "Homework 4",
+    "section": "Extra Credit",
+    "text": "Extra Credit\nThere are other outcome variables in the study that you did not select: create visualizations that display the means and 95% confidence intervals in treatment and control groups for these outcomes.\n\n\n\n\n\n\nSubmission Instructions\n\n\n\nAfter rendering your document, export your project folder and submit it on Blackboard. You will find the link to the Coding Assignment one submission portal under the Assignments link. There is a screen capture video in the Discord server that will help you understand how to do this.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 4"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-3.html",
+    "href": "assignments/coding-assignment-3.html",
+    "title": "Homework 3",
+    "section": "",
+    "text": "In this homework assignment, we are once again going to be exploring the correlates of democracy with V-Dem. But this time we are going to do so in the context of regression analysis.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 3"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-3.html#step-1-load-the-data-12.5-pts.",
+    "href": "assignments/coding-assignment-3.html#step-1-load-the-data-12.5-pts.",
+    "title": "Homework 3",
+    "section": "Step 1: Load the data (12.5 pts.)",
+    "text": "Step 1: Load the data (12.5 pts.)\nUsing fetchdem from vdemlite, select the v2x_regime variable, a continuous measure of democracy like v2x_polyarchy, and at least three variables that you believe correlate with democracy for all countries and one year of your choosing. Use mutate() to transform v2x_regime into a binary variable that indicates whether a country is a democracy or not (I have provided this part of the code for you).\n\nlibrary(vdemlite)\n\n# Uncomment this code to start working on it.\n\n#vdem_data &lt;- fetchdem(indicators = c(???),\n#                      start_year = ???, end_year = ???) |&gt;\n#  mutate(regime_dummy = ifelse(v2x_regime &gt;= 2, 1, 0)",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 3"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-3.html#step-2-hypotheses-12.5-pts.",
+    "href": "assignments/coding-assignment-3.html#step-2-hypotheses-12.5-pts.",
+    "title": "Homework 3",
+    "section": "Step 2: Hypotheses (12.5 pts.)",
+    "text": "Step 2: Hypotheses (12.5 pts.)\nTalk about why you chose the indicators you did and why you think your independent variables should be related to democracy.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 3"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-3.html#step-3-run-a-bivariate-linear-regression-model-12.5-pts.",
+    "href": "assignments/coding-assignment-3.html#step-3-run-a-bivariate-linear-regression-model-12.5-pts.",
+    "title": "Homework 3",
+    "section": "Step 3: Run a bivariate linear regression model (12.5 pts.)",
+    "text": "Step 3: Run a bivariate linear regression model (12.5 pts.)\nRun a bivariate linear regression model with your selected continuous measure of democracy as the dependent variable and one of your selected predictors as the independent variable. Use the lm() function to run the model and the summary() function to view the results.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 3"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-3.html#step-4-interpret-the-results-12.5-pts.",
+    "href": "assignments/coding-assignment-3.html#step-4-interpret-the-results-12.5-pts.",
+    "title": "Homework 3",
+    "section": "Step 4: Interpret the results (12.5 pts.)",
+    "text": "Step 4: Interpret the results (12.5 pts.)\nInterpret the results of the regression model. What is the coefficient on the predictor variable? What does this coefficient tell you about the relationship between the predictor and democracy? Is the relationship stastically significant? How about the constant (intercept term)?",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 3"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-3.html#step-5-run-a-multiple-linear-regression-model-12.5-pts.",
+    "href": "assignments/coding-assignment-3.html#step-5-run-a-multiple-linear-regression-model-12.5-pts.",
+    "title": "Homework 3",
+    "section": "Step 5: Run a Multiple Linear Regression Model (12.5 pts.)",
+    "text": "Step 5: Run a Multiple Linear Regression Model (12.5 pts.)\nRun a multiple linear regression model with your selected continous measure of democracy as the dependent variable and at least three of your selected predictors as the independent variables. Use the lm() function to run the model and the summary() function to view the results.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 3"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-3.html#step-6-interpret-the-results-of-your-multiple-regression-12.5-pts.",
+    "href": "assignments/coding-assignment-3.html#step-6-interpret-the-results-of-your-multiple-regression-12.5-pts.",
+    "title": "Homework 3",
+    "section": "Step 6: Interpret the Results of Your Multiple Regression (12.5 pts.)",
+    "text": "Step 6: Interpret the Results of Your Multiple Regression (12.5 pts.)\nInterpret the results of the multiple regression model. What is the coefficient on each of the predictor variables? What does this coefficient tell you about the relationship between the predictors and democracy? Are the relationships statistically significant? How would you interpret the constant (intercept term)?",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 3"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-3.html#step-7-run-a-multiple-logistic-regression-12.5-pts.",
+    "href": "assignments/coding-assignment-3.html#step-7-run-a-multiple-logistic-regression-12.5-pts.",
+    "title": "Homework 3",
+    "section": "Step 7: Run a Multiple Logistic Regression (12.5 pts.)",
+    "text": "Step 7: Run a Multiple Logistic Regression (12.5 pts.)\nUsing your dichotomous measure of regime type (democratic or not) as the dependent variable, run a multiple logistic regression model with your three predictors. Use the glm() function to run the model and the summary() function to view the results.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 3"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-3.html#step-8-interpret-the-results-of-your-logistic-regression-12.5-pts.",
+    "href": "assignments/coding-assignment-3.html#step-8-interpret-the-results-of-your-logistic-regression-12.5-pts.",
+    "title": "Homework 3",
+    "section": "Step 8: Interpret the Results of Your Logistic Regression (12.5 pts.)",
+    "text": "Step 8: Interpret the Results of Your Logistic Regression (12.5 pts.)\nInterpret the results of the logistic regression model. Interpret the direction and significance of each predictor. Exponentiate the coefficient of one of the predictors and interpret it?",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 3"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-3.html#extra-credit-3-pts.",
+    "href": "assignments/coding-assignment-3.html#extra-credit-3-pts.",
+    "title": "Homework 3",
+    "section": "Extra Credit (3 pts.)",
+    "text": "Extra Credit (3 pts.)\nUse the marginaleffects package to give the predicted probabilities of regime transition for three countries in your dataset.\n\n\n\n\n\n\nSubmission Instructions\n\n\n\nAfter rendering your document, export your project folder and submit it on Blackboard. You will find the link to the Coding Assignment one submission portal under the Assignments link. There is a screen capture video in the Discord server that will help you understand how to do this.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 3"
+    ]
+  },
+  {
+    "objectID": "weeks/week-6.html",
+    "href": "weeks/week-6.html",
+    "title": "Week 6",
+    "section": "",
+    "text": "📖 Edward Miguel, “Tribe or Nation?”\n📖 Holland and Ben Ross Schneider, “Easy and Hard Redistribution”"
+  },
+  {
+    "objectID": "weeks/week-6.html#readings",
+    "href": "weeks/week-6.html#readings",
+    "title": "Week 6",
+    "section": "",
+    "text": "📖 Edward Miguel, “Tribe or Nation?”\n📖 Holland and Ben Ross Schneider, “Easy and Hard Redistribution”"
+  },
+  {
+    "objectID": "weeks/week-6.html#slides",
+    "href": "weeks/week-6.html#slides",
+    "title": "Week 6",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Ethnicity and public goods\n🖥️ Democracy and redistribution"
+  },
+  {
+    "objectID": "weeks/week-6.html#videos",
+    "href": "weeks/week-6.html#videos",
+    "title": "Week 6",
+    "section": "Videos",
+    "text": "Videos\n📺 Bar chart video\n📺 Line chart video\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-5.html",
+    "href": "weeks/week-5.html",
+    "title": "Week 5",
+    "section": "",
+    "text": "📖 Stokes et. al., Brokers, Voters and Clientelism, Chapter 1\n📖 Aspinall and Berenschot, Democracy for Sale, Chapter 5"
+  },
+  {
+    "objectID": "weeks/week-5.html#readings",
+    "href": "weeks/week-5.html#readings",
+    "title": "Week 5",
+    "section": "",
+    "text": "📖 Stokes et. al., Brokers, Voters and Clientelism, Chapter 1\n📖 Aspinall and Berenschot, Democracy for Sale, Chapter 5"
+  },
+  {
+    "objectID": "weeks/week-5.html#slides",
+    "href": "weeks/week-5.html#slides",
+    "title": "Week 5",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Programmatic politics vs. clientelism\n🖥️ Vote buying\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-1.html",
+    "href": "weeks/week-1.html",
+    "title": "Week 1",
+    "section": "",
+    "text": "📖 Review the course syllabus and support resources\n📖 Polanyi, The Great Transformation, Chapter 11"
+  },
+  {
+    "objectID": "weeks/week-1.html#readings",
+    "href": "weeks/week-1.html#readings",
+    "title": "Week 1",
+    "section": "",
+    "text": "📖 Review the course syllabus and support resources\n📖 Polanyi, The Great Transformation, Chapter 11"
+  },
+  {
+    "objectID": "weeks/week-1.html#slides",
+    "href": "weeks/week-1.html#slides",
+    "title": "Week 1",
+    "section": "Slides",
+    "text": "Slides\n🖥Polany’s Great Transformation\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-2.html",
+    "href": "weeks/week-2.html",
+    "title": "Week 2",
+    "section": "",
+    "text": "📖 Acemoglu and Robinson, “Rents and Economic Development”\n📖 Cheibub and Vreeland, “Modernization Theory”"
+  },
+  {
+    "objectID": "weeks/week-2.html#readings",
+    "href": "weeks/week-2.html#readings",
+    "title": "Week 2",
+    "section": "",
+    "text": "📖 Acemoglu and Robinson, “Rents and Economic Development”\n📖 Cheibub and Vreeland, “Modernization Theory”"
+  },
+  {
+    "objectID": "weeks/week-2.html#slides",
+    "href": "weeks/week-2.html#slides",
+    "title": "Week 2",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Institutions and Development\n🖥️ Modernization Theory\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-11.html",
+    "href": "weeks/week-11.html",
+    "title": "Week 11",
+    "section": "",
+    "text": "📖 Gumbrell-McCormick and Hyman, “Democracy in Trade Unions, Democracy Through Trade Unions?”\n📖 Hall and Soskice, Varities of Capitalism, Chapter 1"
+  },
+  {
+    "objectID": "weeks/week-11.html#readings",
+    "href": "weeks/week-11.html#readings",
+    "title": "Week 11",
+    "section": "",
+    "text": "📖 Gumbrell-McCormick and Hyman, “Democracy in Trade Unions, Democracy Through Trade Unions?”\n📖 Hall and Soskice, Varities of Capitalism, Chapter 1"
+  },
+  {
+    "objectID": "weeks/week-11.html#slides",
+    "href": "weeks/week-11.html#slides",
+    "title": "Week 11",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Unions and collective bargaining\n🖥️ Varieties of capitalism\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-12.html",
+    "href": "weeks/week-12.html",
+    "title": "Week 12",
+    "section": "",
+    "text": "Important\n\n\n\n“Project Assignment 2: White Paper” is due on Sunday, April 9"
+  },
+  {
+    "objectID": "weeks/week-12.html#readings",
+    "href": "weeks/week-12.html#readings",
+    "title": "Week 12",
+    "section": "Readings",
+    "text": "Readings\n📖 Autor, Dorn and Hanson, “The China Shock”\n📖 Joseph Stiglitz, People, Power, and Profits, Chapter 3"
+  },
+  {
+    "objectID": "weeks/week-12.html#slides",
+    "href": "weeks/week-12.html#slides",
+    "title": "Week 12",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Globalization\n🖥️ Inequality"
+  },
+  {
+    "objectID": "weeks/week-12.html#assignments",
+    "href": "weeks/week-12.html#assignments",
+    "title": "Week 12",
+    "section": "Assignments",
+    "text": "Assignments\n✍️ Project Assignment 2: White Paper\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-8.html",
+    "href": "weeks/week-8.html",
+    "title": "Week 8",
+    "section": "",
+    "text": "Important\n\n\n\nExam 2 is due on Sunday, March 19."
+  },
+  {
+    "objectID": "weeks/week-8.html#readings",
+    "href": "weeks/week-8.html#readings",
+    "title": "Week 8",
+    "section": "Readings",
+    "text": "Readings\n📖 James Putzel, “The ‘Populist’ Right Challenge to Neoliberalism”\n📖 Mary Cullen, “How to Write and Format a White Paper”"
+  },
+  {
+    "objectID": "weeks/week-8.html#slides",
+    "href": "weeks/week-8.html#slides",
+    "title": "Week 8",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Populism and social policy\n🖥️ Exam 2 review"
+  },
+  {
+    "objectID": "weeks/week-8.html#assignments",
+    "href": "weeks/week-8.html#assignments",
+    "title": "Week 8",
+    "section": "Assignments",
+    "text": "Assignments\n📘 Exam 2\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "weeks/week-14.html",
+    "href": "weeks/week-14.html",
+    "title": "Week 14",
+    "section": "",
+    "text": "📖 Aklin and Matto, “Prisoners of the Wrong Dilemma”"
+  },
+  {
+    "objectID": "weeks/week-14.html#readings",
+    "href": "weeks/week-14.html#readings",
+    "title": "Week 14",
+    "section": "",
+    "text": "📖 Aklin and Matto, “Prisoners of the Wrong Dilemma”"
+  },
+  {
+    "objectID": "weeks/week-14.html#slides",
+    "href": "weeks/week-14.html#slides",
+    "title": "Week 14",
+    "section": "Slides",
+    "text": "Slides\n🖥️ Climate change and collective action\n\n\nBack to course schedule ⏎"
+  },
+  {
+    "objectID": "instructor.html",
+    "href": "instructor.html",
+    "title": "Instructor",
+    "section": "",
+    "text": "Emmanuel Teitelbaum is an associate professor of political science and international affairs at the The George Washington University His research and writing explore how class conflict and compromise intersect with democracy and development. He also has a strong interest in labor standards and understanding how labor unions, nonprofit organizations, consumers and corporations can help to promote them.\nAt GW, Professor Teitelbaum teaches courses on comparative politics, comparative political economy and data science. He is on faculty in the Department of Political Science and the Elliott School of International Affairs and is affiliated with the Sigur Center for Asian Studies as well as the Institute for International Economic Policy.",
+    "crumbs": [
+      "Course information",
+      "Instructor"
+    ]
+  },
+  {
+    "objectID": "slides/week-3.2.html#line-charts",
+    "href": "slides/week-3.2.html#line-charts",
+    "title": "Which Visualization Should I Use?",
+    "section": "Line Charts",
+    "text": "Line Charts\n\n\nLine charts are used to show trends over time\nYou especially want to use a line chart when you have multiple cases or categories that you want to compare over time"
+  },
+  {
+    "objectID": "slides/week-3.2.html#huntingtons-three-waves",
+    "href": "slides/week-3.2.html#huntingtons-three-waves",
+    "title": "Which Visualization Should I Use?",
+    "section": "Huntington’s Three Waves",
+    "text": "Huntington’s Three Waves"
+  },
+  {
+    "objectID": "slides/week-3.2.html#line-chart-example",
+    "href": "slides/week-3.2.html#line-chart-example",
+    "title": "Which Visualization Should I Use?",
+    "section": "Line Chart Example",
+    "text": "Line Chart Example"
+  },
+  {
+    "objectID": "slides/week-3.2.html#section",
+    "href": "slides/week-3.2.html#section",
+    "title": "Which Visualization Should I Use?",
+    "section": "",
+    "text": "Here is the code…\n\n\n# in this ggplot() call, we add a third dimension for line color\nggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +\n  geom_line(linewidth = 1) + # our geom is a line with a width of 1\n  labs(\n    x = \"Year\", \n    y = \"Polyarchy Score\", \n    title = 'Democracy in countries representing three different \"waves\"', \n    caption = \"Source: V-Dem Institute\", \n    color = \"Country\" # make title of legend to upper case\n  )"
+  },
+  {
+    "objectID": "slides/week-3.2.html#section-1",
+    "href": "slides/week-3.2.html#section-1",
+    "title": "Which Visualization Should I Use?",
+    "section": "",
+    "text": "Use geom_line() to specify a line chart…\n\n\n# in this ggplot() call, we add a third dimension for line color\nggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +\n  geom_line(linewidth = 1) + # our geom is a line with a width of 1\n  labs(\n    x = \"Year\", \n    y = \"Polyarchy Score\", \n    title = 'Democracy in countries representing three different \"waves\"', \n    caption = \"Source: V-Dem Institute\", \n    color = \"Country\" # make title of legend to upper case\n  )"
+  },
+  {
+    "objectID": "slides/week-3.2.html#section-2",
+    "href": "slides/week-3.2.html#section-2",
+    "title": "Which Visualization Should I Use?",
+    "section": "",
+    "text": "Add third dimension to the aes() call for line color…\n\n\n# in this ggplot() call, we add a third dimension for line color\nggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +\n  geom_line(linewidth = 1) + # our geom is a line with a width of 1\n  labs(\n    x = \"Year\", \n    y = \"Polyarchy Score\", \n    title = 'Democracy in countries representing three different \"waves\"', \n    caption = \"Source: V-Dem Institute\", \n    color = \"Country\" # make title of legend to upper case\n  )"
+  },
+  {
+    "objectID": "slides/week-3.2.html#section-3",
+    "href": "slides/week-3.2.html#section-3",
+    "title": "Which Visualization Should I Use?",
+    "section": "",
+    "text": "Modify the legend title…\n\n\n# in this ggplot() call, we add a third dimension for line color\nggplot(dem_waves_ctrs, aes(x = year, y = polyarchy, color = country)) +\n  geom_line(linewidth = 1) + # our geom is a line with a width of 1\n  labs(\n    x = \"Year\", \n    y = \"Polyarchy Score\", \n    title = 'Democracy in countries representing three different \"waves\"', \n    caption = \"Source: V-Dem Institute\", \n    color = \"Country\" # make title of legend to upper case\n  )"
+  },
+  {
+    "objectID": "slides/week-3.2.html#your-turn",
+    "href": "slides/week-3.2.html#your-turn",
+    "title": "Which Visualization Should I Use?",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\nSee table three of this article\nSelect three countries to visualize\nAdjust setup code to filter data on those countries\nVisualize with geom_line()\n\n\n\n\n−+\n10:00"
+  },
+  {
+    "objectID": "slides/week-3.2.html#scatter-plots",
+    "href": "slides/week-3.2.html#scatter-plots",
+    "title": "Which Visualization Should I Use?",
+    "section": "Scatter Plots",
+    "text": "Scatter Plots\n\n\nScatter plots are used to show the relationship between two variables\nFrequently the outcome variable is on the y-axis and the predictor variable is on the x-axis\nIn addition to the points, you can use color, size, and shape to add more information to the plot"
+  },
+  {
+    "objectID": "slides/week-3.2.html#scatter-plot-setup",
+    "href": "slides/week-3.2.html#scatter-plot-setup",
+    "title": "Which Visualization Should I Use?",
+    "section": "Scatter Plot Setup",
+    "text": "Scatter Plot Setup\n\n\ndem_summary_ctry &lt;- read_csv(\"data/dem_women.csv\") |&gt;\n  group_by(country, region) |&gt; # group by country, keep region\n  summarize(\n    polyarchy = mean(polyarchy, na.rm = TRUE),\n    gdp_pc = mean(gdp_pc, na.rm = TRUE), \n    flfp = mean(flfp, na.rm = TRUE), \n    women_rep = mean(women_rep, na.rm = TRUE)\n  )"
+  },
+  {
+    "objectID": "slides/week-3.2.html#scatter-plot",
+    "href": "slides/week-3.2.html#scatter-plot",
+    "title": "Which Visualization Should I Use?",
+    "section": "Scatter Plot",
+    "text": "Scatter Plot\n\n\nCode\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) + \n  geom_point() + # use geom_point() for scatter plots\n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\",\n    size = \"Women Reps\"\n    )"
+  },
+  {
+    "objectID": "slides/week-3.2.html#scatter-plot-1",
+    "href": "slides/week-3.2.html#scatter-plot-1",
+    "title": "Which Visualization Should I Use?",
+    "section": "Scatter Plot",
+    "text": "Scatter Plot\n\nUse geom_point()…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) +\n  geom_point() + # use geom_point() for scatter plots\n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\",\n    size = \"Women Reps\"\n    )"
+  },
+  {
+    "objectID": "slides/week-3.2.html#scatter-plot-2",
+    "href": "slides/week-3.2.html#scatter-plot-2",
+    "title": "Which Visualization Should I Use?",
+    "section": "Scatter Plot",
+    "text": "Scatter Plot\n\nFour dimensions…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) + \n  geom_point() + # use geom_point() for scatter plots\n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\",\n    size = \"Women Reps\"\n    )"
+  },
+  {
+    "objectID": "slides/week-3.2.html#scatter-plot-3",
+    "href": "slides/week-3.2.html#scatter-plot-3",
+    "title": "Which Visualization Should I Use?",
+    "section": "Scatter Plot",
+    "text": "Scatter Plot\n\nStretch axis on log scale and use scales package to adjust labels…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) + \n  geom_point() + # use geom_point() for scatter plots\n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\",\n    size = \"Women Reps\"\n    )"
+  },
+  {
+    "objectID": "slides/week-3.2.html#scatter-plot-4",
+    "href": "slides/week-3.2.html#scatter-plot-4",
+    "title": "Which Visualization Should I Use?",
+    "section": "Scatter Plot",
+    "text": "Scatter Plot\n\nChange legend titles…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy, color = region, size = women_rep)) + \n  geom_point() + # use geom_point() for scatter plots\n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\",\n    size = \"Women Reps\"\n    )"
+  },
+  {
+    "objectID": "slides/week-3.2.html#your-turn-1",
+    "href": "slides/week-3.2.html#your-turn-1",
+    "title": "Which Visualization Should I Use?",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\nThere are four variables in dem_summary_ctry\nPick one related to women’s empowerment\nVisualize it on the y-axis with gdp_pc or polyarchy on the x-axis\nChange labels and legend titles to match your visualization\nInterpret your plot\n\n\n\n\n−+\n10:00"
+  },
+  {
+    "objectID": "slides/week-3.2.html#add-a-trend-line",
+    "href": "slides/week-3.2.html#add-a-trend-line",
+    "title": "Which Visualization Should I Use?",
+    "section": "Add a Trend Line",
+    "text": "Add a Trend Line"
+  },
+  {
+    "objectID": "slides/week-3.2.html#add-a-trend-line-1",
+    "href": "slides/week-3.2.html#add-a-trend-line-1",
+    "title": "Which Visualization Should I Use?",
+    "section": "Add a Trend Line",
+    "text": "Add a Trend Line\n\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + \n  geom_point(aes(color = region)) + \n  geom_smooth(method = \"lm\", linewidth = 1) + \n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\"\n    )"
+  },
+  {
+    "objectID": "slides/week-3.2.html#add-a-trend-line-2",
+    "href": "slides/week-3.2.html#add-a-trend-line-2",
+    "title": "Which Visualization Should I Use?",
+    "section": "Add a Trend Line",
+    "text": "Add a Trend Line\n\nTaking out size and adding color to geom_point() call…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + \n  geom_point(aes(color = region)) + \n  geom_smooth(method = \"lm\", linewidth = 1) + \n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\"\n    )"
+  },
+  {
+    "objectID": "slides/week-3.2.html#add-a-trend-line-3",
+    "href": "slides/week-3.2.html#add-a-trend-line-3",
+    "title": "Which Visualization Should I Use?",
+    "section": "Add a Trend Line",
+    "text": "Add a Trend Line\n\nChanging legend titles…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + \n  geom_point(aes(color = region)) + \n  geom_smooth(method = \"lm\", linewidth = 1) + \n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\"\n    )"
+  },
+  {
+    "objectID": "slides/week-3.2.html#your-turn-2",
+    "href": "slides/week-3.2.html#your-turn-2",
+    "title": "Which Visualization Should I Use?",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\nAdd a trendline to your plot\nChange the labels accordingly\nTry using method = \"loess\" instead of a “lm”\n\n\n\n\n−+\n10:00"
+  },
+  {
+    "objectID": "slides/week-3.2.html#which-plot-should-you-use",
+    "href": "slides/week-3.2.html#which-plot-should-you-use",
+    "title": "Which Visualization Should I Use?",
+    "section": "Which Plot Should You Use?",
+    "text": "Which Plot Should You Use?\n\n\n\nTrends in stock process over time\nDistribution of income in a country\nComparison of FLFP across MENA countries\nRelationship between poverty and inequality (cross-nationally)"
+  },
+  {
+    "objectID": "slides/week-3.2.html#which-geom-would-you-use",
+    "href": "slides/week-3.2.html#which-geom-would-you-use",
+    "title": "Which Visualization Should I Use?",
+    "section": "Which Geom Would You Use?",
+    "text": "Which Geom Would You Use?\n\n\n\nColumn chart\nHistogram\nLine chart\nScatter plot"
+  },
+  {
+    "objectID": "slides/week-3.2.html#other-plots-and-geometries",
+    "href": "slides/week-3.2.html#other-plots-and-geometries",
+    "title": "Which Visualization Should I Use?",
+    "section": "Other Plots and Geometries",
+    "text": "Other Plots and Geometries\n\n\n\n\nBox Plot\ngeom_boxplot()\nViolin Plot\ngeom_violin()\nDensity Plot\ngeom_density()\nBar Plot (Categorical)\ngeom_bar()\nHeatmap\ngeom_tile()\n\n\n\nArea Plot\ngeom_area()\nDot Plot\ngeom_dotplot()\nPie Chart\n(usually a bar plot with coord_polar())\nRidgeline Plot\nggridges::geom_density_ridges()\nMap Plot (Choropleth)\ngeom_polygon()"
   },
   {
     "objectID": "slides/week-13.1.html#hypotheses",
@@ -4177,29 +4226,29 @@
     "objectID": "slides/week-2.1.html#what-can-r-do",
     "href": "slides/week-2.1.html#what-can-r-do",
     "title": "R Coding Basics",
-    "section": "",
-    "text": "R is a powerful language for data analysis and visualization\nIt is also a general-purpose programming language\nDoes everything from web development to machine learning\nIt is open-source and has a large community of users and developers"
+    "section": "What Can R Do?",
+    "text": "What Can R Do?\n\n\n\nR is a powerful language for data analysis and visualization\nIt is also a general-purpose programming language\nDoes everything from web development to machine learning\nIt is open-source and has a large community of users and developers"
   },
   {
     "objectID": "slides/week-2.1.html#r-as-a-calculator",
     "href": "slides/week-2.1.html#r-as-a-calculator",
     "title": "R Coding Basics",
-    "section": "",
-    "text": "R can be used as a simple calculator\nYou can perform arithmetic operations on numbers\n\n\n# Addi a number and store it to a value\nsum_of_2plus2 &lt;- 2 + 2\n\n\nsum_of_2plus2\n\n[1] 4"
+    "section": "R as a Calculator",
+    "text": "R as a Calculator\n\n\nR can be used as a simple calculator\nYou can perform arithmetic operations on numbers\n\n\n# Addi a number and store it to a value\nsum_of_2plus2 &lt;- 2 + 2\n\n\nsum_of_2plus2\n\n[1] 4"
   },
   {
     "objectID": "slides/week-2.1.html#some-common-arithmetic-operators",
     "href": "slides/week-2.1.html#some-common-arithmetic-operators",
     "title": "R Coding Basics",
-    "section": "",
-    "text": "+ addition\n- subtraction\n* multiplication\n/ division\n^ exponentiation (also **)"
+    "section": "Some Common Arithmetic Operators",
+    "text": "Some Common Arithmetic Operators\n\n\n+ addition\n- subtraction\n* multiplication\n/ division\n^ exponentiation (also **)"
   },
   {
     "objectID": "slides/week-2.1.html#functions",
     "href": "slides/week-2.1.html#functions",
     "title": "R Coding Basics",
-    "section": "",
-    "text": "A function is a set of instructions that produces some output\nIn R, you can use built-in functions to perform specific tasks\nFor example, you can use the mean() function to calculate the average of a set of numbers\nTo do this you have to use the combine function c() to create a vector of numbers"
+    "section": "Functions",
+    "text": "Functions\n\nA function is a set of instructions that produces some output\nIn R, you can use built-in functions to perform specific tasks\nFor example, you can use the mean() function to calculate the average of a set of numbers\nTo do this you have to use the combine function c() to create a vector of numbers"
   },
   {
     "objectID": "slides/week-2.1.html#section",
@@ -4212,8 +4261,8 @@
     "objectID": "slides/week-2.1.html#some-common-base-r-functions",
     "href": "slides/week-2.1.html#some-common-base-r-functions",
     "title": "R Coding Basics",
-    "section": "",
-    "text": "mean() calculates the mean of a set of numbers\nmedian() calculates the median of a set of numbers\nsd() calculates the standard deviation of a set of numbers\nsum() calculates the sum of a set of numbers\nlength() calculates the length of a vector\nmax() and min() calculate the maximum and minimum values of a vector\nround() rounds a number to a specified number of decimal places\nsqrt() calculates the square root of a number\nlog() calculates the natural logarithm of a number\nexp() calculates the exponential of a number\nabs() calculates the absolute value of a number"
+    "section": "Some Common Base R Functions",
+    "text": "Some Common Base R Functions\n\nmean() calculates the mean of a set of numbers\nmedian() calculates the median of a set of numbers\nsd() calculates the standard deviation of a set of numbers\nsum() calculates the sum of a set of numbers\nlength() calculates the length of a vector\nmax() and min() calculate the maximum and minimum values of a vector\nround() rounds a number to a specified number of decimal places\nsqrt() calculates the square root of a number\nlog() calculates the natural logarithm of a number\nexp() calculates the exponential of a number\nabs() calculates the absolute value of a number"
   },
   {
     "objectID": "slides/week-2.1.html#from-functions-to-packages",
@@ -5159,68 +5208,5 @@
       "Course information",
       "Support"
     ]
-  },
-  {
-    "objectID": "slides/week-1.1.html#lets-get-going-.-.-.",
-    "href": "slides/week-1.1.html#lets-get-going-.-.-.",
-    "title": "Coding Examples",
-    "section": "Let’s get going . . .",
-    "text": "Let’s get going . . .\n\nLet’s open up the Week 01 module on Posit Cloud…\nAnd work through the examples there."
-  },
-  {
-    "objectID": "slides/week-1.1.html#example-make-a-map",
-    "href": "slides/week-1.1.html#example-make-a-map",
-    "title": "Coding Examples",
-    "section": "Example: Make a map!",
-    "text": "Example: Make a map!"
-  },
-  {
-    "objectID": "slides/week-1.1.html#example-make-a-map-1",
-    "href": "slides/week-1.1.html#example-make-a-map-1",
-    "title": "Coding Examples",
-    "section": "Example: Make a map!",
-    "text": "Example: Make a map!\n\n\nlibrary(leaflet)\nleaflet() %&gt;% \n  addTiles() %&gt;%   # Add default OpenStreetMap map tiles\n  addMarkers(lat = 38.90243843683386, lng =  -77.0443814477152, \n             label = \"Elliott School of International Affairs\")\n\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "slides/week-1.1.html#plotting-democracy-over-time",
-    "href": "slides/week-1.1.html#plotting-democracy-over-time",
-    "title": "Coding Examples",
-    "section": "Plotting Democracy Over Time",
-    "text": "Plotting Democracy Over Time"
-  },
-  {
-    "objectID": "slides/week-1.1.html#example-plotting-democracy-over-time",
-    "href": "slides/week-1.1.html#example-plotting-democracy-over-time",
-    "title": "Coding Examples",
-    "section": "Example: Plotting Democracy Over Time",
-    "text": "Example: Plotting Democracy Over Time\n\n# Load the packages\nlibrary(vdemlite)\nlibrary(ggplot2)\n\n# Use vdemlite to extract democracy scores for France and INdia\ndem_data &lt;- fetchdem(indicators = \"v2x_polyarchy\",\n                     countries = c(\"FRA\", \"IND\"))\n\n# And now we can plot the data\nggplot(dem_data, aes(y = v2x_polyarchy, x = year, color=country_name)) +\n  geom_line() +\n  theme_minimal() +\n  xlab(\"Year\") +\n  ylab(\"Electoral Democracy Index\") +\n  ggtitle(\"Electoral Democracy, 1970-2022\") +\n  geom_hline(yintercept = .5, linetype = \"dashed\", color = \"grey\") +\n   scale_color_manual(name=\"Country\", values=c(\"#E69F00\", \"#56B4E9\")) +\n  ylim(0, 1)\n\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "slides/week-1.1.html#example-un-voting-trends",
-    "href": "slides/week-1.1.html#example-un-voting-trends",
-    "title": "Coding Examples",
-    "section": "Example: UN Voting Trends",
-    "text": "Example: UN Voting Trends"
-  },
-  {
-    "objectID": "slides/week-1.1.html#example-un-voting-trends-1",
-    "href": "slides/week-1.1.html#example-un-voting-trends-1",
-    "title": "Coding Examples",
-    "section": "Example: UN Voting Trends",
-    "text": "Example: UN Voting Trends\n\nlibrary(tidyverse)\nlibrary(unvotes)\nlibrary(lubridate)\nlibrary(scales)\nlibrary(pacman)\n\nunvotes &lt;- un_votes %&gt;%\n  inner_join(un_roll_calls, by = \"rcid\") %&gt;%\n  inner_join(un_roll_call_issues, by = \"rcid\")\n\nunvotes %&gt;%\n  # then filter out to only include the countries we want\n  filter(country %in% c(\"South Africa\", \"United States\", \"France\")) %&gt;%\n  # then make sure R understands the the year variable is a data\n  mutate(year = year(date)) %&gt;%\n  # Then group the data by country and year\n  group_by(country, year, issue) %&gt;%\n  # then take the average Yes votes for each country_year\n  summarize(percent_yes = mean(vote == \"yes\")) %&gt;%\n  # then make a nice plot\n  ggplot(mapping = aes(x = year, y = percent_yes, color = country)) +\n  geom_point(alpha = 0.4) +\n  geom_smooth(method = \"loess\", se = FALSE) +\n  facet_wrap(~issue) +\n  scale_y_continuous(labels = percent) +\n  scale_color_manual( values=c(\"#E69F00\", \"#56B4E9\", \"#009E73\")) +\n  labs(\n    title = \"Percentage of 'Yes' votes in the UN General Assembly\",\n    subtitle = \"1946 to 2019\",\n    y = \"% Yes\",\n    x = \"Year\",\n    color = \"Country\"\n  )\n\n\n\n\n−+\n05:00"
-  },
-  {
-    "objectID": "slides/week-2.1.html",
-    "href": "slides/week-2.1.html",
-    "title": "R Coding Basics",
-    "section": "",
-    "text": "R is a powerful language for data analysis and visualization\nIt is also a general-purpose programming language\nDoes everything from web development to machine learning\nIt is open-source and has a large community of users and developers\n\n\n\n\n\n\n\nR can be used as a simple calculator\nYou can perform arithmetic operations on numbers\n\n\n# Addi a number and store it to a value\nsum_of_2plus2 &lt;- 2 + 2\n\n\nsum_of_2plus2\n\n[1] 4\n\n\n\n\n\n\n\n+ addition\n- subtraction\n* multiplication\n/ division\n^ exponentiation (also **)\n\n\n\n\n\nA function is a set of instructions that produces some output\nIn R, you can use built-in functions to perform specific tasks\nFor example, you can use the mean() function to calculate the average of a set of numbers\nTo do this you have to use the combine function c() to create a vector of numbers\n\n\n\n\n\nCreate a vector of numbers and take the mean…\n\n\n# Create a vector of numbers\nnumbers &lt;- c(1, 2, 3, 4, 5)\n\n# Calculate the mean of the numbers\nmean(numbers)\n\n[1] 3\n\n\n\n\n\n\nmean() calculates the mean of a set of numbers\nmedian() calculates the median of a set of numbers\nsd() calculates the standard deviation of a set of numbers\nsum() calculates the sum of a set of numbers\nlength() calculates the length of a vector\nmax() and min() calculate the maximum and minimum values of a vector\nround() rounds a number to a specified number of decimal places\nsqrt() calculates the square root of a number\nlog() calculates the natural logarithm of a number\nexp() calculates the exponential of a number\nabs() calculates the absolute value of a number"
-  },
-  {
-    "objectID": "slides/week-1.2.html",
-    "href": "slides/week-1.2.html",
-    "title": "Meet ouR Tech Stack",
-    "section": "",
-    "text": "RStudio is an integrated development environment (IDE) for R\nRStudio has four panes\n\nSource-where you write code\nConsole-where you run code\nEnvironment-where you see objects in memory\nFiles/Plots/Packages/Help-where you can navigate files, see plots, install packages, and get help\n\nLet’s open RStudio and have a look around"
   }
 ]
