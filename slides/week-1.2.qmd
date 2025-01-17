@@ -152,7 +152,7 @@ execute:
 ```{r}
 #| label: timer3
 
-countdown(minutes = 2, 
+countdown(minutes = 5, 
           id = "timer3", 
           bottom = "0%",
           right = "5%")
@@ -279,7 +279,7 @@ ggplot(mpg, aes(displ, hwy, colour = class)) +
 ```{r}
 #| label: timer5
 
-countdown(minutes = 2, 
+countdown(minutes = 5, 
           id = "timer5", 
           bottom = "10%",
           right = "10%")

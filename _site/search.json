@@ -1729,7 +1729,7 @@
     "href": "slides/week-1.2.html#yaml-header-1",
     "title": "Meet ouR Tech Stack",
     "section": "YAML Header",
-    "text": "YAML Header\n---\ntitle: \"My Document\"\nauthor: \"Your Name\"\ndate: today\ndate-format: long\nformat: html\nexecute:\n  echo: false\n  message: false\n---\n\nTry adding some of these options in your document\nThen render it again\nLook in the Quarto guide for other options to try\nCan you figure out how to add a theme?\n\n\n\n\n−+\n02:00"
+    "text": "YAML Header\n---\ntitle: \"My Document\"\nauthor: \"Your Name\"\ndate: today\ndate-format: long\nformat: html\nexecute:\n  echo: false\n  message: false\n---\n\nTry adding some of these options in your document\nThen render it again\nLook in the Quarto guide for other options to try\nCan you figure out how to add a theme?\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/week-1.2.html#markdown",
@@ -1799,7 +1799,7 @@
     "href": "slides/week-1.2.html#try-it-yourself",
     "title": "Meet ouR Tech Stack",
     "section": "Try it Yourself!",
-    "text": "Try it Yourself!\n\nCreate a code chunk\nCopy this code chunk into your document\n\n\nlibrary(ggplot2)\n\nggplot(mpg, aes(displ, hwy, colour = class)) + \n  geom_point()\n\n\nTry adding some chunk options in your document\nThen render it again\n\n\n\n\n−+\n02:00"
+    "text": "Try it Yourself!\n\nCreate a code chunk\nCopy this code chunk into your document\n\n\nlibrary(ggplot2)\n\nggplot(mpg, aes(displ, hwy, colour = class)) + \n  geom_point()\n\n\nTry adding some chunk options in your document\nThen render it again\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/week-11.1.html#section",
