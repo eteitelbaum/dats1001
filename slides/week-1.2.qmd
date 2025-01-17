@@ -134,7 +134,7 @@ countdown(minutes = 2,
 
 ```         
 ---
-title: "My Documnet"
+title: "My Document"
 author: "Your Name"
 date: today
 date-format: long
@@ -147,6 +147,7 @@ execute:
  - Try adding some of these options in your document
  - Then render it again
  - Look in the Quarto [guide](https://quarto.org/docs/reference/formats/html.html) for other options to try
+ - Can you figure out how to add a theme?
 
 ```{r}
 #| label: timer3

@@ -1729,7 +1729,7 @@
     "href": "slides/week-1.2.html#yaml-header-1",
     "title": "Meet ouR Tech Stack",
     "section": "YAML Header",
-    "text": "YAML Header\n---\ntitle: \"My Documnet\"\nauthor: \"Your Name\"\ndate: today\ndate-format: long\nformat: html\nexecute:\n  echo: false\n  message: false\n---\n\nTry adding some of these options in your document\nThen render it again\nLook in the Quarto guide for other options to try\n\n\n\n\n−+\n02:00"
+    "text": "YAML Header\n---\ntitle: \"My Document\"\nauthor: \"Your Name\"\ndate: today\ndate-format: long\nformat: html\nexecute:\n  echo: false\n  message: false\n---\n\nTry adding some of these options in your document\nThen render it again\nLook in the Quarto guide for other options to try\nCan you figure out how to add a theme?\n\n\n\n\n−+\n02:00"
   },
   {
     "objectID": "slides/week-1.2.html#markdown",
