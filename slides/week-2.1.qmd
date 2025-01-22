@@ -59,78 +59,26 @@ sum_of_2plus2
 - `/` division
 - `^` exponentiation (also `**`)
 
-## Functions
-
-- A function is a set of instructions that produces some output
-- In R, you can use built-in functions to perform specific tasks
-- For example, you can use the `mean()` function to calculate the average of a set of numbers
-- To do this you have to use the combine function `c()` to create a vector of numbers
-
-## 
-
-<br> 
-
-Create a vector of numbers and take the mean...
+## Your Turn! 
 
 <br>
+
+- Try some basic calculations 
+- Try them in a code chunk in the Quarto doc
+- Then try some in the console
 
 ```{r}
-#| label: mean
-#| echo: true
-
-# Create a vector of numbers
-numbers <- c(1, 2, 3, 4, 5)
-
-# Calculate the mean of the numbers
-mean(numbers)
+library(countdown)
+countdown(minutes = 5, 
+          bottom = "10%",
+          right = "10%",
+          color_border = "#fff",
+          color_text = "#fff",
+          color_running_background = "#42affa",
+          color_running_text = "black",
+          color_finished_background = "#E5D19D",
+          color_finished_text = "#00264A")
 ```
-
-## Some Common Base R Functions {.smaller}
-
-- `mean()` calculates the mean of a set of numbers
-- `median()` calculates the median of a set of numbers
-- `sd()` calculates the standard deviation of a set of numbers
-- `sum()` calculates the sum of a set of numbers
-- `length()` calculates the length of a vector
-- `max()` and `min()` calculate the maximum and minimum values of a vector
-- `round()` rounds a number to a specified number of decimal places
-- `sqrt()` calculates the square root of a number
-- `log()` calculates the natural logarithm of a number
-- `exp()` calculates the exponential of a number
-- `abs()` calculates the absolute value of a number
-
-# Packages
-
-## From Functions to Packages {.smaller}
-
-<br>
-
-::: {.incremental}
--   A *function* is a set of instructions
-    -   `read_csv()` is a function
-    -   `ggplot()` is a function
--   A *package* is a collection of functions
-    -   `readr` is a package that contains the `read_csv()` function
-    -   `ggplot2` is a package that contains the `ggplot()` function
--   Use `install.packages()` to install packages
--   Use `library()` to load packages
--   You can install packages from CRAN
-:::
-
-## The Tidyverse {.smaller}
-
-::: {.incremental}
--   The Tidyverse is a collection of data science packages
--   It is also considered a dialect of R
--   In this class, we will be using many Tidyverse packages
-    -   `ggplot2` for data visualization
-    -   `readr` for reading data
-    -   `dplyr` for data manipulation
-    -   `tidyr` for data tidying
-    -   Etc.
--   At first we will load the packages independently, e.g. `library(ggplot2)`
--   Later we will load them all at once with `library(tidyverse)`
-:::
 
 # Objects
 
@@ -160,241 +108,178 @@ my_number <- 42
 my_number 
 ```
 
-## When to Store Data in Objects
+## Storing a Vector 
 
 <br>
 
-- Note that you don't always have to store data in objects
-- You should mostly store data in objects when you want to use the data later
-- If you only need to use the data once, you can just use the data directly
+- Sometimes you want to store more than one number
+- In this case you can store a *vector*
+- A vector is a collection of numbers or characters
 
 ```{r}
-#| label: arithmetic2
 #| echo: true
 
-# Add two numbers without storing them in an object
-2 + 2
+my_numbers <- c(1, 2, 3, 4, 5)
+
+my_numbers
 ```
+
+## "Printing" objects
+
+<br>
+
+- Sometimes you will see `print()` used to display the contents of objects
+- This is not typically necessary
+- Sometimes you need it (like when printing inside of a function)
+- But usually you can just type the name of the object
 
 ## Your Turn!
 
 <br>
 
-- Go to the Week 2 module on Posit Cloud
-- Work through the first set of challenges there
+- Store a number in an object
+- Create a vector of numbers and store it in an object
+- "Print" the objects by typing the object names
 
 ```{r}
-#| label: timer0
-
-library(countdown)
 countdown(minutes = 5, 
-          id = "timer0", 
           bottom = "10%",
-          right = "10%",
-          color_border = "#fff",
-          color_text = "#fff",
-          color_running_background = "#42affa",
-          color_running_text = "black",
-          color_finished_background = "#E5D19D",
-          color_finished_text = "#00264A")
+          right = "10%")
 ```
 
-# Three Examples
+# Functions
 
-## Let's get going . . .
+## Functions
 
-<br>
+- A function is a set of instructions that produces some output
+- In R, you can use built-in functions to perform specific tasks
+- For example, you can use the `mean()` function to calculate the average of a set of numbers
+- To do this you have to use the combine function `c()` to create a vector of numbers
 
-Let's open up the Getting Started module on Posit Cloud...
+## 
 
-And work through the examples there.
+<br> 
 
-## Example: Make a map!
-
-```{r}
-#| label: leaflet_map
-
-library(leaflet)
-leaflet() %>% 
-  addTiles() %>%   # Add default OpenStreetMap map tiles
-  addMarkers(lat = 38.90243843683386, lng =  -77.0443814477152, 
-             label = "Elliott School of International Affairs")
-```
-
-## Example: Make a map!
+Create a vector of numbers and take the mean...
 
 <br>
 
 ```{r}
-#| label: leaflet_map2
 #| echo: true
-#| eval: false
-  
-library(leaflet)
-leaflet() %>% 
-  addTiles() %>%   # Add default OpenStreetMap map tiles
-  addMarkers(lat = 38.90243843683386, lng =  -77.0443814477152, 
-             label = "Elliott School of International Affairs")
+
+# Create a vector of numbers
+numbers <- c(1, 2, 3, 4, 5)
+
+# Calculate the mean of the numbers
+mean(numbers)
 ```
 
-```{r}
-#| label: timer1
+## Some Common Base R Functions {.smaller}
 
-library(countdown)
+- `mean()` calculates the mean of a set of numbers
+- `median()` calculates the median of a set of numbers
+- `sd()` calculates the standard deviation of a set of numbers
+- `sum()` calculates the sum of a set of numbers
+- `length()` calculates the length of a vector
+- `max()` and `min()` calculate the maximum and minimum values of a vector
+- `round()` rounds a number to a specified number of decimal places
+- `sqrt()` calculates the square root of a number
+- `log()` calculates the natural logarithm of a number
+- `exp()` calculates the exponential of a number
+- `abs()` calculates the absolute value of a number
+
+## Your Turn!
+
+<br>
+
+- Create a vector of numbers
+- Store as an object
+- Apply a function to the object
+
+```{r}
 countdown(minutes = 5, 
-          id = "timer1")
-```
-
-## Example: Plotting Democracy Over Time
-
-```{r}
-#| label: plot_democracy
-
-# Load the packages
-library(vdemlite)
-library(ggplot2)
-
-# Use vdemlite to extract democracy scores for France and INdia
-dem_data <- fetchdem(indicators = "v2x_polyarchy",
-                     countries = c("FRA", "IND"))
-
-# And now we can plot the data
-ggplot(dem_data, aes(y = v2x_polyarchy, x = year, color=country_name)) +
-  geom_line() +
-  theme_minimal() +
-  xlab("Year") +
-  ylab("Electoral Democracy Index") +
-  ggtitle("Electoral Democracy, 1970-2022") +
-  geom_hline(yintercept = .5, linetype = "dashed", color = "grey") +
-   scale_color_manual(name="Country", values=c("#E69F00", "#56B4E9")) +
-  ylim(0, 1)
-```
-
-## Example: Plotting Democracy Over Time
-
-```{r}
-#| label: plot_democracy2
-#| echo: true
-#| eval: false
-
-# Load the packages
-library(vdemlite)
-library(ggplot2)
-
-# Use vdemlite to extract democracy scores for France and INdia
-dem_data <- fetchdem(indicators = "v2x_polyarchy",
-                     countries = c("FRA", "IND"))
-
-# And now we can plot the data
-ggplot(dem_data, aes(y = v2x_polyarchy, x = year, color=country_name)) +
-  geom_line() +
-  theme_minimal() +
-  xlab("Year") +
-  ylab("Electoral Democracy Index") +
-  ggtitle("Electoral Democracy, 1970-2022") +
-  geom_hline(yintercept = .5, linetype = "dashed", color = "grey") +
-   scale_color_manual(name="Country", values=c("#E69F00", "#56B4E9")) +
-  ylim(0, 1)
-```
-
-```{r}
-#| label: timer2
-
-library(countdown)
-countdown(minutes = 5, 
-          id = "timer2",
-          bottom = "0%",
+          bottom = "10%",
           right = "10%")
 ```
 
-## Example: UN Voting Trends
+# Packages
+
+## From Functions to Packages {.smaller}
+
+<br>
+
+::: {.incremental}
+-   A *function* is a set of instructions
+    -   `read_csv()` is a function
+    -   `ggplot()` is a function
+-   A *package* is a collection of functions
+    -   `readr` is a package that contains the `read_csv()` function
+    -   `ggplot2` is a package that contains the `ggplot()` function
+-   Use `install.packages()` to install packages
+-   Use `library()` to load packages
+-   You can install packages from CRAN
+:::
+
+## Installing Packages
+
+<br>
+
+- You can install packages from CRAN (Comprehensive R Archive Network)
+- Use the `install.packages()` function to install packages
+- For example, to install the `tidyverse` package, you would run `install.packages("tidyverse")`
+
+## Installing Packages
+
+<br>
+
+- Another way to install packages is from a GitHub repository
+- We will use the `pak` package to install packages from GitHub
+- To install `pak`, run `install.packages("pak")`
+- Then you can use `pak::pkg_install()` to install packages from GitHub
+- For example, to install the `vdemlite` package, you would run `pak::pkg_install("eteitelbaum/vdemlite")`
+
+## Installing Packages
+
+<br>
+
+- You only need to install a package once
+- After you install a package, you can load it with the `library()` function
+- Do **not** put `install.packages()` in your R script or Quarto document
+
+## Your Turn!
+
+<br>
+
+- Install the `tidyverse` package in your environment
+- Load the `tidyverse` package
+- Install the `pak` package
+- Install `vdemlite` using `pak::pkg_install()`
+- Load the `vdemlite` package
 
 ```{r}
-#| label: un_voting
-
-library(tidyverse)
-library(unvotes)
-library(lubridate)
-library(scales)
-library(pacman)
-
-unvotes <- un_votes %>%
-  inner_join(un_roll_calls, by = "rcid") %>%
-  inner_join(un_roll_call_issues, by = "rcid")
-
-unvotes %>%
-  # then filter out to only include the countries we want
-  filter(country %in% c("South Africa", "United States", "France")) %>%
-  # then make sure R understands the the year variable is a data
-  mutate(year = year(date)) %>%
-  # Then group the data by country and year
-  group_by(country, year, issue) %>%
-  # then take the average Yes votes for each country_year
-  summarize(percent_yes = mean(vote == "yes")) %>%
-  # then make a nice plot
-  ggplot(mapping = aes(x = year, y = percent_yes, color = country)) +
-  geom_point(alpha = 0.4) +
-  geom_smooth(method = "loess", se = FALSE) +
-  facet_wrap(~issue) +
-  scale_y_continuous(labels = percent) +
-  scale_color_manual( values=c("#E69F00", "#56B4E9", "#009E73")) +
-  labs(
-    title = "Percentage of 'Yes' votes in the UN General Assembly",
-    subtitle = "1946 to 2019",
-    y = "% Yes",
-    x = "Year",
-    color = "Country"
-  )
-```
-
-## Example: UN Voting Trends
-
-```{r}
-#| label: un_voting2
-#| echo: true
-#| eval: false
-
-library(tidyverse)
-library(unvotes)
-library(lubridate)
-library(scales)
-library(pacman)
-
-unvotes <- un_votes %>%
-  inner_join(un_roll_calls, by = "rcid") %>%
-  inner_join(un_roll_call_issues, by = "rcid")
-
-unvotes %>%
-  # then filter out to only include the countries we want
-  filter(country %in% c("South Africa", "United States", "France")) %>%
-  # then make sure R understands the the year variable is a data
-  mutate(year = year(date)) %>%
-  # Then group the data by country and year
-  group_by(country, year, issue) %>%
-  # then take the average Yes votes for each country_year
-  summarize(percent_yes = mean(vote == "yes")) %>%
-  # then make a nice plot
-  ggplot(mapping = aes(x = year, y = percent_yes, color = country)) +
-  geom_point(alpha = 0.4) +
-  geom_smooth(method = "loess", se = FALSE) +
-  facet_wrap(~issue) +
-  scale_y_continuous(labels = percent) +
-  scale_color_manual( values=c("#E69F00", "#56B4E9", "#009E73")) +
-  labs(
-    title = "Percentage of 'Yes' votes in the UN General Assembly",
-    subtitle = "1946 to 2019",
-    y = "% Yes",
-    x = "Year",
-    color = "Country"
-  )
-```
-
-```{r}
-#| label: timer3
-
-library(countdown)
 countdown(minutes = 5, 
-          id = "timer3",
-          bottom = "8",
+          bottom = "10%",
           right = "10%")
 ```
+
+# Running R and RStudio Locally
+
+## Installing R and RStudio
+
+<br>
+
+- You can install R and RStudio on your local machine
+- Visit [Posit](https://posit.co/download/rstudio-desktop/) to download R and RStudio
+- Install R first, then RStudio
+- You download R from CRAN and RStudio from the RStudio website
+
+
+## Try It!
+
+<br>
+
+- Install R and RStudio on your local machine
+- Open RStudio
+- Open a Quarto document
+- Try some of the code we have used today
+- Install the `tidyverse` package

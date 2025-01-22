@@ -1,0 +1,35 @@
+---
+title: Intro to the Tidyverse
+#subtitle: 
+date: today
+date-format: long
+footer: "[DATS 1001 Website](https://ds4all.rocks)"
+logo: images/ds4all-logo.png
+format:
+  revealjs:
+    theme: [simple, custom.scss]
+    transition: fade
+    slide-number: true
+    chalkboard: true
+execute:
+  echo: false
+  message: false
+  warning: false
+  freeze: auto
+---
+
+
+## The Tidyverse {.smaller}
+
+::: {.incremental}
+-   The Tidyverse is a collection of data science packages
+-   It is also considered a dialect of R
+-   In this class, we will be using many Tidyverse packages
+    -   `ggplot2` for data visualization
+    -   `readr` for reading data
+    -   `dplyr` for data manipulation
+    -   `tidyr` for data tidying
+    -   Etc.
+-   At first we will load the packages independently, e.g. `library(ggplot2)`
+-   Later we will load them all at once with `library(tidyverse)`
+:::

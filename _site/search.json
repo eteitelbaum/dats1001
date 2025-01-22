@@ -4327,7 +4327,7 @@
     "href": "slides/week-2.1.html#your-turn",
     "title": "R Coding Basics",
     "section": "Your Turn!",
-    "text": "Your Turn!\n\n\nGo to the Week 2 module on Posit Cloud\nWork through the first set of challenges there\n\n\n\n\n−+\n05:00"
+    "text": "Your Turn!\n\n\nTry some basic calculations\nTry them in a code chunk in the Quarto doc\nThen try some in the console\n\n\n\n\n−+\n05:00"
   },
   {
     "objectID": "slides/week-2.1.html#lets-get-going-.-.-.",
@@ -5231,5 +5231,82 @@
       "Course information",
       "Support"
     ]
+  },
+  {
+    "objectID": "slides/week-2.1.html#storing-a-vector",
+    "href": "slides/week-2.1.html#storing-a-vector",
+    "title": "R Coding Basics",
+    "section": "Storing a Vector",
+    "text": "Storing a Vector\n\n\nSometimes you want to store more than one number\nIn this case you can store a vector\nA vector is a collection of numbers or characters\n\n\nmy_numbers &lt;- c(1, 2, 3, 4, 5)\n\nmy_numbers\n\n[1] 1 2 3 4 5"
+  },
+  {
+    "objectID": "slides/week-2.1.html#printing-objects",
+    "href": "slides/week-2.1.html#printing-objects",
+    "title": "R Coding Basics",
+    "section": "“Printing” objects",
+    "text": "“Printing” objects\n\n\nSometimes you will see print() used to display the contents of objects\nThis is not typically necessary\nSometimes you need it (like when printing inside of a function)\nBut usually you can just type the name of the object"
+  },
+  {
+    "objectID": "slides/week-2.1.html#your-turn-1",
+    "href": "slides/week-2.1.html#your-turn-1",
+    "title": "R Coding Basics",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\nStore a number in an object\nCreate a vector of numbers and store it in an object\n“Print” the objects by typing the object names\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/week-2.1.html#functions-1",
+    "href": "slides/week-2.1.html#functions-1",
+    "title": "R Coding Basics",
+    "section": "Functions",
+    "text": "Functions\n\nA function is a set of instructions that produces some output\nIn R, you can use built-in functions to perform specific tasks\nFor example, you can use the mean() function to calculate the average of a set of numbers\nTo do this you have to use the combine function c() to create a vector of numbers"
+  },
+  {
+    "objectID": "slides/week-2.1.html#your-turn-2",
+    "href": "slides/week-2.1.html#your-turn-2",
+    "title": "R Coding Basics",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\nCreate a vector of numbers\nStore as an object\nApply a function to the object\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/week-2.1.html#installing-packages",
+    "href": "slides/week-2.1.html#installing-packages",
+    "title": "R Coding Basics",
+    "section": "Installing Packages",
+    "text": "Installing Packages\n\n\nYou can install packages from CRAN (Comprehensive R Archive Network)\nUse the install.packages() function to install packages\nFor example, to install the tidyverse package, you would run install.packages(\"tidyverse\")"
+  },
+  {
+    "objectID": "slides/week-2.1.html#installing-packages-1",
+    "href": "slides/week-2.1.html#installing-packages-1",
+    "title": "R Coding Basics",
+    "section": "Installing Packages",
+    "text": "Installing Packages\n\n\nAnother way to install packages is from a GitHub repository\nWe will use the pak package to install packages from GitHub\nTo install pak, run install.packages(\"pak\")\nThen you can use pak::pkg_install() to install packages from GitHub\nFor example, to install the vdemlite package, you would run pak::pkg_install(\"eteitelbaum/vdemlite\")"
+  },
+  {
+    "objectID": "slides/week-2.1.html#installing-packages-2",
+    "href": "slides/week-2.1.html#installing-packages-2",
+    "title": "R Coding Basics",
+    "section": "Installing Packages",
+    "text": "Installing Packages\n\n\nYou only need to install a package once\nAfter you install a package, you can load it with the library() function\nDo not put install.packages() in your R script or Quarto document"
+  },
+  {
+    "objectID": "slides/week-2.1.html#your-turn-3",
+    "href": "slides/week-2.1.html#your-turn-3",
+    "title": "R Coding Basics",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\nInstall the tidyverse package in your environment\nLoad the tidyverse package\nInstall the pak package\nInstall vdemlite using pak::pkg_install()\nLoad the vdemlite package\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/week-2.1.html#installing-r-and-rstudio",
+    "href": "slides/week-2.1.html#installing-r-and-rstudio",
+    "title": "R Coding Basics",
+    "section": "Installing R and RStudio",
+    "text": "Installing R and RStudio\n\n\nYou can install R and RStudio on your local machine\nVisit Posit to download R and RStudio\nInstall R first, then RStudio\nYou download R from CRAN and RStudio from the RStudio website"
+  },
+  {
+    "objectID": "slides/week-2.1.html#try-it",
+    "href": "slides/week-2.1.html#try-it",
+    "title": "R Coding Basics",
+    "section": "Try It!",
+    "text": "Try It!\n\n\nInstall R and RStudio on your local machine\nOpen RStudio\nOpen a Quarto document\nTry some of the code we have used today\nInstall the tidyverse package"
   }
 ]
