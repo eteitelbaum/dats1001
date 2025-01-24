@@ -5308,5 +5308,110 @@
     "title": "R Coding Basics",
     "section": "Try It!",
     "text": "Try It!\n\n\nInstall R and RStudio on your local machine\nOpen RStudio\nOpen a Quarto document\nTry some of the code we have used today\nInstall the tidyverse package"
+  },
+  {
+    "objectID": "slides/week-2.2.html#a-data-science-workflow",
+    "href": "slides/week-2.2.html#a-data-science-workflow",
+    "title": "Intro to the Tidyverse",
+    "section": "A Data Science Workflow",
+    "text": "A Data Science Workflow"
+  },
+  {
+    "objectID": "slides/week-2.2.html#the-tidyverse",
+    "href": "slides/week-2.2.html#the-tidyverse",
+    "title": "Intro to the Tidyverse",
+    "section": "The Tidyverse",
+    "text": "The Tidyverse\n\n\nThe Tidyverse is a collection of data science packages\nIt is also considered a dialect of R\nIn this class, we will be using many Tidyverse packages\n\nreadr for reading data\n\ntidyr for data tidying\ndplyr for data manipulation\nggplot2 for data visualization\n\nClick here for a full list"
+  },
+  {
+    "objectID": "slides/week-2.2.html#working-with-tidyverse-packages",
+    "href": "slides/week-2.2.html#working-with-tidyverse-packages",
+    "title": "Intro to the Tidyverse",
+    "section": "Working with Tidyverse packages",
+    "text": "Working with Tidyverse packages\n\n\nAt first we will load the packages independently, e.g. library(ggplot2)\nLater we will load them all at once with library(tidyverse)\nAnother way to call a package is with ::, e.g. ggplot2::ggplot()"
+  },
+  {
+    "objectID": "slides/week-2.2.html#reading-data-into-r",
+    "href": "slides/week-2.2.html#reading-data-into-r",
+    "title": "Intro to the Tidyverse",
+    "section": "Reading Data into R",
+    "text": "Reading Data into R\n\n\nLet’s use the readr package to read in a dataset\n\n\nlibrary(readr)\n\ndem_summary &lt;- read_csv(\"data/dem_summary.csv\")"
+  },
+  {
+    "objectID": "slides/week-2.2.html#lets-look-at-the-data",
+    "href": "slides/week-2.2.html#lets-look-at-the-data",
+    "title": "Intro to the Tidyverse",
+    "section": "Let’s Look at the Data",
+    "text": "Let’s Look at the Data\n\nOne way to do this is with the base R head() function\n\nhead(dem_summary)\n\n# A tibble: 6 × 5\n  region         polyarchy gdp_pc  flfp women_rep\n  &lt;chr&gt;              &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;\n1 The West           0.871  37.9   53.0      28.1\n2 Latin America      0.637   9.61  48.1      21.3\n3 Eastern Europe     0.539  12.2   50.5      18.0\n4 Asia               0.408   9.75  50.3      14.5\n5 Africa             0.393   4.41  56.7      17.4\n6 Middle East        0.246  21.1   26.6      10.2"
+  },
+  {
+    "objectID": "slides/week-2.2.html#use-view",
+    "href": "slides/week-2.2.html#use-view",
+    "title": "Intro to the Tidyverse",
+    "section": "Use View()",
+    "text": "Use View()\n\nAnother way to look at the data is with View(). Or click on the name of the data frame in the Environment pane.\n\nView(dem_summary)"
+  },
+  {
+    "objectID": "slides/week-2.2.html#using-glimpse-from-dplyr",
+    "href": "slides/week-2.2.html#using-glimpse-from-dplyr",
+    "title": "Intro to the Tidyverse",
+    "section": "Using glimpse() from dplyr",
+    "text": "Using glimpse() from dplyr\n\nAnother way to look at the data is with glimpse() from the dplyr package.\n\nlibrary(dplyr)\n\nglimpse(dem_summary)\n\nRows: 6\nColumns: 5\n$ region    &lt;chr&gt; \"The West\", \"Latin America\", \"Eastern Europe\", \"Asia\", \"Afri…\n$ polyarchy &lt;dbl&gt; 0.8709230, 0.6371358, 0.5387451, 0.4076602, 0.3934166, 0.245…\n$ gdp_pc    &lt;dbl&gt; 37.913054, 9.610284, 12.176554, 9.746391, 4.410484, 21.134319\n$ flfp      &lt;dbl&gt; 52.99082, 48.12645, 50.45894, 50.32171, 56.69530, 26.57872\n$ women_rep &lt;dbl&gt; 28.12921, 21.32548, 17.99728, 14.45225, 17.44296, 10.21568"
+  },
+  {
+    "objectID": "slides/week-2.2.html#your-turn",
+    "href": "slides/week-2.2.html#your-turn",
+    "title": "Intro to the Tidyverse",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\nRead in the dem_summary.csv file\nUse the three methods we discussed to view the data\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/week-2.2.html#a-few-more-basic-dplyr-functions",
+    "href": "slides/week-2.2.html#a-few-more-basic-dplyr-functions",
+    "title": "Intro to the Tidyverse",
+    "section": "A Few More Basic dplyr Functions",
+    "text": "A Few More Basic dplyr Functions\n\nUse select() to choose columns.\n\ndem_summary_abbr &lt;- dem_summary |&gt;\n  select(polyarchy, gdp_pc)\n\nglimpse(dem_summary_abbr)\n\nRows: 6\nColumns: 2\n$ polyarchy &lt;dbl&gt; 0.8709230, 0.6371358, 0.5387451, 0.4076602, 0.3934166, 0.245…\n$ gdp_pc    &lt;dbl&gt; 37.913054, 9.610284, 12.176554, 9.746391, 4.410484, 21.134319"
+  },
+  {
+    "objectID": "slides/week-2.2.html#a-few-more-basic-dplyr-functions-1",
+    "href": "slides/week-2.2.html#a-few-more-basic-dplyr-functions-1",
+    "title": "Intro to the Tidyverse",
+    "section": "A Few More Basic dplyr Functions",
+    "text": "A Few More Basic dplyr Functions\nUse filter() to choose rows.\n\ndem_summary_abbr &lt;- dem_summary |&gt;\n  filter(gdp_pc &gt; 10)\n\nglimpse(dem_summary_abbr)\n\nRows: 3\nColumns: 5\n$ region    &lt;chr&gt; \"The West\", \"Eastern Europe\", \"Middle East\"\n$ polyarchy &lt;dbl&gt; 0.8709230, 0.5387451, 0.2458892\n$ gdp_pc    &lt;dbl&gt; 37.91305, 12.17655, 21.13432\n$ flfp      &lt;dbl&gt; 52.99082, 50.45894, 26.57872\n$ women_rep &lt;dbl&gt; 28.12921, 17.99728, 10.21568\n\n\n\n\n\n\n\n\nNote\n\n\nUsing the same name for the data frame results in overwriting the original data frame. If you want to keep the original data frame, use a different name."
+  },
+  {
+    "objectID": "slides/week-2.2.html#a-few-more-basic-dplyr-functions-2",
+    "href": "slides/week-2.2.html#a-few-more-basic-dplyr-functions-2",
+    "title": "Intro to the Tidyverse",
+    "section": "A Few More Basic dplyr Functions",
+    "text": "A Few More Basic dplyr Functions\nUse mutate() to create new columns.\n\ndem_summary_abbr &lt;- dem_summary |&gt;\n  mutate(gdp_pc_thousands = gdp_pc * 1000)\n\nglimpse(dem_summary_abbr)\n\nRows: 6\nColumns: 6\n$ region           &lt;chr&gt; \"The West\", \"Latin America\", \"Eastern Europe\", \"Asia\"…\n$ polyarchy        &lt;dbl&gt; 0.8709230, 0.6371358, 0.5387451, 0.4076602, 0.3934166…\n$ gdp_pc           &lt;dbl&gt; 37.913054, 9.610284, 12.176554, 9.746391, 4.410484, 2…\n$ flfp             &lt;dbl&gt; 52.99082, 48.12645, 50.45894, 50.32171, 56.69530, 26.…\n$ women_rep        &lt;dbl&gt; 28.12921, 21.32548, 17.99728, 14.45225, 17.44296, 10.…\n$ gdp_pc_thousands &lt;dbl&gt; 37913.054, 9610.284, 12176.554, 9746.391, 4410.484, 2…"
+  },
+  {
+    "objectID": "slides/week-2.2.html#your-turn-1",
+    "href": "slides/week-2.2.html#your-turn-1",
+    "title": "Intro to the Tidyverse",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\nUse your new dplyr verbs to manipulate the data\nSelect columns, filter rows, and create new columns\n\n\n\n\n−+\n05:00"
+  },
+  {
+    "objectID": "slides/week-2.2.html#basic-data-viz-with-ggplot2",
+    "href": "slides/week-2.2.html#basic-data-viz-with-ggplot2",
+    "title": "Intro to the Tidyverse",
+    "section": "Basic Data Viz with ggplot2",
+    "text": "Basic Data Viz with ggplot2\n\n\nggplot2 is a powerful data visualization package\nIt is based on the grammar of graphics\nWe will talk about this more in depth later"
+  },
+  {
+    "objectID": "slides/week-2.2.html#basic-data-viz-with-ggplot2-1",
+    "href": "slides/week-2.2.html#basic-data-viz-with-ggplot2-1",
+    "title": "Intro to the Tidyverse",
+    "section": "Basic Data Viz with ggplot2",
+    "text": "Basic Data Viz with ggplot2\n\nFor now, let’s make a simple column chart\n\n\n\nCode\nlibrary(ggplot2)\n\nggplot(data = dem_summary, aes(x = region, y = polyarchy)) +\n  geom_col(fill = \"dodgerblue\")"
+  },
+  {
+    "objectID": "slides/week-2.2.html#your-turn-2",
+    "href": "slides/week-2.2.html#your-turn-2",
+    "title": "Intro to the Tidyverse",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\nUse ggplot2 to make a simple column chart\nChoose a different variable to plot\nChange the color of the bars\n\n\n\n\n−+\n05:00"
   }
 ]

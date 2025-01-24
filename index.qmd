@@ -27,11 +27,11 @@ submitted by 11:59 p.m. on the due date***.
 
 ::: column-screen-inset-right
 | Week | Date | Topic | Reading | Video | Slides | Assignment | Due Date |
-|:--:|----|----|:--:|:--:|:--:|:--:|:--:|
+|:-------:|---------|---------|:-------:|:-------:|:-------:|:-------:|:-------:|
 | 1 | `r advdate(wed,0)` | Welcome to DATS 1001 | [📖](https://rstudio-education.github.io/hopr/starting.html "hopwr, Appendix A and B") [📖](https://quarto.org/docs/get-started/hello/rstudio.html "Hello, Quarto") | [📺](https://youtu.be/eimM6pNkYjE) [📺](https://youtu.be/6QN9ZYURDFg) | [🖥️](slides/week-1.1.qmd "Week 1.2 slides") |  |  |
 |  | `r advdate(fri,0)` | Meet ouR tech stack | [📖](https://www.markdownguide.org/getting-started/ "Markdown Guide") | [📺](https://www.youtube.com/watch?v=bTVIMt3XllM) | [🖥️](slides/week-1.2.qmd "Week 1.2 slides") |  |  |
 | 2 | `r advdate(wed,1)` | R coding basics | [📖](https://rstudio-education.github.io/hopr/basics.html) | [📺](https://www.youtube.com/watch?v=hvFBDmT4bdY) [📺](https://youtu.be/9f2g7RN5N0I?si=WMsaGlhFC7Fx-ZNy) | [🖥️](slides/week-2.1.qmd "Week 2.1 slides") |  |  |
-|  | `r advdate(fri,1)` | Intro to the Tidyverse |  |  |  |  |  |
+|  | `r advdate(fri,1)` | Intro to the Tidyverse | [📖](https://r4ds.hadley.nz/intro) | [📺](https://youtu.be/izFssYRsLZs?si=b6Oy4atpRrkfEKzB "Hadley Wickham on code maintenance") | 🖥️ |  |  |
 | 3 | `r advdate(wed,2)` | Grammar of graphics | [📖](https://r4ds.hadley.nz/data-import "r4ds, chap. 7") [📖](https://r4ds.hadley.nz/data-visualize.html "r4ds, 2") | [📺](https://youtu.be/QG1oDJPoIio "Make a bar chart") [📺](https://youtu.be/-1YhCql-gMo "Make a histogram") | [🖥️](slides/week-3.1.qmd "Week 3.1 slides") |  |  |
 |  | `r advdate(fri,2)` | Which visualization do I use? | [📖](https://r4ds.hadley.nz/layers.html "r4ds, 9.1-9.4") | [📺](https://youtu.be/PnmQ2MFQpIc "Make a line chart") [📺](https://youtu.be/FiosjUVyfLM "Make a scatterplot") | [🖥️](slides/week-3.2.qmd "Week 3.2 slides") |  |  |
 | 4 | `r advdate(wed,3)` | Visualization best practices | [📖](https://r4ds.hadley.nz/communication "r4ds, chap. 11") | 📺 | [🖥️](slides/week-4.1.qmd "Week 4.1 slides") |  |  |

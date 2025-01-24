@@ -1,0 +1,214 @@
+---
+title: Intro to the Tidyverse
+date: today
+date-format: long
+footer: "[DATS 1001 Website](https://ds4all.rocks)"
+logo: images/ds4all-logo.png
+format:
+  revealjs:
+    theme: [simple, custom.scss]
+    transition: fade
+    slide-number: true
+    chalkboard: true
+execute:
+  echo: false
+  message: false
+  warning: false
+  freeze: auto
+---
+
+## A Data Science Workflow
+
+<br>
+
+![ ](images/ds-workflow.png)
+
+## The Tidyverse
+
+::: {.incremental}
+-   The Tidyverse is a collection of data science packages
+-   It is also considered a dialect of R
+-   In this class, we will be using many Tidyverse packages
+    - `readr` for reading data   
+    - `tidyr` for data tidying
+    - `dplyr` for data manipulation
+    - `ggplot2` for data visualization
+-   Click [here](https://www.tidyverse.org/packages/) for a full list
+:::
+
+## Working with Tidyverse packages
+
+<br>
+
+-   At first we will load the packages independently, e.g. `library(ggplot2)`
+-   Later we will load them all at once with `library(tidyverse)`
+-   Another way to call a package is with `::`, e.g. `ggplot2::ggplot()`
+
+## Reading Data into R
+
+<br>
+
+- Let's use the `readr` package to read in a dataset
+
+```{r}
+#| echo: true
+
+library(readr)
+
+dem_summary <- read_csv("data/dem_summary.csv")
+```
+
+## Let's Look at the Data
+
+<br>
+
+One way to do this is with the base R `head()` function
+
+```{r}
+#| echo: true
+
+head(dem_summary)
+```
+
+## Use `View()` 
+
+<br>
+
+Another way to look at the data is with `View()`. Or click on the name of the data frame in the Environment pane.
+
+```{r}
+#| echo: true
+
+View(dem_summary)
+```
+
+## Using `glimpse()` from `dplyr`
+
+<br>
+
+Another way to look at the data is with `glimpse()` from the `dplyr` package.
+
+```{r}
+#| echo: true
+
+library(dplyr)
+
+glimpse(dem_summary)
+```
+
+## Your Turn! 
+
+<br>
+
+- Read in the `dem_summary.csv` file
+- Use the three methods we discussed to view the data
+
+```{r}
+library(countdown)
+countdown(minutes = 5, 
+          bottom = "10%",
+          right = "10%",
+          color_border = "#fff",
+          color_text = "#fff",
+          color_running_background = "#42affa",
+          color_running_text = "black",
+          color_finished_background = "#E5D19D",
+          color_finished_text = "#00264A")
+```
+
+## A Few More Basic `dplyr` Functions
+
+<br>
+
+Use `select()` to choose columns.
+
+```{r}
+#| echo: true
+
+dem_summary_abbr <- dem_summary |>
+  select(polyarchy, gdp_pc)
+
+glimpse(dem_summary_abbr)
+```
+
+## A Few More Basic `dplyr` Functions
+
+Use `filter()` to choose rows.
+
+```{r}
+#| echo: true
+
+dem_summary_abbr <- dem_summary |>
+  filter(gdp_pc > 10)
+
+glimpse(dem_summary_abbr)
+```
+
+::: {.callout-note}
+Using the same name for the data frame results in overwriting the original data frame. If you want to keep the original data frame, use a different name.
+:::
+
+## A Few More Basic `dplyr` Functions
+
+Use `mutate()` to create new columns.
+
+```{r}
+#| echo: true
+
+dem_summary_abbr <- dem_summary |>
+  mutate(gdp_pc_thousands = gdp_pc * 1000)
+
+glimpse(dem_summary_abbr)
+```
+
+## Your Turn! 
+
+<br>
+
+- Use your new `dplyr` verbs to manipulate the data
+- Select columns, filter rows, and create new columns
+
+```{r}
+library(countdown)
+countdown(minutes = 5, 
+          bottom = "10%",
+          right = "10%")
+```
+
+## Basic Data Viz with `ggplot2`
+
+<br>
+
+-   `ggplot2` is a powerful data visualization package
+-   It is based on the grammar of graphics
+-   We will talk about this more in depth later
+
+
+## Basic Data Viz with `ggplot2`
+
+- For now, let's make a simple column chart
+
+```{r}
+#| echo: true
+#| code-fold: true
+
+library(ggplot2)
+
+ggplot(data = dem_summary, aes(x = region, y = polyarchy)) +
+  geom_col(fill = "dodgerblue") 
+```
+
+## Your Turn! 
+
+<br>
+
+- Use `ggplot2` to make a simple column chart
+- Choose a different variable to plot
+- Change the color of the bars
+
+```{r}
+library(countdown)
+countdown(minutes = 5, 
+          bottom = "10%",
+          right = "10%")
+```
