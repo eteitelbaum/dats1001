@@ -5377,7 +5377,7 @@
     "href": "slides/week-2.2.html#a-few-more-basic-dplyr-functions-1",
     "title": "Intro to the Tidyverse",
     "section": "A Few More Basic dplyr Functions",
-    "text": "A Few More Basic dplyr Functions\nUse filter() to choose rows.\n\ndem_summary_abbr &lt;- dem_summary |&gt;\n  filter(gdp_pc &gt; 10)\n\nglimpse(dem_summary_abbr)\n\nRows: 3\nColumns: 5\n$ region    &lt;chr&gt; \"The West\", \"Eastern Europe\", \"Middle East\"\n$ polyarchy &lt;dbl&gt; 0.8709230, 0.5387451, 0.2458892\n$ gdp_pc    &lt;dbl&gt; 37.91305, 12.17655, 21.13432\n$ flfp      &lt;dbl&gt; 52.99082, 50.45894, 26.57872\n$ women_rep &lt;dbl&gt; 28.12921, 17.99728, 10.21568\n\n\n\n\n\n\n\n\nNote\n\n\n\nUsing the same name for the data frame results in overwriting the original data frame. If you want to keep the original data frame, use a different name."
+    "text": "A Few More Basic dplyr Functions\nUse filter() to choose rows.\n\ndem_summary_abbr &lt;- dem_summary |&gt;\n  filter(gdp_pc &gt; 10)\n\nglimpse(dem_summary_abbr)\n\nRows: 3\nColumns: 5\n$ region    &lt;chr&gt; \"The West\", \"Eastern Europe\", \"Middle East\"\n$ polyarchy &lt;dbl&gt; 0.8709230, 0.5387451, 0.2458892\n$ gdp_pc    &lt;dbl&gt; 37.91305, 12.17655, 21.13432\n$ flfp      &lt;dbl&gt; 52.99082, 50.45894, 26.57872\n$ women_rep &lt;dbl&gt; 28.12921, 17.99728, 10.21568\n\n\n\n\n\n\n\n\nNote\n\n\nUsing the same name for the data frame results in overwriting the original data frame. If you want to keep the original data frame, use a different name."
   },
   {
     "objectID": "slides/week-2.2.html#a-few-more-basic-dplyr-functions-2",
