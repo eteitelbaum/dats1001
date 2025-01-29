@@ -129,7 +129,7 @@ ggplot(dem_summary, aes(x = region, y = polyarchy)) +
 <br>
 
 ::: {.callout-tip}
-See [here](http://sape.inf.usi.ch/quick-reference/ggplot2/colour) for more `available`ggplot2` colors. 
+See [here](http://sape.inf.usi.ch/quick-reference/ggplot2/colour) for more available `ggplot2` colors. 
 :::
 
 ## 
@@ -243,7 +243,7 @@ Now let's change the theme to `theme_minimal()`.
 ```{r}
 #| label: barchart11
 #| eval: false
-#| code-line-numbers: "8"
+#| code-line-numbers: "8-9"
 
 ggplot(dem_summary, aes(x = reorder(region, -polyarchy), y = polyarchy)) +
   geom_col(fill = "steelblue") + 
@@ -252,7 +252,8 @@ ggplot(dem_summary, aes(x = reorder(region, -polyarchy), y = polyarchy)) +
     y = "Avg. Polyarchy Score", 
     title = "Democracy by region, 1990 - present", 
     caption = "Source: V-Dem Institute"
-    ) + theme_minimal()
+    ) + 
+  theme_minimal()
 ```
 
 <br>

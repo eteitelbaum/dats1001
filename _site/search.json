@@ -3648,7 +3648,7 @@
     "href": "slides/week-3.1.html#section-4",
     "title": "Grammar of Graphics",
     "section": "",
-    "text": "…let’s change the color of the columns by specifying fill = \"steelblue\".\n\n\nggplot(dem_summary, aes(x = region, y = polyarchy)) + \n  geom_col(fill = \"steelblue\")\n\n\n\n\n\n\n\n\nTip\n\n\nSee here for more availableggplot2` colors."
+    "text": "…let’s change the color of the columns by specifying fill = \"steelblue\".\n\n\nggplot(dem_summary, aes(x = region, y = polyarchy)) + \n  geom_col(fill = \"steelblue\")\n\n\n\n\n\n\n\n\nTip\n\n\nSee here for more available ggplot2 colors."
   },
   {
     "objectID": "slides/week-3.1.html#section-5",
@@ -3690,7 +3690,7 @@
     "href": "slides/week-3.1.html#section-10",
     "title": "Grammar of Graphics",
     "section": "",
-    "text": "Now let’s change the theme to theme_minimal().\n\n\nggplot(dem_summary, aes(x = reorder(region, -polyarchy), y = polyarchy)) +\n  geom_col(fill = \"steelblue\") + \n  labs(\n    x = \"Region\", \n    y = \"Avg. Polyarchy Score\", \n    title = \"Democracy by region, 1990 - present\", \n    caption = \"Source: V-Dem Institute\"\n    ) + theme_minimal()\n\n\n\n\n\n\n\n\nTip\n\n\nSee here for available ggplot2 themes."
+    "text": "Now let’s change the theme to theme_minimal().\n\n\nggplot(dem_summary, aes(x = reorder(region, -polyarchy), y = polyarchy)) +\n  geom_col(fill = \"steelblue\") + \n  labs(\n    x = \"Region\", \n    y = \"Avg. Polyarchy Score\", \n    title = \"Democracy by region, 1990 - present\", \n    caption = \"Source: V-Dem Institute\"\n    ) + \n  theme_minimal()\n\n\n\n\n\n\n\n\nTip\n\n\nSee here for available ggplot2 themes."
   },
   {
     "objectID": "slides/week-3.1.html#section-11",
