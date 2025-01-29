@@ -1,22 +1,28 @@
 ---
 title: "Week 2"
-subtitle: "The Political Economy of Regime Type"
-editor: visual
+subtitle: "Intro to R"
 ---
 
 ## Readings
 
-📖 Acemoglu and Robinson, ["Rents and Economic
-Development"](https://link-springer-com.proxygw.wrlc.org/article/10.1007/s11127-019-00645-z "Acemoglu and Robinson")
+📖 HOPWR, [The Very Basics](https://rstudio-education.github.io/hopr/basics.html)
 
-📖 Cheibub and Vreeland, ["Modernization
-Theory"](https://blackboard.gwu.edu/webapps/blackboard/execute/content/file?cmd=view&mode=designer&content_id=_12817118_1&course_id=_380501_1 "Cheibub and Vreeland")
+📖 r4ds,
+[Introduction](https://rstudio-education.github.io/hopr/basics.html)
+
+## Videos
+
+📺 [Using Functions and Obejcts in R](https://www.youtube.com/watch?v=hvFBDmT4bdY)
+
+📺 [Explore the Data Frame](https://youtu.be/9f2g7RN5N0I?si=WMsaGlhFC7Fx-ZNy)
+
+📺 [Maintaining the House the Tidyverse Built](https://youtu.be/izFssYRsLZs?si=b6Oy4atpRrkfEKzB)
 
 ## Slides
 
-🖥️ [Institutions and Development](/slides/lecture-2.1.html)
+🖥️ [R Coding Basics](slides/week-2.1.qmd)
 
-🖥️ [Modernization Theory](/slides/lecture-2.2.html)
+🖥️ [Intro to the Tidyverse](slides/week-2.1.qmd)
 
 <br><br>
 

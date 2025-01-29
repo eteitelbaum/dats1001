@@ -1,7 +1,6 @@
 ---
 title: "Week 1"
 subtitle: "Course Overview"
-editor: visual
 ---
 
 ## Readings
@@ -12,7 +11,8 @@ resources](/course-support.qmd)
 📖 [HOPWR](https://rstudio-education.github.io/hopr/starting.html),
 Appendix A and B
 
-📖 [Hello, Quarto](https://quarto.org/docs/get-started/hello/rstudio.html)
+📖 [Hello,
+Quarto](https://quarto.org/docs/get-started/hello/rstudio.html)
 
 📖 [Markdown Guide](https://www.markdownguide.org/getting-started/)
 

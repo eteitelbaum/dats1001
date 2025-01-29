@@ -1,32 +1,31 @@
 ---
 title: "Week 3"
 subtitle: "Challenges to Democracy"
-editor: visual
 ---
-
-::: callout-important
-"Data Assignment 1: Working With Data in Excel" is due on Sunday,
-February 5
-:::
 
 ## Readings
 
-📖Kaufman and Haggard, ["Democratic Decline in the United
-States"](https://doi.org/10.1017/S1537592718003377)
+📖 r4ds, [Data Import](https://r4ds.hadley.nz/data-import)
 
-📖Michael Ross, [The Oil
-Curse](https://www-jstor-org.proxygw.wrlc.org/stable/j.ctt7s3wz.10)*,*
-Chapter 3
+📖 r4ds, [Data Visualization](https://r4ds.hadley.nz/data-visualize)
+
+📖 r4ds, [Layers](https://r4ds.hadley.nz/layers), sections 9.1-9.4
+
+## Videos
+
+📺 [Make a Bar Chart with ggplot2](https://youtu.be/QG1oDJPoIio)
+
+📺 [Make a Histogram with ggplot2](https://youtu.be/-1YhCql-gMo)
+
+📺 [Make a Line Chart with ggplot2](https://youtu.be/PnmQ2MFQpIc)
+
+📺 [Make a Scatterplot with ggplot2](https://youtu.be/FiosjUVyfLM)
 
 ## Slides
 
-🖥️ [Democratic backsliding](/slides/lecture-3.1.html)
+🖥 [Grammar of Graphics](slides/week-3.1.qmd)
 
-🖥️ [The resource curse](/slides/lecture-3.2.html)
-
-## Assignments
-
-🧮 [Data Assignment 1](/assignments/data-assignment-1.html)
+🖥 [Which Visualization Do I Use?](slides/week-3.2.qmd)
 
 <br><br>
 
