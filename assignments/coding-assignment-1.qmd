@@ -46,15 +46,13 @@ library(plotly)
 
 *c) Now click on the data frame in the Environment tab or use `View()` to scroll through the data frame. What countries, years and variables are in the data frame? What are the measures of democracy?*
 
-*d) Now choose one of the democracy indicators and visualize it with a line chart using `ggplot2`. Be sure to specify `x = `, `y = ` and `color =` in your aes() call and use `geom_line()` to create the chart.Add appropriate axis labels, a title and a caption. Now add a colorblind-friendly color map using `viridis` and a theme.* 
+*d) Now choose one of the democracy indicators and visualize it for the countries in the dataset with a line chart using `ggplot2`. Be sure to specify `x = `, `y = ` and `color =` in your aes() call and use `geom_line()` to create the chart.Add appropriate axis labels, a title and a caption. Now add a colorblind-friendly color map using `viridis` and a theme.* 
 
 ```{r}
 
 ```
 
 *e) In a few sentences below, interpret your chart. Describe the levels and trends in democracy scores. Put your answer right below this line in markdown text (DO NOT write your comments in a code chunk!!).*
-
-
 
 ## Step 2: Make a column chart comparing regional levels (20 pts)
 
@@ -88,7 +86,7 @@ library(plotly)
 
 ```
 
-*c) Next add a trend line with `geom_smooth()` preferably with a linear model (method = "lm"). Note that you will get some warnings about missing data points and a message about the linear model. Try setting `warning: false` at the top of the code chunk with the hash pipe (#|) operator.*  
+*c) Next add a trend line with `geom_smooth()` preferably with a linear model (method = "lm"). Note that you will get some warnings about missing data points and a message about the linear model. Try setting `warning: false` at the top of the code chunk with the hash pipe (#|) operator. Make sure that you have just ONE TREND LINE in your scatter plot (not one for each region).*  
 
 ```{r}
 

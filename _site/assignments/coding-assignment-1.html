@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Your Name">
-<meta name="dcterms.date" content="2025-01-28">
+<meta name="dcterms.date" content="2025-02-03">
 
 <title>Homework 1 – DATS 1001–Fall Schedule</title>
 <style>
@@ -353,7 +353,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">January 28, 2025</p>
+      <p class="date">February 3, 2025</p>
     </div>
   </div>
   
@@ -387,7 +387,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><em>a) Read in the data from line_chart.csv using <code>read_csv()</code> in an object called <code>line_chart_dta</code>.</em></p>
 <p><em>b) Now use <code>glimpse()</code> to inspect the data. How many rows and columns are in the data frame? Write your answer below the code chunk</em></p>
 <p><em>c) Now click on the data frame in the Environment tab or use <code>View()</code> to scroll through the data frame. What countries, years and variables are in the data frame? What are the measures of democracy?</em></p>
-<p><em>d) Now choose one of the democracy indicators and visualize it with a line chart using <code>ggplot2</code>. Be sure to specify <code>x =</code>, <code>y =</code> and <code>color =</code> in your aes() call and use <code>geom_line()</code> to create the chart.Add appropriate axis labels, a title and a caption. Now add a colorblind-friendly color map using <code>viridis</code> and a theme.</em></p>
+<p><em>d) Now choose one of the democracy indicators and visualize it for the countries in the dataset with a line chart using <code>ggplot2</code>. Be sure to specify <code>x =</code>, <code>y =</code> and <code>color =</code> in your aes() call and use <code>geom_line()</code> to create the chart.Add appropriate axis labels, a title and a caption. Now add a colorblind-friendly color map using <code>viridis</code> and a theme.</em></p>
 <p><em>e) In a few sentences below, interpret your chart. Describe the levels and trends in democracy scores. Put your answer right below this line in markdown text (DO NOT write your comments in a code chunk!!).</em></p>
 </section>
 <section id="step-2-make-a-column-chart-comparing-regional-levels-20-pts" class="level2">
@@ -401,7 +401,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="step-3-make-a-scatter-plot-20-pts">Step 3: Make a scatter plot (20 pts)</h2>
 <p><em>a) Load the scatter plot data with <code>read_csv()</code>from <code>scatter_plot.csv</code>, storing the data in an object called <code>scatter_plot_dta</code>. Then glimpse or view the data and describe briefly what you see. Note that the values you see are country averages for the variables over the period 2010 - 2019.</em></p>
 <p><em>b) Now build a scatter plot with <code>ggplot2</code> using these data. Put GDP on the x-axis and one of the measures of democracy on the y-axis and color the points by region. Stretch the x-axis on a log scale and use the <code>scales</code> package to add a prefix and suffix to the x-axis numbers to indicate that they are dollar figures. Add appropriate labels and a <code>viridis</code> color map and add your favorite theme. Note that you will get some warnings about a few missing data points, so try setting <code>warning: false</code> at the top of the code chunk with the hash pipe (#|) operator.</em></p>
-<p><em>c) Next add a trend line with <code>geom_smooth()</code> preferably with a linear model (method = “lm”). Note that you will get some warnings about missing data points and a message about the linear model. Try setting <code>warning: false</code> at the top of the code chunk with the hash pipe (#|) operator.</em></p>
+<p><em>c) Next add a trend line with <code>geom_smooth()</code> preferably with a linear model (method = “lm”). Note that you will get some warnings about missing data points and a message about the linear model. Try setting <code>warning: false</code> at the top of the code chunk with the hash pipe (#|) operator. Make sure that you have just ONE TREND LINE in your scatter plot (not one for each region).</em></p>
 </section>
 <section id="step-4-additional-tasks-20-pts" class="level2">
 <h2 class="anchored" data-anchor-id="step-4-additional-tasks-20-pts">Step 4: Additional Tasks (20 pts)</h2>
