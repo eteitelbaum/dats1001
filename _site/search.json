@@ -1060,6 +1060,13 @@
     "text": "When to Use a Color Scheme\n\n\nUse a color scheme when you want to differentiate between categories or groups\nBut only when the color adds value to the visualization\nIn this case, region is already differentiated by column height"
   },
   {
+    "objectID": "slides/week-4.1.html#your-turn-1",
+    "href": "slides/week-4.1.html#your-turn-1",
+    "title": "Data Viz Best Practices",
+    "section": "Your Turn!",
+    "text": "Your Turn!\n\n\nPractice applying color schemes to a scatter plot\nFirst, try a color scheme for a discrete variable\nThen, try a color scheme for a continuous variable\n\n\n\n\n−+\n05:00"
+  },
+  {
     "objectID": "slides/week-4.1.html#facet-wrapping",
     "href": "slides/week-4.1.html#facet-wrapping",
     "title": "Data Viz Best Practices",
@@ -1088,8 +1095,8 @@
     "text": "Facet Wrapping\n\nDon’t forget to take the legend title out of the captions…\n\nggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + \n  geom_point() + \n  geom_smooth(method = \"lm\", linewidth = 1) + \n  facet_wrap(~ region) +\n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\"\n    )"
   },
   {
-    "objectID": "slides/week-4.1.html#your-turn-1",
-    "href": "slides/week-4.1.html#your-turn-1",
+    "objectID": "slides/week-4.1.html#your-turn-2",
+    "href": "slides/week-4.1.html#your-turn-2",
     "title": "Data Viz Best Practices",
     "section": "Your Turn!",
     "text": "Your Turn!\n\n\nFacet wrap your scatter plot\nUse scales = \"free\" in facet_wrap call to fix the West\n\nfacet_wrap(~ region, scales = \"free\")\n\n\n\n\n\n−+\n05:00"
@@ -1109,8 +1116,8 @@
     "text": "Labeling Points\n\nFilter for Asia, add labels with geom_text()…\n\ndem_summary_ctry |&gt; \n  filter(region == \"Asia\") |&gt;\n  ggplot(aes(x = gdp_pc, y = polyarchy)) + \n    geom_point() + \n    geom_text(aes(label = country), size = 2, vjust = 2) +\n    geom_smooth(method = \"lm\", linewidth = 1) +\n    scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n      labs(\n        x= \"GDP Per Capita\", \n        y = \"Polyarchy Score\",\n        title = \"Wealth and democracy in Asia, 1990 - present\", \n        caption = \"Source: V-Dem Institute\"\n        )"
   },
   {
-    "objectID": "slides/week-4.1.html#your-turn-2",
-    "href": "slides/week-4.1.html#your-turn-2",
+    "objectID": "slides/week-4.1.html#your-turn-3",
+    "href": "slides/week-4.1.html#your-turn-3",
     "title": "Data Viz Best Practices",
     "section": "Your Turn!",
     "text": "Your Turn!\n\n\nFilter for Asia or another region\nUse geom_text() to add labels to your points\nPlay with size and vjust paramters\n\n\n\n\n−+\n05:00"
@@ -1130,8 +1137,8 @@
     "text": "Use plotly to make any plot interactive…\n\nlibrary(plotly)\n\nmodernization_plot &lt;- ggplot(dem_summary_ctry, aes(x = gdp_pc, y = polyarchy)) + \n  geom_point(aes(color = region)) + \n  aes(label = country) +\n  geom_smooth(method = \"lm\", linewidth = 1) + \n  scale_x_log10(labels = scales::label_number(prefix = \"$\", suffix = \"k\")) +\n  labs(\n    x= \"GDP per Capita\", \n    y = \"Polyarchy Score\",\n    title = \"Wealth and democracy, 1990 - present\", \n    caption = \"Source: V-Dem Institute\", \n    color = \"Region\"\n    ) +\n  scale_color_viridis_d(option = \"inferno\", end = .8)\n\nggplotly(modernization_plot, tooltip = c(\"country\", \"gdp_pc\", \"polyarchy\"))"
   },
   {
-    "objectID": "slides/week-4.1.html#your-turn-3",
-    "href": "slides/week-4.1.html#your-turn-3",
+    "objectID": "slides/week-4.1.html#your-turn-4",
+    "href": "slides/week-4.1.html#your-turn-4",
     "title": "Data Viz Best Practices",
     "section": "Your Turn!",
     "text": "Your Turn!\n\n\nMake your scatter plot interactive with plotly\nUse tooltip argument to show more information on hover\nMake sure to include an additional aesthetic in aes() for the label\n\n\n\n\n−+\n05:00"
@@ -2529,7 +2536,7 @@
     "href": "weeks/week-2.html#slides",
     "title": "Week 2",
     "section": "Slides",
-    "text": "Slides\n🖥️ R Coding Basics\n🖥️ Intro to the Tidyverse\n\n\nBack to course schedule ⏎",
+    "text": "Slides\n🖥 R Coding Basics\n🖥 Intro to the Tidyverse\n\n\nBack to course schedule ⏎",
     "crumbs": [
       "Weekly materials",
       "Week 2"
@@ -3170,28 +3177,28 @@
     "href": "weeks/week-4.html",
     "title": "Week 4",
     "section": "",
-    "text": "Important\n\n\n\nExam 1 is due on Sunday, February 12"
+    "text": "Important\n\n\n\nCoding Assignment 1 is due on Monday, February 10"
   },
   {
     "objectID": "weeks/week-4.html#readings",
     "href": "weeks/week-4.html#readings",
     "title": "Week 4",
     "section": "Readings",
-    "text": "Readings\n📖 Hessami and Lopes da Fonseca, “Female Political Representation and Substantive Effects on Policies”"
+    "text": "Readings\n📖 r4ds, Communication\n📖 Lipset, Some Social Requisites of Democracy"
   },
   {
     "objectID": "weeks/week-4.html#slides",
     "href": "weeks/week-4.html#slides",
     "title": "Week 4",
     "section": "Slides",
-    "text": "Slides\n🖥️ Women’s empowerment\n🖥️ Exam 1 review"
+    "text": "Slides\n🖥 Visualization Best Practices\n🖥 Red green colourblindess, do you have it?"
   },
   {
     "objectID": "weeks/week-4.html#assignments",
     "href": "weeks/week-4.html#assignments",
     "title": "Week 4",
     "section": "Assignments",
-    "text": "Assignments\n📘 Exam 1\n\n\nBack to course schedule ⏎"
+    "text": "Assignments\n🧮 Coding Assignment 1\n\n\nBack to course schedule ⏎"
   },
   {
     "objectID": "weeks/week-3.html",

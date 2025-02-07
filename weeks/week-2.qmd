@@ -5,24 +5,28 @@ subtitle: "Intro to R"
 
 ## Readings
 
-📖 HOPWR, [The Very Basics](https://rstudio-education.github.io/hopr/basics.html)
+📖 HOPWR, [The Very
+Basics](https://rstudio-education.github.io/hopr/basics.html)
 
 📖 r4ds,
 [Introduction](https://rstudio-education.github.io/hopr/basics.html)
 
 ## Videos
 
-📺 [Using Functions and Obejcts in R](https://www.youtube.com/watch?v=hvFBDmT4bdY)
+📺 [Using Functions and Obejcts in
+R](https://www.youtube.com/watch?v=hvFBDmT4bdY)
 
-📺 [Explore the Data Frame](https://youtu.be/9f2g7RN5N0I?si=WMsaGlhFC7Fx-ZNy)
+📺 [Explore the Data
+Frame](https://youtu.be/9f2g7RN5N0I?si=WMsaGlhFC7Fx-ZNy)
 
-📺 [Maintaining the House the Tidyverse Built](https://youtu.be/izFssYRsLZs?si=b6Oy4atpRrkfEKzB)
+📺 [Maintaining the House the Tidyverse
+Built](https://youtu.be/izFssYRsLZs?si=b6Oy4atpRrkfEKzB)
 
 ## Slides
 
-🖥️ [R Coding Basics](slides/week-2.1.qmd)
+🖥 [R Coding Basics](/slides/week-2.1.qmd)
 
-🖥️ [Intro to the Tidyverse](slides/week-2.1.qmd)
+🖥 [Intro to the Tidyverse](/slides/week-2.1.qmd)
 
 <br><br>
 

@@ -1,6 +1,6 @@
 ---
 title: "Week 3"
-subtitle: "Challenges to Democracy"
+subtitle: "Data Visualization"
 ---
 
 ## Readings
@@ -23,9 +23,9 @@ subtitle: "Challenges to Democracy"
 
 ## Slides
 
-🖥 [Grammar of Graphics](slides/week-3.1.qmd)
+🖥 [Grammar of Graphics](/slides/week-3.1.qmd)
 
-🖥 [Which Visualization Do I Use?](slides/week-3.2.qmd)
+🖥 [Which Visualization Do I Use?](/slides/week-3.2.qmd)
 
 <br><br>
 

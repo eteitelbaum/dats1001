@@ -371,6 +371,23 @@ ggplot(dem_summary, aes(x = reorder(region, -polyarchy), y = polyarchy, fill = r
 - But **only** when the color adds value to the visualization
 - In this case, region is already differentiated by column height
 
+## Your Turn! 
+
+<br>
+
+- Practice applying color schemes to a scatter plot
+- First, try a color scheme for a discrete variable
+- Then, try a color scheme for a continuous variable
+
+```{r}
+#| echo: false
+
+countdown::countdown(minutes = 5, 
+                     id = "facet", 
+                     bottom = "10%", 
+                     right = "10%")
+```
+
 ## Facet Wrapping
 
 <br>

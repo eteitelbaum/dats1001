@@ -1,28 +1,29 @@
 ---
 title: "Week 4"
-subtitle: "Women's Empowerment"
+subtitle: "DataViz Extras"
 editor: visual
 ---
 
 ::: callout-important
-Exam 1 is due on Sunday, February 12
+Coding Assignment 1 is due on Monday, February 10
 :::
 
 ## Readings
 
-📖 Hessami and Lopes da Fonseca, ["Female Political Representation and
-Substantive Effects on
-Policies"](https://www.econstor.eu/bitstream/10419/216551/1/cesifo1_wp8155.pdf)
+📖 r4ds, [Communication](https://r4ds.hadley.nz/communication)
+
+📖 Lipset, [Some Social Requisites of
+Democracy](https://www-jstor-org.proxygw.wrlc.org/stable/1951731?seq=8)
 
 ## Slides
 
-🖥️ [Women's empowerment](/slides/lecture-4.1.html)
+🖥 [Visualization Best Practices](/slides/week-4.1.qmd)
 
-🖥️ [Exam 1 review](/slides/lecture-4.2.html)
+🖥 [Red green colourblindess, do you have it?](https://youtu.be/l6AVQOxkzxQ?si=UUFExkQgdzfaJOHW)
 
 ## Assignments
 
-📘 Exam 1
+🧮 [Coding Assignment 1](/assignments/coding-assignment-1.qmd)
 
 <br><br>
 
