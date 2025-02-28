@@ -89,12 +89,6 @@ Don't write your paragraphs or any interpretation or analysis in a code chunk. U
 You can relate your analysis to the assigned Norris reading that explores reasons for variations in women's empowerment but this is not required.
 :::
 
-## Step 6: Pivot WB Data (10 pts.)
-
-```{r}
-
-```
-
 ## Extra Credit (3 pts.)
 
 *Sometimes our data does not come in the format that we need to have it in for our analysis. Demonstrate that you know how to pivot data from wide to long form using the `world_bank_pop` data frame that comes with the `tidyr` package. Then pivot again (wider this time) to get the data into tidy format.*
