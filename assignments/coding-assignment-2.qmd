@@ -81,6 +81,9 @@ Don't write your paragraphs or any interpretation or analysis in a code chunk. U
 
 *Using the data from step 5, create an appropriate visualization that either shows differences in levels of women's empowerment across countries or regions or demonstrates the relationship between women's empowerment and a potential explanatory variable like welath or democracy. Then write a few lines about the patterns that your visualization uncovers.*
 
+```{r}
+
+```
 
 ::: {.callout-note}
 You can relate your analysis to the assigned Norris reading that explores reasons for variations in women's empowerment but this is not required.
