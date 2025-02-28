@@ -79,7 +79,7 @@ Don't write your paragraphs or any interpretation or analysis in a code chunk. U
 
 ## Step 6: Visualize and interpret your data (20 pts)
 
-*Using the data from step 5, create an appropriate visualization that either shows differences in levels of women's empowerment across countries or regions or demonstrates the relationship between women's empowerment and a potential explanatory variable like welath or democracy. Then write a few lines about the patterns that your visualization uncovers.*
+*Using the data from step 5, create an appropriate visualization that either shows differences in levels of women's empowerment across countries or regions or demonstrates the relationship between women's empowerment and a potential explanatory variable like welath or democracy. Then write a few lines about the patterns that your visualization uncovers. (Note that you will need to store the summary that you created in Step 5 as an object in order to do this.)*
 
 ```{r}
 
