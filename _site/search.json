@@ -2999,7 +2999,7 @@
     "href": "assignments/coding-assignment-2.html#step-6-pivot-wb-data-10-pts.",
     "title": "Coding Assignment 2",
     "section": "Step 6: Pivot WB Data (10 pts.)",
-    "text": "Step 6: Pivot WB Data (10 pts.)\nSometimes our data does not come in the format that we need to have it in for our analysis. Demonstrate that you know how to pivot data from wide to long form using the world_bank_pop data frame that comes with the tidyr package. Then pivot again (wider this time) to get the data into tidy format.",
+    "text": "Step 6: Pivot WB Data (10 pts.)",
     "crumbs": [
       "Coding Asignments",
       "Assignment 2"
@@ -3010,7 +3010,7 @@
     "href": "assignments/coding-assignment-2.html#extra-credit-3-pts.",
     "title": "Coding Assignment 2",
     "section": "Extra Credit (3 pts.)",
-    "text": "Extra Credit (3 pts.)\nFollowing the example that we did in class, download some messy data from the World Development Indicators website and wrangle it so that it is a tidy data frame. Be sure to download more than one data variable and don’t forget to use backticks (``) when dealing with unconventional variable names.\nNow render the document to make sure everything runs and to produce a final HTML document!",
+    "text": "Extra Credit (3 pts.)\nSometimes our data does not come in the format that we need to have it in for our analysis. Demonstrate that you know how to pivot data from wide to long form using the world_bank_pop data frame that comes with the tidyr package. Then pivot again (wider this time) to get the data into tidy format.\nNow render the document to make sure everything runs and to produce a final HTML document!",
     "crumbs": [
       "Coding Asignments",
       "Assignment 2"
@@ -5404,6 +5404,72 @@
     "crumbs": [
       "Course information",
       "Support"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-2.html#step-1-download-data-from-v-dem-10pts",
+    "href": "assignments/coding-assignment-2.html#step-1-download-data-from-v-dem-10pts",
+    "title": "Coding Assignment 2",
+    "section": "Step 1: Download data from V-Dem (10pts)",
+    "text": "Step 1: Download data from V-Dem (10pts)\nUse the V-Dem codebook or the searchdem() function in vdemlite to identify at least two measures of women’s empowerment (make at least one something that we did not use in class). Also retrieve the six-fold regional classification that we used in class and a general measure of democracy (like the polyarchy or libdem score). Now use fetchdem() to download the most recent 25 years or so of data for your analysis for all countries in the dataset. Make sure to load the packages that you need and glimpse() the data or View() it to make sure that it downloaded properly.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-2.html#step-2-download-data-from-the-world-bank-10-pts",
+    "href": "assignments/coding-assignment-2.html#step-2-download-data-from-the-world-bank-10-pts",
+    "title": "Coding Assignment 2",
+    "section": "Step 2: Download data from the World Bank (10 pts)",
+    "text": "Step 2: Download data from the World Bank (10 pts)\nNext, download the variable on women’s representation that we used in Module 1.2 (“SG.GEN.PARL.ZS”), at least one additional measure related to women’s empowerment and a measure of wealth (GDP per capita). Go to the WDI site the wb_search() function to identify relevant variables. Download data for the same time period as you did for the V-Dem data for all countries. Ensure that at least one of the variables you select is different from the ones we explored in class.\n\n\n\n\n\n\nImportant\n\n\n\nTry to make sure you download indicators with enough data to conduct your analysis. You won’t get great results if there are too many NAs.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-2.html#step-3-clean-the-data-20-pts",
+    "href": "assignments/coding-assignment-2.html#step-3-clean-the-data-20-pts",
+    "title": "Coding Assignment 2",
+    "section": "Step 3: Clean the data (20 pts)",
+    "text": "Step 3: Clean the data (20 pts)\nNow clean the data. Drop any columns that you will not need for the analysis. Filter out any years that do not match between the two data frames. Transform the region codes into actual region names. Etc.\n\n# clean v-dem data\n\n\n# clean wb data",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-2.html#step-4-merge-the-data-20-pts",
+    "href": "assignments/coding-assignment-2.html#step-4-merge-the-data-20-pts",
+    "title": "Coding Assignment 2",
+    "section": "Step 4: Merge the data (20 pts)",
+    "text": "Step 4: Merge the data (20 pts)\nNow add country codes using the countrycode package and merge the data using left_join().",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-2.html#step-5-summarize-your-combined-data-set-20-pts",
+    "href": "assignments/coding-assignment-2.html#step-5-summarize-your-combined-data-set-20-pts",
+    "title": "Coding Assignment 2",
+    "section": "Step 5: Summarize your combined data set (20 pts)",
+    "text": "Step 5: Summarize your combined data set (20 pts)\nUse group_by(), summarize() and arrange() to glean preliminary insights about your data. For example, how do regions compare on mean values of women’s representation and how do these values relate to the values of other variables in your data set? Which countries stand out in terms of women’s representation?\n\n# Regional summary\n\n\n# Country summary\n\n\n\n\n\n\n\nWarning\n\n\n\nDon’t write your paragraphs or any interpretation or analysis in a code chunk. Use markdown text. Quarto is designed to be a literate programming tool, so you can write your analysis in markdown text and include code chunks when necessary to support your argument.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 2"
+    ]
+  },
+  {
+    "objectID": "assignments/coding-assignment-2.html#step-6-visualize-and-interpret-your-data-20-pts",
+    "href": "assignments/coding-assignment-2.html#step-6-visualize-and-interpret-your-data-20-pts",
+    "title": "Coding Assignment 2",
+    "section": "Step 6: Visualize and interpret your data (20 pts)",
+    "text": "Step 6: Visualize and interpret your data (20 pts)\nUsing the data from step 5, create an appropriate visualization that either shows differences in levels of women’s empowerment across countries or regions or demonstrates the relationship between women’s empowerment and a potential explanatory variable like welath or democracy. Then write a few lines about the patterns that your visualization uncovers.\n\n\n\n\n\n\nNote\n\n\n\nYou can relate your analysis to the assigned Norris reading that explores reasons for variations in women’s empowerment but this is not required.",
+    "crumbs": [
+      "Coding Asignments",
+      "Assignment 2"
     ]
   }
 ]

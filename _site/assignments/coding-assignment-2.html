@@ -325,14 +325,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#step-1-download-data-from-v-dem-20pts" id="toc-step-1-download-data-from-v-dem-20pts" class="nav-link" data-scroll-target="#step-1-download-data-from-v-dem-20pts">Step 1: Download data from V-Dem (20pts)</a></li>
-  <li><a href="#step-2-download-data-from-the-world-bank-20-pts" id="toc-step-2-download-data-from-the-world-bank-20-pts" class="nav-link" data-scroll-target="#step-2-download-data-from-the-world-bank-20-pts">Step 2: Download data from the World Bank (20 pts)</a></li>
-  <li><a href="#step-3-merge-the-data-20-pts" id="toc-step-3-merge-the-data-20-pts" class="nav-link" data-scroll-target="#step-3-merge-the-data-20-pts">Step 3: Merge the data (20 pts)</a></li>
-  <li><a href="#step-4-summarize-your-combined-data-set-20-pts" id="toc-step-4-summarize-your-combined-data-set-20-pts" class="nav-link" data-scroll-target="#step-4-summarize-your-combined-data-set-20-pts">Step 4: Summarize your combined data set (20 pts)</a></li>
-  <li><a href="#step-5-interpret-your-data-10-pts" id="toc-step-5-interpret-your-data-10-pts" class="nav-link" data-scroll-target="#step-5-interpret-your-data-10-pts">Step 5: Interpret your data (10 pts)</a></li>
+  <li><a href="#step-1-download-data-from-v-dem-10pts" id="toc-step-1-download-data-from-v-dem-10pts" class="nav-link" data-scroll-target="#step-1-download-data-from-v-dem-10pts">Step 1: Download data from V-Dem (10pts)</a></li>
+  <li><a href="#step-2-download-data-from-the-world-bank-10-pts" id="toc-step-2-download-data-from-the-world-bank-10-pts" class="nav-link" data-scroll-target="#step-2-download-data-from-the-world-bank-10-pts">Step 2: Download data from the World Bank (10 pts)</a></li>
+  <li><a href="#step-3-clean-the-data-20-pts" id="toc-step-3-clean-the-data-20-pts" class="nav-link" data-scroll-target="#step-3-clean-the-data-20-pts">Step 3: Clean the data (20 pts)</a></li>
+  <li><a href="#step-4-merge-the-data-20-pts" id="toc-step-4-merge-the-data-20-pts" class="nav-link" data-scroll-target="#step-4-merge-the-data-20-pts">Step 4: Merge the data (20 pts)</a></li>
+  <li><a href="#step-5-summarize-your-combined-data-set-20-pts" id="toc-step-5-summarize-your-combined-data-set-20-pts" class="nav-link" data-scroll-target="#step-5-summarize-your-combined-data-set-20-pts">Step 5: Summarize your combined data set (20 pts)</a></li>
+  <li><a href="#step-6-visualize-and-interpret-your-data-20-pts" id="toc-step-6-visualize-and-interpret-your-data-20-pts" class="nav-link" data-scroll-target="#step-6-visualize-and-interpret-your-data-20-pts">Step 6: Visualize and interpret your data (20 pts)</a></li>
   <li><a href="#step-6-pivot-wb-data-10-pts." id="toc-step-6-pivot-wb-data-10-pts." class="nav-link" data-scroll-target="#step-6-pivot-wb-data-10-pts.">Step 6: Pivot WB Data (10 pts.)</a></li>
   <li><a href="#extra-credit-3-pts." id="toc-extra-credit-3-pts." class="nav-link" data-scroll-target="#extra-credit-3-pts.">Extra Credit (3 pts.)</a></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
+  <li><a href="#deadline-extension" id="toc-deadline-extension" class="nav-link" data-scroll-target="#deadline-extension">Deadline Extension</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/dats1001-fall-2024/edit/main/assignments/coding-assignment-2.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/dats1001-fall-2024/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -382,13 +384,13 @@ Warning
 </div>
 </div>
 </section>
-<section id="step-1-download-data-from-v-dem-20pts" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-download-data-from-v-dem-20pts">Step 1: Download data from V-Dem (20pts)</h2>
-<p><em>Use the V-Dem <a href="https://www.v-dem.net/data/reference-documents/">codebook</a> or the <code>searchdem()</code> function in <code>vdemlite</code> to identify one measure of democracy and one indicator related to women’s empowerment (or two measures of women’s empowerment). Now use <code>fetchdem()</code> to download the most recent 25 years or so of data for your analysis for all countries in the dataset. Make sure to load the packages that you need and <code>glimpse()</code> the data or <code>View()</code> it to make sure that it downloaded properly.</em></p>
+<section id="step-1-download-data-from-v-dem-10pts" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-download-data-from-v-dem-10pts">Step 1: Download data from V-Dem (10pts)</h2>
+<p><em>Use the V-Dem <a href="https://www.v-dem.net/data/reference-documents/">codebook</a> or the <code>searchdem()</code> function in <code>vdemlite</code> to identify at least two measures of women’s empowerment (make at least one something that we did not use in class). Also retrieve the six-fold regional classification that we used in class and a general measure of democracy (like the polyarchy or libdem score). Now use <code>fetchdem()</code> to download the most recent 25 years or so of data for your analysis for all countries in the dataset. Make sure to load the packages that you need and <code>glimpse()</code> the data or <code>View()</code> it to make sure that it downloaded properly.</em></p>
 </section>
-<section id="step-2-download-data-from-the-world-bank-20-pts" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-download-data-from-the-world-bank-20-pts">Step 2: Download data from the World Bank (20 pts)</h2>
-<p><em>Next, download the variable on women’s represenation that we used in Module 1.2 (“SG.GEN.PARL.ZS”) and at least one additional measure related to women’s empowerment. Go to the <a href="https://databank.worldbank.org/source/world-development-indicators">WDI</a> site the wb_search() function to identify relevant variables. Download data for the same time period as you did for the V-Dem data for all countries.</em></p>
+<section id="step-2-download-data-from-the-world-bank-10-pts" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-download-data-from-the-world-bank-10-pts">Step 2: Download data from the World Bank (10 pts)</h2>
+<p><em>Next, download the variable on women’s representation that we used in Module 1.2 (“SG.GEN.PARL.ZS”), at least one additional measure related to women’s empowerment and a measure of wealth (GDP per capita). Go to the <a href="https://databank.worldbank.org/source/world-development-indicators">WDI</a> site the wb_search() function to identify relevant variables. Download data for the same time period as you did for the V-Dem data for all countries. Ensure that at least one of the variables you select is different from the ones we explored in class.</em></p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -403,23 +405,29 @@ Important
 </div>
 </div>
 </section>
-<section id="step-3-merge-the-data-20-pts" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-merge-the-data-20-pts">Step 3: Merge the data (20 pts)</h2>
+<section id="step-3-clean-the-data-20-pts" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-clean-the-data-20-pts">Step 3: Clean the data (20 pts)</h2>
+<p><em>Now clean the data. Drop any columns that you will not need for the analysis. Filter out any years that do not match between the two data frames. Transform the region codes into actual region names. Etc.</em></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># clean v-dem data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># clean wb data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="step-4-merge-the-data-20-pts" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-merge-the-data-20-pts">Step 4: Merge the data (20 pts)</h2>
 <p><em>Now add country codes using the <code>countrycode</code> package and merge the data using <code>left_join()</code>.</em></p>
 </section>
-<section id="step-4-summarize-your-combined-data-set-20-pts" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-summarize-your-combined-data-set-20-pts">Step 4: Summarize your combined data set (20 pts)</h2>
-<p><em>Use <code>group_by()</code>, <code>summarize()</code> and <code>arrange()</code> to glean insights about your data. For example, how do regions compare on mean values of women’s representation and how do these values relate to the values of other variables in your data set? Which countries stand out in terms of women’s representation?</em></p>
+<section id="step-5-summarize-your-combined-data-set-20-pts" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-summarize-your-combined-data-set-20-pts">Step 5: Summarize your combined data set (20 pts)</h2>
+<p><em>Use <code>group_by()</code>, <code>summarize()</code> and <code>arrange()</code> to glean preliminary insights about your data. For example, how do regions compare on mean values of women’s representation and how do these values relate to the values of other variables in your data set? Which countries stand out in terms of women’s representation?</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regional summary</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regional summary</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Country summary</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Country summary</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</section>
-<section id="step-5-interpret-your-data-10-pts" class="level2">
-<h2 class="anchored" data-anchor-id="step-5-interpret-your-data-10-pts">Step 5: Interpret your data (10 pts)</h2>
-<p><em>Write a paragraph or so relating your insights to the Norris reading about electoral reform and women’s representation. Picking a handful of country cases from your data, how does your summary of gender and democracy variables relate to the level of female representation in a country? How would you relate these findings to Norris’s argument about the importance of an inclusive democracy?</em></p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -434,21 +442,41 @@ Warning
 </div>
 </div>
 </section>
+<section id="step-6-visualize-and-interpret-your-data-20-pts" class="level2">
+<h2 class="anchored" data-anchor-id="step-6-visualize-and-interpret-your-data-20-pts">Step 6: Visualize and interpret your data (20 pts)</h2>
+<p><em>Using the data from step 5, create an appropriate visualization that either shows differences in levels of women’s empowerment across countries or regions or demonstrates the relationship between women’s empowerment and a potential explanatory variable like welath or democracy. Then write a few lines about the patterns that your visualization uncovers.</em></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can relate your analysis to the assigned Norris reading that explores reasons for variations in women’s empowerment but this is not required.</p>
+</div>
+</div>
+</section>
 <section id="step-6-pivot-wb-data-10-pts." class="level2">
 <h2 class="anchored" data-anchor-id="step-6-pivot-wb-data-10-pts.">Step 6: Pivot WB Data (10 pts.)</h2>
-<p><em>Sometimes our data does not come in the format that we need to have it in for our analysis. Demonstrate that you know how to pivot data from wide to long form using the <code>world_bank_pop</code> data frame that comes with the <code>tidyr</code> package. Then pivot again (wider this time) to get the data into tidy format.</em></p>
 </section>
 <section id="extra-credit-3-pts." class="level2">
 <h2 class="anchored" data-anchor-id="extra-credit-3-pts.">Extra Credit (3 pts.)</h2>
-<p><em>Following the example that we did in class, download some messy data from the World Development Indicators website and wrangle it so that it is a tidy data frame. Be sure to download more than one data variable and don’t forget to use backticks (``) when dealing with unconventional variable names.</em></p>
+<p><em>Sometimes our data does not come in the format that we need to have it in for our analysis. Demonstrate that you know how to pivot data from wide to long form using the <code>world_bank_pop</code> data frame that comes with the <code>tidyr</code> package. Then pivot again (wider this time) to get the data into tidy format.</em></p>
 <p><strong>Now render the document to make sure everything runs and to produce a final HTML document!</strong></p>
 </section>
 <section id="submission" class="level2">
 <h2 class="anchored" data-anchor-id="submission">Submission</h2>
 <p><em>After rendering your document, export your project folder and submit it on Blackboard. You will find the link to the Coding Assignment one submission portal under the Assignments link. There is a screen capture video in the Discord server that will help you understand how to do this.</em></p>
-
-
 </section>
+<section id="deadline-extension" class="level1 {callout-important}">
+<h1>Deadline Extension</h1>
+<p>I am going to be moving this weekend and may not be able to respond to questions right away (I may not even have an internet connection). Therefore I am extending the deadline to Tuesday, March 4 at 11:59 PM.</p>
+</section>
+
+
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
