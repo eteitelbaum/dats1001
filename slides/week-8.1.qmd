@@ -347,14 +347,38 @@ ggplot(modelData, aes(x = log_wealth, y = lib_dem)) +
 
 ## Interpreting the Coefficient for log(Wealth)
 
-- **Model**: Democracy = 0.12 × log(Wealth)
-  
-- **Coefficient Interpretation**: 
-  - A 1% increase in GDP per capita is associated with a 0.0012 increase in the democracy score
-  - Doubling GDP per capita (e.g., from $10,000 to $20,000) increases the democracy score by 0.12 points
+$$
+\text{Democracy} = 0.12 \times \log(\text{Wealth})
+$$
 
-- **In Dollar Terms**:
-  - If GDP per capita increases by 10% (e.g., from $10,000 to $11,000), the democracy score is expected to increase by 0.012 points
+For **small** percentage changes in a "log-linear" model, we can use the approximation rule (divide by 100):
+
+- A **1% increase** in GDP per capita is associated with a **0.0012** point increase in the democracy score.  
+  - **Rule:** $0.12 / 100 = 0.0012$  
+
+## For Larger Changes We Log the Change
+
+<br>
+
+- A **10% increase** (e.g., from \$10,000 to \$11,000) increases the democracy score by **0.0114 points** since:
+
+  $$
+  0.12 \times \ln(1.1) \approx 0.12 \times 0.0953 = 0.0114
+  $$  
+
+## Similarly...
+
+- **Doubling** GDP per capita (e.g., \$10,000 → \$20,000) increases the democracy score by:
+
+  $$
+  0.12 \times \ln(2) \approx 0.12 \times 0.693 = 0.083
+  $$
+
+- **Tripling** GDP per capita (e.g., \$10,000 → \$30,000) increases the democracy score by:
+
+  $$
+  0.12 \times \ln(3) \approx 0.12 \times 1.099 = 0.132
+  $$  
 
 ## Linear Model: Interpretation
 

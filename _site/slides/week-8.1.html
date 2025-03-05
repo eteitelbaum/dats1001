@@ -10,7 +10,7 @@
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-c374e8903e699ee474c14b9fa33e2f95.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.7.11">
 
-  <meta name="dcterms.date" content="2025-02-07">
+  <meta name="dcterms.date" content="2025-03-04">
   <title>DATS 1001--Fall Schedule – Linear Regression</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -204,7 +204,7 @@
 <div class="quarto-title-authors">
 </div>
 
-  <p class="date">February 7, 2025</p>
+  <p class="date">March 4, 2025</p>
 </section>
 <section id="modeling" class="slide level2">
 <h2>Modeling</h2>
@@ -422,17 +422,38 @@
 <img data-src="week-8.1_files/figure-revealjs/unnamed-chunk-11-1.png" width="960" class="r-stretch"></section>
 <section id="interpreting-the-coefficient-for-logwealth" class="slide level2">
 <h2>Interpreting the Coefficient for log(Wealth)</h2>
+<p><span class="math display">\[
+\text{Democracy} = 0.12 \times \log(\text{Wealth})
+\]</span></p>
+<p>For <strong>small</strong> percentage changes in a “log-linear” model, we can use the approximation rule (divide by 100):</p>
 <ul>
-<li><p><strong>Model</strong>: Democracy = 0.12 × log(Wealth)</p></li>
-<li><p><strong>Coefficient Interpretation</strong>:</p>
+<li>A <strong>1% increase</strong> in GDP per capita is associated with a <strong>0.0012</strong> point increase in the democracy score.
 <ul>
-<li>A 1% increase in GDP per capita is associated with a 0.0012 increase in the democracy score</li>
-<li>Doubling GDP per capita (e.g., from $10,000 to $20,000) increases the democracy score by 0.12 points</li>
+<li><strong>Rule:</strong> <span class="math inline">\(0.12 / 100 = 0.0012\)</span></li>
 </ul></li>
-<li><p><strong>In Dollar Terms</strong>:</p>
+</ul>
+</section>
+<section id="for-larger-changes-we-log-the-change" class="slide level2">
+<h2>For Larger Changes We Log the Change</h2>
+<p><br></p>
 <ul>
-<li>If GDP per capita increases by 10% (e.g., from $10,000 to $11,000), the democracy score is expected to increase by 0.012 points</li>
-</ul></li>
+<li><p>A <strong>10% increase</strong> (e.g., from $10,000 to $11,000) increases the democracy score by <strong>0.0114 points</strong> since:</p>
+<p><span class="math display">\[
+0.12 \times \ln(1.1) \approx 0.12 \times 0.0953 = 0.0114
+\]</span></p></li>
+</ul>
+</section>
+<section id="similarly" class="slide level2">
+<h2>Similarly…</h2>
+<ul>
+<li><p><strong>Doubling</strong> GDP per capita (e.g., $10,000 → $20,000) increases the democracy score by:</p>
+<p><span class="math display">\[
+0.12 \times \ln(2) \approx 0.12 \times 0.693 = 0.083
+\]</span></p></li>
+<li><p><strong>Tripling</strong> GDP per capita (e.g., $10,000 → $30,000) increases the democracy score by:</p>
+<p><span class="math display">\[
+0.12 \times \ln(3) \approx 0.12 \times 1.099 = 0.132
+\]</span></p></li>
 </ul>
 </section>
 <section id="linear-model-interpretation-6" class="slide level2">

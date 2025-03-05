@@ -623,7 +623,7 @@
     "href": "slides/week-8.1.html#interpreting-the-coefficient-for-logwealth",
     "title": "Linear Regression",
     "section": "Interpreting the Coefficient for log(Wealth)",
-    "text": "Interpreting the Coefficient for log(Wealth)\n\nModel: Democracy = 0.12 × log(Wealth)\nCoefficient Interpretation:\n\nA 1% increase in GDP per capita is associated with a 0.0012 increase in the democracy score\nDoubling GDP per capita (e.g., from $10,000 to $20,000) increases the democracy score by 0.12 points\n\nIn Dollar Terms:\n\nIf GDP per capita increases by 10% (e.g., from $10,000 to $11,000), the democracy score is expected to increase by 0.012 points"
+    "text": "Interpreting the Coefficient for log(Wealth)\n\\[\n\\text{Democracy} = 0.12 \\times \\log(\\text{Wealth})\n\\]\nFor small percentage changes in a “log-linear” model, we can use the approximation rule (divide by 100):\n\nA 1% increase in GDP per capita is associated with a 0.0012 point increase in the democracy score.\n\nRule: \\(0.12 / 100 = 0.0012\\)"
   },
   {
     "objectID": "slides/week-8.1.html#linear-model-interpretation-6",
@@ -5471,5 +5471,26 @@
       "Coding Asignments",
       "Assignment 2"
     ]
+  },
+  {
+    "objectID": "slides/week-8.1.html#larger-gdp-increases-have-a-smaller-marginal-effect",
+    "href": "slides/week-8.1.html#larger-gdp-increases-have-a-smaller-marginal-effect",
+    "title": "Linear Regression",
+    "section": "Larger GDP Increases Have a Smaller Marginal Effect",
+    "text": "Larger GDP Increases Have a Smaller Marginal Effect\n\nA 10% increase (e.g., from $10,000 to $11,000) increases the democracy score by 0.0114 points since:\n\\[\n0.12 \\times \\ln(1.1) \\approx 0.12 \\times 0.0953 = 0.0114\n\\]"
+  },
+  {
+    "objectID": "slides/week-8.1.html#similarly",
+    "href": "slides/week-8.1.html#similarly",
+    "title": "Linear Regression",
+    "section": "Similarly…",
+    "text": "Similarly…\n\nDoubling GDP per capita (e.g., $10,000 → $20,000) increases the democracy score by:\n\\[\n0.12 \\times \\ln(2) \\approx 0.12 \\times 0.693 = 0.083\n\\]\nTripling GDP per capita (e.g., $10,000 → $30,000) increases the democracy score by:\n\\[\n0.12 \\times \\ln(3) \\approx 0.12 \\times 1.099 = 0.132\n\\]"
+  },
+  {
+    "objectID": "slides/week-8.1.html#for-larger-changes-we-log-the-change",
+    "href": "slides/week-8.1.html#for-larger-changes-we-log-the-change",
+    "title": "Linear Regression",
+    "section": "For Larger Changes We Log the Change",
+    "text": "For Larger Changes We Log the Change\n\n\nA 10% increase (e.g., from $10,000 to $11,000) increases the democracy score by 0.0114 points since:\n\\[\n0.12 \\times \\ln(1.1) \\approx 0.12 \\times 0.0953 = 0.0114\n\\]"
   }
 ]
