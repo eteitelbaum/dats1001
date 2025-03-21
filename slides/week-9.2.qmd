@@ -227,7 +227,7 @@ For each one unit increase in log GDP per capita, the odds of the outcome occurr
 
 <br>
 
-This means that an increase in GDP per capita is associated with a **decrease** in the odds of the outcome occurring. The odds of the outcome decrease by about 28.2% for each unit increase in GDP per capita (on average).
+This means that an increase in GDP per capita is associated with a **decrease** in the odds of the outcome occurring. The odds of the outcome decrease by about 28.1% for each unit increase in GDP per capita (on average).
 
 ## Your Turn! {.smaller}
 
@@ -372,7 +372,7 @@ countdown(minutes = 10,
 | wbpopest         | 0.2851            | 1.3298     |
 | wbgdppc2011est   | -0.3826           | 0.6821     |
 
-## Slide 3: Interpretation of Odds Ratios {.smaller}
+## Interpretation of Odds Ratios {.smaller}
 
 - **(Intercept)**: An OR of 0.0048 indicates the baseline odds of \(y\) when all predictors are zero.
 - **v2x_polyarchy**: An OR of 0.5325 implies that for each one-unit increase in v2x_polyarchy, the odds of \(y\) decrease by approximately 46.8%.
