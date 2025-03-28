@@ -13,10 +13,10 @@ Using `fetchdem` from `vdemlite`, select the `v2x_regime` variable, a continuous
 
 
 ```{r}
-library(vdemlite)
-library(tidyverse)
-
 # Uncomment this code to start working on it.
+
+#library(vdemlite)
+#library(tidyverse)
 
 #vdem_data <- fetchdem(indicators = c(???),
 #                      start_year = ???, end_year = ???) |>
