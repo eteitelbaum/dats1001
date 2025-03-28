@@ -7,26 +7,29 @@ format: html
 
 In this homework assignment, we are once again going to be exploring the correlates of democracy with V-Dem. But this time we are going to do so in the context of regression analysis. 
 
-## Step 1: Load the data (12.5 pts.)
+## Step 1: Load the data (8 pts.)
 
 Using `fetchdem` from `vdemlite`, select the `v2x_regime` variable, a continuous measure of democracy like `v2x_polyarchy`, and at least three variables that you believe correlate with democracy for all countries and one year of your choosing. Use `mutate()` to transform `v2x_regime` into a binary variable that indicates whether a country is a democracy or not (I have provided this part of the code for you).
 
 
 ```{r}
 library(vdemlite)
+library(tidyverse)
 
 # Uncomment this code to start working on it.
 
 #vdem_data <- fetchdem(indicators = c(???),
 #                      start_year = ???, end_year = ???) |>
 #  mutate(regime_dummy = ifelse(v2x_regime >= 2, 1, 0)
+
+#glimpse(vdem_data)
 ```
 
-## Step 2: Hypotheses (12.5 pts.)
+## Step 2: Hypotheses (8 pts.)
 
 Talk about why you chose the indicators you did and why you think your independent variables should be related to democracy. 
 
-## Step 3: Run a bivariate linear regression model (12.5 pts.)
+## Step 3: Run a bivariate linear regression model (12 pts.)
 
 Run a bivariate linear regression model with your selected *continuous* measure of democracy as the dependent variable and one of your selected predictors as the independent variable. Use the `lm()` function to run the model and the `summary()` function to view the results. 
 
@@ -34,11 +37,11 @@ Run a bivariate linear regression model with your selected *continuous* measure 
 
 ```
 
-## Step 4: Interpret the results (12.5 pts.)
+## Step 4: Interpret the results (12 pts.)
 
 Interpret the results of the regression model. What is the coefficient on the predictor variable? What does this coefficient tell you about the relationship between the predictor and democracy? Is the relationship stastically significant? How about the constant (intercept term)?
 
-## Step 5: Run a Multiple Linear Regression Model (12.5 pts.)
+## Step 5: Run a Multiple Linear Regression Model (12 pts.)
 
 Run a multiple linear regression model with your selected *continous* measure of democracy as the dependent variable and at least three of your selected predictors as the independent variables. Use the `lm()` function to run the model and the `summary()` function to view the results. 
 
@@ -46,28 +49,29 @@ Run a multiple linear regression model with your selected *continous* measure of
 
 ```
 
-## Step 6: Interpret the Results of Your Multiple Regression (12.5 pts.)
+## Step 6: Interpret the Results of Your Multiple Regression (12 pts.)
 
 Interpret the results of the multiple regression model. What is the coefficient on each of the predictor variables? What does this coefficient tell you about the relationship between the predictors and democracy? Are the relationships statistically significant? How would you interpret the constant (intercept term)?
 
-## Step 7: Run a Multiple Logistic Regression (12.5 pts.)
+## Step 7: Run a Multiple Logistic Regression (12 pts.)
 
 Using your *dichotomous* measure of regime type (democratic or not) as the dependent variable, run a multiple logistic regression model with your three predictors. Use the `glm()` function to run the model and the `summary()` function to view the results. 
 
-## Step 8: Interpret the Results of Your Logistic Regression (12.5 pts.)
+## Step 8: Interpret the Results of Your Logistic Regression (12 pts.)
 
-Interpret the results of the logistic regression model. Interpret the direction and significance of each predictor. Exponentiate the coefficient of one of the predictors and interpret it? 
+Interpret the results of the logistic regression model. Interpret the direction and significance of each predictor. Exponentiate the coefficient of one of the predictors and interpret the substantive effects.
 
-## Extra Credit (3 pts.)
+## Step 9: Calculate predicted probabilities (12 pts.)
 
-Use the `marginaleffects` package to give the predicted probabilities of regime transition for three countries in your dataset.
+Use the `marginaleffects` package to give the predicted probabilities of regime transition (e.g. becoming a democracy) for three countries in your dataset. Display the results using the `tidy()` function from the `broom` package.
+
+## Extra Credit (3 pts)
+
+Use `ggplot2` to visualize your predictions with a coefficient plot.
 
 ::: {.callout-important}
 ## Submission Instructions
 
 After rendering your document, export your project folder and submit it on Blackboard. You will find the link to the Coding Assignment one submission portal under the Assignments link. There is a screen capture video in the Discord server that will help you understand how to do this.
 :::
-
-
-
 
