@@ -52,7 +52,7 @@ submitted by 11:59 p.m. on the due date***.
 | 11 | `r advdate(wed,10)` | Predictive modeling | 📖 | 📺 | 🖥️ |  |  |
 |  | `r advdate(fri,10)` | Coding assignment 3 | 📖 |  | 🖥️ | [🧮](assignments/coding-assignment-3.qmd "Coding assingment 3") | `r advdate(mon,11)` |
 | 12 | `r advdate(wed,11)` | Research design | 📖 | 📺 | [🖥️](slides/week-11.1.qmd "Week 11.1 slides") |  |  |
-|  | `r advdate(fri,11)` | Distributions | 📖 | 📺 | [🖥️](slides/week-11.2.qmd "Week 11.2 slides") | [✍️](project/project-assignment-2.qmd "Project assignment 2") | `r advdate(mon,12)` |
+|  | `r advdate(fri,11)` | Distributions | 📖 | 📺 | [🖥️](slides/week-11.2.qmd "Week 11.2 slides") | [✍️](project/project-assignment-2.qmd "Project assignment 2") | `r advdate(wed,12)` |
 | 13 | `r advdate(wed,12)` | Sampling and uncertainty | 📖 | 📺 | [🖥️](slides/week-12.1.qmd "Week 12.1 slides") |  |  |
 |  | `r advdate(fri,12)` | Hypothesis testing 1 | 📖 | 📺 | [🖥️](slides/week-12.2.qmd "Week 12.2 slides") |  |  |
 | 14 | `r advdate(wed,13)` | Hypothesis testing 2 | 📖 | 📺 | [🖥️](slides/week-13.1.qmd "Week 13.1 slides") |  |  |
