@@ -51,11 +51,11 @@ submitted by 11:59 p.m. on the due date***.
 |  | `r advdate(fri,9)` | Logistic regression | [📖](https://openintro-ims.netlify.app/model-logistic "IMS, chap. 9") | [📺](https://youtu.be/xuTiAW0OR40?si=sUoIr5pzHwHEpazO) | [🖥️](slides/week-9.2.qmd "Week 9.2 slides") | [✍️](project/project-assignment-1.qmd "Project assignment 1") | `r advdate(mon,10)` |
 | 11 | `r advdate(wed,10)` | Predictive modeling | 📖 | 📺 | 🖥️ |  |  |
 |  | `r advdate(fri,10)` | Coding assignment 3 | 📖 |  | 🖥️ | [🧮](assignments/coding-assignment-3.qmd "Coding assingment 3") | `r advdate(mon,11)` |
-| 12 | `r advdate(wed,11)` | Research design | 📖 | 📺 | [🖥️](slides/week-11.1.qmd "Week 11.1 slides") |  |  |
-|  | `r advdate(fri,11)` | Distributions | 📖 | 📺 | [🖥️](slides/week-11.2.qmd "Week 11.2 slides") | [✍️](project/project-assignment-2.qmd "Project assignment 2") | `r advdate(wed,12)` |
-| 13 | `r advdate(wed,12)` | Sampling and uncertainty | 📖 | 📺 | [🖥️](slides/week-12.1.qmd "Week 12.1 slides") |  |  |
-|  | `r advdate(fri,12)` | Hypothesis testing 1 | 📖 | 📺 | [🖥️](slides/week-12.2.qmd "Week 12.2 slides") |  |  |
-| 14 | `r advdate(wed,13)` | Hypothesis testing 2 | 📖 | 📺 | [🖥️](slides/week-13.1.qmd "Week 13.1 slides") |  |  |
+| 12 | `r advdate(wed,11)` | Categorical Data | [📖](https://openintro-ims.netlify.app/explore-categorical "IMS, chap. 4") | [📺](https://youtu.be/7NhNeADL8fA?si=InH8FFc1BIVT0ktM "Exploring Categorical Data") | [🖥️](slides/week-11.1.qmd "Week 11.1 slides") |  |  |
+|  | `r advdate(fri,11)` | Continuous Data | [📖](https://openintro-ims.netlify.app/explore-numerical "IMS, chap. 5") | [📺](https://youtu.be/Xm0PPtci3JE?si=MocqDt05YqllA9k5 "Exploring Numerical Data") | [🖥️](slides/week-11.2.qmd "Week 11.2 slides") | [✍️](project/project-assignment-2.qmd "Project assignment 2") | `r advdate(wed,12)` |
+| 13 | `r advdate(wed,12)` | Sampling and uncertainty | [📖](https://openintro-ims.netlify.app/foundations-bootstrapping "IMS, chap. 12") | [📺](https://youtu.be/Xz0x-8-cgaQ?si=v_YCi-dU5YBdcb99 "Bootstrapping Main Ideas") | [🖥️](slides/week-12.1.qmd "Week 12.1 slides") |  |  |
+|  | `r advdate(fri,12)` | Hypothesis testing 1 | [📖](https://openintro-ims.netlify.app/inference-one-prop "IMS, chap. 16") | 📺 | [🖥️](slides/week-12.2.qmd "Week 12.2 slides") |  |  |
+| 14 | `r advdate(wed,13)` | Hypothesis testing 2 | [📖](https://openintro-ims.netlify.app/foundations-randomization "IMS, chap. 11") | 📺 | [🖥️](slides/week-13.1.qmd "Week 13.1 slides") |  |  |
 |  | `r advdate(fri,13)` | Coding assignment 4 | 📖 | 📺 | [🖥️](slides/week-13.2.qmd "Week 13.2 slides") | [🧮](assignments/coding-assignment-4.qmd "Coding assingment 4") | `r advdate(mon,14)` |
 | 15 | `r advdate(wed,14)` | Lightning talks |  |  |  |  |  |
 |  | `r advdate(fri,14)` | Lightning talks |  |  |  | [✍️](project/project-assignment-3.qmd "Project assignment 3") | `r advdate(fri,15)` |
