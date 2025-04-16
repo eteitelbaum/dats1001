@@ -3,6 +3,18 @@ title: "Project Assignment 3"
 subtitle: "Final Presentation and Report"
 ---
 
+::: {.callout-important}
+## Due dates
+
+Note that the submission instructions and due date for this assignment have changed. 
+
+Instead of giving a lightening talk, you are going to submit recorded presentations of 5-7 minutes in length. 
+
+The due date for this is the same as the original due date for the assignment (**May 2nd at 11:59 p.m.**). 
+
+The due date for the report is now the day of the scheduled final exam for this course (**May 9th at 11:59 p.m**). 
+:::
+
 ## Overview  
 
 For this final assignment, you will synthesize the work completed in Parts 1 and 2 into a polished deliverable that communicates your findings effectively. This assignment has **two components**:  
@@ -12,7 +24,7 @@ For this final assignment, you will synthesize the work completed in Parts 1 and
 
 Together, these components should demonstrate your ability to apply data analysis skills to answer a question relevant to decision-making in a real-world context.  
 
-## Component 1: RevealJS Presentation  
+## Component 1: RevealJS Presentation (due May 2nd) 
 
 You will create a **5 minute presentation** using Quarto's RevealJS slide deck format. The goal of the presentation is to provide a concise and engaging summary of your project.  
 
@@ -30,10 +42,11 @@ You will create a **5 minute presentation** using Quarto's RevealJS slide deck f
 - You can add a few more slides if needed, but only if it still allows you to stay within the time limit.
 
 **Submission Instructions**:  
-- Upload your RevealJS presentation to [Quarto Pub](https://quartopub.com/) and share the link on the designated platform (e.g., Discord).  
-- Submit your QMD file and project folder to Blackboard.  
+- Upload your RevealJS presentation to [Quarto Pub](https://quartopub.com/) and share the link to the presentation on Discord.
+- Record your presentation using a screen recording tool (e.g., Zoom, Vimeo) and post the link to the recording to Discord.
+- Submit the QMD file for the presentation to Blackboard.
 
-## Component 2: Final Written Report  
+## Component 2: Final Written Report (due May 9th)  
 
 The final report should be a **3–5 page policy memo** or technical report that provides a detailed narrative of your project. The memo should build upon the work from Parts 1 and 2, integrating your research question, hypotheses, analysis, and conclusions.  
 
@@ -65,6 +78,7 @@ The final report should be a **3–5 page policy memo** or technical report that
 
 **Submission Instructions**:  
 - Render your report in **HTML** format and upload it to Quarto Pub.  
-- Submit the link to the report to Discord and the project folder (including the QMD file) on Blackboard.  
+- Submit the link to the report to Discord
+- Submit your group's zipped project folder (including the QMD file and data) to Blackboard.  
 
 
