@@ -2882,7 +2882,7 @@
     "href": "assignments/coding-assignment-4.html#extra-credit",
     "title": "Homework 4",
     "section": "Extra Credit",
-    "text": "Extra Credit\nThere are other outcome variables in the study that you did not select: create visualizations that display the means and 95% confidence intervals in treatment and control groups for these outcomes.\n\n\n\n\n\n\nSubmission Instructions\n\n\n\nAfter rendering your document, export your project folder and submit it on Blackboard. You will find the link to the Coding Assignment one submission portal under the Assignments link. There is a screen capture video in the Discord server that will help you understand how to do this.",
+    "text": "Extra Credit\nThere are addtional outcome variables in the study that you did not select: get the p-value and visualize the treatment effect relative to the null distribution for these variables.\n\n\n\n\n\n\nSubmission Instructions\n\n\n\nAfter rendering your document, export your project folder and submit it on Blackboard. You will find the link to the Coding Assignment one submission portal under the Assignments link. There is a screen capture video in the Discord server that will help you understand how to do this.",
     "crumbs": [
       "Coding Asignments",
       "Assignment 4"

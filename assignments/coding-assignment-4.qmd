@@ -100,7 +100,7 @@ Write one or two paragraphs that summarize the results of your analysis and accu
 
 ## Extra Credit
 
-There are other outcome variables in the study that you did not select: create visualizations that display the means and 95% confidence intervals in treatment and control groups for these outcomes. 
+There are addtional outcome variables in the study that you did not select: get the p-value and visualize the treatment effect relative to the null distribution for these variables.
 
 ::: {.callout-important}
 ## Submission Instructions
