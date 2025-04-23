@@ -56,7 +56,7 @@ submitted by 11:59 p.m. on the due date***.
 | 13 | `r advdate(wed,12)` | Sampling and uncertainty | [📖](https://openintro-ims.netlify.app/foundations-bootstrapping "IMS, chap. 12") | [📺](https://youtu.be/Xz0x-8-cgaQ?si=v_YCi-dU5YBdcb99 "Bootstrapping Main Ideas") | [🖥️](slides/week-12.1.qmd "Week 12.1 slides") |  |  |
 |  | `r advdate(fri,12)` | Hypothesis testing 1 | [📖](https://openintro-ims.netlify.app/inference-one-prop "IMS, chap. 16") | 📺 | [🖥️](slides/week-12.2.qmd "Week 12.2 slides") |  |  |
 | 14 | `r advdate(wed,13)` | Hypothesis testing 2 | [📖](https://openintro-ims.netlify.app/foundations-randomization "IMS, chap. 11") | 📺 | [🖥️](slides/week-13.1.qmd "Week 13.1 slides") |  |  |
-|  | `r advdate(fri,13)` | Coding assignment 4 (**class online**) | 📖 | 📺 | [🖥️](slides/week-13.2.qmd "Week 13.2 slides") | [🧮](assignments/coding-assignment-4.qmd "Coding assingment 4") | `r advdate(mon,14)` |
-| 15 | `r advdate(wed,14)` | Final project workshop |  |  |  |  |  |
+|  | `r advdate(fri,13)` | Coding assignment 4 (**class online**) | 📖 | 📺 |  | [🧮](assignments/coding-assignment-4.qmd "Coding assingment 4") | `r advdate(mon,14)` |
+| 15 | `r advdate(wed,14)` | Final project workshop |  |  | [🖥️](slides/week-13.2.qmd "Week 13.2 slides") |  |  |
 |  | `r advdate(fri,14)` | Final project workshop |  |  |  | [✍️](project/project-assignment-3.qmd "Project assignment 3") | See assignment |
 :::
