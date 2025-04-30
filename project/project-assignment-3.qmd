@@ -1,84 +1,87 @@
 ---
 title: "Project Assignment 3"
 subtitle: "Final Presentation and Report"
+format: html
 ---
 
 ::: {.callout-important}
 ## Due dates
 
-Note that the submission instructions and due date for this assignment have changed. 
+Note that the submission instructions and due date for this assignment have changed.
 
-Instead of giving a lightening talk, you are going to submit recorded presentations of 5-7 minutes in length. 
+Instead of giving a lightning talk, you are going to submit recorded presentations of 5–7 minutes in length.
 
-The due date for this is the same as the original due date for the assignment (**May 2nd at 11:59 p.m.**). 
+The due date for this is the same as the original due date for the assignment (**May 2nd at 11:59 p.m.**).
 
-The due date for the report is now the day of the scheduled final exam for this course (**May 9th at 11:59 p.m**). 
+The due date for the report is now the day of the scheduled final exam for this course (**May 9th at 11:59 p.m.**).
 :::
 
-## Overview  
+## Overview
 
-For this final assignment, you will synthesize the work completed in Parts 1 and 2 into a polished deliverable that communicates your findings effectively. This assignment has **two components**:  
+For this final assignment, you will synthesize the work completed in Parts 1 and 2 into a polished deliverable that communicates your findings effectively. This assignment has **two components**:
 
-1. **A Quarto RevealJS Presentation**: A lightning talk summarizing your project, findings, and policy implications.  
-2. **A Final Written Report**: A detailed document that provides a comprehensive overview of your analysis, results, and recommendations.  
+1. **A Quarto RevealJS Presentation**: A lightning talk summarizing your project, findings, and policy implications.
+2. **A Final Written Report**: A detailed document that provides a comprehensive overview of your analysis, results, and recommendations.
 
-Together, these components should demonstrate your ability to apply data analysis skills to answer a question relevant to decision-making in a real-world context.  
+Together, these components should demonstrate your ability to apply data analysis skills to answer a question relevant to decision-making in a real-world context.
 
-## Component 1: RevealJS Presentation (due May 2nd) 
+## Component 1: RevealJS Presentation (due May 2nd)
 
-You will create a **5 minute presentation** using Quarto's RevealJS slide deck format. The goal of the presentation is to provide a concise and engaging summary of your project.  
+You will create a **5-minute presentation** using Quarto's RevealJS slide deck format. The goal is to provide a concise and engaging summary of your project.
 
-**Here is a rough outline for your presentation**:  
-- **Slide 1**: Title slide with project title, group member names, and date.  
-- **Slide 2**: Introduction of your research question and its importance.  
-- **Slide 3**: Overview of your data, including the source and key variables.  
-- **Slides 4 - 5**: Key results, supported by 1–2 visuals (e.g., plots or tables).  
-- **Slide 6**: Summary of findings and policy implications.  
+**Rough outline for your presentation:**
 
-**Tips**:  
-- Use visuals to make your presentation engaging and accessible.  
-- Keep text minimal—focus on high-level points and key insights.  
-- Practice your timing to stay within the 5 minute limit.  
+- **Slide 1**: Title slide with project title, group member names, and date.
+- **Slide 2**: Introduction of your research question and its importance.
+- **Slide 3**: Overview of your data, including the source and key variables.
+- **Slides 4–5**: Key results, supported by 1–2 visuals (e.g., plots or tables).
+- **Slide 6**: Summary of findings and policy implications.
+
+**Tips:**
+
+- Use visuals to make your presentation engaging and accessible.
+- Keep text minimal—focus on high-level points and key insights.
+- Practice your timing to stay within the 5-minute limit.
 - You can add a few more slides if needed, but only if it still allows you to stay within the time limit.
 
-**Submission Instructions**:  
-- Upload your RevealJS presentation to [Quarto Pub](https://quartopub.com/) and share the link to the presentation on Discord.
-- Record your presentation using a screen recording tool (e.g., Zoom, Vimeo) and post the link to the recording to Discord.
-- Submit the QMD file for the presentation to Blackboard.
+**Submission Instructions:**
 
-## Component 2: Final Written Report (due May 9th)  
+- On **May 2nd**, upload your RevealJS presentation to [Quarto Pub](https://quartopub.com/) and share the link on Discord.
+- Also by **May 2nd**, record your presentation using a screen recording tool (e.g., Zoom, Vimeo) and post the link to the recording to Discord or, if you decided to do the writeup/reflection, post that to Discord instead.
+- Submit the QMD file for the presentation to Blackboard **on May 9**, along with your full project folder.
 
-The final report should be a **3–5 page policy memo** or technical report that provides a detailed narrative of your project. The memo should build upon the work from Parts 1 and 2, integrating your research question, hypotheses, analysis, and conclusions.  
+## Component 2: Final Written Report (due May 9th)
 
-**Your report should include**:  
+The final report should be a **3–5 page policy memo** or technical report that provides a detailed narrative of your project. It should build upon Parts 1 and 2, integrating your research question, hypotheses, analysis, and conclusions.
 
-1. **Introduction**:  
-   - Clearly state your research question and why it is important.  
-   - Provide background context, citing relevant literature or examples.  
+**Your report should include:**
 
-2. **Data and Methodology**:  
-   - Describe your data sources and key variables (outcome and explanatory).  
-   - Justify your choice of analytical approach, including the methods used (e.g., regression, hypothesis testing).  
+1. **Introduction**
+   - Clearly state your research question and why it is important.
+   - Provide background context, citing relevant literature or examples.
 
-3. **Analysis and Results**:  
-   - Present your findings, supported by tables, plots, or statistical results.  
-   - Include at least one visualization of your results (e.g., regression plot, histogram).  
+2. **Data and Methodology**
+   - Describe your data sources and key variables (outcome and explanatory).
+   - Justify your analytical approach, including the methods used (e.g., regression, hypothesis testing).
 
-4. **Discussion**:  
-   - Interpret your results in the context of your research question and hypotheses.  
-   - Discuss the statistical significance and implications of your findings.  
+3. **Analysis and Results**
+   - Present your findings, supported by tables, plots, or statistical results.
+   - Include at least one visualization (e.g., regression plot, histogram).
 
-5. **Policy Implications**:  
-   - Summarize how your findings inform policy or decision-making in your chosen area.  
-   - Propose actionable recommendations based on your analysis.  
+4. **Discussion**
+   - Interpret your results in context of your research question and hypotheses.
+   - Discuss the statistical significance and implications of your findings.
 
-6. **Conclusion**:  
-   - Provide a clear and concise answer to your research question.  
-   - Reflect briefly on the limitations of your analysis and potential next steps.  
+5. **Policy Implications**
+   - Summarize how your findings inform policy or decision-making.
+   - Propose actionable recommendations based on your analysis.
 
-**Submission Instructions**:  
-- Render your report in **HTML** format and upload it to Quarto Pub.  
-- Submit the link to the report to Discord
-- Submit your group's zipped project folder (including the QMD file and data) to Blackboard.  
+6. **Conclusion**
+   - Provide a clear answer to your research question.
+   - Reflect briefly on limitations and next steps.
 
+**Submission Instructions:**
 
+- Render your report in **HTML** format and upload it to Quarto Pub.
+- Submit the link on Discord.
+- Upload your group’s zipped project folder (QMD file and data) to Blackboard.
