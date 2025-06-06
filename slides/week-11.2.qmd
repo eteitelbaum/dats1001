@@ -489,8 +489,15 @@ vdem2022 |>
 
 ## Box Plot
 
-- A box plot is a graphical representation of the distribution based on the median and quartiles
-- It is a standardized way of displaying the distribution of data based on a five number summary: minimum, first quartile, median, third quartile, and maximum
+Certainly! Here’s a cleaner, expanded version of your paragraph that gives a fuller explanation of the purpose and value of box plots, in a style consistent with your modules:
+
+---
+
+The **box plot** is a powerful tool for visually summarizing the spread of a distribution. It provides a standardized way to display key features of a dataset using what’s known as the **five-number summary**: the minimum, first quartile (Q1), median, third quartile (Q3), and maximum.
+
+At its core, a box plot helps us quickly see where most values lie and how they are distributed across the range. The "box" itself shows the **interquartile range** — the middle 50% of the data — while the line inside the box marks the **median**. The "whiskers" extend to the smallest and largest values that fall within 1.5 times the interquartile range, and any values beyond that are plotted individually as **potential outliers**.
+
+This makes box plots especially useful for comparing distributions across different groups. They allow us to see not just differences in center (like the median), but also differences in spread, skewness, and the presence of outliers — all in a compact and easily interpretable visual.
 
 ## Box Plot
 
